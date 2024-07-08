@@ -1,14 +1,21 @@
-import { PrismaAdapter } from "@auth/prisma-adapter";
-import {
-  getServerSession,
-  type DefaultSession,
-  type NextAuthOptions,
-} from "next-auth";
-import { type Adapter } from "next-auth/adapters";
-import DiscordProvider from "next-auth/providers/discord";
+import { type DefaultSession } from "next-auth";
+// import DiscordProvider from "next-auth/providers/discord";
 
 import { env } from "@/env";
 import { db } from "@/server/db";
+import NextAuth from "next-auth";
+import GoogleProvider from "next-auth/providers/google";
+// import PasskeyProvider from "next-auth/providers/passkey";
+// import ResendProvider from "next-auth/providers/resend";
+// import { MongoDBAdapter } from "@auth/mongodb-adapter";
+// import { clientPromise, connectToDatabase } from "@/lib/mongodb";
+// import { Resend } from "resend";
+// import SignInEmail from "@/components/emails/signInEmail";
+// import crypto from "crypto";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -31,42 +38,64 @@ declare module "next-auth" {
   // }
 }
 
-/**
- * Options for NextAuth.js used to configure adapters, providers, callbacks, etc.
- *
- * @see https://next-auth.js.org/configuration/options
- */
-export const authOptions: NextAuthOptions = {
-  callbacks: {
-    session: ({ session, user }) => ({
-      ...session,
-      user: {
-        ...session.user,
-        id: user.id,
-      },
-    }),
-  },
-  adapter: PrismaAdapter(db) as Adapter,
-  providers: [
-    DiscordProvider({
-      clientId: env.DISCORD_CLIENT_ID,
-      clientSecret: env.DISCORD_CLIENT_SECRET,
-    }),
-    /**
-     * ...add more providers here.
-     *
-     * Most other providers require a bit more work than the Discord provider. For example, the
-     * GitHub provider requires you to add the `refresh_token_expires_in` field to the Account
-     * model. Refer to the NextAuth.js docs for the provider you want to use. Example:
-     *
-     * @see https://next-auth.js.org/providers/github
-     */
-  ],
-};
+// const resend = new Resend(env.AUTH_RESEND_KEY);
 
-/**
- * Wrapper for `getServerSession` so that you don't need to import the `authOptions` in every file.
- *
- * @see https://next-auth.js.org/configuration/nextjs
- */
-export const getServerAuthSession = () => getServerSession(authOptions);
+export const { auth, handlers, signIn, signOut } = NextAuth({
+  adapter: PrismaAdapter(prisma),
+  providers: [
+    GoogleProvider({
+      clientId: env.GOOGLE_CLIENT_ID,
+      clientSecret: env.GOOGLE_CLIENT_SECRET,
+    }),
+    // ResendProvider({
+    // 	from: "signin@deaplearning.com",
+    // 	async sendVerificationRequest({ identifier: email, url }) {
+    // 		const code = crypto.randomBytes(4).toString("hex").match(/.{4}/g)?.join("-");
+    // 		if (!code) throw new Error("Could not generate code");
+
+    // 		const intermediateUrl = `${env.URL}/verifyRedirect${new URL(url).search}`;
+    // 		const result = await resend.emails.send({
+    // 			from: "Ember <support@deaplearning.com>",
+    // 			to: [email],
+    // 			subject: "Sign in to Ember",
+    // 			react: SignInEmail(intermediateUrl, code),
+    // 		});
+    // 		if (result.error || !result.data) throw new Error(`Could not send email: ${result.error}`);
+
+    // 		const { verifyEmailsDB, emailedCodesDB } = await connectToDatabase();
+    // 		verifyEmailsDB.insertOne({ emailId: result.data.id, email });
+    // 		emailedCodesDB.insertOne({
+    // 			code,
+    // 			email,
+    // 			timestamp: new Date(),
+    // 			redirect: intermediateUrl,
+    // 		});
+    // 	},
+    // }),
+    // PasskeyProvider,
+  ],
+  callbacks: {
+    async session({ session, user }) {
+      /* eslint-disable no-param-reassign */
+      session.user.id = user.id;
+      // session.user.isAdmin = (user as User).isAdmin ?? false;
+      // session.user.role = (user as User).role;
+      /* eslint-enable no-param-reassign */
+      return session;
+    },
+    async redirect({ url, baseUrl }) {
+      // Allows relative callback URLs
+      if (url.startsWith("/")) return `${baseUrl}${url}`;
+      // Allows callback URLs on the same origin
+      if (new URL(url).origin === baseUrl) return url;
+      return baseUrl;
+    },
+  },
+  pages: {
+    signIn: "/signin",
+    verifyRequest: "/verify",
+  },
+  secret: env.NEXTAUTH_SECRET,
+  debug: false, // env.NODE_ENV === "development",
+  experimental: { enableWebAuthn: true },
+});
