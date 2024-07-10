@@ -41,10 +41,7 @@ declare module "next-auth" {
 export const { auth, handlers, signIn, signOut } = NextAuth({
 	adapter: PrismaAdapter(db),
 	providers: [
-		GoogleProvider({
-			clientId: env.GOOGLE_CLIENT_ID,
-			clientSecret: env.GOOGLE_CLIENT_SECRET,
-		}),
+		GoogleProvider,
 		Discord,
 		// ResendProvider({
 		// 	from: "signin@deaplearning.com",
