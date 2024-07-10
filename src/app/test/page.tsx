@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 export default function TestToast() {
 	useEffect(() => {
-		wait(3000).then((r) => {
+		void wait(3000).then((r) => {
 			toast({
 				title: "Would you like to sign a petition?",
 				description: "Fight for the environment!",

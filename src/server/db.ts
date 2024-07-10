@@ -5,6 +5,7 @@ import { env } from "@/env";
 const createPrismaClient = () => new PrismaClient({});
 
 declare global {
+	// eslint-disable-next-line no-var
 	var prisma: ReturnType<typeof createPrismaClient> | undefined;
 }
 
