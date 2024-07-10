@@ -89,7 +89,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 		},
 	},
 	pages: {
-		signIn: "/signin",
+		// signIn: "/signin",
 		verifyRequest: "/verify",
 	},
 	secret: env.NEXTAUTH_SECRET,
