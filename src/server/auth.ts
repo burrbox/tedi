@@ -5,6 +5,7 @@ import { env } from "@/env";
 import { db } from "@/server/db";
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import Discord from "next-auth/providers/discord";
 // import PasskeyProvider from "next-auth/providers/passkey";
 // import ResendProvider from "next-auth/providers/resend";
 // import { MongoDBAdapter } from "@auth/mongodb-adapter";
@@ -44,6 +45,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 			clientId: env.GOOGLE_CLIENT_ID,
 			clientSecret: env.GOOGLE_CLIENT_SECRET,
 		}),
+		Discord,
 		// ResendProvider({
 		// 	from: "signin@deaplearning.com",
 		// 	async sendVerificationRequest({ identifier: email, url }) {
