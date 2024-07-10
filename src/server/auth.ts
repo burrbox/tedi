@@ -13,9 +13,6 @@ import GoogleProvider from "next-auth/providers/google";
 // import SignInEmail from "@/components/emails/signInEmail";
 // import crypto from "crypto";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -41,7 +38,7 @@ declare module "next-auth" {
 // const resend = new Resend(env.AUTH_RESEND_KEY);
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
-	adapter: PrismaAdapter(prisma),
+	adapter: PrismaAdapter(db),
 	providers: [
 		GoogleProvider({
 			clientId: env.GOOGLE_CLIENT_ID,
