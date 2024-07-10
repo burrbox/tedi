@@ -9,6 +9,7 @@ const config = {
 		"next/core-web-vitals",
 		"plugin:@typescript-eslint/recommended-type-checked",
 		"plugin:@typescript-eslint/stylistic-type-checked",
+		"prettier",
 	],
 	rules: {
 		"@typescript-eslint/array-type": "off",
