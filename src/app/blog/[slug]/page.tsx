@@ -70,20 +70,20 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 											<a href="#0">
 												<Image
 													className="mr-3 shrink-0 rounded-full"
-													src={post.authorImg}
+													src={post.author.image ?? "/avatar.jpg"}
 													width={32}
 													height={32}
-													alt={post.author}
+													alt={post.author.name ?? "Anonymous Author"}
 												/>
 											</a>
 											<div>
 												<span className="text-gray-600 dark:text-gray-400">By </span>
 												<a className="font-medium text-gray-800 hover:underline dark:text-gray-300" href="#0">
-													{post.author}
+													{post.author.name ?? "Anonymous Author"}
 												</a>
 												<span className="text-gray-600 dark:text-gray-400">
 													{" "}
-													{/* · <PostDate dateString={post.publishedAt} /> */}
+													{/* · <PostDate dateString={post.createdAt} /> */}
 												</span>
 											</div>
 										</div>
@@ -97,7 +97,7 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 
 								{/* Article content */}
 								<div
-									className="prose prose-td:border-2 prose-td:border-gray-500 prose-td:p-2 mb-8"
+									className="prose mb-8 prose-td:border-2 prose-td:border-gray-500 prose-td:p-2"
 									data-aos="fade-up"
 									data-aos-delay="450">
 									<Mdx content={post.content} />

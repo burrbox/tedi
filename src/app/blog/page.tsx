@@ -55,20 +55,20 @@ export default async function Blog() {
 											<a href="#0">
 												<Image
 													className="mr-3 shrink-0 rounded-full"
-													src={featuredPost.authorImg}
+													src={featuredPost.author.image ?? "/avatar.jpg"}
 													width={32}
 													height={32}
-													alt={featuredPost.author}
+													alt={featuredPost.author.name ?? "Anonymous Author"}
 												/>
 											</a>
 											<div>
 												<span className="text-gray-600 dark:text-gray-400">By </span>
 												<a className="font-medium text-gray-800 hover:underline dark:text-gray-300" href="#0">
-													{featuredPost.author}
+													{featuredPost.author.name ?? "Anonymous Author"}
 												</a>
 												<span className="text-gray-600 dark:text-gray-400">
 													{" "}
-													{/* · <PostDate dateString={featuredPost.publishedAt} /> */}
+													{/* · <PostDate dateString={featuredPost.createdAt} /> */}
 												</span>
 											</div>
 										</div>
@@ -119,18 +119,18 @@ export default async function Blog() {
 												<a href="#0">
 													<Image
 														className="mr-3 shrink-0 rounded-full"
-														src={post.authorImg}
+														src={post.author.image ?? "/avatar.jpg"}
 														width={32}
 														height={32}
-														alt={post.author}
+														alt={post.author.name ?? "Anonymous Author"}
 													/>
 												</a>
 												<div className="text-sm text-gray-500">
 													By{" "}
 													<a className="font-medium text-gray-800 hover:underline dark:text-gray-400" href="#0">
-														{post.author}
+														{post.author.name ?? "Anonymous Author"}
 													</a>{" "}
-													· <span className="text-gray-500">{/* <PostDate dateString={post.publishedAt} /> */}</span>
+													· <span className="text-gray-500">{/* <PostDate dateString={post.createdAt} /> */}</span>
 												</div>
 											</footer>
 										</article>
