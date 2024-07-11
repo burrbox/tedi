@@ -1,3 +1,46 @@
+import Image from "next/image";
+import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
+
+const team = [
+	{
+		name: "Emma Mazzotta",
+		title: "Founder & Executive Director",
+		location: "Hopewell Junction, NY, USA",
+		image: "/placeholder.svg",
+		description: `From a young age, Emma has exhibited a remarkable talent for leadership and passion for protecting the environment. She not only coordinates and engages in clean-up projects, but conducts research on the ecological impacts of water pollution. She founded TEDI to build upon her passion for environmental advocacy and achieve long-lasting, impactful change on an international level.`,
+		email: "Emmarose2007@icloud.com",
+		linkedin: "https://www.linkedin.com/in/emma-mazzotta-362182286/",
+		twitter: "",
+		instagram: "https://www.instagram.com/emma_mazzotta24/",
+		tiktok: "https://www.tiktok.com/@emmamazzotta24",
+	},
+	{
+		name: "Kailey Fitzgerald",
+		title: "Networking Coordinator & TikTok Director",
+		location: "Hopewell Junction, NY, USA",
+		image: "/placeholder.svg",
+		description: `Kailey has always seen the beauty of our world and is extremely passionate about preserving it. As a kid she was fascinated by nonfiction books about sea creatures and dinosaurs and would go on nature walks during recess at school. She joined TEDI because it allows her to use her voice, regardless of her age, to make a difference in this world.`,
+		email: "",
+		linkedin: "",
+		twitter: "",
+		instagram: "",
+		tiktok: "",
+	},
+	{
+		name: "Karen Peng",
+		title: "Networking Coordinator",
+		location: "Toronto, Ontario, Canada",
+		image: "/placeholder.svg",
+		description: `Karen has always been intrigued by forest ecosystems and how they sustain themselves. She is fascinated by environmental policy and advocating for sustainability in developing cities. She joined TEDI to express her passion for environmental science and to meet likeminded peers who also hope to solve current environmental issues.`,
+		email: "",
+		linkedin: "",
+		twitter: "",
+		instagram: "",
+		tiktok: "",
+	},
+];
+
 export default function AboutPage() {
 	return (
 		<div className="flex w-full flex-col items-center p-8">
@@ -66,125 +109,48 @@ export default function AboutPage() {
 				<div className="container mx-auto px-4">
 					<h2 className="mb-8 text-center text-3xl font-bold text-green-700">Meet the Team</h2>
 					<div className="grid gap-8 md:grid-cols-3">
-						<div className="rounded-md bg-blue-100 p-8 shadow-md">
-							<img
-								src="/placeholder.svg"
-								alt="An image of Emma Mazzatto at the beach."
-								className="mb-4 w-full rounded-md"
-							/>
-							<h3 className="mb-2 text-xl font-bold text-blue-700">Emma Mazzotta</h3>
-							<p className="mb-2 text-blue-700">Founder & Executive Director</p>
-							<p className="mb-2 text-blue-700">
-								<LocateIcon className="mr-1 inline-block h-4 w-4" />
-								Hopewell Junction, NY, USA
-							</p>
-							<p className="text-blue-700">
-								From a young age, Emma has exhibited a remarkable talent for leadership and passion for protecting the
-								environment. She not only coordinates and engages in clean-up projects, but conducts research on the
-								ecological impacts of water pollution. She founded TEDI to build upon her passion for environmental
-								advocacy and achieve long-lasting, impactful change on an international level.
-							</p>
-							<MailIcon className="mt-4 h-6 w-6 text-blue-700" />
-						</div>
-						<div className="rounded-md bg-blue-100 p-8 shadow-md">
-							<img
-								src="/placeholder.svg"
-								alt="An image of Kailey Fitzgerald with a plant behind her head."
-								className="mb-4 w-full rounded-md"
-							/>
-							<h3 className="mb-2 text-xl font-bold text-blue-700">Kailey Fitzgerald</h3>
-							<p className="mb-2 text-blue-700">Networking Coordinator & TikTok Director</p>
-							<p className="mb-2 text-blue-700">
-								<LocateIcon className="mr-1 inline-block h-4 w-4" />
-								Hopewell Junction, NY, USA
-							</p>
-							<p className="text-blue-700">
-								Kailey has always seen the beauty of our world and is extremely passionate about preserving it. As a kid
-								she was fascinated by nonfiction books about sea creatures and dinosaurs and would go on nature walks
-								during recess at school. She joined TEDI because it allows her to use her voice, regardless of her age,
-								to make a difference in this world.
-							</p>
-							<MailIcon className="mt-4 h-6 w-6 text-blue-700" />
-						</div>
-						<div className="rounded-md bg-blue-100 p-8 shadow-md">
-							<img src="/placeholder.svg" alt="An image of Karen Peng." className="mb-4 w-full rounded-md" />
-							<h3 className="mb-2 text-xl font-bold text-blue-700">Karen Peng</h3>
-							<p className="mb-2 text-blue-700">Networking Coordinator</p>
-							<p className="mb-2 text-blue-700">
-								<LocateIcon className="mr-1 inline-block h-4 w-4" />
-								Toronto, Ontario, Canada
-							</p>
-							<p className="text-blue-700">
-								Karen has always been intrigued by forest ecosystems and how they sustain themselves. She is fascinated
-								by environmental policy and advocating for sustainability in developing cities. She joined TEDI to
-								express her passion for environmental science and to meet likeminded peers who also hope to solve
-								current environmental issues.
-							</p>
-							<MailIcon className="mt-4 h-6 w-6 text-blue-700" />
-						</div>
+						{team.map((member) => (
+							<div key={member.name} className="rounded-md bg-blue-100 p-8 shadow-md">
+								<img src={member.image} alt={`An image of ${member.name}.`} className="mb-4 w-full rounded-md" />
+								<h3 className="mb-2 text-xl font-bold text-blue-700">{member.name}</h3>
+								<p className="mb-2 text-blue-700">{member.title}</p>
+								<p className="mb-2 text-blue-700">
+									<MapPinIcon className="mr-1 inline-block h-6 w-6" />
+									{member.location}
+								</p>
+								<p className="text-blue-700">{member.description}</p>
+								<div className="mt-4 flex space-x-4">
+									{member.email && (
+										<Link href={member.email}>
+											<EnvelopeIcon className="h-6 w-6" />
+										</Link>
+									)}
+									{member.linkedin && (
+										<Link href={member.linkedin}>
+											<Image src="/linkedin.svg" alt="Link to linkedin" width={24} height={24} color="#0A66C2" />
+										</Link>
+									)}
+									{member.twitter && (
+										<Link href={member.twitter}>
+											<Image src="/x.svg" alt="Link to twitter" width={24} height={24} />
+										</Link>
+									)}
+									{member.instagram && (
+										<Link href={member.instagram}>
+											<Image src="/instagram.svg" alt="Link to instagram" width={24} height={24} />
+										</Link>
+									)}
+									{member.tiktok && (
+										<Link href={member.instagram}>
+											<Image src="/tiktok.svg" alt="Link to tiktok" width={24} height={24} />
+										</Link>
+									)}
+								</div>
+							</div>
+						))}
 					</div>
 				</div>
 			</section>
 		</div>
-	);
-}
-
-function LocateIcon(props: React.ComponentProps<"svg">) {
-	return (
-		<svg
-			{...props}
-			xmlns="http://www.w3.org/2000/svg"
-			width="24"
-			height="24"
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth="2"
-			strokeLinecap="round"
-			strokeLinejoin="round">
-			<line x1="2" x2="5" y1="12" y2="12" />
-			<line x1="19" x2="22" y1="12" y2="12" />
-			<line x1="12" x2="12" y1="2" y2="5" />
-			<line x1="12" x2="12" y1="19" y2="22" />
-			<circle cx="12" cy="12" r="7" />
-		</svg>
-	);
-}
-
-function MailIcon(props: React.ComponentProps<"svg">) {
-	return (
-		<svg
-			{...props}
-			xmlns="http://www.w3.org/2000/svg"
-			width="24"
-			height="24"
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth="2"
-			strokeLinecap="round"
-			strokeLinejoin="round">
-			<rect width="20" height="16" x="2" y="4" rx="2" />
-			<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-		</svg>
-	);
-}
-
-function XIcon(props: React.ComponentProps<"svg">) {
-	return (
-		<svg
-			{...props}
-			xmlns="http://www.w3.org/2000/svg"
-			width="24"
-			height="24"
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth="2"
-			strokeLinecap="round"
-			strokeLinejoin="round">
-			<path d="M18 6 6 18" />
-			<path d="m6 6 12 12" />
-		</svg>
 	);
 }
