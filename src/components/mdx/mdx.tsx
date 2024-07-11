@@ -1,13 +1,12 @@
 "use client";
 
-import type { Components } from "react-markdown";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
-import type { PluggableList } from "react-markdown/lib";
+import { type PluggableList } from "node_modules/react-markdown/lib";
 
-const components: Components = {
-	a({ node: _node, ...rest }) {
+const components = {
+	a({ ...rest }) {
 		// eslint-disable-next-line
 		return <a target="_blank" {...rest} />;
 	},
