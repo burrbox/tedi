@@ -7,8 +7,10 @@ const team = [
 		name: "Emma Mazzotta",
 		title: "Founder & Executive Director",
 		location: "Hopewell Junction, NY, USA",
+		/*image:
+			"https://res.cloudinary.com/dlzeuksus/image/upload/f_auto,q_auto/v1/TEDI%20Bio/x6q3sdgebdrhx2pb5b4k", how do i crop this??*/
 		image:
-			"https://res.cloudinary.com/dlzeuksus/image/upload/f_auto,q_auto/v1/TEDI%20Bio/x6q3sdgebdrhx2pb5b4k",
+			"https://static.wixstatic.com/media/288dd2_05f3afcc636847509d9d036dbd6120e9~mv2.jpg/v1/crop/x_0,y_35,w_1449,h_1272/fill/w_403,h_353,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/3F6F22F3-129A-47F6-BBEA-1F63F567F51D_1_1.jpg",
 		description: `From a young age, Emma has exhibited a remarkable talent for leadership and passion for protecting the environment. She not only coordinates and engages in clean-up projects, but conducts research on the ecological impacts of water pollution. She founded TEDI to build upon her passion for environmental advocacy and achieve long-lasting, impactful change on an international level.`,
 		email: "Emmarose2007@icloud.com",
 		linkedin: "https://www.linkedin.com/in/emma-mazzotta-362182286/",
@@ -23,11 +25,11 @@ const team = [
 		image:
 			"https://static.wixstatic.com/media/288dd2_b751666863d24360bd1d1d381329c963~mv2.png/v1/crop/x_0,y_115,w_826,h_724/fill/w_804,h_706,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Screen%20Shot%202023-08-12%20at%2010_48_39%20AM.png",
 		description: `Kailey has always seen the beauty of our world and is extremely passionate about preserving it. As a kid she was fascinated by nonfiction books about sea creatures and dinosaurs and would go on nature walks during recess at school. She joined TEDI because it allows her to use her voice, regardless of her age, to make a difference in this world.`,
-		email: "",
+		email: "kaileyfitzgerald102@gmail.com",
 		linkedin: "",
 		twitter: "",
 		instagram: "",
-		tiktok: "",
+		tiktok: "https://www.tiktok.com/@buster_0924",
 	},
 	{
 		name: "Karen Peng",
@@ -36,10 +38,10 @@ const team = [
 		image:
 			"https://res.cloudinary.com/dlzeuksus/image/upload/f_auto,q_auto/v1/TEDI%20Bio/xejrbnm0k1loivohupbx",
 		description: `Karen has always been intrigued by forest ecosystems and how they sustain themselves. She is fascinated by environmental policy and advocating for sustainability in developing cities. She joined TEDI to express her passion for environmental science and to meet likeminded peers who also hope to solve current environmental issues.`,
-		email: "",
+		email: "Karen.penggg@gmail.com",
 		linkedin: "",
 		twitter: "",
-		instagram: "",
+		instagram: "https://www.instagram.com/kp_penguin/",
 		tiktok: "",
 	},
 	{
@@ -203,7 +205,7 @@ const team = [
 
 export default function AboutPage() {
 	return (
-		<div className="flex w-full flex-col items-center p-8">
+		<div className="flex w-full flex-col items-center pb-8">
 			<section className="relative h-[400px] w-full">
 				<img
 					src="https://static.wixstatic.com/media/11062b_df22f41a0277457e8de40061c174b018~mv2.jpg/v1/fill/w_3088,h_1000,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/11062b_df22f41a0277457e8de40061c174b018~mv2.jpg"
@@ -211,9 +213,9 @@ export default function AboutPage() {
 					className="h-full w-full object-cover"
 				/>
 				<div className="absolute inset-0 flex items-center justify-center">
-					<div className="rounded-md bg-white bg-opacity-75 p-8">
-						<h2 className="mb-4 text-center text-2xl font-bold text-green-700">Our Mission</h2>
-						<p className="mx-auto max-w-3xl text-center text-blue-700">
+					<div className="rounded-lg bg-white bg-opacity-85 px-5 py-10">
+						<h2 className="mb-4 text-center text-3xl font-bold text-green-700">Our Mission</h2>
+						<p className="mx-auto max-w-3xl text-center text-blue-700 text-xl">
 							The Environmental Defense Initiative is an international youth-led initiative dedicated to raising
 							awareness of environmental issues and providing a platform for people to take action to create
 							long-lasting change.
@@ -221,13 +223,14 @@ export default function AboutPage() {
 					</div>
 				</div>
 			</section>
-			<section className="w-full bg-white py-16">
+			<section className="w-full bg-white py-8">
 				<div className="container mx-auto px-4">
-					<h2 className="mb-8 text-center text-3xl font-bold text-green-700">Our Story</h2>
-					<p className="mx-auto max-w-3xl text-center text-blue-700">
+					<h2 className="py-4 text-center text-3xl font-bold text-green-700">Our Story</h2>
+					<hr className="border-t-4 border-green-700 w-12 mx-auto mb-6"></hr>
+					<p className="mx-auto max-w-4xl text-center text-blue-600 text-xl">
 						The Environmental Defense Initiative was founded in Hopewell Junction, New York by Emma Mazzotta. Emma has
 						been passionate about environmental issues from a young age and started TEDI to further develop her passion
-						in a way that can make an impact across the US. <br />
+						in a way that can make an impact across the US. <br /> <br />
 						{`Through writing blogs on current issues in our environment, creating petitions to advocate for policy
 						change, educating others on our social media platforms, and hosting informational webinars, we hope to
 						expand TEDI's reach to thousands of people and do our part in shaping a better world for future generations
@@ -237,7 +240,8 @@ export default function AboutPage() {
 			</section>
 			<section className="w-full bg-gray-100 py-16">
 				<div className="container mx-auto px-4">
-					<h2 className="mb-8 text-center text-3xl font-bold text-green-700">Our Values</h2>
+					<h2 className="mb-4 text-center text-3xl font-bold text-green-700">Our Values</h2>
+					<hr className="border-t-4 border-green-700 w-12 mx-auto mb-6"></hr>
 					<div className="grid gap-8 md:grid-cols-3">
 						<div className="rounded-md bg-white p-8 shadow-md justify-center">
 							<div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-700 text-2xl font-bold text-white">
@@ -272,10 +276,10 @@ export default function AboutPage() {
 			<section className="w-full bg-white py-16">
 				<div className="container mx-auto px-4">
 					<h2 className="mb-8 text-center text-3xl font-bold text-green-700">Meet the Team</h2>
-					<div className="grid gap-8 md:grid-cols-3">
+					<div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2">
 						{team.map((member) => (
-							<div key={member.name} className="rounded-md bg-blue-100 p-8 shadow-md">
-								<img src={member.image} alt={`An image of ${member.name}.`} className="mb-4 w-full rounded-md" />
+							<div key={member.name} className="rounded-lg bg-blue-100 p-8 shadow-md ease-in-out hover:bg-blue-200 duration-300">
+								<img src={member.image} alt={`An image of ${member.name}.`} className="mb-4 w-full rounded-md object-cover h-96" />
 								<h3 className="mb-2 text-xl font-bold text-blue-700">{member.name}</h3>
 								<p className="mb-2 text-blue-700">{member.title}</p>
 								<p className="mb-2 flex text-blue-700">
@@ -315,10 +319,11 @@ export default function AboutPage() {
 					</div>
 				</div>
 			</section>
-			<section className="max-w-5xl bg-white py-16">
+			<section className="max-w-5xl bg-white py-8">
 				<div className="flex justify-center">
-						<h1 className="mb-8 text-center text-6xl text-green-700">Partnerships</h1>
+						<h1 className="py-4 text-center text-6xl text-green-700">Partnerships</h1>
 				</div>
+				<hr className="border-t-4 border-green-700 w-12 mx-auto mb-6"></hr>
 				<div className="relative mx-auto max-w-3xl">
 						<h3 className="mb-8 text-center text-3x1 text-blue-700">Thank you to all of our partners for working with us to achieve sustainable, long-lasting change. Learn more about these partnerships by following us on Instagram.</h3>
 						<div className="mt-8 flex justify-center">
@@ -329,18 +334,19 @@ export default function AboutPage() {
 				</div>
 				<div className="w-full flex justify-center py-10">
 					<div className="container items-center w-full flex-col flex">
-						<img src="https://static.wixstatic.com/media/288dd2_251366a23d324a8d8f07df515829e90b~mv2.jpg/v1/crop/x_7,y_0,w_1156,h_1156/fill/w_121,h_121,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_0843.jpg" alt="Partner 1" width={121} height={121} className="rounded-md mb-2"/>
+						<img src="https://static.wixstatic.com/media/288dd2_e69d3d26239b43799d6a05c0f0d83d2b~mv2.jpg/v1/crop/x_0,y_11,w_1002,h_1002/fill/w_121,h_121,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/633A2431-1788-4C29-8389-2A3A589B1E62_edi.jpg" alt="Partner 1" width={121} height={121} className="rounded-full mb-2"/>
 						<h3 className="text-blue-700 text-2xl flex justify-center text-center">
 							PLANT A CHANGE
 						</h3>
 					</div>
 					<div className="container items-center w-full flex-col flex">
-							<img src="https://static.wixstatic.com/media/288dd2_e69d3d26239b43799d6a05c0f0d83d2b~mv2.jpg/v1/crop/x_0,y_11,w_1002,h_1002/fill/w_121,h_121,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/633A2431-1788-4C29-8389-2A3A589B1E62_edi.jpg" alt="Partner 2" width={121} height={121} className="rounded-md mb-2"/>
+							<img src="https://static.wixstatic.com/media/288dd2_251366a23d324a8d8f07df515829e90b~mv2.jpg/v1/crop/x_7,y_0,w_1156,h_1156/fill/w_121,h_121,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_0843.jpg" alt="Partner 2" width={121} height={121} className="rounded-full mb-2"/>
 						<h3 className="text-blue-700 text-2xl flex justify-center text-center">
 							PLASTIC2BRICK
 						</h3>
 					</div>
 				</div>
+				<hr className="border-t-1 border-green-700 w-3/4 mx-auto mb-6"></hr>
 				<div className="relative mx-auto max-w-4xl">
 					<h3 className="text-center text-xl py-5 text-blue-600">
 						"Collaborating with the Environmental Defense Initiative on <span className="text-green-600 font-semibold">inspiring</span> reels and a microplastic pollution petition was an experience nothing short of <span className="text-green-600 font-semibold">amazing</span>. Their unwavering dedication to <span className="text-green-600 font-semibold">protecting our planet</span> and educating the community on sustainable practices is truly commendable. We’re proud to stand alongside such a <span className="text-green-600 font-semibold">passionate and impactful</span> organization in our shared mission to make the world a greener place."

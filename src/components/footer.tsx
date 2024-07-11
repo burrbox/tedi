@@ -134,8 +134,8 @@ export default function Footer() {
 						<div>
 							<p className="text-blue-600 py-2">
 								Email*</p>
-								<span className=" text-green-600 text-xl border-b-green-600 py-1 border-4 border-white w-1/2">
-									<input className="outline-none text-blue-700 size-1/2 empty:border-b-red-600" />
+								<span className=" text-green-600 text-xl border-b-green-600 border-b-4 py-1 w-1/2">
+									<input className="outline-none text-blue-700 size-1/2 bg-transparent" />
 										Subscribe
 								</span>
 						</div>
