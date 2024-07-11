@@ -129,7 +129,7 @@ export default function AboutPage() {
 	);
 }
 
-function LocateIcon(props) {
+function LocateIcon(props: React.ComponentProps<"svg">) {
 	return (
 		<svg
 			{...props}
@@ -151,7 +151,7 @@ function LocateIcon(props) {
 	);
 }
 
-function MailIcon(props) {
+function MailIcon(props: React.ComponentProps<"svg">) {
 	return (
 		<svg
 			{...props}
@@ -170,7 +170,7 @@ function MailIcon(props) {
 	);
 }
 
-function XIcon(props) {
+function XIcon(props: React.ComponentProps<"svg">) {
 	return (
 		<svg
 			{...props}
