@@ -3,7 +3,7 @@
 import { SessionProvider } from "next-auth/react";
 
 import Header from "@/components/header";
-// import Footer from "@/components/ui/footer";
+import Footer from "@/components/footer";
 
 export default function RootLayoutClient({ children }: { children: React.ReactNode }) {
 	return (
@@ -11,7 +11,7 @@ export default function RootLayoutClient({ children }: { children: React.ReactNo
 			<div className="flex min-h-screen flex-col overflow-hidden">
 				<Header />
 				<main className="grow pt-16">{children}</main>
-				{/* <Footer /> */}
+				<Footer />
 			</div>
 		</SessionProvider>
 	);

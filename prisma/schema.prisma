@@ -16,15 +16,19 @@ datasource db {
 
 model Post {
     id        String   @id @default(auto()) @map("_id") @db.ObjectId
-    name      String
+    slug      String   @unique
+    title     String
+    summary   String
+    content   String
+    image     String
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 
-    createdBy   User   @relation(fields: [createdById], references: [id])
-    createdById String @db.ObjectId
+    author   User   @relation(fields: [authorId], references: [id])
+    authorId String @db.ObjectId
 
-    @@index([name])
-    @@index([createdById])
+    @@index([createdAt])
+    @@index([authorId])
 }
 
 // Necessary for Next auth
@@ -59,7 +63,7 @@ model Session {
 
 model User {
     id            String    @id @default(auto()) @map("_id") @db.ObjectId
-    name          String?
+    name          String?   @default("")
     email         String?   @unique
     emailVerified DateTime?
     image         String?
