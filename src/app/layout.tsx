@@ -5,6 +5,7 @@ import { type Metadata } from "next";
 
 import { TRPCReactProvider } from "@/trpc/react";
 import { Toaster } from "@/components/ui/toaster";
+import RootLayoutClient from "./layoutClient";
 
 export const metadata: Metadata = {
 	title: "The Environmental Defense Initiative",
@@ -16,7 +17,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 	return (
 		<html lang="en" className={`${GeistSans.variable}`}>
 			<body>
-				<TRPCReactProvider>{children}</TRPCReactProvider>
+				<TRPCReactProvider>
+					<RootLayoutClient>{children}</RootLayoutClient>
+				</TRPCReactProvider>
 				<Toaster />
 			</body>
 		</html>
