@@ -127,6 +127,19 @@ export default function Footer() {
 					{/* </div> */}
 
 					{/* Bottom area */}
+					<div className="pb-8 w-full">
+						<div>
+							<h2 className="text-blue-600 text-xl">Subscribe to our monthy newsletter!</h2>
+						</div>
+						<div>
+							<p className="text-blue-600 py-2">
+								Email*</p>
+								<span className=" text-green-600 text-xl border-b-green-600 py-1 border-4 border-white w-1/2">
+									<input className="outline-none text-blue-700 size-1/2 empty:border-b-red-600" />
+										Subscribe
+								</span>
+						</div>
+					</div>
 					<div className="md:flex md:items-center md:justify-between">
 						{/* Social links */}
 						<ul className="mb-4 flex md:order-2 md:mb-0 md:ml-4">
