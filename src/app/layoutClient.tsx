@@ -10,7 +10,7 @@ export default function RootLayoutClient({ children }: { children: React.ReactNo
 		<SessionProvider>
 			<div className="flex min-h-screen flex-col overflow-hidden">
 				<Header />
-				<main className="grow">{children}</main>
+				<main className="grow pt-16">{children}</main>
 				{/* <Footer /> */}
 			</div>
 		</SessionProvider>

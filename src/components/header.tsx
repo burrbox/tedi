@@ -18,7 +18,7 @@ export default function Header() {
 	const path = usePathname();
 
 	return (
-		<header className="w-full bg-white shadow-md">
+		<header className="fixed z-30 w-full bg-white shadow-md">
 			<div className="container mx-auto flex items-center justify-between px-4 py-4">
 				<div className="flex items-center space-x-2">
 					<img
