@@ -7,7 +7,8 @@ const team = [
 		name: "Emma Mazzotta",
 		title: "Founder & Executive Director",
 		location: "Hopewell Junction, NY, USA",
-		image: "/placeholder.svg",
+		image:
+			"https://static.wixstatic.com/media/288dd2_14f893d922994b6eb5a3b67fb26d95f2~mv2.jpg/v1/crop/x_0,y_243,w_2250,h_1973/fill/w_804,h_706,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/IMG_6637_edited.jpg",
 		description: `From a young age, Emma has exhibited a remarkable talent for leadership and passion for protecting the environment. She not only coordinates and engages in clean-up projects, but conducts research on the ecological impacts of water pollution. She founded TEDI to build upon her passion for environmental advocacy and achieve long-lasting, impactful change on an international level.`,
 		email: "Emmarose2007@icloud.com",
 		linkedin: "https://www.linkedin.com/in/emma-mazzotta-362182286/",
@@ -19,7 +20,8 @@ const team = [
 		name: "Kailey Fitzgerald",
 		title: "Networking Coordinator & TikTok Director",
 		location: "Hopewell Junction, NY, USA",
-		image: "/placeholder.svg",
+		image:
+			"https://static.wixstatic.com/media/288dd2_b751666863d24360bd1d1d381329c963~mv2.png/v1/crop/x_0,y_115,w_826,h_724/fill/w_804,h_706,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Screen%20Shot%202023-08-12%20at%2010_48_39%20AM.png",
 		description: `Kailey has always seen the beauty of our world and is extremely passionate about preserving it. As a kid she was fascinated by nonfiction books about sea creatures and dinosaurs and would go on nature walks during recess at school. She joined TEDI because it allows her to use her voice, regardless of her age, to make a difference in this world.`,
 		email: "",
 		linkedin: "",
@@ -31,7 +33,8 @@ const team = [
 		name: "Karen Peng",
 		title: "Networking Coordinator",
 		location: "Toronto, Ontario, Canada",
-		image: "/placeholder.svg",
+		image:
+			"https://static.wixstatic.com/media/288dd2_6362bc43cee14f868ba8434fe4a2fdad~mv2.jpeg/v1/crop/x_53,y_0,w_615,h_540/fill/w_738,h_648,al_c,lg_1,q_85,enc_auto/IMG_2064.jpeg",
 		description: `Karen has always been intrigued by forest ecosystems and how they sustain themselves. She is fascinated by environmental policy and advocating for sustainability in developing cities. She joined TEDI to express her passion for environmental science and to meet likeminded peers who also hope to solve current environmental issues.`,
 		email: "",
 		linkedin: "",
@@ -45,7 +48,11 @@ export default function AboutPage() {
 	return (
 		<div className="flex w-full flex-col items-center p-8">
 			<section className="relative h-[400px] w-full">
-				<img src="/placeholder.svg" alt="Forest" className="h-full w-full object-cover" />
+				<img
+					src="https://static.wixstatic.com/media/11062b_df22f41a0277457e8de40061c174b018~mv2.jpg/v1/fill/w_3088,h_1000,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/11062b_df22f41a0277457e8de40061c174b018~mv2.jpg"
+					alt="Forest"
+					className="h-full w-full object-cover"
+				/>
 				<div className="absolute inset-0 flex items-center justify-center">
 					<div className="rounded-md bg-white bg-opacity-75 p-8">
 						<h2 className="mb-4 text-center text-2xl font-bold text-green-700">Our Mission</h2>
@@ -114,9 +121,9 @@ export default function AboutPage() {
 								<img src={member.image} alt={`An image of ${member.name}.`} className="mb-4 w-full rounded-md" />
 								<h3 className="mb-2 text-xl font-bold text-blue-700">{member.name}</h3>
 								<p className="mb-2 text-blue-700">{member.title}</p>
-								<p className="mb-2 text-blue-700">
+								<p className="mb-2 flex text-blue-700">
 									<MapPinIcon className="mr-1 inline-block h-6 w-6" />
-									{member.location}
+									<span>{member.location}</span>
 								</p>
 								<p className="text-blue-700">{member.description}</p>
 								<div className="mt-4 flex space-x-4">
