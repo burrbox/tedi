@@ -8,6 +8,7 @@ import DiscordProvider from "next-auth/providers/discord";
 // import PasskeyProvider from "next-auth/providers/passkey";
 import ResendProvider from "next-auth/providers/resend";
 import { Resend } from "resend";
+import SignInEmail from "@/components/emails/signInEmail";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 
 /**
@@ -45,7 +46,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 					from: "Ember <support@deaplearning.com>",
 					to: [email],
 					subject: "Sign in to Ember",
-					text: `Sign in to here: ${url}`,
+					react: SignInEmail({ url }),
 				});
 				if (result.error ?? !result.data) throw new Error(`Could not send email: ${result.error?.message}`);
 			},
