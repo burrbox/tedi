@@ -2,10 +2,23 @@
 
 import { SessionProvider } from "next-auth/react";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { useEffect } from "react";
 
 export default function RootLayoutClient({ children }: { children: React.ReactNode }) {
+	useEffect(() => {
+		AOS.init({
+			once: true,
+			disable: "phone",
+			duration: 600,
+			easing: "ease-out-sine",
+		});
+	});
+
 	return (
 		<SessionProvider>
 			<div className="flex min-h-screen flex-col overflow-hidden">
