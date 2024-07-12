@@ -1,18 +1,13 @@
 import { type DefaultSession } from "next-auth";
-// import DiscordProvider from "next-auth/providers/discord";
 
 import { env } from "@/env";
 import { db } from "@/server/db";
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import Discord from "next-auth/providers/discord";
+import DiscordProvider from "next-auth/providers/discord";
 // import PasskeyProvider from "next-auth/providers/passkey";
-// import ResendProvider from "next-auth/providers/resend";
-// import { MongoDBAdapter } from "@auth/mongodb-adapter";
-// import { clientPromise, connectToDatabase } from "@/lib/mongodb";
-// import { Resend } from "resend";
-// import SignInEmail from "@/components/emails/signInEmail";
-// import crypto from "crypto";
+import ResendProvider from "next-auth/providers/resend";
+import { Resend } from "resend";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 
 /**
@@ -36,38 +31,25 @@ declare module "next-auth" {
 	// }
 }
 
-// const resend = new Resend(env.AUTH_RESEND_KEY);
+const resend = new Resend(env.AUTH_RESEND_KEY);
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
 	adapter: PrismaAdapter(db),
 	providers: [
 		GoogleProvider,
-		Discord,
-		// ResendProvider({
-		// 	from: "signin@deaplearning.com",
-		// 	async sendVerificationRequest({ identifier: email, url }) {
-		// 		const code = crypto.randomBytes(4).toString("hex").match(/.{4}/g)?.join("-");
-		// 		if (!code) throw new Error("Could not generate code");
-
-		// 		const intermediateUrl = `${env.URL}/verifyRedirect${new URL(url).search}`;
-		// 		const result = await resend.emails.send({
-		// 			from: "Ember <support@deaplearning.com>",
-		// 			to: [email],
-		// 			subject: "Sign in to Ember",
-		// 			react: SignInEmail(intermediateUrl, code),
-		// 		});
-		// 		if (result.error || !result.data) throw new Error(`Could not send email: ${result.error}`);
-
-		// 		const { verifyEmailsDB, emailedCodesDB } = await connectToDatabase();
-		// 		verifyEmailsDB.insertOne({ emailId: result.data.id, email });
-		// 		emailedCodesDB.insertOne({
-		// 			code,
-		// 			email,
-		// 			timestamp: new Date(),
-		// 			redirect: intermediateUrl,
-		// 		});
-		// 	},
-		// }),
+		DiscordProvider,
+		ResendProvider({
+			from: "signin@deaplearning.com",
+			async sendVerificationRequest({ identifier: email, url }) {
+				const result = await resend.emails.send({
+					from: "Ember <support@deaplearning.com>",
+					to: [email],
+					subject: "Sign in to Ember",
+					text: `Sign in to here: ${url}`,
+				});
+				if (result.error ?? !result.data) throw new Error(`Could not send email: ${result.error?.message}`);
+			},
+		}),
 		// PasskeyProvider,
 	],
 	callbacks: {

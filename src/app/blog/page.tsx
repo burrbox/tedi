@@ -6,8 +6,8 @@ import { getPosts } from "@/lib/serverActions";
 // import PostItem from "@/components/post-item";
 
 export const metadata = {
-	title: "Blog - JJ HHS",
-	description: "Page description",
+	title: "Blog - The Environmental Defense Initiative",
+	description: "Read the latest articles from the Environmental Defense Initiative.",
 };
 
 export default async function Blog() {
