@@ -74,7 +74,8 @@ const team = [
 		name: "Maggie Yang",
 		title: "Blog Writer & Digital Creator",
 		location: "Hopewell Junction, NY, USA",
-		image: "https://jjhhs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fprofile-utter.5ea9f9de.jpg&w=128&q=75",
+		image:
+			"https://res.cloudinary.com/dlzeuksus/image/upload/c_fill,g_face,f_auto,h_1080,w_1080/v1/TEDI%20Bio/xjbajtpnzsoe6c05o66w",
 		description: `Maggie has always appreciated and been fascinated by the beauty of nature. She believes in protecting our world so that future generations can experience the same wonder and beauty she has. Maggie hopes to make a difference in our world and preserve our environment by working with TEDI. `,
 		email: "maggie.yang0713@gmail.com",
 		linkedin: "",
