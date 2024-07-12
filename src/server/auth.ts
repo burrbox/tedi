@@ -13,7 +13,7 @@ import Discord from "next-auth/providers/discord";
 // import { Resend } from "resend";
 // import SignInEmail from "@/components/emails/signInEmail";
 // import crypto from "crypto";
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import { PrismaAdapter } from "@auth/prisma-adapter";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
