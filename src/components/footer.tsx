@@ -127,17 +127,16 @@ export default function Footer() {
 					{/* </div> */}
 
 					{/* Bottom area */}
-					<div className="pb-8 w-full">
+					<div className="w-full pb-8">
 						<div>
-							<h2 className="text-blue-600 text-xl">Subscribe to our monthy newsletter!</h2>
+							<h2 className="text-xl text-blue-600">Subscribe to our monthy newsletter!</h2>
 						</div>
 						<div>
-							<p className="text-blue-600 py-2">
-								Email*</p>
-								<span className=" text-green-600 text-xl border-b-green-600 border-b-4 py-1 w-1/2">
-									<input className="outline-none text-blue-700 size-1/2 bg-transparent" />
-										Subscribe
-								</span>
+							<p className="py-2 text-blue-600">Email*</p>
+							<span className="w-1/2 border-b-4 border-b-green-600 py-1 text-xl text-green-600">
+								<input className="size-1/2 bg-transparent text-blue-700 outline-none" />
+								Subscribe
+							</span>
 						</div>
 					</div>
 					<div className="md:flex md:items-center md:justify-between">
