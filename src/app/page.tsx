@@ -86,7 +86,7 @@ export default async function Home() {
 				<div className="relative flex flex-col bg-green-800 opacity-80">
 					<div className="self-start px-6 py-3">
 						<h1 className="text-wrap text-3xl text-white">About</h1>
-						<h2 className="w-3/4 text-wrap py-4 text-white">Learn about TEDI's mission and meet our team.</h2>
+						<h2 className="w-3/4 text-wrap py-4 text-white">{"Learn about TEDI's mission and meet our team."}</h2>
 					</div>
 					<div className="absolute inset-x-0 bottom-0 flex justify-center py-3">
 						<span className="btn rounded-xl border-green-600 bg-white px-10 py-4 text-green-600 opacity-100 duration-300 hover:bg-green-600 hover:text-white">
