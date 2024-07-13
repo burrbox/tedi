@@ -94,6 +94,7 @@ export default function AboutPage() {
 									src={member.image}
 									alt={`An image of ${member.name}.`}
 									gravity="face"
+									crop="fill"
 									className="mb-4 h-96 w-full rounded-md object-cover"
 								/>
 								<h3 className="mb-2 text-xl font-bold text-blue-700">{member.name}</h3>
