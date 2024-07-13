@@ -7,12 +7,12 @@ import { usePathname } from "next/navigation";
 import { CldImage } from "next-cloudinary";
 
 const links = [
-	{ name: "Home", href: "/" },
+	// { name: "Home", href: "/" },
 	{ name: "About", href: "/about" },
-	{ name: "Our Work", href: "/our-work" },
+	// { name: "Our Work", href: "/our-work" },
 	{ name: "Blog", href: "/blog" },
 	{ name: "Petitions", href: "/petitions" },
-	{ name: "Join Us", href: "/join" },
+	// { name: "Join Us", href: "/join" },
 ];
 
 export default function Header() {
@@ -23,10 +23,10 @@ export default function Header() {
 	return (
 		<header className="fixed z-30 w-full bg-white shadow-md">
 			<div className="container mx-auto flex items-center justify-between px-4 py-4">
-				<div className="flex items-center space-x-2">
+				<Link href={"/"} className="flex items-center space-x-2">
 					<CldImage width="40" height="40" src="logo" alt="Logo" className="h-10 w-10" />
-					<h1 className="text-xl font-bold text-green-700">The Environmental Defense Initiative</h1>
-				</div>
+					<h1 className="hidden text-xl font-bold text-green-700 sm:block">The Environmental Defense Initiative</h1>
+				</Link>
 				<nav className="flex items-center space-x-8 text-lg">
 					{links.map((link) => (
 						<Link key={link.name} href={link.href} className={link.href === path ? "text-green-700" : "text-blue-700"}>
@@ -36,7 +36,7 @@ export default function Header() {
 					{session?.user ? (
 						<div className="border-gray-700 pb-3 pt-4">
 							<div className="flex items-center px-5">
-								<div className="flex-shrink-0">
+								<div className="mr-3 flex-shrink-0">
 									<Image
 										className="h-10 w-10 rounded-full"
 										src={session?.user.image ?? "https://img.icons8.com/96/FFFFFF/user-male-circle.png"}
@@ -45,7 +45,7 @@ export default function Header() {
 										alt=""
 									/>
 								</div>
-								<div className="ml-3">
+								<div className="hidden lg:block">
 									<div className="text-base font-medium text-gray-800">{session?.user.name}</div>
 									<div className="text-sm font-medium text-gray-400">{session?.user.email}</div>
 								</div>
