@@ -58,11 +58,9 @@ export default async function Petitions() {
 									entered the Flint River from corroded pipes to infiltrate the water supply.
 									<br />
 									<br />
-									Lead concentrations in the blood of Flint citizens are significantly higher currently than they were
-									when the Delaware River was used as the city’s main water supply. Lead is known to cause severe health
-									issues including hypertension, anaemia, and most notably Legionnaires' disease, a severe form of
-									pneumonia. 12 people have died from this deadly respiratory disease and dozens more are forced to live
-									with the side effects of lead poisoning on a daily basis in Flint, Michigan.
+									{
+										"Lead concentrations in the blood of Flint citizens are significantly higher currently than they were when the Delaware River was used as the city’s main water supply. Lead is known to cause severe health	issues including hypertension, anaemia, and most notably Legionnaires' disease, a severe form of pneumonia. 12 people have died from this deadly respiratory disease and dozens more are forced to live	with the side effects of lead poisoning on a daily basis in Flint, Michigan."
+									}
 									<br />
 									<br />
 									The Flint Water Crisis sparked national outrage and investigations into government negligence and

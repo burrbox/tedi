@@ -29,7 +29,7 @@ export default async function Home() {
 				<span className="py-auto h-fit flex-row bg-green-800 px-4 opacity-80 sm:w-1/3 md:w-1/3 lg:w-1/5">
 					<h1 className="mt-3 text-3xl text-white text-opacity-100">About</h1>
 					<h2 className="mt-auto text-wrap py-4 text-xl text-white text-opacity-100">
-						Learn about TEDI's mission and meet our team.
+						{"Learn about TEDI's mission and meet our team."}
 					</h2>
 					<div className="flex items-center justify-center pb-8">
 						<button className="rounded-xl border-2 border-green-600 bg-white px-4 py-2 text-center text-green-600 text-opacity-100 opacity-100 duration-300 hover:bg-green-600 hover:text-white">
