@@ -176,7 +176,7 @@ export const team = [
 		email: "cassyfish2025@gmail.com",
 		linkedin: "",
 		twitter: "",
-		instagram: "https://www.instagram.com/ _cassidyfisher_/",
+		instagram: "https://www.instagram.com/_cassidyfisher_/",
 		tiktok: "",
 	},
 	{
