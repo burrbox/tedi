@@ -16,7 +16,7 @@ const links = [
 ];
 
 export default function Header() {
-	const { data: session, status } = useSession();
+	const { data: session } = useSession();
 
 	const path = usePathname();
 

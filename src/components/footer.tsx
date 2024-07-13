@@ -1,9 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
 import { EnvelopeIcon } from "@heroicons/react/24/solid";
-import YoutubeIcon from "public/youtube.svg";
 import { addEmailSubscription } from "@/lib/serverActions";
 import { useState } from "react";
 
