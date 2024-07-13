@@ -1,4 +1,5 @@
 import { db } from "@/server/db";
+import { z } from "zod";
 
 export async function getPosts() {
 	return [
@@ -14,4 +15,8 @@ export async function getPosts() {
 			createdAt: new Date("2022-01-01"),
 		},
 	].concat(await db.post.findMany({ include: { author: true } }));
+}
+
+export async function addEmailSubscription(email: string) {
+	await db.subscription.create({ data: { email: z.string().email().parse(email) } });
 }

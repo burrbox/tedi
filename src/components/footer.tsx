@@ -1,9 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { EnvelopeIcon } from "@heroicons/react/24/solid";
 import YoutubeIcon from "public/youtube.svg";
+import { addEmailSubscription } from "@/lib/serverActions";
+import { useState } from "react";
 
 export default function Footer() {
+	const [email, setEmail] = useState("");
 	return (
 		<footer className="relative">
 			<div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -129,15 +134,24 @@ export default function Footer() {
 					{/* Bottom area */}
 					<div className="w-full pb-8">
 						<div>
-							<h2 className="text-xl text-blue-600">Subscribe to our monthy newsletter!</h2>
+							<h2 className="text-xl text-blue-600">Subscribe to our monthly newsletter!</h2>
 						</div>
-						<div>
+						<form
+							onSubmit={async (e) => {
+								e.preventDefault();
+								await addEmailSubscription(email);
+							}}>
 							<p className="py-2 text-blue-600">Email*</p>
 							<span className="w-1/2 border-b-4 border-b-green-600 py-1 text-xl text-green-600">
-								<input className="size-1/2 bg-transparent text-blue-700 outline-none" />
-								Subscribe
+								<input
+									type="email"
+									className="size-1/2 bg-transparent text-blue-700 outline-none"
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
+								/>
+								<button type="submit">Subscribe</button>
 							</span>
-						</div>
+						</form>
 					</div>
 					<div className="md:flex md:items-center md:justify-between">
 						{/* Social links */}
