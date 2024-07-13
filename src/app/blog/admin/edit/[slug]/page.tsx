@@ -3,7 +3,6 @@
 import "@uiw/react-md-editor/markdown-editor.css";
 import "@uiw/react-markdown-preview/markdown.css";
 import dynamic from "next/dynamic";
-// import * as commands from "@uiw/react-md-editor/lib/commands";
 import { useState } from "react";
 import { commands } from "@uiw/react-md-editor";
 import { CldUploadButton } from "next-cloudinary";
@@ -18,7 +17,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 	const [summary, setSummary] = useState("");
 
 	return (
-		<div className="space-y-4 p-8 pt-24">
+		<div className="m-auto max-w-6xl space-y-4 p-8 pt-24">
 			{/* Edit title */}
 			<div>
 				<label htmlFor="title" className="mb-2 block">
@@ -62,7 +61,19 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 			</div>
 			<div className="flex items-center justify-between py-4">
 				<h1 className="mb-4 grow text-2xl font-bold">Edit Post</h1>
-				<CldUploadButton className="mx-4 rounded-md border-2 border-blue-400 px-4 py-2">Upload Image</CldUploadButton>
+				<CldUploadButton
+					className="mx-4 rounded-md border-2 border-blue-400 px-4 py-2"
+					uploadPreset="TEDI Blog"
+					options={{
+						cropping: true,
+					}}
+					onSuccess={(results) => {
+						if (!results.info || typeof results.info === "string") return;
+						const imageMd = `![${results.info.original_filename}](${results.info.secure_url})`;
+						setContent((prev) => prev + imageMd);
+					}}>
+					Upload Image
+				</CldUploadButton>
 				<button
 					className="rounded-md bg-blue-600 px-4 py-2 text-white"
 					onClick={() => {
