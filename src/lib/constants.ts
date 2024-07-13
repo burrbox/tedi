@@ -1,3 +1,5 @@
+import { title } from "process";
+
 export const team = [
 	{
 		name: "Emma Mazzotta",
@@ -10,6 +12,30 @@ export const team = [
 		twitter: "",
 		instagram: "https://www.instagram.com/emma_mazzotta24/",
 		tiktok: "https://www.tiktok.com/@emmamazzotta24",
+	},
+	{
+		name: "Nash Pillai",
+		title: "Chief Technology Officer",
+		location: "Hopewell Junction, NY, USA",
+		image: "utter",
+		description: `Nash likes to code.`,
+		email: "nash.pillai@protonmail.com",
+		linkedin: "https://www.linkedin.com/in/nash-pillai/",
+		twitter: "",
+		instagram: "",
+		tiktok: "",
+	},
+	{
+		name: "Hiroyuki Sakuma",
+		title: "Senior Director of Website Development",
+		location: "Hopewell Junction, NY, USA",
+		image: "utter",
+		description: `Hiro likes to code.`,
+		email: "",
+		linkedin: "",
+		twitter: "",
+		instagram: "",
+		tiktok: "",
 	},
 	{
 		name: "Kailey Fitzgerald",
