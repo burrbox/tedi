@@ -17,19 +17,21 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
  *
  * @see https://next-auth.js.org/getting-started/typescript#module-augmentation
  */
+
+type UserRole = "user" | "writer" | "editor" | "admin";
+
 declare module "next-auth" {
 	interface Session extends DefaultSession {
 		user: {
 			id: string;
-			// ...other properties
-			// role: UserRole;
+			role: UserRole;
 		} & DefaultSession["user"];
 	}
+}
 
-	// interface User {
-	//   // ...other properties
-	//   // role: UserRole;
-	// }
+interface User {
+	// ...other properties
+	role: UserRole;
 }
 
 const resend = new Resend(env.AUTH_RESEND_KEY);
@@ -57,8 +59,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 		async session({ session, user }) {
 			/* eslint-disable no-param-reassign */
 			session.user.id = user.id;
-			// session.user.isAdmin = (user as User).isAdmin ?? false;
-			// session.user.role = (user as User).role;
+			session.user.role = (user as unknown as User).role;
 			/* eslint-enable no-param-reassign */
 			return session;
 		},
