@@ -88,7 +88,9 @@ export default function AboutPage() {
 								key={member.name}
 								className="rounded-lg bg-blue-100 p-8 shadow-md duration-300 ease-in-out hover:bg-blue-200"
 								data-aos="fade-in">
-								<img
+								<CldImage
+									height={1080}
+									width={1080}
 									src={member.image}
 									alt={`An image of ${member.name}.`}
 									className="mb-4 h-96 w-full rounded-md object-cover"
