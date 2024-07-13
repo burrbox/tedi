@@ -7,14 +7,21 @@ import { useState } from "react";
 import { commands } from "@uiw/react-md-editor";
 import { CldUploadButton } from "next-cloudinary";
 import { createArticle } from "@/lib/serverActions";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 
 export default function BlogEditor({ params: { slug } }: { params: { slug: string } }) {
+	const router = useRouter();
+	const { data: session } = useSession();
+
 	const [content, setContent] = useState("");
 	const [newSlug, setNewSlug] = useState(slug);
 	const [title, setTitle] = useState("New Article");
 	const [summary, setSummary] = useState("");
+
+	if (!session || ["editor", "admin"].includes(session.user.role)) router.push("/unauthorized");
 
 	return (
 		<div className="m-auto max-w-6xl space-y-4 p-8 pt-24">

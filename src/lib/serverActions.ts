@@ -2,6 +2,7 @@
 
 import { auth } from "@/server/auth";
 import { db } from "@/server/db";
+import { redirect } from "next/navigation";
 import { z } from "zod";
 
 export async function getPosts() {
@@ -26,7 +27,7 @@ export async function addEmailSubscription(email: string) {
 
 export async function createArticle(article: { title: string; content: string; slug: string; summary: string }) {
 	const session = await auth();
-	if (!session) throw new Error("Unauthorized");
+	if (!session || ["editor", "admin"].includes(session.user.role)) redirect("/unauthorized");
 
 	await db.post.create({ data: { ...article, image: "", authorId: session?.user.id } });
 }
