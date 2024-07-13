@@ -37,8 +37,8 @@ export default function SignIn({ searchParams }: { searchParams: Record<string, 
 	return (
 		<div className="relative mx-auto max-w-6xl px-4 sm:px-6">
 			<head>
-				<title>Sign-In | DeAP Learning Labs</title>
-				<meta name="description" content="Sign in to your DeAP Learning Labs account and get to learning!" />
+				<title>Sign-In | TEDI</title>
+				<meta name="description" content="Sign in to your TEDI account and get to learning!" />
 			</head>
 			<div className="pb-12 pt-32 md:pb-20 md:pt-40">
 				{/* Page header */}

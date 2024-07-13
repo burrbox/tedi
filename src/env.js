@@ -23,8 +23,6 @@ export const env = createEnv({
 		AUTH_GOOGLE_SECRET: z.string(),
 		AUTH_RESEND_KEY: z.string(),
 		URL: z.string().url(),
-		CLOUDINARY_CLOUD_NAME: z.string(),
-		CLOUDINARY_API_KEY: z.string(),
 		CLOUDINARY_API_SECRET: z.string(),
 	},
 
@@ -34,7 +32,8 @@ export const env = createEnv({
 	 * `NEXT_PUBLIC_`.
 	 */
 	client: {
-		// NEXT_PUBLIC_CLIENTVAR: z.string(),
+		NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: z.string(),
+		NEXT_PUBLIC_CLOUDINARY_API_KEY: z.string(),
 	},
 
 	/**
@@ -52,8 +51,8 @@ export const env = createEnv({
 		AUTH_GOOGLE_SECRET: process.env.AUTH_GOOGLE_SECRET,
 		AUTH_RESEND_KEY: process.env.AUTH_RESEND_KEY,
 		URL: process.env.URL,
-		CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME,
-		CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY,
+		NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
+		NEXT_PUBLIC_CLOUDINARY_API_KEY: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
 		CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,
 	},
 	/**

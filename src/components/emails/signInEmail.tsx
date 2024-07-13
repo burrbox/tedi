@@ -85,14 +85,12 @@ export default function SignInEmail({ url = "https://tedi.vercel.app/" }) {
 		<Tailwind config={tailwindConfig as TailwindProps["config"]}>
 			<Html>
 				<Head />
-				<Preview>DeAP Sign In Email</Preview>
+				<Preview>TEDI Sign In Email</Preview>
 				<Section style={containerStyles}>
 					<Container style={innerContainerStyles}>
 						<Section style={{ marginTop: "32px" }}>
 							<Img
-								src={
-									"https://static.wixstatic.com/media/288dd2_e7cbe6ecdfa74a6285cd5ddb921ce497~mv2.png/v1/fill/w_142,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/288dd2_e7cbe6ecdfa74a6285cd5ddb921ce497~mv2.png"
-								}
+								src={"https://res.cloudinary.com/dlzeuksus/image/upload/v1720838326/logo.png"}
 								width="40"
 								height="37"
 								alt="The Environmental Defense Initiative Logo"
