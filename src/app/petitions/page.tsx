@@ -85,23 +85,46 @@ export default async function Petitions() {
 									<h1 className="py-6 text-5xl text-green-700">Sign Today!</h1>
 									<h2 className="text-lg text-blue-500">Ensure ALL Americans have access to clean water.</h2>
 								</div>
-								<div className="mx-6 grid grid-cols-2 grid-rows-3 gap-3 pb-10">
+								<div className="mx-6 grid grid-cols-2 grid-rows-3 gap-3">
 									<div className="col-span-1 row-span-1 flex-col">
 										<p className="text-blue-400">First Name *</p>
-										<input className="border-b-2 border-b-blue-900 bg-blue-400 p-3" />
+										<input
+											className="border-b-2 border-b-blue-900 bg-blue-400 p-3 duration-200 hover:bg-white focus:bg-white"
+											type="text"
+										/>
 									</div>
 									<div className="col-span-1 col-start-2 row-span-1 flex-col">
 										<p className="text-blue-400">Last Name *</p>
-										<input className="border-b-2 border-b-blue-900 bg-blue-400 p-3" />
+										<input
+											className="border-b-2 border-b-blue-900 bg-blue-400 p-3 duration-200 hover:bg-white focus:bg-white"
+											type="text"
+										/>
 									</div>
 									<div className="col-span-1 col-start-1 row-span-1 flex-col">
 										<p className="text-blue-400">Email *</p>
-										<input className="border-b-2 border-b-blue-900 bg-blue-400 p-3" />
+										<input
+											className="border-b-2 border-b-blue-900 bg-blue-400 p-3 duration-200 hover:bg-white focus:bg-white"
+											type="email"
+										/>
 									</div>
 									<div className="col-span-1 col-start-1 row-span-1 flex-col">
 										<p className="text-blue-400">Zip Code *</p>
-										<input className="border-b-2 border-b-blue-900 bg-blue-400 p-3" />
+										<input className="border-b-2 border-b-blue-900 bg-blue-400 p-3 duration-200 hover:bg-white focus:bg-white" />
 									</div>
+									<div className="col-span-1 col-start-2 row-span-2 row-start-2 flex-col">
+										<p className="text-blue-400">Message</p>
+										<textarea
+											className="h-fit resize-none border-b-2 border-b-blue-900 bg-blue-400 p-3 duration-200 hover:bg-white focus:bg-white"
+											rows={5}
+										/>
+									</div>
+								</div>
+								<div className="mx-3 flex justify-center py-10">
+									<button
+										type="submit"
+										className="w-4/5 rounded-xl border-2 border-blue-500 bg-blue-500 py-3 text-black duration-300 hover:border-black hover:bg-black hover:text-white">
+										Sign
+									</button>
 								</div>
 							</div>
 						</div>
