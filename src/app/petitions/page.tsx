@@ -33,7 +33,7 @@ export default async function Petitions() {
 				</div>
 			</div>
 			<div
-				className="relative flex w-full bg-fixed"
+				className="relative flex w-full bg-fixed pt-16 xl:pt-28"
 				style={{
 					backgroundImage:
 						"url(https://static.wixstatic.com/media/11062b_c2b35eecf8974f979019c6830b0b4964~mv2.jpg/v1/fill/w_1587,h_810,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_c2b35eecf8974f979019c6830b0b4964~mv2.jpg)",
@@ -42,7 +42,7 @@ export default async function Petitions() {
 					width: "100vw",
 					minHeight: "110vh",
 				}}>
-				<div className="absolute inset-0 mx-auto my-16 w-10/12 pb-8 xl:mt-28" data-aos="fade-down">
+				<div className="inset-0 mx-auto w-10/12 pb-8" data-aos="fade-down">
 					<div className="flex flex-col justify-center gap-6 xl:flex-row">
 						<div className="basis-3/5">
 							<div className="h-fit rounded-xl bg-white xl:py-4">
