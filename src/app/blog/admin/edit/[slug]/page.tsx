@@ -104,7 +104,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 					className="flex space-x-2 rounded-md bg-blue-600 px-4 py-2 text-white"
 					onClick={async () => {
 						setIsSaving(true);
-						if (newSlug !== "new") await upsertArticle({ title, content, slug: newSlug, summary });
+						if (newSlug !== "new") await upsertArticle(slug, { title, content, slug: newSlug, summary });
 						else alert("Please enter a URL");
 						setIsSaving(false);
 					}}>

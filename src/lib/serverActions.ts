@@ -17,13 +17,16 @@ export async function addEmailSubscription(email: string) {
 	await db.subscription.create({ data: { email: z.string().email().parse(email) } });
 }
 
-export async function upsertArticle(article: { title: string; content: string; slug: string; summary: string }) {
+export async function upsertArticle(
+	oldSlug: string,
+	article: { title: string; content: string; slug: string; summary: string },
+) {
 	const session = await auth();
 	if (!session || !["editor", "admin"].includes(session.user.role)) redirect("/unauthorized");
 
 	await db.post.upsert({
 		create: { ...article, image: "", authorId: session?.user.id },
 		update: article,
-		where: { slug: article.slug },
+		where: { slug: oldSlug },
 	});
 }
