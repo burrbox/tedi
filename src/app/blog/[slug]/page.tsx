@@ -5,6 +5,8 @@ import Image from "next/image";
 import { Mdx } from "@/components/mdx/mdx";
 // import RelatedPosts from "@/components/related-posts-02";
 import { getPosts } from "@/lib/serverActions";
+import { team } from "@/lib/constants";
+import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 
 export async function generateStaticParams() {
 	return (await getPosts()).map((post) => ({
@@ -27,8 +29,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 export default async function SinglePost({ params }: { params: { slug: string } }) {
 	const post = (await getPosts()).find((post) => post.slug === params.slug);
-
 	if (!post) notFound();
+
+	const author = team.find((member) => member.name.toLowerCase() === post.author) ?? team[1]!;
 
 	return (
 		<>
@@ -68,18 +71,18 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 										{/* Author meta */}
 										<div className="flex items-center justify-center" data-aos="fade-down" data-aos-delay="300">
 											<a href="#0">
-												<Image
+												<CloudinaryClientWrapper
 													className="mr-3 shrink-0 rounded-full"
-													src={post.author.image ?? "/avatar.jpg"}
+													src={author.image ?? "/avatar.jpg"}
 													width={32}
 													height={32}
-													alt={post.author.name ?? "Anonymous Author"}
+													alt={author.name ?? "Anonymous Author"}
 												/>
 											</a>
 											<div>
 												<span className="text-gray-600 dark:text-gray-400">By </span>
 												<a className="font-medium text-gray-800 hover:underline dark:text-gray-300" href="#0">
-													{post.author.name ?? "Anonymous Author"}
+													{author.name ?? "Anonymous Author"}
 												</a>
 												<span className="text-gray-600 dark:text-gray-400">
 													{" "}

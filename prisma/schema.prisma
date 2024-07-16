@@ -24,11 +24,10 @@ model Post {
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 
-    author   User   @relation(fields: [authorId], references: [id])
-    authorId String @db.ObjectId
+    author    String  @default("nash pillai")
 
     @@index([createdAt])
-    @@index([authorId])
+    @@index([author])
 }
 
 // Necessary for Next auth
@@ -70,7 +69,6 @@ model User {
     role          String    @default("user")
     accounts      Account[]
     sessions      Session[]
-    posts         Post[]
 }
 
 model VerificationToken {

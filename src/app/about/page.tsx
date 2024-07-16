@@ -1,16 +1,14 @@
-"use client";
-
 import Image from "next/image";
 import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { team } from "@/lib/constants";
-import { CldImage } from "next-cloudinary";
+import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 
 export default function AboutPage() {
 	return (
 		<div className="flex w-full flex-col items-center pb-8">
 			<section className="relative h-[400px] w-full">
-				<CldImage
+				<CloudinaryClientWrapper
 					width="960"
 					height="600"
 					src="nature/forest"
@@ -99,7 +97,7 @@ export default function AboutPage() {
 								className="rounded-lg bg-blue-100 p-8 shadow-md duration-300 ease-in-out hover:bg-blue-200"
 								data-aos="fade-down"
 								data-aos-duration="300">
-								<CldImage
+								<CloudinaryClientWrapper
 									height={1080}
 									width={1080}
 									src={member.image}
@@ -165,7 +163,7 @@ export default function AboutPage() {
 				</div>
 				<div className="flex w-full justify-center py-10">
 					<div className="container flex w-full flex-col items-center">
-						<CldImage
+						<CloudinaryClientWrapper
 							src="partners/plantachange"
 							alt="Partner 1"
 							width={150}
@@ -175,7 +173,7 @@ export default function AboutPage() {
 						<h3 className="flex justify-center text-center text-2xl text-blue-700">PLANT A CHANGE</h3>
 					</div>
 					<div className="container flex w-full flex-col items-center">
-						<CldImage
+						<CloudinaryClientWrapper
 							src="partners/plastic2brick"
 							alt="Partner 2"
 							width={150}

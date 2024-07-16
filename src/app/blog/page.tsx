@@ -1,6 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getPosts } from "@/lib/serverActions";
+import { type Prisma } from "@prisma/client";
+import { team } from "@/lib/constants";
+import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 // import PostDate from "@/components/post-date";
 // import RelatedPosts from "@/components/related-posts-01";
 // import PostItem from "@/components/post-item";
@@ -9,6 +12,9 @@ export const metadata = {
 	title: "Blog - The Environmental Defense Initiative",
 	description: "Read the latest articles from the Environmental Defense Initiative.",
 };
+
+const getPostAuthor = (post: Prisma.PostGetPayload<null>) =>
+	team.find((member) => member.name.toLowerCase() === post.author) ?? team[1]!;
 
 export default async function Blog() {
 	// Sort posts by date
@@ -53,18 +59,18 @@ export default async function Blog() {
 										{/* Author meta */}
 										<div className="flex items-center justify-center">
 											<a href="#0">
-												<Image
+												<CloudinaryClientWrapper
 													className="mr-3 shrink-0 rounded-full"
-													src={featuredPost.author.image ?? "/avatar.jpg"}
+													src={getPostAuthor(featuredPost).image ?? "/avatar.jpg"}
 													width={32}
 													height={32}
-													alt={featuredPost.author.name ?? "Anonymous Author"}
+													alt={getPostAuthor(featuredPost).name ?? "Anonymous Author"}
 												/>
 											</a>
 											<div>
 												<span className="text-gray-600 dark:text-gray-400">By </span>
 												<a className="font-medium text-gray-800 hover:underline dark:text-gray-300" href="#0">
-													{featuredPost.author.name ?? "Anonymous Author"}
+													{getPostAuthor(featuredPost).name ?? "Anonymous Author"}
 												</a>
 												<span className="text-gray-600 dark:text-gray-400">
 													{" "}
@@ -120,18 +126,18 @@ export default async function Blog() {
 											<p className="grow text-gray-600 dark:text-gray-400">{post.summary}</p>
 											<footer className="mt-4 flex items-center">
 												<a href="#0">
-													<Image
+													<CloudinaryClientWrapper
 														className="mr-3 shrink-0 rounded-full"
-														src={post.author.image ?? "/avatar.jpg"}
+														src={getPostAuthor(post).image ?? "/avatar.jpg"}
 														width={32}
 														height={32}
-														alt={post.author.name ?? "Anonymous Author"}
+														alt={getPostAuthor(post).name ?? "Anonymous Author"}
 													/>
 												</a>
 												<div className="text-sm text-gray-500">
 													By{" "}
 													<a className="font-medium text-gray-800 hover:underline dark:text-gray-400" href="#0">
-														{post.author.name ?? "Anonymous Author"}
+														{getPostAuthor(post).name ?? "Anonymous Author"}
 													</a>{" "}
 													· <span className="text-gray-500">{/* <PostDate dateString={post.createdAt} /> */}</span>
 												</div>

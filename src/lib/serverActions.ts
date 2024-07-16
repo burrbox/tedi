@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 import { z } from "zod";
 
 export async function getPosts() {
-	return db.post.findMany({ include: { author: true } });
+	return db.post.findMany({});
 }
 
 export async function getPost(slug: string) {
@@ -19,13 +19,13 @@ export async function addEmailSubscription(email: string) {
 
 export async function upsertArticle(
 	oldSlug: string,
-	article: { title: string; content: string; slug: string; summary: string },
+	article: { title: string; content: string; slug: string; summary: string; author: string },
 ) {
 	const session = await auth();
 	if (!session || !["editor", "admin"].includes(session.user.role)) redirect("/unauthorized");
 
 	await db.post.upsert({
-		create: { ...article, image: "", authorId: session?.user.id },
+		create: { ...article, image: "" },
 		update: article,
 		where: { slug: oldSlug },
 	});
