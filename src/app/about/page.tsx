@@ -44,9 +44,17 @@ export default function AboutPage() {
 					</p>
 				</div>
 			</section>
-			<section className="w-full bg-gray-100 py-16">
-				<div className="bg-fix relative">
-					<div className="container mx-auto px-4">
+			<section className="w-full bg-gray-100">
+				<div
+					className="relative flex w-full"
+					style={{
+						backgroundImage: "url(https://www.campusfrance.org/sites/default/files/medias/images/2022-02/Ocean.jpg)",
+						backgroundSize: "cover",
+						backgroundRepeat: "repeat",
+						width: "100vw",
+						minHeight: "50vh",
+					}}>
+					<div className="container mx-auto px-4 py-16">
 						<h2 className="mb-4 text-center text-3xl font-bold text-green-700">Our Values</h2>
 						<hr className="mx-auto mb-6 w-12 border-t-4 border-green-700"></hr>
 						<div className="grid gap-8 md:grid-cols-3">
@@ -150,30 +158,28 @@ export default function AboutPage() {
 						about these partnerships by following us on Instagram.
 					</h3>
 					<div className="mt-8 flex justify-center">
-						<a
-							className="btn text-1xl max-w-32 border-2 border-green-600 px-5 py-2 text-center text-green-500 hover:bg-green-500 hover:text-white"
-							href="https://www.instagram.com/environmentaldefenseinitiative/">
-							Follow Us
-						</a>
+						<button className="text-1xl max-w-32 grow rounded-xl border-2 border-green-600 bg-green-500 px-5 py-2 text-center text-white duration-300 hover:bg-white hover:text-green-500">
+							<a href="https://instagram.com/environmentaldefenseinitiative/">Follow Us</a>
+						</button>
 					</div>
 				</div>
 				<div className="flex w-full justify-center py-10">
 					<div className="container flex w-full flex-col items-center">
-						<img
-							src="https://static.wixstatic.com/media/288dd2_e69d3d26239b43799d6a05c0f0d83d2b~mv2.jpg/v1/crop/x_0,y_11,w_1002,h_1002/fill/w_121,h_121,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/633A2431-1788-4C29-8389-2A3A589B1E62_edi.jpg"
+						<CldImage
+							src="partners/plantachange"
 							alt="Partner 1"
-							width={121}
-							height={121}
+							width={150}
+							height={150}
 							className="mb-2 rounded-full"
 						/>
 						<h3 className="flex justify-center text-center text-2xl text-blue-700">PLANT A CHANGE</h3>
 					</div>
 					<div className="container flex w-full flex-col items-center">
-						<img
-							src="https://static.wixstatic.com/media/288dd2_251366a23d324a8d8f07df515829e90b~mv2.jpg/v1/crop/x_7,y_0,w_1156,h_1156/fill/w_121,h_121,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_0843.jpg"
+						<CldImage
+							src="partners/plastic2brick"
 							alt="Partner 2"
-							width={121}
-							height={121}
+							width={150}
+							height={150}
 							className="mb-2 rounded-full"
 						/>
 						<h3 className="flex justify-center text-center text-2xl text-blue-700">PLASTIC2BRICK</h3>
