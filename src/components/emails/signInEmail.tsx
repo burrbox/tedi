@@ -79,7 +79,6 @@ export default function SignInEmail({ url = "https://tedi.vercel.app/" }) {
 	const linkStyles = {
 		color: "#3182ce",
 	};
-	console.log(url);
 
 	return (
 		<Tailwind config={tailwindConfig as TailwindProps["config"]}>

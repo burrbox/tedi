@@ -5,11 +5,19 @@ import "@uiw/react-markdown-preview/markdown.css";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { commands } from "@uiw/react-md-editor";
-import { CldUploadButton } from "next-cloudinary";
+import { CldImage, CldUploadButton } from "next-cloudinary";
 import { upsertArticle, getPost } from "@/lib/serverActions";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Loading from "@/components/loading";
+
+import { Check, ChevronsUpDown } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@/components/ui/command";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { team } from "@/lib/constants";
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 
@@ -21,6 +29,8 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 	const [newSlug, setNewSlug] = useState(slug);
 	const [title, setTitle] = useState("New Article");
 	const [summary, setSummary] = useState("");
+	const [author, setAuthor] = useState("");
+	const [isAuthorOpen, setIsAuthorOpen] = useState(false);
 
 	const [isSaving, setIsSaving] = useState(false);
 
@@ -59,18 +69,68 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 				/>
 			</div>
 			{/* URL */}
-			<div>
-				<label htmlFor="slug" className="mb-2 block">
-					URL
-				</label>
-				<input
-					id="slug"
-					type="text"
-					className="w-full rounded-md border-2 border-gray-300 px-4 py-2"
-					placeholder="URL"
-					value={newSlug}
-					onChange={(e) => setNewSlug((prev) => (e.target.value.match(/^[a-z0-9-]+$/) ? e.target.value : prev))}
-				/>
+			<div className="flex flex-col space-x-8 sm:flex-row">
+				<div className="w-full">
+					<label htmlFor="slug" className="mb-2 block">
+						URL
+					</label>
+					<input
+						id="slug"
+						type="text"
+						className="w-full rounded-md border-2 border-gray-300 px-4 py-2"
+						placeholder="URL"
+						value={newSlug}
+						onChange={(e) => setNewSlug((prev) => (e.target.value.match(/^[a-z0-9-]+$/) ? e.target.value : prev))}
+					/>
+				</div>
+				<div className="w-full">
+					<label htmlFor="author" className="mb-2 block">
+						Author
+					</label>
+					<Popover open={isAuthorOpen} onOpenChange={setIsAuthorOpen}>
+						<PopoverTrigger asChild>
+							<Button
+								id="author"
+								variant="outline"
+								role="combobox"
+								aria-expanded={isAuthorOpen}
+								className="w-full justify-between">
+								{author ? team.find((member) => member.name.toLowerCase() === author)?.name : "Select author..."}
+								<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+							</Button>
+						</PopoverTrigger>
+						<PopoverContent className="w-72 p-0">
+							<Command>
+								<CommandInput placeholder="Search author..." />
+								<CommandEmpty>No author found.</CommandEmpty>
+								<CommandGroup className="max-h-96 overflow-scroll">
+									{team.map((member) => (
+										<CommandItem
+											key={member.name}
+											value={member.name}
+											onSelect={(newAuthor) => {
+												console.log("newAuthor", newAuthor);
+												setAuthor((prev) => (newAuthor === prev ? "" : newAuthor));
+												setIsAuthorOpen(false);
+											}}>
+											<Check className={cn("mr-2 h-4 w-4", author === member.name ? "opacity-100" : "opacity-0")} />
+											<CldImage
+												className="mr-4 h-8 w-8 rounded-full"
+												src={member.image}
+												gravity="face"
+												crop="fill"
+												alt={`An image of ${member.name}.`}
+												height={32}
+												width={32}
+											/>
+											{member.name}
+										</CommandItem>
+									))}
+								</CommandGroup>
+							</Command>
+						</PopoverContent>
+					</Popover>
+				</div>
 			</div>
 			{/* Summary */}
 			<div>
@@ -104,7 +164,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 					className="flex space-x-2 rounded-md bg-blue-600 px-4 py-2 text-white"
 					onClick={async () => {
 						setIsSaving(true);
-						if (newSlug !== "new") await upsertArticle(slug, { title, content, slug: newSlug, summary });
+						if (newSlug !== "new") await upsertArticle(slug, { title, content, slug: newSlug, summary, author });
 						else alert("Please enter a URL");
 						setIsSaving(false);
 					}}>
