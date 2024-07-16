@@ -3,6 +3,7 @@ import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { team } from "@/lib/constants";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
+import { useState } from "react";
 
 export default function AboutPage() {
 	return (
@@ -145,7 +146,7 @@ export default function AboutPage() {
 					</div>
 				</div>
 			</section>
-			<section className="max-w-5xl bg-white py-8">
+			<section className="mx-2 max-w-5xl bg-white py-8 md:mx-4 lg:mx-8">
 				<div className="flex justify-center">
 					<h1 className="py-4 text-center text-6xl text-green-700">Partnerships</h1>
 				</div>
@@ -161,11 +162,11 @@ export default function AboutPage() {
 						</button>
 					</div>
 				</div>
-				<div className="flex w-full justify-center py-10">
+				<div className="flex w-full items-center justify-center py-10">
 					<div className="container flex w-full flex-col items-center">
 						<CloudinaryClientWrapper
 							src="partners/plantachange"
-							alt="Partner 1"
+							alt="Logo of Plant A Change"
 							width={150}
 							height={150}
 							className="mb-2 rounded-full"
@@ -175,12 +176,14 @@ export default function AboutPage() {
 					<div className="container flex w-full flex-col items-center">
 						<CloudinaryClientWrapper
 							src="partners/plastic2brick"
-							alt="Partner 2"
+							alt="Logo of Plastic 2 Brick"
 							width={150}
 							height={150}
 							className="mb-2 rounded-full"
 						/>
-						<h3 className="flex justify-center text-center text-2xl text-blue-700">PLASTIC2BRICK</h3>
+						<button>
+							<h3 className="flex justify-center text-center text-2xl text-blue-700">PLASTIC 2 BRICK</h3>
+						</button>
 					</div>
 				</div>
 				<hr className="border-t-1 mx-auto mb-6 w-3/4 border-green-700"></hr>
