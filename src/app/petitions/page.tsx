@@ -2,7 +2,7 @@ export default async function Petitions() {
 	return (
 		<section className="h-full w-full flex-col items-end">
 			<div
-				className="relative flex h-full w-full"
+				className="flex h-fit w-full"
 				style={{
 					backgroundImage:
 						"url(https://static.wixstatic.com/media/7cc6b0344c9440818bad598dd590ed27.jpg/v1/fill/w_1587,h_654,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/7cc6b0344c9440818bad598dd590ed27.jpg)",
@@ -11,14 +11,16 @@ export default async function Petitions() {
 					width: "100vw",
 					height: "70vh",
 				}}>
-				<div className="absolute inset-0 mx-auto mt-28 w-fit md:mt-32 lg:mt-60" data-aos="fade-down">
-					<div className="flex flex-col justify-center rounded-xl bg-white p-10 lg:p-20">
-						<h1 className="text-center text-6xl text-blue-600">Petitions</h1>
-						<h2 className="text-wrap pt-6 text-center text-xl text-green-600">
-							Be the change you want to see in the world.
-							<br />
-							Sign a petition; every signature counts.
-						</h2>
+				<div className="container relative mx-auto h-fit w-full px-4 py-16">
+					<div className="absolute inset-0 mx-auto mt-28 w-fit md:mt-32 lg:mt-44 2xl:mt-52" data-aos="fade-down">
+						<div className="flex flex-col justify-center rounded-xl bg-white p-10 lg:p-20">
+							<h1 className="text-center text-6xl text-blue-600">Petitions</h1>
+							<h2 className="text-wrap pt-6 text-center text-xl text-green-600">
+								Be the change you want to see in the world.
+								<br />
+								Sign a petition; every signature counts.
+							</h2>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -42,7 +44,7 @@ export default async function Petitions() {
 					width: "100vw",
 					minHeight: "110vh",
 				}}>
-				<div className="inset-0 mx-auto w-10/12 pb-8" data-aos="fade-down">
+				<div className="inset-0 mx-auto w-10/12" data-aos="fade-down">
 					<div className="flex flex-col justify-center gap-6 xl:flex-row">
 						<div className="basis-3/5">
 							<div className="h-fit rounded-xl bg-white xl:py-4">

@@ -90,12 +90,15 @@ export default async function Blog() {
 							{/* Main content */}
 							<div className="lg:grow" data-aos="fade-down" data-aos-delay="200">
 								{/* Section title */}
-								<h4 className="h3 font-red-hat-display mb-8">Latest</h4>
+								<h4 className="h3 font-red-hat-display mb-4">Latest</h4>
+								<hr className="border-1 mb-4 border-green-500" />
 
 								{/* Articles container */}
 								<div className="grid items-start gap-12 sm:grid-cols-2 sm:gap-x-6 md:gap-y-8">
 									{posts.map((post, postIndex) => (
-										<article key={postIndex} className="flex h-full flex-col">
+										<article
+											key={postIndex}
+											className="flex h-full flex-col rounded-xl bg-gray-100 p-10 duration-300 hover:bg-gray-200">
 											<header>
 												{post.image && (
 													<Link className="mb-4 block" href={`/blog/${post.slug}`}>
