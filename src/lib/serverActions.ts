@@ -15,7 +15,7 @@ export async function addEmailSubscription(email: string) {
 
 export async function createArticle(article: { title: string; content: string; slug: string; summary: string }) {
 	const session = await auth();
-	if (!session || ["editor", "admin"].includes(session.user.role)) redirect("/unauthorized");
+	if (!session || !["editor", "admin"].includes(session.user.role)) redirect("/unauthorized");
 
 	await db.post.create({ data: { ...article, image: "", authorId: session?.user.id } });
 }
