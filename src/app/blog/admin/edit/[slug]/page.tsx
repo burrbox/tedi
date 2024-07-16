@@ -3,10 +3,10 @@
 import "@uiw/react-md-editor/markdown-editor.css";
 import "@uiw/react-markdown-preview/markdown.css";
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { commands } from "@uiw/react-md-editor";
 import { CldUploadButton } from "next-cloudinary";
-import { createArticle } from "@/lib/serverActions";
+import { upsertArticle, getPost } from "@/lib/serverActions";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
@@ -23,6 +23,21 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 
 	if (status === "unauthenticated" || (session?.user && !["editor", "admin"].includes(session.user.role)))
 		router.push("/unauthorized");
+
+	useEffect(() => {
+		if (slug !== "new") {
+			getPost(slug)
+				.then((post) => {
+					if (post) {
+						setTitle(post.title);
+						setContent(post.content);
+						setSummary(post.summary);
+						setContent(post.content);
+					}
+				})
+				.catch(() => null);
+		}
+	}, [slug]);
 
 	return (
 		<div className="m-auto max-w-6xl space-y-4 p-8 pt-24">
@@ -51,7 +66,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 					className="w-full rounded-md border-2 border-gray-300 px-4 py-2"
 					placeholder="URL"
 					value={newSlug}
-					onChange={(e) => setNewSlug(e.target.value)}
+					onChange={(e) => setNewSlug((prev) => (e.target.value.match(/^[a-z0-9-]+$/) ? e.target.value : prev))}
 				/>
 			</div>
 			{/* Summary */}
@@ -85,7 +100,8 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 				<button
 					className="rounded-md bg-blue-600 px-4 py-2 text-white"
 					onClick={() => {
-						createArticle({ title, content, slug: newSlug, summary });
+						if (newSlug !== "new") upsertArticle({ title, content, slug: newSlug, summary });
+						else alert("Please enter a URL");
 					}}>
 					{slug === "new" ? "Create Article" : "Save Article"}
 				</button>
