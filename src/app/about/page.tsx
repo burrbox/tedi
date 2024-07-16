@@ -45,36 +45,38 @@ export default function AboutPage() {
 				</div>
 			</section>
 			<section className="w-full bg-gray-100 py-16">
-				<div className="container mx-auto px-4">
-					<h2 className="mb-4 text-center text-3xl font-bold text-green-700">Our Values</h2>
-					<hr className="mx-auto mb-6 w-12 border-t-4 border-green-700"></hr>
-					<div className="grid gap-8 md:grid-cols-3">
-						<div className="justify-center rounded-md bg-white p-8 shadow-md">
-							<div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-700 text-2xl font-bold text-white">
-								1
+				<div className="bg-fix relative">
+					<div className="container mx-auto px-4">
+						<h2 className="mb-4 text-center text-3xl font-bold text-green-700">Our Values</h2>
+						<hr className="mx-auto mb-6 w-12 border-t-4 border-green-700"></hr>
+						<div className="grid gap-8 md:grid-cols-3">
+							<div className="justify-center rounded-md bg-white p-8 shadow-md">
+								<div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-700 text-2xl font-bold text-white">
+									1
+								</div>
+								<h3 className="mb-4 text-center text-xl font-bold text-blue-700">Passion</h3>
+								<p className="text-center text-blue-700">
+									{`We believe that long-lasting change cannot be achieved without passion. All members of our team love the environment and are passionate about protecting it from human carelessness. Passion is the core of TEDI's mission.`}
+								</p>
 							</div>
-							<h3 className="mb-4 text-center text-xl font-bold text-blue-700">Passion</h3>
-							<p className="text-center text-blue-700">
-								{`We believe that long-lasting change cannot be achieved without passion. All members of our team love the environment and are passionate about protecting it from human carelessness. Passion is the core of TEDI's mission.`}
-							</p>
-						</div>
-						<div className="rounded-md bg-white p-8 shadow-md">
-							<div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-700 text-2xl font-bold text-white">
-								2
+							<div className="rounded-md bg-white p-8 shadow-md">
+								<div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-700 text-2xl font-bold text-white">
+									2
+								</div>
+								<h3 className="mb-4 text-center text-xl font-bold text-blue-700">Inspiration</h3>
+								<p className="text-center text-blue-700">
+									{`Our mission is to inspire individuals to take action on environmental issues in their own communities. In order to inspire people to engage in environmental advocacy, we provide opportunities for people to learn about our environment.`}
+								</p>
 							</div>
-							<h3 className="mb-4 text-center text-xl font-bold text-blue-700">Inspiration</h3>
-							<p className="text-center text-blue-700">
-								{`Our mission is to inspire individuals to take action on environmental issues in their own communities. In order to inspire people to engage in environmental advocacy, we provide opportunities for people to learn about our environment.`}
-							</p>
-						</div>
-						<div className="rounded-md bg-white p-8 shadow-md">
-							<div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-700 text-2xl font-bold text-white">
-								3
+							<div className="rounded-md bg-white p-8 shadow-md">
+								<div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-700 text-2xl font-bold text-white">
+									3
+								</div>
+								<h3 className="mb-4 text-center text-xl font-bold text-blue-700">Creativity</h3>
+								<p className="text-center text-blue-700">
+									{`We believe that creativity is the key to success and channel it in all of our campaigns. TEDI aims to stand out, not blend in. Instead of offering volunteer opportunities, we focus on creating petitions that can be used to make sustainable policy change.`}
+								</p>
 							</div>
-							<h3 className="mb-4 text-center text-xl font-bold text-blue-700">Creativity</h3>
-							<p className="text-center text-blue-700">
-								{`We believe that creativity is the key to success and channel it in all of our campaigns. TEDI aims to stand out, not blend in. Instead of offering volunteer opportunities, we focus on creating petitions that can be used to make sustainable policy change.`}
-							</p>
 						</div>
 					</div>
 				</div>
@@ -87,7 +89,8 @@ export default function AboutPage() {
 							<div
 								key={member.name}
 								className="rounded-lg bg-blue-100 p-8 shadow-md duration-300 ease-in-out hover:bg-blue-200"
-								data-aos="fade-in">
+								data-aos="fade-down"
+								data-aos-duration="300">
 								<CldImage
 									height={1080}
 									width={1080}

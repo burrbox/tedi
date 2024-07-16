@@ -29,10 +29,10 @@ export const team = [
 		location: "Hopewell Junction, NY, USA",
 		image: "utter",
 		description: `Hiro likes to code.`,
-		email: "",
+		email: "hiroyuki.sakuma1@gmail.com",
 		linkedin: "",
-		twitter: "",
-		instagram: "",
+		twitter: "https://www.twitter.com/hryksakuma",
+		instagram: "https://www.instagram.com/hryk.sakuma",
 		tiktok: "",
 	},
 	{
