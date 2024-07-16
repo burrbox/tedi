@@ -9,6 +9,7 @@ import { CldUploadButton } from "next-cloudinary";
 import { upsertArticle, getPost } from "@/lib/serverActions";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Loading from "@/components/loading";
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 
@@ -20,6 +21,8 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 	const [newSlug, setNewSlug] = useState(slug);
 	const [title, setTitle] = useState("New Article");
 	const [summary, setSummary] = useState("");
+
+	const [isSaving, setIsSaving] = useState(false);
 
 	if (status === "unauthenticated" || (session?.user && !["editor", "admin"].includes(session.user.role)))
 		router.push("/unauthorized");
@@ -98,12 +101,15 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 					Upload Image
 				</CldUploadButton>
 				<button
-					className="rounded-md bg-blue-600 px-4 py-2 text-white"
-					onClick={() => {
-						if (newSlug !== "new") upsertArticle({ title, content, slug: newSlug, summary });
+					className="flex space-x-2 rounded-md bg-blue-600 px-4 py-2 text-white"
+					onClick={async () => {
+						setIsSaving(true);
+						if (newSlug !== "new") await upsertArticle({ title, content, slug: newSlug, summary });
 						else alert("Please enter a URL");
+						setIsSaving(false);
 					}}>
-					{slug === "new" ? "Create Article" : "Save Article"}
+					<span>{slug === "new" ? "Create Article" : "Save Article"}</span>
+					{isSaving && <Loading />}
 				</button>
 			</div>
 
