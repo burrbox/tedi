@@ -1,3 +1,5 @@
+import { petition } from "@/lib/constants";
+
 export default async function Petitions() {
 	return (
 		<section className="h-full w-full flex-col items-end">
@@ -31,7 +33,7 @@ export default async function Petitions() {
 				</div>
 			</div>
 			<div
-				className="relative flex min-h-[110vh] w-screen bg-cover bg-fixed bg-center bg-repeat pt-16 xl:pt-28"
+				className="relative flex min-h-[110vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
 				style={{
 					backgroundImage:
 						"url(https://static.wixstatic.com/media/11062b_c2b35eecf8974f979019c6830b0b4964~mv2.jpg/v1/fill/w_1587,h_810,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_c2b35eecf8974f979019c6830b0b4964~mv2.jpg)",
@@ -40,36 +42,9 @@ export default async function Petitions() {
 					<div className="flex flex-col justify-center gap-6 xl:flex-row">
 						<div className="basis-3/5">
 							<div className="h-fit rounded-xl bg-white p-2 py-8">
-								<h1 className="text-center text-3xl font-semibold text-blue-700">
-									The Flint Water Crisis - Holding the EPA Accountable
-								</h1>
-								<h2 className="mx-4 pt-6 text-sm text-green-700 md:mx-6 md:text-sm lg:mx-8 lg:text-base">
-									The water catastrophe is expanding rapidly and inevitably across the United States, threatening the
-									health of millions of people and calling into question the diligence of environmental organizations
-									such as the Environmental Protection Agency. The Flint Water Crisis began in 2014 when the city of
-									Flint, Michigan decided to switch the source of their water from the Delaware River to the Flint
-									River. This new source of water was not treated as scrupulously as its predecessor, allowing lead that
-									entered the Flint River from corroded pipes to infiltrate the water supply.
-									<br />
-									<br />
-									{
-										"Lead concentrations in the blood of Flint citizens are significantly higher currently than they were when the Delaware River was used as the city’s main water supply. Lead is known to cause severe health	issues including hypertension, anaemia, and most notably Legionnaires' disease, a severe form of pneumonia. 12 people have died from this deadly respiratory disease and dozens more are forced to live	with the side effects of lead poisoning on a daily basis in Flint, Michigan."
-									}
-									<br />
-									<br />
-									The Flint Water Crisis sparked national outrage and investigations into government negligence and
-									environmental injustice. In 1986 the US Environmental Protection Agency passed the Safe Drinking Water
-									Act which banned the use of lead in the construction of water pipes. Yet, plumbing systems in the
-									majority of homes in Flint still boast lead apparatus, compromising the safety of drinking water.
-									<br />
-									<br />
-									Now, how can we prevent this issue from persisting in the future? Many have looked toward the lead
-									standard which currently stands at 15µg/L in Michigan. Experts and EPA officials claim the standard
-									must be decreased to 10µg/L in order for drinking water to truly be deemed “safe.” The only way to
-									prevent this issue from expanding and impairing the health of more Americans is to address the root
-									cause of the issue: a lack of action by the EPA in enforcing water quality standards. Urge the EPA to
-									lower the standard for lead concentrations in drinking water to 10µg/L and mandate the removal of lead
-									pipes from plumbing systems TODAY. Fight for our future and the people of Flint!
+								<h1 className="text-center text-3xl font-semibold text-blue-700">{petition.title}</h1>
+								<h2 className="mx-4 whitespace-pre-line pt-6 text-sm text-green-700 md:mx-6 md:text-sm lg:mx-8 lg:text-base">
+									{petition.description}
 								</h2>
 							</div>
 						</div>
@@ -77,9 +52,7 @@ export default async function Petitions() {
 							<div className="rounded-2xl bg-white">
 								<div className="mx-4 py-4 lg:py-8">
 									<h1 className="text-wrap py-6 text-center text-5xl font-bold text-green-700">Sign Today!</h1>
-									<h2 className="text-wrap text-center text-lg text-blue-700">
-										Ensure ALL Americans have access to clean water.
-									</h2>
+									<h2 className="text-wrap text-center text-lg text-blue-700">{petition.callToAction}</h2>
 								</div>
 								<div className="mx-6 grid justify-center gap-3 md:flex-col lg:grid-cols-2 lg:grid-rows-3">
 									<div className="flex-col lg:col-span-1 lg:row-span-1">
@@ -108,7 +81,7 @@ export default async function Petitions() {
 										<input className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white" />
 									</div>
 									<div className="col-span-1 col-start-2 row-span-2 row-start-2 flex-col">
-										<p className="text-blue-700">Message</p>
+										<p className="text-blue-700">Message (optional)</p>
 										<textarea
 											className="h-fit w-full resize-none rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white"
 											rows={5}

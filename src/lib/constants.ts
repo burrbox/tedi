@@ -204,3 +204,15 @@ export const team = [
 		tiktok: "",
 	},
 ];
+
+export const petition = {
+	title: "The Flint Water Crisis - Holding the EPA Accountable",
+	description: `The water catastrophe is expanding rapidly and inevitably across the United States, threatening the health of millions of people and calling into question the diligence of environmental organizations such as the Environmental Protection Agency. The Flint Water Crisis began in 2014 when the city of Flint, Michigan decided to switch the source of their water from the Delaware River to the Flint River. This new source of water was not treated as scrupulously as its predecessor, allowing lead that entered the Flint River from corroded pipes to infiltrate the water supply.
+
+Lead concentrations in the blood of Flint citizens are significantly higher currently than they were when the Delaware River was used as the city’s main water supply. Lead is known to cause severe health	issues including hypertension, anaemia, and most notably Legionnaires' disease, a severe form of pneumonia. 12 people have died from this deadly respiratory disease and dozens more are forced to live	with the side effects of lead poisoning on a daily basis in Flint, Michigan.
+
+The Flint Water Crisis sparked national outrage and investigations into government negligence and environmental injustice. In 1986 the US Environmental Protection Agency passed the Safe Drinking Water Act which banned the use of lead in the construction of water pipes. Yet, plumbing systems in the majority of homes in Flint still boast lead apparatus, compromising the safety of drinking water.
+
+Now, how can we prevent this issue from persisting in the future? Many have looked toward the lead standard which currently stands at 15µg/L in Michigan. Experts and EPA officials claim the standard must be decreased to 10µg/L in order for drinking water to truly be deemed “safe.” The only way to prevent this issue from expanding and impairing the health of more Americans is to address the root cause of the issue: a lack of action by the EPA in enforcing water quality standards. Urge the EPA to lower the standard for lead concentrations in drinking water to 10µg/L and mandate the removal of lead pipes from plumbing systems TODAY. Fight for our future and the people of Flint!`,
+	callToAction: `Ensure ALL Americans have access to clean water.`,
+};
