@@ -1,6 +1,10 @@
 import { petition } from "@/lib/constants";
 
-export default async function Petitions() {
+export default async function Petitions({
+	searchParams,
+}: {
+	searchParams: Record<string, string | string[] | undefined>;
+}) {
 	return (
 		<section className="h-full w-full flex-col items-end">
 			<div
@@ -49,43 +53,60 @@ export default async function Petitions() {
 							</div>
 						</div>
 						<div className="basis-2/5">
-							<div className="rounded-2xl bg-white">
+							<form className="rounded-2xl bg-white">
 								<div className="mx-4 py-4 lg:py-8">
 									<h1 className="text-wrap py-6 text-center text-5xl font-bold text-green-700">Sign Today!</h1>
 									<h2 className="text-wrap text-center text-lg text-blue-700">{petition.callToAction}</h2>
 								</div>
 								<div className="mx-6 grid justify-center gap-3 md:flex-col lg:grid-cols-2 lg:grid-rows-3">
 									<div className="flex-col lg:col-span-1 lg:row-span-1">
-										<p className="text-blue-700">First Name *</p>
-										<input
-											className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white"
-											type="text"
-										/>
+										<label className="text-blue-700">
+											First Name *
+											<input
+												name="first-name"
+												className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white"
+												type="text"
+											/>
+										</label>
 									</div>
 									<div className="flex-col lg:col-span-1 lg:col-start-2 lg:row-span-1">
-										<p className="text-blue-700">Last Name *</p>
-										<input
-											className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white"
-											type="text"
-										/>
+										<label className="text-blue-700">
+											Last Name *
+											<input
+												name="last-name"
+												className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white"
+												type="text"
+											/>
+										</label>
 									</div>
 									<div className="flex-col lg:col-span-1 lg:col-start-1 lg:row-span-1">
-										<p className="text-blue-700">Email *</p>
-										<input
-											className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white"
-											type="email"
-										/>
+										<label className="text-blue-700">
+											Email *
+											<input
+												name="email"
+												className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white"
+												type="email"
+											/>
+										</label>
 									</div>
 									<div className="flex-col lg:col-span-1 lg:col-start-1 lg:row-span-1">
-										<p className="text-blue-700">Zip Code *</p>
-										<input className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white" />
+										<label className="text-blue-700">
+											Zip Code *
+											<input
+												name="zip-code"
+												className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white"
+											/>
+										</label>
 									</div>
 									<div className="col-span-1 col-start-2 row-span-2 row-start-2 flex-col">
-										<p className="text-blue-700">Message (optional)</p>
-										<textarea
-											className="h-fit w-full resize-none rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white"
-											rows={5}
-										/>
+										<label className="text-blue-700">
+											Message (optional)
+											<textarea
+												name="message"
+												className="h-fit w-full resize-none rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white"
+												rows={5}
+											/>
+										</label>
 									</div>
 								</div>
 								<div className="mx-3 flex justify-center py-10">
@@ -95,7 +116,7 @@ export default async function Petitions() {
 										Sign
 									</button>
 								</div>
-							</div>
+							</form>
 						</div>
 					</div>
 				</div>
