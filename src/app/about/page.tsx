@@ -44,7 +44,7 @@ export default function AboutPage() {
 			</section>
 			<section className="w-full bg-gray-100">
 				<div
-					className="relative flex w-full"
+					className="relative flex w-full flex-col bg-fixed"
 					style={{
 						backgroundImage: "url(https://www.campusfrance.org/sites/default/files/medias/images/2022-02/Ocean.jpg)",
 						backgroundSize: "cover",
@@ -52,9 +52,13 @@ export default function AboutPage() {
 						width: "100vw",
 						minHeight: "50vh",
 					}}>
+					<div className="w-screen">
+						<div className="w-screen rounded-b-2xl bg-white py-2 md:px-20">
+							<h2 className="text-center text-3xl font-bold text-green-700">Our Values</h2>
+							<hr className="mx-auto mb-6 w-12 border-t-4 border-green-700"></hr>
+						</div>
+					</div>
 					<div className="container mx-auto px-4 py-16">
-						<h2 className="mb-4 text-center text-3xl font-bold text-green-700">Our Values</h2>
-						<hr className="mx-auto mb-6 w-12 border-t-4 border-green-700"></hr>
 						<div className="grid gap-8 md:grid-cols-3">
 							<div className="justify-center rounded-md bg-white p-8 shadow-md">
 								<div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-700 text-2xl font-bold text-white">
@@ -184,8 +188,8 @@ export default function AboutPage() {
 					</div>
 				</div>
 				<hr className="border-t-1 mx-auto mb-6 w-1/2 border-green-700"></hr>
-				<div className="mx-auto grid w-full justify-items-center gap-3 md:flex-row">
-					<div className="relative max-w-2xl">
+				<div className="mx-auto flex w-3/4 flex-col items-center justify-center gap-6 xl:flex-row">
+					<div className="relative w-1/2">
 						<h3 className="py-5 text-center text-xl text-blue-600">
 							&quot;Collaborating with your team on our project has been an{" "}
 							<span className="font-semibold text-green-600">exceptional</span> experience. Your{" "}
@@ -197,7 +201,7 @@ export default function AboutPage() {
 						</h3>
 						<h3 className="text-center text-xl font-semibold text-blue-600">-- Plant A Change--</h3>
 					</div>
-					<div className="relative max-w-2xl">
+					<div className="relative w-1/2">
 						<h3 className="py-5 text-center text-xl text-blue-600">
 							&quot;Collaborating with the Environmental Defense Initiative on{" "}
 							<span className="font-semibold text-green-600">inspiring</span> reels and a microplastic pollution

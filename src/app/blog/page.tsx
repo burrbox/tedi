@@ -27,7 +27,7 @@ export default async function Blog() {
 		<>
 			<section>
 				<div
-					className="flex h-1/2 w-full"
+					className="relative flex h-1/2 w-full"
 					style={{
 						backgroundImage:
 							"url(https://static.wixstatic.com/media/7cc6b0344c9440818bad598dd590ed27.jpg/v1/fill/w_1587,h_654,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/7cc6b0344c9440818bad598dd590ed27.jpg)",
