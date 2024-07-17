@@ -25,35 +25,63 @@ export default async function Blog() {
 
 	return (
 		<>
-			{/*<section>
-				<div
-					className="relative flex h-1/2 w-full"
-					style={{
-						backgroundImage:
-							"url(https://static.wixstatic.com/media/7cc6b0344c9440818bad598dd590ed27.jpg/v1/fill/w_1587,h_654,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/7cc6b0344c9440818bad598dd590ed27.jpg)",
-						backgroundSize: "cover",
-						backgroundRepeat: "no-repeat",
-						width: "100vw",
-						minHeight: "47vh",
-					}}>
-					<div className="container relative mx-auto h-full w-full px-4">
-						<div className="absolute inset-0 mx-auto mt-12 w-fit md:mt-16 lg:mt-20 2xl:mt-32" data-aos="fade-down">
-							<div className="flex flex-col justify-center rounded-xl bg-white p-10">
-								<h1 className="text-center text-6xl text-blue-600">Blogs</h1>
-								<h2 className="max-w-96 text-wrap pt-6 text-center text-lg text-green-600">
-									Environmental education is the foundation of long-term solutions and sustainable action.
-									<br />
-									Learn about current environmental issues and how to take action in your own communities.
-								</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			/*}
 			{/* Background image */}
 			{/* Featured post */}
-			<section className="h-screen">
+			<section className="mx-auto w-full max-w-6xl py-12 md:py-16 lg:py-20">
+				<div className="mb-12 md:mb-16 lg:mb-20">
+					{featuredPost.image && (
+						<div className="relative h-[400px] overflow-hidden rounded-lg md:h-[500px] lg:h-[600px]">
+							<Image
+								className="relative inset-0 h-full w-full object-cover opacity-50"
+								src={featuredPost.image}
+								width={1440}
+								height={577}
+								priority
+								alt={featuredPost.title}
+							/>
+							<div className="absolute inset-0 bg-gradient-to-t from-white/50 to-transparent" />
+							<div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 lg:p-10">
+								<div className="max-w-xl">
+									<div className="mb-2 md:mb-3 lg:mb-4">
+										<span className="inline-block rounded-full bg-green-600 px-3 py-1 font-medium text-white">
+											Featured
+										</span>
+										<h1 className="mb-3 text-3xl font-bold text-blue-600 md:mb-4 md:text-4xl lg:mb-5 lg:text-5xl">
+											{featuredPost.title}
+										</h1>
+										<div className="mb-4 flex items-center text-sm text-black md:mb-5 md:text-base lg:mb-6 lg:text-lg">
+											<div className="mr-4">
+												<CloudinaryClientWrapper
+													className="mr-3 shrink-0 rounded-full"
+													src={getPostAuthor(featuredPost).image ?? "/avatar.jpg"}
+													width={32}
+													height={32}
+													alt={getPostAuthor(featuredPost).name ?? "Anonymous Author"}
+												/>
+												<span>
+													<span className="font-medium">{getPostAuthor(featuredPost).name}</span>
+													<span className="mx-2">•</span>
+													<span className="text-muted-foreground">created at</span>
+												</span>
+											</div>
+										</div>
+										<p className="mb-6 line-clamp-3 text-base text-gray-600/80 md:mb-8 md:text-lg lg:mb-10 lg:text-xl">
+											{featuredPost.summary}
+										</p>
+										<div>
+											<button className="rounded-xl border-2 border-green-700 bg-green-700 text-white duration-300 hover:bg-white hover:text-green-700">
+												<label className="px-10 py-2 md:px-16">Read More</label>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					)}
+				</div>
+			</section>
+
+			{/*<section className="h-screen">
 				<div className="relative mx-10 my-20 pb-10">
 					{featuredPost.image && (
 						<div className="relative -z-10 box-content h-screen">
@@ -76,9 +104,9 @@ export default async function Blog() {
 							<p className="text-xl text-gray-600 dark:text-gray-400">{featuredPost.summary}</p>
 						</div>
 						{/* Article meta */}
-						<div className="mt-5 md:flex md:items-center md:justify-between">
+			{/*}	<div className="mt-5 md:flex md:items-center md:justify-between">
 							{/* Author meta */}
-							<div className="flex items-center justify-center">
+			{/*}		<div className="flex items-center justify-center">
 								<a href="#0">
 									<CloudinaryClientWrapper
 										className="mr-3 shrink-0 rounded-full"
@@ -96,13 +124,13 @@ export default async function Blog() {
 									<span className="text-gray-600 dark:text-gray-400">
 										{" "}
 										{/* · <PostDate dateString={featuredPost.createdAt} /> */}
-									</span>
+			{/*</span>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</section>
+			</section>*/}
 
 			{/* <RelatedPosts /> */}
 

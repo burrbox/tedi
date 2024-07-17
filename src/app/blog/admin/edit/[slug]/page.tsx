@@ -69,7 +69,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 				/>
 			</div>
 			{/* URL */}
-			<div className="flex flex-col space-x-8 sm:flex-row">
+			<div className="flex flex-col gap-4 sm:flex-row">
 				<div className="w-full">
 					<label htmlFor="slug" className="mb-2 block">
 						URL
@@ -80,7 +80,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 						className="w-full rounded-md border-2 border-gray-300 px-4 py-2"
 						placeholder="URL"
 						value={newSlug}
-						onChange={(e) => setNewSlug((prev) => (e.target.value.match(/^[a-z0-9-]+$/) ? e.target.value : prev))}
+						onChange={(e) => setNewSlug((prev) => (e.target.value.match(/^[a-z0-9-]*$/) ? e.target.value : prev))}
 					/>
 				</div>
 				<div className="w-full">
@@ -164,7 +164,8 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 					className="flex space-x-2 rounded-md bg-blue-600 px-4 py-2 text-white"
 					onClick={async () => {
 						setIsSaving(true);
-						if (newSlug !== "new") await upsertArticle(slug, { title, content, slug: newSlug, summary, author });
+						if (newSlug && newSlug !== "new")
+							await upsertArticle(slug, { title, content, slug: newSlug, summary, author });
 						else alert("Please enter a URL");
 						setIsSaving(false);
 					}}>

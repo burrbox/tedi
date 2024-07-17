@@ -44,13 +44,9 @@ export default function AboutPage() {
 			</section>
 			<section className="w-full bg-gray-100">
 				<div
-					className="relative flex w-full flex-col bg-fixed"
+					className="relative flex min-h-[50vh] w-screen flex-col bg-cover bg-fixed bg-center bg-repeat"
 					style={{
 						backgroundImage: "url(https://www.campusfrance.org/sites/default/files/medias/images/2022-02/Ocean.jpg)",
-						backgroundSize: "cover",
-						backgroundRepeat: "repeat",
-						width: "100vw",
-						minHeight: "50vh",
 					}}>
 					<div className="w-screen">
 						<div className="w-screen rounded-b-2xl bg-white py-2 md:px-20">
