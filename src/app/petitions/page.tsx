@@ -10,7 +10,7 @@ export default async function Petitions() {
 				<div className="container relative mx-auto h-fit w-full px-4 py-16">
 					<div className="absolute inset-0 mx-auto mt-28 w-fit md:mt-32 lg:mt-44 2xl:mt-52" data-aos="fade-down">
 						<div className="flex flex-col justify-center rounded-xl bg-white p-10 lg:p-20">
-							<h1 className="text-center text-6xl text-blue-600">Petitions</h1>
+							<h1 className="text-center text-6xl font-bold text-blue-600">Petitions</h1>
 							<h2 className="text-wrap pt-6 text-center text-xl text-green-600">
 								Be the change you want to see in the world.
 								<br />
@@ -36,14 +36,14 @@ export default async function Petitions() {
 					backgroundImage:
 						"url(https://static.wixstatic.com/media/11062b_c2b35eecf8974f979019c6830b0b4964~mv2.jpg/v1/fill/w_1587,h_810,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_c2b35eecf8974f979019c6830b0b4964~mv2.jpg)",
 				}}>
-				<div className="inset-0 mx-auto w-10/12" data-aos="fade-down">
+				<div className="inset-0 mx-auto w-full sm:w-10/12" data-aos="fade-down">
 					<div className="flex flex-col justify-center gap-6 xl:flex-row">
 						<div className="basis-3/5">
-							<div className="h-fit rounded-xl bg-white p-2 xl:py-4">
-								<h1 className="pt-8 text-center text-3xl font-semibold text-blue-700">
+							<div className="h-fit rounded-xl bg-white p-2 py-8">
+								<h1 className="text-center text-3xl font-semibold text-blue-700">
 									The Flint Water Crisis - Holding the EPA Accountable
 								</h1>
-								<h2 className="mx-4 py-6 text-sm text-green-700 md:mx-6 md:text-sm lg:mx-8 lg:text-base">
+								<h2 className="mx-4 pt-6 text-sm text-green-700 md:mx-6 md:text-sm lg:mx-8 lg:text-base">
 									The water catastrophe is expanding rapidly and inevitably across the United States, threatening the
 									health of millions of people and calling into question the diligence of environmental organizations
 									such as the Environmental Protection Agency. The Flint Water Crisis began in 2014 when the city of
@@ -77,7 +77,7 @@ export default async function Petitions() {
 							<div className="rounded-2xl bg-white">
 								<div className="mx-4 py-4 lg:py-8">
 									<h1 className="text-wrap py-6 text-center text-5xl font-bold text-green-700">Sign Today!</h1>
-									<h2 className="text-wrap text-center text-lg text-blue-700 lg:text-left">
+									<h2 className="text-wrap text-center text-lg text-blue-700">
 										Ensure ALL Americans have access to clean water.
 									</h2>
 								</div>
@@ -85,32 +85,32 @@ export default async function Petitions() {
 									<div className="flex-col lg:col-span-1 lg:row-span-1">
 										<p className="text-blue-700">First Name *</p>
 										<input
-											className="w-full border-b-2 border-b-blue-900 bg-blue-200 p-3 duration-200 hover:bg-blue-100 focus:bg-white"
+											className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white"
 											type="text"
 										/>
 									</div>
 									<div className="flex-col lg:col-span-1 lg:col-start-2 lg:row-span-1">
 										<p className="text-blue-700">Last Name *</p>
 										<input
-											className="w-full border-b-2 border-b-blue-900 bg-blue-200 p-3 duration-200 hover:bg-blue-100 focus:bg-white"
+											className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white"
 											type="text"
 										/>
 									</div>
 									<div className="flex-col lg:col-span-1 lg:col-start-1 lg:row-span-1">
 										<p className="text-blue-700">Email *</p>
 										<input
-											className="w-full border-b-2 border-b-blue-900 bg-blue-200 p-3 duration-200 hover:bg-blue-100 focus:bg-white"
+											className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white"
 											type="email"
 										/>
 									</div>
 									<div className="flex-col lg:col-span-1 lg:col-start-1 lg:row-span-1">
 										<p className="text-blue-700">Zip Code *</p>
-										<input className="w-full border-b-2 border-b-blue-900 bg-blue-200 p-3 duration-200 hover:bg-blue-100 focus:bg-white" />
+										<input className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white" />
 									</div>
 									<div className="col-span-1 col-start-2 row-span-2 row-start-2 flex-col">
 										<p className="text-blue-700">Message</p>
 										<textarea
-											className="h-fit w-full resize-none border-b-2 border-b-blue-900 bg-blue-200 p-3 duration-200 hover:bg-blue-100 focus:bg-white"
+											className="h-fit w-full resize-none rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white"
 											rows={5}
 										/>
 									</div>
