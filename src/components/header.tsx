@@ -49,7 +49,7 @@ export default function Header() {
 								</div>
 								<div className="hidden lg:block">
 									<div className="text-base font-medium text-gray-800">{session?.user.name}</div>
-									<div className="text-sm font-medium text-gray-400">{session?.user.email}</div>
+									<div className="text-sm font-medium text-gray-600">{session?.user.email}</div>
 								</div>
 							</div>
 						</div>
