@@ -25,7 +25,7 @@ export default async function Blog() {
 
 	return (
 		<>
-			<section>
+			{/*<section>
 				<div
 					className="relative flex h-1/2 w-full"
 					style={{
@@ -50,62 +50,55 @@ export default async function Blog() {
 					</div>
 				</div>
 			</section>
+			/*}
+			{/* Background image */}
 			{/* Featured post */}
-			<section className="relative h-1/2">
-				{/* Background image */}
-				{featuredPost.image && (
-					<div className="absolute inset-0 -z-10 box-content h-full pt-16">
-						<Image
-							className="absolute inset-0 h-full w-full object-cover opacity-25"
-							src={featuredPost.image}
-							width={1440}
-							height={577}
-							priority
-							alt={featuredPost.title}
-						/>
-						<div className="absolute inset-0 bg-gradient-to-t from-white dark:from-gray-900" aria-hidden="true" />
-					</div>
-				)}
-				<div className="relative mx-auto max-w-6xl px-4 sm:px-6">
-					<div className="pb-12 pt-32 md:pb-16 md:pt-40">
-						{/* Featured article */}
-						<div className="max-w-3xl" data-aos="fade-down">
-							<article>
-								<header>
-									{/* Title and excerpt */}
-									<div className="text-center md:text-left">
-										<Link href={`/blog/${featuredPost.slug}`}>
-											<h1 className="h1 font-red-hat-display mb-4">{featuredPost.title}</h1>
-										</Link>
-										<p className="text-xl text-gray-600 dark:text-gray-400">{featuredPost.summary}</p>
-									</div>
-									{/* Article meta */}
-									<div className="mt-5 md:flex md:items-center md:justify-between">
-										{/* Author meta */}
-										<div className="flex items-center justify-center">
-											<a href="#0">
-												<CloudinaryClientWrapper
-													className="mr-3 shrink-0 rounded-full"
-													src={getPostAuthor(featuredPost).image ?? "/avatar.jpg"}
-													width={32}
-													height={32}
-													alt={getPostAuthor(featuredPost).name ?? "Anonymous Author"}
-												/>
-											</a>
-											<div>
-												<span className="text-gray-600 dark:text-gray-400">By </span>
-												<a className="font-medium text-gray-800 hover:underline dark:text-gray-300" href="#0">
-													{getPostAuthor(featuredPost).name ?? "Anonymous Author"}
-												</a>
-												<span className="text-gray-600 dark:text-gray-400">
-													{" "}
-													{/* · <PostDate dateString={featuredPost.createdAt} /> */}
-												</span>
-											</div>
-										</div>
-									</div>
-								</header>
-							</article>
+			<section className="h-screen">
+				<div className="relative mx-10 my-20 pb-10">
+					{featuredPost.image && (
+						<div className="relative -z-10 box-content h-screen">
+							<Image
+								className="relative inset-0 h-3/4 w-full object-cover opacity-25"
+								src={featuredPost.image}
+								width={1440}
+								height={577}
+								priority
+								alt={featuredPost.title}
+							/>
+							<div className="absolute inset-0 bg-gradient-to-t from-white dark:from-gray-900" aria-hidden="true" />
+						</div>
+					)}
+					<div className="absolute inset-0 mx-auto my-auto">
+						<div className="text-center md:text-left">
+							<Link href={`/blog/${featuredPost.slug}`}>
+								<h1 className="h1 font-red-hat-display mb-4">{featuredPost.title}</h1>
+							</Link>
+							<p className="text-xl text-gray-600 dark:text-gray-400">{featuredPost.summary}</p>
+						</div>
+						{/* Article meta */}
+						<div className="mt-5 md:flex md:items-center md:justify-between">
+							{/* Author meta */}
+							<div className="flex items-center justify-center">
+								<a href="#0">
+									<CloudinaryClientWrapper
+										className="mr-3 shrink-0 rounded-full"
+										src={getPostAuthor(featuredPost).image ?? "/avatar.jpg"}
+										width={32}
+										height={32}
+										alt={getPostAuthor(featuredPost).name ?? "Anonymous Author"}
+									/>
+								</a>
+								<div>
+									<span className="text-gray-600 dark:text-gray-400">By </span>
+									<a className="font-medium text-gray-800 hover:underline dark:text-gray-300" href="#0">
+										{getPostAuthor(featuredPost).name ?? "Anonymous Author"}
+									</a>
+									<span className="text-gray-600 dark:text-gray-400">
+										{" "}
+										{/* · <PostDate dateString={featuredPost.createdAt} /> */}
+									</span>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
