@@ -1,14 +1,10 @@
 export default async function Home() {
 	return (
 		<div
-			className="relative flex h-dvh w-full items-end"
+			className="relative flex h-screen w-screen items-end bg-cover bg-no-repeat"
 			style={{
 				backgroundImage:
 					"url(https://static.wixstatic.com/media/11062b_b21f82750bf3464da0b803cc5304b4e9f000.jpg/v1/fill/w_1587,h_934,al_c,q_85,usm_0.33_1.00_0.00,enc_auto/11062b_b21f82750bf3464da0b803cc5304b4e9f000.jpg)",
-				backgroundSize: "cover",
-				backgroundRepeat: "no-repeat",
-				width: "100vw",
-				height: "100vh",
 			}}>
 			<div className="xs:mt-32 absolute inset-0 mx-auto w-fit md:mt-32 lg:mt-60" data-aos="fade-down">
 				<span className="mt-6 flex flex-col place-items-center rounded-xl bg-white opacity-90">

@@ -2,15 +2,11 @@ export default async function Petitions() {
 	return (
 		<section className="h-full w-full flex-col items-end">
 			<div
-				className="flex h-fit w-full"
 				style={{
 					backgroundImage:
 						"url(https://static.wixstatic.com/media/7cc6b0344c9440818bad598dd590ed27.jpg/v1/fill/w_1587,h_654,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/7cc6b0344c9440818bad598dd590ed27.jpg)",
-					backgroundSize: "cover",
-					backgroundRepeat: "no-repeat",
-					width: "100vw",
-					height: "70vh",
-				}}>
+				}}
+				className="flex h-[70vh] w-screen bg-cover bg-fixed bg-center bg-no-repeat">
 				<div className="container relative mx-auto h-fit w-full px-4 py-16">
 					<div className="absolute inset-0 mx-auto mt-28 w-fit md:mt-32 lg:mt-44 2xl:mt-52" data-aos="fade-down">
 						<div className="flex flex-col justify-center rounded-xl bg-white p-10 lg:p-20">
@@ -35,14 +31,10 @@ export default async function Petitions() {
 				</div>
 			</div>
 			<div
-				className="relative flex w-full bg-fixed pt-16 xl:pt-28"
+				className="relative flex min-h-[110vh] w-screen bg-cover bg-fixed bg-center bg-repeat pt-16 xl:pt-28"
 				style={{
 					backgroundImage:
 						"url(https://static.wixstatic.com/media/11062b_c2b35eecf8974f979019c6830b0b4964~mv2.jpg/v1/fill/w_1587,h_810,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_c2b35eecf8974f979019c6830b0b4964~mv2.jpg)",
-					backgroundSize: "cover",
-					backgroundRepeat: "repeat",
-					width: "100vw",
-					minHeight: "110vh",
 				}}>
 				<div className="inset-0 mx-auto w-10/12" data-aos="fade-down">
 					<div className="flex flex-col justify-center gap-6 xl:flex-row">
