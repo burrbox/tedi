@@ -34,101 +34,7 @@ export default function Footer() {
 						</svg>
 					</div>
 
-					{/* Top area: Blocks */}
-					{/* <div className="mb-8 grid gap-8 md:mb-12 md:grid-cols-12 lg:gap-20"> */}
-					{/* 1st block */}
-					{/* <div className="flex items-center md:col-span-8 lg:col-span-6">
-							<div className="pl-12 pr-0">
-								<div>Sign up for our newsletter</div>
-								<input />
-							</div>
-						</div> */}
-					{/* 2nd, 3rd, 4th and 5th blocks */}
-					{/* <div className="grid grid-cols-2 gap-8 md:col-span-8 md:grid-cols-3 lg:col-span-6">
-							<div className="text-sm">
-								<h6 className="mb-2 font-medium uppercase">Projects</h6>
-								<ul>
-									<li className="mb-1">
-										<a
-											className="text-gray-600 transition duration-150 ease-in-out hover:underline dark:text-gray-400"
-											href="/efhs-gravesites/list">
-											EFHS Gravesites
-										</a>
-									</li>
-									<li className="mb-1">
-										<a
-											className="text-gray-600 transition duration-150 ease-in-out hover:underline dark:text-gray-400"
-											href="#0">
-											Colonial Day
-										</a>
-									</li>
-								</ul>
-							</div>
-
-							<div className="text-sm">
-								<h6 className="mb-2 font-medium uppercase">Resources</h6>
-								<ul>
-									<li className="mb-1">
-										<a
-											className="text-gray-600 transition duration-150 ease-in-out hover:underline dark:text-gray-400"
-											href="/blog/charter">
-											Club Charter
-										</a>
-									</li>
-									<li className="mb-1">
-										<a
-											className="text-gray-600 transition duration-150 ease-in-out hover:underline dark:text-gray-400"
-											href="/apply">
-											Application Process
-										</a>
-									</li>
-									<li className="mb-1">
-										<a
-											className="text-gray-600 transition duration-150 ease-in-out hover:underline dark:text-gray-400"
-											href="/apply">
-											Civic Seal
-										</a>
-									</li>
-									<li className="mb-1">
-										<a
-											className="text-gray-600 transition duration-150 ease-in-out hover:underline dark:text-gray-400"
-											href="/about#timeline">
-											Upcoming Events
-										</a>
-									</li>
-								</ul>
-							</div>
-
-							<div className="text-sm">
-								<h6 className="mb-2 font-medium uppercase">About our Club</h6>
-								<ul>
-									<li className="mb-1">
-										<a
-											className="text-gray-600 transition duration-150 ease-in-out hover:underline dark:text-gray-400"
-											href="/about#officers">
-											Our officers
-										</a>
-									</li>
-									<li className="mb-1">
-										<a
-											className="text-gray-600 transition duration-150 ease-in-out hover:underline dark:text-gray-400"
-											href="/about">
-											About us
-										</a>
-									</li>
-									<li className="mb-1">
-										<a
-											className="text-gray-600 transition duration-150 ease-in-out hover:underline dark:text-gray-400"
-											href="#0">
-											Community impact
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div> */}
-					{/* </div> */}
-
-					{/* Bottom area */}
+					{/* Footer Content */}
 					<div className="w-full pb-8">
 						<div>
 							<h3 className="text-xl text-blue-600">Subscribe to our monthly newsletter!</h3>
@@ -138,9 +44,11 @@ export default function Footer() {
 								e.preventDefault();
 								await addEmailSubscription(email);
 							}}>
-							<label className="py-2 text-blue-600">Email*</label>
+							<h4 className="py-2 text-blue-600">Email*</h4>
 							<span className="w-1/2 border-b-4 border-b-green-600 py-1 text-xl text-green-600">
 								<input
+									id="email"
+									name="email"
 									type="email"
 									className="size-1/2 bg-transparent text-blue-700 outline-none"
 									value={email}

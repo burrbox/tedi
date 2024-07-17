@@ -25,7 +25,6 @@ export default async function Blog() {
 
 	return (
 		<>
-			{/* Background image */}
 			{/* Featured post */}
 			<section className="mx-auto w-full max-w-6xl py-12 md:py-16 lg:py-20">
 				<div className="mb-12 md:mb-16 lg:mb-20">
