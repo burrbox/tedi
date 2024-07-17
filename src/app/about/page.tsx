@@ -3,7 +3,6 @@ import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { team } from "@/lib/constants";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
-import { useState } from "react";
 
 export default function AboutPage() {
 	return (
@@ -146,7 +145,7 @@ export default function AboutPage() {
 					</div>
 				</div>
 			</section>
-			<section className="mx-2 max-w-5xl bg-white py-8 md:mx-4 lg:mx-8">
+			<section className="mx-2 w-full bg-white py-8 md:mx-4 lg:mx-8">
 				<div className="flex justify-center">
 					<h1 className="py-4 text-center text-6xl text-green-700">Partnerships</h1>
 				</div>
@@ -162,7 +161,7 @@ export default function AboutPage() {
 						</button>
 					</div>
 				</div>
-				<div className="flex w-full items-center justify-center py-10">
+				<div className="mx-auto flex max-w-5xl items-center justify-center py-10">
 					<div className="container flex w-full flex-col items-center">
 						<CloudinaryClientWrapper
 							src="partners/plantachange"
@@ -181,23 +180,35 @@ export default function AboutPage() {
 							height={150}
 							className="mb-2 rounded-full"
 						/>
-						<button>
-							<h3 className="flex justify-center text-center text-2xl text-blue-700">PLASTIC 2 BRICK</h3>
-						</button>
+						<h3 className="flex justify-center text-center text-2xl text-blue-700">PLASTIC 2 BRICK</h3>
 					</div>
 				</div>
-				<hr className="border-t-1 mx-auto mb-6 w-3/4 border-green-700"></hr>
-				<div className="relative mx-auto max-w-4xl">
-					<h3 className="py-5 text-center text-xl text-blue-600">
-						&quot;Collaborating with the Environmental Defense Initiative on{" "}
-						<span className="font-semibold text-green-600">inspiring</span> reels and a microplastic pollution petition
-						was an experience nothing short of <span className="font-semibold text-green-600">amazing</span>. Their
-						unwavering dedication to <span className="font-semibold text-green-600">protecting our planet</span> and
-						educating the community on sustainable practices is truly commendable. We’re proud to stand alongside such a{" "}
-						<span className="font-semibold text-green-600">passionate and impactful</span> organization in our shared
-						mission to make the world a greener place.&quot;
-					</h3>
-					<h3 className="text-center text-xl font-semibold text-blue-600">-- Plastic2Brick--</h3>
+				<hr className="border-t-1 mx-auto mb-6 w-1/2 border-green-700"></hr>
+				<div className="mx-auto grid w-full justify-items-center gap-3 md:flex-row">
+					<div className="relative max-w-2xl">
+						<h3 className="py-5 text-center text-xl text-blue-600">
+							&quot;Collaborating with your team on our project has been an{" "}
+							<span className="font-semibold text-green-600">exceptional</span> experience. Your{" "}
+							<span className="font-semibold text-green-600">dedication, creativity, and professionalism</span> were
+							evident in every phase of our partnership. The insights and solutions you provided{" "}
+							<span className="font-semibold text-green-600">significantly</span> enhanced our project, and the{" "}
+							<span className="font-semibold text-green-600">seamless collaboration</span> process made it all the more
+							enjoyable.&quot;
+						</h3>
+						<h3 className="text-center text-xl font-semibold text-blue-600">-- Plant A Change--</h3>
+					</div>
+					<div className="relative max-w-2xl">
+						<h3 className="py-5 text-center text-xl text-blue-600">
+							&quot;Collaborating with the Environmental Defense Initiative on{" "}
+							<span className="font-semibold text-green-600">inspiring</span> reels and a microplastic pollution
+							petition was an experience nothing short of <span className="font-semibold text-green-600">amazing</span>.
+							Their unwavering dedication to <span className="font-semibold text-green-600">protecting our planet</span>{" "}
+							and educating the community on sustainable practices is truly commendable. We’re proud to stand alongside
+							such a <span className="font-semibold text-green-600">passionate and impactful</span> organization in our
+							shared mission to make the world a greener place.&quot;
+						</h3>
+						<h3 className="text-center text-xl font-semibold text-blue-600">-- Plastic 2 Brick--</h3>
+					</div>
 				</div>
 			</section>
 		</div>
