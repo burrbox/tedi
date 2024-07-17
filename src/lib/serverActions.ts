@@ -2,6 +2,7 @@
 
 import { auth } from "@/server/auth";
 import { db } from "@/server/db";
+import { type Prisma } from "@prisma/client";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
@@ -28,5 +29,26 @@ export async function upsertArticle(
 		create: { ...article, image: "" },
 		update: article,
 		where: { slug: oldSlug },
+	});
+}
+
+export async function savePetitionSignature(data: {
+	firstName: string;
+	lastName: string;
+	email: string;
+	zipCode: string;
+	message?: string;
+}) {
+	"use server";
+	await db.petitionSignature.create({
+		data: z
+			.object({
+				firstName: z.string().min(1).max(50),
+				lastName: z.string().min(1).max(50),
+				email: z.string().email(),
+				zipCode: z.string().length(5),
+				message: z.string().optional(),
+			})
+			.parse(data),
 	});
 }
