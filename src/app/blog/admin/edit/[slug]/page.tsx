@@ -164,9 +164,10 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 					className="flex space-x-2 rounded-md bg-blue-600 px-4 py-2 text-white"
 					onClick={async () => {
 						setIsSaving(true);
-						if (newSlug && newSlug !== "new")
+						if (newSlug && newSlug !== "new") {
 							await upsertArticle(slug, { title, content, slug: newSlug, summary, author });
-						else alert("Please enter a URL");
+							if (slug !== newSlug) router.push(`/blog/admin/edit/${newSlug}`);
+						} else alert("Please enter a URL");
 						setIsSaving(false);
 					}}>
 					<span>{slug === "new" ? "Create Article" : "Save Article"}</span>
