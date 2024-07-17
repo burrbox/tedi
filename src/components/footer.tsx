@@ -131,14 +131,14 @@ export default function Footer() {
 					{/* Bottom area */}
 					<div className="w-full pb-8">
 						<div>
-							<h2 className="text-xl text-blue-600">Subscribe to our monthly newsletter!</h2>
+							<h3 className="text-xl text-blue-600">Subscribe to our monthly newsletter!</h3>
 						</div>
 						<form
 							onSubmit={async (e) => {
 								e.preventDefault();
 								await addEmailSubscription(email);
 							}}>
-							<p className="py-2 text-blue-600">Email*</p>
+							<label className="py-2 text-blue-600">Email*</label>
 							<span className="w-1/2 border-b-4 border-b-green-600 py-1 text-xl text-green-600">
 								<input
 									type="email"
@@ -146,7 +146,9 @@ export default function Footer() {
 									value={email}
 									onChange={(e) => setEmail(e.target.value)}
 								/>
-								<button type="submit">Subscribe</button>
+								<button type="submit">
+									<label>Subscribe</label>
+								</button>
 							</span>
 						</form>
 					</div>

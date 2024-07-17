@@ -81,57 +81,6 @@ export default async function Blog() {
 				</div>
 			</section>
 
-			{/*<section className="h-screen">
-				<div className="relative mx-10 my-20 pb-10">
-					{featuredPost.image && (
-						<div className="relative -z-10 box-content h-screen">
-							<Image
-								className="relative inset-0 h-3/4 w-full object-cover opacity-25"
-								src={featuredPost.image}
-								width={1440}
-								height={577}
-								priority
-								alt={featuredPost.title}
-							/>
-							<div className="absolute inset-0 bg-gradient-to-t from-white dark:from-gray-900" aria-hidden="true" />
-						</div>
-					)}
-					<div className="absolute inset-0 mx-auto my-auto">
-						<div className="text-center md:text-left">
-							<Link href={`/blog/${featuredPost.slug}`}>
-								<h1 className="h1 font-red-hat-display mb-4">{featuredPost.title}</h1>
-							</Link>
-							<p className="text-xl text-gray-600 dark:text-gray-400">{featuredPost.summary}</p>
-						</div>
-						{/* Article meta */}
-			{/*}	<div className="mt-5 md:flex md:items-center md:justify-between">
-							{/* Author meta */}
-			{/*}		<div className="flex items-center justify-center">
-								<a href="#0">
-									<CloudinaryClientWrapper
-										className="mr-3 shrink-0 rounded-full"
-										src={getPostAuthor(featuredPost).image ?? "/avatar.jpg"}
-										width={32}
-										height={32}
-										alt={getPostAuthor(featuredPost).name ?? "Anonymous Author"}
-									/>
-								</a>
-								<div>
-									<span className="text-gray-600 dark:text-gray-400">By </span>
-									<a className="font-medium text-gray-800 hover:underline dark:text-gray-300" href="#0">
-										{getPostAuthor(featuredPost).name ?? "Anonymous Author"}
-									</a>
-									<span className="text-gray-600 dark:text-gray-400">
-										{" "}
-										{/* · <PostDate dateString={featuredPost.createdAt} /> */}
-			{/*</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>*/}
-
 			{/* <RelatedPosts /> */}
 
 			{/* Articles list */}
@@ -142,7 +91,7 @@ export default async function Blog() {
 							{/* Main content */}
 							<div className="lg:grow" data-aos="fade-down" data-aos-delay="200">
 								{/* Section title */}
-								<h4 className="h3 font-red-hat-display mb-4">Latest</h4>
+								<h2 className="h3 font-red-hat-display mb-4">Latest</h2>
 								<hr className="border-1 mb-4 border-green-500" />
 
 								{/* Articles container */}

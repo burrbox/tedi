@@ -50,7 +50,7 @@ export default function AboutPage() {
 					}}>
 					<div className="w-screen">
 						<div className="w-screen rounded-b-2xl bg-white py-2 md:px-20">
-							<h2 className="text-center text-3xl font-bold text-green-700">Our Values</h2>
+							<h2 className="mb-6 text-center text-3xl font-bold text-green-700">Our Values</h2>
 							<hr className="mx-auto mb-6 w-12 border-t-4 border-green-700"></hr>
 						</div>
 					</div>
@@ -107,7 +107,7 @@ export default function AboutPage() {
 									className="mb-4 h-96 w-full rounded-md object-cover"
 								/>
 								<h3 className="mb-2 text-xl font-bold text-blue-700">{member.name}</h3>
-								<p className="mb-2 text-blue-700">{member.title}</p>
+								<h4 className="mb-2 text-blue-700">{member.title}</h4>
 								<p className="mb-2 flex text-blue-700">
 									<MapPinIcon className="mr-1 inline-block h-6 w-6" />
 									<span>{member.location}</span>
@@ -151,13 +151,15 @@ export default function AboutPage() {
 				</div>
 				<hr className="mx-auto mb-6 w-12 border-t-4 border-green-700"></hr>
 				<div className="relative mx-auto max-w-3xl">
-					<h3 className="text-3x1 mb-8 text-center text-blue-700">
+					<h2 className="text-3x1 mb-8 text-center text-blue-700">
 						Thank you to all of our partners for working with us to achieve sustainable, long-lasting change. Learn more
 						about these partnerships by following us on Instagram.
-					</h3>
+					</h2>
 					<div className="mt-8 flex justify-center">
 						<button className="text-1xl max-w-32 grow rounded-xl border-2 border-green-600 bg-green-500 px-5 py-2 text-center text-white duration-300 hover:bg-white hover:text-green-500">
-							<a href="https://instagram.com/environmentaldefenseinitiative/">Follow Us</a>
+							<label>
+								<a href="https://instagram.com/environmentaldefenseinitiative/">Follow Us</a>
+							</label>
 						</button>
 					</div>
 				</div>
@@ -170,7 +172,7 @@ export default function AboutPage() {
 							height={150}
 							className="mb-2 rounded-full"
 						/>
-						<h3 className="flex justify-center text-center text-2xl text-blue-700">PLANT A CHANGE</h3>
+						<h2 className="flex justify-center text-center text-2xl text-blue-700">PLANT A CHANGE</h2>
 					</div>
 					<div className="container flex w-full flex-col items-center">
 						<CloudinaryClientWrapper
@@ -180,13 +182,13 @@ export default function AboutPage() {
 							height={150}
 							className="mb-2 rounded-full"
 						/>
-						<h3 className="flex justify-center text-center text-2xl text-blue-700">PLASTIC 2 BRICK</h3>
+						<h2 className="flex justify-center text-center text-2xl text-blue-700">PLASTIC 2 BRICK</h2>
 					</div>
 				</div>
 				<hr className="border-t-1 mx-auto mb-6 w-1/2 border-green-700"></hr>
 				<div className="mx-auto flex w-3/4 flex-col items-center justify-center gap-6 xl:flex-row">
 					<div className="relative w-1/2">
-						<h3 className="py-5 text-center text-xl text-blue-600">
+						<p className="py-5 text-center text-xl text-blue-600">
 							&quot;Collaborating with your team on our project has been an{" "}
 							<span className="font-semibold text-green-600">exceptional</span> experience. Your{" "}
 							<span className="font-semibold text-green-600">dedication, creativity, and professionalism</span> were
@@ -194,11 +196,11 @@ export default function AboutPage() {
 							<span className="font-semibold text-green-600">significantly</span> enhanced our project, and the{" "}
 							<span className="font-semibold text-green-600">seamless collaboration</span> process made it all the more
 							enjoyable.&quot;
-						</h3>
+						</p>
 						<h3 className="text-center text-xl font-semibold text-blue-600">-- Plant A Change--</h3>
 					</div>
 					<div className="relative w-1/2">
-						<h3 className="py-5 text-center text-xl text-blue-600">
+						<p className="py-5 text-center text-xl text-blue-600">
 							&quot;Collaborating with the Environmental Defense Initiative on{" "}
 							<span className="font-semibold text-green-600">inspiring</span> reels and a microplastic pollution
 							petition was an experience nothing short of <span className="font-semibold text-green-600">amazing</span>.
@@ -206,7 +208,7 @@ export default function AboutPage() {
 							and educating the community on sustainable practices is truly commendable. We’re proud to stand alongside
 							such a <span className="font-semibold text-green-600">passionate and impactful</span> organization in our
 							shared mission to make the world a greener place.&quot;
-						</h3>
+						</p>
 						<h3 className="text-center text-xl font-semibold text-blue-600">-- Plastic 2 Brick--</h3>
 					</div>
 				</div>
