@@ -69,7 +69,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 				/>
 			</div>
 			{/* URL */}
-			<div className="flex flex-col space-x-8 sm:flex-row">
+			<div className="flex flex-col gap-4 sm:flex-row">
 				<div className="w-full">
 					<label htmlFor="slug" className="mb-2 block">
 						URL
