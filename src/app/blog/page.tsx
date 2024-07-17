@@ -25,11 +25,36 @@ export default async function Blog() {
 
 	return (
 		<>
+			<section>
+				<div
+					className="flex h-1/2 w-full"
+					style={{
+						backgroundImage:
+							"url(https://static.wixstatic.com/media/7cc6b0344c9440818bad598dd590ed27.jpg/v1/fill/w_1587,h_654,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/7cc6b0344c9440818bad598dd590ed27.jpg)",
+						backgroundSize: "cover",
+						backgroundRepeat: "no-repeat",
+						width: "100vw",
+						minHeight: "47vh",
+					}}>
+					<div className="container relative mx-auto h-full w-full px-4">
+						<div className="absolute inset-0 mx-auto mt-12 w-fit md:mt-16 lg:mt-20 2xl:mt-32" data-aos="fade-down">
+							<div className="flex flex-col justify-center rounded-xl bg-white p-10">
+								<h1 className="text-center text-6xl text-blue-600">Blogs</h1>
+								<h2 className="max-w-96 text-wrap pt-6 text-center text-lg text-green-600">
+									Environmental education is the foundation of long-term solutions and sustainable action.
+									<br />
+									Learn about current environmental issues and how to take action in your own communities.
+								</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 			{/* Featured post */}
-			<section className="relative">
+			<section className="relative h-1/2">
 				{/* Background image */}
 				{featuredPost.image && (
-					<div className="-z-1 h-128 absolute inset-0 box-content pt-16">
+					<div className="absolute inset-0 -z-10 box-content h-full pt-16">
 						<Image
 							className="absolute inset-0 h-full w-full object-cover opacity-25"
 							src={featuredPost.image}
