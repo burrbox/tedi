@@ -2,10 +2,10 @@ import "@/app/globals.css";
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
-
 import { TRPCReactProvider } from "@/trpc/react";
 import { Toaster } from "@/components/ui/toaster";
 import RootLayoutClient from "./layoutClient";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
 	title: "The Environmental Defense Initiative",
@@ -21,6 +21,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 					<RootLayoutClient>{children}</RootLayoutClient>
 				</TRPCReactProvider>
 				<Toaster />
+				<Analytics />
 			</body>
 		</html>
 	);
