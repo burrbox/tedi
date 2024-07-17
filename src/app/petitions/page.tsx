@@ -8,6 +8,7 @@ export default async function Petitions({
 	return (
 		<section className="h-full w-full flex-col items-end">
 			<div
+				title="An background image of a butterfly"
 				style={{
 					backgroundImage:
 						"url(https://static.wixstatic.com/media/7cc6b0344c9440818bad598dd590ed27.jpg/v1/fill/w_1587,h_654,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/7cc6b0344c9440818bad598dd590ed27.jpg)",
@@ -44,6 +45,7 @@ export default async function Petitions({
 			</div>
 			<div
 				className="relative flex min-h-[110vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
+				title="An image of water droplets"
 				style={{
 					backgroundImage:
 						"url(https://static.wixstatic.com/media/11062b_c2b35eecf8974f979019c6830b0b4964~mv2.jpg/v1/fill/w_1587,h_810,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_c2b35eecf8974f979019c6830b0b4964~mv2.jpg)",

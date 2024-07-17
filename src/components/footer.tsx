@@ -40,6 +40,7 @@ export default function Footer() {
 							<h3 className="text-xl text-blue-600">Subscribe to our monthly newsletter!</h3>
 						</div>
 						<form
+							name="email-subscription"
 							onSubmit={async (e) => {
 								e.preventDefault();
 								await addEmailSubscription(email);

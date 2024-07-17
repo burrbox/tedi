@@ -115,8 +115,8 @@ export default function AboutPage() {
 								<p className="text-blue-700">{member.description}</p>
 								<div className="mt-4 flex space-x-4">
 									{member.email && (
-										<Link href={member.email}>
-											<EnvelopeIcon className="h-6 w-6" />
+										<Link href={`mailto:${member.email}`}>
+											<EnvelopeIcon className="h-6 w-6" name="Member's email" />
 										</Link>
 									)}
 									{member.linkedin && (
