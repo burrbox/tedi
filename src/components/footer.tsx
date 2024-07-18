@@ -1,6 +1,6 @@
 "use client";
 
-import { EnvelopeIcon } from "@heroicons/react/24/solid";
+import { EnvelopeIcon, RssIcon } from "@heroicons/react/24/solid";
 import { addEmailSubscription } from "@/lib/serverActions";
 import { useState } from "react";
 import { InstagramIcon, LinkedInIcon, TikTokIcon, YouTubeIcon } from "./icons";
@@ -105,6 +105,14 @@ export default function Footer() {
 									href="https://www.linkedin.com/company/97920980/admin/feed/posts/"
 									aria-label="Linkedin">
 									<LinkedInIcon className="h-4 w-4 fill-current dark:fill-white" />
+								</a>
+							</li>
+							<li className="ml-4">
+								<a
+									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
+									href="/rss.xml"
+									aria-label="RSS Feed">
+									<RssIcon className="h-4 w-4 fill-current dark:fill-white" />
 								</a>
 							</li>
 						</ul>
