@@ -11,7 +11,7 @@ export async function GET(request: NextRequest) {
 				<title>${article.title}</title>
 				<link>${url}</link>
 				<guid>${url}</guid>
-				<pubDate>${article.createdAt.toISOString()}</pubDate>
+				<pubDate>${article.createdAt.toUTCString()}</pubDate>
 				${article.summary && `<description>${article.summary}</description>`}
 				<content:encoded><![CDATA[${article.content}]]></content:encoded>
 			</item>`;
@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
 			<title>The Environmental Defense Initiative</title>
 			<description>A nonprofit to defend the environment</description>
 			<link>${env.URL}</link>
-			<lastBuildDate>${new Date().toISOString()}</lastBuildDate>
+			<lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
 			${articles}
 			</channel>
 		</rss>`;
