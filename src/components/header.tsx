@@ -93,10 +93,7 @@ export default function Header() {
 							href={`/signin?redirect=${path}`}>
 							{/* <ShimmerButton className="shadow-2xl" background="#4F46E5"> */}
 							<span className="whitespace-pre-wrap from-white to-slate-900/10 text-center text-lg font-medium leading-none tracking-tight text-white">
-								Sign In{" "}
-								<span className="ml-1 tracking-normal text-sky-300 transition-transform duration-150 ease-in-out group-hover:translate-x-0.5">
-									-&gt;
-								</span>
+								Sign In
 							</span>
 						</Link>
 					)}

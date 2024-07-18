@@ -82,16 +82,7 @@ export default function SignIn({ searchParams }: { searchParams: Record<string, 
 									className="btn-sm group w-full bg-indigo-500 text-sm text-white shadow-sm hover:bg-indigo-600 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-indigo-800 disabled:text-gray-300"
 									type="submit"
 									disabled={loading || !email}>
-									{loading ? (
-										<Loading />
-									) : (
-										<>
-											Sign In{" "}
-											<span className="ml-1 tracking-normal text-sky-300 transition-transform duration-150 ease-in-out group-hover:translate-x-0.5">
-												-&gt;
-											</span>
-										</>
-									)}
+									{loading ? <Loading /> : "Sign In"}
 								</button>
 							</div>
 						</form>
