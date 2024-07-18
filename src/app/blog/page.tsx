@@ -4,7 +4,7 @@ import { getPosts } from "@/lib/serverActions";
 import { type Prisma } from "@prisma/client";
 import { team } from "@/lib/constants";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
-// import PostDate from "@/components/post-date";
+import { format } from "date-fns";
 // import RelatedPosts from "@/components/related-posts-01";
 // import PostItem from "@/components/post-item";
 
@@ -136,8 +136,11 @@ export default async function Blog() {
 													By{" "}
 													<a className="font-medium text-gray-800 hover:underline dark:text-stone-200" href="#0">
 														{getPostAuthor(post).name ?? "Anonymous Author"}
-													</a>{" "}
-													· <span className="text-gray-500">{/* <PostDate dateString={post.createdAt} /> */}</span>
+													</a>
+													{" · "}
+													<span className="text-gray-500 dark:text-blue-400">
+														<time dateTime={post.createdAt.toISOString()}>{format(post.createdAt, "MMM d, yyyy")}</time>
+													</span>
 												</div>
 											</footer>
 										</article>

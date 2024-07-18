@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-// import PostDate from "@/components/post-date";
 import { Mdx } from "@/components/mdx/mdx";
 // import RelatedPosts from "@/components/related-posts-02";
 import { getPosts } from "@/lib/serverActions";
 import { team } from "@/lib/constants";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
+import { format } from "date-fns";
 
 export async function generateStaticParams() {
 	return (await getPosts()).map((post) => ({
@@ -85,8 +85,8 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 													{author.name ?? "Anonymous Author"}
 												</a>
 												<span className="text-gray-600 dark:text-blue-400">
-													{" "}
-													{/* · <PostDate dateString={post.createdAt} /> */}
+													{" · "}
+													<time dateTime={post.createdAt.toISOString()}>{format(post.createdAt, "MMM d, yyyy")}</time>
 												</span>
 											</div>
 										</div>
