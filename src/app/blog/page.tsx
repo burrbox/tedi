@@ -55,6 +55,8 @@ export default async function Blog() {
 													src={getPostAuthor(featuredPost).image ?? "/avatar.jpg"}
 													width={32}
 													height={32}
+													crop="thumb"
+													gravity="face"
 													alt={getPostAuthor(featuredPost).name ?? "Anonymous Author"}
 												/>
 												<span>
@@ -121,10 +123,12 @@ export default async function Blog() {
 											<footer className="mt-4 flex items-center">
 												<a href="#0">
 													<CloudinaryClientWrapper
-														className="mr-3 shrink-0 rounded-full"
+														className="mr-3 rounded-full"
 														src={getPostAuthor(post).image ?? "/avatar.jpg"}
 														width={32}
 														height={32}
+														crop="thumb"
+														gravity="face"
 														alt={getPostAuthor(post).name ?? "Anonymous Author"}
 													/>
 												</a>
