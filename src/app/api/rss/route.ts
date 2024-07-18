@@ -29,5 +29,8 @@ export async function GET(request: NextRequest) {
 			</channel>
 		</rss>`;
 
-	return new NextResponse(feed, { status: 200, headers: { "Content-Type": "text/xml" } });
+	return new NextResponse(feed, {
+		status: 200,
+		headers: { "Content-Type": "text/xml", "Cache-Control": "s-maxage=600" },
+	});
 }
