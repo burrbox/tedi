@@ -3,15 +3,14 @@
 import type { FormEvent } from "react";
 import { useState } from "react";
 import { signIn, useSession } from "next-auth/react";
-import { redirect, useSearchParams } from "next/navigation";
+import { redirect } from "next/navigation";
 import Link from "next/link";
 import Loading from "@/components/loading";
 import { type SignInPageErrorParam } from "@auth/core/types";
 import { DiscordIcon, GithubIcon, GoogleIcon } from "@/components/icons";
 
-export default function SignIn() {
+export default function SignIn({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {
 	const { status } = useSession();
-	const searchParams = useSearchParams();
 	const [email, setEmail] = useState("");
 
 	const [loading, setLoading] = useState(false);
@@ -22,15 +21,13 @@ export default function SignIn() {
 		e.preventDefault();
 		setLoading(true);
 
-		const res = await signIn("email", { email, callbackUrl: searchParams.get("redirect") ?? "/blog" });
+		const res = await signIn("email", { email, callbackUrl: (searchParams.redirect ?? "/blog").toString() });
 		if (res?.error) alert(res.error);
 	}
 
 	async function handleSignIn(provider: string): Promise<void> {
 		setLoading(true);
-		const res = await signIn(provider, {
-			callbackUrl: searchParams.get("redirect") ?? "/blog",
-		});
+		const res = await signIn(provider, { callbackUrl: (searchParams.redirect ?? "/blog").toString() });
 		if (res?.error) alert(res.error);
 	}
 
@@ -53,10 +50,10 @@ export default function SignIn() {
 					</div>
 
 					{/* Error message */}
-					{searchParams.get("error") && (
+					{searchParams.error && (
 						<div className="mx-auto mb-8 max-w-sm">
 							<div className="rounded border border-red-400 bg-red-100 p-4 text-red-700 dark:border-red-600 dark:bg-red-800 dark:text-red-100">
-								{errorMeanings[searchParams.get("error")!] ?? "An error occurred. Please try again."}
+								{errorMeanings[searchParams.error.toString()] ?? "An error occurred. Please try again."}
 							</div>
 						</div>
 					)}
