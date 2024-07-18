@@ -1,4 +1,4 @@
-import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import { EnvelopeIcon, GlobeAmericasIcon, MapPinIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { team } from "@/lib/constants";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
@@ -140,6 +140,14 @@ export default function AboutPage() {
 									{member.tiktok && (
 										<Link href={member.tiktok}>
 											<TikTokIcon className="h-6 w-6 dark:fill-gray-200" name={`Link to ${member.name}'s Tiktok`} />
+										</Link>
+									)}
+									{member.website && (
+										<Link href={member.website}>
+											<GlobeAmericasIcon
+												className="h-6 w-6 dark:fill-gray-200"
+												name={`Link to ${member.name}'s website`}
+											/>
 										</Link>
 									)}
 								</div>
