@@ -5,6 +5,7 @@ import { db } from "@/server/db";
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import DiscordProvider from "next-auth/providers/discord";
+import GithubProvider from "next-auth/providers/github";
 // import PasskeyProvider from "next-auth/providers/passkey";
 import ResendProvider from "next-auth/providers/resend";
 import { Resend } from "resend";
@@ -41,6 +42,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 	providers: [
 		GoogleProvider,
 		DiscordProvider,
+		GithubProvider,
 		ResendProvider({
 			from: "signin@deaplearning.com",
 			async sendVerificationRequest({ identifier: email, url }) {
