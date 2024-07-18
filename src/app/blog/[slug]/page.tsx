@@ -135,9 +135,9 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 									</div>
 									<div>
 										<p className="text-green-500">
-											Author: <span>{post.author}</span>
+											Author: <span>{team.find((member) => member.name.toLowerCase() === post.author)?.name}</span>
 											<br />
-											Editor: <span>{post.author}</span>
+											Editor: <span>{team.find((member) => member.name.toLowerCase() === post.author)?.name}</span>
 										</p>
 									</div>
 								</div>
