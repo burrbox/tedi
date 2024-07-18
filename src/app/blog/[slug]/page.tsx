@@ -99,13 +99,8 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 								/>
 
 								{/* Article content */}
-								<div
-									className="prose mb-8 prose-td:border-2 prose-td:border-gray-500 prose-td:p-2 dark:prose-td:border-white"
-									data-aos="fade-up"
-									data-aos-delay="450">
-									<span className="text-white">
-										<Mdx content={post.content} />
-									</span>
+								<div className="mb-8" data-aos="fade-up" data-aos-delay="450">
+									<Mdx content={post.content} />
 								</div>
 							</article>
 							<div className="dark:bg-stone-900">
