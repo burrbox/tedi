@@ -23,7 +23,7 @@ export default function Header() {
 	const path = usePathname();
 
 	return (
-		<header className="fixed z-30 w-full bg-white shadow-md dark:bg-stone-900">
+		<header className="fixed z-30 w-full bg-white shadow-md dark:bg-stone-950">
 			<div className="container mx-auto flex items-center justify-between px-4 py-4">
 				<Link href={"/"} className="flex items-center space-x-2">
 					<CldImage width="40" height="40" src="logo" alt="Logo" className="h-10 w-10" />

@@ -17,9 +17,9 @@ export default function AboutPage() {
 					className="h-full w-full object-cover"
 				/>
 				<div className="absolute inset-0 flex items-center justify-center">
-					<div className="rounded-lg bg-white bg-opacity-85 px-5 py-10 dark:bg-emerald-950 dark:bg-opacity-85">
-						<h2 className="mb-4 text-center text-3xl font-bold text-green-700 dark:text-green-300">Our Mission</h2>
-						<p className="mx-auto max-w-3xl text-center text-xl text-blue-700 dark:text-stone-300">
+					<div className="rounded-lg bg-white bg-opacity-85 px-5 py-10 dark:bg-emerald-950/85" data-aos="fade-down">
+						<h2 className="mb-4 text-center text-6xl font-bold text-green-700 dark:text-white">Our Mission</h2>
+						<p className="mx-auto max-w-3xl text-center text-xl text-blue-700 dark:text-green-300">
 							The Environmental Defense Initiative is an international youth-led initiative dedicated to raising
 							awareness of environmental issues and providing a platform for people to take action to create
 							long-lasting change.
@@ -121,22 +121,41 @@ export default function AboutPage() {
 									)}
 									{member.linkedin && (
 										<Link href={member.linkedin}>
-											<Image src="/linkedin.svg" alt="Link to linkedin" width={24} height={24} color="#0A66C2" />
+											<Image
+												src="/linkedin.svg"
+												className="dark:fill-white"
+												alt="Link to linkedin"
+												width={24}
+												height={24}
+												color="#0A66C2"
+											/>
 										</Link>
 									)}
 									{member.twitter && (
 										<Link href={member.twitter}>
-											<Image src="/x.svg" alt="Link to twitter" width={24} height={24} />
+											<Image src="/x.svg" className="dark:fill-white" alt="Link to twitter" width={24} height={24} />
 										</Link>
 									)}
 									{member.instagram && (
 										<Link href={member.instagram}>
-											<Image src="/instagram.svg" alt="Link to instagram" width={24} height={24} />
+											<Image
+												src="/instagram.svg"
+												className="dark:fill-white"
+												alt="Link to instagram"
+												width={24}
+												height={24}
+											/>
 										</Link>
 									)}
 									{member.tiktok && (
 										<Link href={member.instagram}>
-											<Image src="/tiktok.svg" alt="Link to tiktok" width={24} height={24} />
+											<Image
+												src="/tiktok.svg"
+												className="dark:fill-white"
+												alt="Link to tiktok"
+												width={24}
+												height={24}
+											/>
 										</Link>
 									)}
 								</div>
@@ -156,7 +175,7 @@ export default function AboutPage() {
 						about these partnerships by following us on Instagram.
 					</h2>
 					<div className="mt-8 flex justify-center">
-						<button className="text-1xl max-w-32 grow rounded-xl border-2 border-green-600 bg-green-500 px-5 py-2 text-center text-white duration-300 hover:bg-white hover:text-green-500">
+						<button className="text-1xl max-w-32 grow rounded-xl border-2 border-green-600 bg-green-600 px-5 py-2 text-center text-white duration-300 hover:bg-white hover:text-green-600">
 							<label>
 								<a href="https://instagram.com/environmentaldefenseinitiative/">Follow Us</a>
 							</label>

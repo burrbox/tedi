@@ -7,7 +7,7 @@ import { useState } from "react";
 export default function Footer() {
 	const [email, setEmail] = useState("");
 	return (
-		<footer className="relative bg-white dark:bg-stone-900">
+		<footer className="relative bg-white dark:bg-stone-950">
 			<div className="mx-auto max-w-6xl px-4 sm:px-6">
 				<div className="-mt-px border-t border-gray-200 py-12 dark:border-gray-800 md:py-16">
 					{/* Footer illustration */}
@@ -37,7 +37,7 @@ export default function Footer() {
 					{/* Footer Content */}
 					<div className="w-full pb-8">
 						<div>
-							<h3 className="text-xl text-blue-600">Subscribe to our monthly newsletter!</h3>
+							<h3 className="text-xl text-blue-600 dark:text-blue-400">Subscribe to our monthly newsletter!</h3>
 						</div>
 						<form
 							name="email-subscription"
@@ -45,8 +45,8 @@ export default function Footer() {
 								e.preventDefault();
 								await addEmailSubscription(email);
 							}}>
-							<h4 className="py-2 text-blue-600">Email*</h4>
-							<span className="w-1/2 border-b-4 border-b-green-600 py-1 text-xl text-green-600">
+							<h4 className="py-2 text-blue-600 dark:text-blue-300">Email*</h4>
+							<span className="w-1/2 border-b-4 border-b-green-600 py-1 text-xl text-green-600 dark:text-green-500">
 								<input
 									id="email"
 									name="email"
@@ -66,15 +66,15 @@ export default function Footer() {
 						<ul className="mb-4 flex md:order-2 md:mb-0 md:ml-4">
 							<li>
 								<a
-									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-gray-800 dark:text-blue-600"
+									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
 									href="mailto:environmentaldefenseinitiative@gmail.com"
 									aria-label="Email">
-									<EnvelopeIcon className="h-4 w-4" />
+									<EnvelopeIcon className="h-4 w-4 dark:fill-white" />
 								</a>
 							</li>
 							<li className="ml-4">
 								<a
-									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-gray-800 dark:text-blue-600"
+									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
 									href="https://www.tiktok.com/@tedi_youth"
 									aria-label="TikTok">
 									<svg className="h-4 w-4 fill-white" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -84,12 +84,12 @@ export default function Footer() {
 							</li>
 							<li className="ml-4">
 								<a
-									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-gray-800 dark:text-blue-600"
+									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
 									href="https://www.youtube.com/channel/UCLJIczzKZWeqsa2Pmg55F6g"
 									aria-label="Youtube">
 									<svg
 										role="img"
-										className="h-4 w-4 fill-current"
+										className="h-4 w-4 fill-current dark:fill-white"
 										viewBox="0 0 24 24"
 										xmlns="http://www.w3.org/2000/svg">
 										<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
@@ -98,10 +98,13 @@ export default function Footer() {
 							</li>
 							<li className="ml-4">
 								<a
-									className="flex items-center justify-center rounded-full bg-blue-600 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-gray-800 dark:text-blue-600"
+									className="flex items-center justify-center rounded-full bg-blue-600 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
 									href="https://www.instagram.com/environmentaldefenseinitiative/"
 									aria-label="Instagram">
-									<svg className="h-8 w-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+									<svg
+										className="h-8 w-8 fill-current dark:fill-white"
+										viewBox="0 0 32 32"
+										xmlns="http://www.w3.org/2000/svg">
 										<circle cx="20.145" cy="11.892" r="1" />
 										<path d="M16 20c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4zm0-6c-1.103 0-2 .897-2 2s.897 2 2 2 2-.897 2-2-.897-2-2-2z" />
 										<path d="M20 24h-8c-2.056 0-4-1.944-4-4v-8c0-2.056 1.944-4 4-4h8c2.056 0 4 1.944 4 4v8c0 2.056-1.944 4-4 4zm-8-14c-.935 0-2 1.065-2 2v8c0 .953 1.047 2 2 2h8c.935 0 2-1.065 2-2v-8c0-.935-1.065-2-2-2h-8z" />
@@ -110,10 +113,13 @@ export default function Footer() {
 							</li>
 							<li className="ml-4">
 								<a
-									className="flex items-center justify-center rounded-full bg-blue-600 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-gray-800 dark:text-blue-600"
+									className="flex items-center justify-center rounded-full bg-blue-600 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
 									href="https://www.linkedin.com/company/97920980/admin/feed/posts/"
 									aria-label="Linkedin">
-									<svg className="h-8 w-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+									<svg
+										className="h-8 w-8 fill-current dark:fill-white"
+										viewBox="0 0 32 32"
+										xmlns="http://www.w3.org/2000/svg">
 										<path d="M23.3 8H8.7c-.4 0-.7.3-.7.7v14.7c0 .3.3.6.7.6h14.7c.4 0 .7-.3.7-.7V8.7c-.1-.4-.4-.7-.8-.7zM12.7 21.6h-2.3V14h2.4v7.6h-.1zM11.6 13c-.8 0-1.4-.7-1.4-1.4 0-.8.6-1.4 1.4-1.4.8 0 1.4.6 1.4 1.4-.1.7-.7 1.4-1.4 1.4zm10 8.6h-2.4v-3.7c0-.9 0-2-1.2-2s-1.4 1-1.4 2v3.8h-2.4V14h2.3v1c.3-.6 1.1-1.2 2.2-1.2 2.4 0 2.8 1.6 2.8 3.6v4.2h.1z" />
 									</svg>
 								</a>
