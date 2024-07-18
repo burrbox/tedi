@@ -39,7 +39,7 @@ export default function Header() {
 						The Environmental Defense Initiative
 					</h1>
 				</Link>
-				<nav className="flex items-center space-x-8 text-lg">
+				<nav className="flex items-center space-x-4 text-lg sm:space-x-8">
 					{links.map((link) => (
 						<Link
 							key={link.name}
@@ -82,9 +82,11 @@ export default function Header() {
 							</DropdownMenuContent>
 						</DropdownMenu>
 					) : (
-						<Link className="btn-sm group w-full bg-blue-700 shadow-sm md:w-max" href={`/signin?redirect=${path}`}>
+						<Link
+							className="group inline-flex items-center justify-center rounded bg-blue-700 px-2 py-1 leading-snug shadow-sm sm:px-4 sm:py-2 md:w-max"
+							href={`/signin?redirect=${path}`}>
 							{/* <ShimmerButton className="shadow-2xl" background="#4F46E5"> */}
-							<span className="whitespace-pre-wrap from-white to-slate-900/10 px-2 py-1 text-center text-lg font-medium leading-none tracking-tight text-white">
+							<span className="whitespace-pre-wrap from-white to-slate-900/10 text-center text-lg font-medium leading-none tracking-tight text-white">
 								Sign In{" "}
 								<span className="ml-1 tracking-normal text-sky-300 transition-transform duration-150 ease-in-out group-hover:translate-x-0.5">
 									-&gt;
