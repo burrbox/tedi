@@ -17,6 +17,7 @@
 		"email": "email dev --dir ./src/components/emails"
 	},
 	"dependencies": {
+		"@auth/core": "^0.34.1",
 		"@auth/prisma-adapter": "^2.4.1",
 		"@heroicons/react": "^2.1.5",
 		"@prisma/client": "^5.16.1",
