@@ -45,20 +45,22 @@ export default function Footer() {
 								e.preventDefault();
 								await addEmailSubscription(email);
 							}}>
-							<h4 className="py-2 text-blue-600 dark:text-blue-300">Email*</h4>
-							<span className="w-1/2 border-b-4 border-b-green-600 py-1 text-xl text-green-600 dark:text-green-500">
-								<input
-									id="email"
-									name="email"
-									type="email"
-									className="size-1/2 bg-transparent text-blue-700 outline-none"
-									value={email}
-									onChange={(e) => setEmail(e.target.value)}
-								/>
-								<button type="submit">
-									<label>Subscribe</label>
-								</button>
-							</span>
+							<label className="py-2 text-blue-600 dark:text-blue-300">
+								Email*
+								<div className="flex w-1/2 border-b-4 border-b-green-600 py-1 text-xl text-green-600 dark:text-green-500">
+									<input
+										id="email"
+										name="email"
+										type="email"
+										className="size-3/4 bg-transparent text-blue-700 outline-none"
+										value={email}
+										onChange={(e) => setEmail(e.target.value)}
+									/>
+									<label className="inline w-1/4 text-center">
+										<button type="submit">Subscribe</button>
+									</label>
+								</div>
+							</label>
 						</form>
 					</div>
 					<div className="md:flex md:items-center md:justify-between">
