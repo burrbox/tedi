@@ -1,8 +1,8 @@
-import Image from "next/image";
 import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { team } from "@/lib/constants";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
+import { InstagramIcon, LinkedInIcon, TikTokIcon, TwitterXIcon } from "@/components/icons";
 
 export default function AboutPage() {
 	return (
@@ -49,7 +49,7 @@ export default function AboutPage() {
 						backgroundImage: "url(https://www.campusfrance.org/sites/default/files/medias/images/2022-02/Ocean.jpg)",
 					}}>
 					<div className="w-screen">
-						<div className="w-screen rounded-b-2xl bg-white py-2 dark:bg-stone-900 md:px-20">
+						<div className="w-screen rounded-b-2xl bg-white py-2 md:px-20 dark:bg-stone-900">
 							<h2 className="mb-6 text-center text-3xl font-bold text-green-700 dark:text-green-500">Our Values</h2>
 							<hr className="mx-auto mb-6 w-12 border-t-4 border-green-700"></hr>
 						</div>
@@ -116,46 +116,30 @@ export default function AboutPage() {
 								<div className="mt-4 flex space-x-4">
 									{member.email && (
 										<Link href={`mailto:${member.email}`}>
-											<EnvelopeIcon className="h-6 w-6" name="Member's email" />
+											<EnvelopeIcon className="h-6 w-6 dark:text-gray-200" name={`Send an email to ${member.name}`} />
 										</Link>
 									)}
 									{member.linkedin && (
 										<Link href={member.linkedin}>
-											<Image
-												src="/linkedin.svg"
-												className="dark:fill-white"
-												alt="Link to linkedin"
-												width={24}
-												height={24}
-												color="#0A66C2"
-											/>
+											<LinkedInIcon className="h-6 w-6 dark:fill-gray-200" name={`Link to ${member.name}'s LinkedIn`} />
 										</Link>
 									)}
 									{member.twitter && (
 										<Link href={member.twitter}>
-											<Image src="/x.svg" className="dark:fill-white" alt="Link to twitter" width={24} height={24} />
+											<TwitterXIcon className="h-6 w-6 dark:fill-gray-200" name={`Link to ${member.name}'s Twitter`} />
 										</Link>
 									)}
 									{member.instagram && (
 										<Link href={member.instagram}>
-											<Image
-												src="/instagram.svg"
-												className="dark:fill-white"
-												alt="Link to instagram"
-												width={24}
-												height={24}
+											<InstagramIcon
+												className="h-6 w-6 dark:fill-gray-200"
+												name={`Link to ${member.name}'s Instagram`}
 											/>
 										</Link>
 									)}
 									{member.tiktok && (
-										<Link href={member.instagram}>
-											<Image
-												src="/tiktok.svg"
-												className="dark:fill-white"
-												alt="Link to tiktok"
-												width={24}
-												height={24}
-											/>
+										<Link href={member.tiktok}>
+											<TikTokIcon className="h-6 w-6 dark:fill-gray-200" name={`Link to ${member.name}'s Tiktok`} />
 										</Link>
 									)}
 								</div>
@@ -164,7 +148,7 @@ export default function AboutPage() {
 					</div>
 				</div>
 			</section>
-			<section className="mx-2 w-full bg-white py-8 dark:bg-stone-900 md:mx-4 lg:mx-8">
+			<section className="mx-2 w-full bg-white py-8 md:mx-4 lg:mx-8 dark:bg-stone-900">
 				<div className="flex justify-center">
 					<h1 className="py-4 text-center text-6xl text-green-700 dark:text-green-500">Partnerships</h1>
 				</div>
