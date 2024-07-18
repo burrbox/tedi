@@ -23,15 +23,22 @@ export default function Header() {
 	const path = usePathname();
 
 	return (
-		<header className="fixed z-30 w-full bg-white shadow-md">
+		<header className="fixed z-30 w-full bg-white shadow-md dark:bg-stone-900">
 			<div className="container mx-auto flex items-center justify-between px-4 py-4">
 				<Link href={"/"} className="flex items-center space-x-2">
 					<CldImage width="40" height="40" src="logo" alt="Logo" className="h-10 w-10" />
-					<h1 className="hidden text-xl font-bold text-green-700 sm:block">The Environmental Defense Initiative</h1>
+					<h1 className="hidden text-xl font-bold text-green-700 dark:text-blue-400 sm:block">
+						The Environmental Defense Initiative
+					</h1>
 				</Link>
 				<nav className="flex items-center space-x-8 text-lg">
 					{links.map((link) => (
-						<Link key={link.name} href={link.href} className={link.href === path ? "text-green-700" : "text-blue-700"}>
+						<Link
+							key={link.name}
+							href={link.href}
+							className={
+								link.href === path ? "text-green-700 dark:text-green-300" : "text-blue-700 dark:text-blue-400"
+							}>
 							{link.name}
 						</Link>
 					))}
@@ -48,8 +55,8 @@ export default function Header() {
 									/>
 								</div>
 								<div className="hidden lg:block">
-									<div className="text-base font-medium text-gray-800">{session?.user.name}</div>
-									<div className="text-sm font-medium text-gray-600">{session?.user.email}</div>
+									<div className="text-base font-medium text-gray-800 dark:text-white">{session?.user.name}</div>
+									<div className="text-sm font-medium text-gray-600 dark:text-gray-300">{session?.user.email}</div>
 								</div>
 							</div>
 						</div>

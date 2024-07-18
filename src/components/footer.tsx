@@ -7,7 +7,7 @@ import { useState } from "react";
 export default function Footer() {
 	const [email, setEmail] = useState("");
 	return (
-		<footer className="relative">
+		<footer className="relative bg-white dark:bg-stone-900">
 			<div className="mx-auto max-w-6xl px-4 sm:px-6">
 				<div className="-mt-px border-t border-gray-200 py-12 dark:border-gray-800 md:py-16">
 					{/* Footer illustration */}
@@ -27,7 +27,7 @@ export default function Footer() {
 									r="1"
 									gradientUnits="userSpaceOnUse"
 									gradientTransform="rotate(90 0 400) scale(315.089)">
-									<stop stopColor="#3ABAB4" />
+									<stop stopColor="#3ABAB4 dark:#7D55C3" />
 									<stop offset="1" stopColor="#3ABAB4" stopOpacity=".01" />
 								</radialGradient>
 							</defs>
