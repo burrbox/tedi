@@ -59,7 +59,7 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 								<header className="mb-8">
 									{/* Title and excerpt */}
 									<div className="text-center md:text-left">
-										<h1 className="h1 font-red-hat-display mb-4 dark:text-green-500" data-aos="fade-down">
+										<h1 className="h1 font-red-hat-display mb-4 dark:text-green-600" data-aos="fade-down">
 											{post.title}
 										</h1>
 										<p className="text-xl text-gray-600 dark:text-stone-300" data-aos="fade-down" data-aos-delay="150">
@@ -100,10 +100,12 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 
 								{/* Article content */}
 								<div
-									className="prose mb-8 prose-td:border-2 prose-td:border-gray-500 prose-td:p-2"
+									className="prose mb-8 prose-td:border-2 prose-td:border-gray-500 prose-td:p-2 dark:prose-td:border-white"
 									data-aos="fade-up"
 									data-aos-delay="450">
-									<Mdx content={post.content} />
+									<span className="text-white">
+										<Mdx content={post.content} />
+									</span>
 								</div>
 							</article>
 							<div className="dark:bg-stone-900">
@@ -113,23 +115,23 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 										social media platforms!
 									</h3>
 									<div className="py-6 text-black dark:text-white">
-										<ul className="mb-4 flex gap-2 md:order-2 md:mb-0 md:ml-4 md:gap-4">
-											<button className="rounded-xl bg-green-700 px-5 py-2">
+										<ul className="mx-auto mb-4 flex flex-wrap justify-center gap-2 md:order-2 md:mb-0 md:ml-4 md:gap-4">
+											<button className="w-32 rounded-xl bg-green-700 py-2">
 												<label>
 													<a href="https://www.instagram.com/environmentaldefenseinitiative/">Instagram</a>
 												</label>
 											</button>
-											<button className="rounded-xl bg-green-700 px-5 py-2">
+											<button className="w-32 rounded-xl bg-green-700 py-2">
 												<label>
 													<a href="https://medium.com/@environmentaldefenseinitiative">Medium</a>
 												</label>
 											</button>
-											<button className="rounded-xl bg-green-700 px-5 py-2">
+											<button className="w-32 rounded-xl bg-green-700 py-2">
 												<label>
 													<a href="https://www.youtube.com/channel/UCLJIczzKZWeqsa2Pmg55F6g">YouTube</a>
 												</label>
 											</button>
-											<button className="rounded-xl bg-green-700 px-5 py-2">
+											<button className="w-32 rounded-xl bg-green-700 py-2">
 												<label>
 													<a href="https://www.tiktok.com/@tediactivism">TikTok</a>
 												</label>
@@ -137,10 +139,10 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 										</ul>
 									</div>
 									<div>
-										<p>
+										<p className="text-green-500">
 											Author: <span>{post.author}</span>
 											<br />
-											Editor: <span>{post.editor}</span>
+											Editor: <span>{post.author}</span>
 										</p>
 									</div>
 								</div>
