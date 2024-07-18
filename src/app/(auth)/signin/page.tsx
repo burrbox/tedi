@@ -15,13 +15,13 @@ export default function SignIn({ searchParams }: { searchParams: Record<string, 
 
 	const [loading, setLoading] = useState(false);
 
-	if (status === "authenticated") redirect("/courses");
+	if (status === "authenticated") redirect((searchParams.redirect ?? "/blog").toString());
 
 	async function handleSubmit(e: FormEvent) {
 		e.preventDefault();
 		setLoading(true);
 
-		const res = await signIn("email", { email, callbackUrl: (searchParams.redirect ?? "/blog").toString() });
+		const res = await signIn("resend", { email, callbackUrl: (searchParams.redirect ?? "/blog").toString() });
 		if (res?.error) alert(res.error);
 	}
 

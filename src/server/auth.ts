@@ -44,12 +44,12 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 		DiscordProvider,
 		GithubProvider,
 		ResendProvider({
-			from: "signin@deaplearning.com",
+			from: "signin@resend.dev",
 			async sendVerificationRequest({ identifier: email, url }) {
 				const result = await resend.emails.send({
-					from: "Ember <support@deaplearning.com>",
+					from: "TEDI <signin@resend.dev>",
 					to: [email],
-					subject: "Sign in to Ember",
+					subject: "Sign in to TEDI",
 					react: SignInEmail({ url }),
 				});
 				if (result.error ?? !result.data) throw new Error(`Could not send email: ${result.error?.message}`);
@@ -74,8 +74,9 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 		},
 	},
 	pages: {
-		// signIn: "/signin",
-		verifyRequest: "/verify",
+		signIn: "/signin",
+		// verifyRequest: "/verify",
+		error: "/error",
 	},
 	secret: env.NEXTAUTH_SECRET,
 	debug: false, // env.NODE_ENV === "development",
