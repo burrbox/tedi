@@ -118,7 +118,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 												className="mr-4 h-8 w-8 rounded-full"
 												src={member.image}
 												gravity="face"
-												crop="fill"
+												crop="thumb"
 												alt={`An image of ${member.name}.`}
 												height={32}
 												width={32}
