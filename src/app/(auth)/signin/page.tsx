@@ -3,13 +3,14 @@
 import type { FormEvent } from "react";
 import { useState } from "react";
 import { signIn, useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
+import { redirect, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Loading from "@/components/loading";
-// import { envClient } from "@/envClient";
+import { type SignInPageErrorParam } from "@auth/core/types";
 
-export default function SignIn({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {
+export default function SignIn() {
 	const { status } = useSession();
+	const searchParams = useSearchParams();
 	const [email, setEmail] = useState("");
 
 	const [loading, setLoading] = useState(false);
@@ -20,20 +21,24 @@ export default function SignIn({ searchParams }: { searchParams: Record<string, 
 		e.preventDefault();
 		setLoading(true);
 
-		const res = await signIn("email", {
-			email,
-			callbackUrl: Array.isArray(searchParams.redirect) ? "/blog" : searchParams.redirect ?? "/blog",
-		});
+		const res = await signIn("email", { email, callbackUrl: searchParams.get("redirect") ?? "/blog" });
 		if (res?.error) alert(res.error);
 	}
 
 	async function handleSignIn(provider: string): Promise<void> {
 		setLoading(true);
 		const res = await signIn(provider, {
-			callbackUrl: Array.isArray(searchParams.redirect) ? "/blog" : searchParams.redirect ?? "/blog",
+			callbackUrl: searchParams.get("redirect") ?? "/blog",
 		});
 		if (res?.error) alert(res.error);
 	}
+
+	// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion, @typescript-eslint/no-redundant-type-constituents
+	const error = searchParams.get("error") as SignInPageErrorParam | string | null;
+
+	const errorMeanings = {
+		OAuthAccountNotLinked: "This email is already associated with another account.",
+	} as Record<string, string | undefined>;
 
 	return (
 		<div className="dark:bg-stone-900">
@@ -42,11 +47,20 @@ export default function SignIn({ searchParams }: { searchParams: Record<string, 
 					<title>Sign-In | TEDI</title>
 					<meta name="description" content="Sign in to your TEDI account and get to learning!" />
 				</head>
-				<div className="pb-12 pt-32 md:pb-20 md:pt-40">
+				<div className="pb-12 pt-24 md:pb-20 md:pt-32">
 					{/* Page header */}
 					<div className="mx-auto max-w-3xl pb-12 text-center">
-						<h1 className="h2 font-hkgrotesk dark:text-blue-400">Welcome back!</h1>
+						<h1 className="h2 dark:text-blue-400">Welcome back!</h1>
 					</div>
+
+					{/* Error message */}
+					{error && (
+						<div className="mx-auto mb-8 max-w-sm">
+							<div className="rounded border border-red-400 bg-red-100 p-4 text-red-700 dark:border-red-600 dark:bg-red-800 dark:text-red-100">
+								{errorMeanings[error] ?? "An error occurred. Please try again."}
+							</div>
+						</div>
+					)}
 
 					{/* Form */}
 					<div className="mx-auto max-w-sm">
