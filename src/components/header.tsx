@@ -24,7 +24,7 @@ const links = [
 ];
 
 export default function Header() {
-	const { data: session } = useSession();
+	const { data: session, update: updateSession } = useSession();
 
 	console.log(session);
 
@@ -77,7 +77,13 @@ export default function Header() {
 								<DropdownMenuItem>Profile</DropdownMenuItem>
 								<DropdownMenuItem>Settings</DropdownMenuItem>
 								<DropdownMenuItem>
-									<button onClick={() => signOut()}>Sign Out</button>
+									<button
+										onClick={async () => {
+											await signOut();
+											await updateSession();
+										}}>
+										Sign Out
+									</button>
 								</DropdownMenuItem>
 							</DropdownMenuContent>
 						</DropdownMenu>
