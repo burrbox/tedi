@@ -6,7 +6,7 @@ import { InstagramIcon, LinkedInIcon, TikTokIcon, TwitterXIcon } from "@/compone
 
 export default function AboutPage() {
 	return (
-		<div className="flex w-full flex-col items-center dark:bg-stone-900">
+		<div className="flex w-full flex-col items-center">
 			<section className="relative h-[400px] w-full">
 				<CloudinaryClientWrapper
 					width="960"

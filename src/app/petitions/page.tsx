@@ -3,7 +3,7 @@ import PetitionForm from "./petitionForm";
 
 export default async function Petitions({}) {
 	return (
-		<section className="h-full w-full flex-col items-end dark:bg-stone-900">
+		<section className="h-full w-full flex-col items-end">
 			<div
 				title="An background image of a butterfly"
 				style={{
@@ -13,7 +13,7 @@ export default async function Petitions({}) {
 				className="flex h-[70vh] w-screen bg-cover bg-fixed bg-center bg-no-repeat">
 				<div className="container relative mx-auto h-fit w-full px-4 py-16">
 					<div className="absolute inset-0 mx-auto mt-28 w-fit md:mt-32 lg:mt-44 2xl:mt-52" data-aos="fade-down">
-						<div className="flex flex-col justify-center rounded-xl bg-white p-10 dark:bg-emerald-950 lg:p-20">
+						<div className="flex flex-col justify-center rounded-xl bg-white p-10 lg:p-20 dark:bg-emerald-950">
 							<h1 className="text-center text-6xl font-bold text-blue-600 dark:text-white">Petitions</h1>
 							<h2 className="text-wrap pt-6 text-center text-xl text-green-600 dark:text-green-300">
 								Be the change you want to see in the world.
@@ -54,7 +54,7 @@ export default async function Petitions({}) {
 								<h1 className="text-center text-3xl font-semibold text-blue-700 dark:text-blue-500">
 									{petition.title}
 								</h1>
-								<h2 className="mx-4 whitespace-pre-line pt-6 text-sm text-green-700 dark:text-blue-300 md:mx-6 md:text-sm lg:mx-8 lg:text-base">
+								<h2 className="mx-4 whitespace-pre-line pt-6 text-sm text-green-700 md:mx-6 md:text-sm lg:mx-8 lg:text-base dark:text-blue-300">
 									{petition.description}
 								</h2>
 							</div>

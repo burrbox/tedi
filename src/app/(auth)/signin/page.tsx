@@ -37,7 +37,7 @@ export default function SignIn({ searchParams }: { searchParams: Record<string, 
 	} as Record<SignInPageErrorParam | string, string | undefined>;
 
 	return (
-		<div className="dark:bg-stone-900">
+		<div>
 			<div className="relative mx-auto max-w-6xl px-4 sm:px-6">
 				<head>
 					<title>Sign-In | TEDI</title>

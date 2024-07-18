@@ -35,7 +35,7 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 
 	return (
 		<>
-			<section className="relative dark:bg-stone-900">
+			<section className="relative">
 				{/* Background image */}
 				{post.image && (
 					<div className="h-128 absolute inset-0 box-content pt-16">

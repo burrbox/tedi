@@ -26,7 +26,7 @@ export default async function Blog() {
 	return (
 		<>
 			{/* Featured post */}
-			<section className="w-full py-12 dark:bg-stone-900 md:py-16 lg:py-20">
+			<section className="w-full py-12 md:py-16 lg:py-20">
 				<div className="mx-auto mb-12 max-w-6xl md:mb-16 lg:mb-20">
 					{featuredPost.image && (
 						<div className="relative h-[400px] overflow-hidden rounded-lg md:h-[500px] lg:h-[600px]">
@@ -45,10 +45,10 @@ export default async function Blog() {
 										<span className="inline-block rounded-full bg-green-600 px-3 py-1 font-medium text-white">
 											Featured
 										</span>
-										<h1 className="mb-3 text-3xl font-bold text-blue-600 dark:text-blue-400 md:mb-4 md:text-4xl lg:mb-5 lg:text-5xl">
+										<h1 className="mb-3 text-3xl font-bold text-blue-600 md:mb-4 md:text-4xl lg:mb-5 lg:text-5xl dark:text-blue-400">
 											{featuredPost.title}
 										</h1>
-										<div className="mb-4 flex items-center text-sm text-black dark:text-white md:mb-5 md:text-base lg:mb-6 lg:text-lg">
+										<div className="mb-4 flex items-center text-sm text-black md:mb-5 md:text-base lg:mb-6 lg:text-lg dark:text-white">
 											<div className="mr-4">
 												<CloudinaryClientWrapper
 													className="mr-3 shrink-0 rounded-full"
@@ -66,7 +66,7 @@ export default async function Blog() {
 												</span>
 											</div>
 										</div>
-										<p className="mb-6 line-clamp-3 text-base text-gray-600 dark:text-stone-300 md:mb-8 md:text-lg lg:mb-10 lg:text-xl">
+										<p className="mb-6 line-clamp-3 text-base text-gray-600 md:mb-8 md:text-lg lg:mb-10 lg:text-xl dark:text-stone-300">
 											{featuredPost.summary}
 										</p>
 										<div>
