@@ -7,6 +7,7 @@ import { getPosts } from "@/lib/serverActions";
 import { team } from "@/lib/constants";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { format } from "date-fns";
+import { env } from "@/env";
 
 export async function generateStaticParams() {
 	return (await getPosts()).map((post) => ({
@@ -24,6 +25,22 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 	return {
 		title,
 		description,
+		openGraph: {
+			type: "article",
+			title,
+			description,
+			url: `${env.URL}/blog/${params.slug}`,
+			images: post.image
+				? [
+						{
+							url: post.image,
+							width: 1440,
+							height: 577,
+							alt: title,
+						},
+					]
+				: undefined,
+		},
 	};
 }
 

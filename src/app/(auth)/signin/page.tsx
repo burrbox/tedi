@@ -41,7 +41,7 @@ export default function SignIn({ searchParams }: { searchParams: Record<string, 
 			<div className="relative mx-auto max-w-6xl px-4 sm:px-6">
 				<head>
 					<title>Sign-In | TEDI</title>
-					<meta name="description" content="Sign in to your TEDI account and get to learning!" />
+					<meta name="description" content="Sign in to your TEDI account!" />
 				</head>
 				<div className="pb-12 pt-24 md:pb-20 md:pt-32">
 					{/* Page header */}

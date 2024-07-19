@@ -5,12 +5,30 @@ import { type Prisma } from "@prisma/client";
 import { team } from "@/lib/constants";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { format } from "date-fns";
+import { type Metadata } from "next";
+import { env } from "@/env";
+import { getCldOgImageUrl } from "next-cloudinary";
 // import RelatedPosts from "@/components/related-posts-01";
 // import PostItem from "@/components/post-item";
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: "Blog - TEDI",
 	description: "Read the latest articles from the Environmental Defense Initiative.",
+	openGraph: {
+		type: "website",
+		siteName: "The Environmental Defense Initiative",
+		title: "Blog - TEDI",
+		description: "Read the latest articles from the Environmental Defense Initiative.",
+		url: `${env.URL}/blog`,
+		images: [
+			{
+				url: getCldOgImageUrl({ src: "nature/tallForest" }),
+				width: 1200,
+				height: 627,
+				alt: "An image of a forest",
+			},
+		],
+	},
 };
 
 const getPostAuthor = (post: Prisma.PostGetPayload<null>) =>

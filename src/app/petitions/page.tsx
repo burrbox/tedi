@@ -1,27 +1,29 @@
 import { petition } from "@/lib/constants";
 import PetitionForm from "./petitionForm";
-import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
-import { ImageResponse } from "next/og";
+import { type Metadata } from "next";
+import { env } from "@/env";
+import { getCldOgImageUrl } from "next-cloudinary";
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: "Petitions - TEDI",
 	description: "Be the change you want to see in the world.",
+	openGraph: {
+		url: `${env.URL}/petitions`,
+		title: "Petitions - TEDI",
+		type: "website",
+		description: "Sign a petition to advocate for new policies.",
+		images: [
+			{
+				url: getCldOgImageUrl({ src: "nature/tallForest" }),
+				width: 1200,
+				height: 627,
+				alt: "An image of the Redwood Forest",
+			},
+		],
+	},
 };
 
 export default async function Petitions({}) {
-	<head>
-		<title>Petitions - TEDI</title>
-		<meta
-			property="og:image"
-			content="https://res.cloudinary.com/mozzarella-tedi/image/upload/f_auto,q_auto/v1/nature/tallForest"
-		/>
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
-		<meta property="og:type" content="Blog home page" />
-		<meta property="og:url" content="https://www.tedinitative.org/blog/" />
-		<meta property="og:description" content="Sign a petition to advocate for new policies." />
-	</head>;
-
 	return (
 		<section className="h-full w-full flex-col items-end">
 			<div

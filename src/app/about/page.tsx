@@ -3,10 +3,28 @@ import Link from "next/link";
 import { team } from "@/lib/constants";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { InstagramIcon, LinkedInIcon, TikTokIcon, TwitterXIcon } from "@/components/icons";
+import { env } from "@/env";
+import { type Metadata } from "next";
+import { getCldOgImageUrl } from "next-cloudinary";
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: "About - TEDI",
 	description: "Learn more about The Environmental Defense Initiative and our mission.",
+	openGraph: {
+		title: "About - TEDI",
+		description: "Learn more about The Environmental Defense Initiative and our mission.",
+		url: `${env.URL}/about`,
+		type: "website",
+		images: [
+			{
+				url: getCldOgImageUrl({ src: "nature/tallForest" }),
+				width: 1200,
+				height: 627,
+				alt: "An image of a forest",
+			},
+		],
+		siteName: "The Environmental Defense Initiative",
+	},
 };
 
 export default function AboutPage() {

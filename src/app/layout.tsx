@@ -14,6 +14,12 @@ export const metadata: Metadata = {
 	icons: [
 		{ rel: "icon", url: `https://res.cloudinary.com/${env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/logo.png` },
 	],
+	openGraph: {
+		type: "website",
+		siteName: "The Environmental Defense Initiative",
+		title: "The Environmental Defense Initiative",
+		description: "We defend the environment.",
+	},
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
