@@ -2,7 +2,6 @@
 
 import { auth } from "@/server/auth";
 import { db } from "@/server/db";
-import { type Prisma } from "@prisma/client";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
