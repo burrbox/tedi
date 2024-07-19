@@ -1,7 +1,16 @@
 import { petition } from "@/lib/constants";
 import PetitionForm from "./petitionForm";
+import Head from "next/head";
 
 export default async function Petitions({}) {
+	<head>
+		<title>Petitions - TEDI</title>
+		<meta
+			property="og:image"
+			content="https://static.wixstatic.com/media/7cc6b0344c9440818bad598dd590ed27.jpg/v1/fill/w_1587,h_654,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/7cc6b0344c9440818bad598dd590ed27.jpg"
+		/>
+		<meta property="og:description" content="Sign a petition to advocate for new policies." />
+	</head>;
 	return (
 		<section className="h-full w-full flex-col items-end">
 			<div
