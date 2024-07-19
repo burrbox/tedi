@@ -2,7 +2,7 @@ import { EnvelopeIcon, GlobeAmericasIcon, MapPinIcon } from "@heroicons/react/24
 import Link from "next/link";
 import { team } from "@/lib/constants";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
-import { InstagramIcon, LinkedInIcon, TikTokIcon, TwitterXIcon } from "@/components/icons";
+import { GithubIcon, InstagramIcon, LinkedInIcon, TikTokIcon, TwitterXIcon } from "@/components/icons";
 import { env } from "@/env";
 import { type Metadata } from "next";
 import { getCldOgImageUrl } from "next-cloudinary";
@@ -147,6 +147,11 @@ export default function AboutPage() {
 									{member.linkedin && (
 										<Link href={member.linkedin}>
 											<LinkedInIcon className="h-6 w-6 dark:fill-gray-200" name={`Link to ${member.name}'s LinkedIn`} />
+										</Link>
+									)}
+									{member.github && (
+										<Link href={member.github}>
+											<GithubIcon className="h-6 w-6 dark:fill-gray-200" name={`Link to ${member.name}'s Github`} />
 										</Link>
 									)}
 									{member.twitter && (

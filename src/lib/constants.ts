@@ -19,6 +19,7 @@ export const team = [
 		email: "nash.pillai@protonmail.com",
 		linkedin: "https://www.linkedin.com/in/nash-pillai/",
 		website: "https://nashpillai.com/about",
+		github: "https://github.com/nash-pillai/",
 	},
 	{
 		name: "Hiroyuki Sakuma",
@@ -29,6 +30,7 @@ export const team = [
 		email: "hiroyuki.sakuma1@gmail.com",
 		twitter: "https://www.twitter.com/hryksakuma",
 		instagram: "https://www.instagram.com/hryk.sakuma",
+		github: "https://github.com/HiroDookie/",
 	},
 	{
 		name: "Kailey Fitzgerald",
@@ -170,6 +172,7 @@ export const team = [
 	instagram?: string;
 	tiktok?: string;
 	website?: string;
+	github?: string;
 }[];
 
 export const petition = {
