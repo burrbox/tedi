@@ -5,7 +5,7 @@ import { getPosts } from "@/lib/serverActions";
 export async function GET(request: NextRequest) {
 	const articles = (await getPosts())
 		.map((article) => {
-			const url = `${process.env.URL}/blog/${article.slug}`;
+			const url = `${env.URL}/blog/${article.slug}`;
 
 			return `<item>
 				<title>${article.title}</title>
