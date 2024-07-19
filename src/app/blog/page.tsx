@@ -9,7 +9,7 @@ import { format } from "date-fns";
 // import PostItem from "@/components/post-item";
 
 export const metadata = {
-	title: "Blog - The Environmental Defense Initiative",
+	title: "Blog - TEDI",
 	description: "Read the latest articles from the Environmental Defense Initiative.",
 };
 

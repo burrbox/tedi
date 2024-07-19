@@ -1,16 +1,49 @@
 import { petition } from "@/lib/constants";
 import PetitionForm from "./petitionForm";
 import Head from "next/head";
+import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
+import { ImageResponse } from "next/og";
+
+export async function GET() {
+	return new ImageResponse(
+		(
+			<div
+				style={{
+					fontSize: 40,
+					color: "black",
+					background: "white",
+					width: "100%",
+					height: "100%",
+					padding: "50px 200px",
+					textAlign: "center",
+					justifyContent: "center",
+					alignItems: "center",
+				}}>
+				👋 Hello
+			</div>
+		),
+		{
+			width: 1200,
+			height: 630,
+		},
+	);
+}
+
+export const metadata = {
+	title: "Petitions - TEDI",
+	description: "Be the change you want to see in the world.",
+};
 
 export default async function Petitions({}) {
-	<head>
+	<Head>
 		<title>Petitions - TEDI</title>
 		<meta
 			property="og:image"
 			content="https://static.wixstatic.com/media/7cc6b0344c9440818bad598dd590ed27.jpg/v1/fill/w_1587,h_654,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/7cc6b0344c9440818bad598dd590ed27.jpg"
 		/>
 		<meta property="og:description" content="Sign a petition to advocate for new policies." />
-	</head>;
+	</Head>;
+
 	return (
 		<section className="h-full w-full flex-col items-end">
 			<div

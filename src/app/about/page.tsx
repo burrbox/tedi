@@ -4,6 +4,11 @@ import { team } from "@/lib/constants";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { InstagramIcon, LinkedInIcon, TikTokIcon, TwitterXIcon } from "@/components/icons";
 
+export const metadata = {
+	title: "About - TEDI",
+	description: "Learn more about The Environmental Defense Initiative and our mission.",
+};
+
 export default function AboutPage() {
 	return (
 		<div className="flex w-full flex-col items-center">

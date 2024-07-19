@@ -1,3 +1,8 @@
+export const metadata = {
+	title: "Home - TEDI",
+	description: "Welcome to The Environmental Defense Initiative.",
+};
+
 export default async function Home() {
 	return (
 		<div
