@@ -3,6 +3,7 @@ import PetitionForm from "./petitionForm";
 import { type Metadata } from "next";
 import { env } from "@/env";
 import { getCldOgImageUrl } from "next-cloudinary";
+import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 
 export const metadata: Metadata = {
 	title: "Petitions - TEDI",
@@ -50,16 +51,16 @@ export default async function Petitions({}) {
 			<div className="h-fit w-full bg-white dark:bg-stone-900">
 				<div className="flex flex-row justify-center py-8">
 					<span>
-						<img
-							alt="An image of a protest. One of the protesters is holding a sign that reads 'The Climate is Chagning. Why aren't we?'."
-							src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpeoplesdispatch.org%2Fwp-content%2Fuploads%2F2019%2F03%2Fglobal-strike-4-climate.jpg&f=1&nofb=1&ipt=dcb808b33e4a67306edfd9698dc60df55f4bc148211da879e84eb43727088751&ipo=images"
+						<CloudinaryClientWrapper
+							src="other/many-signs"
+							alt="An image of a protest with many people holding various signs for environmental protection."
 							className="h-96 object-cover"
 						/>
 					</span>
 					<span>
-						<img
-							alt="An image of a protest. One of the protesters is holding a sign of the world on fire and read 'WAKE UP'."
-							src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.V-oo5LTTojTNnhLqkqNYQwHaE8%26pid%3DApi&f=1&ipt=3e5984c18fcfe9f3f90f5ce7118ab302ef61af3ab8fbbe8d0933ab2b04929de7&ipo=images"
+						<CloudinaryClientWrapper
+							src="other/act-now"
+							alt="An image of a protest. One of the protesters is holding a sign that reads '#ACTNOW'."
 							className="h-96 object-cover"
 						/>
 					</span>
