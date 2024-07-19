@@ -26,7 +26,7 @@ export default async function Blog() {
 	return (
 		<>
 			{/* Featured post */}
-			<section className="w-full py-12 md:py-16 lg:py-20">
+			<section className="lg:pb-18 w-full pb-12 pt-6 md:pb-16 md:pt-10 lg:pt-14">
 				{/* Header in case we ever want to use it */}
 				{/*<div className="relative h-[400px] w-full bg-fixed pb-10">
 					<CloudinaryClientWrapper
@@ -49,11 +49,13 @@ export default async function Blog() {
 				</div>*/}
 				<div className="relative mx-auto mb-3 max-w-6xl justify-center md:mb-4 lg:mb-5">
 					<input
-						className="mx-auto size-10/12 w-full justify-center rounded-full bg-green-100 py-2 pl-4 text-blue-900 dark:bg-white dark:text-black"
-						placeholder="Search for articles by TEDI"
+						className="mx-auto size-10/12 w-full justify-center rounded-full bg-green-100 py-2 pl-4 text-blue-900 duration-300 dark:bg-stone-700 dark:text-white dark:hover:bg-gray-500 dark:focus:bg-gray-500 dark:focus:outline-none"
+						placeholder="Search for articles by TEDI..."
 						title="search for articles"
 					/>
-					<button className="absolute inset-y-0 right-0 rounded-full bg-green-500 py-2 md:w-2/12" title="search">
+					<button
+						className="absolute inset-y-0 right-0 rounded-full bg-green-500 py-2 duration-300 hover:bg-green-400 md:w-2/12 dark:bg-emerald-900 dark:text-white dark:hover:bg-emerald-800"
+						title="search">
 						Search
 					</button>
 				</div>

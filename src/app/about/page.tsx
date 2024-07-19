@@ -16,7 +16,7 @@ export default function AboutPage() {
 				<CloudinaryClientWrapper
 					width="960"
 					height="600"
-					src="nature/forest"
+					src="nature/mountainWide"
 					sizes="100vw"
 					alt="Forest"
 					className="h-full w-full object-cover"
@@ -51,7 +51,8 @@ export default function AboutPage() {
 				<div
 					className="relative flex min-h-[50vh] w-screen flex-col bg-cover bg-fixed bg-center bg-repeat"
 					style={{
-						backgroundImage: "url(https://www.campusfrance.org/sites/default/files/medias/images/2022-02/Ocean.jpg)",
+						backgroundImage:
+							"url(https://res.cloudinary.com/mozzarella-tedi/image/upload/f_auto,q_auto/v1/nature/waterfall)",
 					}}>
 					<div className="w-screen">
 						<div className="w-screen rounded-b-2xl bg-white py-2 md:px-20 dark:bg-stone-900">
