@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 	title: "Petitions - TEDI",
 	description: "Be the change you want to see in the world.",
 	openGraph: {
+		siteName: "The Environmental Defense Initiative",
 		url: `${env.URL}/petitions`,
 		title: "Petitions - TEDI",
 		type: "website",

@@ -1,6 +1,21 @@
-export const metadata = {
+import { type Metadata } from "next";
+import { getCldOgImageUrl } from "next-cloudinary";
+
+export const metadata: Metadata = {
 	title: "Home - TEDI",
 	description: "Welcome to The Environmental Defense Initiative.",
+	openGraph: {
+		type: "website",
+		siteName: "The Environmental Defense Initiative",
+		title: "Home - TEDI",
+		description: "Welcome to The Environmental Defense Initiative.",
+		images: {
+			url: getCldOgImageUrl({ src: "nature/tallForest" }),
+			width: 1200,
+			height: 627,
+			alt: "An image of a forest",
+		},
+	},
 };
 
 export default async function Home() {

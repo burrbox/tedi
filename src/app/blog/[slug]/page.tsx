@@ -8,6 +8,7 @@ import { team } from "@/lib/constants";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { format } from "date-fns";
 import { env } from "@/env";
+import { getCldOgImageUrl } from "next-cloudinary";
 
 export async function generateStaticParams() {
 	return (await getPosts()).map((post) => ({
@@ -26,6 +27,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 		title,
 		description,
 		openGraph: {
+			siteName: "The Environmental Defense Initiative",
 			type: "article",
 			title,
 			description,
@@ -33,7 +35,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 			images: post.image
 				? [
 						{
-							url: post.image,
+							url: getCldOgImageUrl({ src: post.image }),
 							width: 1440,
 							height: 577,
 							alt: title,
