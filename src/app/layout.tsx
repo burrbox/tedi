@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 		siteName: "The Environmental Defense Initiative",
 		title: "The Environmental Defense Initiative",
 		description: "We defend the environment.",
+		url: env.URL,
 	},
 };
 

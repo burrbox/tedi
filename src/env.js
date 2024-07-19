@@ -26,6 +26,7 @@ export const env = createEnv({
 		AUTH_RESEND_KEY: z.string(),
 		URL: z.string().url(),
 		CLOUDINARY_API_SECRET: z.string(),
+		VERCEL_URL: z.string().optional(),
 	},
 
 	/**
@@ -58,6 +59,7 @@ export const env = createEnv({
 		NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
 		NEXT_PUBLIC_CLOUDINARY_API_KEY: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
 		CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,
+		VERCEL_URL: process.env.VERCEL_URL,
 	},
 	/**
 	 * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
