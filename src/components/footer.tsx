@@ -53,7 +53,8 @@ export default function Footer() {
 										id="email"
 										name="email"
 										type="email"
-										className="size-3/4 bg-transparent text-blue-700 outline-none"
+										className="size-3/4 border-none bg-transparent text-blue-700 focus:outline-none"
+										placeholder="Your email"
 										value={email}
 										onChange={(e) => setEmail(e.target.value)}
 									/>

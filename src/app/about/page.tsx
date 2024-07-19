@@ -115,7 +115,8 @@ export default function AboutPage() {
 			<section className="w-full bg-white py-16 dark:bg-stone-900">
 				<div className="container mx-auto px-4">
 					<h2 className="mb-8 text-center text-3xl font-bold text-green-700 dark:text-green-500">Meet the Team</h2>
-					<div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+					<hr className="mx-auto w-1/4 justify-center border-2 border-green-500" />
+					<div className="grid gap-8 pt-5 md:grid-cols-2 md:pt-7 lg:grid-cols-3 lg:pt-10">
 						{team.map((member) => (
 							<div
 								key={member.name}

@@ -133,29 +133,29 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 									</h3>
 									<div className="py-6 text-black dark:text-white">
 										<ul className="mx-auto mb-4 flex flex-wrap justify-center gap-2 md:order-2 md:mb-0 md:ml-4 md:gap-4">
-											<button className="w-32 rounded-xl bg-green-700 py-2">
+											<button className="w-32 rounded-xl bg-green-500 py-2 dark:bg-green-700">
 												<label>
 													<a href="https://www.instagram.com/environmentaldefenseinitiative/">Instagram</a>
 												</label>
 											</button>
-											<button className="w-32 rounded-xl bg-green-700 py-2">
+											<button className="w-32 rounded-xl bg-green-500 py-2 dark:bg-green-700">
 												<label>
 													<a href="https://medium.com/@environmentaldefenseinitiative">Medium</a>
 												</label>
 											</button>
-											<button className="w-32 rounded-xl bg-green-700 py-2">
+											<button className="w-32 rounded-xl bg-green-500 py-2 dark:bg-green-700">
 												<label>
 													<a href="https://www.youtube.com/channel/UCLJIczzKZWeqsa2Pmg55F6g">YouTube</a>
 												</label>
 											</button>
-											<button className="w-32 rounded-xl bg-green-700 py-2">
+											<button className="w-32 rounded-xl bg-green-500 py-2 dark:bg-green-700">
 												<label>
 													<a href="https://www.tiktok.com/@tediactivism">TikTok</a>
 												</label>
 											</button>
 										</ul>
 									</div>
-									<div>
+									<div className="pt-5 md:pt-10">
 										<p className="text-green-500">
 											Author: <span>{team.find((member) => member.name.toLowerCase() === post.author)?.name}</span>
 											<br />

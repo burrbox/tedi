@@ -26,7 +26,7 @@ export const team = [
 		title: "Senior Director of Website Development",
 		location: "Hopewell Junction, NY, USA",
 		image: "TEDI Bio/hiro",
-		description: `Hiroyuki is a junior and is interested in engineering, trains, and superconductors. Devoting a majority of his time to the school robotics club, he is the team's design leader and works on CAD. He also attends a Japanese weekend school.`,
+		description: `Hiroyuki uses arch, btw. He speaks Japanese with a native proficiency and is interested in robotics, computer science, and mathematics. He is passionate about environmental conservation and is excited to use his skills to help TEDI achieve its mission.`,
 		email: "hiroyuki.sakuma1@gmail.com",
 		twitter: "https://www.twitter.com/hryksakuma",
 		instagram: "https://www.instagram.com/hryk.sakuma",

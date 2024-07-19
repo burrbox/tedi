@@ -52,7 +52,7 @@ export default function Header() {
 						</Link>
 					))}
 					<button
-						className="group inline-flex items-center justify-center rounded bg-green-700 px-2 py-1 leading-snug shadow-sm sm:px-4 sm:py-2 md:w-max"
+						className="group inline-flex items-center justify-center rounded bg-green-500 px-2 py-1 leading-snug shadow-sm sm:px-4 sm:py-2 md:w-max dark:bg-green-700"
 						onClick={() => stripeDonation()}>
 						<span className="whitespace-pre-wrap from-white to-slate-900/10 text-center text-lg font-medium leading-none tracking-tight text-white">
 							Donate
