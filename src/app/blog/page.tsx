@@ -128,14 +128,13 @@ export default async function Blog() {
 								<hr className="border-1 mb-4 border-green-500 pb-4 md:pb-10" />
 
 								{/* Articles container */}
-								<div
-									className="grid items-start gap-12 sm:grid-cols-2 sm:gap-x-6 md:gap-y-8"
-									data-aos="fade-down"
-									data-aos-delay="200">
+								<div className="grid items-start gap-12 sm:grid-cols-2 sm:gap-x-6 md:gap-y-8">
 									{posts.map((post, postIndex) => (
 										<article
 											key={postIndex}
-											className="flex h-full flex-col rounded-xl bg-gray-100 p-10 duration-300 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600">
+											className="flex h-full flex-col rounded-xl bg-gray-100 p-10 duration-300 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600"
+											data-aos="fade-down"
+											data-aos-delay="200">
 											<header>
 												{post.image && (
 													<Link className="mb-4 block" href={`/blog/${post.slug}`}>

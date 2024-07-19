@@ -9,11 +9,6 @@ import Loading from "@/components/loading";
 import { type SignInPageErrorParam } from "@auth/core/types";
 import { DiscordIcon, GithubIcon, GoogleIcon } from "@/components/icons";
 
-export const metadata = {
-	title: "Sign In - TEDI",
-	description: "Sign in to your account",
-};
-
 export default function SignIn({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {
 	const { status } = useSession();
 	const [email, setEmail] = useState("");
