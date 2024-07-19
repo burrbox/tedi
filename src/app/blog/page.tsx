@@ -47,12 +47,15 @@ export default async function Blog() {
 						</div>
 					</div>
 				</div>*/}
-				<div className="mx-auto mb-3 max-w-6xl md:mb-4 lg:mb-5">
+				<div className="relative mx-auto mb-3 max-w-6xl justify-center md:mb-4 lg:mb-5">
 					<input
-						className="size-full rounded-full bg-green-100 py-2 pl-4 text-blue-900 dark:bg-white dark:text-black"
-						placeholder="Search..."
+						className="mx-auto size-10/12 w-full justify-center rounded-full bg-green-100 py-2 pl-4 text-blue-900 dark:bg-white dark:text-black"
+						placeholder="Search for articles by TEDI"
+						title="search for articles"
 					/>
-					<button className="bg-gren-500 w-1/8 inline rounded-full">Search</button>
+					<button className="absolute inset-y-0 right-0 rounded-full bg-green-500 py-2 md:w-2/12" title="search">
+						Search
+					</button>
 				</div>
 				<div className="lg:mb-18 mx-auto mb-12 max-w-6xl md:mb-16">
 					{featuredPost.image && (
