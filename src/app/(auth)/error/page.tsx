@@ -1,13 +1,21 @@
-"use client";
-
+import { auth } from "@/server/auth";
 import { type ErrorPageParam } from "@auth/core/types";
-import { useSession } from "next-auth/react";
+import { type Metadata } from "next";
 import { redirect } from "next/navigation";
 
-export default function ErrorPage({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {
-	const { status } = useSession();
+export const metadata: Metadata = {
+	title: "Error | TEDI",
+	description: "If you're here, then something went wrong.",
+};
 
-	if (status === "authenticated") redirect((searchParams.redirect ?? "/blog").toString());
+export default async function ErrorPage({
+	searchParams,
+}: {
+	searchParams: Record<string, string | string[] | undefined>;
+}) {
+	const session = await auth();
+
+	if (session) redirect((searchParams.redirect ?? "/blog").toString());
 
 	return (
 		<div className="relative mx-auto max-w-6xl px-4 sm:px-6">
