@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Mdx } from "@/components/mdx/mdx";
@@ -16,7 +16,10 @@ export async function generateStaticParams() {
 	}));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata | undefined> {
+export async function generateMetadata(
+	{ params }: { params: { slug: string } },
+	parent: ResolvingMetadata,
+): Promise<Metadata | undefined> {
 	const post = (await getPosts()).find((post) => post.slug === params.slug);
 
 	if (!post) return;
