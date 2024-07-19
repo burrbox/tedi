@@ -114,7 +114,9 @@ export default async function Blog() {
 												<span>
 													<span className="font-medium">{getPostAuthor(featuredPost).name}</span>
 													<span className="mx-2">•</span>
-													<span className="text-muted-foreground">created at</span>
+													<time dateTime={featuredPost.createdAt.toISOString()}>
+														{format(featuredPost.createdAt, "MMM d, yyyy")}
+													</time>
 												</span>
 											</div>
 										</div>
