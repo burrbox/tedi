@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 import RootLayoutClient from "./layoutClient";
 import { Analytics } from "@vercel/analytics/react";
 import { env } from "@/env";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
 	title: "The Environmental Defense Initiative",
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 				<TRPCReactProvider>
 					<RootLayoutClient>{children}</RootLayoutClient>
 				</TRPCReactProvider>
+				<SpeedInsights />
 				<Toaster />
 				<Analytics />
 			</body>
