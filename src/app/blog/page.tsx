@@ -27,6 +27,26 @@ export default async function Blog() {
 		<>
 			{/* Featured post */}
 			<section className="w-full py-12 md:py-16 lg:py-20">
+				{/* Header in case we ever want to use it */}
+				{/*<div className="relative h-[400px] w-full bg-fixed pb-10">
+					<CloudinaryClientWrapper
+						className="relative h-full w-full object-cover"
+						src="nature/forest"
+						alt="background image"
+						width={1440}
+						height={1080}
+					/>
+					<div className="absolute inset-0 mx-auto flex justify-center pt-10">
+						<div
+							className="h-1/2 w-1/2 rounded-xl bg-white px-20 py-5 text-center dark:bg-emerald-950/85"
+							data-aos="fade-down">
+							<h1 className="text-6xl dark:text-white">Blogs</h1>
+							<p className="text-wrap py-10 dark:text-green-500">
+								Theres a lot of text that goes here but I don't want to go look for it right now. This is just a demo.
+							</p>
+						</div>
+					</div>
+				</div>*/}
 				<div className="mx-auto mb-12 max-w-6xl md:mb-16 lg:mb-20">
 					{featuredPost.image && (
 						<div className="relative h-[400px] overflow-hidden rounded-lg md:h-[500px] lg:h-[600px]">
@@ -70,9 +90,11 @@ export default async function Blog() {
 											{featuredPost.summary}
 										</p>
 										<div>
-											<button className="rounded-xl border-2 border-green-600 bg-green-600 text-white duration-300 hover:bg-white hover:text-green-600">
+											<Link
+												href={`/blog/${featuredPost.slug}`}
+												className="rounded-xl border-2 border-green-600 bg-green-600 py-2 text-white duration-300 hover:bg-white hover:text-green-600">
 												<label className="px-10 py-2 md:px-16">Read More</label>
-											</button>
+											</Link>
 										</div>
 									</div>
 								</div>
@@ -90,13 +112,16 @@ export default async function Blog() {
 					<div className="pb-12 md:pb-20">
 						<div className="lg:flex lg:justify-between">
 							{/* Main content */}
-							<div className="lg:grow" data-aos="fade-down" data-aos-delay="200">
+							<div className="lg:grow">
 								{/* Section title */}
 								<h2 className="h3 font-red-hat-display mb-4 dark:text-green-500">Latest</h2>
-								<hr className="border-1 mb-4 border-green-500" />
+								<hr className="border-1 mb-4 border-green-500 pb-4 md:pb-10" />
 
 								{/* Articles container */}
-								<div className="grid items-start gap-12 sm:grid-cols-2 sm:gap-x-6 md:gap-y-8">
+								<div
+									className="grid items-start gap-12 sm:grid-cols-2 sm:gap-x-6 md:gap-y-8"
+									data-aos="fade-down"
+									data-aos-delay="200">
 									{posts.map((post, postIndex) => (
 										<article
 											key={postIndex}
