@@ -66,7 +66,7 @@ export async function stripeDonation() {
 		payment_method_types: ["card"],
 		mode: "payment",
 		cancel_url: `${env.URL}/pricing`,
-		success_url: `${env.URL}/courses`,
+		success_url: `${env.URL}/blog`,
 		line_items: [{ price: prices.data[0].id, quantity: 1 }],
 		customer_email: session?.user.email ?? undefined,
 	});
