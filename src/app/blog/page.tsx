@@ -47,7 +47,14 @@ export default async function Blog() {
 						</div>
 					</div>
 				</div>*/}
-				<div className="mx-auto mb-12 max-w-6xl md:mb-16 lg:mb-20">
+				<div className="mx-auto mb-3 max-w-6xl md:mb-4 lg:mb-5">
+					<input
+						className="size-full rounded-full bg-green-100 py-2 pl-4 text-blue-900 dark:bg-white dark:text-black"
+						placeholder="Search..."
+					/>
+					<button className="bg-gren-500 w-1/8 inline rounded-full">Search</button>
+				</div>
+				<div className="lg:mb-18 mx-auto mb-12 max-w-6xl md:mb-16">
 					{featuredPost.image && (
 						<div className="relative h-[400px] overflow-hidden rounded-lg md:h-[500px] lg:h-[600px]">
 							<Image
