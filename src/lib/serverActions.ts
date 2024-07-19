@@ -4,6 +4,8 @@ import { auth } from "@/server/auth";
 import { db } from "@/server/db";
 import { redirect } from "next/navigation";
 import { z } from "zod";
+import Stripe from "stripe";
+import { env } from "@/env";
 
 export async function getPosts() {
 	return db.post.findMany({});
@@ -50,4 +52,24 @@ export async function savePetitionSignature(data: {
 			})
 			.parse(data),
 	});
+}
+
+export async function stripeDonation() {
+	const session = await auth();
+
+	const stripe = new Stripe(env.STRIPE_SECRET_KEY, { apiVersion: "2024-06-20" });
+	const prices = await stripe.prices.list({ lookup_keys: ["donation"], expand: ["data.product"] });
+
+	if (!prices.data[0]) redirect("/error?error=StripeError");
+
+	const stripeSession = await stripe.checkout.sessions.create({
+		payment_method_types: ["card"],
+		mode: "payment",
+		cancel_url: `${env.URL}/pricing`,
+		success_url: `${env.URL}/courses`,
+		line_items: [{ price: prices.data[0].id, quantity: 1 }],
+		customer_email: session?.user.email ?? undefined,
+	});
+
+	redirect(stripeSession.url!);
 }

@@ -27,6 +27,8 @@ export const env = createEnv({
 		URL: z.string().url(),
 		CLOUDINARY_API_SECRET: z.string(),
 		VERCEL_URL: z.string().optional(),
+		STRIPE_PUBLIC_KEY: z.string(),
+		STRIPE_SECRET_KEY: z.string(),
 	},
 
 	/**
@@ -60,6 +62,8 @@ export const env = createEnv({
 		NEXT_PUBLIC_CLOUDINARY_API_KEY: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
 		CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,
 		VERCEL_URL: process.env.VERCEL_URL,
+		STRIPE_PUBLIC_KEY: process.env.STRIPE_PUBLIC_KEY,
+		STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
 	},
 	/**
 	 * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
