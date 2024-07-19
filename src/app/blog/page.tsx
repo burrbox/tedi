@@ -9,13 +9,13 @@ import { type Metadata } from "next";
 import { env } from "@/env";
 import { getCldOgImageUrl } from "next-cloudinary";
 // import RelatedPosts from "@/components/related-posts-01";
-// import PostItem from "@/components/post-item";
 
 export const revalidate = 300; // 5 minutes
 
 export const metadata: Metadata = {
 	title: "Blog - TEDI",
 	description: "Read the latest articles from the Environmental Defense Initiative.",
+	keywords: ["blog", "articles", "news", "environment", "climate", "sustainability"],
 	openGraph: {
 		type: "website",
 		siteName: "The Environmental Defense Initiative",

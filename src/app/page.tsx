@@ -4,6 +4,7 @@ import { getCldOgImageUrl } from "next-cloudinary";
 export const metadata: Metadata = {
 	title: "Home - TEDI",
 	description: "Welcome to The Environmental Defense Initiative.",
+	keywords: ["environment", "climate", "sustainability", "advocacy"],
 	openGraph: {
 		type: "website",
 		siteName: "The Environmental Defense Initiative",

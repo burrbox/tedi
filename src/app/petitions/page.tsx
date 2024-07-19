@@ -8,6 +8,7 @@ import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 export const metadata: Metadata = {
 	title: "Petitions - TEDI",
 	description: "Be the change you want to see in the world.",
+	keywords: ["petition", "advocacy", "environment", "climate", "sustainability"],
 	openGraph: {
 		siteName: "The Environmental Defense Initiative",
 		url: `${env.URL}/petitions`,
