@@ -62,7 +62,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 				<input
 					id="title"
 					type="text"
-					className="w-full rounded-md border-2 border-gray-300 px-4 py-2"
+					className="w-full rounded-md border-2 border-gray-300 px-4 py-2 dark:border-gray-800 dark:bg-gray-900"
 					placeholder="Title"
 					value={title}
 					onChange={(e) => setTitle(e.target.value)}
@@ -77,7 +77,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 					<input
 						id="slug"
 						type="text"
-						className="w-full rounded-md border-2 border-gray-300 px-4 py-2"
+						className="w-full rounded-md border-2 border-gray-300 px-4 py-2 dark:border-gray-800 dark:bg-gray-900"
 						placeholder="URL"
 						value={newSlug}
 						onChange={(e) => setNewSlug((prev) => (e.target.value.match(/^[a-z0-9-]*$/) ? e.target.value : prev))}
@@ -139,7 +139,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 				</label>
 				<textarea
 					id="summary"
-					className="w-full rounded-md border-2 border-gray-300 px-4 py-2"
+					className="w-full rounded-md border-2 border-gray-300 px-4 py-2 dark:border-gray-800 dark:bg-gray-900"
 					placeholder="Summary"
 					value={summary}
 					onChange={(e) => setSummary(e.target.value)}
