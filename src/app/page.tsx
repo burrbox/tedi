@@ -44,7 +44,7 @@ export default async function Home() {
 					</span>
 				</span>
 			</div>
-			<div className="container mx-auto flex flex-row justify-center sm:flex-wrap md:flex-wrap lg:flex-nowrap">
+			<div className="container mx-auto flex flex-col justify-center sm:flex-row sm:flex-wrap md:flex-wrap lg:flex-nowrap">
 				<span className="py-auto h-fit flex-row bg-green-800 px-4 opacity-80 sm:w-1/3 md:w-1/3 lg:w-1/5">
 					<h1 className="mt-3 text-3xl text-white text-opacity-100">About</h1>
 					<h2 className="mt-auto text-wrap py-4 text-xl text-white text-opacity-100">
@@ -78,7 +78,7 @@ export default async function Home() {
 						</button>
 					</div>
 				</span>
-				<span className="py-auto h-fit flex-row bg-lime-800 px-4 opacity-80 sm:w-1/3 md:w-1/3 lg:w-1/5">
+				{/* <span className="py-auto h-fit flex-row bg-lime-800 px-4 opacity-80 sm:w-1/3 md:w-1/3 lg:w-1/5">
 					<h1 className="mt-3 text-3xl text-white text-opacity-100">Our Work</h1>
 					<h2 className="mt-auto text-wrap py-4 text-xl text-white text-opacity-100">
 						Learn about our upcoming campaigns and events.
@@ -88,8 +88,8 @@ export default async function Home() {
 							View More
 						</button>
 					</div>
-				</span>
-				<span className="py-auto h-fit flex-row bg-green-800 px-4 opacity-80 sm:w-1/3 md:w-1/3 lg:w-1/5">
+				</span> */}
+				{/* <span className="py-auto h-fit flex-row bg-green-800 px-4 opacity-80 sm:w-1/3 md:w-1/3 lg:w-1/5">
 					<h1 className="mt-3 text-3xl text-white text-opacity-100">Join Us</h1>
 					<h2 className="mt-auto text-wrap py-4 text-xl text-white text-opacity-100">
 						Become a member or join our team.
@@ -99,7 +99,7 @@ export default async function Home() {
 							View More
 						</button>
 					</div>
-				</span>
+				</span> */}
 			</div>
 		</div>
 	);
