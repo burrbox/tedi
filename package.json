@@ -13,7 +13,7 @@
 		"postinstall": "prisma generate",
 		"lint": "next lint",
 		"start": "next start",
-		"fix": "prettier -w . && eslint . --fix",
+		"fix": "prettier -w . '!pnpm-lock.yaml' && eslint . --fix",
 		"email": "email dev --dir ./src/components/emails"
 	},
 	"dependencies": {
