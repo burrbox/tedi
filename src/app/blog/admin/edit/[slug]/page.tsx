@@ -18,6 +18,8 @@ import { Button } from "@/components/ui/button";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { team } from "@/lib/constants";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 
@@ -59,14 +61,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 				<label htmlFor="title" className="mb-2 block">
 					Title
 				</label>
-				<input
-					id="title"
-					type="text"
-					className="w-full rounded-md border-2 border-gray-300 px-4 py-2 dark:border-gray-800 dark:bg-gray-900"
-					placeholder="Title"
-					value={title}
-					onChange={(e) => setTitle(e.target.value)}
-				/>
+				<Input id="title" type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
 			</div>
 			{/* URL */}
 			<div className="flex flex-col gap-4 sm:flex-row">
@@ -74,11 +69,9 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 					<label htmlFor="slug" className="mb-2 block">
 						URL
 					</label>
-					<input
+					<Input
 						id="slug"
 						type="text"
-						className="w-full rounded-md border-2 border-gray-300 px-4 py-2 dark:border-gray-800 dark:bg-gray-900"
-						placeholder="URL"
 						value={newSlug}
 						onChange={(e) => setNewSlug((prev) => (e.target.value.match(/^[a-z0-9-]*$/) ? e.target.value : prev))}
 					/>
@@ -137,13 +130,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 				<label htmlFor="summary" className="mb-2 block">
 					Summary
 				</label>
-				<textarea
-					id="summary"
-					className="w-full rounded-md border-2 border-gray-300 px-4 py-2 dark:border-gray-800 dark:bg-gray-900"
-					placeholder="Summary"
-					value={summary}
-					onChange={(e) => setSummary(e.target.value)}
-				/>
+				<Textarea id="summary" placeholder="Summary" value={summary} onChange={(e) => setSummary(e.target.value)} />
 			</div>
 			<div className="flex items-center justify-between py-4">
 				<h1 className="mb-4 grow text-2xl font-bold">Edit Post</h1>
