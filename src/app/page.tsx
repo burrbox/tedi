@@ -25,28 +25,30 @@ export default async function Home() {
 	return (
 		<div className="flex min-h-dvh flex-col">
 			<section
-				title="An image of the Redwood Forest"
+				title="An image of a forest"
 				style={{
 					backgroundImage:
 						"url(https://res.cloudinary.com/mozzarella-tedi/image/upload/f_auto,q_auto/v1/nature/oh93nln39npdtzsyettf)",
 				}}
 				className="pb:pb-16 flex h-[70vh] w-screen bg-cover bg-fixed bg-center bg-no-repeat pb-6 pt-12 md:pb-20 md:pt-32 lg:pt-40">
-				<div className="mx-auto justify-center rounded-xl bg-white/80 py-10 shadow-xl">
+				<div
+					className="mx-auto justify-center rounded-xl bg-white/80 py-10 shadow-xl dark:bg-stone-950/80"
+					data-aos="fade-down">
 					<div className="space-y-10xl:space-y-16 container">
 						<div className="grid gap-4 md:grid-cols-2 md:gap-16">
 							<div>
-								<h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter text-green-600 sm:text-4xl md:text-5xl xl:text-[4rem] 2xl:text-[5rem]">
+								<h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter text-green-600 sm:text-4xl md:text-5xl xl:text-[4rem] 2xl:text-[5rem] dark:text-white">
 									The Environmental Defense Initiative
 								</h1>
-								<p className="text-muted-foreground mx-auto max-w-[700px] py-5 md:py-10 md:text-xl">
+								<p className="text-muted-foreground mx-auto max-w-[700px] py-5 md:py-10 md:text-xl dark:text-green-500">
 									Our nonprofit organization is dedicated to preserving the natural world and creating a sustainable
 									future for all.
 								</p>
 								<div className="space-x-4">
-									<button className="text-primary-foreground focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md bg-green-500 px-4 py-2 text-sm font-medium shadow transition-colors hover:bg-green-600/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
+									<button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-green-700 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
 										<a href="/join">Get Involved</a>
 									</button>
-									<button className="border-input focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md border bg-blue-400 px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-blue-500 hover:text-black focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
+									<button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
 										<a href="/donate">Donate</a>
 									</button>
 								</div>
@@ -54,7 +56,7 @@ export default async function Home() {
 							<div className="flex flex-col items-start space-y-4">
 								<CloudinaryClientWrapper
 									alt="An image of our team"
-									src="TEDI Bio/rainbow-hiro"
+									src="nature/teamCleanup"
 									className="mx-auto aspect-video overflow-hidden rounded-xl object-cover shadow-xl"
 									width="650"
 									height="550"
@@ -64,7 +66,7 @@ export default async function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32">
+			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800">
 				<div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
 					<div className="space-y-3">
 						<h2 className="text-3xl font-bold tracking-tighter text-blue-500 sm:text-4xl md:text-5xl">
@@ -77,22 +79,22 @@ export default async function Home() {
 						</p>
 					</div>
 					<div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-						<div className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center">
-							<h3 className="text-3xl font-bold">1,500+</h3>
+						<div className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center dark:bg-gray-500">
+							<h3 className="text-3xl font-bold dark:text-green-400">1,500+</h3>
 							<p className="text-muted-foreground">Students Reached</p>
 						</div>
-						<div className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center">
-							<h3 className="text-3xl font-bold">10,000</h3>
+						<div className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center dark:bg-gray-500">
+							<h3 className="text-3xl font-bold dark:text-green-400">10,000</h3>
 							<p className="text-muted-foreground">Hours Volunteered</p>
 						</div>
-						<div className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center">
-							<h3 className="text-3xl font-bold">20+</h3>
+						<div className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center dark:bg-gray-500">
+							<h3 className="text-3xl font-bold dark:text-green-400">20+</h3>
 							<p className="text-muted-foreground">Team Members</p>
 						</div>
 					</div>
 				</div>
 			</section>
-			<section className="bg-muted w-full py-12 md:py-24 lg:py-32">
+			<section className="w-full bg-white py-12 md:py-24 lg:py-32 dark:bg-stone-900">
 				<div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
 					<div className="space-y-2">
 						<h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">A Message from Our Founder</h2>
