@@ -14,6 +14,9 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { stripeDonation } from "@/lib/serverActions";
+import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Button } from "./ui/button";
+import { Package2, PanelLeft } from "lucide-react";
 
 const links = [
 	// { name: "Home", href: "/" },
@@ -34,6 +37,32 @@ export default function Header() {
 	return (
 		<header className="fixed z-30 w-full bg-white shadow-md dark:bg-stone-950">
 			<div className="container mx-auto flex items-center justify-between px-4 py-4">
+				<Sheet>
+					<SheetTrigger asChild>
+						<Button size="icon" variant="outline" className="mx-5 sm:hidden">
+							<PanelLeft className="h-5 w-5" />
+							<span className="sr-only">Toggle Menu</span>
+						</Button>
+					</SheetTrigger>
+					<SheetContent side="left" className="sm:max-w-xs">
+						<nav className="grid gap-6 text-lg font-medium">
+							<Link
+								href="/"
+								className="bg-primary group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full text-lg font-semibold text-gray-200 md:text-base">
+								<Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
+								<span>Home</span>
+							</Link>
+							{links.map((link) => (
+								<Link
+									key={link.name}
+									href={link.href}
+									className={`${link.href === path ? "text-gray-900 dark:text-gray-200" : "text-gray-400 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"} flex items-center gap-4 px-2.5`}>
+									{link.name}
+								</Link>
+							))}
+						</nav>
+					</SheetContent>
+				</Sheet>
 				<Link href={"/"} className="flex items-center space-x-2">
 					<CldImage width="40" height="40" src="logo" alt="Logo" className="h-10 w-10" />
 					<h1 className="hidden text-xl font-bold text-green-700 sm:block dark:text-blue-400">
@@ -45,9 +74,9 @@ export default function Header() {
 						<Link
 							key={link.name}
 							href={link.href}
-							className={
+							className={`hidden sm:block ${
 								link.href === path ? "text-green-700 dark:text-green-300" : "text-blue-700 dark:text-blue-400"
-							}>
+							}`}>
 							{link.name}
 						</Link>
 					))}
