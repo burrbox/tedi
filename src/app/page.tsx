@@ -63,8 +63,9 @@ export default async function Home() {
 							Our Impact in the Past Year
 						</h2>
 						<p className="text-muted-foreground mx-auto max-w-[700px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-							{`We're proud to share the significant progress we've made in protecting the environment and creating a more
-							sustainable future.`}
+							{
+								"We're proud to share the significant progress we've made in protecting the environment and creating a more sustainable future."
+							}
 						</p>
 					</div>
 					<div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -88,9 +89,7 @@ export default async function Home() {
 					<div className="space-y-2">
 						<h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">A Message from Our Founder</h2>
 						<p className="text-muted-foreground max-w-[600px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-							{`"At our nonprofit, we believe that protecting the environment is not just a responsibility, but a moral
-							imperative. We are committed to making a lasting impact and creating a sustainable future for generations
-							to come."`}
+							{`"At our nonprofit, we believe that protecting the environment is not just a responsibility, but a moral imperative. We are committed to making a lasting impact and creating a sustainable future for generations to come."`}
 						</p>
 						<div className="flex gap-4 lg:justify-start">
 							<CloudinaryClientWrapper
