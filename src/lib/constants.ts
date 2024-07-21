@@ -73,7 +73,7 @@ export const team = [
 		name: "Maggie Yang",
 		title: "Blog Writer & Digital Creator",
 		location: "Hopewell Junction, NY, USA",
-		image: "TEDI Bio/xjbajtpnzsoe6c05o66w",
+		image: "TEDI Bio/h0m1t2yqudur3vsbthvi",
 		description: `Maggie has always appreciated and been fascinated by the beauty of nature. She believes in protecting our world so that future generations can experience the same wonder and beauty she has. Maggie hopes to make a difference in our world and preserve our environment by working with TEDI. `,
 		email: "maggie.yang0713@gmail.com",
 		instagram: "https://www.instagram.com/maggiesomebody/",
