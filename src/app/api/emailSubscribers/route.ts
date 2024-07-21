@@ -5,9 +5,11 @@ import { Resend } from "resend";
 
 const resend = new Resend(env.AUTH_RESEND_KEY);
 
-// Runs every week
+// Runs every day at 10:00
 export async function GET(request: NextRequest) {
-	if (request.nextUrl.searchParams.get("key") !== env.CRON_KEY) return NextResponse.json({ error: "Not Authorized" });
+	if (request.headers.get("authorization") !== `Bearer ${process.env.CRON_SECRET}`)
+		return new Response("Unauthorized", { status: 401 });
+
 	const newPosts = await db.post.findMany({
 		where: { createdAt: { gte: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000) } },
 	});
