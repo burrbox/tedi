@@ -10,6 +10,8 @@ import { format } from "date-fns";
 import { env } from "@/env";
 import { getCldOgImageUrl } from "next-cloudinary";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
+import { auth } from "@/server/auth";
 
 export async function generateStaticParams() {
 	return (await getPosts()).map((post) => ({
@@ -56,7 +58,7 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 
 	const author = team.find((member) => member.name.toLowerCase() === post.author) ?? team[1]!;
 
-	const status = useSession;
+	const session = await auth();
 
 	return (
 		<>
@@ -90,9 +92,6 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 										<p className="text-xl text-gray-600 dark:text-stone-300" data-aos="fade-down" data-aos-delay="150">
 											{post.summary}
 										</p>
-										{/*{status ===
-											"unauthenticated"(<h1 className="text-6xl text-red-500">this will be the edit button</h1>)}
-											*/}
 									</div>
 									{/* Article meta */}
 									<div className="mt-5 md:flex md:items-center md:justify-between">
@@ -120,6 +119,14 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 										</div>
 									</div>
 								</header>
+								{session?.user.role === "admin" && (
+									<Link
+										className="rounded-xl bg-green-600 px-4 py-2 text-3xl text-white hover:bg-green-700"
+										title="Edit this article"
+										href={`../admin/edit/${post.slug}`}>
+										Edit this article...
+									</Link>
+								)}
 								<hr
 									className="mb-8 h-px w-5 border-0 bg-gray-400 pt-px dark:bg-white"
 									data-aos="fade-down"
@@ -139,22 +146,22 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 									</h3>
 									<div className="py-6 text-black dark:text-white">
 										<ul className="mx-auto mb-4 flex flex-wrap justify-center gap-2 md:order-2 md:mb-0 md:ml-4 md:gap-4">
-											<button className="w-32 rounded-xl bg-green-500 py-2 dark:bg-green-700">
+											<button className="w-32 rounded-xl bg-green-600 py-2 duration-300 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800">
 												<label>
 													<a href="https://www.instagram.com/environmentaldefenseinitiative/">Instagram</a>
 												</label>
 											</button>
-											<button className="w-32 rounded-xl bg-green-500 py-2 dark:bg-green-700">
+											<button className="w-32 rounded-xl bg-green-600 py-2 duration-300 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800">
 												<label>
 													<a href="https://medium.com/@environmentaldefenseinitiative">Medium</a>
 												</label>
 											</button>
-											<button className="w-32 rounded-xl bg-green-500 py-2 dark:bg-green-700">
+											<button className="w-32 rounded-xl bg-green-600 py-2 duration-300 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800">
 												<label>
 													<a href="https://www.youtube.com/channel/UCLJIczzKZWeqsa2Pmg55F6g">YouTube</a>
 												</label>
 											</button>
-											<button className="w-32 rounded-xl bg-green-500 py-2 dark:bg-green-700">
+											<button className="w-32 rounded-xl bg-green-600 py-2 duration-300 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800">
 												<label>
 													<a href="https://www.tiktok.com/@tediactivism">TikTok</a>
 												</label>
