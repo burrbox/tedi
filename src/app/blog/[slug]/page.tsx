@@ -9,6 +9,7 @@ import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { format } from "date-fns";
 import { env } from "@/env";
 import { getCldOgImageUrl } from "next-cloudinary";
+import { useSession } from "next-auth/react";
 
 export async function generateStaticParams() {
 	return (await getPosts()).map((post) => ({
@@ -55,6 +56,8 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 
 	const author = team.find((member) => member.name.toLowerCase() === post.author) ?? team[1]!;
 
+	const status = useSession;
+
 	return (
 		<>
 			<section className="relative">
@@ -87,6 +90,8 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 										<p className="text-xl text-gray-600 dark:text-stone-300" data-aos="fade-down" data-aos-delay="150">
 											{post.summary}
 										</p>
+										{status ===
+											"unauthenticated"(<h1 className="text-6xl text-red-500">this will be the edit button</h1>)}
 									</div>
 									{/* Article meta */}
 									<div className="mt-5 md:flex md:items-center md:justify-between">
