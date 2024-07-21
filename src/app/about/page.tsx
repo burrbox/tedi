@@ -82,7 +82,7 @@ export default function AboutPage() {
 					<div className="container mx-auto px-4 py-16">
 						<div className="grid gap-8 md:grid-cols-3">
 							<div className="justify-center rounded-md bg-white p-8 shadow-md dark:bg-emerald-950">
-								<div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-700 text-2xl font-bold text-white">
+								<div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-700 text-2xl font-bold text-white md:h-20 md:w-20 md:text-5xl">
 									1
 								</div>
 								<h3 className="mb-4 text-center text-xl font-bold text-blue-700 dark:text-blue-400">Passion</h3>
@@ -91,7 +91,7 @@ export default function AboutPage() {
 								</p>
 							</div>
 							<div className="rounded-md bg-white p-8 shadow-md dark:bg-emerald-950">
-								<div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-700 text-2xl font-bold text-white">
+								<div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-700 text-2xl font-bold text-white md:h-20 md:w-20 md:text-5xl">
 									2
 								</div>
 								<h3 className="mb-4 text-center text-xl font-bold text-blue-700 dark:text-blue-400">Inspiration</h3>
@@ -100,7 +100,7 @@ export default function AboutPage() {
 								</p>
 							</div>
 							<div className="rounded-md bg-white p-8 shadow-md dark:bg-emerald-950">
-								<div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-700 text-2xl font-bold text-white">
+								<div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-700 text-2xl font-bold text-white md:h-20 md:w-20 md:text-5xl">
 									3
 								</div>
 								<h3 className="mb-4 text-center text-xl font-bold text-blue-700 dark:text-blue-400">Creativity</h3>

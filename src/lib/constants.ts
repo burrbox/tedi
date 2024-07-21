@@ -14,7 +14,7 @@ export const team = [
 		name: "Nash Pillai",
 		title: "Chief Technology Officer",
 		location: "Hopewell Junction, NY, USA",
-		image: "TEDI Bio/nash",
+		image: "TEDI Bio/nash2",
 		description: `Nash used to use Arch, btw, but now he uses NixOS as his primary operating system. He also use GrapheneOS as his mobile operating system. He's been coding for nearly a decade and have used a wide range of technologies. Nash is particularly passionate about higher-level mathematics and cybersecurity.`,
 		email: "nash.pillai@protonmail.com",
 		linkedin: "https://www.linkedin.com/in/nash-pillai/",

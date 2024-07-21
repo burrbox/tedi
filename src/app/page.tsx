@@ -24,39 +24,47 @@ export const metadata: Metadata = {
 export default async function Home() {
 	return (
 		<div className="flex min-h-dvh flex-col">
-			<section className="pb:pb-16 w-full pb-6 pt-12 md:pb-12 md:pt-24 lg:pt-32">
-				<div className="container space-y-10 xl:space-y-16">
-					<div className="grid gap-4 px-10 md:grid-cols-2 md:gap-16">
-						<div>
-							<h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter text-green-600 sm:text-4xl md:text-5xl xl:text-[4rem] 2xl:text-[5rem]">
-								The Environmental Defense Initiative
-							</h1>
-							<p className="text-muted-foreground mx-auto max-w-[700px] py-5 md:py-10 md:text-xl">
-								Our nonprofit organization is dedicated to preserving the natural world and creating a sustainable
-								future for all.
-							</p>
-							<div className="space-x-4">
-								<button className="text-primary-foreground focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md bg-green-500 px-4 py-2 text-sm font-medium shadow transition-colors hover:bg-green-600/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
-									<a href="/join">Join Us</a>
-								</button>
-								<button className="border-input focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md border bg-blue-400 px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-blue-500 hover:text-black focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
-									<a href="/donate">Donate</a>
-								</button>
+			<section
+				title="An image of the Redwood Forest"
+				style={{
+					backgroundImage:
+						"url(https://res.cloudinary.com/mozzarella-tedi/image/upload/f_auto,q_auto/v1/nature/oh93nln39npdtzsyettf)",
+				}}
+				className="pb:pb-16 flex h-[70vh] w-screen bg-cover bg-fixed bg-center bg-no-repeat pb-6 pt-12 md:pb-20 md:pt-32 lg:pt-40">
+				<div className="mx-auto justify-center rounded-xl bg-white/80 py-10 shadow-xl">
+					<div className="space-y-10xl:space-y-16 container">
+						<div className="grid gap-4 md:grid-cols-2 md:gap-16">
+							<div>
+								<h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter text-green-600 sm:text-4xl md:text-5xl xl:text-[4rem] 2xl:text-[5rem]">
+									The Environmental Defense Initiative
+								</h1>
+								<p className="text-muted-foreground mx-auto max-w-[700px] py-5 md:py-10 md:text-xl">
+									Our nonprofit organization is dedicated to preserving the natural world and creating a sustainable
+									future for all.
+								</p>
+								<div className="space-x-4">
+									<button className="text-primary-foreground focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md bg-green-500 px-4 py-2 text-sm font-medium shadow transition-colors hover:bg-green-600/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
+										<a href="/join">Get Involved</a>
+									</button>
+									<button className="border-input focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md border bg-blue-400 px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-blue-500 hover:text-black focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
+										<a href="/donate">Donate</a>
+									</button>
+								</div>
 							</div>
-						</div>
-						<div className="flex flex-col items-start space-y-4">
-							<CloudinaryClientWrapper
-								alt="An image of our team"
-								src="TEDI Bio/rainbow-hiro"
-								className="mx-auto aspect-video overflow-hidden rounded-xl object-cover shadow-xl"
-								width="650"
-								height="550"
-							/>
+							<div className="flex flex-col items-start space-y-4">
+								<CloudinaryClientWrapper
+									alt="An image of our team"
+									src="TEDI Bio/rainbow-hiro"
+									className="mx-auto aspect-video overflow-hidden rounded-xl object-cover shadow-xl"
+									width="650"
+									height="550"
+								/>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<section className="w-full bg-stone-200 py-12 md:py-24 lg:py-32">
+			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32">
 				<div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
 					<div className="space-y-3">
 						<h2 className="text-3xl font-bold tracking-tighter text-blue-500 sm:text-4xl md:text-5xl">
@@ -70,16 +78,16 @@ export default async function Home() {
 					</div>
 					<div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 						<div className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center">
-							<h3 className="text-3xl font-bold">50,000+</h3>
-							<p className="text-muted-foreground">Trees Planted</p>
+							<h3 className="text-3xl font-bold">1,500+</h3>
+							<p className="text-muted-foreground">Students Reached</p>
 						</div>
 						<div className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center">
-							<h3 className="text-3xl font-bold">15,000</h3>
-							<p className="text-muted-foreground">Acres of Land Preserved</p>
+							<h3 className="text-3xl font-bold">10,000</h3>
+							<p className="text-muted-foreground">Hours Volunteered</p>
 						</div>
 						<div className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center">
-							<h3 className="text-3xl font-bold">20,000+</h3>
-							<p className="text-muted-foreground">Volunteers Engaged</p>
+							<h3 className="text-3xl font-bold">20+</h3>
+							<p className="text-muted-foreground">Team Members</p>
 						</div>
 					</div>
 				</div>
@@ -93,11 +101,13 @@ export default async function Home() {
 						</p>
 						<div className="flex gap-4 lg:justify-start">
 							<CloudinaryClientWrapper
-								src="TEDI Bio/x6q3sdgebdrhx2pb5b4k"
-								width="64"
 								height="64"
-								alt="CEO"
-								className="rounded-full"
+								width="64"
+								src="TEDI Bio/x6q3sdgebdrhx2pb5b4k"
+								alt="An image of TEDI Founder Emma Mazzotta"
+								gravity="face"
+								crop="fill"
+								className="rounded-full object-cover"
 							/>
 							<div>
 								<h4 className="text-lg font-semibold">Emma Mazzotta</h4>
