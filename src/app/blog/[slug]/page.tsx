@@ -121,14 +121,14 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 								</header>
 								{session?.user.role === "admin" && (
 									<Link
-										className="rounded-xl bg-green-600 px-4 py-2 text-3xl text-white hover:bg-green-700"
+										className="my-4 rounded-xl bg-green-600 px-4 py-2 text-xl text-white hover:bg-green-700"
 										title="Edit this article"
-										href={`../admin/edit/${post.slug}`}>
+										href={`../blog/admin/edit/${post.slug}`}>
 										Edit this article...
 									</Link>
 								)}
 								<hr
-									className="mb-8 h-px w-5 border-0 bg-gray-400 pt-px dark:bg-white"
+									className="my-8 h-px w-5 border-0 bg-gray-400 pt-px dark:bg-white"
 									data-aos="fade-down"
 									data-aos-delay="450"
 								/>
