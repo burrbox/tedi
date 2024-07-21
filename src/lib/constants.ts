@@ -25,7 +25,7 @@ export const team = [
 		name: "Hiroyuki Sakuma",
 		title: "Senior Director of Website Development",
 		location: "Hopewell Junction, NY, USA",
-		image: "blog/rainbow-hiro",
+		image: "TEDI Bio/rainbow-hiro",
 		description: `Hiroyuki uses arch, btw. He speaks Japanese with a native proficiency and is interested in robotics, computer science, and mathematics. He is passionate about environmental conservation and is excited to use his skills to help TEDI achieve its mission.`,
 		email: "hiroyuki.sakuma1@gmail.com",
 		twitter: "https://www.twitter.com/hryksakuma",
