@@ -35,7 +35,7 @@ export default function PetitionForm() {
 	return (
 		<form className="rounded-2xl bg-white dark:bg-stone-800" onSubmit={submitForm}>
 			<div className="mx-4 py-4 lg:py-8">
-				<h1 className="text-wrap py-6 text-center text-5xl font-bold text-green-700 dark:text-green-500">
+				<h1 className="text-wrap py-6 text-center text-5xl font-bold text-green-700 dark:text-green-400">
 					Sign Today!
 				</h1>
 				<h2 className="text-wrap text-center text-lg text-blue-700 dark:text-blue-400">{petition.callToAction}</h2>
