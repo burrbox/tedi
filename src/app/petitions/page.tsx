@@ -55,6 +55,8 @@ export default async function Petitions({}) {
 						<CloudinaryClientWrapper
 							src="other/many-signs"
 							alt="An image of a protest with many people holding various signs for environmental protection."
+							width="600"
+							height="300"
 							className="h-96 object-cover"
 						/>
 					</span>
@@ -62,6 +64,8 @@ export default async function Petitions({}) {
 						<CloudinaryClientWrapper
 							src="other/act-now"
 							alt="An image of a protest. One of the protesters is holding a sign that reads '#ACTNOW'."
+							width="400"
+							height="300"
 							className="h-96 object-cover"
 						/>
 					</span>

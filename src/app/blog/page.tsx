@@ -69,7 +69,7 @@ export default async function Blog() {
 				</div>*/}
 				<div className="relative mx-auto mb-3 max-w-6xl justify-center md:mb-4 lg:mb-5">
 					<input
-						className="mx-auto size-10/12 w-full justify-center rounded-full bg-green-100 py-2 pl-4 text-blue-900 duration-300 dark:bg-stone-700 dark:text-white dark:hover:bg-gray-500 dark:focus:bg-gray-500 dark:focus:outline-none"
+						className="mx-auto size-10/12 w-full justify-center rounded-full border-none bg-green-100 py-2 pl-4 text-blue-900 duration-300 hover:bg-green-200 dark:bg-stone-700 dark:text-white dark:hover:bg-gray-500 dark:focus:bg-gray-500 dark:focus:outline-none"
 						placeholder="Search for articles by TEDI..."
 						title="search for articles"
 					/>
