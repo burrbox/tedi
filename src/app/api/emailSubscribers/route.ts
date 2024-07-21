@@ -1,3 +1,4 @@
+import newArticleEmail from "@/components/emails/newArticleEmail";
 import { env } from "@/env";
 import { db } from "@/server/db";
 import { type NextRequest, NextResponse } from "next/server";
@@ -13,16 +14,15 @@ export async function GET(request: NextRequest) {
 	const newPosts = await db.post.findMany({
 		where: { createdAt: { gte: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000) } },
 	});
-	(await db.subscription.findMany()).forEach(
-		(sub) =>
-			void resend.emails.send({
-				from: "TEDI <blog@tedinitiative.org>",
-				to: sub.email,
-				subject: "New Post in TEDI Blog",
-				html:
-					"Check it out here: <br>" +
-					newPosts.map((post) => `<a href="${env.URL}/blog/${post.slug}">${post.title}</a>`).join("<br>"),
-			}),
-	);
+	if (newPosts[0])
+		(await db.subscription.findMany()).forEach(
+			(sub) =>
+				void resend.emails.send({
+					from: "TEDI <blog@tedinitiative.org>",
+					to: sub.email,
+					subject: "New Post in TEDI Blog",
+					react: newArticleEmail({ post: newPosts[0]! }),
+				}),
+		);
 	return NextResponse.json({ message: "Hello, world!", env: env });
 }
