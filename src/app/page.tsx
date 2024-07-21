@@ -1,6 +1,7 @@
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { type Metadata } from "next";
 import { getCldOgImageUrl } from "next-cloudinary";
+import Link from "next/link";
 
 export const metadata: Metadata = {
 	title: "Home - TEDI",
