@@ -90,8 +90,9 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 										<p className="text-xl text-gray-600 dark:text-stone-300" data-aos="fade-down" data-aos-delay="150">
 											{post.summary}
 										</p>
-										{status ===
+										{/*{status ===
 											"unauthenticated"(<h1 className="text-6xl text-red-500">this will be the edit button</h1>)}
+											*/}
 									</div>
 									{/* Article meta */}
 									<div className="mt-5 md:flex md:items-center md:justify-between">
