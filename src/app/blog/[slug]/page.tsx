@@ -12,6 +12,7 @@ import { getCldOgImageUrl } from "next-cloudinary";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { auth } from "@/server/auth";
+import { TwitterXIcon, LinkShare } from "@/components/icons";
 
 export async function generateStaticParams() {
 	return (await getPosts()).map((post) => ({
@@ -106,9 +107,9 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 													alt={author.name ?? "Anonymous Author"}
 												/>
 											</a>
-											<div>
-												<span className="text-gray-600 dark:text-blue-400">By </span>
-												<a className="font-medium text-gray-800 hover:underline dark:text-blue-300" href="#0">
+											<div className="flex justify-items-stretch">
+												<span className="text-gray-600 dark:text-blue-400">By</span>
+												<a className="px-2 font-medium text-gray-800 hover:underline dark:text-blue-300" href="#0">
 													{author.name ?? "Anonymous Author"}
 												</a>
 												<span className="text-gray-600 dark:text-blue-400">
@@ -120,20 +121,26 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 									</div>
 								</header>
 								{session?.user.role === "admin" && (
-									<Link
-										className="my-4 rounded-xl bg-green-600 px-4 py-2 text-xl text-white hover:bg-green-700"
-										title="Edit this article"
-										href={`../blog/admin/edit/${post.slug}`}
-										data-aos="fade-down"
-										data-aos-delay="450">
-										Edit this article...
-									</Link>
+									<span data-aos="fade-down" data-aos-delay="450">
+										<Link
+											className="my-4 rounded-xl bg-green-600 px-4 py-2 text-xl text-white hover:bg-green-700"
+											title="Edit this article"
+											href={`../blog/admin/edit/${post.slug}`}>
+											Edit this article...
+										</Link>
+									</span>
 								)}
 								<hr
 									className="my-8 h-px w-5 border-0 bg-gray-400 pt-px dark:bg-white"
 									data-aos="fade-down"
 									data-aos-delay="450"
 								/>
+								<Link href={`https://twitter.com/intent/tweet?text=${post.slug}`} className="inline">
+									<TwitterXIcon className="h-6 w-6 dark:fill-gray-200" name="Share this article on Twitter" />
+								</Link>
+								{/*<button onClick={() => navigator.clipboard.writeText(post.slug)}>
+														<LinkShare className="h-6" name="Copy this article link to your clipboard" />
+													</button> */}
 
 								{/* Article content */}
 								<div className="mb-8" data-aos="fade-up" data-aos-delay="450">
