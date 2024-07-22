@@ -126,8 +126,8 @@ export default async function Blog() {
 										<div>
 											<Link
 												href={`/blog/${featuredPost.slug}`}
-												className="rounded-xl border-2 border-green-600 bg-green-600 py-2 text-white duration-300 hover:bg-white hover:text-green-600">
-												<label className="px-10 py-2 md:px-16">Read More</label>
+												className="rounded-xl border-2 border-green-600 bg-green-600 px-10 py-2 text-white duration-300 hover:bg-white hover:text-green-600 md:px-16">
+												Read More
 											</Link>
 										</div>
 									</div>

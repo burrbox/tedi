@@ -79,27 +79,33 @@ export default async function Home() {
 						</p>
 					</div>
 					<div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-						<div className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center shadow-xl dark:border-gray-700 dark:bg-gray-700">
-							<h3 className="text-3xl font-bold dark:text-green-400">1,500+</h3>
-							<p className="text-muted-foreground">Students Reached</p>
+						<div
+							className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center shadow-xl dark:border-gray-700 dark:bg-gray-700"
+							data-aos="fade-up">
+							<h3 className="text-3xl font-bold dark:text-green-400">221</h3>
+							<p className="text-muted-foreground">Gallons of Trash Collected</p>
 						</div>
-						<div className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center shadow-xl dark:border-gray-700 dark:bg-gray-700">
-							<h3 className="text-3xl font-bold dark:text-green-400">10,000</h3>
-							<p className="text-muted-foreground">Hours Volunteered</p>
-						</div>
-						<div className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center shadow-xl dark:border-gray-700 dark:bg-gray-700">
+						<div
+							className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center shadow-xl dark:border-gray-700 dark:bg-gray-700"
+							data-aos="fade-up">
 							<h3 className="text-3xl font-bold dark:text-green-400">20+</h3>
 							<p className="text-muted-foreground">Team Members</p>
+						</div>
+						<div
+							className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center shadow-xl dark:border-gray-700 dark:bg-gray-700"
+							data-aos="fade-up">
+							<h3 className="text-3xl font-bold dark:text-green-400">78</h3>
+							<p className="text-muted-foreground">Gallons of Plastic Collected</p>
 						</div>
 					</div>
 				</div>
 			</section>
 			<section className="w-full bg-white py-12 md:py-24 lg:py-32 dark:bg-stone-900">
 				<div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-					<div className="space-y-2">
+					<div className="space-y-2" data-aos="fade-right">
 						<h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">A Message from Our Founder</h2>
 						<p className="text-muted-foreground max-w-[600px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-							{`"At our nonprofit, we believe that protecting the environment is not just a responsibility, but a moral imperative. We are committed to making a lasting impact and creating a sustainable future for generations to come."`}
+							{`"TEDI was founded with the mission of inspiring youth activists to use their voices to inspire long-lasting sustainable change through education, initiative, and creativity. We believe that every individual on this Earth must do their part to keep our planet clean and fight for a sustainable future."`}
 						</p>
 						<div className="flex gap-4 py-5 lg:justify-start">
 							<CloudinaryClientWrapper
@@ -123,6 +129,8 @@ export default async function Home() {
 						height="450"
 						alt="CEO"
 						className="mx-auto aspect-video overflow-hidden rounded-xl object-cover shadow-xl"
+						data-aos="fade-left"
+						data-aos-delay="200"
 					/>
 				</div>
 			</section>
