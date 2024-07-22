@@ -37,10 +37,8 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 
 	const [isSaving, setIsSaving] = useState(false);
 
-	{
-		/*if (status === "unauthenticated" || (session?.user && !["editor", "admin"].includes(session.user.role)))
-		router.push("/unauthorized");*/
-	}
+	if (status === "unauthenticated" || (session?.user && !["editor", "admin"].includes(session.user.role)))
+		router.push("/unauthorized");
 
 	useEffect(() => {
 		if (slug !== "new") {
@@ -141,15 +139,19 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 				<CldUploadButton
 					className="mx-4 rounded-md border-2 border-blue-400 px-4 py-2"
 					uploadPreset="TEDI Blog"
-					options={{
-						cropping: true,
-					}}
 					onSuccess={(results) => {
 						if (!results.info || typeof results.info === "string") return;
 						setArticleImage(results.info.secure_url);
 					}}>
 					Upload Article Image
 				</CldUploadButton>
+				{articleImage && (
+					<button
+						className="flex space-x-2 rounded-md bg-blue-600 px-4 py-2 text-white"
+						onClick={() => window.open(articleImage)}>
+						Preview article image...
+					</button>
+				)}
 				<CldUploadButton
 					className="mx-4 rounded-md border-2 border-blue-400 px-4 py-2"
 					uploadPreset="TEDI Blog"
