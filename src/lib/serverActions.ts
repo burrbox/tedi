@@ -21,7 +21,7 @@ export async function addEmailSubscription(email: string) {
 
 export async function upsertArticle(
 	oldSlug: string,
-	article: { title: string; content: string; slug: string; summary: string; author: string },
+	article: { title: string; content: string; slug: string; summary: string; author: string; image: string },
 ) {
 	const session = await auth();
 	if (!session || !["editor", "admin"].includes(session.user.role)) redirect("/unauthorized");

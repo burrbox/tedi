@@ -32,6 +32,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 	const [title, setTitle] = useState("New Article");
 	const [summary, setSummary] = useState("");
 	const [author, setAuthor] = useState("");
+	const [articleImage, setArticleImage] = useState("");
 	const [isAuthorOpen, setIsAuthorOpen] = useState(false);
 
 	const [isSaving, setIsSaving] = useState(false);
@@ -50,6 +51,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 						setContent(post.content);
 						setSummary(post.summary);
 						setContent(post.content);
+						setArticleImage(post.image);
 					}
 				})
 				.catch(() => null);
@@ -144,7 +146,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 					}}
 					onSuccess={(results) => {
 						if (!results.info || typeof results.info === "string") return;
-						const articleImage = `${results.info.secure_url}`;
+						setArticleImage(results.info.secure_url);
 					}}>
 					Upload Article Image
 				</CldUploadButton>
@@ -166,7 +168,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 					onClick={async () => {
 						setIsSaving(true);
 						if (newSlug && newSlug !== "new") {
-							await upsertArticle(slug, { title, content, slug: newSlug, summary, author });
+							await upsertArticle(slug, { title, content, slug: newSlug, summary, author, image: articleImage });
 							if (slug !== newSlug) router.push(`/blog/admin/edit/${newSlug}`);
 						} else alert("Please enter a URL");
 						setIsSaving(false);
