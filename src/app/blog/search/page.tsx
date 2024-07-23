@@ -161,3 +161,10 @@ export default async function search() {
 		</div>
 	);
 } */
+export default async function Search() {
+	return (
+		<div>
+			<span className="text-red text-6xl">go away</span>
+		</div>
+	);
+}
