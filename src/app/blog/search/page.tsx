@@ -1,4 +1,4 @@
-"use client";
+/* "use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -8,7 +8,7 @@ import { team } from "@/lib/constants";
 import { Input } from "@/components/ui/input";
 import { useState, useMemo } from "react";
 import { type Metadata } from "next";
-import { type Prisma } from "@prisma/client";
+import { type Prisma } from "@prisma/client"; */
 
 {
 	/*this is a test page i tried doing some stuff here. it did not work so im commenting it out for now 
