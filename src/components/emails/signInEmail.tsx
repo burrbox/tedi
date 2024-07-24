@@ -12,6 +12,8 @@ import type { TailwindProps } from "@react-email/tailwind";
 import { Tailwind } from "@react-email/tailwind";
 import tailwindConfig from "tailwind.config";
 import { Link } from "@react-email/link";
+import { env } from "@/env";
+import { getCldImageUrl } from "next-cloudinary";
 
 export default function SignInEmail({ url = "https://tedi.vercel.app/" }) {
 	const containerStyles = {
@@ -89,7 +91,7 @@ export default function SignInEmail({ url = "https://tedi.vercel.app/" }) {
 					<Container style={innerContainerStyles}>
 						<Section style={{ marginTop: "32px" }}>
 							<Img
-								src={"https://res.cloudinary.com/dlzeuksus/image/upload/v1720838326/logo.png"}
+								src={getCldImageUrl({ src: "logo" })}
 								width="40"
 								height="37"
 								alt="The Environmental Defense Initiative Logo"
@@ -113,8 +115,8 @@ export default function SignInEmail({ url = "https://tedi.vercel.app/" }) {
 						<Hr style={hrStyles} />
 						<Text style={additionalTextStyles}>
 							If you ever need assistance, please contact us at{" "}
-							<Link className="text-[#3182ce]" href="https://tedi.vercel.app/support">
-								tedi.vercel.app/support
+							<Link className="text-[#3182ce]" href={`mailto: environmentaldefenseinitiative@gmail.com `}>
+								environmentaldefenseinitiative@gmail.com
 							</Link>
 							.
 						</Text>
