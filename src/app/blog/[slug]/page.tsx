@@ -9,7 +9,6 @@ import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { format } from "date-fns";
 import { env } from "@/env";
 import { getCldOgImageUrl } from "next-cloudinary";
-import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { auth } from "@/server/auth";
 import { TwitterXIcon, LinkShare } from "@/components/icons";
@@ -40,14 +39,7 @@ export async function generateMetadata(
 			description,
 			url: `${env.URL}/blog/${params.slug}`,
 			images: post.image
-				? [
-						{
-							url: getCldOgImageUrl({ src: post.image }),
-							width: 1440,
-							height: 577,
-							alt: title,
-						},
-					]
+				? [{ url: getCldOgImageUrl({ src: post.image }), width: 1440, height: 577, alt: title }]
 				: undefined,
 		},
 	};
@@ -101,9 +93,11 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 											<a href="#0">
 												<CloudinaryClientWrapper
 													className="mr-3 shrink-0 rounded-full"
-													src={author.image ?? "/avatar.jpg"}
+													src={author.image ?? "utter"}
 													width={32}
 													height={32}
+													crop="thumb"
+													gravity="face"
 													alt={author.name ?? "Anonymous Author"}
 												/>
 											</a>

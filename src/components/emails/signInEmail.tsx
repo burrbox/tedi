@@ -12,7 +12,6 @@ import type { TailwindProps } from "@react-email/tailwind";
 import { Tailwind } from "@react-email/tailwind";
 import tailwindConfig from "tailwind.config";
 import { Link } from "@react-email/link";
-import { env } from "@/env";
 import { getCldImageUrl } from "next-cloudinary";
 
 export default function SignInEmail({ url = "https://tedi.vercel.app/" }) {
@@ -115,7 +114,7 @@ export default function SignInEmail({ url = "https://tedi.vercel.app/" }) {
 						<Hr style={hrStyles} />
 						<Text style={additionalTextStyles}>
 							If you ever need assistance, please contact us at{" "}
-							<Link className="text-[#3182ce]" href={`mailto: environmentaldefenseinitiative@gmail.com `}>
+							<Link className="text-[#3182ce]" href={`mailto:environmentaldefenseinitiative@gmail.com `}>
 								environmentaldefenseinitiative@gmail.com
 							</Link>
 							.
