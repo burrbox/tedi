@@ -2,7 +2,7 @@ import { petition } from "@/lib/constants";
 import PetitionForm from "./petitionForm";
 import { type Metadata } from "next";
 import { env } from "@/env";
-import { getCldOgImageUrl } from "next-cloudinary";
+import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 
 export const metadata: Metadata = {
@@ -31,10 +31,7 @@ export default async function Petitions({}) {
 		<section className="h-full w-full flex-col items-end">
 			<div
 				title="An image of the Redwood Forest"
-				style={{
-					backgroundImage:
-						"url(https://res.cloudinary.com/mozzarella-tedi/image/upload/f_auto,q_auto/v1/nature/tallForest)",
-				}}
+				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/tallForest" })})` }}
 				className="flex h-[70vh] w-screen bg-cover bg-fixed bg-center bg-no-repeat">
 				<div className="container relative mx-auto h-fit w-full px-4 py-16">
 					<div className="absolute inset-0 mx-auto mt-28 w-fit md:mt-32 lg:mt-44 2xl:mt-52" data-aos="fade-down">
@@ -74,10 +71,7 @@ export default async function Petitions({}) {
 			<div
 				className="relative flex min-h-[110vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
 				title="An image of a beach and ocean"
-				style={{
-					backgroundImage:
-						"url(https://res.cloudinary.com/mozzarella-tedi/image/upload/f_auto,q_auto/v1/nature/t7x9xmnsyqs2yetfpp3j)",
-				}}>
+				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/t7x9xmnsyqs2yetfpp3j" })})` }}>
 				<div className="inset-0 mx-auto w-full sm:w-10/12" data-aos="fade-down">
 					<div className="flex flex-col justify-center gap-6 xl:flex-row">
 						<div className="basis-3/5">

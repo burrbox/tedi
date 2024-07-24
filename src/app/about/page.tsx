@@ -5,7 +5,7 @@ import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { GithubIcon, InstagramIcon, LinkedInIcon, TikTokIcon, TwitterXIcon } from "@/components/icons";
 import { env } from "@/env";
 import { type Metadata } from "next";
-import { getCldOgImageUrl } from "next-cloudinary";
+import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
 
 export const metadata: Metadata = {
 	title: "About - TEDI",
@@ -69,10 +69,7 @@ export default function AboutPage() {
 			<section className="w-full bg-gray-100 dark:bg-stone-900">
 				<div
 					className="relative flex min-h-[50vh] w-screen flex-col bg-cover bg-fixed bg-center bg-repeat"
-					style={{
-						backgroundImage:
-							"url(https://res.cloudinary.com/mozzarella-tedi/image/upload/f_auto,q_auto/v1/nature/waterfall)",
-					}}>
+					style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/waterfall" })})` }}>
 					<div className="w-screen">
 						<div className="w-screen rounded-b-2xl bg-white py-2 md:px-20 dark:bg-stone-900">
 							<h2 className="mb-6 text-center text-3xl font-bold text-green-700 dark:text-green-500">Our Values</h2>

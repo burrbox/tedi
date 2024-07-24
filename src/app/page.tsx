@@ -1,6 +1,6 @@
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { type Metadata } from "next";
-import { getCldOgImageUrl } from "next-cloudinary";
+import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -26,10 +26,7 @@ export default async function Home() {
 		<div className="flex min-h-dvh flex-col">
 			<section
 				title="An image of a forest"
-				style={{
-					backgroundImage:
-						"url(https://res.cloudinary.com/mozzarella-tedi/image/upload/f_auto,q_auto/v1/nature/oh93nln39npdtzsyettf)",
-				}}
+				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/oh93nln39npdtzsyettf" })})` }}
 				className="flex min-h-[70vh] w-screen bg-cover bg-fixed bg-center bg-no-repeat py-12 md:pb-20 md:pt-32 lg:pt-40">
 				<div
 					className="mx-auto justify-center rounded-xl bg-white/80 py-10 shadow-xl dark:bg-stone-950/80"
