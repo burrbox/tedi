@@ -46,10 +46,10 @@ export default async function Home() {
 								</p>
 								<div className="space-x-4">
 									<button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-green-700 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
-										<a href="/join">Get Involved</a>
+										<Link href="/join">Get Involved</Link>
 									</button>
 									<button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
-										<a href="/donate">Donate</a>
+										<Link href="/donate">Donate</Link>
 									</button>
 								</div>
 							</div>
