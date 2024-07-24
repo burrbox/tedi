@@ -27,7 +27,7 @@ export async function upsertArticle(
 	if (!session || !["editor", "admin"].includes(session.user.role)) redirect("/unauthorized");
 
 	await db.post.upsert({
-		create: { ...article, image: "" },
+		create: article,
 		update: article,
 		where: { slug: oldSlug },
 	});
@@ -40,7 +40,6 @@ export async function savePetitionSignature(data: {
 	zipCode: string;
 	message?: string;
 }) {
-	"use server";
 	await db.petitionSignature.create({
 		data: z
 			.object({
