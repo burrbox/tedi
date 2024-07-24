@@ -15,6 +15,7 @@ import { Link } from "@react-email/link";
 import { env } from "@/env";
 import { getCldImageUrl } from "next-cloudinary";
 import { type Prisma } from "@prisma/client";
+import { Markdown } from "@react-email/markdown";
 
 export default function newArticleEmail({
 	post = {
@@ -116,7 +117,8 @@ export default function newArticleEmail({
 						</Section>
 						<Heading style={headingStyles}>{post.title}</Heading>
 						<Img src={getCldImageUrl({ src: post.image })} height="200" className="m-auto block" />
-						<Text style={textStyles}>{post.content}</Text>
+						<Markdown>{post.content}</Markdown>
+
 						<Section style={{ marginBottom: "32px", marginTop: "32px", textAlign: "center" }}>
 							<Button style={{ ...buttonStyles, padding: "12px" }} href={`${env.URL}/blog/${post.slug}`}>
 								Check it out
@@ -125,8 +127,8 @@ export default function newArticleEmail({
 						<Hr style={hrStyles} />
 						<Text style={additionalTextStyles}>
 							If you ever need assistance, please contact us at{" "}
-							<Link className="text-[#3182ce]" href={`${env.URL}/`}>
-								tedinitiative.org/
+							<Link className="text-[#3182ce]" href={`mailto:environmentaldefenseinitiative@gmail.com `}>
+								environmentaldefenseinitiative@gmail.com
 							</Link>
 							.
 						</Text>
