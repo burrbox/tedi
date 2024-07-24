@@ -1,21 +1,23 @@
-import { Button } from "@react-email/button";
-import { Head } from "@react-email/head";
-import { Img } from "@react-email/img";
-import { Section } from "@react-email/section";
-import { Html } from "@react-email/html";
-import { Hr } from "@react-email/hr";
-import { Container } from "@react-email/container";
-import { Heading } from "@react-email/heading";
-import { Text } from "@react-email/text";
-import { Preview } from "@react-email/preview";
-import type { TailwindProps } from "@react-email/tailwind";
-import { Tailwind } from "@react-email/tailwind";
+import {
+	Button,
+	Head,
+	Img,
+	Section,
+	Html,
+	Hr,
+	Container,
+	Heading,
+	Text,
+	Preview,
+	type TailwindProps,
+	Tailwind,
+	Link,
+	Markdown,
+} from "@react-email/components";
 import tailwindConfig from "tailwind.config";
-import { Link } from "@react-email/link";
 import { env } from "@/env";
 import { getCldImageUrl } from "next-cloudinary";
 import { type Prisma } from "@prisma/client";
-import { Markdown } from "@react-email/markdown";
 
 export default function newArticleEmail({
 	post = {
