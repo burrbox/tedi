@@ -27,8 +27,12 @@ export default function PetitionForm() {
 		return (
 			<div className="rounded-2xl bg-white text-center dark:bg-stone-800">
 				<div className="mx-4 py-4 lg:py-8">
-					<h1 className="text-wrap py-6 text-center text-5xl font-bold text-green-700">Thank You!</h1>
-					<h2 className="text-wrap text-center text-lg text-blue-700">Your support will help us create change</h2>
+					<h1 className="text-wrap py-6 text-center text-5xl font-bold text-green-700 dark:text-green-400">
+						Thank You!
+					</h1>
+					<h2 className="text-wrap text-center text-lg text-blue-700 dark:text-blue-400">
+						Your support will help us create change
+					</h2>
 				</div>
 			</div>
 		);
