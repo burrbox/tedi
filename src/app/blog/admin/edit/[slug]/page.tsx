@@ -4,7 +4,6 @@ import "@uiw/react-md-editor/markdown-editor.css";
 import "@uiw/react-markdown-preview/markdown.css";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-import { commands } from "@uiw/react-md-editor";
 import { CldImage, CldUploadButton } from "next-cloudinary";
 import { upsertArticle, getPost } from "@/lib/serverActions";
 import { useSession } from "next-auth/react";
@@ -104,7 +103,6 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 											key={member.name}
 											value={member.name}
 											onSelect={(newAuthor) => {
-												console.log("newAuthor", newAuthor);
 												setAuthor((prev) => (newAuthor === prev ? "" : newAuthor));
 												setIsAuthorOpen(false);
 											}}>

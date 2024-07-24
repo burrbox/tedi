@@ -1,8 +1,8 @@
-import { type NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { env } from "@/env";
 import { getPosts } from "@/lib/serverActions";
 
-export async function GET(request: NextRequest) {
+export async function GET() {
 	const articles = (await getPosts())
 		.map((article) => {
 			const url = `${env.URL}/blog/${article.slug}`;

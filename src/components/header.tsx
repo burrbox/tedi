@@ -30,8 +30,6 @@ const links = [
 export default function Header() {
 	const { data: session, update: updateSession } = useSession();
 
-	console.log(session);
-
 	const path = usePathname();
 
 	return (
