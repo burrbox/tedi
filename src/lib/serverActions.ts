@@ -8,7 +8,7 @@ import Stripe from "stripe";
 import { env } from "@/env";
 
 export async function getPosts() {
-	return db.post.findMany({});
+	return db.post.findMany({ orderBy: { createdAt: "desc" } });
 }
 
 export async function getPost(slug: string) {
