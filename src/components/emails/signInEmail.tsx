@@ -36,7 +36,7 @@ export default function SignInEmail({ url = "https://tedi.vercel.app/" }) {
 						<Heading className="mt-8 text-center text-2xl font-normal text-black">Welcome to TEDI!</Heading>
 						<Text className="text-sm leading-6 text-black">Hello,</Text>
 						<Text className="text-sm leading-6 text-black">Sign in to your account to get started!</Text>
-						<Section style={{ marginBottom: "32px", marginTop: "32px", textAlign: "center" }}>
+						<Section className="my-8 text-center">
 							<Button className="rounded bg-black px-6 py-3 text-xs font-semibold text-white" href={url}>
 								Sign In
 							</Button>

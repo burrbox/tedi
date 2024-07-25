@@ -153,9 +153,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 				<CldUploadButton
 					className="mx-4 rounded-md border-2 border-blue-400 px-4 py-2"
 					uploadPreset="TEDI Blog"
-					options={{
-						cropping: true,
-					}}
+					options={{ cropping: true }}
 					onSuccess={(results) => {
 						if (!results.info || typeof results.info === "string") return;
 						const imageMd = `![${results.info.original_filename}](${results.info.secure_url})`;
