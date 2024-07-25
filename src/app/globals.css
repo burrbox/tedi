@@ -98,3 +98,19 @@ input[type="search"]::-webkit-search-results-decoration {
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
 }
+
+.mdx figcaption {
+	@apply mt-2 text-center text-sm text-gray-500 dark:text-gray-300 !important;
+}
+
+.mdx figure {
+	@apply md:mt-0 md:max-w-sm lg:max-w-none;
+}
+
+.w-md-editor-preview figcaption {
+	@apply mt-2 text-center text-sm text-gray-500 dark:text-gray-300 !important;
+}
+
+.w-md-editor-preview figure {
+	@apply md:mt-0 md:max-w-sm lg:max-w-none;
+}
