@@ -36,8 +36,8 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 
 	const [isSaving, setIsSaving] = useState(false);
 
-	if (status === "unauthenticated" || (session?.user && !["editor", "admin"].includes(session.user.role)))
-		router.push("/unauthorized");
+	// if (status === "unauthenticated" || (session?.user && !["editor", "admin"].includes(session.user.role)))
+	// 	router.push("/unauthorized");
 
 	useEffect(() => {
 		if (slug !== "new") {
@@ -132,10 +132,10 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 				</label>
 				<Textarea id="summary" placeholder="Summary" value={summary} onChange={(e) => setSummary(e.target.value)} />
 			</div>
-			<div className="flex items-center justify-between py-4">
-				<h1 className="mb-4 grow text-2xl font-bold">Edit Post</h1>
+			<div className="flex flex-col items-center justify-between gap-4 py-4 sm:flex-row">
+				<h1 className="grow text-2xl font-bold">Edit Post</h1>
 				<CldUploadButton
-					className="mx-4 rounded-md border-2 border-blue-400 px-4 py-2"
+					className="rounded-md border-2 border-blue-400 px-4 py-2"
 					uploadPreset="TEDI Blog"
 					onSuccess={(results) => {
 						if (!results.info || typeof results.info === "string") return;
@@ -151,7 +151,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 					</button>
 				)}
 				<CldUploadButton
-					className="mx-4 rounded-md border-2 border-blue-400 px-4 py-2"
+					className="rounded-md border-2 border-blue-400 px-4 py-2"
 					uploadPreset="TEDI Blog"
 					options={{ cropping: true }}
 					onSuccess={(results) => {
