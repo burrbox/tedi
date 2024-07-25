@@ -48,6 +48,16 @@ export default async function Blog() {
 			<section className="lg:pb-18 w-full pb-12 pt-6 md:pb-16 md:pt-10 lg:pt-14">
 				<div className="relative mx-auto mb-3 max-w-6xl justify-center space-y-4 md:mb-4 lg:mb-5">
 					<BlogSearch articles={allPosts} />
+					{session?.user && ["editor", "admin"].includes(session.user.role) && (
+						<div>
+							<Link
+								className="my-4 rounded-xl bg-green-600 px-4 py-2 text-white hover:bg-green-700"
+								title="Edit this article"
+								href="/blog/admin/edit/new">
+								New article
+							</Link>
+						</div>
+					)}
 				</div>
 				<div className="lg:mb-18 mx-auto mb-12 max-w-6xl md:mb-16">
 					{featuredPost.image && (
