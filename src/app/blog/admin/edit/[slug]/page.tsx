@@ -1,5 +1,8 @@
 "use client";
 
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+
 import "@uiw/react-md-editor/markdown-editor.css";
 import "@uiw/react-markdown-preview/markdown.css";
 import dynamic from "next/dynamic";
@@ -9,9 +12,7 @@ import { upsertArticle, getPost } from "@/lib/serverActions";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Loading from "@/components/loading";
-
 import { Check, ChevronsUpDown } from "lucide-react";
-
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@/components/ui/command";
@@ -20,7 +21,14 @@ import { team } from "@/lib/constants";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
+const MDEditor = dynamic(() => import("@uiw/react-md-editor"), {
+	ssr: false,
+	loading: () => (
+		<SkeletonTheme baseColor="#1e293b" highlightColor="#3e595b">
+			<Skeleton height={200} />
+		</SkeletonTheme>
+	),
+});
 
 const cloudinaryDarkStyles = {
 	palette: {
