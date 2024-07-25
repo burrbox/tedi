@@ -114,7 +114,7 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 										</div>
 									</div>
 								</header>
-								{session?.user.role === "admin" && (
+								{session?.user && ["editor", "admin"].includes(session.user.role) && (
 									<span data-aos="fade-down" data-aos-delay="450">
 										<Link
 											className="my-4 rounded-xl bg-green-600 px-4 py-2 text-xl text-white hover:bg-green-700"
