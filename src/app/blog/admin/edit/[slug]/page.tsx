@@ -156,7 +156,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 					options={{ cropping: true }}
 					onSuccess={(results) => {
 						if (!results.info || typeof results.info === "string") return;
-						const imageMd = `![${results.info.original_filename}](${results.info.secure_url})`;
+						const imageMd = `<figure>\n\n![${results.info.original_filename}](${results.info.secure_url})\n<figcaption>${results.info.original_filename}</figcaption></figure>`;
 						setContent((prev) => prev + imageMd);
 					}}>
 					Upload Image
@@ -176,7 +176,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 				</button>
 			</div>
 
-			<MDEditor id="md-editor" value={content} onChange={(val) => setContent(val ?? "")} />
+			<MDEditor id="md-editor" value={content} onChange={(val) => setContent(val ?? "")} height={1000} />
 		</div>
 	);
 }
