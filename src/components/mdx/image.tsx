@@ -1,20 +1,22 @@
-import type { StaticImageData } from "next/image";
-import Image from "next/image";
-
-interface PostImageProps {
-	alt: string;
+export default function PostImage({
+	alt = "",
+	caption,
+	align,
+	src = "",
+	...props
+}: {
+	alt?: string;
 	caption?: string;
 	align?: string;
-	src: StaticImageData;
-}
-
-export default function PostImage({ alt, caption, align, ...props }: PostImageProps) {
+	src?: string;
+}) {
+	// console.log("PostImage:", { alt, caption, align, src, ...props });
 	const classes = align === "left" ? "md:float-left md:max-w-sm md:mr-8 md:mt-0 lg:max-w-none lg:-ml-32" : "";
 
 	return (
 		<figure className={classes}>
-			<Image className="w-full" {...props} alt={alt} />
-			{caption && <figcaption className="mt-3 text-center text-sm text-gray-500">{caption}</figcaption>}
+			<img className="w-full" {...props} src={src} alt={alt} />
+			{caption && <figcaption className="mt-3 text-center text-sm text-gray-500">{alt}</figcaption>}
 		</figure>
 	);
 }

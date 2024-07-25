@@ -1,13 +1,8 @@
 import Link from "next/link";
 
-interface PostLinkProps {
-	href: string;
-	children: React.ReactNode;
-}
-
-export default function PostLink({ href, ...props }: PostLinkProps) {
+export default function PostLink({ href, ...props }: { href?: string; children?: React.ReactNode }) {
 	return (
-		<Link href={href} {...props}>
+		<Link href={href ?? "/"} {...props}>
 			{props.children}
 		</Link>
 	);
