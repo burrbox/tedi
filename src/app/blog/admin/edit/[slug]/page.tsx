@@ -15,7 +15,7 @@ import Loading from "@/components/loading";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@/components/ui/command";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { team } from "@/lib/constants";
 import { Input } from "@/components/ui/input";
@@ -122,30 +122,37 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 						<PopoverContent className="w-72 p-0">
 							<Command>
 								<CommandInput placeholder="Search author..." />
-								<CommandEmpty>No author found.</CommandEmpty>
-								<CommandGroup className="max-h-96 overflow-scroll">
-									{team.map((member) => (
-										<CommandItem
-											key={member.name}
-											value={member.name}
-											onSelect={(newAuthor) => {
-												setAuthor((prev) => (newAuthor === prev ? "" : newAuthor));
-												setIsAuthorOpen(false);
-											}}>
-											<Check className={cn("mr-2 h-4 w-4", author === member.name ? "opacity-100" : "opacity-0")} />
-											<CldImage
-												className="mr-4 h-8 w-8 rounded-full"
-												src={member.image}
-												gravity="face"
-												crop="thumb"
-												alt={`An image of ${member.name}.`}
-												height={32}
-												width={32}
-											/>
-											{member.name}
-										</CommandItem>
-									))}
-								</CommandGroup>
+								<CommandList>
+									<CommandEmpty>No author found.</CommandEmpty>
+									<CommandGroup className="max-h-96 overflow-scroll">
+										{team.map((member) => (
+											<CommandItem
+												key={member.name}
+												value={member.name}
+												onSelect={(newAuthor) => {
+													setAuthor((prev) => (newAuthor === prev ? "" : newAuthor.toLowerCase()));
+													setIsAuthorOpen(false);
+												}}>
+												<Check
+													className={cn(
+														"mr-2 h-4 w-4",
+														author === member.name.toLowerCase() ? "opacity-100" : "opacity-0",
+													)}
+												/>
+												<CldImage
+													className="mr-4 h-8 w-8 rounded-full"
+													src={member.image}
+													gravity="face"
+													crop="thumb"
+													alt={`An image of ${member.name}.`}
+													height={32}
+													width={32}
+												/>
+												{member.name}
+											</CommandItem>
+										))}
+									</CommandGroup>
+								</CommandList>
 							</Command>
 						</PopoverContent>
 					</Popover>

@@ -8,6 +8,8 @@ import { format } from "date-fns";
 import { type Metadata } from "next";
 import { env } from "@/env";
 import { getCldOgImageUrl } from "next-cloudinary";
+import { BlogSearch } from "./blogSearch";
+import { auth } from "@/server/auth";
 // import RelatedPosts from "@/components/related-posts-01";
 
 export const revalidate = 300; // 5 minutes
@@ -33,8 +35,9 @@ const getPostAuthor = (post: Prisma.PostGetPayload<null>) =>
 	team.find((member) => member.name.toLowerCase() === post.author) ?? team[1]!;
 
 export default async function Blog() {
-	// Sort posts by date
 	const allPosts = await getPosts();
+	console.log(allPosts.map((post) => post.title));
+	const session = await auth();
 
 	const featuredPost = allPosts[0]!;
 	const posts = allPosts.slice(1);
@@ -43,37 +46,8 @@ export default async function Blog() {
 		<>
 			{/* Featured post */}
 			<section className="lg:pb-18 w-full pb-12 pt-6 md:pb-16 md:pt-10 lg:pt-14">
-				{/* Header in case we ever want to use it */}
-				{/*<div className="relative h-[400px] w-full bg-fixed pb-10">
-					<CloudinaryClientWrapper
-						className="relative h-full w-full object-cover"
-						src="nature/forest"
-						alt="background image"
-						width={1440}
-						height={1080}
-					/>
-					<div className="absolute inset-0 mx-auto flex justify-center pt-10">
-						<div
-							className="h-1/2 w-1/2 rounded-xl bg-white px-20 py-5 text-center dark:bg-emerald-950/85"
-							data-aos="fade-down">
-							<h1 className="text-6xl dark:text-white">Blogs</h1>
-							<p className="text-wrap py-10 dark:text-green-500">
-								Theres a lot of text that goes here but I don't want to go look for it right now. This is just a demo.
-							</p>
-						</div>
-					</div>
-				</div>*/}
-				<div className="relative mx-auto mb-3 max-w-6xl justify-center md:mb-4 lg:mb-5">
-					<input
-						className="mx-auto size-10/12 w-full justify-center rounded-full border-none bg-green-100 py-2 pl-4 text-blue-900 duration-300 hover:bg-green-200 dark:bg-stone-700 dark:text-white dark:hover:bg-gray-500 dark:focus:bg-gray-500 dark:focus:outline-none"
-						placeholder="Search for articles by TEDI..."
-						title="search for articles"
-					/>
-					<button
-						className="absolute inset-y-0 right-0 rounded-full bg-green-500 py-2 duration-300 hover:bg-green-400 md:w-2/12 dark:bg-emerald-900 dark:text-white dark:hover:bg-emerald-800"
-						title="search">
-						Search
-					</button>
+				<div className="relative mx-auto mb-3 max-w-6xl justify-center space-y-4 md:mb-4 lg:mb-5">
+					<BlogSearch articles={allPosts} />
 				</div>
 				<div className="lg:mb-18 mx-auto mb-12 max-w-6xl md:mb-16">
 					{featuredPost.image && (
