@@ -122,6 +122,9 @@ importers:
       remark-gfm:
         specifier: ^4.0.0
         version: 4.0.0
+      remark-unwrap-images:
+        specifier: ^4.0.0
+        version: 4.0.0
       resend:
         specifier: ^3.4.0
         version: 3.4.0
@@ -3812,6 +3815,9 @@ packages:
 
   remark-stringify@11.0.0:
     resolution: {integrity: sha512-1OSmLd3awB/t8qdoEOMazZkNsfVTeY4fTsgzcQFdXNq8ToTN4ZGwrMnlda4K6smTFKD+GRV6O48i6Z4iKgPPpw==}
+
+  remark-unwrap-images@4.0.0:
+    resolution: {integrity: sha512-Ilr5ZhrhZSvnjemy1rRuxlTC0I/39YyWDRiE9d5vF079APcwdYYzwcZL8RGehlCtQCiik8hWMyo4Xhz2Fq0JhA==}
 
   require-from-string@2.0.2:
     resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
@@ -8813,6 +8819,12 @@ snapshots:
       '@types/mdast': 4.0.4
       mdast-util-to-markdown: 2.1.0
       unified: 11.0.5
+
+  remark-unwrap-images@4.0.0:
+    dependencies:
+      '@types/mdast': 4.0.4
+      hast-util-whitespace: 3.0.0
+      unist-util-visit: 5.0.0
 
   require-from-string@2.0.2: {}
 
