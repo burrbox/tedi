@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Mdx } from "@/components/mdx/mdx";
 // import RelatedPosts from "@/components/related-posts-02";
-import { getPosts } from "@/lib/serverActions";
+import { getPost, getPosts } from "@/lib/serverActions";
 import { team } from "@/lib/constants";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { format } from "date-fns";
@@ -46,7 +46,7 @@ export async function generateMetadata(
 }
 
 export default async function SinglePost({ params }: { params: { slug: string } }) {
-	const post = (await getPosts()).find((post) => post.slug === params.slug);
+	const post = await getPost(params.slug);
 	if (!post) notFound();
 
 	const author = team.find((member) => member.name.toLowerCase() === post.author) ?? team[1]!;
