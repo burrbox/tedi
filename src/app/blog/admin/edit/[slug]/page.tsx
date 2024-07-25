@@ -22,6 +22,24 @@ import { Textarea } from "@/components/ui/textarea";
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 
+const cloudinaryDarkStyles = {
+	palette: {
+		window: "#0f172a",
+		sourceBg: "#1e293b",
+		windowBorder: "#9ca3af",
+		tabIcon: "#FFFFFF",
+		inactiveTabIcon: "#8E9FBF",
+		menuIcons: "#FFFFFF",
+		link: "#08C0FF",
+		action: "#336BFF",
+		inProgress: "#00BFFF",
+		complete: "#33ff00",
+		error: "#EA2727",
+		textDark: "#000000",
+		textLight: "#FFFFFF",
+	},
+};
+
 export default function BlogEditor({ params: { slug } }: { params: { slug: string } }) {
 	const router = useRouter();
 	const { data: session, status } = useSession();
@@ -36,8 +54,8 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 
 	const [isSaving, setIsSaving] = useState(false);
 
-	// if (status === "unauthenticated" || (session?.user && !["editor", "admin"].includes(session.user.role)))
-	// 	router.push("/unauthorized");
+	if (status === "unauthenticated" || (session?.user && !["editor", "admin"].includes(session.user.role)))
+		router.push("/unauthorized");
 
 	useEffect(() => {
 		if (slug !== "new") {
@@ -137,6 +155,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 				<CldUploadButton
 					className="rounded-md border-2 border-blue-400 px-4 py-2"
 					uploadPreset="TEDI Blog"
+					options={{ cropping: true, styles: cloudinaryDarkStyles }}
 					onSuccess={(results) => {
 						if (!results.info || typeof results.info === "string") return;
 						setArticleImage(results.info.secure_url);
@@ -153,7 +172,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 				<CldUploadButton
 					className="rounded-md border-2 border-blue-400 px-4 py-2"
 					uploadPreset="TEDI Blog"
-					options={{ cropping: true }}
+					options={{ cropping: true, styles: cloudinaryDarkStyles }}
 					onSuccess={(results) => {
 						if (!results.info || typeof results.info === "string") return;
 						const imageMd = `<figure>\n\n![${results.info.original_filename}](${results.info.secure_url})\n<figcaption>${results.info.original_filename}</figcaption></figure>`;
