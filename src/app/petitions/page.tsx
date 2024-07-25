@@ -9,20 +9,19 @@ export const metadata: Metadata = {
 	title: "Petitions - TEDI",
 	description: "Be the change you want to see in the world.",
 	keywords: ["petition", "advocacy", "environment", "climate", "sustainability"],
+	alternates: { canonical: `${env.URL}/petitions` },
 	openGraph: {
 		siteName: "The Environmental Defense Initiative",
 		url: `${env.URL}/petitions`,
 		title: "Petitions - TEDI",
 		type: "website",
 		description: "Sign a petition to advocate for new policies.",
-		images: [
-			{
-				url: getCldOgImageUrl({ src: "nature/tallForest" }),
-				width: 1200,
-				height: 627,
-				alt: "An image of the Redwood Forest",
-			},
-		],
+		images: {
+			url: getCldOgImageUrl({ src: "nature/tallForest" }),
+			width: 1200,
+			height: 627,
+			alt: "An image of the Redwood Forest",
+		},
 	},
 };
 

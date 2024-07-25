@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 	title: "About - TEDI",
 	description: "Learn more about The Environmental Defense Initiative and our mission.",
 	keywords: ["about", "mission", "values", "team", "partnerships", "environment", "climate", "sustainability"],
+	alternates: { canonical: `${env.URL}/about` },
 	openGraph: {
 		siteName: "The Environmental Defense Initiative",
 		title: "About - TEDI",

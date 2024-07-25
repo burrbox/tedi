@@ -11,7 +11,7 @@ import { env } from "@/env";
 import { getCldOgImageUrl } from "next-cloudinary";
 import Link from "next/link";
 import { auth } from "@/server/auth";
-import { TwitterXIcon, LinkShare } from "@/components/icons";
+import { TwitterXIcon } from "@/components/icons";
 
 export async function generateStaticParams() {
 	return (await getPosts()).map((post) => ({
@@ -21,7 +21,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata(
 	{ params }: { params: { slug: string } },
-	parent: ResolvingMetadata,
+	_parent: ResolvingMetadata,
 ): Promise<Metadata | undefined> {
 	const post = (await getPosts()).find((post) => post.slug === params.slug);
 
@@ -32,6 +32,7 @@ export async function generateMetadata(
 	return {
 		title,
 		description,
+		alternates: { canonical: `${env.URL}/blog/${params.slug}` },
 		openGraph: {
 			siteName: "The Environmental Defense Initiative",
 			type: "article",

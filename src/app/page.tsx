@@ -1,4 +1,5 @@
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
+import { env } from "@/env";
 import { type Metadata } from "next";
 import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
 import Link from "next/link";
@@ -7,9 +8,11 @@ export const metadata: Metadata = {
 	title: "Home - TEDI",
 	description: "Welcome to The Environmental Defense Initiative.",
 	keywords: ["environment", "climate", "sustainability", "advocacy"],
+	alternates: { canonical: env.URL },
 	openGraph: {
 		type: "website",
 		siteName: "The Environmental Defense Initiative",
+		url: env.URL,
 		title: "Home - TEDI",
 		description: "Welcome to The Environmental Defense Initiative.",
 		images: {

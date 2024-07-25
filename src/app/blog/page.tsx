@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 	title: "Blog - TEDI",
 	description: "Read the latest articles from the Environmental Defense Initiative.",
 	keywords: ["blog", "articles", "news", "environment", "climate", "sustainability"],
+	alternates: { canonical: `${env.URL}/blog` },
 	openGraph: {
 		type: "website",
 		siteName: "The Environmental Defense Initiative",
@@ -23,12 +24,7 @@ export const metadata: Metadata = {
 		description: "Read the latest articles from the Environmental Defense Initiative.",
 		url: `${env.URL}/blog`,
 		images: [
-			{
-				url: getCldOgImageUrl({ src: "nature/tallForest" }),
-				width: 1200,
-				height: 627,
-				alt: "An image of a forest",
-			},
+			{ url: getCldOgImageUrl({ src: "nature/tallForest" }), width: 1200, height: 627, alt: "An image of a forest" },
 		],
 	},
 };
