@@ -40,15 +40,15 @@ export default async function Home() {
 								<h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter text-green-600 sm:text-4xl md:text-5xl xl:text-[4rem] 2xl:text-[5rem] dark:text-stone-100">
 									The Environmental Defense Initiative
 								</h1>
-								<p className="text-muted-foreground mx-auto max-w-[700px] py-5 md:py-10 md:text-xl dark:text-green-500">
+								<p className="mx-auto max-w-[700px] py-5 md:py-10 md:text-xl dark:text-green-500">
 									Our nonprofit organization is dedicated to preserving the natural world and creating a sustainable
 									future for all.
 								</p>
 								<div className="space-x-4">
-									<button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-green-700 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
+									<button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-green-700">
 										<Link href="/join">Get Involved</Link>
 									</button>
-									<button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
+									<button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700">
 										<Link href="/donate">Donate</Link>
 									</button>
 								</div>
@@ -95,7 +95,7 @@ export default async function Home() {
 							className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center shadow-xl dark:border-gray-700 dark:bg-gray-700"
 							data-aos="fade-up">
 							<h3 className="text-3xl font-bold dark:text-green-400">78</h3>
-							<p className="text-muted-foreground">Gallons of Plastic Recycled</p>
+							<p className="text-muted-foreground">Gallons of Plastic Collected</p>
 						</div>
 					</div>
 				</div>
