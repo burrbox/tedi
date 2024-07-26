@@ -88,14 +88,14 @@ export default async function Home() {
 						<div
 							className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center shadow-xl dark:border-gray-700 dark:bg-gray-700"
 							data-aos="fade-up">
-							<h3 className="text-3xl font-bold dark:text-green-400">20+</h3>
-							<p className="text-muted-foreground">Team Members</p>
+							<h3 className="text-3xl font-bold dark:text-green-400">15,000+</h3>
+							<p className="text-muted-foreground">People Reached</p>
 						</div>
 						<div
 							className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center shadow-xl dark:border-gray-700 dark:bg-gray-700"
 							data-aos="fade-up">
 							<h3 className="text-3xl font-bold dark:text-green-400">78</h3>
-							<p className="text-muted-foreground">Gallons of Plastic Collected</p>
+							<p className="text-muted-foreground">Gallons of Plastic Recycled</p>
 						</div>
 					</div>
 				</div>

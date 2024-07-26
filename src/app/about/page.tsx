@@ -231,7 +231,7 @@ export default function AboutPage() {
 				</div>
 				<hr className="border-t-1 mx-auto mb-6 w-1/2 border-green-700"></hr>
 				<div className="mx-auto flex w-3/4 flex-col items-center justify-center gap-6 xl:flex-row">
-					<div className="relative w-1/2">
+					<div className="relative w-full md:w-1/2">
 						<p className="py-5 text-center text-xl text-blue-600 dark:text-blue-300">
 							&quot;Collaborating with your team on our project has been an{" "}
 							<span className="font-semibold text-green-600">exceptional</span> experience. Your{" "}
@@ -243,7 +243,7 @@ export default function AboutPage() {
 						</p>
 						<h3 className="text-center text-xl font-semibold text-blue-600 dark:text-blue-400">-- Plant A Change--</h3>
 					</div>
-					<div className="relative w-1/2">
+					<div className="relative w-full md:w-1/2">
 						<p className="py-5 text-center text-xl text-blue-600 dark:text-blue-300">
 							&quot;Collaborating with the Environmental Defense Initiative on{" "}
 							<span className="font-semibold text-green-600">inspiring</span> reels and a microplastic pollution
