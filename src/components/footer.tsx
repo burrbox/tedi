@@ -3,7 +3,7 @@
 import { EnvelopeIcon, RssIcon } from "@heroicons/react/24/solid";
 import { addEmailSubscription } from "@/lib/serverActions";
 import { useState } from "react";
-import { InstagramIcon, LinkedInIcon, TikTokIcon, YouTubeIcon } from "./icons";
+import { InstagramIcon, LinkedInIcon, TikTokIcon, TwitterXIcon, YouTubeIcon } from "./icons";
 
 export default function Footer() {
 	const [email, setEmail] = useState("");
@@ -82,6 +82,14 @@ export default function Footer() {
 									href="https://www.tiktok.com/@tedi_youth"
 									aria-label="TikTok">
 									<TikTokIcon className="h-4 w-4 fill-current dark:fill-white" />
+								</a>
+							</li>
+							<li className="ml-4">
+								<a
+									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
+									href="https://twitter.com/TEDIactivism"
+									aria-label="Twitter">
+									<TwitterXIcon className="h-4 w-4 fill-current dark:fill-white" />
 								</a>
 							</li>
 							<li className="ml-4">
