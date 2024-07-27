@@ -49,9 +49,9 @@ export default async function OurWork({}) {
 									Join Us
 								</Link>
 								<Link
-									href="/join"
+									href="https://docs.google.com/forms/d/e/1FAIpQLSdRxjerrXZqC4LlJaQDmklnCyL-liINyCnZFoRvL3WCieS1mw/viewform?usp=sharing"
 									className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-blue-700">
-									Join Us
+									Help our summer clean up
 								</Link>
 							</div>
 						</div>
