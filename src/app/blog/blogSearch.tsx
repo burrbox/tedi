@@ -6,12 +6,12 @@ import { useState } from "react";
 
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 import { Command as CommandPrimitive } from "cmdk";
-import { Check } from "lucide-react";
 
-import { cn } from "@/lib/utils";
+import { getPostAuthor } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { type Prisma } from "@prisma/client";
 import { useRouter } from "next/navigation";
+import { CldImage } from "next-cloudinary";
 
 export function BlogSearch({ articles }: { articles: Prisma.PostGetPayload<null>[] }) {
 	const router = useRouter();
@@ -53,6 +53,15 @@ export function BlogSearch({ articles }: { articles: Prisma.PostGetPayload<null>
 											setOpen(false);
 											void router.push(`/blog/${currentValue}`);
 										}}>
+										<CldImage
+											className="mr-3 shrink-0 rounded-full"
+											src={getPostAuthor(article).image ?? "utter"}
+											width={32}
+											height={32}
+											crop="thumb"
+											gravity="face"
+											alt={getPostAuthor(article).name ?? "Anonymous Author"}
+										/>
 										{article.title}
 									</CommandItem>
 								))}

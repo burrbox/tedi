@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getPosts } from "@/lib/serverActions";
-import { type Prisma } from "@prisma/client";
-import { team } from "@/lib/constants";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { format } from "date-fns";
 import { type Metadata } from "next";
@@ -10,6 +8,7 @@ import { env } from "@/env";
 import { getCldOgImageUrl } from "next-cloudinary";
 import { BlogSearch } from "./blogSearch";
 import { auth } from "@/server/auth";
+import { getPostAuthor } from "@/lib/utils";
 // import RelatedPosts from "@/components/related-posts-01";
 
 export const revalidate = 300; // 5 minutes
@@ -31,12 +30,8 @@ export const metadata: Metadata = {
 	},
 };
 
-const getPostAuthor = (post: Prisma.PostGetPayload<null>) =>
-	team.find((member) => member.name.toLowerCase() === post.author) ?? team[1]!;
-
 export default async function Blog() {
 	const allPosts = await getPosts();
-	console.log(allPosts.map((post) => post.title));
 	const session = await auth();
 
 	const featuredPost = allPosts[0]!;
@@ -84,7 +79,7 @@ export default async function Blog() {
 											<div className="mr-4">
 												<CloudinaryClientWrapper
 													className="mr-3 shrink-0 rounded-full"
-													src={getPostAuthor(featuredPost).image ?? "/avatar.jpg"}
+													src={getPostAuthor(featuredPost).image ?? "utter"}
 													width={32}
 													height={32}
 													crop="thumb"
@@ -162,7 +157,7 @@ export default async function Blog() {
 												<a href="#0">
 													<CloudinaryClientWrapper
 														className="mr-3 rounded-full"
-														src={getPostAuthor(post).image ?? "/avatar.jpg"}
+														src={getPostAuthor(post).image ?? "utter"}
 														width={32}
 														height={32}
 														crop="thumb"

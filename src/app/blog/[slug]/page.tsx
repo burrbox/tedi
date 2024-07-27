@@ -12,6 +12,7 @@ import { getCldOgImageUrl } from "next-cloudinary";
 import Link from "next/link";
 import { auth } from "@/server/auth";
 import { TwitterXIcon } from "@/components/icons";
+import { getPostAuthor } from "@/lib/utils";
 
 export async function generateStaticParams() {
 	return (await getPosts()).map((post) => ({
@@ -50,7 +51,7 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 	const post = await getPost(params.slug);
 	if (!post) notFound();
 
-	const author = team.find((member) => member.name.toLowerCase() === post.author) ?? team[1]!;
+	const author = getPostAuthor(post) ?? team[1]!;
 
 	const session = await auth();
 
@@ -174,9 +175,9 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 									</div>
 									<div className="pt-5 md:pt-10">
 										<p className="text-green-500">
-											Author: <span>{team.find((member) => member.name.toLowerCase() === post.author)?.name}</span>
+											Author: <span>{author.name}</span>
 											<br />
-											Editor: <span>{team.find((member) => member.name.toLowerCase() === post.author)?.name}</span>
+											Editor: <span>{author.name}</span>
 										</p>
 									</div>
 								</div>
