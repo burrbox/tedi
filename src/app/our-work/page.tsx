@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
 	title: "Our Work - TEDI",
-	description: "Fidn out about all the work we do for our environPetitionsment!",
+	description: "Find out about all the work we do for our environment!",
 	keywords: ["nature", "defense", "environment", "climate", "sustainability"],
 	openGraph: {
 		siteName: "The Environmental Defense Initiative",
