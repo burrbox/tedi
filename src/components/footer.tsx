@@ -74,6 +74,7 @@ export default function Footer() {
 								<a
 									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
 									href="mailto:environmentaldefenseinitiative@gmail.com"
+									target="_blank"
 									aria-label="Email">
 									<EnvelopeIcon className="h-4 w-4 dark:fill-white" />
 								</a>
@@ -82,6 +83,7 @@ export default function Footer() {
 								<a
 									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
 									href="https://www.tiktok.com/@tedi_youth"
+									target="_blank"
 									aria-label="TikTok">
 									<TikTokIcon className="h-4 w-4 fill-current dark:fill-white" />
 								</a>
@@ -90,6 +92,7 @@ export default function Footer() {
 								<a
 									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
 									href="https://twitter.com/TEDIactivism"
+									target="_blank"
 									aria-label="Twitter">
 									<TwitterXIcon className="h-4 w-4 fill-current dark:fill-white" />
 								</a>
@@ -98,6 +101,7 @@ export default function Footer() {
 								<a
 									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
 									href="https://www.youtube.com/channel/UCLJIczzKZWeqsa2Pmg55F6g"
+									target="_blank"
 									aria-label="Youtube">
 									<YouTubeIcon className="h-4 w-4 fill-current dark:fill-white" />
 								</a>
@@ -106,6 +110,7 @@ export default function Footer() {
 								<a
 									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
 									href="https://www.instagram.com/environmentaldefenseinitiative/"
+									target="_blank"
 									aria-label="Instagram">
 									<InstagramIcon className="h-4 w-4 fill-current dark:fill-white" />
 								</a>
@@ -114,6 +119,7 @@ export default function Footer() {
 								<a
 									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
 									href="https://www.linkedin.com/company/97920980/admin/feed/posts/"
+									target="_blank"
 									aria-label="Linkedin">
 									<LinkedInIcon className="h-4 w-4 fill-current dark:fill-white" />
 								</a>
@@ -122,6 +128,7 @@ export default function Footer() {
 								<a
 									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
 									href="/rss.xml"
+									target="_blank"
 									aria-label="RSS Feed">
 									<RssIcon className="h-4 w-4 fill-current dark:fill-white" />
 								</a>
@@ -138,7 +145,8 @@ export default function Footer() {
 							·{" "} */}
 							<a
 								className="text-gray-600 transition duration-150 ease-in-out hover:underline dark:text-gray-400"
-								href="/privacy-policy">
+								href="/privacy-policy"
+								target="_blank">
 								Privacy Policy
 							</a>
 						</div>

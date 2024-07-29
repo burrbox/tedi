@@ -141,27 +141,27 @@ export default function AboutPage() {
 								</div>
 								<div className="mt-4 flex space-x-4">
 									{member.email && (
-										<Link href={`mailto:${member.email}`}>
+										<Link href={`mailto:${member.email}`} target="_blank">
 											<EnvelopeIcon className="h-6 w-6 dark:text-gray-200" name={`Send an email to ${member.name}`} />
 										</Link>
 									)}
 									{member.linkedin && (
-										<Link href={member.linkedin}>
+										<Link href={member.linkedin} target="_blank">
 											<LinkedInIcon className="h-6 w-6 dark:fill-gray-200" name={`Link to ${member.name}'s LinkedIn`} />
 										</Link>
 									)}
 									{member.github && (
-										<Link href={member.github}>
+										<Link href={member.github} target="_blank">
 											<GithubIcon className="h-6 w-6 dark:fill-gray-200" name={`Link to ${member.name}'s Github`} />
 										</Link>
 									)}
 									{member.twitter && (
-										<Link href={member.twitter}>
+										<Link href={member.twitter} target="_blank">
 											<TwitterXIcon className="h-6 w-6 dark:fill-gray-200" name={`Link to ${member.name}'s Twitter`} />
 										</Link>
 									)}
 									{member.instagram && (
-										<Link href={member.instagram}>
+										<Link href={member.instagram} target="_blank">
 											<InstagramIcon
 												className="h-6 w-6 dark:fill-gray-200"
 												name={`Link to ${member.name}'s Instagram`}
@@ -169,12 +169,12 @@ export default function AboutPage() {
 										</Link>
 									)}
 									{member.tiktok && (
-										<Link href={member.tiktok}>
+										<Link href={member.tiktok} target="_blank">
 											<TikTokIcon className="h-6 w-6 dark:fill-gray-200" name={`Link to ${member.name}'s Tiktok`} />
 										</Link>
 									)}
 									{member.website && (
-										<Link href={member.website}>
+										<Link href={member.website} target="_blank">
 											<GlobeAmericasIcon
 												className="h-6 w-6 dark:fill-gray-200"
 												name={`Link to ${member.name}'s website`}
