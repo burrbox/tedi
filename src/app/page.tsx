@@ -124,10 +124,10 @@ export default async function Home() {
 						</div>
 					</div>
 					<CloudinaryClientWrapper
-						src="TEDI Bio/rainbow-hiro"
+						src="other/wq4nmeqsd2o4lf1rc4ly"
 						width="550"
 						height="450"
-						alt="CEO"
+						alt="A local high school cleanup event"
 						className="mx-auto aspect-video overflow-hidden rounded-xl object-cover shadow-xl"
 						data-aos="fade-left"
 						data-aos-delay="200"

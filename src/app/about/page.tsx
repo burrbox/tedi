@@ -67,7 +67,7 @@ export default function AboutPage() {
 					</p>
 				</div>
 			</section>
-			<section className="w-full bg-gray-100 dark:bg-stone-900">
+			<section className="w-full bg-gray-100 pt-20 dark:bg-stone-900">
 				<div
 					className="relative flex min-h-[50vh] w-screen flex-col bg-cover bg-fixed bg-center bg-repeat"
 					style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/waterfall" })})` }}>
