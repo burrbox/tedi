@@ -41,7 +41,7 @@ export default async function OurWork({}) {
 								<p className="max-w-[600px] text-wrap text-white md:text-xl">
 									TEDI raises awareness of current environmental issues and encourages individuals to take action in
 									their own communities by posting frequently on various social media platforms, writing blogs,
-									launching petitions, ad hosting webinars.
+									launching petitions, and hosting webinars.
 									<br />
 									<br />
 									<span className="dark:text-green-500">
@@ -51,7 +51,7 @@ export default async function OurWork({}) {
 							</div>
 							<div className="flex flex-col gap-2 min-[400px]:flex-row">
 								<Link
-									href="/join"
+									href="https://docs.google.com/forms/d/e/1FAIpQLSfEWkGAauRBi07E8-4WRlay7RyXJlLII85dt1FCV2C0m-hI1Q/viewform"
 									className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-green-700">
 									Join Us
 								</Link>
@@ -185,8 +185,7 @@ export default async function OurWork({}) {
 					</div>
 				</div>
 			</section>
-			{/* 			<Carousel />
-			 */}
+			{/* <Carousel /> */}
 		</div>
 	);
 }
