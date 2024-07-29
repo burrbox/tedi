@@ -21,7 +21,7 @@ import { Package2, PanelLeft } from "lucide-react";
 const links = [
 	// { name: "Home", href: "/" },
 	{ name: "About", href: "/about" },
-	// { name: "Our Work", href: "/our-work" },
+	{ name: "Our Work", href: "/our-work" },
 	{ name: "Blog", href: "/blog" },
 	{ name: "Petitions", href: "/petitions" },
 	// { name: "Join Us", href: "/join" },

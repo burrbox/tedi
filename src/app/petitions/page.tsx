@@ -75,7 +75,7 @@ export default async function Petitions({}) {
 					<div className="flex flex-col justify-center gap-6 xl:flex-row">
 						<div className="basis-3/5">
 							<div className="h-fit rounded-xl bg-white p-2 py-8 dark:bg-stone-800">
-								<h1 className="text-center text-3xl font-semibold text-blue-700 dark:text-blue-500">
+								<h1 className="text-center text-3xl font-semibold text-green-700 dark:text-green-400">
 									{petition.title}
 								</h1>
 								<h2 className="mx-4 whitespace-pre-line pt-6 text-sm text-green-700 md:mx-6 md:text-sm lg:mx-8 lg:text-base dark:text-blue-300">

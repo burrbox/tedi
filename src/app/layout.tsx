@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
-		<html lang="en" className={`${GeistSans.variable} dark:bg-black`}>
+		<html lang="en" className={`${GeistSans.variable} dark:bg-stone-950`}>
 			<body>
 				<TRPCReactProvider>
 					<RootLayoutClient>{children}</RootLayoutClient>

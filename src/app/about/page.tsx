@@ -118,25 +118,27 @@ export default function AboutPage() {
 						{team.map((member) => (
 							<div
 								key={member.name}
-								className="rounded-lg bg-blue-100 p-8 shadow-md duration-300 ease-in-out hover:bg-blue-200 dark:bg-emerald-900 dark:duration-500 dark:ease-in-out dark:hover:bg-emerald-800"
+								className="flex h-full flex-col justify-between rounded-lg bg-blue-100 p-8 shadow-md duration-300 ease-in-out hover:bg-blue-200 dark:bg-emerald-900 dark:duration-500 dark:ease-in-out dark:hover:bg-emerald-800"
 								data-aos="fade-down"
 								data-aos-duration="300">
-								<CloudinaryClientWrapper
-									height={1080}
-									width={1080}
-									src={member.image}
-									alt={`An image of ${member.name}.`}
-									gravity="face"
-									crop="fill"
-									className="mb-4 h-96 w-full rounded-md object-cover"
-								/>
-								<h3 className="mb-2 text-xl font-bold text-blue-700 dark:text-blue-200">{member.name}</h3>
-								<h4 className="mb-2 text-blue-700 dark:text-blue-200">{member.title}</h4>
-								<p className="mb-2 flex text-blue-700 dark:text-blue-200">
-									<MapPinIcon className="mr-1 inline-block h-6 w-6" />
-									<span>{member.location}</span>
-								</p>
-								<p className="text-blue-700 dark:text-stone-300">{member.description}</p>
+								<div>
+									<CloudinaryClientWrapper
+										height={1080}
+										width={1080}
+										src={member.image}
+										alt={`An image of ${member.name}.`}
+										gravity="face"
+										crop="fill"
+										className="mb-4 h-96 w-full rounded-md object-cover"
+									/>
+									<h3 className="mb-2 text-xl font-bold text-blue-700 dark:text-blue-200">{member.name}</h3>
+									<h4 className="mb-2 text-blue-700 dark:text-blue-200">{member.title}</h4>
+									<p className="mb-2 flex text-blue-700 dark:text-blue-200">
+										<MapPinIcon className="mr-1 inline-block h-6 w-6" />
+										<span>{member.location}</span>
+									</p>
+									<p className="text-blue-700 dark:text-stone-300">{member.description}</p>
+								</div>
 								<div className="mt-4 flex space-x-4">
 									{member.email && (
 										<Link href={`mailto:${member.email}`}>
@@ -230,8 +232,8 @@ export default function AboutPage() {
 					</div>
 				</div>
 				<hr className="border-t-1 mx-auto mb-6 w-1/2 border-green-700"></hr>
-				<div className="mx-auto flex w-3/4 flex-col items-center justify-center gap-6 xl:flex-row">
-					<div className="relative w-full md:w-1/2">
+				<div className="mx-auto flex w-full flex-col items-center justify-center gap-6 md:flex-row lg:w-3/4">
+					<div className="relative w-11/12 md:w-3/4 lg:w-1/2">
 						<p className="py-5 text-center text-xl text-blue-600 dark:text-blue-300">
 							&quot;Collaborating with your team on our project has been an{" "}
 							<span className="font-semibold text-green-600">exceptional</span> experience. Your{" "}
@@ -243,7 +245,7 @@ export default function AboutPage() {
 						</p>
 						<h3 className="text-center text-xl font-semibold text-blue-600 dark:text-blue-400">-- Plant A Change--</h3>
 					</div>
-					<div className="relative w-full md:w-1/2">
+					<div className="relative w-11/12 md:w-3/4 lg:w-1/2">
 						<p className="py-5 text-center text-xl text-blue-600 dark:text-blue-300">
 							&quot;Collaborating with the Environmental Defense Initiative on{" "}
 							<span className="font-semibold text-green-600">inspiring</span> reels and a microplastic pollution

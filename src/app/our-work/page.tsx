@@ -1,8 +1,9 @@
 import { type Metadata } from "next";
 import { env } from "@/env";
-import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
+import { getCldOgImageUrl } from "next-cloudinary";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import Link from "next/link";
+import Carousel from "./carousel";
 
 export const metadata: Metadata = {
 	title: "Our Work - TEDI",
@@ -33,13 +34,19 @@ export default async function OurWork({}) {
 					<div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
 						<div className="flex flex-col justify-center space-y-4" data-aos="fade-right">
 							<div className="space-y-2">
-								<h1 className="text-wrap text-3xl font-bold tracking-tighter text-blue-600 sm:text-4xl md:text-5xl xl:text-6xl/none dark:text-white">
+								<h1 className="text-wrap text-3xl font-bold tracking-tighter text-blue-600 sm:text-4xl md:text-5xl xl:text-6xl/none">
 									Together, <br />
 									We Can Make a Difference
 								</h1>
-								<p className="max-w-[600px] text-wrap md:text-xl dark:text-green-500">
-									The Environmental Defense Initiative is dedicated to environmental conservation and sustainability.
-									Join us in our mission to create a greener, healthier future.
+								<p className="max-w-[600px] text-wrap text-white md:text-xl">
+									TEDI raises awareness of current evnironemntal issues and encourages individuals to take action in
+									their own communities by posting frequently on various social media platforms, writing blogs,
+									launching petitions, ad hosting webinars.
+									<br />
+									<br />
+									<span className="dark:text-green-500">
+										Join us in our mission to create a greener, healthier future.
+									</span>
 								</p>
 							</div>
 							<div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -115,13 +122,13 @@ export default async function OurWork({}) {
 					</div>
 				</div>
 			</section>
-			<section className="w-full py-12">
+			<section className="w-full py-12 md:py-24 lg:py-32" data-aos="fade-in">
 				<div className="container px-4 md:px-6">
 					<div className="flex flex-col items-center justify-center space-y-4 text-center">
 						<div className="space-y-2">
 							<div className="inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">Get Involved</div>
 							<h2 className="text-3xl font-bold tracking-tighter text-green-600 sm:text-5xl">Join the Movement</h2>
-							<p className="max-w-[900px]">
+							<p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 								Join us in our next local clean up, hosted from 10-11:30am on August 4th at Patriot Way. <br /> Help us
 								clean our local environment and make a difference in our community! Every small action counts in
 								protecting the Earth.
@@ -142,9 +149,11 @@ export default async function OurWork({}) {
 					</div>
 				</div>
 			</section>
-			<section className="w-full bg-stone-800 py-12">
+			<section className="w-full bg-stone-800 py-12 md:py-24 lg:grid lg:grid-cols-2 lg:gap-12 lg:py-32">
 				<div className="aspect-video w-full overflow-hidden rounded-lg">
+					<h2></h2>
 					<iframe
+						data-aos="fade-right"
 						width="560"
 						height="315"
 						src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=UmlRV3kb59TWgAGG"
@@ -153,13 +162,13 @@ export default async function OurWork({}) {
 						className="h-full w-full rounded-xl pl-12"
 					/>
 				</div>
-				<div className="mr-12 flex flex-col items-center justify-center space-y-4 text-center">
+				<div className="mr-12 flex flex-col items-center justify-center space-y-4 text-center" data-aos="fade-left">
 					<div className="space-y-2">
 						<div className="inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">Webinars</div>
 						<h2 className="text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl">
 							Learn from what Experts have to say
 						</h2>
-						<p className="max-w-[900px]">
+						<p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 							Now, more than ever before, we are seeing the effects of human overpopulation on nature and the
 							envionrment on an international level. Although these issues are broad in scope, every community has its
 							own unique environment and therefore faces different problms. It is up to you to take action and protect
@@ -169,14 +178,14 @@ export default async function OurWork({}) {
 					</div>
 					<div className="flex flex-col gap-2 min-[400px]:flex-row">
 						<Link
-							href="#"
+							href="https://www.youtube.com/channel/UCLJIczzKZWeqsa2Pmg55F6g"
 							className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-green-700">
 							See Our Past Webinars
 						</Link>
 					</div>
 				</div>
 			</section>
-			<section id="gallery"></section>
+			<Carousel />
 		</div>
 	);
 }

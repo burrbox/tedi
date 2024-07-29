@@ -65,7 +65,7 @@ export default async function Blog() {
 								priority
 								alt={featuredPost.title}
 							/>
-							<div className="absolute inset-0 bg-gradient-to-t from-white/50 to-transparent dark:from-black/50" />
+							<div className="absolute inset-0 bg-gradient-to-t from-blue-100/50 to-transparent dark:from-black/50" />
 							<div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 lg:p-10">
 								<div className="max-w-xl">
 									<div className="mb-2 md:mb-3 lg:mb-4">
@@ -131,7 +131,7 @@ export default async function Blog() {
 									{posts.map((post, postIndex) => (
 										<article
 											key={postIndex}
-											className="flex h-full flex-col rounded-xl bg-gray-100 p-10 duration-300 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600"
+											className="flex h-full flex-col rounded-xl bg-blue-100 p-10 duration-300 hover:bg-blue-200 dark:bg-emerald-950 dark:hover:bg-emerald-900"
 											data-aos="fade-down"
 											data-aos-delay="200">
 											<header>

@@ -38,7 +38,9 @@ export default function Footer() {
 					{/* Footer Content */}
 					<div className="w-full pb-8">
 						<div>
-							<h3 className="pb-2 text-xl text-blue-600 dark:text-blue-400">Subscribe to our monthly newsletter!</h3>
+							<h3 className="pb-2 text-xl text-blue-600 dark:text-blue-400">
+								Subscribe to our monthly membership emails!
+							</h3>
 						</div>
 						<form
 							name="email-subscription"
