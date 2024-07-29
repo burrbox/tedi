@@ -185,7 +185,7 @@ export default async function OurWork({}) {
 					</div>
 				</div>
 			</section>
-			{/* <Carousel /> */}
+			<Carousel />
 		</div>
 	);
 }
