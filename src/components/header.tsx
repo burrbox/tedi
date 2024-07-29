@@ -9,14 +9,13 @@ import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
-	DropdownMenuLabel,
-	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { stripeDonation } from "@/lib/serverActions";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { Button } from "./ui/button";
-import { Package2, PanelLeft } from "lucide-react";
+import { Package2 } from "lucide-react";
+import { Bars3Icon } from "@heroicons/react/24/solid";
 
 const links = [
 	// { name: "Home", href: "/" },
@@ -38,7 +37,7 @@ export default function Header() {
 				<Sheet>
 					<SheetTrigger asChild>
 						<Button size="icon" variant="outline" className="mx-5 sm:hidden">
-							<PanelLeft className="h-5 w-5" />
+							<Bars3Icon className="h-5 w-5" />
 							<span className="sr-only">Toggle Menu</span>
 						</Button>
 					</SheetTrigger>
@@ -61,18 +60,18 @@ export default function Header() {
 						</nav>
 					</SheetContent>
 				</Sheet>
-				<Link href={"/"} className="flex items-center space-x-2">
+				<Link href="/" className="flex items-center space-x-2">
 					<CldImage width="40" height="40" src="logo" alt="Logo" className="h-10 w-10" />
 					<h1 className="hidden text-xl font-bold text-green-700 sm:block dark:text-blue-400">
 						The Environmental Defense Initiative
 					</h1>
 				</Link>
-				<nav className="flex items-center space-x-4 text-lg sm:space-x-8">
+				<nav className="flex items-center space-x-1 text-lg md:space-x-6">
 					{links.map((link) => (
 						<Link
 							key={link.name}
 							href={link.href}
-							className={`hidden sm:block ${
+							className={`hidden rounded-md px-2 py-1 hover:bg-gray-200 sm:block dark:hover:bg-gray-800 ${
 								link.href === path ? "text-green-700 dark:text-green-300" : "text-blue-700 dark:text-blue-400"
 							}`}>
 							{link.name}
@@ -88,7 +87,7 @@ export default function Header() {
 					{session?.user ? (
 						<DropdownMenu>
 							<DropdownMenuTrigger>
-								<div className="border-gray-700 pb-3 pt-4">
+								<div className="border-gray-700">
 									<div className="flex items-center px-5">
 										<div className="mr-3 flex-shrink-0">
 											<Image
@@ -99,7 +98,7 @@ export default function Header() {
 												alt=""
 											/>
 										</div>
-										<div className="hidden lg:block">
+										<div className="hidden xl:block">
 											<div className="text-base font-medium text-gray-800 dark:text-white">{session.user.name}</div>
 											<div className="text-sm font-medium text-gray-600 dark:text-gray-300">{session.user.email}</div>
 										</div>
@@ -107,18 +106,12 @@ export default function Header() {
 								</div>
 							</DropdownMenuTrigger>
 							<DropdownMenuContent>
-								<DropdownMenuLabel>My Account</DropdownMenuLabel>
-								<DropdownMenuSeparator />
+								{/* <DropdownMenuLabel>My Account</DropdownMenuLabel> */}
+								{/* <DropdownMenuSeparator /> */}
 								<DropdownMenuItem>Profile</DropdownMenuItem>
 								<DropdownMenuItem>Settings</DropdownMenuItem>
 								<DropdownMenuItem>
-									<button
-										onClick={async () => {
-											await signOut();
-											await updateSession();
-										}}>
-										Sign Out
-									</button>
+									<button onClick={() => signOut().then(() => updateSession())}>Sign Out</button>
 								</DropdownMenuItem>
 							</DropdownMenuContent>
 						</DropdownMenu>
