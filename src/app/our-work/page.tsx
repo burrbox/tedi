@@ -39,7 +39,7 @@ export default async function OurWork({}) {
 									We Can Make a Difference
 								</h1>
 								<p className="max-w-[600px] text-wrap text-white md:text-xl">
-									TEDI raises awareness of current evnironemntal issues and encourages individuals to take action in
+									TEDI raises awareness of current environmental issues and encourages individuals to take action in
 									their own communities by posting frequently on various social media platforms, writing blogs,
 									launching petitions, ad hosting webinars.
 									<br />
@@ -170,8 +170,8 @@ export default async function OurWork({}) {
 						</h2>
 						<p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 							Now, more than ever before, we are seeing the effects of human overpopulation on nature and the
-							envionrment on an international level. Although these issues are broad in scope, every community has its
-							own unique environment and therefore faces different problms. It is up to you to take action and protect
+							environment on an international level. Although these issues are broad in scope, every community has its
+							own unique environment and therefore faces different problems. It is up to you to take action and protect
 							the environment – we at TEDI are here to help you do it. Explore the links below to learn how to take
 							action.
 						</p>
