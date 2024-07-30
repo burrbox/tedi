@@ -48,7 +48,8 @@ export default async function Blog() {
 							<Link
 								className="my-4 rounded-xl bg-green-600 px-4 py-2 text-white hover:bg-green-700"
 								title="Edit this article"
-								href="/blog/admin/edit/new">
+								href="/blog/admin/edit/new"
+							>
 								New article
 							</Link>
 						</div>
@@ -101,7 +102,8 @@ export default async function Blog() {
 										<div>
 											<Link
 												href={`/blog/${featuredPost.slug}`}
-												className="rounded-xl border-2 border-green-600 bg-green-600 px-10 py-2 text-white duration-300 hover:bg-white hover:text-green-600 md:px-16">
+												className="rounded-xl border-2 border-green-600 bg-green-600 px-10 py-2 text-white duration-300 hover:bg-white hover:text-green-600 md:px-16"
+											>
 												Read More
 											</Link>
 										</div>
@@ -133,7 +135,8 @@ export default async function Blog() {
 											key={postIndex}
 											className="flex h-full flex-col rounded-xl bg-blue-100 p-10 duration-300 hover:bg-blue-200 dark:bg-emerald-950 dark:hover:bg-emerald-900"
 											data-aos="fade-down"
-											data-aos-delay="200">
+											data-aos-delay="200"
+										>
 											<header>
 												{post.image && (
 													<Link className="mb-4 block" href={`/blog/${post.slug}`}>

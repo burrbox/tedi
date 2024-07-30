@@ -121,7 +121,8 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 										<Link
 											className="my-4 rounded-xl bg-green-600 px-4 py-2 text-xl text-white hover:bg-green-700"
 											title="Edit this article"
-											href={`/blog/admin/edit/${post.slug}`}>
+											href={`/blog/admin/edit/${post.slug}`}
+										>
 											Edit this article
 										</Link>
 									</span>

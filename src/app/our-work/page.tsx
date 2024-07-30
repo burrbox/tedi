@@ -52,12 +52,14 @@ export default async function OurWork({}) {
 							<div className="flex flex-col gap-2 min-[400px]:flex-row">
 								<Link
 									href="https://docs.google.com/forms/d/e/1FAIpQLSfEWkGAauRBi07E8-4WRlay7RyXJlLII85dt1FCV2C0m-hI1Q/viewform"
-									className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-green-700">
+									className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-green-700"
+								>
 									Join Us
 								</Link>
 								<Link
 									href="https://docs.google.com/forms/d/e/1FAIpQLSdRxjerrXZqC4LlJaQDmklnCyL-liINyCnZFoRvL3WCieS1mw/viewform?usp=sharing"
-									className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-blue-700">
+									className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-blue-700"
+								>
 									Help our summer clean up
 								</Link>
 							</div>
@@ -90,7 +92,8 @@ export default async function OurWork({}) {
 						</div>
 						<div
 							className="mx-auto grid items-start gap-8 py-4 sm:max-w-4xl sm:grid-cols-2 md:max-w-5xl md:gap-20 lg:max-w-7xl lg:grid-cols-3"
-							data-aos="fade-in">
+							data-aos="fade-in"
+						>
 							<div className="grid w-full gap-1">
 								<div className="inline-flex h-12 items-center justify-center rounded-lg bg-green-600 dark:bg-green-700"></div>
 								<h2 className="text-center text-2xl text-white">Expert Interviews</h2>
@@ -137,12 +140,14 @@ export default async function OurWork({}) {
 						<div className="flex flex-col gap-2 min-[400px]:flex-row">
 							<Link
 								href="https://docs.google.com/forms/d/e/1FAIpQLSdRxjerrXZqC4LlJaQDmklnCyL-liINyCnZFoRvL3WCieS1mw/viewform?usp=sharing"
-								className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-green-700">
+								className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-green-700"
+							>
 								Sign Up
 							</Link>
 							<Link
 								href="/our-work#gallery"
-								className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-blue-700">
+								className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-blue-700"
+							>
 								See our past cleanups!
 							</Link>
 						</div>
@@ -179,7 +184,8 @@ export default async function OurWork({}) {
 					<div className="flex flex-col gap-2 min-[400px]:flex-row">
 						<Link
 							href="https://www.youtube.com/channel/UCLJIczzKZWeqsa2Pmg55F6g"
-							className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-green-700">
+							className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-green-700"
+						>
 							See Our Past Webinars
 						</Link>
 					</div>

@@ -116,7 +116,8 @@ export default function PetitionForm() {
 				<button
 					type="submit"
 					disabled={isSubmitting || done}
-					className="w-4/5 cursor-pointer rounded-xl bg-blue-700 py-3 text-white duration-300 hover:bg-blue-600">
+					className="w-4/5 cursor-pointer rounded-xl bg-blue-700 py-3 text-white duration-300 hover:bg-blue-600"
+				>
 					{isSubmitting ? <Loading className="m-auto" /> : "Sign"}
 				</button>
 			</div>

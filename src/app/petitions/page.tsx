@@ -31,7 +31,8 @@ export default async function Petitions({}) {
 			<div
 				title="An image of the Redwood Forest"
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/tallForest" })})` }}
-				className="flex h-[70vh] w-screen bg-cover bg-fixed bg-center bg-no-repeat">
+				className="flex h-[70vh] w-screen bg-cover bg-fixed bg-center bg-no-repeat"
+			>
 				<div className="container relative mx-auto h-fit w-full px-4 py-16">
 					<div className="absolute inset-0 mx-auto mt-28 w-fit md:mt-32 lg:mt-44 2xl:mt-52" data-aos="fade-down">
 						<div className="flex flex-col justify-center rounded-xl bg-white p-10 lg:p-20 dark:bg-emerald-950">
@@ -70,7 +71,8 @@ export default async function Petitions({}) {
 			<div
 				className="relative flex min-h-[110vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
 				title="An image of a beach and ocean"
-				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/t7x9xmnsyqs2yetfpp3j" })})` }}>
+				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/t7x9xmnsyqs2yetfpp3j" })})` }}
+			>
 				<div className="inset-0 mx-auto w-full sm:w-10/12" data-aos="fade-down">
 					<div className="flex flex-col justify-center gap-6 xl:flex-row">
 						<div className="basis-3/5">

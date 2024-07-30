@@ -45,7 +45,8 @@ export default function Header() {
 						<nav className="grid gap-6 text-lg font-medium">
 							<Link
 								href="/"
-								className="bg-primary group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full text-lg font-semibold text-gray-200 md:text-base">
+								className="bg-primary group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full text-lg font-semibold text-gray-200 md:text-base"
+							>
 								<Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
 								<span>Home</span>
 							</Link>
@@ -53,7 +54,8 @@ export default function Header() {
 								<Link
 									key={link.name}
 									href={link.href}
-									className={`${link.href === path ? "text-gray-900 dark:text-gray-200" : "text-gray-400 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"} flex items-center gap-4 px-2.5`}>
+									className={`${link.href === path ? "text-gray-900 dark:text-gray-200" : "text-gray-400 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"} flex items-center gap-4 px-2.5`}
+								>
 									{link.name}
 								</Link>
 							))}
@@ -73,7 +75,8 @@ export default function Header() {
 							href={link.href}
 							className={`hidden rounded-md px-2 py-1 hover:bg-gray-200 sm:block dark:hover:bg-gray-800 ${
 								link.href === path ? "text-green-700 dark:text-green-300" : "text-blue-700 dark:text-blue-400"
-							}`}>
+							}`}
+						>
 							{link.name}
 						</Link>
 					))}
@@ -118,7 +121,8 @@ export default function Header() {
 					) : (
 						<Link
 							className="group inline-flex items-center justify-center rounded bg-blue-700 px-2 py-1 leading-snug shadow-sm sm:px-4 sm:py-2 md:w-max"
-							href={`/signin?redirect=${path}`}>
+							href={`/signin?redirect=${path}`}
+						>
 							{/* <ShimmerButton className="shadow-2xl" background="#4F46E5"> */}
 							<span className="whitespace-pre-wrap from-white to-slate-900/10 text-center text-lg font-medium leading-none tracking-tight text-white">
 								Sign In

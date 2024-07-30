@@ -58,7 +58,8 @@ export default function newArticleEmail({
 						<Section style={{ marginBottom: "32px", marginTop: "32px", textAlign: "center" }}>
 							<Button
 								className="rounded bg-black px-6 py-3 text-xs font-semibold text-white"
-								href={`${env.URL}/blog/${post.slug}`}>
+								href={`${env.URL}/blog/${post.slug}`}
+							>
 								Check it out
 							</Button>
 						</Section>

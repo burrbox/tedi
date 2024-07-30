@@ -28,7 +28,8 @@ export default function NotFound() {
 							<Link
 								href="/blog"
 								className="btn-sm group w-full bg-indigo-500 text-sm text-white shadow-sm hover:bg-indigo-600"
-								type="submit">
+								type="submit"
+							>
 								Read a blog
 							</Link>
 						</div>

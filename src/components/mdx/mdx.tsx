@@ -27,7 +27,8 @@ export function Mdx({ content }: { content: string }) {
 			<ReactMarkdown
 				remarkPlugins={[remarkGfm, remarkUnwrapImages] as PluggableList}
 				rehypePlugins={[rehypeRaw]}
-				components={components}>
+				components={components}
+			>
 				{content}
 			</ReactMarkdown>
 		</article>

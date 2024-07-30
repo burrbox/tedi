@@ -70,7 +70,8 @@ export default function AboutPage() {
 			<section className="w-full bg-gray-100 pt-20 dark:bg-stone-900">
 				<div
 					className="relative flex min-h-[50vh] w-screen flex-col bg-cover bg-fixed bg-center bg-repeat"
-					style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/waterfall" })})` }}>
+					style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/waterfall" })})` }}
+				>
 					<div className="w-screen">
 						<div className="w-screen rounded-b-2xl bg-white py-2 md:px-20 dark:bg-stone-900">
 							<h2 className="mb-6 text-center text-3xl font-bold text-green-700 dark:text-green-500">Our Values</h2>
@@ -120,7 +121,8 @@ export default function AboutPage() {
 								key={member.name}
 								className="flex h-full flex-col justify-between rounded-lg bg-blue-100 p-8 shadow-md duration-300 ease-in-out hover:bg-blue-200 dark:bg-emerald-900 dark:duration-500 dark:ease-in-out dark:hover:bg-emerald-800"
 								data-aos="fade-down"
-								data-aos-duration="300">
+								data-aos-duration="300"
+							>
 								<div>
 									<CloudinaryClientWrapper
 										height={1080}

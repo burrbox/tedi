@@ -114,7 +114,8 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 								variant="outline"
 								role="combobox"
 								aria-expanded={isAuthorOpen}
-								className="w-full justify-between">
+								className="w-full justify-between"
+							>
 								{author ? team.find((member) => member.name.toLowerCase() === author)?.name : "Select author..."}
 								<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
 							</Button>
@@ -132,7 +133,8 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 												onSelect={(newAuthor) => {
 													setAuthor((prev) => (newAuthor === prev ? "" : newAuthor.toLowerCase()));
 													setIsAuthorOpen(false);
-												}}>
+												}}
+											>
 												<Check
 													className={cn(
 														"mr-2 h-4 w-4",
@@ -174,13 +176,15 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 					onSuccess={(results) => {
 						if (!results.info || typeof results.info === "string") return;
 						setArticleImage(results.info.secure_url);
-					}}>
+					}}
+				>
 					Upload Article Image
 				</CldUploadButton>
 				{articleImage && (
 					<button
 						className="flex space-x-2 rounded-md bg-blue-600 px-4 py-2 text-white"
-						onClick={() => window.open(articleImage)}>
+						onClick={() => window.open(articleImage)}
+					>
 						Preview article image...
 					</button>
 				)}
@@ -192,7 +196,8 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 						if (!results.info || typeof results.info === "string") return;
 						const imageMd = `<figure>\n\n![${results.info.original_filename}](${results.info.secure_url})\n<figcaption>${results.info.original_filename}</figcaption></figure>`;
 						setContent((prev) => prev + imageMd);
-					}}>
+					}}
+				>
 					Upload Image
 				</CldUploadButton>
 				<button
@@ -204,7 +209,8 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 							if (slug !== newSlug) router.push(`/blog/admin/edit/${newSlug}`);
 						} else alert("Please enter a URL");
 						setIsSaving(false);
-					}}>
+					}}
+				>
 					<span>{slug === "new" ? "Create Article" : "Save Article"}</span>
 					{isSaving && <Loading />}
 				</button>

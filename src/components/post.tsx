@@ -28,7 +28,8 @@ export function LatestPost() {
 					e.preventDefault();
 					createPost.mutate({ name });
 				}}
-				className="flex flex-col gap-2">
+				className="flex flex-col gap-2"
+			>
 				<input
 					type="text"
 					placeholder="Title"
@@ -39,7 +40,8 @@ export function LatestPost() {
 				<button
 					type="submit"
 					className="rounded-full bg-white/10 px-10 py-3 font-semibold transition hover:bg-white/20"
-					disabled={createPost.isPending}>
+					disabled={createPost.isPending}
+				>
 					{createPost.isPending ? "Submitting..." : "Submit"}
 				</button>
 			</form>

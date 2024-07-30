@@ -29,7 +29,8 @@ export function BlogSearch({ articles }: { articles: Prisma.PostGetPayload<null>
 							onValueChange={setSearch}
 							onKeyDown={(e) => setOpen(e.key !== "Escape")}
 							onMouseDown={() => setOpen((open) => !!search || !open)}
-							onFocus={() => setOpen(true)}>
+							onFocus={() => setOpen(true)}
+						>
 							<Input placeholder="Select article..." className="w-full" />
 						</CommandPrimitive.Input>
 					</PopoverPrimitive.Anchor>
@@ -40,7 +41,8 @@ export function BlogSearch({ articles }: { articles: Prisma.PostGetPayload<null>
 						onInteractOutside={(e) => {
 							if (e.target instanceof Element && e.target.hasAttribute("cmdk-input")) e.preventDefault();
 						}}
-						className="w-[--radix-popover-trigger-width] p-0">
+						className="w-[--radix-popover-trigger-width] p-0"
+					>
 						<CommandList>
 							<CommandEmpty>No article found.</CommandEmpty>
 							<CommandGroup>
@@ -52,7 +54,8 @@ export function BlogSearch({ articles }: { articles: Prisma.PostGetPayload<null>
 										onSelect={(currentValue) => {
 											setOpen(false);
 											void router.push(`/blog/${currentValue}`);
-										}}>
+										}}
+									>
 										<CldImage
 											className="mr-3 shrink-0 rounded-full"
 											src={getPostAuthor(article).image ?? "utter"}

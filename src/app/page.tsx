@@ -30,10 +30,12 @@ export default async function Home() {
 			<section
 				title="An image of a forest"
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/oh93nln39npdtzsyettf" })})` }}
-				className="flex min-h-[70vh] w-screen bg-cover bg-fixed bg-center bg-no-repeat py-12 md:pb-20 md:pt-32 lg:pt-40">
+				className="flex min-h-[70vh] w-screen bg-cover bg-fixed bg-center bg-no-repeat py-12 md:pb-20 md:pt-32 lg:pt-40"
+			>
 				<div
 					className="mx-auto justify-center rounded-xl bg-white/80 py-10 shadow-xl dark:bg-stone-950/80"
-					data-aos="fade-down">
+					data-aos="fade-down"
+				>
 					<div className="space-y-10xl:space-y-16 container">
 						<div className="grid gap-4 lg:grid-cols-2 lg:gap-16">
 							<div>
@@ -81,19 +83,22 @@ export default async function Home() {
 					<div className="grid grid-cols-1 gap-6 md:grid-cols-3">
 						<div
 							className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center shadow-xl dark:border-gray-700 dark:bg-gray-700"
-							data-aos="fade-up">
+							data-aos="fade-up"
+						>
 							<h3 className="text-3xl font-bold dark:text-green-400">221</h3>
 							<p className="text-muted-foreground">Gallons of Trash Collected</p>
 						</div>
 						<div
 							className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center shadow-xl dark:border-gray-700 dark:bg-gray-700"
-							data-aos="fade-up">
+							data-aos="fade-up"
+						>
 							<h3 className="text-3xl font-bold dark:text-green-400">15,000+</h3>
 							<p className="text-muted-foreground">People Reached</p>
 						</div>
 						<div
 							className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center shadow-xl dark:border-gray-700 dark:bg-gray-700"
-							data-aos="fade-up">
+							data-aos="fade-up"
+						>
 							<h3 className="text-3xl font-bold dark:text-green-400">78</h3>
 							<p className="text-muted-foreground">Gallons of Plastic Collected</p>
 						</div>

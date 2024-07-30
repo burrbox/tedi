@@ -81,7 +81,8 @@ export default function SignIn({ searchParams }: { searchParams: Record<string, 
 								<button
 									className="btn-sm group w-full bg-indigo-500 text-sm text-white shadow-sm hover:bg-indigo-600 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-indigo-800 disabled:text-gray-300"
 									type="submit"
-									disabled={loading || !email}>
+									disabled={loading || !email}
+								>
 									{loading ? <Loading /> : "Sign In"}
 								</button>
 							</div>
@@ -96,7 +97,8 @@ export default function SignIn({ searchParams }: { searchParams: Record<string, 
 						<button
 							className="btn-sm relative my-3 flex w-full bg-gray-200 text-sm text-white after:flex-1"
 							type="button"
-							onClick={() => handleSignIn("google")}>
+							onClick={() => handleSignIn("google")}
+						>
 							<div className="flex flex-1 items-center">
 								<GoogleIcon className="h-6 w-6 shrink-0 fill-current" />
 							</div>
@@ -105,7 +107,8 @@ export default function SignIn({ searchParams }: { searchParams: Record<string, 
 						<button
 							className="btn-sm relative my-3 flex w-full bg-gray-700 text-sm text-white after:flex-1"
 							type="button"
-							onClick={() => handleSignIn("github")}>
+							onClick={() => handleSignIn("github")}
+						>
 							<div className="flex flex-1 items-center">
 								<GithubIcon className="h-6 w-6 shrink-0 fill-current text-gray-300" />
 							</div>
@@ -114,7 +117,8 @@ export default function SignIn({ searchParams }: { searchParams: Record<string, 
 						<button
 							className="btn-sm relative my-3 flex w-full bg-gray-800 text-sm after:flex-1"
 							type="button"
-							onClick={() => handleSignIn("discord")}>
+							onClick={() => handleSignIn("discord")}
+						>
 							<div className="flex flex-1 items-center">
 								<DiscordIcon className="h-6 w-6 shrink-0 fill-current text-gray-300" />
 							</div>
