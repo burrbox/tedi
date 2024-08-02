@@ -38,7 +38,7 @@ export default async function OurWork({}) {
 									Together, <br />
 									We Can Make a Difference
 								</h1>
-								<p className="max-w-[600px] text-wrap text-white md:text-xl">
+								<p className="max-w-[600px] text-wrap md:text-xl dark:text-white">
 									TEDI raises awareness of current environmental issues and encourages individuals to take action in
 									their own communities by posting frequently on various social media platforms, writing blogs,
 									launching petitions, and hosting webinars.
@@ -83,7 +83,7 @@ export default async function OurWork({}) {
 							<h2 className="text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl">
 								Protecting the Environment, One Step at a Time
 							</h2>
-							<p className="max-w-[900px] text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+							<p className="mx-auto max-w-4xl text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 								At TEDI we believe that <span className="font-semibold text-green-600">anyone</span> can make a
 								difference. All it takes is one signature, one plastic bottle recycled, or one conversation to have a
 								positive impact on our planet. Join us <span className="font-semibold text-green-600">today</span> in
@@ -97,7 +97,7 @@ export default async function OurWork({}) {
 							<div className="grid w-full gap-1">
 								<div className="inline-flex h-12 items-center justify-center rounded-lg bg-green-600 dark:bg-green-700"></div>
 								<h2 className="text-center text-2xl text-white">Expert Interviews</h2>
-								<p>
+								<p className="text-white">
 									Our expert interviews aim to inspire young activists to pursue careers in sustainability,
 									conservation, environmental advocacy, and natural sciences. We interview experts from across the
 									country about their professions and how young people can get involved at a local level!
@@ -106,7 +106,7 @@ export default async function OurWork({}) {
 							<div className="grid w-full gap-1">
 								<div className="inline-flex h-12 items-center justify-center rounded-lg bg-green-600 dark:bg-green-700"></div>
 								<h2 className="text-center text-2xl text-white">Cleanups</h2>
-								<p>
+								<p className="text-white">
 									Cleanups are one of the few ways individuals are able to clearly see the tangible impact we are having
 									on our environment. These events are excellent ways to connect with others in your community who are
 									passionate about protecting the environment all while earning volunteer hours and doing something
@@ -116,7 +116,7 @@ export default async function OurWork({}) {
 							<div className="grid w-full gap-1">
 								<div className="inline-flex h-12 items-center justify-center rounded-lg bg-green-600 dark:bg-green-700"></div>
 								<h2 className="text-center text-2xl text-white">Petitions</h2>
-								<p>
+								<p className="text-white">
 									Petitions are how we achieve not only change, but sustainable, long-lasting change that will last for
 									generations. Policy and legislation reform is how we make progress - every signature counts!
 								</p>
@@ -173,7 +173,7 @@ export default async function OurWork({}) {
 						<h2 className="text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl">
 							Learn from what Experts have to say
 						</h2>
-						<p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+						<p className="max-w-[900px] text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 							Now, more than ever before, we are seeing the effects of human overpopulation on nature and the
 							environment on an international level. Although these issues are broad in scope, every community has its
 							own unique environment and therefore faces different problems. It is up to you to take action and protect
