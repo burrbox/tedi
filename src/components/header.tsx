@@ -36,7 +36,7 @@ export default function Header() {
 			<div className="container mx-auto flex items-center justify-between px-4 py-4">
 				<Sheet>
 					<SheetTrigger asChild>
-						<Button size="icon" variant="outline" className="mx-5 sm:hidden">
+						<Button size="icon" variant="outline" className="sm:hidden">
 							<Bars3Icon className="h-5 w-5" />
 							<span className="sr-only">Toggle Menu</span>
 						</Button>
@@ -64,11 +64,11 @@ export default function Header() {
 				</Sheet>
 				<Link href="/" className="flex items-center space-x-2">
 					<CldImage width="40" height="40" src="logo" alt="Logo" className="h-10 w-10" />
-					<h1 className="hidden text-xl font-bold text-green-700 sm:block dark:text-blue-400">
+					<h1 className="hidden text-xl font-bold text-green-700 md:block dark:text-blue-400">
 						The Environmental Defense Initiative
 					</h1>
 				</Link>
-				<nav className="flex items-center space-x-1 text-lg md:space-x-6">
+				<nav className="flex items-center space-x-1 text-lg lg:space-x-6">
 					{links.map((link) => (
 						<Link
 							key={link.name}
