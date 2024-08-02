@@ -31,7 +31,7 @@ export async function generateMetadata(
 	const { title, summary: description } = post;
 
 	return {
-		title,
+		title: `${title} | TEDI - The Environmental Defense Initiative`,
 		description,
 		alternates: { canonical: `${env.URL}/blog/${params.slug}` },
 		openGraph: {

@@ -6,7 +6,7 @@ import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 
 export const metadata: Metadata = {
-	title: "Petitions - TEDI",
+	title: "Petitions - TEDI - The Environmental Defense Initiative",
 	description: "Be the change you want to see in the world.",
 	keywords: ["petition", "advocacy", "environment", "climate", "sustainability"],
 	alternates: { canonical: `${env.URL}/petitions` },

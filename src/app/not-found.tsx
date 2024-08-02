@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-	title: "Page Not Found | TEDI",
+	title: "Page Not Found | TEDI - The Environmental Defense Initiative",
 	description: "Have any questions about TEDI? We'd love to chat!",
 };
 
