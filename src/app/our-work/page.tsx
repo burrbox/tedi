@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 	},
 };
 
-export default async function OurWork({}) {
+export default async function OurWork() {
 	return (
 		<div className="flex min-h-screen flex-col">
 			<section className="flex h-screen w-full items-center">
@@ -95,8 +95,9 @@ export default async function OurWork({}) {
 							data-aos="fade-in"
 						>
 							<div className="grid w-full gap-1">
-								<div className="inline-flex h-12 items-center justify-center rounded-lg bg-green-600 dark:bg-green-700"></div>
-								<h2 className="text-center text-2xl text-white">Expert Interviews</h2>
+								<div className="mb-4 inline-flex h-12 items-center justify-center rounded-lg bg-green-600 dark:bg-green-700">
+									<h2 className="text-center text-2xl text-white">Expert Interviews</h2>
+								</div>
 								<p className="text-white">
 									Our expert interviews aim to inspire young activists to pursue careers in sustainability,
 									conservation, environmental advocacy, and natural sciences. We interview experts from across the
@@ -104,8 +105,9 @@ export default async function OurWork({}) {
 								</p>
 							</div>
 							<div className="grid w-full gap-1">
-								<div className="inline-flex h-12 items-center justify-center rounded-lg bg-green-600 dark:bg-green-700"></div>
-								<h2 className="text-center text-2xl text-white">Cleanups</h2>
+								<div className="mb-4 inline-flex h-12 items-center justify-center rounded-lg bg-green-600 dark:bg-green-700">
+									<h2 className="text-center text-2xl text-white">Cleanups</h2>
+								</div>
 								<p className="text-white">
 									Cleanups are one of the few ways individuals are able to clearly see the tangible impact we are having
 									on our environment. These events are excellent ways to connect with others in your community who are
@@ -114,8 +116,9 @@ export default async function OurWork({}) {
 								</p>
 							</div>
 							<div className="grid w-full gap-1">
-								<div className="inline-flex h-12 items-center justify-center rounded-lg bg-green-600 dark:bg-green-700"></div>
-								<h2 className="text-center text-2xl text-white">Petitions</h2>
+								<div className="mb-4 inline-flex h-12 items-center justify-center rounded-lg bg-green-600 dark:bg-green-700">
+									<h2 className="text-center text-2xl text-white">Petitions</h2>
+								</div>
 								<p className="text-white">
 									Petitions are how we achieve not only change, but sustainable, long-lasting change that will last for
 									generations. Policy and legislation reform is how we make progress - every signature counts!
@@ -177,7 +180,7 @@ export default async function OurWork({}) {
 							Now, more than ever before, we are seeing the effects of human overpopulation on nature and the
 							environment on an international level. Although these issues are broad in scope, every community has its
 							own unique environment and therefore faces different problems. It is up to you to take action and protect
-							the environment – we at TEDI are here to help you do it. Explore the links below to learn how to take
+							the environment - we at TEDI are here to help you do it. Explore the links below to learn how to take
 							action.
 						</p>
 					</div>
