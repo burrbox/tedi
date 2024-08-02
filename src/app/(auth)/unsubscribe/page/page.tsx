@@ -1,17 +1,16 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 export default function SignIn() {
 	const router = useRouter();
-	const searchParams = useSearchParams();
 
 	useEffect(() => {
-		fetch(`/unsubscribe?${searchParams.toString()}`, { method: "POST" }).catch((e) => {
+		fetch(`/unsubscribe${window.location.search}`, { method: "POST" }).catch((e) => {
 			router.push("/error");
 		});
-	}, [searchParams]);
+	}, [router]);
 
 	return (
 		<div className="relative mx-auto max-w-6xl px-4 sm:px-6">
