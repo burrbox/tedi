@@ -8,13 +8,12 @@ import RootLayoutClient from "./layoutClient";
 import { Analytics } from "@vercel/analytics/react";
 import { env } from "@/env";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { getCldImageUrl } from "next-cloudinary";
 
 export const metadata: Metadata = {
 	title: "The Environmental Defense Initiative",
 	description: "We defend the environment.",
-	icons: [
-		{ rel: "icon", url: `https://res.cloudinary.com/${env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/logo.png` },
-	],
+	icons: [{ rel: "icon", url: getCldImageUrl({ src: "logo" }) }],
 	openGraph: {
 		type: "website",
 		siteName: "The Environmental Defense Initiative",
