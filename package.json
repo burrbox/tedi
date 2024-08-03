@@ -12,6 +12,7 @@
 		"dev": "next dev",
 		"postinstall": "prisma generate",
 		"lint": "next lint",
+		"typecheck": "tsc --noEmit",
 		"start": "next start",
 		"fix": "prettier -w . '!pnpm-lock.yaml' && eslint . --fix",
 		"email": "email dev --dir ./src/components/emails"
