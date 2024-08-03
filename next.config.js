@@ -9,7 +9,10 @@ const config = {
 	images: {
 		domains: ["res.cloudinary.com", "cdn.discordapp.com", "lh3.googleusercontent.com"],
 	},
-	rewrites: async () => [{ source: "/rss.xml", destination: "/api/rss" }],
+	rewrites: async () => [
+		{ source: "/rss.xml", destination: "/api/rss" },
+		{ source: "/donate", destination: "/api/donate" },
+	],
 };
 
 export default config;
