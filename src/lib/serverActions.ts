@@ -8,7 +8,11 @@ import Stripe from "stripe";
 import { env } from "@/env";
 
 export async function getPosts() {
-	return db.post.findMany({ orderBy: { createdAt: "desc" } });
+	return db.post.findMany({
+		orderBy: { createdAt: "desc" },
+		select: { title: true, summary: true, slug: true, image: true, author: true, createdAt: true, updatedAt: true },
+		// omit: { content: true },
+	});
 }
 
 export async function getPostsFull() {
