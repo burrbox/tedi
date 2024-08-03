@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const metadata = {
 	title: "Page Not Found | TEDI - The Environmental Defense Initiative",
-	description: "Have any questions about TEDI? We'd love to chat!",
+	description: "This page doesn't exist. It may have been moved or deleted.",
 };
 
 export default function NotFound() {
