@@ -1,8 +1,10 @@
 import { type Metadata } from "next";
 import { env } from "@/env";
-import { getCldOgImageUrl } from "next-cloudinary";
+import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
 import Globe from "@/components/magicui/globe";
 import { type COBEOptions } from "cobe";
+import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
+import Link from "next/link";
 
 export const metadata: Metadata = {
 	title: "Toolkits",
@@ -47,8 +49,8 @@ const globeConfig: Partial<COBEOptions> = {
 
 export default async function Toolkit() {
 	return (
-		<div className="min-h-screen w-full">
-			<section className="pt-8">
+		<div className="min-h-screen w-full px-8">
+			<section className="h-[80vh] pt-8">
 				<h1 className="text-center text-4xl font-bold text-gray-900 dark:text-gray-100">See where our members are!</h1>
 				<Globe
 					className="mt-24 w-full"
@@ -60,6 +62,30 @@ export default async function Toolkit() {
 						{ name: "London", location: [39.9042, 116.4074] },
 					]}
 				/>
+			</section>
+			<section className="mx-auto my-8 max-w-6xl">
+				<div className="flex flex-col-reverse gap-8 sm:flex-row">
+					<div>
+						<CloudinaryClientWrapper
+							className="max-h-[80vh] w-fit"
+							src="toolkit/test"
+							alt="The toolkit for the test campaign"
+							width={1080}
+							height={2160}
+						/>
+					</div>
+					<div className="min-w-72">
+						<h1 className="mb-2 text-4xl font-bold">The Test Campaign</h1>
+						<p className="my-2">Some description of the campaign</p>
+						<Link
+							className="rounded-md bg-green-600 px-2 py-1 hover:bg-green-500"
+							href={`https://res.cloudinary.com/${env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${"toolkit/test"}`}
+							target="_blank"
+						>
+							Download
+						</Link>
+					</div>
+				</div>
 			</section>
 		</div>
 	);
