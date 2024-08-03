@@ -14,7 +14,7 @@ export const team = [
 		name: "Nash Pillai",
 		title: "Chief Technology Officer",
 		location: "Hopewell Junction, NY, USA",
-		image: "TEDI Bio/nash2",
+		image: "TEDI Bio/nash4",
 		description: `Nash is a software engineer with a passion for environmental conservation. He has worked on projects that use technology to solve environmental problems and is excited to use his skills to help manage the technological aspects of TEDI.`,
 		email: "nash.pillai@protonmail.com",
 		linkedin: "https://www.linkedin.com/in/nash-pillai/",
