@@ -13,7 +13,11 @@ import { type Prisma } from "@prisma/client";
 import { useRouter } from "next/navigation";
 import { CldImage } from "next-cloudinary";
 
-export function BlogSearch({ articles }: { articles: Prisma.PostGetPayload<null>[] }) {
+export function BlogSearch({
+	articles,
+}: {
+	articles: Pick<Prisma.PostGetPayload<null>, "slug" | "image" | "author" | "title">[];
+}) {
 	const router = useRouter();
 	const [open, setOpen] = useState(false);
 	const [search, setSearch] = useState("");

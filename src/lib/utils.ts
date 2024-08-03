@@ -11,6 +11,6 @@ export function wait(ms: number) {
 	return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export function getPostAuthor(post: Prisma.PostGetPayload<null>) {
+export function getPostAuthor(post: { author: string }) {
 	return team.find((member) => member.name.toLowerCase() === post.author) ?? team[1]!;
 }
