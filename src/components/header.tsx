@@ -20,7 +20,6 @@ import { Bars3Icon } from "@heroicons/react/24/solid";
 const links = [
 	// { name: "Home", href: "/" },
 	{ name: "About", href: "/about" },
-	{ name: "Our Work", href: "/our-work" },
 	{ name: "Blog", href: "/blog" },
 	{ name: "Petitions", href: "/petitions" },
 	// { name: "Join Us", href: "/join" },

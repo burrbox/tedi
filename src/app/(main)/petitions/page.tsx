@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 	},
 };
 
-export default async function Petitions({}) {
+export default async function Petitions() {
 	return (
 		<section className="h-full w-full flex-col items-end">
 			<div
