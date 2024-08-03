@@ -34,6 +34,7 @@ export async function generateMetadata(
 		title,
 		description,
 		alternates: { canonical: `${env.URL}/blog/${params.slug}` },
+		keywords: ["blog", "articles", "news", "environment", "climate", "sustainability"],
 		openGraph: {
 			siteName: "The Environmental Defense Initiative",
 			type: "article",
