@@ -14,7 +14,7 @@ import { getPostAuthor } from "@/lib/utils";
 export const revalidate = 300; // 5 minutes
 
 export const metadata: Metadata = {
-	title: "Blog - TEDI - The Environmental Defense Initiative",
+	title: { default: "Blog", template: "%s - Blog" },
 	description: "Read the latest articles from the Environmental Defense Initiative.",
 	keywords: ["blog", "articles", "news", "environment", "climate", "sustainability"],
 	alternates: { canonical: `${env.URL}/blog` },

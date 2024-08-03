@@ -4,7 +4,7 @@ import { type Metadata } from "next";
 import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
-	title: "Error | TEDI - The Environmental Defense Initiative",
+	title: "Error",
 	description: "If you're here, then something went wrong.",
 };
 

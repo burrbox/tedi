@@ -5,7 +5,7 @@ import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-	title: "Home - TEDI - The Environmental Defense Initiative",
+	title: "Home | TEDI - The Environmental Defense Initiative",
 	description: "Welcome to The Environmental Defense Initiative.",
 	keywords: ["environment", "climate", "sustainability", "advocacy"],
 	alternates: { canonical: env.URL },

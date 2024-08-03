@@ -6,7 +6,7 @@ import Link from "next/link";
 import Carousel from "./carousel";
 
 export const metadata: Metadata = {
-	title: "Our Work - TEDI - The Environmental Defense Initiative",
+	title: "Our Work",
 	description: "Find out about all the work we do for our environment!",
 	keywords: ["nature", "defense", "environment", "climate", "sustainability"],
 	openGraph: {

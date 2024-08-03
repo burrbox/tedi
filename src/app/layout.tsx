@@ -11,7 +11,10 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { getCldImageUrl } from "next-cloudinary";
 
 export const metadata: Metadata = {
-	title: "The Environmental Defense Initiative",
+	title: {
+		default: "TEDI - The Environmental Defense Initiative",
+		template: "%s | TEDI - The Environmental Defense Initiative",
+	},
 	description: "We defend the environment.",
 	icons: [{ rel: "icon", url: getCldImageUrl({ src: "logo" }) }],
 	openGraph: {
