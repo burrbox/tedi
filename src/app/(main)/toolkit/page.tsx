@@ -24,7 +24,6 @@ export const metadata: Metadata = {
 };
 
 const globeConfig: Partial<COBEOptions> = {
-	phi: 0.02,
 	dark: 1,
 	diffuse: 0.4,
 	mapSamples: 16000,
@@ -48,10 +47,19 @@ const globeConfig: Partial<COBEOptions> = {
 
 export default async function Toolkit() {
 	return (
-		<div className="h-full w-full">
+		<div className="min-h-screen w-full">
 			<section className="pt-8">
 				<h1 className="text-center text-4xl font-bold text-gray-900 dark:text-gray-100">See where our members are!</h1>
-				<Globe className="mt-24 w-full" config={globeConfig} speed={0.001} />
+				<Globe
+					className="mt-24 w-full"
+					config={globeConfig}
+					speed={0.001}
+					phi={-0.5}
+					markers={[
+						{ name: "New York", location: [14.5995, 120.9842] },
+						{ name: "London", location: [39.9042, 116.4074] },
+					]}
+				/>
 			</section>
 		</div>
 	);
