@@ -11,6 +11,10 @@ export async function getPosts() {
 	return db.post.findMany({ orderBy: { createdAt: "desc" }, omit: { content: true } });
 }
 
+export async function getPostsFull() {
+	return db.post.findMany({ orderBy: { createdAt: "desc" } });
+}
+
 export async function getPost(slug: string) {
 	return db.post.findFirst({ where: { slug } });
 }

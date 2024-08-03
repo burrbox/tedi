@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import { env } from "@/env";
-import { getPosts } from "@/lib/serverActions";
+import { getPostsFull } from "@/lib/serverActions";
 
 export async function GET() {
-	const articles = (await getPosts())
+	const articles = (await getPostsFull())
 		.map((article) => {
 			const url = `${env.URL}/blog/${article.slug}`;
 
