@@ -126,7 +126,7 @@ export default function Footer() {
 							<li className="ml-4">
 								<a
 									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
-									href="https://www.linkedin.com/company/97920980/admin/feed/posts/"
+									href="https://www.linkedin.com/company/the-environmental-defense-initiative/posts"
 									target="_blank"
 									aria-label="Linkedin"
 								>
