@@ -6,6 +6,8 @@ import { GithubIcon, InstagramIcon, LinkedInIcon, TikTokIcon, TwitterXIcon } fro
 import { env } from "@/env";
 import { type Metadata } from "next";
 import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
+import type { WebPage, WithContext } from "schema-dts";
+import { JsonLd } from "@/components/jsonLd";
 
 export const metadata: Metadata = {
 	title: "About",
@@ -29,9 +31,18 @@ export const metadata: Metadata = {
 	},
 };
 
+const jsonLd: WithContext<WebPage> = {
+	"@context": "https://schema.org",
+	"@type": "WebPage",
+	name: "About The Environmental Defense Initiative",
+	description: "Learn more about The Environmental Defense Initiative and our mission.",
+	url: `${env.URL}/about`,
+};
+
 export default function AboutPage() {
 	return (
 		<div className="flex w-full flex-col items-center">
+			<JsonLd data={jsonLd} />
 			<section className="relative h-[400px] w-full">
 				<CloudinaryClientWrapper
 					width="960"

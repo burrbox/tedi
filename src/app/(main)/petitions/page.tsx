@@ -4,6 +4,8 @@ import { type Metadata } from "next";
 import { env } from "@/env";
 import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
+import type { WebPage, WithContext } from "schema-dts";
+import { JsonLd } from "@/components/jsonLd";
 
 export const metadata: Metadata = {
 	title: "Petitions",
@@ -25,9 +27,18 @@ export const metadata: Metadata = {
 	},
 };
 
+const jsonLd: WithContext<WebPage> = {
+	"@context": "https://schema.org",
+	"@type": "WebPage",
+	name: "Petitions - The Environmental Defense Initiative",
+	description: "Sign a petition to advocate for new policies.",
+	url: `${env.URL}/petitions`,
+};
+
 export default async function Petitions() {
 	return (
 		<section className="h-full w-full flex-col items-end">
+			<JsonLd data={jsonLd} />
 			<div
 				title="An image of the Redwood Forest"
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/tallForest" })})` }}

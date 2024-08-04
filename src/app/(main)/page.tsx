@@ -5,7 +5,7 @@ import { env } from "@/env";
 import { type Metadata } from "next";
 import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
 import Link from "next/link";
-import { type Organization, type WebSite, type WithContext } from "schema-dts";
+import type { WebSite, WithContext } from "schema-dts";
 
 export const metadata: Metadata = {
 	title: "Home",
@@ -38,36 +38,34 @@ const jsonLd: WithContext<WebSite> = {
 		{ "@type": "JoinAction", target: { "@type": "EntryPoint", urlTemplate: `${env.URL}/join` } },
 		// { "@type": "SubscribeAction" },
 	],
-};
-const jsonLdOrganization: WithContext<Organization> = {
-	"@context": "https://schema.org",
-	"@type": "Organization",
-	name: "DeAP Learning Labs",
-	// legalName: "Deap Learning Labs",
-	url: env.URL,
-	logo: getCldImageUrl({ src: "logo" }),
-	foundingDate: "2023",
-	founders: [{ "@type": "Person", name: "Emma Mazzotta" }],
-	contactPoint: {
-		"@type": "ContactPoint",
-		telephone: "8457979011",
-		email: "environmentaldefenseinitiative@gmail.com",
+	sourceOrganization: {
+		"@type": "Organization",
+		name: "The Environmental Defense Initiative",
+		// legalName: "The Environmental Defense Initiative",
+		url: env.URL,
+		logo: getCldImageUrl({ src: "logo" }),
+		foundingDate: "2023",
+		founders: [{ "@type": "Person", name: "Emma Mazzotta" }],
+		contactPoint: {
+			"@type": "ContactPoint",
+			telephone: "8457979011",
+			email: "environmentaldefenseinitiative@gmail.com",
+		},
+		sameAs: [
+			"https://www.linkedin.com/company/the-environmental-defense-initiative/posts",
+			"https://www.instagram.com/environmentaldefenseinitiative/",
+			"https://www.youtube.com/channel/UCLJIczzKZWeqsa2Pmg55F6g",
+			"https://twitter.com/TEDIactivism",
+			"https://www.tiktok.com/@tedi_youth",
+			"https://medium.com/@environmentaldefenseinitiative",
+		],
 	},
-	sameAs: [
-		"https://www.linkedin.com/company/the-environmental-defense-initiative/posts",
-		"https://www.instagram.com/environmentaldefenseinitiative/",
-		"https://www.youtube.com/channel/UCLJIczzKZWeqsa2Pmg55F6g",
-		"https://twitter.com/TEDIactivism",
-		"https://www.tiktok.com/@tedi_youth",
-		"https://medium.com/@environmentaldefenseinitiative",
-	],
 };
 
 export default async function Home() {
 	return (
 		<div className="flex min-h-dvh flex-col">
 			<JsonLd data={jsonLd} />
-			<JsonLd data={jsonLdOrganization} />
 			<section
 				title="An image of a forest"
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/oh93nln39npdtzsyettf" })})` }}
