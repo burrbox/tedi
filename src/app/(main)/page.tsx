@@ -284,7 +284,7 @@ export default async function Home() {
 						data-aos="fade-right"
 						width="560"
 						height="315"
-						src="https://www.youtube.com/embed/YucXSNoMiJ0"
+						src="https://www.youtube-nocookie.com/embed/YucXSNoMiJ0"
 						title="Environmental Events &amp; News | July 2024"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 						className="h-full w-full rounded-xl pl-12"
