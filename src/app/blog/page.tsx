@@ -9,6 +9,8 @@ import { getCldOgImageUrl } from "next-cloudinary";
 import { BlogSearch } from "./blogSearch";
 import { auth } from "@/server/auth";
 import { getPostAuthor } from "@/lib/utils";
+import { type WebPage, type WebSite, type WithContext } from "schema-dts";
+import { JsonLd } from "@/components/jsonLd";
 // import RelatedPosts from "@/components/related-posts-01";
 
 export const revalidate = 300; // 5 minutes
@@ -29,6 +31,13 @@ export const metadata: Metadata = {
 		],
 	},
 };
+const jsonLd: WithContext<WebPage> = {
+	"@context": "https://schema.org",
+	"@type": "WebPage",
+	name: "The Environmental Defense Initiative Blog",
+	description: "Read the latest articles from the Environmental Defense Initiative.",
+	url: `${env.URL}/blog`,
+};
 
 export default async function Blog() {
 	const allPosts = await getPosts();
@@ -39,6 +48,7 @@ export default async function Blog() {
 
 	return (
 		<>
+			<JsonLd data={jsonLd} />
 			{/* Featured post */}
 			<section className="lg:pb-18 w-full pb-12 pt-6 md:pb-16 md:pt-10 lg:pt-14">
 				<div className="relative mx-auto mb-3 max-w-6xl justify-center space-y-4 md:mb-4 lg:mb-5">

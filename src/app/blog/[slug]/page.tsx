@@ -13,6 +13,8 @@ import Link from "next/link";
 import { auth } from "@/server/auth";
 import { TwitterXIcon } from "@/components/icons";
 import { getPostAuthor } from "@/lib/utils";
+import { type Article, type WithContext } from "schema-dts";
+import { JsonLd } from "@/components/jsonLd";
 
 export async function generateStaticParams() {
 	return (await getPosts()).map((post) => ({
@@ -35,6 +37,7 @@ export async function generateMetadata(
 		description,
 		alternates: { canonical: `${env.URL}/blog/${params.slug}` },
 		keywords: ["blog", "articles", "news", "environment", "climate", "sustainability"],
+		authors: [{ name: getPostAuthor(post)?.name ?? "Anonymous Author", url: getPostAuthor(post)?.website }],
 		openGraph: {
 			siteName: "The Environmental Defense Initiative",
 			type: "article",
@@ -56,8 +59,20 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 
 	const session = await auth();
 
+	const jsonLd: WithContext<Article> = {
+		"@context": "https://schema.org",
+		"@type": "Article",
+		headline: post.title,
+		description: post.summary,
+		author: { "@type": "Person", name: author.name, url: author.website, email: author.email },
+		image: post.image ? post.image : undefined,
+		datePublished: post.createdAt.toISOString(),
+		dateModified: post.updatedAt.toISOString(),
+	};
+
 	return (
 		<>
+			<JsonLd data={jsonLd} />
 			<section className="relative">
 				{/* Background image */}
 				{post.image && (

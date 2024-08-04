@@ -1,5 +1,6 @@
 import Carousel from "@/components/carousel";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
+import { JsonLd } from "@/components/jsonLd";
 import { env } from "@/env";
 import { type Metadata } from "next";
 import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
@@ -42,7 +43,7 @@ const jsonLd: WithContext<WebSite> = {
 export default async function Home() {
 	return (
 		<div className="flex min-h-dvh flex-col">
-			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+			<JsonLd data={jsonLd} />
 			<section
 				title="An image of a forest"
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/oh93nln39npdtzsyettf" })})` }}
