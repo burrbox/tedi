@@ -4,6 +4,7 @@ import { env } from "@/env";
 import { type Metadata } from "next";
 import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
 import Link from "next/link";
+import { type WebSite, type WithContext } from "schema-dts";
 
 export const metadata: Metadata = {
 	title: "Home | TEDI - The Environmental Defense Initiative",
@@ -25,9 +26,23 @@ export const metadata: Metadata = {
 	},
 };
 
+const jsonLd: WithContext<WebSite> = {
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	name: "The Environmental Defense Initiative",
+	alternateName: ["TEDI"],
+	url: env.URL,
+	potentialAction: [
+		{ "@type": "DonateAction", target: { "@type": "EntryPoint", urlTemplate: `${env.URL}/donate` } },
+		{ "@type": "JoinAction", target: { "@type": "EntryPoint", urlTemplate: `${env.URL}/join` } },
+		// { "@type": "SubscribeAction" },
+	],
+};
+
 export default async function Home() {
 	return (
 		<div className="flex min-h-dvh flex-col">
+			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 			<section
 				title="An image of a forest"
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/oh93nln39npdtzsyettf" })})` }}
