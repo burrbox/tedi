@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 	},
 	description: "We defend the environment.",
 	icons: [{ rel: "icon", url: getCldImageUrl({ src: "logo" }) }],
+	metadataBase: new URL(env.URL),
 	openGraph: {
 		type: "website",
 		siteName: "The Environmental Defense Initiative",

@@ -18,12 +18,6 @@ export const metadata: Metadata = {
 		url: env.URL,
 		title: "Home - TEDI",
 		description: "Welcome to The Environmental Defense Initiative.",
-		images: {
-			url: getCldOgImageUrl({ src: "nature/tallForest" }),
-			width: 1200,
-			height: 627,
-			alt: "An image of a forest",
-		},
 	},
 };
 
