@@ -2,7 +2,7 @@ import { petition } from "@/lib/constants";
 import PetitionForm from "./petitionForm";
 import { type Metadata } from "next";
 import { env } from "@/env";
-import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
+import { getCldImageUrl } from "next-cloudinary";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import type { WebPage, WithContext } from "schema-dts";
 import { JsonLd } from "@/components/jsonLd";
@@ -18,12 +18,6 @@ export const metadata: Metadata = {
 		title: "Petitions - TEDI",
 		type: "website",
 		description: "Sign a petition to advocate for new policies.",
-		images: {
-			url: getCldOgImageUrl({ src: "nature/tallForest" }),
-			width: 1200,
-			height: 627,
-			alt: "An image of the Redwood Forest",
-		},
 	},
 };
 

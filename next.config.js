@@ -13,6 +13,14 @@ const config = {
 		{ source: "/rss.xml", destination: "/api/rss" },
 		{ source: "/donate", destination: "/api/donate" },
 	],
+	redirects: async () => [
+		{
+			source: "/join",
+			destination:
+				"https://docs.google.com/forms/d/e/1FAIpQLSfEWkGAauRBi07E8-4WRlay7RyXJlLII85dt1FCV2C0m-hI1Q/viewform",
+			permanent: false,
+		},
+	],
 };
 
 export default config;

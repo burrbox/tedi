@@ -26,9 +26,6 @@ export const metadata: Metadata = {
 		title: "Blog - TEDI",
 		description: "Read the latest articles from the Environmental Defense Initiative.",
 		url: `${env.URL}/blog`,
-		images: [
-			{ url: getCldOgImageUrl({ src: "nature/tallForest" }), width: 1200, height: 627, alt: "An image of a forest" },
-		],
 	},
 };
 const jsonLd: WithContext<WebPage> = {

@@ -20,14 +20,6 @@ export const metadata: Metadata = {
 		description: "Learn more about The Environmental Defense Initiative and our mission.",
 		url: `${env.URL}/about`,
 		type: "website",
-		images: [
-			{
-				url: getCldOgImageUrl({ src: "nature/tallForest" }),
-				width: 1200,
-				height: 627,
-				alt: "An image of a forest",
-			},
-		],
 	},
 };
 

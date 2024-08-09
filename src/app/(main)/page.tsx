@@ -166,10 +166,10 @@ export default async function Home() {
 									Join Us
 								</Link>
 								<Link
-									href="https://docs.google.com/forms/d/e/1FAIpQLSdRxjerrXZqC4LlJaQDmklnCyL-liINyCnZFoRvL3WCieS1mw/viewform?usp=sharing"
+									href="/donate"
 									className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-blue-700"
 								>
-									Help our summer clean up
+									Donate to support our cause
 								</Link>
 							</div>
 						</div>
@@ -318,23 +318,22 @@ export default async function Home() {
 							<div className="inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">Get Involved</div>
 							<h2 className="text-3xl font-bold tracking-tighter text-green-600 sm:text-5xl">Join the Movement</h2>
 							<p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-								Join us in our next local clean up, hosted from 10-11:30am on August 4th at Patriot Way. <br /> Help us
-								clean our local environment and make a difference in our community! Every small action counts in
-								protecting the Earth.
+								Join us in our mission to create a greener, healthier future. Every small action counts in protecting
+								the Earth.
 							</p>
 						</div>
 						<div className="flex flex-col gap-2 min-[400px]:flex-row">
 							<Link
-								href="https://docs.google.com/forms/d/e/1FAIpQLSdRxjerrXZqC4LlJaQDmklnCyL-liINyCnZFoRvL3WCieS1mw/viewform?usp=sharing"
+								href="/join"
 								className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-green-700"
 							>
-								Sign Up
+								Join us
 							</Link>
 							<Link
-								href="/our-work#gallery"
+								href="/petitions"
 								className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-blue-700"
 							>
-								See our past cleanups!
+								Sign a petition!
 							</Link>
 						</div>
 					</div>
