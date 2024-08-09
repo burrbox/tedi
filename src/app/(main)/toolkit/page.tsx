@@ -5,6 +5,8 @@ import Globe from "@/components/magicui/globe";
 import { type COBEOptions } from "cobe";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import Link from "next/link";
+import { auth } from "@/server/auth";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
 	title: "Toolkits",
@@ -48,6 +50,9 @@ const globeConfig: Partial<COBEOptions> = {
 };
 
 export default async function Toolkit() {
+	const session = await auth();
+	if (!session) redirect("/signin");
+
 	return (
 		<div className="min-h-screen w-full px-8">
 			<section className="h-[80vh] pt-8">
