@@ -23,18 +23,7 @@ const GLOBE_CONFIG: COBEOptions = {
 	baseColor: [1, 1, 1],
 	markerColor: [251 / 255, 100 / 255, 21 / 255],
 	glowColor: [1, 1, 1],
-	markers: [
-		{ location: [14.5995, 120.9842], size: 0.03 },
-		{ location: [19.076, 72.8777], size: 0.1 },
-		{ location: [23.8103, 90.4125], size: 0.05 },
-		{ location: [30.0444, 31.2357], size: 0.07 },
-		{ location: [39.9042, 116.4074], size: 0.08 },
-		{ location: [-23.5505, -46.6333], size: 0.1 },
-		{ location: [19.4326, -99.1332], size: 0.1 },
-		{ location: [40.7128, -74.006], size: 0.1 },
-		{ location: [34.6937, 135.5022], size: 0.05 },
-		{ location: [41.0082, 28.9784], size: 0.06 },
-	],
+	markers: [],
 };
 
 const locationToAngles = (lat: number, long: number) => {
@@ -146,19 +135,19 @@ export default function Globe({
 				onTouchMove={(e) => e.touches[0] && updateMovement(e.touches[0].clientX)}
 			/>
 			{markers && (
-				<div className="mx-auto flex max-w-3xl items-center justify-center gap-2">
-					<div>Go to:</div>
+				<div className="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-2">
+					<div className="whitespace-nowrap">Go to:</div>
 					{markers.map((marker) => (
 						<button
 							key={marker.name}
-							className="flex items-center gap-1 rounded-md bg-green-600 px-1 py-0.5"
+							className="flex items-center gap-1 rounded-md bg-green-600 px-1 py-0.5 hover:bg-green-500"
 							onClick={() => {
 								console.log("focusRef", focusRef);
 								focusRef.current = locationToAngles(marker.location[0], marker.location[1]);
 							}}
 						>
 							<MapPinIcon />
-							<div>{marker.name}</div>
+							<div className="whitespace-nowrap">{marker.name}</div>
 						</button>
 					))}
 				</div>
