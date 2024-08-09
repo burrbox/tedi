@@ -44,9 +44,6 @@ export async function generateMetadata(
 			title,
 			description,
 			url: `${env.URL}/blog/${params.slug}`,
-			images: post.image
-				? [{ url: getCldOgImageUrl({ src: post.image }), width: 1440, height: 577, alt: title }]
-				: undefined,
 		},
 	};
 }
