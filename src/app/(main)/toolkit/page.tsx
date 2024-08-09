@@ -68,8 +68,8 @@ export default async function Toolkit() {
 					<div>
 						<CloudinaryClientWrapper
 							className="max-h-[80vh] w-fit"
-							src="toolkit/test"
-							alt="The toolkit for the test campaign"
+							src="toolkit/cleanup"
+							alt="The toolkit for the cleanup campaign"
 							width={1080}
 							height={2160}
 						/>
@@ -79,7 +79,7 @@ export default async function Toolkit() {
 						<p className="my-2">Some description of the campaign</p>
 						<Link
 							className="rounded-md bg-green-600 px-2 py-1 hover:bg-green-500"
-							href={`https://res.cloudinary.com/${env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${"toolkit/test"}`}
+							href={`https://www.canva.com/design/DAGNVCdAnYI/YQpmkVQrIaY_P0K3t_NXUA/edit?utm_content=DAGNVCdAnYI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton`}
 							target="_blank"
 						>
 							Download
