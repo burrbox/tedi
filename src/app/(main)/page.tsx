@@ -143,7 +143,7 @@ export default async function Home() {
 					<div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
 						<div className="flex flex-col justify-center space-y-4" data-aos="fade-right">
 							<div className="space-y-2">
-								<h1 className="text-wrap text-3xl font-bold tracking-tighter text-blue-600 sm:text-4xl md:text-5xl xl:text-6xl/none">
+								<h1 className="text-wrap text-3xl font-bold tracking-tighter text-blue-600 sm:text-4xl md:text-5xl xl:text-6xl/none dark:text-blue-400">
 									Together, <br />
 									We Can Make a Difference
 								</h1>
@@ -189,7 +189,7 @@ export default async function Home() {
 					<div className="flex flex-col items-center justify-center space-y-4 text-center">
 						<div className="space-y-2" data-aos="fade-down">
 							<div className="inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">Our Initiatives</div>
-							<h2 className="text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl">
+							<h2 className="text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl dark:text-blue-400">
 								Protecting the Environment, One Step at a Time
 							</h2>
 							<p className="mx-auto max-w-4xl text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -240,7 +240,9 @@ export default async function Home() {
 			<section className="w-full bg-white py-12 md:py-24 lg:py-32 dark:bg-stone-900">
 				<div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
 					<div className="space-y-2" data-aos="fade-right">
-						<h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">A Message from Our Founder</h2>
+						<h2 className="text-3xl font-bold tracking-tighter text-green-600 md:text-4xl/tight dark:text-green-400">
+							A Message from Our Founder
+						</h2>
 						<p className="text-muted-foreground max-w-[600px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 							{`"TEDI was founded with the mission of inspiring youth activists to use their voices to inspire long-lasting sustainable change through education, initiative, and creativity. We believe that every individual on this Earth must do their part to keep our planet clean and fight for a sustainable future."`}
 						</p>
@@ -273,13 +275,12 @@ export default async function Home() {
 			</section>
 			<section className="w-full bg-stone-800 py-12 md:py-24 lg:grid lg:grid-cols-2 lg:gap-12 lg:py-32">
 				<div className="aspect-video w-full overflow-hidden rounded-lg">
-					<h2></h2>
 					<iframe
 						data-aos="fade-right"
 						width="560"
 						height="315"
-						src="https://www.youtube-nocookie.com/embed/YucXSNoMiJ0"
-						title="Environmental Events &amp; News | July 2024"
+						src="https://www.youtube-nocookie.com/embed/sZR88xj_-lU?si=pFRTWVhh_o8oupOd"
+						title=" Sustainability Director Expert Interview with Leola Specht"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 						className="h-full w-full rounded-xl pl-12"
 						referrerPolicy="strict-origin-when-cross-origin"
@@ -288,8 +289,8 @@ export default async function Home() {
 				</div>
 				<div className="mr-12 flex flex-col items-center justify-center space-y-4 text-center" data-aos="fade-left">
 					<div className="space-y-2">
-						<div className="inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">Webinars</div>
-						<h2 className="text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl">
+						<div className="inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">Expert Interviews</div>
+						<h2 className="text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl dark:text-blue-400">
 							Learn from what Experts have to say
 						</h2>
 						<p className="max-w-[900px] text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -316,7 +317,9 @@ export default async function Home() {
 					<div className="flex flex-col items-center justify-center space-y-4 text-center">
 						<div className="space-y-2">
 							<div className="inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">Get Involved</div>
-							<h2 className="text-3xl font-bold tracking-tighter text-green-600 sm:text-5xl">Join the Movement</h2>
+							<h2 className="text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl dark:text-blue-400">
+								Join the Movement
+							</h2>
 							<p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 								Join us in our mission to create a greener, healthier future. Every small action counts in protecting
 								the Earth.

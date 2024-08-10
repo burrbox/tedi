@@ -203,11 +203,12 @@ export default function AboutPage() {
 						about these partnerships by following us on Instagram.
 					</h2>
 					<div className="mt-8 flex justify-center">
-						<button className="text-1xl max-w-32 grow rounded-xl border-2 border-green-600 bg-green-600 px-5 py-2 text-center text-white duration-300 hover:bg-white hover:text-green-600">
-							<label>
-								<a href="https://instagram.com/environmentaldefenseinitiative/">Follow Us</a>
-							</label>
-						</button>
+						<Link
+							className="text-1xl max-w-32 grow rounded-xl border-2 border-green-600 bg-green-600 px-5 py-2 text-center text-white duration-300 hover:bg-white hover:text-green-600"
+							href={"https://instagram.com/environmentaldefenseinitiative/"}
+						>
+							Follow Us
+						</Link>
 					</div>
 				</div>
 				<div className="mx-auto flex max-w-5xl items-center justify-center py-10">

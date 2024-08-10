@@ -113,6 +113,9 @@ export default function Header() {
 								<DropdownMenuItem>Profile</DropdownMenuItem>
 								<DropdownMenuItem>Settings</DropdownMenuItem>
 								<DropdownMenuItem>
+									<Link href={"/toolkit"}>Toolkit</Link>
+								</DropdownMenuItem>
+								<DropdownMenuItem>
 									<button onClick={() => signOut().then(() => updateSession())}>Sign Out</button>
 								</DropdownMenuItem>
 							</DropdownMenuContent>

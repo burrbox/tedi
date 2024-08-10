@@ -26,6 +26,7 @@ model Post {
     updatedAt DateTime @updatedAt
 
     author    String  @default("nash pillai")
+    editor    String  @default("nash pillai")
 
     @@index([createdAt])
     @@index([author])
