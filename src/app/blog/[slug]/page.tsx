@@ -12,7 +12,7 @@ import { getCldOgImageUrl } from "next-cloudinary";
 import Link from "next/link";
 import { auth } from "@/server/auth";
 import { TwitterXIcon } from "@/components/icons";
-import { getPostAuthor } from "@/lib/utils";
+import { getPostAuthor, getPostEditor } from "@/lib/utils";
 import { type Article, type WithContext } from "schema-dts";
 import { JsonLd } from "@/components/jsonLd";
 
@@ -53,6 +53,7 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 	if (!post) notFound();
 
 	const author = getPostAuthor(post) ?? team[1]!;
+	const editor = getPostEditor(post) ?? team[1]!;
 
 	const session = await auth();
 
@@ -195,7 +196,7 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 										<p className="text-green-500">
 											Author: <span>{author.name}</span>
 											<br />
-											Editor: <span>{author.name}</span>
+											Editor: <span>{editor.name}</span>
 										</p>
 									</div>
 								</div>

@@ -18,3 +18,6 @@ export function getPostAuthor(post: { author: string }) {
 export function clamp(min: number, max: number, value: number) {
 	return Math.min(Math.max(value, min), max);
 }
+export function getPostEditor(post: { editor: string }) {
+	return team.find((member) => member.name.toLowerCase() === post.editor) ?? team[1]!;
+}

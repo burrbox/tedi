@@ -12,7 +12,16 @@ import { JWT } from "google-auth-library";
 export async function getPosts() {
 	return db.post.findMany({
 		orderBy: { createdAt: "desc" },
-		select: { title: true, summary: true, slug: true, image: true, author: true, createdAt: true, updatedAt: true },
+		select: {
+			title: true,
+			summary: true,
+			slug: true,
+			image: true,
+			author: true,
+			editor: true,
+			createdAt: true,
+			updatedAt: true,
+		},
 		// omit: { content: true },
 	});
 }
@@ -31,7 +40,15 @@ export async function addEmailSubscription(email: string) {
 
 export async function upsertArticle(
 	oldSlug: string,
-	article: { title: string; content: string; slug: string; summary: string; author: string; image: string },
+	article: {
+		title: string;
+		content: string;
+		slug: string;
+		summary: string;
+		author: string;
+		editor: string;
+		image: string;
+	},
 ) {
 	const session = await auth();
 	if (!session || !["editor", "admin"].includes(session.user.role)) redirect("/unauthorized");
