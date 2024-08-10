@@ -43,6 +43,7 @@ const globeConfig: Partial<COBEOptions> = {
 	baseColor: [1, 1, 1],
 	markerColor: [251 / 255, 100 / 255, 21 / 255],
 	glowColor: [1, 1, 1],
+	scale: 1,
 	markers: locations,
 };
 
@@ -68,8 +69,8 @@ export default async function Toolkit() {
 						/>
 					</div>
 					<div className="min-w-72">
-						<h1 className="mb-2 text-4xl font-bold">The Test Campaign</h1>
-						<p className="my-2">Some description of the campaign</p>
+						<h1 className="mb-2 text-4xl font-bold">The Cleanup Campaign</h1>
+						<p className="my-2">Convince people to clean up with this toolkit</p>
 						<Link
 							className="rounded-md bg-green-600 px-2 py-1 hover:bg-green-500"
 							href={`https://www.canva.com/design/DAGNVCdAnYI/YQpmkVQrIaY_P0K3t_NXUA/edit?utm_content=DAGNVCdAnYI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton`}

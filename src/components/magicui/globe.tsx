@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef } from "react";
 import createGlobe, { type COBEOptions } from "cobe";
 import { useSpring } from "react-spring";
 
-import { cn } from "@/lib/utils";
+import { clamp, cn } from "@/lib/utils";
 import { MapPinIcon } from "lucide-react";
 
 const TAU = Math.PI * 2;
@@ -48,6 +48,7 @@ export default function Globe({
 	let currentPhi = 0;
 	let currentTheta = 0;
 	let width = 0;
+	const scale = useRef(configOverride?.scale ?? 1);
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 	const focusRef = useRef([null, null] as [number | null, number | null]);
 	const pointerInteracting = useRef(null as number | null);
@@ -65,7 +66,10 @@ export default function Globe({
 	const updatePointerInteraction = (value: number | null) => {
 		pointerInteracting.current = value;
 		canvasRef.current!.style.cursor = value ? "grabbing" : "grab";
-		if (value !== null) focusRef.current = [null, null];
+		if (value !== null) {
+			focusRef.current = [null, null];
+			scale.current = 1;
+		}
 	};
 
 	const updateMovement = (clientX: number) => {
@@ -78,6 +82,8 @@ export default function Globe({
 
 	const onRender = useCallback(
 		(state: Record<string, number>) => {
+			console.log("rendering", scale);
+			state.scale = scale.current;
 			if (!pointerInteracting.current) phi += speed;
 			if (focusRef.current.includes(null)) {
 				state.phi = phi + r.get();
@@ -98,7 +104,7 @@ export default function Globe({
 			state.width = width * 2;
 			state.height = width * 2;
 		},
-		[pointerInteracting, phi, r, focusRef, width],
+		[pointerInteracting, phi, r, focusRef, width, scale],
 	);
 
 	const onResize = () => {
@@ -133,6 +139,10 @@ export default function Globe({
 				onPointerOut={() => updatePointerInteraction(null)}
 				onMouseMove={(e) => updateMovement(e.clientX)}
 				onTouchMove={(e) => e.touches[0] && updateMovement(e.touches[0].clientX)}
+				onWheel={(e) => {
+					e.preventDefault();
+					scale.current = clamp(0.5, 3, scale.current + e.deltaY * -0.001);
+				}}
 			/>
 			{markers && (
 				<div className="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-2">
@@ -142,8 +152,8 @@ export default function Globe({
 							key={marker.name}
 							className="flex items-center gap-1 rounded-md bg-green-600 px-1 py-0.5 hover:bg-green-500"
 							onClick={() => {
-								console.log("focusRef", focusRef);
 								focusRef.current = locationToAngles(marker.location[0], marker.location[1]);
+								scale.current = 1.5;
 							}}
 						>
 							<MapPinIcon />

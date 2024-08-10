@@ -14,3 +14,7 @@ export function wait(ms: number) {
 export function getPostAuthor(post: { author: string }) {
 	return team.find((member) => member.name.toLowerCase() === post.author) ?? team[1]!;
 }
+
+export function clamp(min: number, max: number, value: number) {
+	return Math.min(Math.max(value, min), max);
+}
