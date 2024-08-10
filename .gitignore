@@ -47,3 +47,4 @@ yarn-error.log*
 
 # Nix
 /direnv
+/.direnv
