@@ -59,7 +59,7 @@ export async function savePetitionSignature(data: {
 	const doc = new GoogleSpreadsheet(env.PETITION_SHEET_ID, serviceAccountAuth);
 	await doc.loadInfo(); // loads document properties and worksheets
 	const sheet = doc.sheetsByIndex[0]!; // or use `doc.sheetsById[id]` or `doc.sheetsByTitle[title]`
-	await sheet.addRow(data);
+	await sheet.addRow({ ...data, createdAt: new Date().toISOString() });
 
 	await db.petitionSignature.create({
 		data: z
