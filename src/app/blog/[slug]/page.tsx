@@ -8,7 +8,6 @@ import { team } from "@/lib/constants";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { format } from "date-fns";
 import { env } from "@/env";
-import { getCldOgImageUrl } from "next-cloudinary";
 import Link from "next/link";
 import { auth } from "@/server/auth";
 import { TwitterXIcon } from "@/components/icons";

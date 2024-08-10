@@ -5,7 +5,6 @@ import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { format } from "date-fns";
 import { type Metadata } from "next";
 import { env } from "@/env";
-import { getCldOgImageUrl } from "next-cloudinary";
 import { BlogSearch } from "./blogSearch";
 import { auth } from "@/server/auth";
 import { getPostAuthor } from "@/lib/utils";

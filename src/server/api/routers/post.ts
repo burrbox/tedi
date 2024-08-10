@@ -21,6 +21,7 @@ export const postRouter = createTRPCRouter({
 				slug: "test-post",
 				image: "https://example.com/image.jpg",
 				author: "",
+				editor: "",
 			},
 		});
 	}),

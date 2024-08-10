@@ -1,6 +1,6 @@
 import { type Metadata } from "next";
 import { env } from "@/env";
-import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
+import { getCldOgImageUrl } from "next-cloudinary";
 import Globe from "@/components/magicui/globe";
 import { type COBEOptions } from "cobe";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";

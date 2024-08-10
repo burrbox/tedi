@@ -31,6 +31,7 @@ export default function newArticleEmail({
 		createdAt: new Date("2024-07-13T08:37:49.202Z"),
 		updatedAt: new Date("2024-07-13T08:37:49.202Z"),
 		author: "nash pillai",
+		editor: "nash pillai",
 	},
 }: {
 	post: Prisma.PostGetPayload<null>;

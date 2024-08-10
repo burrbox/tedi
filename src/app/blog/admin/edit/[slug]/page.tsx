@@ -57,8 +57,10 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 	const [title, setTitle] = useState("New Article");
 	const [summary, setSummary] = useState("");
 	const [author, setAuthor] = useState("");
+	const [editor, setEditor] = useState("");
 	const [articleImage, setArticleImage] = useState("");
 	const [isAuthorOpen, setIsAuthorOpen] = useState(false);
+	const [isEditorOpen, setIsEditorOpen] = useState(false);
 
 	const [isSaving, setIsSaving] = useState(false);
 
@@ -159,6 +161,62 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 						</PopoverContent>
 					</Popover>
 				</div>
+				<div className="w-full">
+					<label htmlFor="editor" className="mb-2 block">
+						Editor
+					</label>
+					<Popover open={isEditorOpen} onOpenChange={setIsEditorOpen}>
+						<PopoverTrigger asChild>
+							<Button
+								id="editor"
+								variant="outline"
+								role="combobox"
+								aria-expanded={isEditorOpen}
+								className="w-full justify-between"
+							>
+								{editor ? team.find((member) => member.name.toLowerCase() === editor)?.name : "Select editor..."}
+								<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+							</Button>
+						</PopoverTrigger>
+						<PopoverContent className="w-72 p-0">
+							<Command>
+								<CommandInput placeholder="Search editor..." />
+								<CommandList>
+									<CommandEmpty>No editor found.</CommandEmpty>
+									<CommandGroup className="max-h-96 overflow-scroll">
+										{team.map((member) => (
+											<CommandItem
+												key={member.name}
+												value={member.name}
+												onSelect={(newEditor) => {
+													setEditor((prev) => (newEditor === prev ? "" : newEditor.toLowerCase()));
+													setIsEditorOpen(false);
+												}}
+											>
+												<Check
+													className={cn(
+														"mr-2 h-4 w-4",
+														editor === member.name.toLowerCase() ? "opacity-100" : "opacity-0",
+													)}
+												/>
+												<CldImage
+													className="mr-4 h-8 w-8 rounded-full"
+													src={member.image}
+													gravity="face"
+													crop="thumb"
+													alt={`An image of ${member.name}.`}
+													height={32}
+													width={32}
+												/>
+												{member.name}
+											</CommandItem>
+										))}
+									</CommandGroup>
+								</CommandList>
+							</Command>
+						</PopoverContent>
+					</Popover>
+				</div>
 			</div>
 			{/* Summary */}
 			<div>
@@ -205,7 +263,15 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 					onClick={async () => {
 						setIsSaving(true);
 						if (newSlug && newSlug !== "new") {
-							await upsertArticle(slug, { title, content, slug: newSlug, summary, author, image: articleImage });
+							await upsertArticle(slug, {
+								title,
+								content,
+								slug: newSlug,
+								summary,
+								author,
+								editor,
+								image: articleImage,
+							});
 							if (slug !== newSlug) router.push(`/blog/admin/edit/${newSlug}`);
 						} else alert("Please enter a URL");
 						setIsSaving(false);

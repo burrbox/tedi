@@ -3,7 +3,7 @@ import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { JsonLd } from "@/components/jsonLd";
 import { env } from "@/env";
 import { type Metadata } from "next";
-import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
+import { getCldImageUrl } from "next-cloudinary";
 import Link from "next/link";
 import type { WebSite, WithContext } from "schema-dts";
 
