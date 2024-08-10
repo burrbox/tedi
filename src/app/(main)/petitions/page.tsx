@@ -75,7 +75,6 @@ export default async function Petitions() {
 			</div>
 			<div
 				className="relative flex min-h-[110vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
-				title="An image of a beach and ocean"
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/t7x9xmnsyqs2yetfpp3j" })})` }}
 			>
 				<div className="inset-0 mx-auto w-full sm:w-10/12" data-aos="fade-down">

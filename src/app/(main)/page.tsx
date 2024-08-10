@@ -61,7 +61,6 @@ export default async function Home() {
 		<div className="flex min-h-dvh flex-col">
 			<JsonLd data={jsonLd} />
 			<section
-				title="An image of a forest"
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/oh93nln39npdtzsyettf" })})` }}
 				className="flex min-h-[70vh] w-screen bg-cover bg-fixed bg-center bg-no-repeat py-12 md:pb-20 md:pt-32 lg:pt-40"
 			>
@@ -118,7 +117,7 @@ export default async function Home() {
 							className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center shadow-xl dark:border-gray-700 dark:bg-gray-700"
 							data-aos="fade-up"
 						>
-							<h3 className="text-3xl font-bold dark:text-green-400">221</h3>
+							<h3 className="text-3xl font-bold dark:text-green-400">338</h3>
 							<p className="text-muted-foreground">Gallons of Trash Collected</p>
 						</div>
 						<div
@@ -132,7 +131,7 @@ export default async function Home() {
 							className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center shadow-xl dark:border-gray-700 dark:bg-gray-700"
 							data-aos="fade-up"
 						>
-							<h3 className="text-3xl font-bold dark:text-green-400">78</h3>
+							<h3 className="text-3xl font-bold dark:text-green-400">156</h3>
 							<p className="text-muted-foreground">Gallons of Plastic Collected</p>
 						</div>
 					</div>
