@@ -6,6 +6,8 @@ import { redirect } from "next/navigation";
 import { z } from "zod";
 import Stripe from "stripe";
 import { env } from "@/env";
+import { GoogleSpreadsheet } from "google-spreadsheet";
+import { JWT } from "google-auth-library";
 
 export async function getPosts() {
 	return db.post.findMany({
@@ -48,6 +50,17 @@ export async function savePetitionSignature(data: {
 	zipCode: string;
 	message?: string;
 }) {
+	const serviceAccountAuth = new JWT({
+		email: env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+		key: env.GOOGLE_PRIVATE_KEY.replace("\\n", "\n"),
+		scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+	});
+
+	const doc = new GoogleSpreadsheet(env.PETITION_SHEET_ID, serviceAccountAuth);
+	await doc.loadInfo(); // loads document properties and worksheets
+	const sheet = doc.sheetsByIndex[0]!; // or use `doc.sheetsById[id]` or `doc.sheetsByTitle[title]`
+	await sheet.addRow(data);
+
 	await db.petitionSignature.create({
 		data: z
 			.object({
