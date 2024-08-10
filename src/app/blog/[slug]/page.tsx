@@ -166,25 +166,25 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 									<div className="py-6 text-black dark:text-white">
 										<ul className="mx-auto mb-4 flex flex-wrap justify-center gap-2 md:order-2 md:mb-0 md:ml-4 md:gap-4">
 											<Link
-												className="w-32 rounded-xl bg-green-600 py-2 duration-300 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800"
+												className="w-32 rounded-xl bg-green-600 py-2 text-center duration-300 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800"
 												href={"https://www.instagram.com/environmentaldefenseinitiative/"}
 											>
 												Instagram
 											</Link>
 											<Link
-												className="w-32 rounded-xl bg-green-600 py-2 duration-300 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800"
+												className="w-32 rounded-xl bg-green-600 py-2 text-center duration-300 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800"
 												href={"https://medium.com/@environmentaldefenseinitiative"}
 											>
 												Medium
 											</Link>
 											<Link
-												className="w-32 rounded-xl bg-green-600 py-2 duration-300 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800"
+												className="w-32 rounded-xl bg-green-600 py-2 text-center duration-300 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800"
 												href={"https://www.youtube.com/channel/UCLJIczzKZWeqsa2Pmg55F6g"}
 											>
 												YouTube
 											</Link>
 											<Link
-												className="w-32 rounded-xl bg-green-600 py-2 duration-300 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800"
+												className="w-32 rounded-xl bg-green-600 py-2 text-center duration-300 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800"
 												href={"https://www.tiktok.com/@tediactivism"}
 											>
 												TikTok
