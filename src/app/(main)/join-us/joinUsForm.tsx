@@ -4,10 +4,9 @@ import Loading from "@/components/loading";
 import { saveJoinUsForm } from "@/lib/serverActions";
 import { useState, type FormEvent } from "react";
 
-export default function JoinUsForm({ user }: { user: { id: string; email?: string | null } | undefined }) {
+export default function JoinUsForm({ user }: { user: { id: string; email?: string | null } }) {
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
-	const [email, setEmail] = useState(user?.email ?? "");
 	const [phone, setPhone] = useState("");
 
 	const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,7 +16,7 @@ export default function JoinUsForm({ user }: { user: { id: string; email?: strin
 		if (done || isSubmitting) return;
 		event.preventDefault();
 		setIsSubmitting(true);
-		await saveJoinUsForm({ firstName, lastName, email, phone });
+		await saveJoinUsForm({ firstName, lastName, phone });
 		setIsSubmitting(false);
 		setDone(true);
 	};
@@ -78,8 +77,8 @@ export default function JoinUsForm({ user }: { user: { id: string; email?: strin
 							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-800 dark:hover:bg-stone-700 dark:focus:bg-stone-800 dark:focus:text-white"
 							type="email"
 							required
-							value={email}
-							onChange={(event) => void setEmail(event.target.value)}
+							disabled
+							value={user.email ?? "No email associated with account"}
 						/>
 					</label>
 				</div>

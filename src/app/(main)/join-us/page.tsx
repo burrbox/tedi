@@ -31,6 +31,7 @@ const jsonLd: WithContext<WebPage> = {
 };
 
 export default async function AboutPage() {
+	const session = await auth();
 	return (
 		<section className="w-full bg-gray-100 pt-20 dark:bg-stone-900">
 			<JsonLd data={jsonLd} />
@@ -42,7 +43,18 @@ export default async function AboutPage() {
 					<div className="inset-0 mx-auto sm:w-10/12 md:w-full" data-aos="fade-down">
 						<div className="flex flex-col justify-center gap-6 xl:flex-row">
 							<div className="m-auto h-fit max-w-3xl rounded-xl bg-white py-8 dark:bg-stone-800">
-								<JoinUsForm user={(await auth())?.user} />
+								{session ? (
+									<JoinUsForm user={session?.user} />
+								) : (
+									<div className="w-full">
+										<h3 className="h3 p-4">Please sign in first</h3>
+										<Link href="/signin" className="">
+											<div className="mx-auto w-4/5 cursor-pointer rounded-xl bg-blue-700 py-3 text-center text-white duration-300 hover:bg-blue-600">
+												Sign in
+											</div>
+										</Link>
+									</div>
+								)}
 							</div>
 						</div>
 					</div>
