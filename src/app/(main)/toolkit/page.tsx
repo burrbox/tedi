@@ -11,11 +11,11 @@ import { redirect } from "next/navigation";
 export const metadata: Metadata = {
 	title: "Toolkits",
 	description: "Our advocacy toolkits.",
-	alternates: { canonical: `${env.URL}/petitions` },
+	alternates: { canonical: `${env.URL}/toolkit` },
 	openGraph: {
 		siteName: "The Environmental Defense Initiative",
-		url: `${env.URL}/petitions`,
-		title: "Petitions - TEDI",
+		url: `${env.URL}/toolkit`,
+		title: "Toolkit - TEDI",
 		type: "website",
 		description: "Our advocacy toolkits.",
 		images: {
@@ -49,7 +49,7 @@ const globeConfig: Partial<COBEOptions> = {
 
 export default async function Toolkit() {
 	const session = await auth();
-	// if (!session) redirect("/signin");
+	if (!session) redirect("/signin");
 
 	return (
 		<div className="min-h-screen w-full px-8">
@@ -73,7 +73,7 @@ export default async function Toolkit() {
 						<p className="my-2">Convince people to clean up with this toolkit</p>
 						<Link
 							className="rounded-md bg-green-600 px-2 py-1 hover:bg-green-500"
-							href={`https://www.canva.com/design/DAGNVCdAnYI/YQpmkVQrIaY_P0K3t_NXUA/edit?utm_content=DAGNVCdAnYI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton`}
+							href={`https://www.canva.com/design/DAGNVCdAnYI/YQpmkVQrIaY_P0K3t_NXUA/view`}
 							target="_blank"
 						>
 							Download
