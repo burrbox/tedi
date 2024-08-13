@@ -1,10 +1,10 @@
-import { EnvelopeIcon, GlobeAmericasIcon, MapPinIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { type Metadata } from "next";
 import { env } from "@/env";
 import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
 import type { WebPage, WithContext } from "schema-dts";
+import { JsonLd } from "@/components/jsonLd";
 
 export const metadata: Metadata = {
 	title: "Join Us",
@@ -31,6 +31,7 @@ const jsonLd: WithContext<WebPage> = {
 export default function AboutPage() {
 	return (
 		<section className="w-full bg-gray-100 pt-20 dark:bg-stone-900">
+			<JsonLd data={jsonLd} />
 			<div
 				className="relative flex min-h-[50vh] w-full flex-col bg-cover bg-fixed bg-center bg-repeat"
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/mountain" })})` }}
@@ -47,7 +48,7 @@ export default function AboutPage() {
 												Join our MOVEMENT TODAY
 											</h1>
 											<h2 className="text-wrap text-center text-lg text-blue-700 dark:text-blue-400">
-												Sign up to recieve resources to help take action on our campaigns and projects in your own
+												Sign up to receive resources to help take action on our campaigns and projects in your own
 												community. Join us today to help spread our initiative.
 											</h2>
 										</div>
