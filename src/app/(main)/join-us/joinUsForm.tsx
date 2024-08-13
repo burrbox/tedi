@@ -35,8 +35,6 @@ export default function JoinUsForm({ user }: { user: { id: string; email?: strin
 		);
 	return (
 		<form className="rounded-2xl bg-white dark:bg-stone-800" onSubmit={submitForm}>
-			<div className="mx-4 py-4 lg:p-4">
-				<h1 className="text-wrap py-6 text-center text-5xl font-bold text-green-700 dark:text-green-400">
 			<div className="mx-4 py-4 lg:py-8">
 				<h1 className="text-wrap pb-6 text-center text-5xl font-bold text-green-700 dark:text-green-400">
 					Join our MOVEMENT TODAY
