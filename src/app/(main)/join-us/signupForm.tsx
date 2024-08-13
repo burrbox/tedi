@@ -1,16 +1,16 @@
 "use client";
 
 import Loading from "@/components/loading";
-import { petition } from "@/lib/constants";
-import { savePetitionSignature } from "@/lib/serverActions";
+import { saveJoinUsForm } from "@/lib/serverActions";
+import { type UserRole } from "@/server/auth";
+import { type User } from "@prisma/client";
 import { useState, type FormEvent } from "react";
 
-export default function PetitionForm() {
+export default function JoinUsForm({ user }: { user: { id: string; email?: string | null } | undefined }) {
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
-	const [email, setEmail] = useState("");
-	const [zipCode, setZipCode] = useState("");
-	const [message, setMessage] = useState("");
+	const [email, setEmail] = useState(user?.email ?? "");
+	const [phone, setPhone] = useState("");
 
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [done, setDone] = useState(false);
@@ -19,7 +19,7 @@ export default function PetitionForm() {
 		if (done || isSubmitting) return;
 		event.preventDefault();
 		setIsSubmitting(true);
-		await savePetitionSignature({ firstName, lastName, email, zipCode, message });
+		await saveJoinUsForm({ firstName, lastName, email, phone });
 		setIsSubmitting(false);
 		setDone(true);
 	};
@@ -43,7 +43,7 @@ export default function PetitionForm() {
 					Join our MOVEMENT TODAY
 				</h1>
 				<h2 className="text-wrap text-center text-lg text-blue-700 dark:text-blue-400">
-					Sign up to recieve resources to help take action on our campaigns and projects in your own community. Join us
+					Sign up to receive resources to help take action on our campaigns and projects in your own community. Join us
 					today to help spread our initiative.
 				</h2>
 			</div>
@@ -52,7 +52,6 @@ export default function PetitionForm() {
 					<label className="text-blue-700 dark:text-blue-300">
 						First Name *
 						<input
-							name="firstName"
 							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:text-black dark:focus:bg-stone-800 dark:focus:text-white"
 							type="text"
 							required
@@ -65,7 +64,6 @@ export default function PetitionForm() {
 					<label className="text-blue-700 dark:text-blue-300">
 						Last Name *
 						<input
-							name="lastName"
 							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:text-black dark:focus:bg-stone-800 dark:focus:text-white"
 							type="text"
 							required
@@ -75,44 +73,29 @@ export default function PetitionForm() {
 					</label>
 				</div>
 
-				<div className="flex-col lg:col-span-1 lg:col-start-1 lg:row-span-1">
-					<label className="text-blue-700 dark:text-blue-300">
-						Zip Code *
-						<input
-							name="zipCode"
-							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:text-black dark:focus:bg-stone-800 dark:focus:text-white"
-							type="text"
-							required
-							value={zipCode}
-							onChange={(event) =>
-								void setZipCode((prev) => (event.target.value.match(/^\d{0,5}$/) ? event.target.value : prev))
-							}
-						/>
-					</label>
-				</div>
-				<div className="col-span-1 col-start-2 row-span-2 row-start-2 flex-col">
-					<label className="text-blue-700 dark:text-blue-300">
-						Message (optional)
-						<input
-							name="email"
-							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:text-black dark:focus:bg-stone-800 dark:focus:text-white"
-							type="email"
-							required
-							value={email}
-							onChange={(event) => void setEmail(event.target.value)}
-						/>
-					</label>
-				</div>
 				<div className="flex-col lg:col-span-2 lg:col-start-1 lg:row-span-1">
 					<label className="text-blue-700 dark:text-blue-300">
 						Email *
 						<input
-							name="email"
 							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:text-black dark:focus:bg-stone-800 dark:focus:text-white"
 							type="email"
 							required
 							value={email}
 							onChange={(event) => void setEmail(event.target.value)}
+						/>
+					</label>
+				</div>
+				<div className="flex-col lg:col-span-1 lg:col-start-1 lg:row-span-1">
+					<label className="text-blue-700 dark:text-blue-300">
+						Phone Number *
+						<input
+							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:text-black dark:focus:bg-stone-800 dark:focus:text-white"
+							type="text"
+							required
+							value={phone}
+							onChange={(event) =>
+								void setPhone((prev) => (event.target.value.match(/^\+?[\d()-]*$/) ? event.target.value : prev))
+							}
 						/>
 					</label>
 				</div>

@@ -19,7 +19,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
  * @see https://next-auth.js.org/getting-started/typescript#module-augmentation
  */
 
-type UserRole = "user" | "writer" | "editor" | "admin";
+export type UserRole = "user" | "writer" | "editor" | "admin";
 
 declare module "next-auth" {
 	interface Session extends DefaultSession {
