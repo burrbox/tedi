@@ -49,7 +49,7 @@ const globeConfig: Partial<COBEOptions> = {
 
 export default async function Toolkit() {
 	const session = await auth();
-	if (!session) redirect("/signin");
+	// if (!session) redirect("/signin");
 
 	return (
 		<div className="min-h-screen w-full px-8">

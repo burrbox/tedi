@@ -125,6 +125,15 @@ export default function Globe({
 			onRender,
 		});
 
+		canvasRef.current!.addEventListener(
+			"wheel",
+			(e) => {
+				e.preventDefault();
+				scale.current = clamp(0.5, 3, scale.current + e.deltaY * -0.001);
+			},
+			{ passive: false },
+		);
+
 		setTimeout(() => (canvasRef.current!.style.opacity = "1"));
 		return () => globe.destroy();
 	}, []);
@@ -139,10 +148,6 @@ export default function Globe({
 				onPointerOut={() => updatePointerInteraction(null)}
 				onMouseMove={(e) => updateMovement(e.clientX)}
 				onTouchMove={(e) => e.touches[0] && updateMovement(e.touches[0].clientX)}
-				onWheel={(e) => {
-					e.preventDefault();
-					scale.current = clamp(0.5, 3, scale.current + e.deltaY * -0.001);
-				}}
 			/>
 			{markers && (
 				<div className="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-2">
