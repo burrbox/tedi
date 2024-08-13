@@ -93,9 +93,7 @@ export default function PetitionForm() {
 							type="text"
 							required
 							value={zipCode}
-							onChange={(event) =>
-								void setZipCode((prev) => (event.target.value.match(/^\d{0,5}$/) ? event.target.value : prev))
-							}
+							onChange={(event) => void setZipCode(event.target.value)}
 						/>
 					</label>
 				</div>
