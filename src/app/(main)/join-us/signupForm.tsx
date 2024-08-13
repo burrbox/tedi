@@ -2,8 +2,6 @@
 
 import Loading from "@/components/loading";
 import { saveJoinUsForm } from "@/lib/serverActions";
-import { type UserRole } from "@/server/auth";
-import { type User } from "@prisma/client";
 import { useState, type FormEvent } from "react";
 
 export default function JoinUsForm({ user }: { user: { id: string; email?: string | null } | undefined }) {

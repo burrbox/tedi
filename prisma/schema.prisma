@@ -25,8 +25,8 @@ model Post {
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 
-    author    String  @default("nash pillai")
-    editor    String  @default("nash pillai")
+    author String @default("nash pillai")
+    editor String @default("nash pillai")
 
     @@index([createdAt])
     @@index([author])
@@ -62,13 +62,20 @@ model Session {
     @@index([userId])
 }
 
+enum Role {
+    user
+    writer
+    editor
+    admin
+}
+
 model User {
     id            String    @id @default(auto()) @map("_id") @db.ObjectId
     name          String?   @default("")
     email         String?   @unique
     emailVerified DateTime?
     image         String?
-    role          String    @default("user")
+    role          Role      @default(user)
     accounts      Account[]
     sessions      Session[]
 }
