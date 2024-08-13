@@ -37,6 +37,8 @@ export default function JoinUsForm({ user }: { user: { id: string; email?: strin
 		<form className="rounded-2xl bg-white dark:bg-stone-800" onSubmit={submitForm}>
 			<div className="mx-4 py-4 lg:p-4">
 				<h1 className="text-wrap py-6 text-center text-5xl font-bold text-green-700 dark:text-green-400">
+			<div className="mx-4 py-4 lg:py-8">
+				<h1 className="text-wrap pb-6 text-center text-5xl font-bold text-green-700 dark:text-green-400">
 					Join our MOVEMENT TODAY
 				</h1>
 				<h2 className="text-wrap text-center text-lg text-blue-700 dark:text-blue-400">
@@ -44,7 +46,7 @@ export default function JoinUsForm({ user }: { user: { id: string; email?: strin
 					today to help spread our initiative.
 				</h2>
 			</div>
-			<div className="mx-6 grid justify-center gap-3 md:flex-col lg:grid-cols-2 lg:grid-rows-3">
+			<div className="mx-6 grid items-stretch justify-center gap-3 pb-8 md:flex-col lg:grid-cols-2 lg:grid-rows-3">
 				<div className="flex-col lg:col-span-1 lg:row-span-1">
 					<label className="text-blue-700 dark:text-blue-300">
 						First Name *
@@ -96,16 +98,25 @@ export default function JoinUsForm({ user }: { user: { id: string; email?: strin
 						/>
 					</label>
 				</div>
+				<div className="lg-col-span-1 flex flex-col items-center justify-center lg:col-start-2 lg:row-span-2">
+					<button
+						type="submit"
+						disabled={isSubmitting || done}
+						className="w-full cursor-pointer self-end rounded-xl bg-blue-700 py-4 text-white duration-300 hover:bg-blue-600"
+					>
+						{isSubmitting ? <Loading className="m-auto" /> : "Join"}
+					</button>
+				</div>
 			</div>
-			<div className="mx-3 flex justify-center py-10">
+			{/* <div className="mx-3 flex justify-center py-10">
 				<button
 					type="submit"
 					disabled={isSubmitting || done}
 					className="w-4/5 cursor-pointer rounded-xl bg-blue-700 py-3 text-white duration-300 hover:bg-blue-600"
 				>
-					{isSubmitting ? <Loading className="m-auto" /> : "Sign"}
+					{isSubmitting ? <Loading className="m-auto" /> : "Join"}
 				</button>
-			</div>
+			</div> */}
 		</form>
 	);
 }

@@ -80,7 +80,7 @@ export default async function Home() {
 								</p>
 								<div className="space-x-4">
 									<button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-green-700">
-										<Link href="/join">Get Involved</Link>
+										<Link href="/join-us">Get Involved</Link>
 									</button>
 									<button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700">
 										<Link href="/donate">Donate</Link>
@@ -139,9 +139,9 @@ export default async function Home() {
 			</section>
 			<section className="flex w-full items-center py-4">
 				<div className="container px-4 md:px-6">
-					<div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
+					<div className="mx-auto grid justify-center gap-6 lg:grid-cols-2 lg:gap-12">
 						<div className="flex flex-col justify-center space-y-4" data-aos="fade-right">
-							<div className="space-y-2">
+							<div className="space-y-3">
 								<h1 className="text-wrap text-3xl font-bold tracking-tighter text-blue-600 sm:text-4xl md:text-5xl xl:text-6xl/none dark:text-blue-400">
 									Together, <br />
 									We Can Make a Difference
@@ -162,7 +162,7 @@ export default async function Home() {
 									href="https://docs.google.com/forms/d/e/1FAIpQLSfEWkGAauRBi07E8-4WRlay7RyXJlLII85dt1FCV2C0m-hI1Q/viewform"
 									className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-green-700"
 								>
-									Join Us
+									Join The TEDI Team
 								</Link>
 								<Link
 									href="/donate"
@@ -175,7 +175,7 @@ export default async function Home() {
 						<CloudinaryClientWrapper
 							src="nature/vu7xxkgfzwfykqg0yosl"
 							alt="An image of an ocean"
-							className="rounded-lg"
+							className="mx-auto justify-center rounded-lg"
 							data-aos="fade-left"
 							width={550}
 							height={550}
@@ -238,7 +238,7 @@ export default async function Home() {
 			</section>
 			<section className="w-full bg-white py-12 md:py-24 lg:py-32 dark:bg-stone-900">
 				<div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-					<div className="space-y-2" data-aos="fade-right">
+					<div className="mx-auto justify-center space-y-2" data-aos="fade-right">
 						<h2 className="text-3xl font-bold tracking-tighter text-green-600 md:text-4xl/tight dark:text-green-400">
 							A Message from Our Founder
 						</h2>
@@ -272,7 +272,7 @@ export default async function Home() {
 					/>
 				</div>
 			</section>
-			<section className="w-full bg-stone-800 py-12 md:py-24 lg:grid lg:grid-cols-2 lg:gap-12 lg:py-32">
+			<section className="w-full bg-stone-800 px-12 py-12 md:py-24 lg:grid lg:grid-cols-2 lg:gap-12 lg:py-32">
 				<div className="aspect-video w-full overflow-hidden rounded-lg">
 					<iframe
 						data-aos="fade-right"
@@ -281,12 +281,12 @@ export default async function Home() {
 						src="https://www.youtube-nocookie.com/embed/sZR88xj_-lU?si=pFRTWVhh_o8oupOd"
 						title=" Sustainability Director Expert Interview with Leola Specht"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						className="h-full w-full rounded-xl pl-12"
+						className="h-full w-full rounded-xl"
 						referrerPolicy="strict-origin-when-cross-origin"
 						allowFullScreen
 					/>
 				</div>
-				<div className="mr-12 flex flex-col items-center justify-center space-y-4 text-center" data-aos="fade-left">
+				<div className="flex flex-col items-center justify-center space-y-4 text-center" data-aos="fade-left">
 					<div className="space-y-2">
 						<div className="inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">Expert Interviews</div>
 						<h2 className="text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl dark:text-blue-400">
@@ -326,10 +326,10 @@ export default async function Home() {
 						</div>
 						<div className="flex flex-col gap-2 min-[400px]:flex-row">
 							<Link
-								href="/join"
+								href="/join-us"
 								className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-green-700"
 							>
-								Join us
+								Join Us
 							</Link>
 							<Link
 								href="/petitions"

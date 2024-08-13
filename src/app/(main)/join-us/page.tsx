@@ -33,14 +33,14 @@ const jsonLd: WithContext<WebPage> = {
 export default async function AboutPage() {
 	const session = await auth();
 	return (
-		<section className="w-full bg-gray-100 pt-20 dark:bg-stone-900">
+		<section className="w-full bg-gray-100 dark:bg-stone-900">
 			<JsonLd data={jsonLd} />
 			<div
 				className="relative flex min-h-[50vh] w-full flex-col bg-cover bg-fixed bg-center bg-repeat"
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/mountain" })})` }}
 			>
-				<div className="mx-auto w-full py-16 sm:container">
-					<div className="inset-0 mx-auto sm:w-10/12 md:w-full" data-aos="fade-down">
+				<div className="container mx-auto w-full py-16 md:py-24">
+					<div className="inset-0 mx-auto w-10/12 md:w-full" data-aos="fade-down">
 						<div className="flex flex-col justify-center gap-6 xl:flex-row">
 							<div className="m-auto h-fit max-w-3xl rounded-xl bg-white py-8 dark:bg-stone-800">
 								{session ? (
@@ -60,7 +60,15 @@ export default async function AboutPage() {
 					</div>
 				</div>
 			</div>
-			<hr className="w-full border-black bg-black py-4" />
+			<div className="min-h-w-full py-8 md:py-12">
+				<h3 className="py-auto text-wrap pb-8 text-center text-3xl text-black dark:text-stone-200" data-aos="fade-in">
+					Looking to help out a bit more? Join the team instead!
+				</h3>
+				<hr
+					className="lg:w-1/8 border-green mx-auto w-1/2 justify-center border-2 border-green-500 md:w-1/4"
+					data-aos="fade-in"
+				/>
+			</div>
 			<div
 				className="relative flex min-h-[50vh] w-screen flex-col bg-cover bg-fixed bg-center bg-repeat"
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/waterfall" })})` }}
@@ -71,11 +79,11 @@ export default async function AboutPage() {
 							<div className="basis-4/5">
 								<div className="h-fit rounded-xl bg-white py-8 dark:bg-stone-800">
 									<form className="rounded-2xl bg-white dark:bg-stone-800">
-										<div className="mx-4 py-4 lg:py-8">
+										<div className="mx-4 py-4 lg:py-6">
 											<h1 className="text-wrap py-6 text-center text-5xl font-bold text-green-700 dark:text-green-400">
 												Join Our Team
 											</h1>
-											<h2 className="text-wrap text-center text-lg text-blue-700 dark:text-blue-400">
+											<h2 className="text-wrap text-center text-lg text-black dark:text-stone-300">
 												We are looking for motivated individuals with a passion for protecting the environment to join
 												our team at The Environmental Defense Initiative. Joining our team is an amazing opportunity to
 												get involved with advocating for change on a national level, meet people with similar interests
@@ -86,7 +94,7 @@ export default async function AboutPage() {
 											</h2>
 										</div>
 
-										<div className="mx-3 flex justify-center py-10">
+										<div className="mx-3 flex justify-center pb-10 pt-6">
 											<Link
 												className="w-4/5 rounded-xl bg-blue-700 py-3 text-center text-white duration-300 hover:bg-blue-600"
 												href="https://docs.google.com/forms/d/e/1FAIpQLSfEWkGAauRBi07E8-4WRlay7RyXJlLII85dt1FCV2C0m-hI1Q/viewform?usp=sf_link"

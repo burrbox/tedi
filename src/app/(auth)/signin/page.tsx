@@ -124,8 +124,17 @@ export default function SignIn({ searchParams }: { searchParams: Record<string, 
 							</div>
 							<span className="flex-auto pl-3 text-gray-200">Continue With Discord</span>
 						</button>
-						{/* Privacy Policy */}
 						<div className="flex gap-1 align-middle">
+							<div className="mx-auto mb-1 block font-medium text-slate-700 dark:text-gray-200">
+								No account yet? Sign up{" "}
+								<Link href="/join-us" className="text-blue-500 underline dark:text-blue-400">
+									Here
+								</Link>
+								.
+							</div>
+						</div>
+						{/* Privacy Policy */}
+						<div className="flex gap-1 align-bottom">
 							<div className="mx-auto mb-1 block font-medium text-slate-700 dark:text-gray-200">
 								By signing in you agree to our{" "}
 								<Link href="/privacy-policy" className="text-blue-500 underline dark:text-blue-400">

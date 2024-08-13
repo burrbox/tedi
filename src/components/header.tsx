@@ -22,7 +22,7 @@ const links = [
 	{ name: "About", href: "/about" },
 	{ name: "Blog", href: "/blog" },
 	{ name: "Petitions", href: "/petitions" },
-	// { name: "Join Us", href: "/join" },
+	{ name: "Join Us", href: "/join-us" },
 ];
 
 export default function Header() {
