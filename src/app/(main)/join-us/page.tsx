@@ -5,7 +5,7 @@ import { env } from "@/env";
 import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
 import type { WebPage, WithContext } from "schema-dts";
 import { JsonLd } from "@/components/jsonLd";
-import JoinUsForm from "./signupForm";
+import JoinUsForm from "./joinUsForm";
 import { auth } from "@/server/auth";
 
 export const metadata: Metadata = {
