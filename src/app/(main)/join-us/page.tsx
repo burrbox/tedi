@@ -38,14 +38,11 @@ export default async function AboutPage() {
 				className="relative flex min-h-[50vh] w-full flex-col bg-cover bg-fixed bg-center bg-repeat"
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/mountain" })})` }}
 			>
-				<div className="container mx-auto w-full py-16">
-					<div className="inset-0 mx-auto w-10/12 md:w-full" data-aos="fade-down">
+				<div className="mx-auto w-full py-16 sm:container">
+					<div className="inset-0 mx-auto sm:w-10/12 md:w-full" data-aos="fade-down">
 						<div className="flex flex-col justify-center gap-6 xl:flex-row">
-							<div className="basis-2/5"></div>
-							<div className="basis-3/5">
-								<div className="h-fit w-full rounded-xl bg-white py-8 dark:bg-stone-800">
-									<JoinUsForm user={(await auth())?.user} />
-								</div>
+							<div className="m-auto h-fit max-w-3xl rounded-xl bg-white py-8 dark:bg-stone-800">
+								<JoinUsForm user={(await auth())?.user} />
 							</div>
 						</div>
 					</div>

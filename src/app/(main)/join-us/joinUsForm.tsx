@@ -36,7 +36,7 @@ export default function JoinUsForm({ user }: { user: { id: string; email?: strin
 		);
 	return (
 		<form className="rounded-2xl bg-white dark:bg-stone-800" onSubmit={submitForm}>
-			<div className="mx-4 py-4 lg:py-8">
+			<div className="mx-4 py-4 lg:p-4">
 				<h1 className="text-wrap py-6 text-center text-5xl font-bold text-green-700 dark:text-green-400">
 					Join our MOVEMENT TODAY
 				</h1>
@@ -50,7 +50,7 @@ export default function JoinUsForm({ user }: { user: { id: string; email?: strin
 					<label className="text-blue-700 dark:text-blue-300">
 						First Name *
 						<input
-							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:text-black dark:focus:bg-stone-800 dark:focus:text-white"
+							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-stone-300 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-800 dark:hover:bg-stone-700 dark:focus:bg-stone-700 dark:focus:text-white"
 							type="text"
 							required
 							value={firstName}
@@ -62,7 +62,7 @@ export default function JoinUsForm({ user }: { user: { id: string; email?: strin
 					<label className="text-blue-700 dark:text-blue-300">
 						Last Name *
 						<input
-							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:text-black dark:focus:bg-stone-800 dark:focus:text-white"
+							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-800 dark:hover:bg-stone-700 dark:focus:bg-stone-800 dark:focus:text-white"
 							type="text"
 							required
 							value={lastName}
@@ -71,11 +71,11 @@ export default function JoinUsForm({ user }: { user: { id: string; email?: strin
 					</label>
 				</div>
 
-				<div className="flex-col lg:col-span-2 lg:col-start-1 lg:row-span-1">
+				<div className="flex-col lg:col-span-1 lg:col-start-1 lg:row-span-1">
 					<label className="text-blue-700 dark:text-blue-300">
 						Email *
 						<input
-							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:text-black dark:focus:bg-stone-800 dark:focus:text-white"
+							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-800 dark:hover:bg-stone-700 dark:focus:bg-stone-800 dark:focus:text-white"
 							type="email"
 							required
 							value={email}
@@ -83,12 +83,12 @@ export default function JoinUsForm({ user }: { user: { id: string; email?: strin
 						/>
 					</label>
 				</div>
-				<div className="flex-col lg:col-span-1 lg:col-start-1 lg:row-span-1">
+				<div className="flex-col lg:col-span-1 lg:col-start-2 lg:row-span-1">
 					<label className="text-blue-700 dark:text-blue-300">
 						Phone Number *
 						<input
-							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:text-black dark:focus:bg-stone-800 dark:focus:text-white"
-							type="text"
+							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-800 dark:hover:bg-stone-700 dark:focus:bg-stone-800 dark:focus:text-white"
+							type="tel"
 							required
 							value={phone}
 							onChange={(event) =>
