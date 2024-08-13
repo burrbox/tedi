@@ -11,7 +11,7 @@ import ResendProvider from "next-auth/providers/resend";
 import { Resend } from "resend";
 import SignInEmail from "@/components/emails/signInEmail";
 import { PrismaAdapter } from "@auth/prisma-adapter";
-import type { $Enums } from "@prisma/client";
+import type { $Enums, User } from "@prisma/client";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -27,11 +27,6 @@ declare module "next-auth" {
 			role: $Enums.Role;
 		} & DefaultSession["user"];
 	}
-}
-
-interface User {
-	// ...other properties
-	role: $Enums.Role;
 }
 
 const resend = new Resend(env.AUTH_RESEND_KEY);
