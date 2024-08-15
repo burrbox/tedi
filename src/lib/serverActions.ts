@@ -91,7 +91,16 @@ export async function savePetitionSignature(data: {
 	});
 }
 
-export async function saveJoinUsForm(data: { firstName: string; lastName: string; phone: string }) {
+export async function saveJoinUsForm(data: {
+	firstName: string;
+	lastName: string;
+	phone: string;
+	email: string;
+	address: string;
+	birthday: string;
+	gender: string;
+	team: boolean;
+}) {
 	const session = await auth();
 	if (!session) redirect("/signin");
 

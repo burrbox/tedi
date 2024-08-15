@@ -43,7 +43,8 @@ export default async function AboutPage() {
 					<div className="inset-0 mx-auto w-10/12 md:w-full" data-aos="fade-down">
 						<div className="flex flex-col justify-center gap-6 xl:flex-row">
 							<div className="m-auto h-fit max-w-3xl rounded-xl bg-white py-8 dark:bg-stone-800">
-								{session ? (
+								<JoinUsForm />
+								{/* {session ? (
 									<JoinUsForm user={session?.user} />
 								) : (
 									<div className="w-full">
@@ -54,7 +55,7 @@ export default async function AboutPage() {
 											</div>
 										</Link>
 									</div>
-								)}
+								)} */}
 							</div>
 						</div>
 					</div>

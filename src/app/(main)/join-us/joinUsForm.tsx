@@ -3,11 +3,23 @@
 import Loading from "@/components/loading";
 import { saveJoinUsForm } from "@/lib/serverActions";
 import { useState, type FormEvent } from "react";
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-export default function JoinUsForm({ user }: { user: { id: string; email?: string | null } }) {
+// export default function JoinUsForm({ user }: { user: { id: string; email?: string | null } }) {
+export default function JoinUsForm() {
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [phone, setPhone] = useState("");
+	const [email, setEmail] = useState("");
+	const [address, setAddress] = useState("");
+	const [birthday, setBirthday] = useState("");
+	const [gender, setGender] = useState("");
+	const [team, setTeam] = useState(false);
 
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [done, setDone] = useState(false);
@@ -16,7 +28,7 @@ export default function JoinUsForm({ user }: { user: { id: string; email?: strin
 		if (done || isSubmitting) return;
 		event.preventDefault();
 		setIsSubmitting(true);
-		await saveJoinUsForm({ firstName, lastName, phone });
+		await saveJoinUsForm({ firstName, lastName, phone, email, address, birthday, gender, team });
 		setIsSubmitting(false);
 		setDone(true);
 	};
@@ -78,7 +90,8 @@ export default function JoinUsForm({ user }: { user: { id: string; email?: strin
 							type="email"
 							required
 							disabled
-							value={user.email ?? "No email associated with account"}
+							value={email}
+							onChange={(event) => void setEmail(event.target.value)} // value={user.email ?? "No email associated with account"}
 						/>
 					</label>
 				</div>
@@ -96,7 +109,24 @@ export default function JoinUsForm({ user }: { user: { id: string; email?: strin
 						/>
 					</label>
 				</div>
-				<div className="lg-col-span-2 flex flex-col items-center justify-center lg:col-start-2 lg:row-span-2">
+				<div className="flex-col lg:col-span-1 lg:col-start-1 lg:row-span-1">
+					<label className="text-blue-700 dark:text-blue-300">
+						Gender *<DropdownMenu>{/* i was gonna put something here */}</DropdownMenu>
+					</label>
+				</div>
+				<div className="flex-col lg:col-span-2 lg:col-start-1 lg:row-span-1">
+					<label className="text-blue-700 dark:text-blue-300">
+						Address *
+						<input
+							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-800 dark:hover:bg-stone-700 dark:focus:bg-stone-800 dark:focus:text-white"
+							type="add"
+							required
+							value={address}
+							onChange={(event) => void setAddress(event.target.value)}
+						/>
+					</label>
+				</div>
+				<div className="flex flex-col items-center justify-center lg:col-span-2 lg:col-start-1 lg:row-span-2">
 					<button
 						type="submit"
 						disabled={isSubmitting || done}

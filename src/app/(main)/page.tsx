@@ -90,10 +90,10 @@ export default async function Home() {
 							<div className="flex h-fit flex-col items-start space-y-4">
 								<CloudinaryClientWrapper
 									alt="An image of our team"
-									src="nature/teamCleanup"
+									src="cleanup2_rhiq2n"
 									className="mx-auto aspect-video overflow-hidden rounded-xl object-cover shadow-xl"
-									width="650"
-									height="550"
+									width="1300"
+									height="1100"
 								/>
 							</div>
 						</div>
