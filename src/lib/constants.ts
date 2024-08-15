@@ -173,7 +173,7 @@ export const team = [
 	{
 		name: "Madeline Cabral",
 		title: "Blog Editor",
-		location: "New York City, New York, USA",
+		location: "Taunton, Massachusetts, USA",
 		image: "madeline_pvpjea",
 		description: `Madeline’s love for the environment began at a young age. She is an aspiring hydrologist who enjoys studying water and soil sciences. She has seen how pollution and negligence affect her local watershed and hopes to help spread awareness about current environmental issues through TEDI.`,
 		email: "madeline.cabral08@yahoo.com",
