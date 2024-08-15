@@ -37,7 +37,7 @@ export default function JoinUsForm({ user }: { user: { id: string; email?: strin
 		<form className="rounded-2xl bg-white dark:bg-stone-800" onSubmit={submitForm}>
 			<div className="mx-4 py-4 lg:py-8">
 				<h1 className="text-wrap pb-6 text-center text-5xl font-bold text-green-700 dark:text-green-400">
-					Join our MOVEMENT TODAY
+					Join our movement TODAY
 				</h1>
 				<h2 className="text-wrap text-center text-lg text-blue-700 dark:text-blue-400">
 					Sign up to receive resources to help take action on our campaigns and projects in your own community. Join us
@@ -96,11 +96,11 @@ export default function JoinUsForm({ user }: { user: { id: string; email?: strin
 						/>
 					</label>
 				</div>
-				<div className="lg-col-span-1 flex flex-col items-center justify-center lg:col-start-2 lg:row-span-2">
+				<div className="lg-col-span-2 flex flex-col items-center justify-center lg:col-start-2 lg:row-span-2">
 					<button
 						type="submit"
 						disabled={isSubmitting || done}
-						className="w-full cursor-pointer self-end rounded-xl bg-blue-700 py-4 text-white duration-300 hover:bg-blue-600"
+						className="w-full cursor-pointer self-center rounded-xl bg-blue-700 py-4 text-white duration-300 hover:bg-blue-600"
 					>
 						{isSubmitting ? <Loading className="m-auto" /> : "Join"}
 					</button>

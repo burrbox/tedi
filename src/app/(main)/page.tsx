@@ -149,7 +149,7 @@ export default async function Home() {
 								<p className="max-w-[600px] text-wrap md:text-xl dark:text-white">
 									TEDI raises awareness of current environmental issues and encourages individuals to take action in
 									their own communities by posting frequently on various social media platforms, writing blogs,
-									launching petitions, and hosting webinars.
+									launching petitions, and hosting expert interviews.
 									<br />
 									<br />
 									<span className="dark:text-green-500">
@@ -162,7 +162,7 @@ export default async function Home() {
 									href="https://docs.google.com/forms/d/e/1FAIpQLSfEWkGAauRBi07E8-4WRlay7RyXJlLII85dt1FCV2C0m-hI1Q/viewform"
 									className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-green-700"
 								>
-									Join The TEDI Team
+									Join the TEDI team
 								</Link>
 								<Link
 									href="/donate"

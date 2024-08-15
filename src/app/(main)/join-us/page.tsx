@@ -65,7 +65,7 @@ export default async function AboutPage() {
 					Looking to help out a bit more? Join the team instead!
 				</h3>
 				<hr
-					className="lg:w-1/8 border-green mx-auto w-1/2 justify-center border-2 border-green-500 md:w-1/4"
+					className="border-green mx-auto w-1/2 justify-center border-2 border-green-500 md:w-1/4 lg:w-1/12"
 					data-aos="fade-in"
 				/>
 			</div>

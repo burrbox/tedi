@@ -44,7 +44,7 @@ export const team = [
 	},
 	{
 		name: "Karen Wong",
-		title: "Blog Director & Blog Writer",
+		title: "Blog Director",
 		location: "Hopewell Junction, NY, USA",
 		image: "TEDI Bio/cgmkahssvtqmleu51a8b",
 		description: `Karen has loved animals from a very young age. In her preschool years, she loved to care for turtles that wandered into her yard from a nearby creek. Growing up, she has been passionate about preserving animal habitats and saving the environment, often reading articles about animal life. TEDI allows her to use her voice to spread awareness for her interests and make a difference in this world. `,
@@ -169,6 +169,15 @@ export const team = [
 		description: `Alexa has always has a strong interest in environmental conservation and ensuring a better future for generations to come. She has a special passion for animals, especially pandas. She wants to pursue a degree in biology and study ways in which we can help our environment thrive. TEDI is a great way to spread awareness and motivate  others to take action in order to make the world a better place!`,
 		email: "asegoviams101@gmail.com",
 		instagram: "https://www.instagram.com/heartz4ken/",
+	},
+	{
+		name: "Madeline Cabral",
+		title: "Blog Editor",
+		location: "New York City, New York, USA",
+		image: "madeline_pvpjea",
+		description: `Madeline’s love for the environment began at a young age. She is an aspiring hydrologist who enjoys studying water and soil sciences. She has seen how pollution and negligence affect her local watershed and hopes to help spread awareness about current environmental issues through TEDI.`,
+		email: "madeline.cabral08@yahoo.com",
+		instagram: "https://www.instagram.com/madeline__cabral/",
 	},
 ] as {
 	name: string;
