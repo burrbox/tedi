@@ -109,11 +109,11 @@ export default function JoinUsForm() {
 						/>
 					</label>
 				</div>
-				<div className="flex-col lg:col-span-1 lg:col-start-1 lg:row-span-1">
+				{/* <div className="flex-col lg:col-span-1 lg:col-start-1 lg:row-span-1">
 					<label className="text-blue-700 dark:text-blue-300">
-						Gender *<DropdownMenu>{/* i was gonna put something here */}</DropdownMenu>
+						Gender *<DropdownMenu>i was gonna put something here </DropdownMenu>
 					</label>
-				</div>
+				</div> */}
 				<div className="flex-col lg:col-span-2 lg:col-start-1 lg:row-span-1">
 					<label className="text-blue-700 dark:text-blue-300">
 						Address *
