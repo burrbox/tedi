@@ -18,7 +18,7 @@ export default function JoinUsForm() {
 	const [email, setEmail] = useState("");
 	const [address, setAddress] = useState("");
 	const [birthday, setBirthday] = useState("");
-	const [gender, setGender] = useState("");
+	const [gender, setGender] = useState("male");
 	const [team, setTeam] = useState(false);
 
 	const [isSubmitting, setIsSubmitting] = useState(false);
@@ -89,7 +89,6 @@ export default function JoinUsForm() {
 							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-800 dark:hover:bg-stone-700 dark:focus:bg-stone-800 dark:focus:text-white"
 							type="email"
 							required
-							disabled
 							value={email}
 							onChange={(event) => void setEmail(event.target.value)} // value={user.email ?? "No email associated with account"}
 						/>
@@ -109,11 +108,37 @@ export default function JoinUsForm() {
 						/>
 					</label>
 				</div>
-				{/* <div className="flex-col lg:col-span-1 lg:col-start-1 lg:row-span-1">
+				<div className="flex-col lg:col-span-1 lg:col-start-1 lg:row-span-1">
 					<label className="text-blue-700 dark:text-blue-300">
-						Gender *<DropdownMenu>i was gonna put something here </DropdownMenu>
+						Gender *
+						<div className="w-full">
+							<DropdownMenu>
+								<DropdownMenuTrigger asChild>
+									<p className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-800 dark:hover:bg-stone-700 dark:focus:bg-stone-800 dark:focus:text-white">
+										{gender.charAt(0).toUpperCase() + gender.slice(1)} {/* Capitalize the first letter */}
+									</p>
+								</DropdownMenuTrigger>
+								<DropdownMenuContent>
+									<DropdownMenuItem onClick={() => setGender("male")}>Male</DropdownMenuItem>
+									<DropdownMenuItem onClick={() => setGender("female")}>Female</DropdownMenuItem>
+									<DropdownMenuItem onClick={() => setGender("other")}>Other</DropdownMenuItem>
+									<DropdownMenuItem onClick={() => setGender("rather not say")}>Preer not to say </DropdownMenuItem>
+								</DropdownMenuContent>
+							</DropdownMenu>
+						</div>
 					</label>
-				</div> */}
+				</div>
+				<div className="flex-col lg:col-span-1 lg:col-start-2 lg:row-span-1">
+					<label className="text-blue-700 dark:text-blue-300">
+						Birthday *
+						<input
+							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-800 dark:hover:bg-stone-700 dark:focus:bg-stone-800 dark:focus:text-white"
+							type="date"
+							value={birthday}
+							onChange={(event) => void setBirthday(event.target.value)}
+						/>
+					</label>
+				</div>
 				<div className="flex-col lg:col-span-2 lg:col-start-1 lg:row-span-1">
 					<label className="text-blue-700 dark:text-blue-300">
 						Address *
@@ -126,6 +151,27 @@ export default function JoinUsForm() {
 						/>
 					</label>
 				</div>
+				{/* <div className="flex-col lg:col-span-2 lg:col-start-1 lg:row-span-1">
+					<label className="text-blue-700 dark:text-blue-300">
+						Interested In Creating Your Own Team?
+						<div className="w-full justify-between">
+							<button
+								className="w-1/3 rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-800 dark:hover:bg-stone-700 dark:focus:bg-stone-800 dark:focus:text-white"
+								type="button"
+								onClick={() => setTeam(false)}
+							>
+								No
+							</button>
+							<button
+								className="w-1/3 rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-800 dark:hover:bg-stone-700 dark:focus:bg-stone-800 dark:focus:text-white"
+								type="button"
+								onClick={() => setTeam(true)}
+							>
+								Yes
+							</button>
+						</div>
+					</label>
+				</div> */}
 				<div className="flex flex-col items-center justify-center lg:col-span-2 lg:col-start-1 lg:row-span-2">
 					<button
 						type="submit"
