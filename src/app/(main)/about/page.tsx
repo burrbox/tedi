@@ -1,6 +1,6 @@
 import { EnvelopeIcon, GlobeAmericasIcon, MapPinIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
-import { team } from "@/lib/constants";
+import { directors, team } from "@/lib/constants";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { GithubIcon, InstagramIcon, LinkedInIcon, TikTokIcon, TwitterXIcon } from "@/components/icons";
 import { env } from "@/env";
@@ -116,8 +116,90 @@ export default function AboutPage() {
 			</section>
 			<section className="w-full bg-white py-16 dark:bg-stone-900">
 				<div className="container mx-auto px-4">
-					<h2 className="mb-8 text-center text-3xl font-bold text-green-700 dark:text-green-500">Meet the Team</h2>
-					<hr className="mx-auto w-1/4 justify-center border-2 border-green-500" />
+					<h2 className="mb-8 text-center text-3xl font-bold text-green-700 dark:text-green-500">Meet Our Directors</h2>
+					<hr className="mx-auto mb-8 w-1/4 justify-center border-2 border-green-500" />
+					{/* <h3 className="mb-8 text-center text-2xl font-bold text-green-700 dark:text-green-500">Our Directors</h3>
+					<hr className="mx-auto w-1/12 justify-center border-2 border-green-500" /> */}
+					<div className="mb-12 grid gap-8 pt-5 md:grid-cols-2 md:pt-7 lg:grid-cols-3 lg:pt-10">
+						{directors.map((member) => (
+							<div
+								key={member.name}
+								className="flex h-full flex-col justify-between rounded-lg bg-blue-100 p-8 shadow-md duration-300 ease-in-out hover:bg-blue-200 dark:bg-emerald-900 dark:duration-500 dark:ease-in-out dark:hover:bg-emerald-800"
+								data-aos="fade-down"
+								data-aos-duration="300"
+							>
+								<div>
+									<CloudinaryClientWrapper
+										height={1080}
+										width={1080}
+										src={member.image}
+										alt={`An image of ${member.name}.`}
+										gravity="face"
+										crop="fill"
+										className="mb-4 h-96 w-full rounded-md object-cover"
+									/>
+									<h3 className="mb-2 text-xl font-bold text-blue-700 dark:text-blue-200">{member.name}</h3>
+									<h4 className="mb-2 text-blue-700 dark:text-blue-200">{member.title}</h4>
+									<p className="mb-2 flex text-blue-700 dark:text-blue-200">
+										<MapPinIcon className="mr-1 inline-block h-6 w-6" />
+										<span>{member.location}</span>
+									</p>
+									<p className="text-blue-700 dark:text-stone-300">{member.description}</p>
+								</div>
+								<div className="mt-4 flex space-x-4">
+									{member.email && (
+										<Link href={`mailto:${member.email}`} target="_blank">
+											<EnvelopeIcon className="h-6 w-6 dark:text-gray-200" name={`Send an email to ${member.name}`} />
+										</Link>
+									)}
+									{member.linkedin && (
+										<Link href={member.linkedin} target="_blank">
+											<LinkedInIcon className="h-6 w-6 dark:fill-gray-200" name={`Link to ${member.name}'s LinkedIn`} />
+										</Link>
+									)}
+									{member.github && (
+										<Link href={member.github} target="_blank">
+											<GithubIcon className="h-6 w-6 dark:fill-gray-200" name={`Link to ${member.name}'s Github`} />
+										</Link>
+									)}
+									{member.twitter && (
+										<Link href={member.twitter} target="_blank">
+											<TwitterXIcon className="h-6 w-6 dark:fill-gray-200" name={`Link to ${member.name}'s Twitter`} />
+										</Link>
+									)}
+									{member.instagram && (
+										<Link href={member.instagram} target="_blank">
+											<InstagramIcon
+												className="h-6 w-6 dark:fill-gray-200"
+												name={`Link to ${member.name}'s Instagram`}
+											/>
+										</Link>
+									)}
+									{member.tiktok && (
+										<Link href={member.tiktok} target="_blank">
+											<TikTokIcon className="h-6 w-6 dark:fill-gray-200" name={`Link to ${member.name}'s Tiktok`} />
+										</Link>
+									)}
+									{member.website && (
+										<Link href={member.website} target="_blank">
+											<GlobeAmericasIcon
+												className="h-6 w-6 dark:fill-gray-200"
+												name={`Link to ${member.name}'s website`}
+											/>
+										</Link>
+									)}
+								</div>
+							</div>
+						))}
+					</div>
+					<h2 className="mb-8 text-center text-3xl font-bold text-green-700 dark:text-green-500" data-aos="fade-in">
+						Meet Our Dedicated Creators
+					</h2>
+					<hr className="mx-auto mb-8 w-1/4 justify-center border-2 border-green-500" data-aos="fade-in" />
+					{/* <h3 className="mb-8 text-center text-2xl font-bold text-green-700 dark:text-green-500">
+						Our Dedicated Creators
+					</h3>
+					<hr className="mx-auto w-1/12 justify-center border-2 border-green-500" /> */}
 					<div className="grid gap-8 pt-5 md:grid-cols-2 md:pt-7 lg:grid-cols-3 lg:pt-10">
 						{team.map((member) => (
 							<div
@@ -211,7 +293,7 @@ export default function AboutPage() {
 						</Link>
 					</div>
 				</div>
-				<div className="mx-auto flex max-w-5xl items-center justify-center py-10">
+				<div className="mx-auto flex max-w-5xl items-center justify-center py-10" data-aos="fade-in">
 					<div className="container flex w-full flex-col items-center">
 						<CloudinaryClientWrapper
 							src="partners/plantachange"
@@ -239,7 +321,7 @@ export default function AboutPage() {
 				</div>
 				<hr className="border-t-1 mx-auto mb-6 w-1/2 border-green-700"></hr>
 				<div className="mx-auto flex w-full flex-col items-center justify-center gap-6 md:flex-row lg:w-3/4">
-					<div className="relative w-11/12 md:w-3/4 lg:w-1/2">
+					<div className="relative w-11/12 md:w-3/4 lg:w-1/2" data-aos="fade-right">
 						<p className="py-5 text-center text-xl text-blue-600 dark:text-blue-300">
 							&quot;Collaborating with your team on our project has been an{" "}
 							<span className="font-semibold text-green-600">exceptional</span> experience. Your{" "}
@@ -251,7 +333,7 @@ export default function AboutPage() {
 						</p>
 						<h3 className="text-center text-xl font-semibold text-blue-600 dark:text-blue-400">-- Plant A Change--</h3>
 					</div>
-					<div className="relative w-11/12 md:w-3/4 lg:w-1/2">
+					<div className="relative w-11/12 md:w-3/4 lg:w-1/2" data-aos="fade-left">
 						<p className="py-5 text-center text-xl text-blue-600 dark:text-blue-300">
 							&quot;Collaborating with the Environmental Defense Initiative on{" "}
 							<span className="font-semibold text-green-600">inspiring</span> reels and a microplastic pollution

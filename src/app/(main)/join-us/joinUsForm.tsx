@@ -115,14 +115,14 @@ export default function JoinUsForm() {
 							<DropdownMenu>
 								<DropdownMenuTrigger asChild>
 									<p className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-800 dark:hover:bg-stone-700 dark:focus:bg-stone-800 dark:focus:text-white">
-										{gender.charAt(0).toUpperCase() + gender.slice(1)} {/* Capitalize the first letter */}
+										{gender.charAt(0).toUpperCase() + gender.slice(1)}
 									</p>
 								</DropdownMenuTrigger>
 								<DropdownMenuContent>
 									<DropdownMenuItem onClick={() => setGender("male")}>Male</DropdownMenuItem>
 									<DropdownMenuItem onClick={() => setGender("female")}>Female</DropdownMenuItem>
 									<DropdownMenuItem onClick={() => setGender("other")}>Other</DropdownMenuItem>
-									<DropdownMenuItem onClick={() => setGender("rather not say")}>Preer not to say </DropdownMenuItem>
+									<DropdownMenuItem onClick={() => setGender("rather not say")}>Prefer not to say </DropdownMenuItem>
 								</DropdownMenuContent>
 							</DropdownMenu>
 						</div>
@@ -176,21 +176,12 @@ export default function JoinUsForm() {
 					<button
 						type="submit"
 						disabled={isSubmitting || done}
-						className="w-full cursor-pointer self-center rounded-xl bg-blue-700 py-4 text-white duration-300 hover:bg-blue-600"
+						className="w-full cursor-pointer self-center rounded-xl bg-blue-700 py-3 text-white duration-300 hover:bg-blue-600"
 					>
 						{isSubmitting ? <Loading className="m-auto" /> : "Join"}
 					</button>
 				</div>
 			</div>
-			{/* <div className="mx-3 flex justify-center py-10">
-				<button
-					type="submit"
-					disabled={isSubmitting || done}
-					className="w-4/5 cursor-pointer rounded-xl bg-blue-700 py-3 text-white duration-300 hover:bg-blue-600"
-				>
-					{isSubmitting ? <Loading className="m-auto" /> : "Join"}
-				</button>
-			</div> */}
 		</form>
 	);
 }

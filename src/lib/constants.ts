@@ -1,4 +1,4 @@
-export const team = [
+export const directors = [
 	{
 		name: "Emma Mazzotta",
 		title: "Founder & Executive Director",
@@ -10,6 +10,68 @@ export const team = [
 		instagram: "https://www.instagram.com/emma_mazzotta24/",
 		tiktok: "https://www.tiktok.com/@emmamazzotta24",
 	},
+	{
+		name: "Karen Wong",
+		title: "Blog Director",
+		location: "Hopewell Junction, NY, USA",
+		image: "TEDI Bio/cgmkahssvtqmleu51a8b",
+		description: `Karen has loved animals from a very young age. In her preschool years, she loved to care for turtles that wandered into her yard from a nearby creek. Growing up, she has been passionate about preserving animal habitats and saving the environment, often reading articles about animal life. TEDI allows her to use her voice to spread awareness for her interests and make a difference in this world. `,
+		email: "kw1021232007@gmail.com",
+		instagram: "https://www.instagram.com/karen.wong21/",
+		tiktok: "https://www.tiktok.com/@karen_wonggg",
+	},
+	{
+		name: "Isabella Morelli",
+		title: "Petition Director",
+		location: "Lakeland, NY, USA",
+		image: "TEDI Bio/zofvvn0r5x8qne3waclf",
+		description: `Isabella has been interested in nature since she was in elementary school when she tried to start a nature club with her friends. Recently, Isabella has become even more passionate about the environment upon witnessing the damage climate change has done to our world. She joined TEDI because she saw an opportunity to create change and use her voice for good.`,
+		email: "isabella.morelli924@gmail.com",
+	},
+	{
+		name: "Karen Peng",
+		title: "Networking Director",
+		location: "Toronto, Ontario, Canada",
+		image: "TEDI Bio/xejrbnm0k1loivohupbx",
+		description: `Karen has always been intrigued by forest ecosystems and how they sustain themselves. She is fascinated by environmental policy and advocating for sustainability in developing cities. She joined TEDI to express her passion for environmental science and to meet likeminded peers who also hope to solve current environmental issues.`,
+		email: "Karen.penggg@gmail.com",
+		instagram: "https://www.instagram.com/kp_penguin/",
+	},
+	{
+		name: "Maggie Yang",
+		title: "Creative Director & Blog Writer",
+		location: "Hopewell Junction, NY, USA",
+		image: "TEDI Bio/h0m1t2yqudur3vsbthvi",
+		description: `Maggie has always appreciated and been fascinated by the beauty of nature. She believes in protecting our world so that future generations can experience the same wonder and beauty she has. Maggie hopes to make a difference in our world and preserve our environment by working with TEDI. `,
+		email: "maggie.yang0713@gmail.com",
+		instagram: "https://www.instagram.com/maggiesomebody/",
+		tiktok: "https://www.tiktok.com/@maggiesomebody",
+	},
+	{
+		name: "Emilia Lugo",
+		title: "Fundraising Director",
+		location: "Miami, Florida, USA",
+		image: "TEDI Bio/bu3aynqhs696kfeayykf",
+		description: `Emily has always been passionate about preserving the Earth and she is especially interested in the use of technology to solve current environmental issues. Her interest began in school, when she learned about how ecosystems function as well as how pollution harms these systems. This is when she began getting involved. She knew that TEDI was something she wanted to be a part of because of their genuine interest in protecting the environment, and she hopes to use her voice to spread awareness.`,
+		email: "emilymlugo2007@gmail.com",
+		instagram: "https://www.instagram.com/emilia.lugoo",
+	},
+] as {
+	name: string;
+	title: string;
+	location: string;
+	image: string;
+	description: string;
+	email?: string;
+	linkedin?: string;
+	twitter?: string;
+	instagram?: string;
+	tiktok?: string;
+	website?: string;
+	github?: string;
+}[];
+
+export const team = [
 	{
 		name: "Nash Pillai",
 		title: "Chief Technology Officer",
@@ -33,26 +95,6 @@ export const team = [
 		github: "https://github.com/HiroDookie/",
 	},
 	{
-		name: "Maggie Yang",
-		title: "Creative Director & Blog Writer",
-		location: "Hopewell Junction, NY, USA",
-		image: "TEDI Bio/h0m1t2yqudur3vsbthvi",
-		description: `Maggie has always appreciated and been fascinated by the beauty of nature. She believes in protecting our world so that future generations can experience the same wonder and beauty she has. Maggie hopes to make a difference in our world and preserve our environment by working with TEDI. `,
-		email: "maggie.yang0713@gmail.com",
-		instagram: "https://www.instagram.com/maggiesomebody/",
-		tiktok: "https://www.tiktok.com/@maggiesomebody",
-	},
-	{
-		name: "Karen Wong",
-		title: "Blog Director",
-		location: "Hopewell Junction, NY, USA",
-		image: "TEDI Bio/cgmkahssvtqmleu51a8b",
-		description: `Karen has loved animals from a very young age. In her preschool years, she loved to care for turtles that wandered into her yard from a nearby creek. Growing up, she has been passionate about preserving animal habitats and saving the environment, often reading articles about animal life. TEDI allows her to use her voice to spread awareness for her interests and make a difference in this world. `,
-		email: "kw1021232007@gmail.com",
-		instagram: "https://www.instagram.com/karen.wong21/",
-		tiktok: "https://www.tiktok.com/@karen_wonggg",
-	},
-	{
 		name: "Kailey Fitzgerald",
 		title: "Networking Coordinator & TikTok Director",
 		location: "Hopewell Junction, NY, USA",
@@ -61,24 +103,6 @@ export const team = [
 		email: "kaileyfitzgerald102@gmail.com",
 		instagram: "https://www.instagram.com/kaileyfitzgerald7/",
 		tiktok: "https://www.tiktok.com/@buster_0924",
-	},
-	{
-		name: "Emilia Lugo",
-		title: "Fundraising Director",
-		location: "Miami, Florida, USA",
-		image: "TEDI Bio/bu3aynqhs696kfeayykf",
-		description: `Emily has always been passionate about preserving the Earth and she is especially interested in the use of technology to solve current environmental issues. Her interest began in school, when she learned about how ecosystems function as well as how pollution harms these systems. This is when she began getting involved. She knew that TEDI was something she wanted to be a part of because of their genuine interest in protecting the environment, and she hopes to use her voice to spread awareness.`,
-		email: "emilymlugo2007@gmail.com",
-		instagram: "https://www.instagram.com/emilia.lugoo",
-	},
-	{
-		name: "Karen Peng",
-		title: "Networking Director",
-		location: "Toronto, Ontario, Canada",
-		image: "TEDI Bio/xejrbnm0k1loivohupbx",
-		description: `Karen has always been intrigued by forest ecosystems and how they sustain themselves. She is fascinated by environmental policy and advocating for sustainability in developing cities. She joined TEDI to express her passion for environmental science and to meet likeminded peers who also hope to solve current environmental issues.`,
-		email: "Karen.penggg@gmail.com",
-		instagram: "https://www.instagram.com/kp_penguin/",
 	},
 	{
 		name: "Charlotte Wang",
@@ -90,14 +114,6 @@ export const team = [
 		linkedin: "https://www.linkedin.com/in/charlotte-wang-023432265/",
 		instagram: "https://www.instagram.com/charlottew.3693/",
 		tiktok: "https://www.tiktok.com/@charlto3",
-	},
-	{
-		name: "Isabella Morelli",
-		title: "Petition Director",
-		location: "Lakeland, NY, USA",
-		image: "TEDI Bio/zofvvn0r5x8qne3waclf",
-		description: `Isabella has been interested in nature since she was in elementary school when she tried to start a nature club with her friends. Recently, Isabella has become even more passionate about the environment upon witnessing the damage climate change has done to our world. She joined TEDI because she saw an opportunity to create change and use her voice for good.`,
-		email: "isabella.morelli924@gmail.com",
 	},
 	{
 		name: "Ann Catechis",

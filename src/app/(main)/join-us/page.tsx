@@ -37,7 +37,7 @@ export default async function AboutPage() {
 			<JsonLd data={jsonLd} />
 			<div
 				className="relative flex min-h-[50vh] w-full flex-col bg-cover bg-fixed bg-center bg-repeat"
-				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/mountain" })})` }}
+				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/qmpzia6kmgjuld13zbhw" })})` }}
 			>
 				<div className="container mx-auto w-full py-16 md:py-24">
 					<div className="inset-0 mx-auto w-10/12 md:w-full" data-aos="fade-down">
@@ -72,7 +72,7 @@ export default async function AboutPage() {
 			</div>
 			<div
 				className="relative flex min-h-[50vh] w-screen flex-col bg-cover bg-fixed bg-center bg-repeat"
-				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/waterfall" })})` }}
+				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/qneh8sn9n3xcb9daktfj" })})` }}
 			>
 				<div className="container mx-auto py-16">
 					<div className="inset-0 mx-auto w-full sm:w-10/12" data-aos="fade-down">
