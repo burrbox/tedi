@@ -1,29 +1,32 @@
-# Create T3 App
+# The Environmental Defense Initiative
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+The Environmental Defense Initiative is an international youth-led initiative dedicated to raising awareness of environmental issues and providing a platform for people to take action to create long-lasting change.
 
-## What's next? How do I make an app with this?
+The website is hosted with vercel at [tedinitiative.org](https://www.tedinitiative.org/)
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## How can I contribute?
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+You can join us though the [form on the website](https://www.tedinitiative.org/join-us). You can also contact us at [environmentaldefenseinitiative@gmail.com](mailto:environmentaldefenseinitiative@gmail.com). We are always looking for new members to help us write articles ([our blog](https://www.tedinitiative.org/blog)), create social media content, and help further our mission.
+
+You can learn more about our mission and goals on the [about page](https://www.tedinitiative.org/about) and support us by [donating](https://www.tedinitiative.org/donate) and signing our [petitions](https://www.tedinitiative.org/petition).
+
+### Some of the technologies we use:
 
 - [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
+- [Auth.js](https://authjs.dev/)
 - [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
 - [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
 
-## Learn More
+### Follow us on social media to stay updated:
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+- [Instagram](https://www.instagram.com/environmentaldefenseinitiative/)
+- [Twitter](https://twitter.com/TEDIactivism)
+- [Facebook](https://www.facebook.com/tedinitiative)
+- [LinkedIn](https://www.linkedin.com/company/the-environmental-defense-initiative/posts)
+- [YouTube](https://www.youtube.com/channel/UCLJIczzKZWeqsa2Pmg55F6g)
+- [TikTok](https://www.tiktok.com/@tedi_youth)
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+## Some Screenshots of the site
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+![Home Page](https://res.cloudinary.com/mozzarella-tedi/image/upload/other/homepage.png)
+![Blog Page](https://res.cloudinary.com/mozzarella-tedi/image/upload/other/blog.png)
