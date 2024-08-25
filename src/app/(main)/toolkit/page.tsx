@@ -26,8 +26,8 @@ export const metadata: Metadata = {
 };
 
 export default async function Toolkit() {
-	// const session = await auth();
-	// if (!session) redirect("/signin");
+	const session = await auth();
+	if (!session) redirect("/signin");
 
 	return (
 		<div className="min-h-screen w-full px-8">
