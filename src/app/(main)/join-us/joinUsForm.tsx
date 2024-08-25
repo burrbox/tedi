@@ -164,7 +164,7 @@ export default function JoinUsForm() {
 						<div className="grid w-full grid-cols-2 gap-3 pt-3">
 							<input
 								type="button"
-								className={`w-full rounded-md p-3 shadow-sm duration-200 ${
+								className={`w-full rounded-md p-2 shadow-sm duration-200 ${
 									team === true
 										? "bg-blue-400 dark:bg-blue-300"
 										: "bg-blue-100 hover:bg-stone-200 dark:bg-stone-800 dark:text-blue-300"
@@ -174,7 +174,7 @@ export default function JoinUsForm() {
 							/>
 							<input
 								type="button"
-								className={`w-full rounded-md p-3 shadow-sm duration-200 ${
+								className={`w-full rounded-md p-2 shadow-sm duration-200 ${
 									team === false
 										? "bg-blue-400 dark:bg-blue-300"
 										: "bg-blue-100 hover:bg-stone-200 dark:bg-stone-800 dark:text-blue-300"

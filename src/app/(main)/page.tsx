@@ -6,6 +6,8 @@ import { type Metadata } from "next";
 import { getCldImageUrl } from "next-cloudinary";
 import Link from "next/link";
 import type { WebSite, WithContext } from "schema-dts";
+import { type COBEOptions } from "cobe";
+import Globe from "@/components/magicui/globe";
 
 export const metadata: Metadata = {
 	title: "Home",
@@ -56,6 +58,26 @@ const jsonLd: WithContext<WebSite> = {
 	},
 };
 
+const locations = [
+	{ name: "Hudson Valley", location: [41.5406254, -73.8357815], size: 0.07 },
+	{ name: "Miami", location: [25.7825389, -80.3118589], size: 0.04 },
+	{ name: "Toronto", location: [43.718371, -79.5428628], size: 0.04 },
+	{ name: "Verona, NJ", location: [40.83363, -74.2632469], size: 0.04 },
+	{ name: "Warrington, Penn", location: [40.2470657, -75.2037622], size: 0.04 },
+] satisfies COBEOptions["markers"] & { name: string }[];
+
+const globeConfig: Partial<COBEOptions> = {
+	dark: 1,
+	diffuse: 0.4,
+	mapSamples: 16000,
+	mapBrightness: 1.2,
+	baseColor: [1, 1, 1],
+	markerColor: [251 / 255, 100 / 255, 21 / 255],
+	glowColor: [1, 1, 1],
+	scale: 1.2,
+	markers: locations,
+};
+
 export default async function Home() {
 	return (
 		<div className="flex min-h-dvh flex-col">
@@ -103,7 +125,7 @@ export default async function Home() {
 			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800">
 				<div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
 					<div className="space-y-3">
-						<h2 className="text-3xl font-bold tracking-tighter text-blue-400 sm:text-4xl md:text-5xl">
+						<h2 className="text-3xl font-bold tracking-tighter text-blue-500 sm:text-4xl md:text-5xl">
 							Our Impact in the Past Year
 						</h2>
 						<p className="text-muted-foreground mx-auto max-w-[700px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -160,13 +182,13 @@ export default async function Home() {
 							<div className="flex flex-col gap-2 min-[400px]:flex-row">
 								<Link
 									href="https://docs.google.com/forms/d/e/1FAIpQLSfEWkGAauRBi07E8-4WRlay7RyXJlLII85dt1FCV2C0m-hI1Q/viewform"
-									className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-green-700"
+									className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow-xl duration-300 hover:bg-green-700"
 								>
 									Join the TEDI team
 								</Link>
 								<Link
 									href="/donate"
-									className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-blue-700"
+									className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-8 text-sm font-medium text-white shadow-xl duration-300 hover:bg-blue-700"
 								>
 									Donate to support our cause
 								</Link>
@@ -183,7 +205,7 @@ export default async function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="w-full bg-stone-800 py-12 md:py-24 lg:py-32">
+			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800">
 				<div className="container px-4 md:px-6">
 					<div className="flex flex-col items-center justify-center space-y-4 text-center">
 						<div className="space-y-2" data-aos="fade-down">
@@ -191,7 +213,7 @@ export default async function Home() {
 							<h2 className="text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl dark:text-blue-400">
 								Protecting the Environment, One Step at a Time
 							</h2>
-							<p className="mx-auto max-w-4xl text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+							<p className="mx-auto max-w-4xl md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-white">
 								At TEDI we believe that <span className="font-semibold text-green-600">anyone</span> can make a
 								difference. All it takes is one signature, one plastic bottle recycled, or one conversation to have a
 								positive impact on our planet. Join us <span className="font-semibold text-green-600">today</span> in
@@ -203,20 +225,20 @@ export default async function Home() {
 							data-aos="fade-in"
 						>
 							<div className="grid w-full gap-1">
-								<div className="mb-4 inline-flex h-12 items-center justify-center rounded-lg bg-green-600 dark:bg-green-700">
+								<div className="mb-4 inline-flex h-12 items-center justify-center rounded-lg bg-green-600 shadow-xl dark:bg-green-700">
 									<h2 className="text-center text-2xl text-white">Expert Interviews</h2>
 								</div>
-								<p className="text-white">
+								<p className="dark:text-white">
 									Our expert interviews aim to inspire young activists to pursue careers in sustainability,
 									conservation, environmental advocacy, and natural sciences. We interview experts from across the
 									country about their professions and how young people can get involved at a local level!
 								</p>
 							</div>
 							<div className="grid w-full gap-1">
-								<div className="mb-4 inline-flex h-12 items-center justify-center rounded-lg bg-green-600 dark:bg-green-700">
+								<div className="mb-4 inline-flex h-12 items-center justify-center rounded-lg bg-green-600 shadow-xl dark:bg-green-700">
 									<h2 className="text-center text-2xl text-white">Cleanups</h2>
 								</div>
-								<p className="text-white">
+								<p className="dark:text-white">
 									Cleanups are one of the few ways individuals are able to clearly see the tangible impact we are having
 									on our environment. These events are excellent ways to connect with others in your community who are
 									passionate about protecting the environment all while earning volunteer hours and doing something
@@ -224,10 +246,10 @@ export default async function Home() {
 								</p>
 							</div>
 							<div className="grid w-full gap-1">
-								<div className="mb-4 inline-flex h-12 items-center justify-center rounded-lg bg-green-600 dark:bg-green-700">
+								<div className="mb-4 inline-flex h-12 items-center justify-center rounded-lg bg-green-600 shadow-xl dark:bg-green-700">
 									<h2 className="text-center text-2xl text-white">Petitions</h2>
 								</div>
-								<p className="text-white">
+								<p className="dark:text-white">
 									Petitions are how we achieve not only change, but sustainable, long-lasting change that will last for
 									generations. Policy and legislation reform is how we make progress - every signature counts!
 								</p>
@@ -242,7 +264,7 @@ export default async function Home() {
 						<h2 className="text-3xl font-bold tracking-tighter text-green-600 md:text-4xl/tight dark:text-green-400">
 							A Message from Our Founder
 						</h2>
-						<p className="text-muted-foreground max-w-[600px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+						<p className="max-w-[600px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 							{`"TEDI was founded with the mission of inspiring youth activists to use their voices to inspire long-lasting sustainable change through education, initiative, and creativity. We believe that every individual on this Earth must do their part to keep our planet clean and fight for a sustainable future."`}
 						</p>
 						<div className="flex gap-4 py-5 lg:justify-start">
@@ -253,7 +275,7 @@ export default async function Home() {
 								alt="An image of TEDI Founder Emma Mazzotta"
 								gravity="face"
 								crop="fill"
-								className="rounded-full object-cover"
+								className="rounded-full object-cover shadow-xl"
 							/>
 							<div>
 								<h4 className="text-lg font-semibold">Emma Mazzotta</h4>
@@ -272,7 +294,7 @@ export default async function Home() {
 					/>
 				</div>
 			</section>
-			<section className="w-full bg-stone-800 px-12 py-12 md:py-24 lg:grid lg:grid-cols-2 lg:gap-12 lg:py-32">
+			<section className="w-full bg-stone-100 px-12 py-12 md:py-24 lg:grid lg:grid-cols-2 lg:gap-12 lg:py-32 dark:bg-stone-800">
 				<div className="aspect-video w-full overflow-hidden rounded-lg">
 					<iframe
 						data-aos="fade-right"
@@ -292,7 +314,7 @@ export default async function Home() {
 						<h2 className="text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl dark:text-blue-400">
 							Learn from what Experts have to say
 						</h2>
-						<p className="max-w-[900px] text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+						<p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-white">
 							Now, more than ever before, we are seeing the effects of human overpopulation on nature and the
 							environment on an international level. Although these issues are broad in scope, every community has its
 							own unique environment and therefore faces different problems. It is up to you to take action and protect
@@ -311,7 +333,21 @@ export default async function Home() {
 				</div>
 			</section>
 			<Carousel />
-			<section className="w-full bg-stone-800 py-12 md:py-24 lg:py-32" data-aos="fade-in">
+			<section className="h-[80vh] pt-8">
+				<h1 className="text-center text-4xl font-bold text-blue-500 dark:text-gray-100">See where our members are!</h1>
+				{/* <div className="mx-6 grid items-stretch justify-center gap-2 md:flex-col lg:grid-cols-2">
+					<div className="absolute w-1/2 lg:col-span-1">
+						<Globe className="w-full" config={globeConfig} speed={0.0} phi={0} markers={locations} />
+					</div>
+					<div className="w-1/2 lg:col-span-1 lg:col-start-2">
+						<h2>Meet the team!</h2>
+					</div>
+				</div> */}
+				<div className="absolute w-full">
+					<Globe className="w-full" config={globeConfig} speed={0.0} phi={0} markers={locations} />
+				</div>
+			</section>
+			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800" data-aos="fade-in">
 				<div className="container px-4 md:px-6">
 					<div className="flex flex-col items-center justify-center space-y-4 text-center">
 						<div className="space-y-2">

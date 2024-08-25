@@ -8,8 +8,6 @@ import { type Metadata } from "next";
 import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
 import type { WebPage, WithContext } from "schema-dts";
 import { JsonLd } from "@/components/jsonLd";
-import { type COBEOptions } from "cobe";
-import Globe from "@/components/magicui/globe";
 
 export const metadata: Metadata = {
 	title: "About",
@@ -31,26 +29,6 @@ const jsonLd: WithContext<WebPage> = {
 	name: "About The Environmental Defense Initiative",
 	description: "Learn more about The Environmental Defense Initiative and our mission.",
 	url: `${env.URL}/about`,
-};
-
-const locations = [
-	{ name: "Hudson Valley", location: [41.5406254, -73.8357815], size: 0.07 },
-	{ name: "Miami", location: [25.7825389, -80.3118589], size: 0.04 },
-	{ name: "Toronto", location: [43.718371, -79.5428628], size: 0.04 },
-	{ name: "Verona, NJ", location: [40.83363, -74.2632469], size: 0.04 },
-	{ name: "Warrington, Penn", location: [40.2470657, -75.2037622], size: 0.04 },
-] satisfies COBEOptions["markers"] & { name: string }[];
-
-const globeConfig: Partial<COBEOptions> = {
-	dark: 1,
-	diffuse: 0.4,
-	mapSamples: 16000,
-	mapBrightness: 1.2,
-	baseColor: [1, 1, 1],
-	markerColor: [251 / 255, 100 / 255, 21 / 255],
-	glowColor: [1, 1, 1],
-	scale: 1,
-	markers: locations,
 };
 
 export default function AboutPage() {
@@ -77,7 +55,7 @@ export default function AboutPage() {
 					</div>
 				</div>
 			</section>
-			<section className="w-full bg-white py-8 dark:bg-stone-900">
+			<section className="w-full bg-stone-100 py-8 dark:bg-stone-900">
 				<div className="container mx-auto px-4">
 					<h2 className="py-4 text-center text-3xl font-bold text-green-700 dark:text-green-500">Our Story</h2>
 					<hr className="mx-auto mb-6 w-12 border-t-4 border-green-700"></hr>
@@ -92,13 +70,13 @@ export default function AboutPage() {
 					</p>
 				</div>
 			</section>
-			<section className="w-full bg-gray-100 pt-20 dark:bg-stone-900">
+			<section className="w-full bg-stone-100 pt-20 dark:bg-stone-900">
 				<div
 					className="relative flex min-h-[50vh] w-screen flex-col bg-cover bg-fixed bg-center bg-repeat"
 					style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/waterfall" })})` }}
 				>
 					<div className="w-screen">
-						<div className="w-screen rounded-b-2xl bg-white py-2 md:px-20 dark:bg-stone-900">
+						<div className="w-screen rounded-b-2xl bg-stone-100 py-2 md:px-20 dark:bg-stone-900">
 							<h2 className="mb-6 text-center text-3xl font-bold text-green-700 dark:text-green-500">Our Values</h2>
 							<hr className="mx-auto mb-6 w-12 border-t-4 border-green-700"></hr>
 						</div>
@@ -296,13 +274,7 @@ export default function AboutPage() {
 					</div>
 				</div>
 			</section>
-			<section className="h-[80vh] pt-8">
-				<h1 className="text-center text-4xl font-bold text-blue-500 dark:text-gray-100">See where our members are!</h1>
-				<div className="absolute">
-					<Globe className="w-full" config={globeConfig} speed={0.001} phi={-0.5} markers={locations} />
-				</div>
-			</section>
-			<section className="mx-2 w-full bg-white pb-8 md:mx-4 lg:mx-8 dark:bg-stone-900">
+			<section className="mx-2 w-full bg-stone-100 py-8 md:mx-4 lg:mx-8 dark:bg-stone-900">
 				<div className="flex justify-center">
 					<h1 className="py-4 text-center text-6xl text-green-700 dark:text-green-500">Partnerships</h1>
 				</div>

@@ -33,7 +33,7 @@ const locationToAngles = (lat: number, long: number) => {
 export default function Globe({
 	className,
 	config: configOverride,
-	speed = 0.005,
+	speed = 0.0,
 	phi: defaultPhi = 0,
 	markers = [],
 }: {
@@ -48,7 +48,7 @@ export default function Globe({
 	let currentPhi = 0;
 	let currentTheta = 0;
 	let width = 0;
-	const scale = useRef(configOverride?.scale ?? 1);
+	const scale = useRef(configOverride?.scale ?? 1.2);
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 	const focusRef = useRef([null, null] as [number | null, number | null]);
 	const pointerInteracting = useRef(null as number | null);
@@ -68,7 +68,7 @@ export default function Globe({
 		canvasRef.current!.style.cursor = value ? "grabbing" : "grab";
 		if (value !== null) {
 			focusRef.current = [null, null];
-			scale.current = 1;
+			scale.current = 1.2;
 		}
 	};
 
@@ -152,14 +152,14 @@ export default function Globe({
 			/>
 			{markers && (
 				<div className="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-2">
-					<div className="whitespace-nowrap">Go to:</div>
+					{/* <div className="whitespace-nowrap">Go to:</div> */}
 					{markers.map((marker) => (
 						<button
 							key={marker.name}
-							className="flex items-center gap-1 rounded-md bg-green-600 px-1 py-0.5 hover:bg-green-500"
+							className="flex items-center gap-1 rounded-xl bg-green-500 px-1 py-2 duration-300 hover:bg-green-400 dark:bg-green-600 dark:hover:bg-green-500"
 							onClick={() => {
 								focusRef.current = locationToAngles(marker.location[0], marker.location[1]);
-								scale.current = 1;
+								scale.current = 1.2;
 							}}
 						>
 							<MapPinIcon />
