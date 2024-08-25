@@ -48,14 +48,16 @@ const globeConfig: Partial<COBEOptions> = {
 };
 
 export default async function Toolkit() {
-	const session = await auth();
-	if (!session) redirect("/signin");
+	// const session = await auth();
+	// if (!session) redirect("/signin");
 
 	return (
 		<div className="min-h-screen w-full px-8">
 			<section className="h-[80vh] pt-8">
 				<h1 className="text-center text-4xl font-bold text-gray-900 dark:text-gray-100">See where our members are!</h1>
-				<Globe className="mt-24 w-full" config={globeConfig} speed={0.001} phi={-0.5} markers={locations} />
+				<div>
+					<Globe className="mt-24 w-full" config={globeConfig} speed={0.001} phi={-0.5} markers={locations} />
+				</div>
 			</section>
 			<section className="mx-auto my-8 max-w-6xl">
 				<div className="flex flex-col-reverse gap-8 sm:flex-row">

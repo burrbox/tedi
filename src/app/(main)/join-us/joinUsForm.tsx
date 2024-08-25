@@ -61,7 +61,7 @@ export default function JoinUsForm() {
 					<label className="text-blue-700 dark:text-blue-300">
 						First Name *
 						<input
-							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-stone-300 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-800 dark:hover:bg-stone-700 dark:focus:bg-stone-700 dark:focus:text-white"
+							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-800 dark:hover:bg-stone-700 dark:focus:bg-stone-800 dark:focus:text-white"
 							type="text"
 							required
 							value={firstName}
@@ -151,27 +151,34 @@ export default function JoinUsForm() {
 						/>
 					</label>
 				</div>
-				{/* <div className="flex-col lg:col-span-2 lg:col-start-1 lg:row-span-1">
+				<div className="flex-col lg:col-span-2 lg:col-start-1 lg:row-span-1">
 					<label className="text-blue-700 dark:text-blue-300">
-						Interested In Creating Your Own Team?
-						<div className="w-full justify-between">
+						Interested in starting your own group?
+						<div className="grid w-full grid-cols-2 gap-3">
 							<button
-								className="w-1/3 rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-800 dark:hover:bg-stone-700 dark:focus:bg-stone-800 dark:focus:text-white"
-								type="button"
-								onClick={() => setTeam(false)}
-							>
-								No
-							</button>
-							<button
-								className="w-1/3 rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-800 dark:hover:bg-stone-700 dark:focus:bg-stone-800 dark:focus:text-white"
-								type="button"
+								className={`w-full rounded-md p-3 shadow-sm duration-200 ${
+									team === true
+										? "bg-blue-300 dark:bg-blue-400"
+										: "hover:bg-stone-200 focus:bg-white dark:bg-stone-800 dark:text-blue-300"
+								} shadow-blue-900 dark:bg-stone-800 dark:text-black dark:hover:bg-stone-700 dark:hover:text-white dark:focus:bg-stone-800`}
 								onClick={() => setTeam(true)}
 							>
 								Yes
 							</button>
+							<button
+								className={`w-full rounded-md p-3 shadow-sm duration-200 ${
+									team === false
+										? "bg-blue-300 dark:bg-blue-400"
+										: "hover:bg-stone-200 focus:bg-white dark:bg-stone-800 dark:text-blue-300"
+								} shadow-blue-900 dark:bg-stone-800 dark:text-black dark:hover:bg-stone-700 dark:hover:text-white dark:focus:bg-stone-800`}
+								onClick={() => setTeam(false)}
+							>
+								No
+							</button>
 						</div>
 					</label>
-				</div> */}
+				</div>
+
 				<div className="flex flex-col items-center justify-center lg:col-span-2 lg:col-start-1 lg:row-span-2">
 					<button
 						type="submit"

@@ -125,14 +125,15 @@ export default function Globe({
 			onRender,
 		});
 
-		canvasRef.current!.addEventListener(
-			"wheel",
-			(e) => {
-				e.preventDefault();
-				scale.current = clamp(0.5, 3, scale.current + e.deltaY * -0.001);
-			},
-			{ passive: false },
-		);
+		// I cant think of any good way to have zoom on this globe since it enlargens and might cover text/
+		// canvasRef.current!.addEventListener(
+		// 	"wheel",
+		// 	(e) => {
+		// 		e.preventDefault();
+		// 		scale.current = clamp(0.5, 3, scale.current + e.deltaY * -0.001);
+		// 	},
+		// 	{ passive: false },
+		// );
 
 		setTimeout(() => (canvasRef.current!.style.opacity = "1"));
 		return () => globe.destroy();
@@ -158,7 +159,7 @@ export default function Globe({
 							className="flex items-center gap-1 rounded-md bg-green-600 px-1 py-0.5 hover:bg-green-500"
 							onClick={() => {
 								focusRef.current = locationToAngles(marker.location[0], marker.location[1]);
-								scale.current = 1.5;
+								scale.current = 1;
 							}}
 						>
 							<MapPinIcon />

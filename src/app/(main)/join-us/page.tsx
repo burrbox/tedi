@@ -44,18 +44,6 @@ export default async function AboutPage() {
 						<div className="flex flex-col justify-center gap-6 xl:flex-row">
 							<div className="m-auto h-fit max-w-3xl rounded-xl bg-white py-8 dark:bg-stone-800">
 								<JoinUsForm />
-								{/* {session ? (
-									<JoinUsForm user={session?.user} />
-								) : (
-									<div className="w-full">
-										<h3 className="h3 p-4">Please sign in first</h3>
-										<Link href="/signin" className="">
-											<div className="mx-auto w-4/5 cursor-pointer rounded-xl bg-blue-700 py-3 text-center text-white duration-300 hover:bg-blue-600">
-												Sign in
-											</div>
-										</Link>
-									</div>
-								)} */}
 							</div>
 						</div>
 					</div>
@@ -98,7 +86,7 @@ export default async function AboutPage() {
 										<div className="mx-3 flex justify-center pb-10 pt-6">
 											<Link
 												className="w-4/5 rounded-xl bg-blue-700 py-3 text-center text-white duration-300 hover:bg-blue-600"
-												href="https://docs.google.com/forms/d/e/1FAIpQLSfEWkGAauRBi07E8-4WRlay7RyXJlLII85dt1FCV2C0m-hI1Q/viewform?usp=sf_link"
+												href="https://docs.google.com/forms/d/e/1FAIpQLSei17YJJv6pwznBs-e072pNXC7o97_GJh--3ekpGClWRgyhDw/viewform"
 											>
 												Apply Now
 											</Link>
