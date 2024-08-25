@@ -45,7 +45,7 @@ export default async function Toolkit() {
 					<div className="min-w-72 max-w-96">
 						<h1 className="mt-2 text-4xl font-bold text-green-500">The Cleanup Campaign</h1>
 						<p className="my-10">
-							Have you always wanted to plan a community cleanup but don't know how? <br />
+							Have you always wanted to plan a community cleanup but don’t know how? <br />
 							Convince people to clean up with this toolkit!!
 						</p>
 						<Link
