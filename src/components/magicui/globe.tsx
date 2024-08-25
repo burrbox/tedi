@@ -140,7 +140,7 @@ export default function Globe({
 	}, []);
 
 	return (
-		<div className={cn("absolute inset-0 mx-auto aspect-[1/1] w-full max-w-[600px]", className)}>
+		<div className={cn("relative inset-0 mx-auto aspect-[1/1] w-full max-w-[600px]", className)}>
 			<canvas
 				className={cn("h-full w-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]")}
 				ref={canvasRef}

@@ -1,6 +1,7 @@
 "use client";
 
 import Loading from "@/components/loading";
+import Link from "next/link";
 import { saveJoinUsForm } from "@/lib/serverActions";
 import { useState, type FormEvent } from "react";
 import {
@@ -19,7 +20,7 @@ export default function JoinUsForm() {
 	const [address, setAddress] = useState("");
 	const [birthday, setBirthday] = useState("");
 	const [gender, setGender] = useState("male");
-	const [team, setTeam] = useState(false);
+	const [team, setTeam] = useState(true);
 
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [done, setDone] = useState(false);
@@ -56,7 +57,7 @@ export default function JoinUsForm() {
 					today to help spread our initiative.
 				</h2>
 			</div>
-			<div className="mx-6 grid items-stretch justify-center gap-3 pb-8 md:flex-col lg:grid-cols-2 lg:grid-rows-3">
+			<div className="mx-6 grid items-stretch justify-center gap-2 md:flex-col lg:grid-cols-2 lg:grid-rows-6">
 				<div className="flex-col lg:col-span-1 lg:row-span-1">
 					<label className="text-blue-700 dark:text-blue-300">
 						First Name *
@@ -152,31 +153,37 @@ export default function JoinUsForm() {
 					</label>
 				</div>
 				<div className="flex-col lg:col-span-2 lg:col-start-1 lg:row-span-1">
-					<label className="text-blue-700 dark:text-blue-300">
-						Interested in starting your own group?
-						<div className="grid w-full grid-cols-2 gap-3">
-							<button
+					<p className="text-blue-700 dark:text-blue-300">
+						Interested in starting your own group?{" "}
+						<Link
+							href="https://docs.google.com/document/d/142CpmF-1781azeozxo3eTYK0pSj8ON-H7xUfJ7szCSc/edit?usp=sharing"
+							className="text-xs text-blue-700 hover:cursor-pointer dark:text-blue-600"
+						>
+							What does this mean?
+						</Link>
+						<div className="grid w-full grid-cols-2 gap-3 pt-3">
+							<input
+								type="button"
 								className={`w-full rounded-md p-3 shadow-sm duration-200 ${
 									team === true
-										? "bg-blue-300 dark:bg-blue-400"
-										: "hover:bg-stone-200 focus:bg-white dark:bg-stone-800 dark:text-blue-300"
-								} shadow-blue-900 dark:bg-stone-800 dark:text-black dark:hover:bg-stone-700 dark:hover:text-white dark:focus:bg-stone-800`}
+										? "bg-blue-400 dark:bg-blue-300"
+										: "bg-blue-100 hover:bg-stone-200 dark:bg-stone-800 dark:text-blue-300"
+								} shadow-blue-900 dark:bg-stone-800 dark:text-black dark:hover:bg-stone-700 dark:hover:text-white`}
 								onClick={() => setTeam(true)}
-							>
-								Yes
-							</button>
-							<button
+								value={"Yes"}
+							/>
+							<input
+								type="button"
 								className={`w-full rounded-md p-3 shadow-sm duration-200 ${
 									team === false
-										? "bg-blue-300 dark:bg-blue-400"
-										: "hover:bg-stone-200 focus:bg-white dark:bg-stone-800 dark:text-blue-300"
-								} shadow-blue-900 dark:bg-stone-800 dark:text-black dark:hover:bg-stone-700 dark:hover:text-white dark:focus:bg-stone-800`}
+										? "bg-blue-400 dark:bg-blue-300"
+										: "bg-blue-100 hover:bg-stone-200 dark:bg-stone-800 dark:text-blue-300"
+								} shadow-blue-900 dark:bg-stone-800 dark:text-black dark:hover:bg-stone-700 dark:hover:text-white`}
 								onClick={() => setTeam(false)}
-							>
-								No
-							</button>
+								value={"No"}
+							/>
 						</div>
-					</label>
+					</p>
 				</div>
 
 				<div className="flex flex-col items-center justify-center lg:col-span-2 lg:col-start-1 lg:row-span-2">
