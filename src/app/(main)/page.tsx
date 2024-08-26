@@ -8,6 +8,7 @@ import Link from "next/link";
 import type { WebSite, WithContext } from "schema-dts";
 import { type COBEOptions } from "cobe";
 import Globe from "@/components/magicui/globe";
+import Teams from "@/components/teams";
 
 export const metadata: Metadata = {
 	title: "Home",
@@ -339,8 +340,8 @@ export default async function Home() {
 					<div className="absolute w-1/2 lg:col-span-1">
 						<Globe className="w-full" config={globeConfig} speed={0.0} phi={0} markers={locations} />
 					</div>
-					<div className="w-1/2 lg:col-span-1 lg:col-start-2">
-						<h2>Meet the team!</h2>
+					<div className="lg:col-span-1 lg:col-start-2">
+						<Teams />
 					</div>
 				</div> */}
 				<div className="absolute w-full">

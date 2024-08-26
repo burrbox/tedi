@@ -156,7 +156,7 @@ export default function Globe({
 					{markers.map((marker) => (
 						<button
 							key={marker.name}
-							className="flex items-center gap-1 rounded-xl bg-green-500 px-1 py-2 duration-300 hover:bg-green-400 dark:bg-green-600 dark:hover:bg-green-500"
+							className="flex items-center gap-1 rounded-xl bg-green-500 px-1 py-2 text-stone-100 duration-300 hover:bg-green-400 dark:bg-green-600 dark:hover:bg-green-500"
 							onClick={() => {
 								focusRef.current = locationToAngles(marker.location[0], marker.location[1]);
 								scale.current = 1.2;

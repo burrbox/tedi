@@ -11,6 +11,28 @@ export const directors = [
 		tiktok: "https://www.tiktok.com/@emmamazzotta24",
 	},
 	{
+		name: "Nash Pillai",
+		title: "Chief Technology Officer",
+		location: "Hopewell Junction, NY, USA",
+		image: "TEDI Bio/nash4",
+		description: `Nash is a software engineer with a passion for environmental conservation. He has worked on projects that use technology to solve environmental problems and is excited to use his skills to help manage the technological aspects of TEDI.`,
+		email: "nash.pillai@protonmail.com",
+		linkedin: "https://www.linkedin.com/in/nash-pillai/",
+		website: "https://nashpillai.com/about",
+		github: "https://github.com/nash-pillai/",
+	},
+	{
+		name: "Hiroyuki Sakuma",
+		title: "Senior Director of Website Development",
+		location: "Hopewell Junction, NY, USA",
+		image: "TEDI Bio/rainbow-hiro",
+		description: `Hiroyuki speaks Japanese with a native proficiency and is interested in robotics, computer science, and mathematics. He is passionate about environmental conservation and is excited to use his skills to help TEDI achieve its mission.`,
+		email: "hiroyuki.sakuma1@gmail.com",
+		twitter: "https://www.twitter.com/hryksakuma",
+		instagram: "https://www.instagram.com/hryk.sakuma",
+		github: "https://github.com/HiroDookie/",
+	},
+	{
 		name: "Karen Wong",
 		title: "Blog Director",
 		location: "Hopewell Junction, NY, USA",
@@ -72,28 +94,6 @@ export const directors = [
 }[];
 
 export const team = [
-	{
-		name: "Nash Pillai",
-		title: "Chief Technology Officer",
-		location: "Hopewell Junction, NY, USA",
-		image: "TEDI Bio/nash4",
-		description: `Nash is a software engineer with a passion for environmental conservation. He has worked on projects that use technology to solve environmental problems and is excited to use his skills to help manage the technological aspects of TEDI.`,
-		email: "nash.pillai@protonmail.com",
-		linkedin: "https://www.linkedin.com/in/nash-pillai/",
-		website: "https://nashpillai.com/about",
-		github: "https://github.com/nash-pillai/",
-	},
-	{
-		name: "Hiroyuki Sakuma",
-		title: "Senior Director of Website Development",
-		location: "Hopewell Junction, NY, USA",
-		image: "TEDI Bio/rainbow-hiro",
-		description: `Hiroyuki speaks Japanese with a native proficiency and is interested in robotics, computer science, and mathematics. He is passionate about environmental conservation and is excited to use his skills to help TEDI achieve its mission.`,
-		email: "hiroyuki.sakuma1@gmail.com",
-		twitter: "https://www.twitter.com/hryksakuma",
-		instagram: "https://www.instagram.com/hryk.sakuma",
-		github: "https://github.com/HiroDookie/",
-	},
 	{
 		name: "Kailey Fitzgerald",
 		title: "Networking Coordinator & TikTok Director",
