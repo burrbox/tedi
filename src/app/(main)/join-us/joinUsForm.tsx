@@ -166,9 +166,9 @@ export default function JoinUsForm() {
 								type="button"
 								className={`w-full rounded-md p-2 shadow-sm duration-200 ${
 									team === true
-										? "bg-blue-400 hover:bg-blue-500 dark:bg-blue-400 dark:hover:bg-blue-600"
+										? "bg-blue-400 hover:bg-blue-500 dark:bg-blue-700 dark:hover:bg-blue-600"
 										: "bg-blue-100 hover:bg-blue-200 dark:bg-stone-800 dark:text-blue-300 dark:hover:bg-stone-700"
-								} shadow-blue-900 dark:bg-stone-800 dark:hover:text-white`}
+								} shadow-blue-900 dark:hover:text-white`}
 								onClick={() => setTeam(true)}
 								value={"Yes"}
 							/>
@@ -176,9 +176,9 @@ export default function JoinUsForm() {
 								type="button"
 								className={`w-full rounded-md p-2 shadow-sm duration-200 ${
 									team === false
-										? "bg-blue-400 hover:bg-blue-500 dark:bg-blue-400 dark:hover:bg-blue-600"
+										? "bg-blue-400 hover:bg-blue-500 dark:bg-blue-700 dark:hover:bg-blue-600"
 										: "bg-blue-100 hover:bg-blue-200 dark:bg-stone-800 dark:text-blue-300 dark:hover:bg-stone-700"
-								} shadow-blue-900 dark:bg-stone-800 dark:hover:text-white`}
+								} shadow-blue-900 dark:hover:text-white`}
 								onClick={() => setTeam(false)}
 								value={"No"}
 							/>

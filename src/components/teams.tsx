@@ -26,7 +26,7 @@ export default function Teams({ team = "all" }: { team?: string }) {
 				<div className={`grow ${team !== "Toronto" && "hidden"}`}>thats crazy</div>
 				<div className={`grow ${team !== "Verona, NJ" && "hidden"}`}>
 					Verona, New Jersey, is a charming suburban town known for its green spaces and strong community spirit. With
-					places like Verona Park and tree-lined neighborhoods, it's clear the town values its environment. This year,
+					places like Verona Park and tree-lined neighborhoods, it’s clear the town values its environment. This year,
 					Verona will be hosting clothing drives to promote TEDI’s eco-friendly values. Together, we can help reduce
 					waste and promote sustainability in this welcoming community.
 				</div>
