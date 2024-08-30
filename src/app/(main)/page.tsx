@@ -65,6 +65,7 @@ const locations = [
 	{ name: "Toronto", location: [43.718371, -79.5428628], size: 0.04 },
 	{ name: "Verona, NJ", location: [40.83363, -74.2632469], size: 0.04 },
 	{ name: "Warrington, Penn", location: [40.2470657, -75.2037622], size: 0.04 },
+	{ name: "Lakeland", location: [43.0903, -76.2405], size: 0.04 },
 ] satisfies COBEOptions["markers"] & { name: string }[];
 
 const globeConfig: Partial<COBEOptions> = {
@@ -334,11 +335,13 @@ export default async function Home() {
 				</div>
 			</section>
 			<Carousel />
-			<section className="h-[80vh] pt-8">
-				<h1 className="text-center text-4xl font-bold text-blue-600 dark:text-blue-400">See where our members are!</h1>
+			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800">
+				<h1 className="pb-6 text-center text-5xl font-bold tracking-tighter text-blue-600 dark:text-blue-400">
+					See where our members are!
+				</h1>
 				<Globe className="w-full" config={globeConfig} speed={0.0} phi={0} markers={locations} />
 			</section>
-			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800" data-aos="fade-in">
+			<section className="w-full py-12 md:py-24 lg:py-32" data-aos="fade-in">
 				<div className="container px-4 md:px-6">
 					<div className="flex flex-col items-center justify-center space-y-4 text-center">
 						<div className="space-y-2">

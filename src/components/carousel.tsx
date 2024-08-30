@@ -12,7 +12,7 @@ const images = [
 ];
 export default function Carousel() {
 	return (
-		<section className="w-full py-12 md:py-24 lg:py-32" id="gallery">
+		<section className="w-full py-12 md:py-24" id="gallery">
 			<div
 				className="mx-auto flex flex-col items-center justify-center space-y-4 pb-6 text-center md:pb-12 lg:pb-16"
 				data-aos="fade-left"

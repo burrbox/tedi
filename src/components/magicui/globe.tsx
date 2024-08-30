@@ -143,9 +143,9 @@ export default function Globe({
 	}, []);
 
 	return (
-		<div className="mx-6 grid items-stretch justify-center gap-2 md:flex-col lg:grid-cols-2">
-			<div className="lg:col-span-1">
-				<div className={cn("relative inset-0 mx-auto aspect-[1/1] w-full max-w-[600px]", className)}>
+		<div className="mx-6 grid items-stretch justify-center gap-2 md:grid-cols-2">
+			<div>
+				<div className={cn("mx-auto aspect-[1/1] w-full max-w-[600px]", className)}>
 					<canvas
 						className={cn("h-full w-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]")}
 						ref={canvasRef}
@@ -176,7 +176,7 @@ export default function Globe({
 					)}
 				</div>
 			</div>
-			<div className="flex lg:col-span-1 lg:col-start-2">
+			<div>
 				<Teams team={`${teamL}`} />
 			</div>
 		</div>
