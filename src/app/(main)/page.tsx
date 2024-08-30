@@ -75,7 +75,7 @@ const globeConfig: Partial<COBEOptions> = {
 	baseColor: [1, 1, 1],
 	markerColor: [251 / 255, 100 / 255, 21 / 255],
 	glowColor: [1, 1, 1],
-	scale: 1.2,
+	scale: 1.1,
 	markers: locations,
 };
 
@@ -335,7 +335,7 @@ export default async function Home() {
 			</section>
 			<Carousel />
 			<section className="h-[80vh] pt-8">
-				<h1 className="text-center text-4xl font-bold text-blue-500 dark:text-gray-100">See where our members are!</h1>
+				<h1 className="text-center text-4xl font-bold text-blue-600 dark:text-blue-400">See where our members are!</h1>
 				<Globe className="w-full" config={globeConfig} speed={0.0} phi={0} markers={locations} />
 			</section>
 			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800" data-aos="fade-in">

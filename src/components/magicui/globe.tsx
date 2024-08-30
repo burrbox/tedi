@@ -49,7 +49,7 @@ export default function Globe({
 	let currentPhi = 0;
 	let currentTheta = 0;
 	let width = 0;
-	const scale = useRef(configOverride?.scale ?? 1.2);
+	const scale = useRef(configOverride?.scale ?? 1.1);
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 	const focusRef = useRef([null, null] as [number | null, number | null]);
 	const pointerInteracting = useRef(null as number | null);
@@ -69,7 +69,7 @@ export default function Globe({
 		canvasRef.current!.style.cursor = value ? "grabbing" : "grab";
 		if (value !== null) {
 			focusRef.current = [null, null];
-			scale.current = 1.2;
+			scale.current = 1.1;
 		}
 	};
 
@@ -144,7 +144,7 @@ export default function Globe({
 
 	return (
 		<div className="mx-6 grid items-stretch justify-center gap-2 md:flex-col lg:grid-cols-2">
-			<div className="absolute w-1/2 lg:col-span-1">
+			<div className="lg:col-span-1">
 				<div className={cn("relative inset-0 mx-auto aspect-[1/1] w-full max-w-[600px]", className)}>
 					<canvas
 						className={cn("h-full w-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]")}
@@ -161,10 +161,10 @@ export default function Globe({
 							{markers.map((marker) => (
 								<button
 									key={marker.name}
-									className="flex items-center gap-1 rounded-xl bg-green-500 px-1 py-2 text-stone-100 duration-300 hover:bg-green-400 dark:bg-green-600 dark:hover:bg-green-500"
+									className="flex items-center gap-1 rounded-xl bg-green-500 px-3 py-2 text-stone-100 duration-300 hover:bg-green-400 dark:bg-green-600 dark:hover:bg-green-700"
 									onClick={() => {
 										focusRef.current = locationToAngles(marker.location[0], marker.location[1]);
-										scale.current = 1.2;
+										scale.current = 1.1;
 										setTeamL(marker.name);
 									}}
 								>
@@ -176,7 +176,7 @@ export default function Globe({
 					)}
 				</div>
 			</div>
-			<div className="lg:col-span-1 lg:col-start-2">
+			<div className="flex lg:col-span-1 lg:col-start-2">
 				<Teams team={`${teamL}`} />
 			</div>
 		</div>
