@@ -336,17 +336,7 @@ export default async function Home() {
 			<Carousel />
 			<section className="h-[80vh] pt-8">
 				<h1 className="text-center text-4xl font-bold text-blue-500 dark:text-gray-100">See where our members are!</h1>
-				{/* <div className="mx-6 grid items-stretch justify-center gap-2 md:flex-col lg:grid-cols-2">
-					<div className="absolute w-1/2 lg:col-span-1">
-						<Globe className="w-full" config={globeConfig} speed={0.0} phi={0} markers={locations} />
-					</div>
-					<div className="lg:col-span-1 lg:col-start-2">
-						<Teams />
-					</div>
-				</div> */}
-				<div className="absolute w-full">
-					<Globe className="w-full" config={globeConfig} speed={0.0} phi={0} markers={locations} />
-				</div>
+				<Globe className="w-full" config={globeConfig} speed={0.0} phi={0} markers={locations} />
 			</section>
 			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800" data-aos="fade-in">
 				<div className="container px-4 md:px-6">
