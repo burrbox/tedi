@@ -52,7 +52,7 @@ export const directors = [
 	},
 	{
 		name: "Karen Peng",
-		title: "Networking Director",
+		title: "Campaign Director",
 		location: "Toronto, Ontario, Canada",
 		image: "TEDI Bio/xejrbnm0k1loivohupbx",
 		description: `Karen has always been intrigued by forest ecosystems and how they sustain themselves. She is fascinated by environmental policy and advocating for sustainability in developing cities. She joined TEDI to express her passion for environmental science and to meet likeminded peers who also hope to solve current environmental issues.`,
@@ -96,7 +96,7 @@ export const directors = [
 export const team = [
 	{
 		name: "Kailey Fitzgerald",
-		title: "Networking Coordinator & TikTok Director",
+		title: "Campaign Specialist & TikTok Manager",
 		location: "Hopewell Junction, NY, USA",
 		image: "TEDI Bio/byugrzyf3ozegsehl1ay",
 		description: `Kailey has always seen the beauty of our world and is extremely passionate about preserving it. As a kid she was fascinated by nonfiction books about sea creatures and dinosaurs and would go on nature walks during recess at school. She joined TEDI because it allows her to use her voice, regardless of her age, to make a difference in this world.`,
@@ -106,7 +106,7 @@ export const team = [
 	},
 	{
 		name: "Charlotte Wang",
-		title: "Instagram Director & Blog Editor",
+		title: "Instagram Manager & Blog Editor",
 		location: "Stormville, NY, USA",
 		image: "TEDI Bio/tnkuimk4otojssngkipi",
 		description: `Charlotte is passionate about the environment and finding ways to reduce humanity’s negative impact upon it. She is currently conducting research in school related to bioplastics as part of her mission to do so. She joined TEDI because it provides a platform for spreading awareness and information to other people, and there is always strength in numbers when creating change.`,

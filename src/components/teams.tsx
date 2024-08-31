@@ -7,7 +7,7 @@ export default function Teams({ team = "all" }: { team?: string }) {
 	return (
 		<div className="mx-auto my-3 h-full w-3/4 justify-center rounded-xl bg-stone-200 px-5 py-7 dark:bg-stone-900">
 			<h2 className="w-full pt-4 text-center text-3xl font-semibold text-blue-700 dark:text-blue-500">
-				Find Out More About Our Teams
+				Find Out More About Our Groups
 			</h2>
 			<div className="mx-5">
 				<div>
@@ -70,9 +70,16 @@ export default function Teams({ team = "all" }: { team?: string }) {
 						<h3 className="py-4 text-center text-2xl font-medium text-green-600 dark:text-green-400">
 							Toronto, Canada
 						</h3>
-						<p>Check out our Toronto team!</p>
+						<p>
+							Our Toronto group is located in the GTA. For now, we are planning to start collaborating with other
+							organizations to make <span className="text-green-600 dark:text-green-400">clothing drives</span> more
+							accessible to all. Currently, the group is looking forward to learning more about{" "}
+							<span className="text-green-600 dark:text-green-400">clean energy strategies</span> that are already
+							established across the world and taking a step closer in helping{" "}
+							<span className="text-green-600 dark:text-green-400">biodiversity in Ontario</span>.
+						</p>
 						<CloudinaryClientWrapper
-							src="IMG_4112_acmhvz"
+							src="other/q1fajpqmehsbe2ed3syz"
 							className="mx-auto mt-7 aspect-video overflow-hidden rounded-xl object-cover shadow-xl"
 							alt="Hudson Valley TEDI Group Photo"
 							width={1000}

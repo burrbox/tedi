@@ -296,7 +296,42 @@ export default async function Home() {
 					/>
 				</div>
 			</section>
-			<section className="w-full bg-stone-100 px-12 py-12 md:py-24 lg:grid lg:grid-cols-2 lg:gap-12 lg:py-32 dark:bg-stone-800">
+			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800">
+				<h1 className="pb-6 text-center text-5xl font-bold tracking-tighter text-blue-600 dark:text-blue-400">
+					Fall Fast Fashion Campaign
+				</h1>
+				<div className="mx-6 grid flex-col items-center justify-center gap-2 space-y-4 text-center md:grid-cols-2">
+					<div className="space-y-2 px-4 md:px-8">
+						<div className="my-5 inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">
+							Getting Involved
+						</div>
+						<p className="text-center font-medium">
+							<span className="font-semibold text-green-600 dark:text-green-400">Donate</span> old/used clothing at one
+							of our several clothing drive donation bins! If you don’t see a clothing drive in your area, consider
+							hosting one yourself. <Link href="/join-us">Become a member</Link> today to receive free, one-on-one
+							guidance on{" "}
+							<span className="font-semibold text-green-600 dark:text-green-400">starting a clothing drive</span> from a
+							member of our campaign team and gain access to an exclusive action toolkit including all of the materials
+							you need to launch a{" "}
+							<span className="font-semibold text-green-600 dark:text-green-400">successful drive</span>.
+						</p>
+					</div>
+					<div>
+						<p>
+							one here maybe one there <br /> a lot here
+						</p>
+					</div>
+				</div>
+				<div className="mt-10 text-center font-bold tracking-tighter text-blue-600 dark:text-blue-400">
+					<Link
+						href="/campaigns"
+						className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow-xl duration-300 hover:bg-green-700"
+					>
+						Find Out More
+					</Link>
+				</div>
+			</section>
+			<section className="w-full bg-white px-12 py-12 md:py-24 lg:grid lg:grid-cols-2 lg:gap-12 lg:py-32 dark:bg-stone-900">
 				<div className="aspect-video w-full overflow-hidden rounded-lg">
 					<iframe
 						data-aos="fade-right"
@@ -313,7 +348,7 @@ export default async function Home() {
 				<div className="flex flex-col items-center justify-center space-y-4 text-center" data-aos="fade-left">
 					<div className="space-y-2">
 						<div className="inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">Expert Interviews</div>
-						<h2 className="text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl dark:text-blue-400">
+						<h2 className="text-3xl font-bold tracking-tighter text-green-600 sm:text-5xl dark:text-green-400">
 							Learn from what Experts have to say
 						</h2>
 						<p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-white">
@@ -334,14 +369,14 @@ export default async function Home() {
 					</div>
 				</div>
 			</section>
-			<Carousel />
 			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800">
 				<h1 className="pb-6 text-center text-5xl font-bold tracking-tighter text-blue-600 dark:text-blue-400">
 					See where our members are!
 				</h1>
 				<Globe className="w-full" config={globeConfig} speed={0.0} phi={0} markers={locations} />
 			</section>
-			<section className="w-full py-12 md:py-24 lg:py-32" data-aos="fade-in">
+			<Carousel />
+			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800" data-aos="fade-in">
 				<div className="container px-4 md:px-6">
 					<div className="flex flex-col items-center justify-center space-y-4 text-center">
 						<div className="space-y-2">
