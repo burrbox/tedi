@@ -89,7 +89,7 @@ export default async function Home() {
 				className="flex min-h-[70vh] w-screen bg-cover bg-fixed bg-center bg-no-repeat py-12 md:pb-20 md:pt-32 lg:pt-40"
 			>
 				<div
-					className="mx-auto justify-center rounded-xl bg-white/80 py-10 shadow-xl dark:bg-stone-950/80"
+					className="mx-3 justify-center rounded-xl bg-white/80 py-10 shadow-xl md:mx-8 lg:mx-auto dark:bg-stone-950/80"
 					data-aos="fade-down"
 				>
 					<div className="space-y-10xl:space-y-16 container">
@@ -296,7 +296,7 @@ export default async function Home() {
 					/>
 				</div>
 			</section>
-			<section className="w-full bg-stone-100 py-6 text-center md:py-12 lg:py-24 dark:bg-stone-800">
+			<section className="w-full bg-stone-100 px-5 py-6 text-center md:px-10 md:py-12 lg:py-24 dark:bg-stone-800">
 				<div className="my-5 inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">Get Involved</div>
 				<h2 className="text-center text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl dark:text-blue-400">
 					Fall Fast Fashion Campaign
@@ -335,10 +335,18 @@ export default async function Home() {
 							Stop by at one of these locations to drop off some clothes and save the environment!
 						</p>
 						<ul className="list-inside list-disc text-left md:pl-12">
-							<li>Hopewell Junction, New York, USA - donation bin addresses TBD</li>
-							<li>Shrub Oak, New York, USA - donation bin addresses TBD</li>
-							<li>Verona, New Jersey, USA - donation bin addresses TBD</li>
-							<li>Toronto, Ontario, Canada - donation bin addresses TBD</li>
+							<li>
+								<span className="font-semibold">Hopewell Junction, New York, USA</span> - donation bin addresses TBD
+							</li>
+							<li>
+								<span className="font-semibold">Shrub Oak, New York, USA</span> - donation bin addresses TBD
+							</li>
+							<li>
+								<span className="font-semibold">Verona, New Jersey, USA</span> - donation bin addresses TBD
+							</li>
+							<li>
+								<span className="font-semibold">Toronto, Ontario, Canada</span> - donation bin addresses TBD
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -359,7 +367,9 @@ export default async function Home() {
 				</div>
 				<div className="flex flex-col items-center justify-center space-y-4 text-center" data-aos="fade-left">
 					<div className="space-y-2">
-						<div className="inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">Expert Interviews</div>
+						<div className="mt-5 inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black lg:mt-0">
+							Expert Interviews
+						</div>
 						<h2 className="text-3xl font-bold tracking-tighter text-green-600 sm:text-5xl dark:text-green-400">
 							Learn from what Experts have to say
 						</h2>
@@ -381,7 +391,7 @@ export default async function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800">
+			<section className="w-full bg-stone-100 px-4 py-12 md:py-24 lg:py-32 dark:bg-stone-800">
 				<h1 className="pb-8 text-center text-5xl font-bold tracking-tighter text-blue-600 dark:text-blue-400">
 					See where our members are!
 				</h1>

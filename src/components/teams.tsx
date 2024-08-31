@@ -10,7 +10,7 @@ export default function Teams({ team = "all" }: { team?: string }) {
 				Find Out More About Our Groups
 			</h2>
 			<div className="mx-5">
-				<div>
+				<div className="pt-4">
 					<div className={`grow ${team !== "all" && "hidden"}`}>
 						<p>
 							The TEDI team is an ever growing community, dedicated to{" "}

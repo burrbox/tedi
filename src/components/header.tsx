@@ -109,8 +109,6 @@ export default function Header() {
 								</div>
 							</DropdownMenuTrigger>
 							<DropdownMenuContent>
-								{/* <DropdownMenuLabel>My Account</DropdownMenuLabel> */}
-								{/* <DropdownMenuSeparator /> */}
 								<DropdownMenuItem>Profile</DropdownMenuItem>
 								<DropdownMenuItem>Settings</DropdownMenuItem>
 								<DropdownMenuItem>

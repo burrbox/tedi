@@ -143,11 +143,14 @@ export default function Globe({
 	}, []);
 
 	return (
-		<div className="mx-6 grid items-stretch justify-center gap-2 md:grid-cols-2">
+		<div className="mx-6 grid items-stretch justify-center gap-2 lg:grid-cols-2">
 			<div>
 				<div className={cn("mx-auto aspect-[1/1] w-full max-w-[600px]", className)}>
 					<canvas
-						className={cn("my-5 h-full w-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]")}
+						className={cn(
+							"my-5 h-full w-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]",
+							// " hidden lg:block",
+						)}
 						ref={canvasRef}
 						onPointerDown={(e) => updatePointerInteraction(e.clientX - pointerInteractionMovement.current)}
 						onPointerUp={() => updatePointerInteraction(null)}

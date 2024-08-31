@@ -31,7 +31,7 @@ export default async function Campaigns() {
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/cqdwyikqyeqqfwemsrek" })})` }}
 				className="flex h-[50vh] w-screen bg-cover bg-fixed bg-center bg-no-repeat"
 			>
-				<div className="container relative mx-auto h-fit w-full px-4 py-16">
+				<div className="container relative mx-2 h-fit w-full px-4 py-16 md:mx-auto">
 					<div className="absolute inset-0 mx-auto mt-28 w-fit md:mt-32 lg:mt-44" data-aos="fade-down">
 						<div className="flex flex-col justify-center rounded-xl bg-stone-100 p-10 lg:p-20 dark:bg-stone-800">
 							<h1 className="text-center text-5xl font-semibold text-green-600 md:text-6xl dark:text-green-400">
@@ -42,8 +42,8 @@ export default async function Campaigns() {
 					</div>
 				</div>
 			</section>
-			<section className="w-full py-12 md:py-24 lg:py-32">
-				<div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
+			<section className="w-full pt-6 md:pt-12">
+				<div className="container grid items-center gap-6 px-4 py-10 pb-6 md:px-6 md:pb-12 lg:grid-cols-2 lg:gap-10">
 					<div>
 						<CloudinaryClientWrapper
 							src="other/dajm8gabnmhhuaeuj37a"
@@ -64,7 +64,7 @@ export default async function Campaigns() {
 						</p>
 					</div>
 				</div>
-				<div className="w-full pt-12 md:pt-24 lg:pt-32">
+				<div className="w-full bg-stone-800 py-6 md:py-12 lg:py-24">
 					<div className="container grid grid-cols-1 gap-12 px-4 md:px-6 lg:grid-cols-2">
 						<div className="space-y-4">
 							<h2 className="text-xl font-semibold text-green-600 sm:text-2xl md:text-3xl dark:text-green-400">
