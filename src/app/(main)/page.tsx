@@ -296,16 +296,21 @@ export default async function Home() {
 					/>
 				</div>
 			</section>
-			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800">
-				<h1 className="pb-6 text-center text-5xl font-bold tracking-tighter text-blue-600 dark:text-blue-400">
+			<section className="w-full bg-stone-100 py-6 text-center md:py-12 lg:py-24 dark:bg-stone-800">
+				<div className="my-5 inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">Get Involved</div>
+				<h2 className="text-center text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl dark:text-blue-400">
 					Fall Fast Fashion Campaign
-				</h1>
-				<div className="mx-6 grid flex-col items-center justify-center gap-2 space-y-4 text-center md:grid-cols-2">
-					<div className="space-y-2 px-4 md:px-8">
-						<div className="my-5 inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">
-							Getting Involved
-						</div>
-						<p className="text-center font-medium">
+				</h2>
+				<p className="mx-auto max-w-4xl py-4 text-center md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-white">
+					This campaign aims to mitigate the environmental harm that fast fashion causes by hosting clothing drives
+					across the <span className="font-semibold text-green-600">United States and Canada</span>. Clothing drives are
+					an excellent way to{" "}
+					<span className="font-semibold text-green-600">repurpose, reuse, and recycle clothing</span> to prevent waste
+					from accumulating in landfills.
+				</p>
+				<div className="mx-10 grid flex-col items-center justify-center gap-6 space-y-4 text-center md:grid-cols-2">
+					<div className="mt-5 h-full space-y-2 rounded-xl px-4 py-10 md:px-8 dark:bg-stone-900">
+						<p className="pb-5 text-center text-lg font-medium">
 							<span className="font-semibold text-green-600 dark:text-green-400">Donate</span> old/used clothing at one
 							of our several clothing drive donation bins! If you don’t see a clothing drive in your area, consider
 							hosting one yourself. <Link href="/join-us">Become a member</Link> today to receive free, one-on-one
@@ -315,20 +320,27 @@ export default async function Home() {
 							you need to launch a{" "}
 							<span className="font-semibold text-green-600 dark:text-green-400">successful drive</span>.
 						</p>
+						<div className="my-5 text-center font-bold tracking-tighter text-blue-600 dark:text-blue-400">
+							<Link
+								href="/join-us" //temporary until i work on the campaign page
+								className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow-xl duration-300 hover:bg-green-700"
+							>
+								Find Out More
+							</Link>
+						</div>
 					</div>
-					<div>
-						<p>
-							one here maybe one there <br /> a lot here
+					<div className="mt-5 h-full space-y-2 rounded-xl px-4 py-10 md:px-8 dark:bg-stone-900">
+						<h3 className="text-2xl font-semibold text-green-600 dark:text-green-400">Our Locations</h3>
+						<p className="py-4 text-xl font-medium">
+							Stop by at one of these locations to drop off some clothes and save the environment!
 						</p>
+						<ul className="list-inside list-disc text-left md:pl-12">
+							<li>Hopewell Junction, New York, USA - donation bin addresses TBD</li>
+							<li>Shrub Oak, New York, USA - donation bin addresses TBD</li>
+							<li>Verona, New Jersey, USA - donation bin addresses TBD</li>
+							<li>Toronto, Ontario, Canada - donation bin addresses TBD</li>
+						</ul>
 					</div>
-				</div>
-				<div className="mt-10 text-center font-bold tracking-tighter text-blue-600 dark:text-blue-400">
-					<Link
-						href="/campaigns"
-						className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow-xl duration-300 hover:bg-green-700"
-					>
-						Find Out More
-					</Link>
 				</div>
 			</section>
 			<section className="w-full bg-white px-12 py-12 md:py-24 lg:grid lg:grid-cols-2 lg:gap-12 lg:py-32 dark:bg-stone-900">
@@ -370,7 +382,7 @@ export default async function Home() {
 				</div>
 			</section>
 			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800">
-				<h1 className="pb-6 text-center text-5xl font-bold tracking-tighter text-blue-600 dark:text-blue-400">
+				<h1 className="pb-8 text-center text-5xl font-bold tracking-tighter text-blue-600 dark:text-blue-400">
 					See where our members are!
 				</h1>
 				<Globe className="w-full" config={globeConfig} speed={0.0} phi={0} markers={locations} />
@@ -380,7 +392,7 @@ export default async function Home() {
 				<div className="container px-4 md:px-6">
 					<div className="flex flex-col items-center justify-center space-y-4 text-center">
 						<div className="space-y-2">
-							<div className="inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">Get Involved</div>
+							<div className="inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">Interested?</div>
 							<h2 className="text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl dark:text-blue-400">
 								Join the Movement
 							</h2>
