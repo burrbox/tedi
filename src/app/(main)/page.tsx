@@ -322,7 +322,7 @@ export default async function Home() {
 						</p>
 						<div className="my-5 text-center font-bold tracking-tighter text-blue-600 dark:text-blue-400">
 							<Link
-								href="/join-us" //temporary until i work on the campaign page
+								href="/campaigns" //temporary until i work on the campaign page
 								className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow-xl duration-300 hover:bg-green-700"
 							>
 								Find Out More
