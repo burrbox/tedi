@@ -22,6 +22,7 @@ const links = [
 	{ name: "About", href: "/about" },
 	{ name: "Blog", href: "/blog" },
 	{ name: "Petitions", href: "/petitions" },
+	{ name: "Campaigns", href: "/campaigns" },
 	{ name: "Join Us", href: "/join-us" },
 ];
 

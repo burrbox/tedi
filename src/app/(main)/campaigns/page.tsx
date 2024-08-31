@@ -70,7 +70,58 @@ export default async function Campaigns() {
 							<h2 className="text-xl font-semibold text-green-600 sm:text-2xl md:text-3xl dark:text-green-400">
 								What is Fast Fashion?
 							</h2>
-							<p className="md:text-lg lg:text-base">so much stuff here</p>
+							<p className="md:text-lg lg:text-base">
+								Most companies that you order clothing from now are fast fashion companies, meaning they{" "}
+								<span className="font-semibold text-blue-600 dark:text-blue-400">mass produce</span>
+								trendy, cheap clothing that quickly moves from design to retail. Many people have taken to discarding
+								clothing once a trend is over or a certain style is no longer popular, leading to an{" "}
+								<span className="font-semibold text-blue-600 dark:text-blue-400">excessive buildup</span>
+								of textiles in landfills and contributing to the{" "}
+								<span className="font-semibold text-blue-600 dark:text-blue-400">microplastic pollution issue</span>.
+								Read more about the origins of fast fashion here.
+							</p>
+						</div>
+						<div className="space-y-4">
+							<h2 className="text-xl font-semibold text-green-600 sm:text-2xl md:text-3xl dark:text-green-400">
+								Action Plan
+							</h2>
+							<p className="md:text-lg lg:text-base">
+								This campaign aims to mitigate the environmental harm that fast fashion causes by hosting clothing
+								drives across the{" "}
+								<span className="font-semibold text-blue-600 dark:text-blue-400">United States and Canada</span>.
+								Clothing drives are an excellent way to{" "}
+								<span className="font-semibold text-blue-600 dark:text-blue-400">
+									repurpose, reuse, and recycle clothing
+								</span>{" "}
+								to prevent waste from accumulating in landfills.
+							</p>
+						</div>
+						<div className="space-y-4">
+							<h2 className="text-xl font-semibold text-green-600 sm:text-2xl md:text-3xl dark:text-green-400">
+								Getting Involved
+							</h2>
+							<p className="md:text-lg lg:text-base">
+								<span className="font-semibold text-blue-600 dark:text-blue-400">Donate</span> old/used clothing at one
+								of our several clothing drive donation bins! If you don’t see a clothing drive in your area, consider
+								hosting one yourself. <Link href="/join-us">Become a member</Link> today to receive free, one-on-one
+								guidance on{" "}
+								<span className="font-semibold text-blue-600 dark:text-blue-400">starting a clothing drive</span> from a
+								member of our campaign team and gain access to an exclusive action toolkit including all of the
+								materials you need to launch a{" "}
+								<span className="font-semibold text-blue-600 dark:text-blue-400">successful drive</span>.
+							</p>
+						</div>
+						<div className="space-y-4">
+							<h2 className="text-xl font-semibold text-green-600 sm:text-2xl md:text-3xl dark:text-green-400">
+								Locations
+							</h2>
+							<p className="md:text-lg lg:text-base">
+								<span className="font-semibold">Hopewell Junction, New York, USA</span> - donation bin addresses TBD
+								<br />
+								<span className="font-semibold">Shrub Oak, New York, USA</span> - donation bin addresses TBD
+								<br /> <span className="font-semibold">Verona, New Jersey, USA</span> - donation bin addresses TBD
+								<br /> <span className="font-semibold">Toronto, Ontario, Canada</span> - donation bin addresses TBD
+							</p>
 						</div>
 					</div>
 				</div>
