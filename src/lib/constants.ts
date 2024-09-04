@@ -136,7 +136,7 @@ export const team = [
 		name: "Kylie Yap",
 		title: "Video Editor",
 		location: "Hopewell Junction, NY, USA",
-		image: "TEDI Bio/q1bsw4rvvbataae5qcwl",
+		image: "TEDI Bio/x4yg3lxrb3ntlha9tw2y",
 		description: `Kylie has always been captivated by nature and various forms of wildlife. She is extremely passionate about helping the millions of species that face extinction by preventing further habitat loss. She joined TEDI as a video editor to raise awareness of the impact of humans on wildlife and the environment.`,
 		email: "kylieayap@gmail.com",
 		instagram: "https://www.instagram.com/taekwondo.sushi/",
