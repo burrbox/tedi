@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { team } from "@/lib/constants";
+import { fullTeam } from "@/lib/constants";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
@@ -118,7 +118,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 								aria-expanded={isAuthorOpen}
 								className="w-full justify-between"
 							>
-								{author ? team.find((member) => member.name.toLowerCase() === author)?.name : "Select author..."}
+								{author ? fullTeam.find((member) => member.name.toLowerCase() === author)?.name : "Select author..."}
 								<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
 							</Button>
 						</PopoverTrigger>
@@ -128,7 +128,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 								<CommandList>
 									<CommandEmpty>No author found.</CommandEmpty>
 									<CommandGroup className="max-h-96 overflow-scroll">
-										{team.map((member) => (
+										{fullTeam.map((member) => (
 											<CommandItem
 												key={member.name}
 												value={member.name}
@@ -174,7 +174,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 								aria-expanded={isEditorOpen}
 								className="w-full justify-between"
 							>
-								{editor ? team.find((member) => member.name.toLowerCase() === editor)?.name : "Select editor..."}
+								{editor ? fullTeam.find((member) => member.name.toLowerCase() === editor)?.name : "Select editor..."}
 								<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
 							</Button>
 						</PopoverTrigger>
@@ -184,7 +184,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 								<CommandList>
 									<CommandEmpty>No editor found.</CommandEmpty>
 									<CommandGroup className="max-h-96 overflow-scroll">
-										{team.map((member) => (
+										{fullTeam.map((member) => (
 											<CommandItem
 												key={member.name}
 												value={member.name}

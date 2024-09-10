@@ -1,6 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { team } from "./constants";
+import { fullTeam } from "./constants";
 import { type Prisma } from "@prisma/client";
 
 export function cn(...inputs: ClassValue[]) {
@@ -12,12 +12,12 @@ export function wait(ms: number) {
 }
 
 export function getPostAuthor(post: { author: string }) {
-	return team.find((member) => member.name.toLowerCase() === post.author) ?? team[1]!;
+	return fullTeam.find((member) => member.name.toLowerCase() === post.author) ?? fullTeam[1]!;
 }
 
 export function clamp(min: number, max: number, value: number) {
 	return Math.min(Math.max(value, min), max);
 }
 export function getPostEditor(post: { editor: string }) {
-	return team.find((member) => member.name.toLowerCase() === post.editor) ?? team[1]!;
+	return fullTeam.find((member) => member.name.toLowerCase() === post.editor) ?? fullTeam[1]!;
 }

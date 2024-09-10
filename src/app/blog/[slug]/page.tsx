@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Mdx } from "@/components/mdx/mdx";
 // import RelatedPosts from "@/components/related-posts-02";
 import { getPost, getPosts } from "@/lib/serverActions";
-import { team } from "@/lib/constants";
+import { fullTeam } from "@/lib/constants";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { format } from "date-fns";
 import { env } from "@/env";
@@ -51,8 +51,8 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 	const post = await getPost(params.slug);
 	if (!post) notFound();
 
-	const author = getPostAuthor(post) ?? team[1]!;
-	const editor = getPostEditor(post) ?? team[1]!;
+	const author = getPostAuthor(post) ?? fullTeam[1]!;
+	const editor = getPostEditor(post) ?? fullTeam[1]!;
 
 	const session = await auth();
 

@@ -210,6 +210,8 @@ export const team = [
 	github?: string;
 }[];
 
+export const fullTeam = [...directors, ...team];
+
 export const petition = {
 	title: "The Flint Water Crisis - Holding the EPA Accountable",
 	description: `The water catastrophe is expanding rapidly and inevitably across the United States, threatening the health of millions of people and calling into question the diligence of environmental organizations such as the Environmental Protection Agency. The Flint Water Crisis began in 2014 when the city of Flint, Michigan decided to switch the source of their water from the Delaware River to the Flint River. This new source of water was not treated as scrupulously as its predecessor, allowing lead that entered the Flint River from corroded pipes to infiltrate the water supply.
