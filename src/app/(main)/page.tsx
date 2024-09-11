@@ -336,7 +336,14 @@ export default async function Home() {
 						</p>
 						<ul className="list-inside list-disc text-left md:pl-12">
 							<li>
-								<span className="font-semibold">Hopewell Junction, New York, USA</span> - donation bin addresses TBD
+								<span className="font-semibold">Hopewell Junction, New York, USA</span> -{" "}
+								<Link
+									className="text-blue-500 underline"
+									href="https://www.google.com/maps/place/John+Jay+Senior+High+School/@41.5406254,-73.8357815,17z/https://www.google.com/maps/place/John+Jay+Senior+High+School/@41.5406254,-73.8357815,17z/data=!4m6!3m5!1s0x89dd4818425ae529:0x696af3813e741117!8m2!3d41.5406214!4d-73.8332066!16s%2Fm%2F025wqkv?entry=ttu&g_ep=EgoyMDI0MDkwOC4wIKXMDSoASAFQAw%3D%3D"
+								>
+									John Jay HS
+								</Link>{" "}
+								9/21 1-3pm
 							</li>
 							<li>
 								<span className="font-semibold">Shrub Oak, New York, USA</span> - donation bin addresses TBD
