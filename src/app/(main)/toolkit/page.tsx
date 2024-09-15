@@ -26,8 +26,8 @@ export const metadata: Metadata = {
 };
 
 export default async function Toolkit() {
-	const session = await auth();
-	if (!session) redirect("/signin");
+	// const session = await auth();
+	// if (!session) redirect("/signin");
 
 	return (
 		<>
@@ -72,8 +72,10 @@ export default async function Toolkit() {
 							<h1 className="mt-2 w-full text-wrap text-6xl font-bold text-green-500">The Cleanup Campaign</h1>
 							<hr className="mt-5 w-3/4 border-green-500" />
 							<p className="my-10 text-xl">
-								Have you always wanted to plan a community cleanup but don’t know how? <br />
-								This is the toolkit for you!
+								<span className="text-lg">
+									Have you always wanted to plan a community cleanup but don’t know how? <br />
+									This is the toolkit for you!
+								</span>
 								<br />
 								<br />
 								Our cleanup toolkit contains{" "}
@@ -86,6 +88,50 @@ export default async function Toolkit() {
 								<Link
 									className="w-1/5 rounded-lg bg-green-500 py-3 text-center duration-300 hover:w-1/4 hover:bg-green-400 dark:bg-green-600 dark:hover:bg-green-700"
 									href={`https://www.canva.com/design/DAGNVCdAnYI/YQpmkVQrIaY_P0K3t_NXUA/view`}
+									target="_blank"
+								>
+									Download
+								</Link>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div className="w-full px-8 py-10">
+				<section className="mx-auto mt-8 max-w-7xl">
+					<div className="flex flex-col-reverse gap-8 sm:flex-row">
+						<div>
+							<CloudinaryClientWrapper
+								className="max-h-[80vh] w-fit rounded-xl"
+								src="toolkit/eypvgy8fndoyfhwjapjn"
+								alt="The toolkit for the cleanup campaign"
+								width={1080}
+								height={2160}
+							/>
+						</div>
+						<div className="w-4/5 px-10">
+							<h1 className="mt-2 w-full text-wrap text-6xl font-bold text-green-500">The Clothing Drive Toolkit</h1>
+							<hr className="mt-5 w-3/4 border-green-500" />
+							<p className="my-10 text-xl">
+								<span className="text-lg">
+									Ready to make a difference in your community with a clothing drive but unsure where to start? <br />
+									This toolkit is filled with resources to help you make a positive impact in your community!
+								</span>
+								<br />
+								<br />
+								This toolkit is filled with everything you need to{" "}
+								<span className="text-blue-600 dark:text-blue-400">successfully organize</span> and execute a clothing
+								drive, whether independently or in partnership with an organization. It includes detailed instructions
+								on setting up your drive, tips for coordinating with local groups, and{" "}
+								<span className="text-blue-600 dark:text-blue-400">essential information</span> on obtaining permissions
+								to place donation bins. Plus, you’ll find{" "}
+								<span className="text-blue-600 dark:text-blue-400">email templates</span> for requesting approval and{" "}
+								<span className="text-blue-600 dark:text-blue-400">sample flyers</span> to help promote your drive.
+							</p>
+							<div className="flex items-center justify-center">
+								<Link
+									className="w-1/5 rounded-lg bg-green-500 py-3 text-center duration-300 hover:w-1/4 hover:bg-green-400 dark:bg-green-600 dark:hover:bg-green-700"
+									href={` https://www.canva.com/design/DAGQCx9CWp0/9FyW8cBqiksP8KVfh-HtLg/edit?utm_content=DAGQCx9CWp0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton`}
 									target="_blank"
 								>
 									Download
