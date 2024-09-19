@@ -40,7 +40,7 @@ export default async function AboutPage() {
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/qmpzia6kmgjuld13zbhw" })})` }}
 			>
 				<div className="container mx-auto w-full py-16 md:py-24">
-					<div className="inset-0 mx-auto w-10/12 md:w-full" data-aos="fade-down">
+					<div className="inset-0 mx-auto w-10/12 md:w-full" /* data-aos="fade-down" */>
 						<div className="flex flex-col justify-center gap-6 xl:flex-row">
 							<div className="m-auto h-fit max-w-3xl rounded-xl bg-white py-8 dark:bg-stone-800">
 								<JoinUsForm />
@@ -50,12 +50,14 @@ export default async function AboutPage() {
 				</div>
 			</div>
 			<div className="min-h-w-full py-8 md:py-12">
-				<h3 className="py-auto text-wrap pb-8 text-center text-3xl text-black dark:text-stone-200" data-aos="fade-in">
+				<h3
+					className="py-auto text-wrap pb-8 text-center text-3xl text-black dark:text-stone-200" /* data-aos="fade-in" */
+				>
 					Looking to help out a bit more? Join the team instead!
 				</h3>
 				<hr
 					className="border-green mx-auto w-1/2 justify-center border-2 border-green-500 md:w-1/4 lg:w-1/12"
-					data-aos="fade-in"
+					/* data-aos="fade-in" */
 				/>
 			</div>
 			<div
@@ -63,7 +65,7 @@ export default async function AboutPage() {
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/qneh8sn9n3xcb9daktfj" })})` }}
 			>
 				<div className="container mx-auto py-16">
-					<div className="inset-0 mx-auto w-full sm:w-10/12" data-aos="fade-down">
+					<div className="inset-0 mx-auto w-full sm:w-10/12" /* data-aos="fade-down" */>
 						<div className="flex flex-col justify-center gap-6 xl:flex-row">
 							<div className="basis-4/5">
 								<div className="h-fit rounded-xl bg-white py-8 dark:bg-stone-800">
