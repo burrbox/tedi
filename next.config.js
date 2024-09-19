@@ -20,10 +20,10 @@ const config = {
 				"https://docs.google.com/forms/d/e/1FAIpQLSfEWkGAauRBi07E8-4WRlay7RyXJlLII85dt1FCV2C0m-hI1Q/viewform",
 			permanent: false,
 		},
-		// am i feeling a bit silly
+		// kill switch oh nooo how do i fix this. help me fix nixos please
 		// {
 		// 	source: "/:x",
-		// 	destination: "https://jaybots.org",
+		// 	destination: "https://jaybots.org/tedinitiative",
 		// 	permanent: true,
 		// },
 	],

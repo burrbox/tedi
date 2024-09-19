@@ -41,7 +41,12 @@ export default function JoinUsForm() {
 						Thank You!
 					</h1>
 					<h2 className="text-wrap text-center text-lg text-blue-700 dark:text-blue-400">
-						Your support will help us create change
+						Your support will help us create change. <br />
+						Consider{" "}
+						<Link href="/signin" className="text-white underline">
+							creating an account
+						</Link>{" "}
+						at TEDI!
 					</h2>
 				</div>
 			</div>
