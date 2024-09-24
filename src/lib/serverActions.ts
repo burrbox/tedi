@@ -66,6 +66,7 @@ export async function savePetitionSignature(data: {
 	email: string;
 	zipCode: string;
 	message?: string;
+	name: string;
 }) {
 	const serviceAccountAuth = new JWT({
 		email: env.GOOGLE_SERVICE_ACCOUNT_EMAIL,

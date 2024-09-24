@@ -1,11 +1,11 @@
 "use client";
 
 import Loading from "@/components/loading";
-import { petition } from "@/lib/constants";
+import { petitions } from "@/lib/constants";
 import { savePetitionSignature } from "@/lib/serverActions";
 import { useState, type FormEvent } from "react";
 
-export default function PetitionForm() {
+export default function PetitionForm({ petition }: { petition: (typeof petitions)[number] }) {
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
@@ -14,12 +14,13 @@ export default function PetitionForm() {
 
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [done, setDone] = useState(false);
+	const name = petition.name;
 
 	const submitForm = async (event: FormEvent<HTMLFormElement>) => {
 		if (done || isSubmitting) return;
 		event.preventDefault();
 		setIsSubmitting(true);
-		await savePetitionSignature({ firstName, lastName, email, zipCode, message });
+		await savePetitionSignature({ firstName, lastName, email, zipCode, message, name });
 		setIsSubmitting(false);
 		setDone(true);
 	};

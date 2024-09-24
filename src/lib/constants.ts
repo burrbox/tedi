@@ -212,22 +212,32 @@ export const team = [
 
 export const fullTeam = [...directors, ...team];
 
-export const petition = {
-	// 	title: "The Flint Water Crisis - Holding the EPA Accountable",
-	// 	description: `The water catastrophe is expanding rapidly and inevitably across the United States, threatening the health of millions of people and calling into question the diligence of environmental organizations such as the Environmental Protection Agency. The Flint Water Crisis began in 2014 when the city of Flint, Michigan decided to switch the source of their water from the Delaware River to the Flint River. This new source of water was not treated as scrupulously as its predecessor, allowing lead that entered the Flint River from corroded pipes to infiltrate the water supply.
-
-	// Lead concentrations in the blood of Flint citizens are significantly higher currently than they were when the Delaware River was used as the city’s main water supply. Lead is known to cause severe health	issues including hypertension, anaemia, and most notably Legionnaires' disease, a severe form of pneumonia. 12 people have died from this deadly respiratory disease and dozens more are forced to live	with the side effects of lead poisoning on a daily basis in Flint, Michigan.
-
-	// The Flint Water Crisis sparked national outrage and investigations into government negligence and environmental injustice. In 1986 the US Environmental Protection Agency passed the Safe Drinking Water Act which banned the use of lead in the construction of water pipes. Yet, plumbing systems in the majority of homes in Flint still boast lead apparatus, compromising the safety of drinking water.
-
-	// Now, how can we prevent this issue from persisting in the future? Many have looked toward the lead standard which currently stands at 15µg/L in Michigan. Experts and EPA officials claim the standard must be decreased to 10µg/L in order for drinking water to truly be deemed “safe.” The only way to prevent this issue from expanding and impairing the health of more Americans is to address the root cause of the issue: a lack of action by the EPA in enforcing water quality standards. Urge the EPA to lower the standard for lead concentrations in drinking water to 10µg/L and mandate the removal of lead pipes from plumbing systems TODAY. Fight for our future and the people of Flint!`,
-	// 	callToAction: `Ensure ALL Americans have access to clean water.`,
-	title: "Halt the Construction of Warehouses on NYS Wetlands in East Fishkill",
-	description: `Treetop Development, a real estate investment firm, is threatening the livelihood of East Fishkill residents and putting our precious wetlands at risk for environmental catastrophe. They have proposed the Treetop Planned Industrial Development Project, an initiative that details the construction of two massive industrial warehouses on the wetlands of Wiccopee, a crucial habitat for various native plants and animals. Not only would this project disrupt the quiet and serene environment East Fishkill residents pride themselves on, but also provide prime conditions for an ecological disaster of epic proportions. 
+export const petitions = [
+	{
+		title: "Halt the Construction of Warehouses on NYS Wetlands in East Fishkill",
+		description: `Treetop Development, a real estate investment firm, is threatening the livelihood of East Fishkill residents and putting our precious wetlands at risk for environmental catastrophe. They have proposed the Treetop Planned Industrial Development Project, an initiative that details the construction of two massive industrial warehouses on the wetlands of Wiccopee, a crucial habitat for various native plants and animals. Not only would this project disrupt the quiet and serene environment East Fishkill residents pride themselves on, but also provide prime conditions for an ecological disaster of epic proportions. 
 
 According to the NYS Department of Environmental Conservation, wetlands provide invaluable ecosystem services including habitats for a wide variety of protected species, preservation of biodiversity, and maintenance of water and air quality. Additionally, wetlands are responsible for the regulation of surface water flow and serve as reservoirs for floodwaters, serving our community from both an environmental and sociological standpoint. The construction of these warehouses would wreak havoc on the ecosystem of the Wiccopee wetlands and our quality of life by causing deforestation, noise pollution, water contamination, air pollution, and habitat loss. 
 
 We must unite as a community to prevent the construction of these warehouses and fight for a more sustainable future for later generations. No longer can we sit by and allow large corporations to destroy our environment and our quality of life along with it. Sign our petition today to urge Treetop Development and the East Fishkill town board to abandon the construction of these warehouses. Act now!`,
-	callToAction: `Protect the Wiccopee Wetlands and the East Fishkill community!`,
-	// sep 24 2:11am btw
-};
+		callToAction: `Protect the Wiccopee Wetlands and the East Fishkill community!`,
+		name: "wetlands",
+	},
+	{
+		title: "The Flint Water Crisis - Holding the EPA Accountable",
+		description: `The water catastrophe is expanding rapidly and inevitably across the United States, threatening the health of millions of people and calling into question the diligence of environmental organizations such as the Environmental Protection Agency. The Flint Water Crisis began in 2014 when the city of Flint, Michigan decided to switch the source of their water from the Delaware River to the Flint River. This new source of water was not treated as scrupulously as its predecessor, allowing lead that entered the Flint River from corroded pipes to infiltrate the water supply.
+
+	Lead concentrations in the blood of Flint citizens are significantly higher currently than they were when the Delaware River was used as the city’s main water supply. Lead is known to cause severe health	issues including hypertension, anaemia, and most notably Legionnaires' disease, a severe form of pneumonia. 12 people have died from this deadly respiratory disease and dozens more are forced to live	with the side effects of lead poisoning on a daily basis in Flint, Michigan.
+
+	The Flint Water Crisis sparked national outrage and investigations into government negligence and environmental injustice. In 1986 the US Environmental Protection Agency passed the Safe Drinking Water Act which banned the use of lead in the construction of water pipes. Yet, plumbing systems in the majority of homes in Flint still boast lead apparatus, compromising the safety of drinking water.
+
+	Now, how can we prevent this issue from persisting in the future? Many have looked toward the lead standard which currently stands at 15µg/L in Michigan. Experts and EPA officials claim the standard must be decreased to 10µg/L in order for drinking water to truly be deemed “safe.” The only way to prevent this issue from expanding and impairing the health of more Americans is to address the root cause of the issue: a lack of action by the EPA in enforcing water quality standards. Urge the EPA to lower the standard for lead concentrations in drinking water to 10µg/L and mandate the removal of lead pipes from plumbing systems TODAY. Fight for our future and the people of Flint!`,
+		callToAction: `Ensure ALL Americans have access to clean water.`,
+		name: "flintwater",
+	},
+] as {
+	title: string;
+	description: string;
+	callToAction: string;
+	name: string;
+}[];

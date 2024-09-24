@@ -1,4 +1,4 @@
-import { petition } from "@/lib/constants";
+import { petitions } from "@/lib/constants";
 import PetitionForm from "./petitionForm";
 import { type Metadata } from "next";
 import { env } from "@/env";
@@ -73,28 +73,31 @@ export default async function Petitions() {
 					</span>
 				</div>
 			</div>
-			<div
-				className="relative flex min-h-[110vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
-				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/t7x9xmnsyqs2yetfpp3j" })})` }}
-			>
-				<div className="inset-0 mx-auto w-full sm:w-10/12" data-aos="fade-down">
-					<div className="flex flex-col justify-center gap-6 xl:flex-row">
-						<div className="basis-3/5">
-							<div className="h-fit rounded-xl bg-white p-2 py-8 dark:bg-stone-800">
-								<h1 className="text-center text-3xl font-semibold text-green-700 dark:text-green-400">
-									{petition.title}
-								</h1>
-								<h2 className="mx-4 whitespace-pre-line pt-6 text-sm text-green-700 md:mx-6 md:text-sm lg:mx-8 lg:text-base dark:text-blue-300">
-									{petition.description}
-								</h2>
+			{petitions.map((petition) => (
+				<div
+					key={petition.name}
+					className="relative flex min-h-[110vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
+					style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/t7x9xmnsyqs2yetfpp3j" })})` }}
+				>
+					<div className="inset-0 mx-auto w-full sm:w-10/12" data-aos="fade-down">
+						<div className="flex flex-col justify-center gap-6 xl:flex-row">
+							<div className="basis-3/5">
+								<div className="h-fit rounded-xl bg-white p-2 py-8 dark:bg-stone-800">
+									<h1 className="text-center text-3xl font-semibold text-green-700 dark:text-green-400">
+										{petition.title}
+									</h1>
+									<h2 className="mx-4 whitespace-pre-line pt-6 text-sm text-green-700 md:mx-6 md:text-sm lg:mx-8 lg:text-base dark:text-blue-300">
+										{petition.description}
+									</h2>
+								</div>
 							</div>
-						</div>
-						<div className="basis-2/5">
-							<PetitionForm />
+							<div className="basis-2/5">
+								<PetitionForm petition={petition} />
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			))}
 		</section>
 	);
 }
