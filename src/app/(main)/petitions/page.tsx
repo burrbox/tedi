@@ -76,11 +76,11 @@ export default async function Petitions() {
 			{petitions.map((petition) => (
 				<div
 					key={petition.name}
-					className="relative flex min-h-[110vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
+					className="relative flex min-h-[60vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
 					style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/t7x9xmnsyqs2yetfpp3j" })})` }}
 				>
 					<div className="inset-0 mx-auto w-full sm:w-10/12" data-aos="fade-down">
-						<div className="flex flex-col justify-center gap-6 xl:flex-row">
+						<div className="flex flex-col justify-center gap-6 rounded-xl bg-stone-300/70 p-10 xl:flex-row dark:bg-stone-800/70">
 							<div className="basis-3/5">
 								<div className="h-fit rounded-xl bg-white p-2 py-8 dark:bg-stone-800">
 									<h1 className="text-center text-3xl font-semibold text-green-700 dark:text-green-400">

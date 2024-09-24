@@ -51,7 +51,7 @@ export default function PetitionForm({ petition }: { petition: (typeof petitions
 						First Name *
 						<input
 							name="firstName"
-							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:text-black dark:focus:bg-stone-800 dark:focus:text-white"
+							className="w-full rounded-md bg-blue-300 p-3 shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-700 dark:text-black dark:hover:bg-stone-800 dark:focus:bg-stone-800 dark:focus:text-white"
 							type="text"
 							required
 							value={firstName}
@@ -64,7 +64,7 @@ export default function PetitionForm({ petition }: { petition: (typeof petitions
 						Last Name *
 						<input
 							name="lastName"
-							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:text-black dark:focus:bg-stone-800 dark:focus:text-white"
+							className="w-full rounded-md bg-blue-300 p-3 shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-700 dark:text-black dark:hover:bg-stone-800 dark:focus:bg-stone-800 dark:focus:text-white"
 							type="text"
 							required
 							value={lastName}
@@ -77,7 +77,7 @@ export default function PetitionForm({ petition }: { petition: (typeof petitions
 						Email *
 						<input
 							name="email"
-							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:text-black dark:focus:bg-stone-800 dark:focus:text-white"
+							className="w-full rounded-md bg-blue-300 p-3 shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-700 dark:text-black dark:hover:bg-stone-800 dark:focus:bg-stone-800 dark:focus:text-white"
 							type="email"
 							required
 							value={email}
@@ -90,7 +90,7 @@ export default function PetitionForm({ petition }: { petition: (typeof petitions
 						Zip Code *
 						<input
 							name="zipCode"
-							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:text-black dark:focus:bg-stone-800 dark:focus:text-white"
+							className="w-full rounded-md bg-blue-300 p-3 shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-700 dark:text-black dark:hover:bg-stone-800 dark:focus:bg-stone-800 dark:focus:text-white"
 							type="text"
 							required
 							value={zipCode}
@@ -103,7 +103,7 @@ export default function PetitionForm({ petition }: { petition: (typeof petitions
 						Message (optional)
 						<textarea
 							name="message"
-							className="h-fit w-full resize-none rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:text-black dark:focus:bg-stone-800 dark:focus:text-white"
+							className="h-fit w-full resize-none rounded-md bg-blue-300 p-3 shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-700 dark:text-black dark:hover:bg-stone-800 dark:focus:bg-stone-800 dark:focus:text-white"
 							rows={5}
 							value={message}
 							onChange={(event) => void setMessage(event.target.value)}
