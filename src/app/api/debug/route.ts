@@ -13,6 +13,7 @@ export async function GET(request: NextRequest) {
 		lastName: "Pillai",
 		message: "Hi",
 		zipCode: "12524",
+		name: "flintwater",
 	});
 	return NextResponse.json({ success: true });
 }

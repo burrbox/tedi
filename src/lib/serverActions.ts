@@ -79,17 +79,18 @@ export async function savePetitionSignature(data: {
 	const sheet = doc.sheetsByIndex[0]!; // or use `doc.sheetsById[id]` or `doc.sheetsByTitle[title]`
 	await sheet.addRow({ ...data, createdAt: new Date().toISOString() });
 
-	await db.petitionSignature.create({
-		data: z
-			.object({
-				firstName: z.string().min(1).max(50),
-				lastName: z.string().min(1).max(50),
-				email: z.string().email(),
-				zipCode: z.string().length(5),
-				message: z.string().optional(),
-			})
-			.parse(data),
-	});
+	// await db.petitionSignature.create({
+	// 	data: z
+	// 		.object({
+	// 			firstName: z.string().min(1).max(50),
+	// 			lastName: z.string().min(1).max(50),
+	// 			email: z.string().email(),
+	// 			zipCode: z.string().length(5),
+	// 			message: z.string().optional(),
+	// 			name: z.string(),
+	// 		})
+	// 		.parse(data),
+	// });
 }
 
 export async function saveJoinUsForm(data: {
