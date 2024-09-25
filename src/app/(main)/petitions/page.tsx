@@ -86,7 +86,7 @@ export default async function Petitions() {
 									<h1 className="text-center text-3xl font-semibold text-green-700 dark:text-green-400">
 										{petition.title}
 									</h1>
-									<h2 className="mx-4 whitespace-pre-line pt-6 text-sm text-green-700 md:mx-6 md:text-sm lg:mx-8 lg:text-base dark:text-blue-300">
+									<h2 className="mx-4 whitespace-pre-line pt-6 text-center text-sm text-green-700 md:mx-6 md:text-sm lg:mx-8 lg:text-base dark:text-blue-300">
 										{petition.description}
 									</h2>
 								</div>
