@@ -60,12 +60,12 @@ const jsonLd: WithContext<WebSite> = {
 };
 
 const locations = [
-	{ name: "Hudson Valley", location: [41.5406254, -73.8357815], size: 0.07 },
-	{ name: "Miami", location: [25.7825389, -80.3118589], size: 0.04 },
-	{ name: "Toronto", location: [43.718371, -79.5428628], size: 0.04 },
+	{ name: "Hopewell Junction, NY", location: [41.5406254, -73.8357815], size: 0.07 },
+	{ name: "Miami, FL", location: [25.7825389, -80.3118589], size: 0.04 },
+	{ name: "Toronto, ON", location: [43.718371, -79.5428628], size: 0.04 },
 	{ name: "Verona, NJ", location: [40.83363, -74.2632469], size: 0.04 },
-	{ name: "Warrington, Penn", location: [40.2470657, -75.2037622], size: 0.04 },
-	{ name: "Lakeland", location: [43.0903, -76.2405], size: 0.04 },
+	{ name: "Warrington, PA", location: [40.2470657, -75.2037622], size: 0.04 },
+	{ name: "Lakeland, NY", location: [43.0903, -76.2405], size: 0.04 },
 ] satisfies COBEOptions["markers"] & { name: string }[];
 
 const globeConfig: Partial<COBEOptions> = {

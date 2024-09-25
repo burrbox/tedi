@@ -84,9 +84,9 @@ export default async function Toolkit() {
 								permits, volunteer recruitment strategies, and email templates that you can use to{" "}
 								<span className="text-blue-600 dark:text-blue-400">contact park/town directors</span> about land use.
 							</p>
-							<div className="flex items-center justify-center">
+							<div className="flex">
 								<Link
-									className="w-1/5 rounded-lg bg-green-500 py-3 text-center duration-300 hover:w-1/4 hover:bg-green-400 dark:bg-green-600 dark:hover:bg-green-700"
+									className="rounded-lg bg-green-500 px-5 py-3 text-center duration-300 hover:bg-green-400 hover:px-7 dark:bg-green-600 dark:hover:bg-green-700"
 									href={`https://www.canva.com/design/DAGNVCdAnYI/YQpmkVQrIaY_P0K3t_NXUA/view`}
 									target="_blank"
 								>
@@ -128,9 +128,9 @@ export default async function Toolkit() {
 								<span className="text-blue-600 dark:text-blue-400">email templates</span> for requesting approval and{" "}
 								<span className="text-blue-600 dark:text-blue-400">sample flyers</span> to help promote your drive.
 							</p>
-							<div className="flex items-center justify-center">
+							<div className="flex">
 								<Link
-									className="w-1/5 rounded-lg bg-green-500 py-3 text-center duration-300 hover:w-1/4 hover:bg-green-400 dark:bg-green-600 dark:hover:bg-green-700"
+									className="rounded-lg bg-green-500 px-5 py-3 text-center duration-300 hover:bg-green-400 hover:px-7 dark:bg-green-600 dark:hover:bg-green-700"
 									href={` https://www.canva.com/design/DAGQCx9CWp0/9FyW8cBqiksP8KVfh-HtLg/edit?utm_content=DAGQCx9CWp0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton`}
 									target="_blank"
 								>

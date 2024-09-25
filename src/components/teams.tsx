@@ -33,9 +33,9 @@ export default function Teams({ team = "all" }: { team?: string }) {
 							</Link>
 						</p>
 					</div>
-					<div className={`grow ${team !== "Hudson Valley" && "hidden"}`}>
+					<div className={`grow ${team !== "Hopewell Junction, NY" && "hidden"}`}>
 						<h3 className="py-4 text-center text-2xl font-medium text-green-600 dark:text-green-400">
-							Hudson Valley, New York
+							Hopewell Junction, New York
 						</h3>
 						<p>
 							Our Hopewell Junction community group is our{" "}
@@ -53,7 +53,7 @@ export default function Teams({ team = "all" }: { team?: string }) {
 							height={800}
 						/>
 					</div>
-					<div className={`grow ${team !== "Warrington, Penn" && "hidden"}`}>
+					<div className={`grow ${team !== "Warrington, PA" && "hidden"}`}>
 						<h3 className="py-4 text-center text-2xl font-medium text-green-600 dark:text-green-400">
 							Warrington, Pennslyvania
 						</h3>
@@ -66,7 +66,7 @@ export default function Teams({ team = "all" }: { team?: string }) {
 							height={800}
 						/>
 					</div>
-					<div className={`grow ${team !== "Toronto" && "hidden"}`}>
+					<div className={`grow ${team !== "Toronto, ON" && "hidden"}`}>
 						<h3 className="py-4 text-center text-2xl font-medium text-green-600 dark:text-green-400">
 							Toronto, Canada
 						</h3>
@@ -86,7 +86,7 @@ export default function Teams({ team = "all" }: { team?: string }) {
 							height={800}
 						/>
 					</div>
-					<div className={`grow ${team !== "Miami" && "hidden"}`}>
+					<div className={`grow ${team !== "Miami, FL" && "hidden"}`}>
 						<h3 className="py-4 text-center text-2xl font-medium text-green-600 dark:text-green-400">Miami, Florida</h3>
 						<p>Check out our Miami team!</p>
 						<CloudinaryClientWrapper
@@ -118,7 +118,7 @@ export default function Teams({ team = "all" }: { team?: string }) {
 							height={800}
 						/>
 					</div>
-					<div className={`grow ${team !== "Lakeland" && "hidden"}`}>
+					<div className={`grow ${team !== "Lakeland, NY" && "hidden"}`}>
 						<h3 className="py-4 text-center text-2xl font-medium text-green-600 dark:text-green-400">
 							Lakeland, New York
 						</h3>
