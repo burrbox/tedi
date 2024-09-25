@@ -12,6 +12,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 			{ url: `${env.URL}/signin`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.1 },
 			{ url: `${env.URL}/error`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.1 },
 			{ url: `${env.URL}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
+			{ url: `${env.URL}/campaigns`, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
+			{ url: `${env.URL}/join-us`, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
 		] as MetadataRoute.Sitemap
 	).concat(
 		posts.map((post) => ({
