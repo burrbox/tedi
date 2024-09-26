@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { type Metadata } from "next";
 import { getCldOgImageUrl, getCldImageUrl } from "next-cloudinary";
 import { env } from "@/env";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
@@ -72,11 +72,11 @@ export default async function Campaigns() {
 							</h2>
 							<p className="md:text-lg lg:text-base">
 								Most companies that you order clothing from now are fast fashion companies, meaning they{" "}
-								<span className="font-semibold text-blue-600 dark:text-blue-400">mass produce</span>
-								trendy, cheap clothing that quickly moves from design to retail. Many people have taken to discarding
-								clothing once a trend is over or a certain style is no longer popular, leading to an{" "}
-								<span className="font-semibold text-blue-600 dark:text-blue-400">excessive buildup</span>
-								of textiles in landfills and contributing to the{" "}
+								<span className="font-semibold text-blue-600 dark:text-blue-400">mass produce</span> trendy, cheap
+								clothing that quickly moves from design to retail. Many people have taken to discarding clothing once a
+								trend is over or a certain style is no longer popular, leading to an{" "}
+								<span className="font-semibold text-blue-600 dark:text-blue-400">excessive buildup</span> of textiles in
+								landfills and contributing to the{" "}
 								<span className="font-semibold text-blue-600 dark:text-blue-400">microplastic pollution issue</span>.
 								Read more about the origins of fast fashion here.
 							</p>
