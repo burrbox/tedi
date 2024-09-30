@@ -32,6 +32,7 @@ export default function JoinUsForm() {
 		await saveJoinUsForm({ firstName, lastName, phone, email, address, birthday, gender, team });
 		setIsSubmitting(false);
 		setDone(true);
+		console.log(email);
 	};
 	if (done)
 		return (
@@ -140,6 +141,7 @@ export default function JoinUsForm() {
 						<input
 							className="w-full rounded-md bg-blue-200 p-3 shadow-sm shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-800 dark:hover:bg-stone-700 dark:focus:bg-stone-800 dark:focus:text-white"
 							type="date"
+							required
 							value={birthday}
 							onChange={(event) => void setBirthday(event.target.value)}
 						/>

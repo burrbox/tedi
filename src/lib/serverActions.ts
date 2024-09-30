@@ -115,7 +115,7 @@ export async function saveJoinUsForm(data: {
 	const doc = new GoogleSpreadsheet(env.PETITION_SHEET_ID, serviceAccountAuth);
 	await doc.loadInfo(); // loads document properties and worksheets
 	const sheet = doc.sheetsByIndex[1]!; // or use `doc.sheetsById[id]` or `doc.sheetsByTitle[title]`
-	await sheet.addRow({ ...data, email: session?.user.email ?? "No email", createdAt: new Date().toISOString() });
+	await sheet.addRow({ ...data, createdAt: new Date().toISOString() });
 }
 
 export async function stripeDonation() {

@@ -48,3 +48,6 @@ yarn-error.log*
 # Nix
 /direnv
 /.direnv
+
+# Auto run
+tasks.json
