@@ -31,7 +31,8 @@ export default function Carousel() {
 								width={200}
 								height={400}
 								alt={image}
-								className="object-cover"
+								crop="auto"
+								className="object-cover duration-300 hover:scale-110"
 							/>
 						))}
 					</Marquee>
