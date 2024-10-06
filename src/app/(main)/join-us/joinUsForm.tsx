@@ -43,7 +43,7 @@ export default function JoinUsForm() {
 					</h1>
 					<h2 className="text-wrap text-center text-lg text-blue-700 dark:text-blue-400">
 						Your support will help us create change. <br />
-						Consider{" "}
+						Interested in our Toolkits? Consider{" "}
 						<Link href="/signin" className="text-white underline">
 							creating an account
 						</Link>{" "}
