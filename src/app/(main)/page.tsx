@@ -339,9 +339,9 @@ export default async function Home() {
 								<span className="font-semibold">Hopewell Junction, NY, USA</span> - October 19st 12-4pm @{" "}
 								<Link
 									className="text-blue-500 underline"
-									href="https://www.google.com/maps/place/John+Jay+Senior+High+School/@41.5406254,-73.8357815,17z/https://www.google.com/maps/place/John+Jay+Senior+High+School/@41.5406254,-73.8357815,17z/data=!4m6!3m5!1s0x89dd4818425ae529:0x696af3813e741117!8m2!3d41.5406214!4d-73.8332066!16s%2Fm%2F025wqkv?entry=ttu&g_ep=EgoyMDI0MDkwOC4wIKXMDSoASAFQAw%3D%3D"
+									href="https://www.google.com/maps/place/Hopewell+Recreation+Park/@41.5749365,-73.8121169,15.79z/data=!4m14!1m7!3m6!1s0x89dd4818425ae529:0x696af3813e741117!2sJohn+Jay+Senior+High+School!8m2!3d41.5406214!4d-73.8332066!16s%2Fm%2F025wqkv!3m5!1s0x89dd4742b5ea7787:0x73795bf9d941a3b4!8m2!3d41.5768458!4d-73.804657!16s%2Fg%2F11k61m0mfd?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D"
 								>
-									John Jay HS
+									Hopewell Recreation Park
 								</Link>
 							</li>
 							<li>
