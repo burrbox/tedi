@@ -64,7 +64,7 @@ export default async function Campaigns() {
 						</p>
 					</div>
 				</div>
-				<div className="w-full bg-stone-800 py-6 md:py-12 lg:py-24">
+				<div className="w-full bg-stone-100 py-6 md:py-12 lg:py-24 dark:bg-stone-800">
 					<div className="container grid grid-cols-1 gap-12 px-4 md:px-6 lg:grid-cols-2">
 						<div className="space-y-4">
 							<h2 className="text-xl font-semibold text-green-600 sm:text-2xl md:text-3xl dark:text-green-400">

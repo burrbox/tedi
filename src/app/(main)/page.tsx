@@ -309,7 +309,7 @@ export default async function Home() {
 					from accumulating in landfills.
 				</p>
 				<div className="mx-10 grid flex-col items-center justify-center gap-6 space-y-4 text-center md:grid-cols-2">
-					<div className="mt-5 h-full space-y-2 rounded-xl px-4 py-10 md:px-8 dark:bg-stone-900">
+					<div className="mt-5 h-full space-y-2 rounded-xl bg-stone-200 px-4 py-10 md:px-8 dark:bg-stone-900">
 						<p className="pb-5 text-center text-lg font-medium">
 							<span className="font-semibold text-green-600 dark:text-green-400">Donate</span> old/used clothing at one
 							of our several clothing drive donation bins! If you don’t see a clothing drive in your area, consider
@@ -329,7 +329,7 @@ export default async function Home() {
 							</Link>
 						</div>
 					</div>
-					<div className="mt-5 h-full space-y-2 rounded-xl px-4 py-10 md:px-8 dark:bg-stone-900">
+					<div className="mt-5 h-full space-y-2 rounded-xl bg-stone-200 px-4 py-10 md:px-8 dark:bg-stone-900">
 						<h3 className="text-2xl font-semibold text-green-600 dark:text-green-400">Our Locations</h3>
 						<p className="py-4 text-xl font-medium">
 							Stop by at one of these locations to drop off some clothes and save the environment!
