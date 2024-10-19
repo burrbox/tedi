@@ -195,6 +195,32 @@ export const team = [
 		email: "madeline.cabral08@yahoo.com",
 		instagram: "https://www.instagram.com/madeline__cabral/",
 	},
+	{
+		name: "Edwin Keefner",
+		title: "Blog Writer",
+		location: "Hopewell Junction, USA",
+		image: "TEDI Bio/edwinqueefner",
+		description: `Edwin Keefner has been passionate about the environment since his childhood, camping often and exploring nature. His love for the outdoors inspired him to join TEDI, where he contributes as a blog writer. Edwin hopes to amplify the message of environmental conservation and emphasize the importance of helping the environment. Through his work with TEDI, he aims to inspire others to take action in protecting the planet for future generations.`,
+		email: "edwin1keefner@gmail.com",
+		instagram: "https://www.instagram.com/chemtoolsfanboy2013",
+	},
+	{
+		name: "Devanshi Pandya",
+		title: "Digital Content Creator",
+		location: "Hopewell Junction, USA",
+		image: "TEDI Bio/oj4ezvnjfmoik5upp2ob",
+		description: `Devanshi has always been a curious girl who always found peace of mind in nature. She hopes to make a difference by spreading awareness through different platforms with beautiful posts in hopes to portray the same beauty nature gives us by giving back and protecting nature. TEDI is a great initiative to encourage our generation to care and be more mindful about the environment since it is a beautiful gift to all to enjoy.`,
+		email: "pandyadevanshi07@gmail.com",
+	},
+	{
+		name: "Anthony Giron",
+		title: "Digital Content Creator",
+		location: "Hopewell Junction, USA",
+		image: "TEDI Bio/lfy2hxarbpv2bmzbscny",
+		description: `Anthony is a 3D animator and software engineer fluent in Spanish. His love for red pandas fuels his passion for environmental conservation, and he’s thrilled to join the team in helping TEDI achieve its mission.`,
+		email: "firethekid1021bro@gmail.com",
+		instagram: "https://www.instagram.com/fuzionpanda/",
+	},
 ] as {
 	name: string;
 	title: string;
