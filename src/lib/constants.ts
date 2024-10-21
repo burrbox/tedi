@@ -31,7 +31,7 @@ export const directors = [
 	{
 		name: "Karen Peng",
 		title: "Campaign Director",
-		location: "Toronto, Ontario, Canada",
+		location: "Toronto, ON, Canada",
 		image: "TEDI Bio/xejrbnm0k1loivohupbx",
 		description: `Karen has always been intrigued by forest ecosystems and how they sustain themselves. She is fascinated by environmental policy and advocating for sustainability in developing cities. She joined TEDI to express her passion for environmental science and to meet likeminded peers who also hope to solve current environmental issues.`,
 		email: "Karen.penggg@gmail.com",
@@ -50,11 +50,22 @@ export const directors = [
 	{
 		name: "Emilia Lugo",
 		title: "Fundraising Director",
-		location: "Miami, Florida, USA",
+		location: "Miami, FL, USA",
 		image: "TEDI Bio/bu3aynqhs696kfeayykf",
 		description: `Emily has always been passionate about preserving the Earth and she is especially interested in the use of technology to solve current environmental issues. Her interest began in school, when she learned about how ecosystems function as well as how pollution harms these systems. This is when she began getting involved. She knew that TEDI was something she wanted to be a part of because of their genuine interest in protecting the environment, and she hopes to use her voice to spread awareness.`,
 		email: "emilymlugo2007@gmail.com",
 		instagram: "https://www.instagram.com/emilia.lugoo",
+	},
+	{
+		name: "Hiroyuki Sakuma",
+		title: "Senior Director of Website Development",
+		location: "Hopewell Junction, NY, USA",
+		image: "TEDI Bio/rainbow-hiro",
+		description: `Hiroyuki speaks Japanese with a native proficiency and is interested in robotics, computer science, and mathematics. He is passionate about environmental conservation and is excited to use his skills to help TEDI achieve its mission.`,
+		email: "hiroyuki.sakuma1@gmail.com",
+		twitter: "https://www.twitter.com/hryksakuma",
+		instagram: "https://www.instagram.com/hryk.sakuma",
+		github: "https://github.com/HiroDookie/",
 	},
 	{
 		name: "Nash Pillai",
@@ -68,15 +79,13 @@ export const directors = [
 		github: "https://github.com/nash-pillai/",
 	},
 	{
-		name: "Hiroyuki Sakuma",
-		title: "Senior Director of Website Development",
-		location: "Hopewell Junction, NY, USA",
-		image: "TEDI Bio/rainbow-hiro",
-		description: `Hiroyuki speaks Japanese with a native proficiency and is interested in robotics, computer science, and mathematics. He is passionate about environmental conservation and is excited to use his skills to help TEDI achieve its mission.`,
-		email: "hiroyuki.sakuma1@gmail.com",
-		twitter: "https://www.twitter.com/hryksakuma",
-		instagram: "https://www.instagram.com/hryk.sakuma",
-		github: "https://github.com/HiroDookie/",
+		name: "Jude Ramsey",
+		title: "Networking Director",
+		location: "Omaha, NE, USA",
+		image: "TEDI Bio/jqvcfnz8fmaeoekuzifa",
+		description: `Jude has maintained a profound interest in the natural world and its interactions with human development. Specifically, he finds himself drawn to fields like sustainable agriculture, environmental toxicology, and natural resource management. As he pursues higher education, Jude hopes to expand upon these interests and their applications in the world of veterinary medicine. He joined TEDI to connect with like-minded individuals and to work to make change on a global scale.`,
+		email: "jude.n.ramsey@gmail.com",
+		instagram: "https://www.instagram.com/judenelsen/",
 	},
 ] as {
 	name: string;
@@ -162,7 +171,7 @@ export const team = [
 	{
 		name: "Cassidy Fisher",
 		title: "Blog Writer",
-		location: "Warrington, Pennsylvania, USA",
+		location: "Warrington, PA, USA",
 		image: "TEDI Bio/uttowv3dxrxhufp1ophz",
 		description: `Cassidy is passionate about the environment and studying the impacts of changes in the environment on human health and wellbeing. She has conducted extensive research on environmental inequities in minority communities and joined TEDI to raise awareness of these inequities and other environmental issues.`,
 		email: "cassyfish2025@gmail.com",
@@ -180,7 +189,7 @@ export const team = [
 	{
 		name: "Alexa Segovia",
 		title: "Blog Editor",
-		location: "New York City, New York, USA",
+		location: "New York City, NY, USA",
 		image: "TEDI Bio/oaj5yxnnzq9yuamerisr",
 		description: `Alexa has always has a strong interest in environmental conservation and ensuring a better future for generations to come. She has a special passion for animals, especially pandas. She wants to pursue a degree in biology and study ways in which we can help our environment thrive. TEDI is a great way to spread awareness and motivate  others to take action in order to make the world a better place!`,
 		email: "asegoviams101@gmail.com",
@@ -189,7 +198,7 @@ export const team = [
 	{
 		name: "Madeline Cabral",
 		title: "Blog Editor",
-		location: "Taunton, Massachusetts, USA",
+		location: "Taunton, MA, USA",
 		image: "madeline_pvpjea",
 		description: `Madeline’s love for the environment began at a young age. She is an aspiring hydrologist who enjoys studying water and soil sciences. She has seen how pollution and negligence affect her local watershed and hopes to help spread awareness about current environmental issues through TEDI.`,
 		email: "madeline.cabral08@yahoo.com",
@@ -198,7 +207,7 @@ export const team = [
 	{
 		name: "Edwin Keefner",
 		title: "Blog Writer",
-		location: "Hopewell Junction, USA",
+		location: "Hopewell Junction, NY, USA",
 		image: "TEDI Bio/edwinqueefner",
 		description: `Edwin Keefner has been passionate about the environment since his childhood, camping often and exploring nature. His love for the outdoors inspired him to join TEDI, where he contributes as a blog writer. Edwin hopes to amplify the message of environmental conservation and emphasize the importance of helping the environment. Through his work with TEDI, he aims to inspire others to take action in protecting the planet for future generations.`,
 		email: "edwin1keefner@gmail.com",
@@ -207,7 +216,7 @@ export const team = [
 	{
 		name: "Devanshi Pandya",
 		title: "Digital Content Creator",
-		location: "Hopewell Junction, USA",
+		location: "Hopewell Junction, NY, USA",
 		image: "TEDI Bio/oj4ezvnjfmoik5upp2ob",
 		description: `Devanshi has always been a curious girl who always found peace of mind in nature. She hopes to make a difference by spreading awareness through different platforms with beautiful posts in hopes to portray the same beauty nature gives us by giving back and protecting nature. TEDI is a great initiative to encourage our generation to care and be more mindful about the environment since it is a beautiful gift to all to enjoy.`,
 		email: "pandyadevanshi07@gmail.com",
@@ -215,7 +224,7 @@ export const team = [
 	{
 		name: "Anthony Giron",
 		title: "Digital Content Creator",
-		location: "Hopewell Junction, USA",
+		location: "Hopewell Junction, NY, USA",
 		image: "TEDI Bio/lfy2hxarbpv2bmzbscny",
 		description: `Anthony is a 3D animator and software engineer fluent in Spanish. His love for red pandas fuels his passion for environmental conservation, and he’s thrilled to join the team in helping TEDI achieve its mission.`,
 		email: "firethekid1021bro@gmail.com",
@@ -224,7 +233,7 @@ export const team = [
 	{
 		name: "Sally Liu",
 		title: "Campaign Specialist",
-		location: "Vancouver, Canada",
+		location: "Vancouver, BC, Canada",
 		image: "TEDI Bio/czv4kdxgkiqdfq6omco2",
 		description: `Sally is always passionate about environmental conservation. As a second-year student majoring in Environmental and Sustainability Studies, she hopes to make a meaningful impact by promoting sustainability, justice, and equality. She joined TEDI to gain hands-on experience in addressing real-world environmental challenges and to contribute to making the world a better place for future generations.`,
 		email: "cheliu2005@outlook.com",
