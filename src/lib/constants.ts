@@ -217,7 +217,7 @@ export const team = [
 		name: "Devanshi Pandya",
 		title: "Digital Content Creator",
 		location: "Hopewell Junction, NY, USA",
-		image: "TEDI Bio/qvwfme5kuwwzvu9hkk4e",
+		image: "TEDI Bio/ypnqqxrnnn4a0bdaduwi",
 		description: `Devanshi has always been a curious girl who always found peace of mind in nature. She hopes to make a difference by spreading awareness through different platforms with beautiful posts in hopes to portray the same beauty nature gives us by giving back and protecting nature. TEDI is a great initiative to encourage our generation to care and be more mindful about the environment since it is a beautiful gift to all to enjoy.`,
 		email: "pandyadevanshi07@gmail.com",
 	},
