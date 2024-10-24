@@ -9,6 +9,8 @@ import type { WebSite, WithContext } from "schema-dts";
 import { type COBEOptions } from "cobe";
 import Globe from "@/components/magicui/globe";
 import Teams from "@/components/teams";
+import Confetti from "react-confetti";
+import Birthday from "@/components/birthday";
 
 export const metadata: Metadata = {
 	title: "Home",
@@ -84,6 +86,7 @@ export default async function Home() {
 	return (
 		<div className="flex min-h-dvh flex-col">
 			<JsonLd data={jsonLd} />
+			<Birthday />
 			<section
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/oh93nln39npdtzsyettf" })})` }}
 				className="flex min-h-[70vh] w-screen bg-cover bg-fixed bg-center bg-no-repeat py-12 md:pb-20 md:pt-32 lg:pt-40"
