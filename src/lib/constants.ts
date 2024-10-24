@@ -151,15 +151,6 @@ export const team = [
 		instagram: "https://www.instagram.com/taekwondo.sushi/",
 	},
 	{
-		name: "Charlotte North",
-		title: "Digital Creator",
-		location: "Verona, NJ, USA",
-		image: "TEDI Bio/vsn2tsvk0cparotcqdm0",
-		description: `Charlotte’s passion for environmental science started as a kid when she lived in Oregon. She was surrounded by people who felt as passionately about the outdoors as she did. This summer she spent weekdays volunteering for local youth programs to help educate young children about the environment. TEDI is an opportunity for her to continue doing her part to help the environment!`,
-		email: "north.c.rose@gmail.com",
-		instagram: "https://www.instagram.com/charlottenorthh/",
-	},
-	{
 		name: "Ashley Curtiss",
 		title: "Digital Creator",
 		location: "Hopewell Junction, NY, USA",
