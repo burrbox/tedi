@@ -191,10 +191,10 @@ export default async function Home() {
 									Join the TEDI team
 								</Link>
 								<Link
-									href="/donate"
+									href="https://www.instagram.com/environmentaldefenseinitiative/"
 									className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-8 text-sm font-medium text-white shadow-xl duration-300 hover:bg-blue-700"
 								>
-									Donate to support our cause
+									Check out our social media
 								</Link>
 							</div>
 						</div>

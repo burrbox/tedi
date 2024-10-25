@@ -104,16 +104,6 @@ export const directors = [
 
 export const team = [
 	{
-		name: "Kailey Fitzgerald",
-		title: "Campaign Specialist & TikTok Manager",
-		location: "Hopewell Junction, NY, USA",
-		image: "TEDI Bio/byugrzyf3ozegsehl1ay",
-		description: `Kailey has always seen the beauty of our world and is extremely passionate about preserving it. As a kid she was fascinated by nonfiction books about sea creatures and dinosaurs and would go on nature walks during recess at school. She joined TEDI because it allows her to use her voice, regardless of her age, to make a difference in this world.`,
-		email: "kaileyfitzgerald102@gmail.com",
-		instagram: "https://www.instagram.com/kaileyfitzgerald7/",
-		tiktok: "https://www.tiktok.com/@buster_0924",
-	},
-	{
 		name: "Charlotte Wang",
 		title: "Instagram Manager & Blog Editor",
 		location: "Stormville, NY, USA",
@@ -214,7 +204,7 @@ export const team = [
 	},
 	{
 		name: "Anthony Giron",
-		title: "Digital Content Creator",
+		title: "Video Editor",
 		location: "Hopewell Junction, NY, USA",
 		image: "TEDI Bio/lfy2hxarbpv2bmzbscny",
 		description: `Anthony is a 3D animator and software engineer fluent in Spanish. His love for red pandas fuels his passion for environmental conservation, and he’s thrilled to join the team in helping TEDI achieve its mission.`,
