@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { type Metadata } from "next";
 import { env } from "@/env";
-import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
+import { getCldImageUrl } from "next-cloudinary";
 import type { WebPage, WithContext } from "schema-dts";
 import { JsonLd } from "@/components/jsonLd";
 import JoinUsForm from "./joinUsForm";

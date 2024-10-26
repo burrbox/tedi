@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { CloudinaryClientWrapper } from "./cloudinaryClientWrapper";
-import { CldImage } from "next-cloudinary";
 
 export default function Teams({ team = "all" }: { team?: string }) {
 	return (

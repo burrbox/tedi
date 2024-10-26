@@ -103,7 +103,7 @@ export async function saveJoinUsForm(data: {
 	gender: string;
 	team: boolean;
 }) {
-	const session = await auth();
+	// const session = await auth();
 	// if (!session) redirect("/signin");
 
 	const serviceAccountAuth = new JWT({

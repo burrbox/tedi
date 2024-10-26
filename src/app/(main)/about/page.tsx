@@ -5,7 +5,7 @@ import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { GithubIcon, InstagramIcon, LinkedInIcon, TikTokIcon, TwitterXIcon } from "@/components/icons";
 import { env } from "@/env";
 import { type Metadata } from "next";
-import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
+import { getCldImageUrl } from "next-cloudinary";
 import type { WebPage, WithContext } from "schema-dts";
 import { JsonLd } from "@/components/jsonLd";
 

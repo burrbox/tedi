@@ -8,8 +8,7 @@ import Link from "next/link";
 import type { WebSite, WithContext } from "schema-dts";
 import { type COBEOptions } from "cobe";
 import Globe from "@/components/magicui/globe";
-import Teams from "@/components/teams";
-import Birthday from "@/components/birthday";
+// import Birthday from "@/components/birthday";
 
 export const metadata: Metadata = {
 	title: "Home",
