@@ -219,6 +219,16 @@ export const team = [
 		description: `Sally is always passionate about environmental conservation. As a second-year student majoring in Environmental and Sustainability Studies, she hopes to make a meaningful impact by promoting sustainability, justice, and equality. She joined TEDI to gain hands-on experience in addressing real-world environmental challenges and to contribute to making the world a better place for future generations.`,
 		email: "cheliu2005@outlook.com",
 	},
+	{
+		name: "Sophia Seifert",
+		title: "Digital Creator",
+		location: "Hopewell Junction, NY, USA",
+		image: "TEDI Bio/wkfk8rmybr4aiprqnbmt",
+		description: `Sophia has been passionate about her love for the environment from a very young age. From her curiosity with animals to the countless house plants she has taken care of, yet has failed to keep alive for very long. She has always wanted to take action to spread these interests and hopefully get others to care about the environment as much as she does. Through becoming a member of TEDI she hopes to collaborate with like minded people, bring awareness to the state of our Earth, and create change so that we can improve it!`,
+		email: "sophial2027@icloud.com",
+		instagram: "https://www.instagram.com/sophia_seif/",
+		tiktok: "https://www.tiktok.com/@soph_seif6217",
+	},
 ] as {
 	name: string;
 	title: string;
