@@ -12,6 +12,12 @@ const config = {
 	rewrites: async () => [
 		{ source: "/rss.xml", destination: "/api/rss" },
 		{ source: "/donate", destination: "/api/donate" },
+		// WARNING: Move this to redirects if too much bandwidth is used
+		{
+			source: "/files/:path*",
+			destination: "https://res.cloudinary.com/mozzarella-tedi/image/upload/v1730714611/:path*",
+			permanent: false,
+		},
 	],
 	redirects: async () => [
 		{

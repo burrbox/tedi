@@ -87,7 +87,7 @@ export default async function Toolkit() {
 							<div className="flex">
 								<Link
 									className="rounded-lg bg-green-500 px-5 py-3 text-center duration-300 hover:scale-110 hover:bg-green-400 dark:bg-green-600 dark:hover:bg-green-700"
-									href={`https://www.canva.com/design/DAGNVCdAnYI/YQpmkVQrIaY_P0K3t_NXUA/view`}
+									href={`https://drive.google.com/file/d/1GubFFA0y5VRbpw8dsYmieU9Wx3RBjiHp/view`}
 									target="_blank"
 								>
 									Download
@@ -131,7 +131,7 @@ export default async function Toolkit() {
 							<div className="flex">
 								<Link
 									className="rounded-lg bg-green-500 px-5 py-3 text-center duration-300 hover:scale-110 hover:bg-green-400 dark:bg-green-600 dark:hover:bg-green-700"
-									href={` https://www.canva.com/design/DAGQCx9CWp0/9FyW8cBqiksP8KVfh-HtLg/edit?utm_content=DAGQCx9CWp0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton`}
+									href={`https://drive.google.com/file/d/1AZ0b0a1lAFLh9--MTi_4799lvlwKkv8Z/view`}
 									target="_blank"
 								>
 									Download
@@ -228,7 +228,7 @@ export default async function Toolkit() {
 							<div className="flex">
 								<Link
 									className="rounded-lg bg-green-500 px-5 py-3 text-center duration-300 hover:scale-110 hover:bg-green-400 dark:bg-green-600 dark:hover:bg-green-700"
-									href={` https://www.canva.com/design/DAGPpuL1_ts/5Dcos8JEWNvBtO9pxKs4zw/edit?utm_content=DAGPpuL1_ts&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton`}
+									href={`/files/toolkit/kids.pdf`}
 									target="_blank"
 								>
 									Download
