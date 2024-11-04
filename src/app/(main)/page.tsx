@@ -31,7 +31,7 @@ const jsonLd: WithContext<WebSite> = {
 	alternateName: ["TEDI"],
 	url: env.URL,
 	potentialAction: [
-		{ "@type": "DonateAction", target: { "@type": "EntryPoint", urlTemplate: `${env.URL}/donate` } },
+		// { "@type": "DonateAction", target: { "@type": "EntryPoint", urlTemplate: `${env.URL}/donate` } },
 		{ "@type": "JoinAction", target: { "@type": "EntryPoint", urlTemplate: `${env.URL}/join` } },
 		// { "@type": "SubscribeAction" },
 	],
@@ -108,7 +108,7 @@ export default async function Home() {
 										<Link href="/join-us">Get Involved</Link>
 									</button>
 									<button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700">
-										<Link href="/donate">Donate</Link>
+										<Link href="/petitions">Sign a Petition</Link>
 									</button>
 								</div>
 							</div>

@@ -8,7 +8,7 @@ The website is hosted with vercel at [tedinitiative.org](https://www.tedinitiati
 
 You can join us though the [form on the website](https://www.tedinitiative.org/join-us). You can also contact us at [environmentaldefenseinitiative@gmail.com](mailto:environmentaldefenseinitiative@gmail.com). We are always looking for new members to help us write articles ([our blog](https://www.tedinitiative.org/blog)), create social media content, and help further our mission.
 
-You can learn more about our mission and goals on the [about page](https://www.tedinitiative.org/about) and support us by [donating](https://www.tedinitiative.org/donate) and signing our [petitions](https://www.tedinitiative.org/petition).
+You can learn more about our mission and goals on the [about page](https://www.tedinitiative.org/about) and support us by signing our [petitions](https://www.tedinitiative.org/petition).
 
 ### Some of the technologies we use:
 
