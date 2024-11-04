@@ -60,7 +60,7 @@ export default function SignIn({ searchParams }: { searchParams: Record<string, 
 
 					{/* Form */}
 					<div className="mx-auto max-w-sm">
-						{/* <form onSubmit={handleSubmit}>
+						<form onSubmit={handleSubmit}>
 							<div className="space-y-4">
 								<div>
 									<label className="mb-1 block text-sm font-medium text-slate-400" htmlFor="email">
@@ -86,13 +86,13 @@ export default function SignIn({ searchParams }: { searchParams: Record<string, 
 									{loading ? <Loading /> : "Sign In"}
 								</button>
 							</div>
-						</form> */}
+						</form>
 						{/* Divider */}
-						{/* <div className="my-6 flex items-center">
+						<div className="my-6 flex items-center">
 							<div className="mr-3 grow border-t border-slate-800 dark:border-gray-400" aria-hidden="true" />
 							<div className="text-sm italic text-slate-500 dark:text-gray-300">Or</div>
 							<div className="ml-3 grow border-t border-slate-800 dark:border-gray-400" aria-hidden="true" />
-						</div> */}
+						</div>
 						{/* Social login */}
 						<button
 							className="btn-sm relative my-3 flex w-full bg-gray-200 text-sm text-white after:flex-1"

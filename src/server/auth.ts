@@ -41,7 +41,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 			from: "signin@resend.dev",
 			async sendVerificationRequest({ identifier: email, url }) {
 				const result = await resend.emails.send({
-					from: "TEDI <signin@resend.dev>",
+					from: "TEDI <signin@tedinitiative.org>",
 					to: [email],
 					subject: "Sign in to TEDI",
 					react: SignInEmail({ url }),
