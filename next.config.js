@@ -15,8 +15,7 @@ const config = {
 		// WARNING: Move this to redirects if too much bandwidth is used
 		{
 			source: "/files/:path*",
-			destination: "https://res.cloudinary.com/mozzarella-tedi/image/upload/v1730714611/:path*",
-			permanent: false,
+			destination: "https://res.cloudinary.com/mozzarella-tedi/image/upload/:path*",
 		},
 	],
 	redirects: async () => [
