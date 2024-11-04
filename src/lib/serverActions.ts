@@ -36,6 +36,17 @@ export async function getPost(slug: string) {
 
 export async function addEmailSubscription(email: string) {
 	await db.subscription.create({ data: { email: z.string().email().parse(email) } });
+
+	const serviceAccountAuth = new JWT({
+		email: env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+		key: env.GOOGLE_PRIVATE_KEY.replace("\\n", "\n"),
+		scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+	});
+
+	const doc = new GoogleSpreadsheet(env.PETITION_SHEET_ID, serviceAccountAuth);
+	await doc.loadInfo(); // loads document properties and worksheets
+	const sheet = doc.sheetsByIndex[2]!; // or use `doc.sheetsById[id]` or `doc.sheetsByTitle[title]`
+	await sheet.addRow({ email, createdAt: new Date().toISOString() });
 }
 
 export async function upsertArticle(

@@ -4,9 +4,11 @@ import { EnvelopeIcon, RssIcon } from "@heroicons/react/24/solid";
 import { addEmailSubscription } from "@/lib/serverActions";
 import { useState } from "react";
 import { InstagramIcon, LinkedInIcon, TikTokIcon, TwitterXIcon, YouTubeIcon } from "./icons";
+import Link from "next/link";
 
 export default function Footer() {
 	const [email, setEmail] = useState("");
+	const [done, setDone] = useState(false);
 	return (
 		<footer className="relative bg-white dark:bg-stone-950">
 			<div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -44,31 +46,41 @@ export default function Footer() {
 								Subscribe to our monthly membership emails!
 							</h3>
 						</div>
-						<form
-							name="email-subscription"
-							onSubmit={async (e) => {
-								e.preventDefault();
-								await addEmailSubscription(email);
-							}}
-						>
-							<label className="py-2 text-blue-600 dark:text-blue-300">
-								Email*
-								<div className="flex w-full border-b-4 border-b-green-600 py-1 text-xl text-green-600 md:w-1/2 dark:text-green-500">
-									<input
-										id="email"
-										name="email"
-										type="email"
-										className="size-3/4 border-none bg-transparent text-blue-700 focus:outline-none"
-										placeholder="Your email"
-										value={email}
-										onChange={(e) => setEmail(e.target.value)}
-									/>
-									<label className="inline w-1/4 text-center">
-										<button type="submit">Subscribe</button>
-									</label>
-								</div>
-							</label>
-						</form>
+						{!done ? (
+							<form
+								name="email-subscription"
+								onSubmit={async (e) => {
+									e.preventDefault();
+									await addEmailSubscription(email);
+									setDone(true);
+								}}
+							>
+								<label className="py-2 text-blue-600 dark:text-blue-300">
+									Email*
+									<div className="flex w-full border-b-4 border-b-green-600 py-1 text-xl text-green-600 md:w-1/2 dark:text-green-500">
+										<input
+											id="email"
+											name="email"
+											type="email"
+											className="size-3/4 border-none bg-transparent text-blue-700 focus:outline-none"
+											placeholder="Your email"
+											value={email}
+											onChange={(e) => setEmail(e.target.value)}
+										/>
+										<label className="inline w-1/4 text-center">
+											<button type="submit">Subscribe</button>
+										</label>
+									</div>
+								</label>
+							</form>
+						) : (
+							<p className="text-wrap text-lg text-green-500">
+								Thanks for subscribing! Consider{" "}
+								<Link href="/join-us" className="underline">
+									joining our team?
+								</Link>
+							</p>
+						)}
 					</div>
 					<div className="md:flex md:items-center md:justify-between">
 						{/* Social links */}
@@ -164,7 +176,7 @@ export default function Footer() {
 
 						{/* Copyrights note */}
 						<div className="mr-4 text-sm text-gray-600 dark:text-gray-400">
-							&copy; Nash and Hiro. All rights reserved.
+							&copy; Hiro and Nash. All rights reserved.
 						</div>
 					</div>
 				</div>
