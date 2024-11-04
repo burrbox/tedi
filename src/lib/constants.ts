@@ -116,7 +116,7 @@ export const team = [
 	},
 	{
 		name: "Ann Catechis",
-		title: "Website Manager",
+		title: "Petition Specialist",
 		location: "Lakeland, NY, USA",
 		image: "TEDI Bio/qpvh1kz9lkhcnn4xw7af",
 		description: `Ann has always been passionate about preserving the Earth. From learning about recycling as a child, to studying how climate change affects marine species in the ocean, Ann knew TEDI was something she wanted to be a part of. Through TEDI, Ann is able to use her voice to express the increasing need for change to preserve the Earth for future generations.`,

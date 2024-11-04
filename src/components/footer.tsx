@@ -53,7 +53,7 @@ export default function Footer() {
 						>
 							<label className="py-2 text-blue-600 dark:text-blue-300">
 								Email*
-								<div className="flex w-1/2 border-b-4 border-b-green-600 py-1 text-xl text-green-600 dark:text-green-500">
+								<div className="flex w-full border-b-4 border-b-green-600 py-1 text-xl text-green-600 md:w-1/2 dark:text-green-500">
 									<input
 										id="email"
 										name="email"
