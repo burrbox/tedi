@@ -51,8 +51,8 @@ export default function Footer() {
 								name="email-subscription"
 								onSubmit={async (e) => {
 									e.preventDefault();
-									await addEmailSubscription(email);
 									setDone(true);
+									await addEmailSubscription(email);
 								}}
 							>
 								<label className="py-2 text-blue-600 dark:text-blue-300">
