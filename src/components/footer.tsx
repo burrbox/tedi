@@ -65,6 +65,7 @@ export default function Footer() {
 											className="size-3/4 border-none bg-transparent text-blue-700 focus:outline-none"
 											placeholder="Your email"
 											value={email}
+											required
 											onChange={(e) => setEmail(e.target.value)}
 										/>
 										<label className="inline w-1/4 text-center">

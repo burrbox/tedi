@@ -3,6 +3,7 @@ import { getCldOgImageUrl, getCldImageUrl } from "next-cloudinary";
 import { env } from "@/env";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import Link from "next/link";
+import CampaignsCarousel from "./campaignsCarousel";
 
 export const metadata: Metadata = {
 	title: "Campaigns",
@@ -116,7 +117,7 @@ export default async function Campaigns() {
 								Locations
 							</h2>
 							<p className="md:text-lg lg:text-base">
-								<span className="font-semibold">Hopewell Junction, New York, USA</span> - October 19st 12-4pm @{" "}
+								{/* <span className="font-semibold">Hopewell Junction, New York, USA</span> - October 19st 12-4pm @{" "}
 								<Link
 									className="text-blue-500 underline"
 									href="https://www.google.com/maps/place/Hopewell+Recreation+Park/@41.5749365,-73.8121169,15.79z/data=!4m14!1m7!3m6!1s0x89dd4818425ae529:0x696af3813e741117!2sJohn+Jay+Senior+High+School!8m2!3d41.5406214!4d-73.8332066!16s%2Fm%2F025wqkv!3m5!1s0x89dd4742b5ea7787:0x73795bf9d941a3b4!8m2!3d41.5768458!4d-73.804657!16s%2Fg%2F11k61m0mfd?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D"
@@ -125,7 +126,7 @@ export default async function Campaigns() {
 								</Link>
 								<br />
 								<span className="font-semibold">Shrub Oak, New York, USA</span> - donation bin addresses TBD
-								<br /> <span className="font-semibold">Verona, New Jersey, USA</span> - donation bin addresses TBD
+								<br /> <span className="font-semibold">Verona, New Jersey, USA</span> - donation bin addresses TBD */}
 								<br /> <span className="font-semibold">Toronto, Ontario, Canada</span> - donation bin addresses TBD
 								<br /> <span className="font-semibold">Miami, Florida, USA</span> - donation bin addresses TBD
 							</p>
@@ -133,6 +134,7 @@ export default async function Campaigns() {
 					</div>
 				</div>
 			</section>
+			<CampaignsCarousel />
 		</>
 	);
 }

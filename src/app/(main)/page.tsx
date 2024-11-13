@@ -336,7 +336,7 @@ export default async function Home() {
 							Stop by at one of these locations to drop off some clothes and save the environment!
 						</p>
 						<ul className="list-inside list-disc text-left md:pl-12">
-							<li>
+							{/* <li>
 								<span className="font-semibold">Hopewell Junction, NY, USA</span> - October 19st 12-4pm @{" "}
 								<Link
 									className="text-blue-500 underline"
@@ -350,7 +350,7 @@ export default async function Home() {
 							</li>
 							<li>
 								<span className="font-semibold">Verona, NJ, USA</span> - donation bin addresses TBD
-							</li>
+							</li> */}
 							<li>
 								<span className="font-semibold">Toronto, ON, Canada</span> - donation bin addresses TBD
 							</li>
