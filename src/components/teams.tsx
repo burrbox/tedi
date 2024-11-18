@@ -96,7 +96,7 @@ export default function Teams({ team = "all" }: { team?: string }) {
 							height={800}
 						/>
 					</div>
-					<div className={`grow ${team !== "Verona, NJ" && "hidden"}`}>
+					{/* <div className={`grow ${team !== "Verona, NJ" && "hidden"}`}>
 						<h3 className="py-4 text-center text-2xl font-medium text-green-600 dark:text-green-400">
 							Verona, New Jersey
 						</h3>
@@ -116,7 +116,7 @@ export default function Teams({ team = "all" }: { team?: string }) {
 							width={1000}
 							height={800}
 						/>
-					</div>
+					</div> */}
 					<div className={`grow ${team !== "Lakeland, NY" && "hidden"}`}>
 						<h3 className="py-4 text-center text-2xl font-medium text-green-600 dark:text-green-400">
 							Lakeland, New York
