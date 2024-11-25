@@ -193,13 +193,9 @@ export default function AboutPage() {
 						))}
 					</div>
 					<h2 className="mb-8 text-center text-3xl font-bold text-green-700 dark:text-green-500" data-aos="fade-in">
-						Meet Our Dedicated Creators
+						Meet Our Team
 					</h2>
 					<hr className="mx-auto mb-8 w-1/4 justify-center border-2 border-green-500" data-aos="fade-in" />
-					{/* <h3 className="mb-8 text-center text-2xl font-bold text-green-700 dark:text-green-500">
-						Our Dedicated Creators
-					</h3>
-					<hr className="mx-auto w-1/12 justify-center border-2 border-green-500" /> */}
 					<div className="grid gap-8 pt-5 md:grid-cols-2 md:pt-7 lg:grid-cols-3 lg:pt-10">
 						{team.map((member) => (
 							<div
