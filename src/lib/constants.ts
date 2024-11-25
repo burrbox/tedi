@@ -105,7 +105,7 @@ export const directors = [
 export const team = [
 	{
 		name: "Charlotte Wang",
-		title: "Instagram Manager & Blog Editor",
+		title: "Video Content Creator",
 		location: "Stormville, NY, USA",
 		image: "TEDI Bio/zv0p0chdbfkebqev2hpm",
 		description: `Charlotte is passionate about the environment and finding ways to reduce humanity’s negative impact upon it. She is currently conducting research in school related to bioplastics as part of her mission to do so. She joined TEDI because it provides a platform for spreading awareness and information to other people, and there is always strength in numbers when creating change.`,
