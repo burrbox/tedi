@@ -128,7 +128,7 @@ export default async function Campaigns() {
 								<span className="font-semibold">Shrub Oak, New York, USA</span> - donation bin addresses TBD
 								<br /> <span className="font-semibold">Verona, New Jersey, USA</span> - donation bin addresses TBD */}
 								<br /> <span className="font-semibold">Toronto, Ontario, Canada</span> - donation bin addresses TBD
-								<br /> <span className="font-semibold">Miami, Florida, USA</span> - donation bin addresses TBD
+								{/* <br /> <span className="font-semibold">Miami, Florida, USA</span> - donation bin addresses TBD */}
 							</p>
 						</div>
 					</div>
