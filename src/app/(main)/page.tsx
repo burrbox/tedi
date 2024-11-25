@@ -51,7 +51,7 @@ const jsonLd: WithContext<WebSite> = {
 		sameAs: [
 			"https://www.linkedin.com/company/the-environmental-defense-initiative/posts",
 			"https://www.instagram.com/environmentaldefenseinitiative/",
-			"https://www.youtube.com/channel/UCLJIczzKZWeqsa2Pmg55F6g",
+			"https://www.youtube.com/@EnvironmentalDefenseInitiative",
 			"https://twitter.com/TEDIactivism",
 			"https://www.tiktok.com/@tedi_youth",
 			"https://medium.com/@environmentaldefenseinitiative",
@@ -394,7 +394,7 @@ export default async function Home() {
 					</div>
 					<div className="flex flex-col gap-2 min-[400px]:flex-row">
 						<Link
-							href="https://www.youtube.com/channel/UCLJIczzKZWeqsa2Pmg55F6g"
+							href="https://www.youtube.com/@EnvironmentalDefenseInitiative"
 							className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-green-700"
 						>
 							See Our Past Webinars

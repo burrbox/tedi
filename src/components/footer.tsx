@@ -119,7 +119,7 @@ export default function Footer() {
 							<li className="ml-4">
 								<a
 									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
-									href="https://www.youtube.com/channel/UCLJIczzKZWeqsa2Pmg55F6g"
+									href="https://www.youtube.com/@EnvironmentalDefenseInitiative"
 									target="_blank"
 									aria-label="Youtube"
 								>

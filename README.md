@@ -23,7 +23,7 @@ You can learn more about our mission and goals on the [about page](https://www.t
 - [Twitter](https://twitter.com/TEDIactivism)
 - [Facebook](https://www.facebook.com/tedinitiative)
 - [LinkedIn](https://www.linkedin.com/company/the-environmental-defense-initiative/posts)
-- [YouTube](https://www.youtube.com/channel/UCLJIczzKZWeqsa2Pmg55F6g)
+- [YouTube](https://www.youtube.com/@EnvironmentalDefenseInitiative)
 - [TikTok](https://www.tiktok.com/@tedi_youth)
 
 ## Some Screenshots of the site

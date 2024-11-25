@@ -179,7 +179,7 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 											</Link>
 											<Link
 												className="w-32 rounded-xl bg-green-600 py-2 text-center duration-300 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800"
-												href={"https://www.youtube.com/channel/UCLJIczzKZWeqsa2Pmg55F6g"}
+												href={"https://www.youtube.com/@EnvironmentalDefenseInitiative"}
 											>
 												YouTube
 											</Link>
