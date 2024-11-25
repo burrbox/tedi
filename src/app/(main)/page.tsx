@@ -354,9 +354,9 @@ export default async function Home() {
 							<li>
 								<span className="font-semibold">Toronto, ON, Canada</span> - donation bin addresses TBD
 							</li>
-							<li>
+							{/* <li>
 								<span className="font-semibold">Miami, FL, USA</span> - donation bin addresses TBD
-							</li>
+							</li> */}
 						</ul>
 					</div>
 				</div>
