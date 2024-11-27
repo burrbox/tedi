@@ -8,6 +8,7 @@ import Link from "next/link";
 import type { WebSite, WithContext } from "schema-dts";
 import { type COBEOptions } from "cobe";
 import Globe from "@/components/magicui/globe";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 // import Birthday from "@/components/birthday";
 
 export const metadata: Metadata = {
@@ -352,9 +353,34 @@ export default async function Home() {
 							<li>
 								<span className="font-semibold">Verona, NJ, USA</span> - donation bin addresses TBD
 							</li> */}
-							<li>
-								<span className="font-semibold">Toronto, ON, Canada</span> - donation bin addresses TBD
-							</li>
+							<Popover>
+								<li>
+									<PopoverTrigger>
+										<span className="font-semibold italic underline">Toronto, ON, Canada *</span>
+									</PopoverTrigger>
+									<PopoverContent>
+										<div className="flex space-x-6">
+											<div className="space-y-2">
+												<h4 className="font-medium leading-none text-green-600 dark:text-green-400">
+													Pickup Clothing Drive
+												</h4>
+												<p className="text-muted-foreground">
+													A truck from{" "}
+													<Link href="https://www.diabetes.ca/" className="italic underline">
+														Diabetes Canada
+													</Link>{" "}
+													will be picking up clothing donations along with a few books. They accept donations around the{" "}
+													<Link href="https://declutterfordiabetes.ca/donation-bin" className="italic underline">
+														General Toronto Area
+													</Link>
+													!
+												</p>
+											</div>
+										</div>
+									</PopoverContent>{" "}
+									- All Day on December 9
+								</li>
+							</Popover>
 							{/* <li>
 								<span className="font-semibold">Miami, FL, USA</span> - donation bin addresses TBD
 							</li> */}
