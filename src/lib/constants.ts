@@ -79,6 +79,17 @@ export const directors = [
 		github: "https://github.com/nash-pillai/",
 	},
 	{
+		name: "Shaylen Bhatt",
+		title: "Chief Website Designer",
+		location: "Hopewell Junction, NY, USA",
+		image: "",
+		description: `Shaylen has been environmentally conscious from a young age and is deeply concerned about the future of global aviation and travel amid rising emissions. This drives his interest in studying sustainable aeronautical engineering. In the past, he has conducted research on air pollution and sustainable drone applications. As part of TEDI, he contributes to organizing a compelling website that will help TEDI achieve its goals.`,
+		email: "shaylenb10@gmail.com",
+		linkedin: "https://www.linkedin.com/in/shaylen-bhatt/",
+		instagram: "https://www.instagram.com/shaylen_b10/",
+		github: "https://github.com/sb00110/",
+	},
+	{
 		name: "Jude Ramsey",
 		title: "Networking Director",
 		location: "Omaha, NE, USA",
