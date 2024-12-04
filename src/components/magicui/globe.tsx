@@ -69,7 +69,7 @@ export default function Globe({
 		canvasRef.current!.style.cursor = value ? "grabbing" : "grab";
 		if (value !== null) {
 			focusRef.current = [null, null];
-			scale.current = 1.1;
+			// scale.current = 1.1;
 		}
 	};
 
@@ -128,15 +128,14 @@ export default function Globe({
 			onRender,
 		});
 
-		// I cant think of any good way to have zoom on this globe since it enlargens and might cover text/
-		// canvasRef.current!.addEventListener(
-		// 	"wheel",
-		// 	(e) => {
-		// 		e.preventDefault();
-		// 		scale.current = clamp(0.5, 3, scale.current + e.deltaY * -0.001);
-		// 	},
-		// 	{ passive: false },
-		// );
+		canvasRef.current!.addEventListener(
+			"wheel",
+			(e) => {
+				e.preventDefault();
+				scale.current = clamp(0.5, 3, scale.current + e.deltaY * -0.001);
+			},
+			{ passive: false },
+		);
 
 		setTimeout(() => (canvasRef.current!.style.opacity = "1"));
 		return () => globe.destroy();

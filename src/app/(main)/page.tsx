@@ -432,7 +432,7 @@ export default async function Home() {
 				<h1 className="pb-8 text-center text-5xl font-bold tracking-tighter text-blue-600 dark:text-blue-400">
 					See where our members are!
 				</h1>
-				<Globe className="w-full" config={globeConfig} speed={0.0} phi={0} markers={locations} />
+				<Globe className="w-full" config={globeConfig} speed={0.002} phi={0} markers={locations} />
 			</section>
 			<Carousel />
 			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800" data-aos="fade-in">

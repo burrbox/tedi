@@ -1,7 +1,7 @@
 "use client";
 
 import Loading from "@/components/loading";
-import { petitions } from "@/lib/constants";
+import { type petitions } from "@/lib/constants";
 import { savePetitionSignature } from "@/lib/serverActions";
 import { useState, type FormEvent } from "react";
 

@@ -14,7 +14,7 @@
 		"lint": "next lint",
 		"typecheck": "tsc --noEmit",
 		"start": "next start",
-		"fix": "prettier -w . '!pnpm-lock.yaml' && eslint . --fix",
+		"fix": "prettier -w . '!{pnpm-lock.yaml,package.json}' && eslint . --fix",
 		"email": "email dev --dir ./src/components/emails"
 	},
 	"dependencies": {
