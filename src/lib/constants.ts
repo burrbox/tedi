@@ -223,14 +223,6 @@ export const team = [
 		instagram: "https://www.instagram.com/fuzionpanda/",
 	},
 	{
-		name: "Sally Liu",
-		title: "Campaign Specialist",
-		location: "Vancouver, BC, Canada",
-		image: "TEDI Bio/czv4kdxgkiqdfq6omco2",
-		description: `Sally is always passionate about environmental conservation. As a second-year student majoring in Environmental and Sustainability Studies, she hopes to make a meaningful impact by promoting sustainability, justice, and equality. She joined TEDI to gain hands-on experience in addressing real-world environmental challenges and to contribute to making the world a better place for future generations.`,
-		email: "cheliu2005@outlook.com",
-	},
-	{
 		name: "Sophia Seifert",
 		title: "Digital Creator",
 		location: "Hopewell Junction, NY, USA",
