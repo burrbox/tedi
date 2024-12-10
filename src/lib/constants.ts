@@ -61,7 +61,7 @@ export const directors = [
 		title: "Senior Director of Website Development",
 		location: "Hopewell Junction, NY, USA",
 		image: "TEDI Bio/rainbow-hiro",
-		description: `Hiroyuki speaks Japanese with a native proficiency and is interested in robotics, computer science, and mathematics. He is passionate about environmental conservation and is excited to use his skills to help TEDI achieve its mission.`,
+		description: `Hiro is interested in STEM and wishes to pursue a career in mechanical engineering or computer science. With his experience of building website, hopes to combine his passion for the environment with his problem solving skills.`,
 		email: "hiroyuki.sakuma1@gmail.com",
 		twitter: "https://www.twitter.com/hryksakuma",
 		instagram: "https://www.instagram.com/hryk.sakuma",
