@@ -9,7 +9,7 @@ export const env = createEnv({
 	server: {
 		MONGODB_URI: z.string().url(),
 		NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
-		NEXTAUTH_SECRET: process.env.NODE_ENV === "production" ? z.string() : z.string().optional(),
+		NEXTAUTH_SECRET: z.string(),
 		NEXTAUTH_URL: z.preprocess(
 			// This makes Vercel deployments not fail if you don't set NEXTAUTH_URL
 			// Since NextAuth.js automatically uses the VERCEL_URL if present.
@@ -19,11 +19,20 @@ export const env = createEnv({
 		),
 		AUTH_DISCORD_ID: z.string(),
 		AUTH_DISCORD_SECRET: z.string(),
+		AUTH_GITHUB_ID: z.string(),
+		AUTH_GITHUB_SECRET: z.string(),
 		AUTH_GOOGLE_ID: z.string(),
 		AUTH_GOOGLE_SECRET: z.string(),
 		AUTH_RESEND_KEY: z.string(),
+		GOOGLE_SERVICE_ACCOUNT_EMAIL: z.string(),
+		GOOGLE_PRIVATE_KEY: z.string(),
+		PETITION_SHEET_ID: z.string(),
 		URL: z.string().url(),
 		CLOUDINARY_API_SECRET: z.string(),
+		VERCEL_URL: z.string().optional(),
+		STRIPE_PUBLIC_KEY: z.string(),
+		STRIPE_SECRET_KEY: z.string(),
+		CRON_SECRET: z.string(),
 	},
 
 	/**
@@ -47,13 +56,22 @@ export const env = createEnv({
 		NEXTAUTH_URL: process.env.NEXTAUTH_URL,
 		AUTH_DISCORD_ID: process.env.AUTH_DISCORD_ID,
 		AUTH_DISCORD_SECRET: process.env.AUTH_DISCORD_SECRET,
+		AUTH_GITHUB_ID: process.env.AUTH_GITHUB_ID,
+		AUTH_GITHUB_SECRET: process.env.AUTH_GITHUB_SECRET,
 		AUTH_GOOGLE_ID: process.env.AUTH_GOOGLE_ID,
 		AUTH_GOOGLE_SECRET: process.env.AUTH_GOOGLE_SECRET,
 		AUTH_RESEND_KEY: process.env.AUTH_RESEND_KEY,
+		GOOGLE_SERVICE_ACCOUNT_EMAIL: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+		GOOGLE_PRIVATE_KEY: process.env.GOOGLE_PRIVATE_KEY,
+		PETITION_SHEET_ID: process.env.PETITION_SHEET_ID,
 		URL: process.env.URL,
 		NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
 		NEXT_PUBLIC_CLOUDINARY_API_KEY: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
 		CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,
+		VERCEL_URL: process.env.VERCEL_URL,
+		STRIPE_PUBLIC_KEY: process.env.STRIPE_PUBLIC_KEY,
+		STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
+		CRON_SECRET: process.env.CRON_SECRET,
 	},
 	/**
 	 * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

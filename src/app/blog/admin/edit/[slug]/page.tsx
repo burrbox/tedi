@@ -1,25 +1,52 @@
 "use client";
 
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+
 import "@uiw/react-md-editor/markdown-editor.css";
 import "@uiw/react-markdown-preview/markdown.css";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-import { commands } from "@uiw/react-md-editor";
 import { CldImage, CldUploadButton } from "next-cloudinary";
 import { upsertArticle, getPost } from "@/lib/serverActions";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Loading from "@/components/loading";
-
 import { Check, ChevronsUpDown } from "lucide-react";
-
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@/components/ui/command";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { team } from "@/lib/constants";
+import { fullTeam } from "@/lib/constants";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
-const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
+const MDEditor = dynamic(() => import("@uiw/react-md-editor"), {
+	ssr: false,
+	loading: () => (
+		<SkeletonTheme baseColor="#1e293b" highlightColor="#3e595b">
+			<Skeleton height={200} />
+		</SkeletonTheme>
+	),
+});
+
+const cloudinaryDarkStyles = {
+	palette: {
+		window: "#0f172a",
+		sourceBg: "#1e293b",
+		windowBorder: "#9ca3af",
+		tabIcon: "#FFFFFF",
+		inactiveTabIcon: "#8E9FBF",
+		menuIcons: "#FFFFFF",
+		link: "#08C0FF",
+		action: "#336BFF",
+		inProgress: "#00BFFF",
+		complete: "#33ff00",
+		error: "#EA2727",
+		textDark: "#000000",
+		textLight: "#FFFFFF",
+	},
+};
 
 export default function BlogEditor({ params: { slug } }: { params: { slug: string } }) {
 	const router = useRouter();
@@ -30,7 +57,10 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 	const [title, setTitle] = useState("New Article");
 	const [summary, setSummary] = useState("");
 	const [author, setAuthor] = useState("");
+	const [editor, setEditor] = useState("");
+	const [articleImage, setArticleImage] = useState("");
 	const [isAuthorOpen, setIsAuthorOpen] = useState(false);
+	const [isEditorOpen, setIsEditorOpen] = useState(false);
 
 	const [isSaving, setIsSaving] = useState(false);
 
@@ -46,6 +76,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 						setContent(post.content);
 						setSummary(post.summary);
 						setContent(post.content);
+						setArticleImage(post.image);
 					}
 				})
 				.catch(() => null);
@@ -59,14 +90,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 				<label htmlFor="title" className="mb-2 block">
 					Title
 				</label>
-				<input
-					id="title"
-					type="text"
-					className="w-full rounded-md border-2 border-gray-300 px-4 py-2"
-					placeholder="Title"
-					value={title}
-					onChange={(e) => setTitle(e.target.value)}
-				/>
+				<Input id="title" type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
 			</div>
 			{/* URL */}
 			<div className="flex flex-col gap-4 sm:flex-row">
@@ -74,11 +98,9 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 					<label htmlFor="slug" className="mb-2 block">
 						URL
 					</label>
-					<input
+					<Input
 						id="slug"
 						type="text"
-						className="w-full rounded-md border-2 border-gray-300 px-4 py-2"
-						placeholder="URL"
 						value={newSlug}
 						onChange={(e) => setNewSlug((prev) => (e.target.value.match(/^[a-z0-9-]*$/) ? e.target.value : prev))}
 					/>
@@ -94,39 +116,103 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 								variant="outline"
 								role="combobox"
 								aria-expanded={isAuthorOpen}
-								className="w-full justify-between">
-								{author ? team.find((member) => member.name.toLowerCase() === author)?.name : "Select author..."}
+								className="w-full justify-between"
+							>
+								{author ? fullTeam.find((member) => member.name.toLowerCase() === author)?.name : "Select author..."}
 								<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
 							</Button>
 						</PopoverTrigger>
 						<PopoverContent className="w-72 p-0">
 							<Command>
 								<CommandInput placeholder="Search author..." />
-								<CommandEmpty>No author found.</CommandEmpty>
-								<CommandGroup className="max-h-96 overflow-scroll">
-									{team.map((member) => (
-										<CommandItem
-											key={member.name}
-											value={member.name}
-											onSelect={(newAuthor) => {
-												console.log("newAuthor", newAuthor);
-												setAuthor((prev) => (newAuthor === prev ? "" : newAuthor));
-												setIsAuthorOpen(false);
-											}}>
-											<Check className={cn("mr-2 h-4 w-4", author === member.name ? "opacity-100" : "opacity-0")} />
-											<CldImage
-												className="mr-4 h-8 w-8 rounded-full"
-												src={member.image}
-												gravity="face"
-												crop="fill"
-												alt={`An image of ${member.name}.`}
-												height={32}
-												width={32}
-											/>
-											{member.name}
-										</CommandItem>
-									))}
-								</CommandGroup>
+								<CommandList>
+									<CommandEmpty>No author found.</CommandEmpty>
+									<CommandGroup className="max-h-96 overflow-scroll">
+										{fullTeam.map((member) => (
+											<CommandItem
+												key={member.name}
+												value={member.name}
+												onSelect={(newAuthor) => {
+													setAuthor((prev) => (newAuthor === prev ? "" : newAuthor.toLowerCase()));
+													setIsAuthorOpen(false);
+												}}
+											>
+												<Check
+													className={cn(
+														"mr-2 h-4 w-4",
+														author === member.name.toLowerCase() ? "opacity-100" : "opacity-0",
+													)}
+												/>
+												<CldImage
+													className="mr-4 h-8 w-8 rounded-full"
+													src={member.image}
+													gravity="face"
+													crop="thumb"
+													alt={`An image of ${member.name}.`}
+													height={32}
+													width={32}
+												/>
+												{member.name}
+											</CommandItem>
+										))}
+									</CommandGroup>
+								</CommandList>
+							</Command>
+						</PopoverContent>
+					</Popover>
+				</div>
+				<div className="w-full">
+					<label htmlFor="editor" className="mb-2 block">
+						Editor
+					</label>
+					<Popover open={isEditorOpen} onOpenChange={setIsEditorOpen}>
+						<PopoverTrigger asChild>
+							<Button
+								id="editor"
+								variant="outline"
+								role="combobox"
+								aria-expanded={isEditorOpen}
+								className="w-full justify-between"
+							>
+								{editor ? fullTeam.find((member) => member.name.toLowerCase() === editor)?.name : "Select editor..."}
+								<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+							</Button>
+						</PopoverTrigger>
+						<PopoverContent className="w-72 p-0">
+							<Command>
+								<CommandInput placeholder="Search editor..." />
+								<CommandList>
+									<CommandEmpty>No editor found.</CommandEmpty>
+									<CommandGroup className="max-h-96 overflow-scroll">
+										{fullTeam.map((member) => (
+											<CommandItem
+												key={member.name}
+												value={member.name}
+												onSelect={(newEditor) => {
+													setEditor((prev) => (newEditor === prev ? "" : newEditor.toLowerCase()));
+													setIsEditorOpen(false);
+												}}
+											>
+												<Check
+													className={cn(
+														"mr-2 h-4 w-4",
+														editor === member.name.toLowerCase() ? "opacity-100" : "opacity-0",
+													)}
+												/>
+												<CldImage
+													className="mr-4 h-8 w-8 rounded-full"
+													src={member.image}
+													gravity="face"
+													crop="thumb"
+													alt={`An image of ${member.name}.`}
+													height={32}
+													width={32}
+												/>
+												{member.name}
+											</CommandItem>
+										))}
+									</CommandGroup>
+								</CommandList>
 							</Command>
 						</PopoverContent>
 					</Popover>
@@ -137,44 +223,66 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 				<label htmlFor="summary" className="mb-2 block">
 					Summary
 				</label>
-				<textarea
-					id="summary"
-					className="w-full rounded-md border-2 border-gray-300 px-4 py-2"
-					placeholder="Summary"
-					value={summary}
-					onChange={(e) => setSummary(e.target.value)}
-				/>
+				<Textarea id="summary" placeholder="Summary" value={summary} onChange={(e) => setSummary(e.target.value)} />
 			</div>
-			<div className="flex items-center justify-between py-4">
-				<h1 className="mb-4 grow text-2xl font-bold">Edit Post</h1>
+			<div className="flex flex-col items-center justify-between gap-4 py-4 sm:flex-row">
+				<h1 className="grow text-2xl font-bold">Edit Post</h1>
 				<CldUploadButton
-					className="mx-4 rounded-md border-2 border-blue-400 px-4 py-2"
+					className="rounded-md border-2 border-blue-400 px-4 py-2"
 					uploadPreset="TEDI Blog"
-					options={{
-						cropping: true,
-					}}
+					options={{ cropping: true, styles: cloudinaryDarkStyles }}
 					onSuccess={(results) => {
 						if (!results.info || typeof results.info === "string") return;
-						const imageMd = `![${results.info.original_filename}](${results.info.secure_url})`;
+						setArticleImage(results.info.secure_url);
+					}}
+				>
+					Upload Article Image
+				</CldUploadButton>
+				{articleImage && (
+					<button
+						className="flex space-x-2 rounded-md bg-blue-600 px-4 py-2 text-white"
+						onClick={() => window.open(articleImage)}
+					>
+						Preview article image...
+					</button>
+				)}
+				<CldUploadButton
+					className="rounded-md border-2 border-blue-400 px-4 py-2"
+					uploadPreset="TEDI Blog"
+					options={{ cropping: true, styles: cloudinaryDarkStyles }}
+					onSuccess={(results) => {
+						if (!results.info || typeof results.info === "string") return;
+						const imageMd = `<figure>\n\n![${results.info.original_filename}](${results.info.secure_url})\n<figcaption>${results.info.original_filename}</figcaption></figure>`;
 						setContent((prev) => prev + imageMd);
-					}}>
+					}}
+				>
 					Upload Image
 				</CldUploadButton>
 				<button
 					className="flex space-x-2 rounded-md bg-blue-600 px-4 py-2 text-white"
 					onClick={async () => {
 						setIsSaving(true);
-						if (newSlug && newSlug !== "new")
-							await upsertArticle(slug, { title, content, slug: newSlug, summary, author });
-						else alert("Please enter a URL");
+						if (newSlug && newSlug !== "new") {
+							await upsertArticle(slug, {
+								title,
+								content,
+								slug: newSlug,
+								summary,
+								author,
+								editor,
+								image: articleImage,
+							});
+							if (slug !== newSlug) router.push(`/blog/admin/edit/${newSlug}`);
+						} else alert("Please enter a URL");
 						setIsSaving(false);
-					}}>
+					}}
+				>
 					<span>{slug === "new" ? "Create Article" : "Save Article"}</span>
 					{isSaving && <Loading />}
 				</button>
 			</div>
 
-			<MDEditor id="md-editor" value={content} onChange={(val) => setContent(val ?? "")} />
+			<MDEditor id="md-editor" value={content} onChange={(val) => setContent(val ?? "")} height={1000} />
 		</div>
 	);
 }

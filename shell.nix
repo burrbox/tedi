@@ -1,11 +1,9 @@
-{ pkgs ? import <nixpkgs> {} }:
-
-let lib = pkgs.lib;
-	unstable = import <unstable> {};
-in pkgs.mkShell (with pkgs; {
+with import <nixpkgs> {};
+let unstable = import <unstable> {};
+in mkShell {
 	buildInputs = [
 		nodejs unstable.nodePackages.pnpm
-		doppler stripe-cli
+		stripe-cli nodePackages.vercel
 		openssl
 	];
 
@@ -16,4 +14,4 @@ in pkgs.mkShell (with pkgs; {
 	PRISMA_QUERY_ENGINE_LIBRARY = "${prisma-engines}/lib/libquery_engine.node";
 	PRISMA_INTROSPECTION_ENGINE_BINARY = "${prisma-engines}/bin/introspection-engine";
 	PRISMA_FMT_BINARY = "${prisma-engines}/bin/prisma-fmt";
-})
+}

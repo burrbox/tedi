@@ -44,3 +44,10 @@ yarn-error.log*
 
 # idea files
 .idea
+
+# Nix
+/direnv
+/.direnv
+
+# Auto run
+tasks.json

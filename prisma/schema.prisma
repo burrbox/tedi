@@ -4,6 +4,7 @@
 generator client {
     provider        = "prisma-client-js"
     previewFeatures = ["driverAdapters"]
+    // previewFeatures = ["driverAdapters", "omitApi"]
 }
 
 datasource db {
@@ -24,7 +25,8 @@ model Post {
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 
-    author    String  @default("nash pillai")
+    author String @default("nash pillai")
+    editor String @default("nash pillai")
 
     @@index([createdAt])
     @@index([author])
@@ -60,13 +62,20 @@ model Session {
     @@index([userId])
 }
 
+enum Role {
+    user
+    writer
+    editor
+    admin
+}
+
 model User {
     id            String    @id @default(auto()) @map("_id") @db.ObjectId
     name          String?   @default("")
     email         String?   @unique
     emailVerified DateTime?
     image         String?
-    role          String    @default("user")
+    role          Role      @default(user)
     accounts      Account[]
     sessions      Session[]
 }
@@ -85,4 +94,18 @@ model Subscription {
     email     String   @unique
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+}
+
+model PetitionSignature {
+    id        String   @id @default(auto()) @map("_id") @db.ObjectId
+    petition  String   @default("")
+    email     String
+    firstName String
+    lastName  String
+    zipCode   String
+    message   String?
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@index([petition])
 }

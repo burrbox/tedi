@@ -5,11 +5,13 @@ import { db } from "@/server/db";
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import DiscordProvider from "next-auth/providers/discord";
+import GithubProvider from "next-auth/providers/github";
 // import PasskeyProvider from "next-auth/providers/passkey";
 import ResendProvider from "next-auth/providers/resend";
 import { Resend } from "resend";
 import SignInEmail from "@/components/emails/signInEmail";
 import { PrismaAdapter } from "@auth/prisma-adapter";
+import type { $Enums, User } from "@prisma/client";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -18,20 +20,13 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
  * @see https://next-auth.js.org/getting-started/typescript#module-augmentation
  */
 
-type UserRole = "user" | "writer" | "editor" | "admin";
-
 declare module "next-auth" {
 	interface Session extends DefaultSession {
 		user: {
 			id: string;
-			role: UserRole;
+			role: $Enums.Role;
 		} & DefaultSession["user"];
 	}
-}
-
-interface User {
-	// ...other properties
-	role: UserRole;
 }
 
 const resend = new Resend(env.AUTH_RESEND_KEY);
@@ -41,13 +36,14 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 	providers: [
 		GoogleProvider,
 		DiscordProvider,
+		GithubProvider,
 		ResendProvider({
-			from: "signin@deaplearning.com",
+			from: "signin@resend.dev",
 			async sendVerificationRequest({ identifier: email, url }) {
 				const result = await resend.emails.send({
-					from: "Ember <support@deaplearning.com>",
+					from: "TEDI <signin@tedinitiative.org>",
 					to: [email],
-					subject: "Sign in to Ember",
+					subject: "Sign in to TEDI",
 					react: SignInEmail({ url }),
 				});
 				if (result.error ?? !result.data) throw new Error(`Could not send email: ${result.error?.message}`);
@@ -72,8 +68,9 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 		},
 	},
 	pages: {
-		// signIn: "/signin",
-		verifyRequest: "/verify",
+		signIn: "/signin",
+		// verifyRequest: "/verify",
+		error: "/error",
 	},
 	secret: env.NEXTAUTH_SECRET,
 	debug: false, // env.NODE_ENV === "development",
