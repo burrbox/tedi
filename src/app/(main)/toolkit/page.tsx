@@ -91,7 +91,7 @@ export default async function Toolkit() {
 							<div className="flex">
 								<Link
 									className="rounded-lg bg-green-500 px-5 py-3 text-center duration-300 hover:scale-110 hover:bg-green-400 dark:bg-green-600 dark:hover:bg-green-700"
-									href={`https://www.canva.com/design/DAGW-RSF7i4/oiaDsyc95HxJ-Ev8y8kpHg/edit?utm_content=DAGW-RSF7i4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton`}
+									href={`https://drive.google.com/file/d/1DWa6K31XcOMLJeuK5fOe1rMuOGDnYnpq/view?usp=sharing`}
 									target="_blank"
 								>
 									Download
