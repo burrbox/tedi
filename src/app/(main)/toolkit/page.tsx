@@ -56,6 +56,51 @@ export default async function Toolkit() {
 					</div>
 				</section>
 			</div>
+			<div className="w-full px-8 py-10">
+				<section className="mx-auto mt-8 max-w-7xl">
+					<div className="flex flex-col-reverse gap-8 sm:flex-row">
+						<div>
+							<CloudinaryClientWrapper
+								className="max-h-[80vh] w-fit rounded-xl"
+								src="toolkit/knxlcdkb4xjkghajhbwh"
+								alt="The toolkit for the wildlife conservation campaign"
+								width={1080}
+								height={2160}
+							/>
+						</div>
+						<div className="w-4/5 px-10">
+							<h1 className="mt-2 w-full text-wrap text-6xl font-bold text-green-500">
+								The Wildlife Conservation Toolkit
+							</h1>
+							<hr className="mt-5 w-3/4 border-green-500" />
+							<p className="my-10 text-xl">
+								<span className="text-lg">
+									How can you support wildlife conservation efforts? <br />
+									Find resources and tips to learn how you can help and how you can take action!
+								</span>
+								<br />
+								<br />
+								Discover how you can actively contribute to{" "}
+								<span className="text-blue-600 dark:text-blue-400">wildlife conservation</span> through the Wildlife
+								Conservation Toolkit. This kit provides information on{" "}
+								<span className="text-blue-600 dark:text-blue-400">key organizations</span> dedicated to protecting
+								wildlife, along with ways you can make a{" "}
+								<span className="text-blue-600 dark:text-blue-400">direct impact</span>—whether by supporting these
+								organizations or taking action in your own communities.
+							</p>
+							<div className="flex">
+								<Link
+									className="rounded-lg bg-green-500 px-5 py-3 text-center duration-300 hover:scale-110 hover:bg-green-400 dark:bg-green-600 dark:hover:bg-green-700"
+									href={`https://www.canva.com/design/DAGW-RSF7i4/oiaDsyc95HxJ-Ev8y8kpHg/edit?utm_content=DAGW-RSF7i4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton`}
+									target="_blank"
+								>
+									Download
+								</Link>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
 			<div className="w-full bg-stone-100 px-8 py-10 dark:bg-stone-800">
 				<section className="mx-auto mt-8 max-w-7xl">
 					<div className="flex flex-col-reverse gap-8 sm:flex-row">
