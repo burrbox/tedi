@@ -2,11 +2,18 @@
 
 import { EnvelopeIcon, RssIcon } from "@heroicons/react/24/solid";
 import { addEmailSubscription } from "@/lib/serverActions";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { InstagramIcon, LinkedInIcon, TikTokIcon, TwitterXIcon, YouTubeIcon } from "./icons";
 import Link from "next/link";
 
 export default function Footer() {
+	const [isMac, setIsMac] = useState(false);
+
+	useEffect(() => {
+		if (navigator.userAgent.includes("Mac")) {
+			setIsMac(true);
+		}
+	}, []);
 	const [email, setEmail] = useState("");
 	const [done, setDone] = useState(false);
 	return (
@@ -177,7 +184,8 @@ export default function Footer() {
 
 						{/* Copyrights note */}
 						<div className="mr-4 text-sm text-gray-600 dark:text-gray-400">
-							&copy; Hiro and Nash. All rights reserved.
+							&copy;
+							{!isMac ? " Hiro and Nash" : " The Environmental Defense Initiative"}. All rights reserved.
 						</div>
 					</div>
 				</div>
