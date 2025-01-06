@@ -184,7 +184,7 @@ export default function Footer() {
 
 						{/* Copyrights note */}
 						<div className="mr-4 text-sm text-gray-600 dark:text-gray-400">
-							&copy;
+							&copy; 2025
 							{!isMac ? " Hiro and Nash" : " The Environmental Defense Initiative"}. All rights reserved.
 						</div>
 					</div>
