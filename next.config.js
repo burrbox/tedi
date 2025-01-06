@@ -25,7 +25,6 @@ const config = {
 				"https://docs.google.com/forms/d/e/1FAIpQLSfEWkGAauRBi07E8-4WRlay7RyXJlLII85dt1FCV2C0m-hI1Q/viewform",
 			permanent: false,
 		},
-		// kill switch oh nooo how do i fix this. help me fix nixos please
 		// {
 		// 	source: "/:x",
 		// 	destination: "https://jaybots.org/tedinitiative",
