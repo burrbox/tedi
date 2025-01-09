@@ -17,19 +17,20 @@ export const size = {
 export const contentType = "image/png";
 
 // Image generation
-export default async function Image({ slug }: { slug: string }) {
-	const article = await getPost(slug);
-	console.log(article);
+export default async function Image({ params }: { params: { slug: string } }) {
+	const article = await getPost(params?.slug);
+	console.log(params?.slug, article);
 
 	return new ImageResponse(
 		(
 			<div
 				style={{
 					fontSize: 128,
-					backgroundImage: `url(${article?.image ?? `https://res.cloudinary.com/${env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_limit/f_auto/q_auto/${"nature/tallForest"}`})`,
+					backgroundImage: `url(${article?.image.replace(/\.webp$/, ".png") ?? `https://res.cloudinary.com/${env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_limit/f_auto/q_auto/${"nature/tallForest"}`})`,
 					width: "100%",
 					height: "100%",
 					display: "flex",
+					// "object-fit": "cover",
 					alignItems: "center",
 					justifyContent: "center",
 				}}
@@ -54,7 +55,7 @@ export default async function Image({ slug }: { slug: string }) {
 		),
 		{
 			...size,
-			debug: true,
+			// debug: true,
 		},
 	);
 }
