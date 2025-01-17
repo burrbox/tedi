@@ -253,15 +253,6 @@ export const fullTeam = [...directors, ...team];
 
 export const toolkits = [
 	{
-		image: "toolkit/soyea38ggsf8bagexkls",
-		alt: "The toolkit for the sustainable ornaments campaign",
-		title: "The Sustainable Ornaments Campaign",
-		tagline: "Have you wondered how you can host your own, fun, sustainable campaigns?",
-		description:
-			"This toolkit provides in-depth information on how to host your [own workshop], with of additional, [free to access] ideas! Links are also provided for any ideas [directly] from this tookit!",
-		link: "https://drive.google.com/file/d/1mfagKu37I3EGX_DLg9VnwW2n4Q0GU9iq/view?usp=sharing",
-	},
-	{
 		image: "toolkit/knxlcdkb4xjkghajhbwh",
 		alt: "The toolkit for the wildlife conservation campaign",
 		title: "The Wildlife Conservation Toolkit",
@@ -289,6 +280,15 @@ export const toolkits = [
 		description:
 			"This toolkit is filled with everything you need to [successfully organize] and execute a clothing drive, whether independently or in partnership with an organization. It includes detailed instructions on setting up your drive, tips for coordinating with local groups, and [essential information] on obtaining permissions to place donation bins. Plus, you’ll find [email templates] for requesting approval and [sample flyers] to help promote your drive.",
 		link: "https://drive.google.com/file/d/1AZ0b0a1lAFLh9--MTi_4799lvlwKkv8Z/view",
+	},
+	{
+		image: "toolkit/soyea38ggsf8bagexkls",
+		alt: "The toolkit for the sustainable ornaments campaign",
+		title: "The Sustainable Ornaments Campaign",
+		tagline: "Have you wondered how you can host your own, fun, sustainable campaigns?",
+		description:
+			"This toolkit provides in-depth information on how to host your [own workshop], with of additional, [free to access] ideas! Links are also provided for any ideas [directly] from this tookit!",
+		link: "https://drive.google.com/file/d/1mfagKu37I3EGX_DLg9VnwW2n4Q0GU9iq/view?usp=sharing",
 	},
 	{
 		image: "toolkit/catzc1tx5w9rfkrri1pe",
