@@ -251,6 +251,74 @@ export const team = [
 
 export const fullTeam = [...directors, ...team];
 
+export const toolkits = [
+	{
+		image: "toolkit/soyea38ggsf8bagexkls",
+		alt: "The toolkit for the sustainable ornaments campaign",
+		title: "The Sustainable Ornaments Campaign",
+		tagline: "Have you wondered how you can host your own, fun, sustainable campaigns?",
+		description:
+			"This toolkit provides in-depth information on how to host your [own workshop], with of additional, [free to access] ideas! Links are also provided for any ideas [directly] from this tookit!",
+		link: "https://drive.google.com/file/d/1mfagKu37I3EGX_DLg9VnwW2n4Q0GU9iq/view?usp=sharing",
+	},
+	{
+		image: "toolkit/knxlcdkb4xjkghajhbwh",
+		alt: "The toolkit for the wildlife conservation campaign",
+		title: "The Wildlife Conservation Toolkit",
+		tagline:
+			"How can you support wildlife conservation efforts? Find resources and tips to learn how you can help and how you can take action!",
+		description:
+			"Discover how you can actively contribute to [wildlife conservation] through the Wildlife Conservation Toolkit. This kit provides information on [key organizations] dedicated to protecting wildlife, along with ways you can make a [direct impact]—whether by supporting these organizations or taking action in your own communities.",
+		link: "https://drive.google.com/file/d/1DWa6K31XcOMLJeuK5fOe1rMuOGDnYnpq/view?usp=sharing",
+	},
+	{
+		image: "toolkit/cleanup",
+		alt: "The toolkit for the cleanup campaign",
+		title: "The Cleanup Campaign",
+		tagline: "Have you always wanted to plan a community cleanup but don’t know how? This is the toolkit for you!",
+		description:
+			"Our cleanup toolkit contains [every resource you could possibly need] to plan and host a successful cleanup including how to choose a date/location, information about obtaining permits, volunteer recruitment strategies, and email templates that you can use to [contact park/town directors] about land use.",
+		link: "https://drive.google.com/file/d/1GubFFA0y5VRbpw8dsYmieU9Wx3RBjiHp/view",
+	},
+	{
+		image: "toolkit/eypvgy8fndoyfhwjapjn",
+		alt: "The clothing drive toolkit",
+		title: "The Clothing Drive Toolkit",
+		tagline:
+			"Ready to make a difference in your community with a clothing drive but unsure where to start? This toolkit is filled with resources to help you make a positive impact in your community!",
+		description:
+			"This toolkit is filled with everything you need to [successfully organize] and execute a clothing drive, whether independently or in partnership with an organization. It includes detailed instructions on setting up your drive, tips for coordinating with local groups, and [essential information] on obtaining permissions to place donation bins. Plus, you’ll find [email templates] for requesting approval and [sample flyers] to help promote your drive.",
+		link: "https://drive.google.com/file/d/1AZ0b0a1lAFLh9--MTi_4799lvlwKkv8Z/view",
+	},
+	{
+		image: "toolkit/catzc1tx5w9rfkrri1pe",
+		alt: "The toolkit for the sustainable crafts",
+		title: "The Sustainable Crafts Toolkit",
+		tagline:
+			"Are you an environmentally conscious arts and crafts person? Learn about some cool sustainable crafts here!",
+		description:
+			"Unlock your creativity with our [sustainable crafts] toolkit! Designed for children of all ages, this kit offers [quick and easy] sustainable crafts that teach kids the importance of environmental stewardship. Each project is [fun, educational, and crafted from eco-friendly materials], making it simple for children to learn about sustainability while making unique, earth-friendly creations!",
+		link: "https://drive.google.com/file/d/1DpIbTigVz11Pd0VQx9y1ccyjOMHD6feH/view?usp=sharing",
+	},
+	{
+		image: "toolkit/mypiky7xtlgv6jrx398a",
+		alt: "The toolkit for engaging kids in environmental awareness",
+		title: "Engaging Kids in Environmental Awareness",
+		tagline:
+			"Interested in spreading environmental awareness to a younger audience? Our toolkit is can help you engage kids and teach them about the environment!",
+		description:
+			"Empower the next generation with our [engaging kids in environmental awareness] toolkit! This comprehensive resource equips educators and parents with [engaging games, interactive lessons, and hands-on activities] designed to teach children of all ages the fundamentals of environmental stewardship. From fun, age-appropriate projects to insightful discussions, this toolkit makes it easy to introduce kids to the essentials of [caring for our planet] while sparking their curiosity and passion for a [sustainable future].",
+		link: "/files/toolkit/kids.pdf",
+	},
+] as {
+	image: string;
+	alt: string;
+	title: string;
+	tagline: string;
+	description: string;
+	link: string;
+}[];
+
 export const petitions = [
 	{
 		title: "Protect the East Fishkill from the Woodland Estates Luxury Apartment Complex",

@@ -5,6 +5,21 @@ import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import Link from "next/link";
 import { auth } from "@/server/auth";
 import { redirect } from "next/navigation";
+import { toolkits } from "@/lib/constants";
+import React from "react";
+
+function formatDescription(description: string) {
+	return description.split(/(\[.*?\])/).map((part, index) => {
+		if (part.startsWith("[") && part.endsWith("]")) {
+			return (
+				<span key={index} className="text-blue-500">
+					{part.slice(1, -1)}
+				</span>
+			);
+		}
+		return part;
+	});
+}
 
 export const metadata: Metadata = {
 	title: "Toolkits",
@@ -56,7 +71,46 @@ export default async function Toolkit() {
 					</div>
 				</section>
 			</div>
-			<div className="w-full px-8 py-10">
+			{toolkits.map((toolkit, index) => (
+				<div
+					className={`w-full px-8 py-10 ${index % 2 === 0 ? "bg-stone-100 dark:bg-stone-800" : ""}`}
+					key={toolkit.title}
+				>
+					<section className="mx-auto mt-8 max-w-7xl">
+						<div className="flex flex-col-reverse gap-8 sm:flex-row">
+							<div>
+								<CloudinaryClientWrapper
+									className="max-h-[80vh] w-fit rounded-xl"
+									src={toolkit.image}
+									alt={toolkit.alt}
+									width={1080}
+									height={2160}
+								/>
+							</div>
+							<div className="w-4/5 px-10">
+								<h1 className="mt-2 w-full text-wrap text-6xl font-bold text-green-500">{toolkit.title}</h1>
+								<hr className="mt-5 w-3/4 border-green-500" />
+								<p className="my-10 text-xl">
+									<span className="text-lg">{toolkit.tagline}</span>
+									<br />
+									<br />
+									{formatDescription(toolkit.description)}
+								</p>
+								<div className="flex">
+									<Link
+										className="rounded-lg bg-green-500 px-5 py-3 text-center duration-300 hover:scale-110 hover:bg-green-400 dark:bg-green-600 dark:hover:bg-green-700"
+										href={toolkit.link}
+										target="_blank"
+									>
+										Download
+									</Link>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			))}
+			{/* <div className="w-full px-8 py-10">
 				<section className="mx-auto mt-8 max-w-7xl">
 					<div className="flex flex-col-reverse gap-8 sm:flex-row">
 						<div>
@@ -100,8 +154,8 @@ export default async function Toolkit() {
 						</div>
 					</div>
 				</section>
-			</div>
-			<div className="w-full bg-stone-100 px-8 py-10 dark:bg-stone-800">
+			</div> */}
+			{/* <div className="w-full bg-stone-100 px-8 py-10 dark:bg-stone-800">
 				<section className="mx-auto mt-8 max-w-7xl">
 					<div className="flex flex-col-reverse gap-8 sm:flex-row">
 						<div>
@@ -141,8 +195,8 @@ export default async function Toolkit() {
 						</div>
 					</div>
 				</section>
-			</div>
-			<div className="w-full px-8 py-10">
+			</div> */}
+			{/* <div className="w-full px-8 py-10">
 				<section className="mx-auto mt-8 max-w-7xl">
 					<div className="flex flex-col-reverse gap-8 sm:flex-row">
 						<div>
@@ -185,8 +239,8 @@ export default async function Toolkit() {
 						</div>
 					</div>
 				</section>
-			</div>
-			<div className="w-full bg-stone-100 px-8 py-10 dark:bg-stone-800">
+			</div> */}
+			{/* <div className="w-full bg-stone-100 px-8 py-10 dark:bg-stone-800">
 				<section className="mx-auto mt-8 max-w-7xl">
 					<div className="flex flex-col-reverse gap-8 sm:flex-row">
 						<div>
@@ -233,8 +287,8 @@ export default async function Toolkit() {
 						</div>
 					</div>
 				</section>
-			</div>
-			<div className="w-full px-8 py-10">
+			</div> */}
+			{/* <div className="w-full px-8 py-10">
 				<section className="mx-auto mt-8 max-w-7xl">
 					<div className="flex flex-col-reverse gap-8 sm:flex-row">
 						<div>
@@ -282,7 +336,7 @@ export default async function Toolkit() {
 						</div>
 					</div>
 				</section>
-			</div>
+			</div> */}
 		</>
 	);
 }

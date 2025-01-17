@@ -105,7 +105,7 @@ export default function Header() {
 										</div>
 										<div className="hidden xl:block">
 											<div className="text-base font-medium text-gray-800 dark:text-white">{session.user.name}</div>
-											<div className="text-sm font-medium text-gray-600 dark:text-gray-300">{session.user.email}</div>
+											{/* <div className="text-sm font-medium text-gray-600 dark:text-gray-300">{session.user.email}</div> */}
 										</div>
 									</div>
 								</div>
