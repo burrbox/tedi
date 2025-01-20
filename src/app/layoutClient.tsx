@@ -26,12 +26,14 @@ export default function RootLayoutClient({ children }: { children: React.ReactNo
 	useEffect(() => {
 		void wait(3000).then(() => {
 			toast({
-				title: "Would you like to sign a petition?",
-				description: "Fight for the environment!",
+				title: "Enjoy our blogs?",
+				description: "Submit your own article to be featured on our website!",
 				duration: 5000,
 				action: (
-					<ToastAction altText="Sign">
-						<Link href="/petitions">Sign</Link>
+					<ToastAction altText="Apply">
+						<Link href="https://docs.google.com/forms/d/e/1FAIpQLScPyNKW82l-B3YJypShgVB6m6WKZ4dqpyFsuzFvKhVdQPbmaA/viewform">
+							Apply
+						</Link>
 					</ToastAction>
 				),
 			});

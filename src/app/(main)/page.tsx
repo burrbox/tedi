@@ -89,13 +89,13 @@ export default async function Home() {
 			{/* <Birthday /> */}
 			<section
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/oh93nln39npdtzsyettf" })})` }}
-				className="flex min-h-[70vh] w-screen bg-cover bg-fixed bg-center bg-no-repeat py-12 md:pb-20 md:pt-32 lg:pt-40"
+				className="flex w-screen bg-cover bg-fixed bg-center bg-no-repeat py-12 md:min-h-[70vh] md:pb-20 md:pt-32 lg:pt-40"
 			>
 				<div
 					className="mx-3 justify-center rounded-xl bg-white/80 py-10 shadow-xl md:mx-8 lg:mx-auto dark:bg-stone-950/80"
 					data-aos="fade-down"
 				>
-					<div className="space-y-10xl:space-y-16 container">
+					<div className="container md:space-y-10 xl:space-y-16">
 						<div className="grid gap-4 lg:grid-cols-2 lg:gap-16">
 							<div>
 								<h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter text-green-600 sm:text-4xl md:text-5xl xl:text-[4rem] 2xl:text-[5rem] dark:text-stone-100">
@@ -114,7 +114,7 @@ export default async function Home() {
 									</button>
 								</div>
 							</div>
-							<div className="flex h-fit flex-col items-start space-y-4">
+							<div className="flex h-fit flex-col items-center self-center">
 								<CloudinaryClientWrapper
 									alt="An image of our team"
 									src="cleanup2_rhiq2n"

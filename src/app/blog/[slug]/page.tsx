@@ -14,6 +14,7 @@ import { TwitterXIcon } from "@/components/icons";
 import { getPostAuthor, getPostEditor } from "@/lib/utils";
 import { type Article, type WithContext } from "schema-dts";
 import { JsonLd } from "@/components/jsonLd";
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 
 export async function generateStaticParams() {
 	return (await getPosts()).map((post) => ({
@@ -87,24 +88,41 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 				)}
 
 				<div className="relative mx-auto max-w-6xl px-4 sm:px-6 dark:bg-stone-900">
-					<div className="pb-12 pt-32 md:pb-20 md:pt-40">
+					<div className="pb-12 pt-8 md:pb-20">
+						<Alert className="relative mb-8" data-aos="fade-down" data-aos-delay="1250">
+							<AlertTitle className="font-semibold text-green-600 dark:text-green-400">Like these articles?</AlertTitle>
+							<AlertDescription>
+								Want to try your hand at writing your own? Submit an article{" "}
+								<Link
+									href="https://docs.google.com/forms/d/e/1FAIpQLScPyNKW82l-B3YJypShgVB6m6WKZ4dqpyFsuzFvKhVdQPbmaA/viewform"
+									className="text-blue-400 underline"
+								>
+									here
+								</Link>{" "}
+								for a chance to be featured on our page!
+							</AlertDescription>
+						</Alert>
 						<div className="mx-auto max-w-3xl">
 							<article>
 								{/* Article header */}
 								<header className="mb-8">
 									{/* Title and excerpt */}
 									<div className="text-center md:text-left">
-										<h1 className="h1 font-red-hat-display mb-4 dark:text-green-600" data-aos="fade-down">
+										<h1
+											className="h1 font-red-hat-display mb-4 dark:text-green-600"
+											data-aos="fade-in"
+											data-aos-delay="150"
+										>
 											{post.title}
 										</h1>
-										<p className="text-xl text-gray-600 dark:text-stone-300" data-aos="fade-down" data-aos-delay="150">
+										<p className="text-xl text-gray-600 dark:text-stone-300" data-aos="fade-in" data-aos-delay="150">
 											{post.summary}
 										</p>
 									</div>
 									{/* Article meta */}
 									<div className="mt-5 md:flex md:items-center md:justify-between">
 										{/* Author meta */}
-										<div className="flex items-center justify-center" data-aos="fade-down" data-aos-delay="300">
+										<div className="flex items-center justify-center" data-aos="fade-in" data-aos-delay="300">
 											<a href="#0">
 												<CloudinaryClientWrapper
 													className="mr-3 shrink-0 rounded-full"
@@ -130,7 +148,7 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 									</div>
 								</header>
 								{session?.user && ["editor", "admin"].includes(session.user.role) && (
-									<span data-aos="fade-down" data-aos-delay="450">
+									<span data-aos="fade-in" data-aos-delay="450">
 										<Link
 											className="my-4 rounded-xl bg-green-600 px-4 py-2 text-xl text-white hover:bg-green-700"
 											title="Edit this article"
@@ -142,10 +160,10 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 								)}
 								<hr
 									className="my-8 h-px w-5 border-0 bg-gray-400 pt-px dark:bg-white"
-									data-aos="fade-down"
-									data-aos-delay="450"
+									data-aos="fade-in"
+									data-aos-delay="300"
 								/>
-								<Link href={`https://twitter.com/intent/tweet?text=${post.slug}`} className="inline">
+								<Link href={`https://twitter.com/intent/tweet?text=${post.slug}`} className="inline" data-aos="fade-in">
 									<TwitterXIcon className="h-6 w-6 dark:fill-gray-200" name="Share this article on Twitter" />
 								</Link>
 								{/*<button onClick={() => navigator.clipboard.writeText(post.slug)}>
@@ -153,7 +171,7 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 													</button> */}
 
 								{/* Article content */}
-								<div className="mb-8" data-aos="fade-up" data-aos-delay="450">
+								<div className="mb-8" data-aos="fade-down" data-aos-delay="450">
 									<Mdx content={post.content} />
 								</div>
 							</article>

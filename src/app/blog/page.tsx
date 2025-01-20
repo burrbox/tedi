@@ -46,7 +46,7 @@ export default async function Blog() {
 		<>
 			<JsonLd data={jsonLd} />
 			{/* Featured post */}
-			<section className="lg:pb-18 w-full pb-12 pt-6 md:pb-16 md:pt-10 lg:pt-14">
+			<section className="w-full pt-6 md:pt-10 lg:pt-14">
 				<div className="relative mx-auto mb-3 max-w-6xl justify-center space-y-4 md:mb-4 lg:mb-5">
 					<BlogSearch articles={allPosts} />
 					{session?.user && ["editor", "admin"].includes(session.user.role) && (
@@ -131,7 +131,30 @@ export default async function Blog() {
 							{/* Main content */}
 							<div className="lg:grow">
 								{/* Section title */}
-								<h2 className="h3 font-red-hat-display mb-4 dark:text-green-500">Latest</h2>
+								<h2 className="h3 font-red-hat-display mb-4 text-center dark:text-green-500">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke-width="1.5"
+										stroke="currentColor"
+										className="mx-3 inline size-6 animate-bounce"
+									>
+										<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+									</svg>
+									Recent Articles
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke-width="1.5"
+										stroke="currentColor"
+										className="mx-3 inline size-6 animate-bounce"
+									>
+										<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+									</svg>
+								</h2>
+
 								<hr className="border-1 mb-4 border-green-500 pb-4 md:pb-10" />
 
 								{/* Articles container */}
