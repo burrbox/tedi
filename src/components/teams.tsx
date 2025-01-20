@@ -4,7 +4,7 @@ import { CloudinaryClientWrapper } from "./cloudinaryClientWrapper";
 
 export default function Teams({ team = "all" }: { team?: string }) {
 	return (
-		<div className="mx-auto my-3 h-full w-3/4 justify-center rounded-xl bg-stone-200 px-5 py-7 dark:bg-stone-900">
+		<div className="mx-auto my-3 h-full justify-center rounded-xl bg-stone-200 px-5 py-7 dark:bg-stone-900">
 			<h2 className="w-full pt-4 text-center text-3xl font-semibold text-blue-700 dark:text-blue-500">
 				Find Out More About Our Groups
 			</h2>

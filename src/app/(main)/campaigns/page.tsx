@@ -31,16 +31,14 @@ export default async function Campaigns() {
 			<section
 				title="An image of a waterfall"
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/cqdwyikqyeqqfwemsrek" })})` }}
-				className="flex h-[50vh] w-screen bg-cover bg-fixed bg-center bg-no-repeat"
+				className="flex w-screen bg-cover bg-fixed bg-center bg-no-repeat lg:h-[50vh]"
 			>
-				<div className="container relative mx-2 h-fit w-full px-4 py-16 md:mx-auto">
-					<div className="absolute inset-0 mx-auto mt-28 w-fit md:mt-32 lg:mt-44" data-aos="fade-down">
-						<div className="flex flex-col justify-center rounded-xl bg-stone-100 p-10 lg:p-20 dark:bg-stone-800">
-							<h1 className="text-center text-5xl font-semibold text-green-600 md:text-6xl dark:text-green-400">
-								Campaigns
-							</h1>
-							<h2 className="text-wrap pt-6 text-center text-3xl">Find out how you can help your local community</h2>
-						</div>
+				<div className="container flex items-center justify-center px-5 py-10" data-aos="fade-in">
+					<div className="flex flex-col justify-center rounded-xl bg-stone-100 p-10 lg:p-20 dark:bg-stone-800">
+						<h1 className="text-center text-5xl font-semibold text-green-600 md:text-6xl dark:text-green-400">
+							Campaigns
+						</h1>
+						<h2 className="text-wrap pt-6 text-center text-3xl">Find out how you can help your local community</h2>
 					</div>
 				</div>
 			</section>

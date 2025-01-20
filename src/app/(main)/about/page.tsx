@@ -35,16 +35,13 @@ export default function AboutPage() {
 	return (
 		<div className="flex w-full flex-col items-center">
 			<JsonLd data={jsonLd} />
-			<section className="relative h-[400px] w-full">
-				<CloudinaryClientWrapper
-					width="960"
-					height="600"
-					src="nature/mountainWide"
-					sizes="100vw"
-					alt="Forest"
-					className="h-full w-full object-cover"
-				/>
-				<div className="absolute inset-0 flex items-center justify-center">
+			<section
+				className="flex w-screen bg-cover bg-fixed bg-center bg-no-repeat py-12 md:pb-20 lg:h-[50vh] lg:pt-40"
+				style={{
+					backgroundImage: `url(${getCldImageUrl({ src: "nature/mountainWide", gravity: "south" })})`,
+				}}
+			>
+				<div className="container flex items-center justify-center">
 					<div className="rounded-lg bg-white bg-opacity-85 px-5 py-10 dark:bg-emerald-950/85" data-aos="fade-down">
 						<h2 className="mb-4 text-center text-6xl font-bold text-green-700 dark:text-white">Our Mission</h2>
 						<p className="mx-auto max-w-3xl text-center text-xl text-blue-700 dark:text-green-300">

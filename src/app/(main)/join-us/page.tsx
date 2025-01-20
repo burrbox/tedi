@@ -35,11 +35,11 @@ export default async function AboutPage() {
 		<section className="w-full bg-gray-100 dark:bg-stone-900">
 			<JsonLd data={jsonLd} />
 			<div
-				className="relative flex min-h-[50vh] w-full flex-col bg-cover bg-fixed bg-center bg-repeat"
+				className="relative flex w-full flex-col bg-cover bg-fixed bg-center bg-repeat"
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/qmpzia6kmgjuld13zbhw" })})` }}
 			>
 				<div className="container mx-auto w-full py-16 md:py-24">
-					<div className="inset-0 mx-auto w-10/12 md:w-full" /* data-aos="fade-down" */>
+					<div className="mx-auto md:w-full" /* data-aos="fade-down" */>
 						<div className="flex flex-col justify-center gap-6 xl:flex-row">
 							<div className="m-auto h-fit max-w-3xl rounded-xl bg-white py-8 dark:bg-stone-800">
 								<JoinUsForm />
