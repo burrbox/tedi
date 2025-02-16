@@ -62,20 +62,27 @@ export default async function Blog() {
 						</div>
 					)}
 				</div>
-				<div className="container mx-auto justify-center px-5 md:px-10 lg:px-20">
-					<Alert className="relative mb-8" data-aos="fade-down" data-aos-delay="500">
-						<AlertTitle className="font-semibold text-green-600 dark:text-green-400">Like these articles?</AlertTitle>
-						<AlertDescription>
-							Want to try your hand at writing your own? Submit an article{" "}
-							<Link
-								href="https://docs.google.com/forms/d/e/1FAIpQLScPyNKW82l-B3YJypShgVB6m6WKZ4dqpyFsuzFvKhVdQPbmaA/viewform"
-								className="text-blue-400 underline"
-							>
-								here
-							</Link>{" "}
-							for a chance to be featured on our page!
-						</AlertDescription>
-					</Alert>
+				<div className="container mx-auto mb-8 justify-center px-5 md:px-10 lg:px-20">
+					<div
+						className="flex flex-col rounded-xl border-2 border-gray-500 bg-white px-2 py-3 text-center text-gray-950 md:flex-row md:px-5 md:py-5 md:text-left lg:px-10 dark:bg-gray-950 dark:text-gray-50"
+						data-aos="fade-in"
+						data-aos-delay="100"
+					>
+						<div>
+							<h3 className="text-2xl font-semibold text-green-600 dark:text-green-400">Want to take action?</h3>
+							<p>
+								We&apos;ve opened our blog submissions to anyone interested!
+								<br />
+								Try your hand at writing an article; it may even be featured on our website!
+							</p>
+						</div>
+						<Link
+							href="https://docs.google.com/forms/d/e/1FAIpQLScPyNKW82l-B3YJypShgVB6m6WKZ4dqpyFsuzFvKhVdQPbmaA/viewform"
+							className="mx-auto my-3 content-center justify-center rounded-xl bg-blue-400 px-3 py-4 text-gray-950 duration-200 hover:scale-105 md:my-auto"
+						>
+							Submit an Article
+						</Link>
+					</div>
 				</div>
 				<div className="lg:mb-18 mx-auto mb-12 max-w-6xl md:mb-16">
 					{featuredPost.image && (
