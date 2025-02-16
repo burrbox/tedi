@@ -61,6 +61,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 	const [articleImage, setArticleImage] = useState("");
 	const [isAuthorOpen, setIsAuthorOpen] = useState(false);
 	const [isEditorOpen, setIsEditorOpen] = useState(false);
+	const [customAuthor, setCustomAuthor] = useState("");
 
 	const [isSaving, setIsSaving] = useState(false);
 
@@ -73,6 +74,8 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 				.then((post) => {
 					if (post) {
 						setTitle(post.title);
+						setAuthor(post.author);
+						setEditor(post.editor);
 						setContent(post.content);
 						setSummary(post.summary);
 						setContent(post.content);
@@ -133,12 +136,37 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 											value="Anonymous"
 											onSelect={(newAuthor) => {
 												setAuthor((prev) => (newAuthor === prev ? "" : newAuthor.toLowerCase()));
-												setIsEditorOpen(false);
+												setIsAuthorOpen(false);
 											}}
 											className="dark:hover:bg-gray-900"
 										>
 											<Check className={cn("mr-2 h-4 w-4", author === "anonymous" ? "opacity-100" : "opacity-0")} />
 											Anonymous
+										</CommandItem>
+										<CommandItem className="dark:hover:bg-gray-900">
+											<Check
+												className={cn(
+													"mr-2 h-4 w-4",
+													author === customAuthor.toLowerCase() ? "opacity-100" : "opacity-0",
+												)}
+											/>
+											<div className="w-full">
+												<input
+													className="w-3/4 bg-inherit font-normal"
+													onChange={(e) => setCustomAuthor(e.target.value)}
+													placeholder="Set Custom Author"
+													value={customAuthor}
+												/>
+												<Button
+													onClick={(e) => {
+														setAuthor((prev) => (customAuthor === prev ? "" : customAuthor.toLowerCase()));
+														setIsAuthorOpen(false);
+													}}
+													className="w-1/4"
+												>
+													Set
+												</Button>
+											</div>
 										</CommandItem>
 										{fullTeam.map((member) => (
 											<CommandItem

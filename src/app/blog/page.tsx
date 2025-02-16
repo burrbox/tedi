@@ -132,13 +132,24 @@ export default async function Blog() {
 										<p className="mb-6 line-clamp-3 text-base text-gray-600 md:mb-8 md:text-lg lg:mb-10 lg:text-xl dark:text-stone-300">
 											{featuredPost.summary}
 										</p>
-										<div>
+										<div className="">
 											<Link
 												href={`/blog/${featuredPost.slug}`}
 												className="rounded-xl border-2 border-green-600 bg-green-600 px-10 py-2 text-white duration-300 hover:bg-white hover:text-green-600 md:px-16"
 											>
 												Read More
 											</Link>
+											{session?.user && ["editor", "admin"].includes(session.user.role) && (
+												<span data-aos="fade-in" data-aos-delay="450">
+													<Link
+														className="mx-5 rounded-xl border-2 border-blue-600 bg-blue-600 px-5 py-2 text-white duration-300 hover:bg-stone-300 hover:text-blue-600"
+														title="Edit this article"
+														href={`/blog/admin/edit/${featuredPost.slug}`}
+													>
+														Edit this article
+													</Link>
+												</span>
+											)}
 										</div>
 									</div>
 								</div>
