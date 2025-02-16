@@ -21,7 +21,7 @@ export default function Carousel() {
 					See pictures from our recent cleanup!
 				</h2>
 			</div>
-			<div className="container px-4 md:px-6">
+			<div className="container md:px-6">
 				<div className="max-w-6x w-full">
 					<Marquee pauseOnHover className="[--duration:20s]">
 						{images.map((image) => (

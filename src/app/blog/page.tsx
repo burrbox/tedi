@@ -10,6 +10,7 @@ import { auth } from "@/server/auth";
 import { getPostAuthor } from "@/lib/utils";
 import { type WebPage, type WebSite, type WithContext } from "schema-dts";
 import { JsonLd } from "@/components/jsonLd";
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 // import RelatedPosts from "@/components/related-posts-01";
 
 export const revalidate = 300; // 5 minutes
@@ -46,9 +47,9 @@ export default async function Blog() {
 		<>
 			<JsonLd data={jsonLd} />
 			{/* Featured post */}
-			<section className="w-full pt-6 md:pt-10 lg:pt-14">
+			<section className="w-full pt-6">
 				<div className="relative mx-auto mb-3 max-w-6xl justify-center space-y-4 md:mb-4 lg:mb-5">
-					<BlogSearch articles={allPosts} />
+					{/* <BlogSearch articles={allPosts} /> */}
 					{session?.user && ["editor", "admin"].includes(session.user.role) && (
 						<div>
 							<Link
@@ -61,9 +62,28 @@ export default async function Blog() {
 						</div>
 					)}
 				</div>
+				<div className="container mx-auto justify-center px-5 md:px-10 lg:px-20">
+					<Alert className="relative mb-8" data-aos="fade-down" data-aos-delay="500">
+						<AlertTitle className="font-semibold text-green-600 dark:text-green-400">Like these articles?</AlertTitle>
+						<AlertDescription>
+							Want to try your hand at writing your own? Submit an article{" "}
+							<Link
+								href="https://docs.google.com/forms/d/e/1FAIpQLScPyNKW82l-B3YJypShgVB6m6WKZ4dqpyFsuzFvKhVdQPbmaA/viewform"
+								className="text-blue-400 underline"
+							>
+								here
+							</Link>{" "}
+							for a chance to be featured on our page!
+						</AlertDescription>
+					</Alert>
+				</div>
 				<div className="lg:mb-18 mx-auto mb-12 max-w-6xl md:mb-16">
 					{featuredPost.image && (
-						<div className="relative h-[400px] overflow-hidden rounded-lg md:h-[500px] lg:h-[600px]">
+						<div
+							className="relative mx-5 h-[400px] overflow-hidden rounded-lg md:h-[500px] lg:h-[600px]"
+							data-aos="fade-in"
+							data-aos-delay="200"
+						>
 							<Image
 								className="relative inset-0 h-full w-full object-cover opacity-50"
 								src={featuredPost.image}

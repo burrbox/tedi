@@ -299,7 +299,7 @@ export default async function Home() {
 					/>
 				</div>
 			</section>
-			<section className="w-full bg-stone-100 px-5 py-6 text-center md:px-10 md:py-12 lg:py-24 dark:bg-stone-800">
+			<section className="bg-stone-100 px-5 py-6 text-center md:px-10 md:py-12 lg:py-24 dark:bg-stone-800">
 				<div className="my-5 inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">Get Involved</div>
 				<h2 className="text-center text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl dark:text-blue-400">
 					Fall Fast Fashion Campaign
@@ -311,8 +311,8 @@ export default async function Home() {
 					<span className="font-semibold text-green-600">repurpose, reuse, and recycle clothing</span> to prevent waste
 					from accumulating in landfills.
 				</p>
-				<div className="mx-10 grid flex-col items-center justify-center gap-6 space-y-4 text-center md:grid-cols-2">
-					<div className="mt-5 h-full space-y-2 rounded-xl bg-stone-200 px-4 py-10 md:px-8 dark:bg-stone-900">
+				<div className="grid flex-col items-center justify-center gap-6 space-y-4 text-center md:grid-cols-2">
+					<div className="mt-5 h-full space-y-2 rounded-xl bg-stone-200 py-10 dark:bg-stone-900">
 						<p className="pb-5 text-center text-lg font-medium">
 							<span className="font-semibold text-green-600 dark:text-green-400">Donate</span> old/used clothing at one
 							of our several clothing drive donation bins! If you don’t see a clothing drive in your area, consider
@@ -428,7 +428,7 @@ export default async function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="w-full bg-stone-100 px-4 py-12 md:py-24 lg:py-32 dark:bg-stone-800">
+			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800">
 				<h1 className="pb-8 text-center text-5xl font-bold tracking-tighter text-blue-600 dark:text-blue-400">
 					See where our members are!
 				</h1>
