@@ -118,16 +118,28 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 								aria-expanded={isAuthorOpen}
 								className="w-full justify-between"
 							>
-								{author ? fullTeam.find((member) => member.name.toLowerCase() === author)?.name : "Select author..."}
+								{author ? author : "Select author..."}
 								<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
 							</Button>
 						</PopoverTrigger>
 						<PopoverContent className="w-72 p-0">
 							<Command>
-								<CommandInput placeholder="Search author..." />
+								<CommandInput placeholder={author} />
 								<CommandList>
 									<CommandEmpty>No author found.</CommandEmpty>
 									<CommandGroup className="max-h-96 overflow-scroll">
+										<CommandItem
+											key="anon"
+											value="Anonymous"
+											onSelect={(newAuthor) => {
+												setAuthor((prev) => (newAuthor === prev ? "" : newAuthor.toLowerCase()));
+												setIsEditorOpen(false);
+											}}
+											className="dark:hover:bg-gray-900"
+										>
+											<Check className={cn("mr-2 h-4 w-4", author === "anonymous" ? "opacity-100" : "opacity-0")} />
+											Anonymous
+										</CommandItem>
 										{fullTeam.map((member) => (
 											<CommandItem
 												key={member.name}
@@ -136,6 +148,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 													setAuthor((prev) => (newAuthor === prev ? "" : newAuthor.toLowerCase()));
 													setIsAuthorOpen(false);
 												}}
+												className="dark:hover:bg-gray-900"
 											>
 												<Check
 													className={cn(
@@ -174,7 +187,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 								aria-expanded={isEditorOpen}
 								className="w-full justify-between"
 							>
-								{editor ? fullTeam.find((member) => member.name.toLowerCase() === editor)?.name : "Select editor..."}
+								{editor ? editor : "Select editor..."}
 								<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
 							</Button>
 						</PopoverTrigger>
@@ -184,6 +197,19 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 								<CommandList>
 									<CommandEmpty>No editor found.</CommandEmpty>
 									<CommandGroup className="max-h-96 overflow-scroll">
+										{/* commented out bc we don't have anonymous editors */}
+										{/* <CommandItem
+											key="anon"
+											value="Anonymous"
+											onSelect={(newEditor) => {
+												setEditor((prev) => (newEditor === prev ? "" : newEditor.toLowerCase()));
+												setIsEditorOpen(false);
+											}}
+											className="dark:hover:bg-gray-900"
+										>
+											<Check className={cn("mr-2 h-4 w-4", editor === "anonymous" ? "opacity-100" : "opacity-0")} />
+											Anonymous
+										</CommandItem> */}
 										{fullTeam.map((member) => (
 											<CommandItem
 												key={member.name}
@@ -192,6 +218,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 													setEditor((prev) => (newEditor === prev ? "" : newEditor.toLowerCase()));
 													setIsEditorOpen(false);
 												}}
+												className="dark:hover:bg-gray-900"
 											>
 												<Check
 													className={cn(

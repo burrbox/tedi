@@ -87,7 +87,7 @@ export default async function AboutPage() {
 										<div className="mx-3 flex justify-center pb-10 pt-6">
 											<Link
 												className="w-4/5 rounded-xl bg-blue-700 py-3 text-center text-white duration-300 hover:bg-blue-600"
-												href="https://docs.google.com/forms/d/e/1FAIpQLSei17YJJv6pwznBs-e072pNXC7o97_GJh--3ekpGClWRgyhDw/viewform"
+												href="https://forms.gle/wA2c3K2k7Rb6KMY76"
 											>
 												Apply Now
 											</Link>
