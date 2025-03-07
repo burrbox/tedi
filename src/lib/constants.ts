@@ -151,15 +151,6 @@ export const team = [
 		instagram: "https://www.instagram.com/ashley.curtiss25/",
 	},
 	{
-		name: "Cassidy Fisher",
-		title: "Blog Writer",
-		location: "Warrington, PA, USA",
-		image: "TEDI Bio/uttowv3dxrxhufp1ophz",
-		description: `Cassidy is passionate about the environment and studying the impacts of changes in the environment on human health and wellbeing. She has conducted extensive research on environmental inequities in minority communities and joined TEDI to raise awareness of these inequities and other environmental issues.`,
-		email: "cassyfish2025@gmail.com",
-		instagram: "https://www.instagram.com/_cassidyfisher_/",
-	},
-	{
 		name: "Priya Connelly",
 		title: "Blog Writer",
 		location: "Hopewell Junction, NY, USA",
@@ -167,15 +158,6 @@ export const team = [
 		description: `Priya has always been passionate about the Earth and is constantly looking for more ways to preserve it for future generations. She loves all things nature, especially animals, and wants to raise awareness of environmental problems that lack public attention. She has witnessed the impacts of environmental problems on our Earth first-hand and joined TEDI to speak up about these important issues.`,
 		email: "priya.connelly@gmail.com",
 		instagram: "https://www.instagram.com/priya.connellyy/",
-	},
-	{
-		name: "Alexa Segovia",
-		title: "Blog Editor",
-		location: "New York City, NY, USA",
-		image: "TEDI Bio/oaj5yxnnzq9yuamerisr",
-		description: `Alexa has always has a strong interest in environmental conservation and ensuring a better future for generations to come. She has a special passion for animals, especially pandas. She wants to pursue a degree in biology and study ways in which we can help our environment thrive. TEDI is a great way to spread awareness and motivate  others to take action in order to make the world a better place!`,
-		email: "asegoviams101@gmail.com",
-		instagram: "https://www.instagram.com/heartz4ken/",
 	},
 	{
 		name: "Madeline Cabral",
