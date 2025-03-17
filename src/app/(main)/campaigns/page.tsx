@@ -46,21 +46,21 @@ export default async function Campaigns() {
 				<div className="container grid items-center gap-6 px-4 py-10 pb-6 md:px-6 md:pb-12 lg:grid-cols-2 lg:gap-10">
 					<div>
 						<CloudinaryClientWrapper
-							src="other/dajm8gabnmhhuaeuj37a"
+							src="other/xgusyuyln9ry0rhojhmx"
 							width="600"
 							height="400"
-							alt="A clothing rack filled with fast fashion clothing"
+							alt="A sidewalk covered in chalk art"
 							className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full"
 						/>
 					</div>
 					<div className="space-y-4">
 						<div className="inline-block rounded-lg bg-stone-100 px-3 py-1 text-sm text-black">Featured Campaign</div>
 						<h2 className="text-xl font-semibold text-blue-600 sm:text-4xl md:text-5xl dark:text-blue-400">
-							Fall Fast Fashion Campaign
+							Chalking Event
 						</h2>
 						<p className="font-medium md:text-lg">
-							Join our movement to end fast fashion and promote sustainable clothing choices. Together, we can make a
-							difference.
+							Decorate sidewalks with chalk, participate in fun spring activities, and enjoy a morning with friends. All
+							ages are welcome!
 						</p>
 					</div>
 				</div>
@@ -68,97 +68,70 @@ export default async function Campaigns() {
 					<div className="container grid grid-cols-1 gap-12 px-4 md:px-6 lg:grid-cols-2">
 						<div className="space-y-4">
 							<h2 className="text-xl font-semibold text-green-600 sm:text-2xl md:text-3xl dark:text-green-400">
-								What is Fast Fashion?
+								About The Event
 							</h2>
 							<p className="md:text-lg lg:text-base">
-								Most companies that you order clothing from now are fast fashion companies, meaning they{" "}
-								<span className="font-semibold text-blue-600 dark:text-blue-400">mass produce</span> trendy, cheap
-								clothing that quickly moves from design to retail. Many people have taken to discarding clothing once a
-								trend is over or a certain style is no longer popular, leading to an{" "}
-								<span className="font-semibold text-blue-600 dark:text-blue-400">excessive buildup</span> of textiles in
-								landfills and contributing to the{" "}
-								<span className="font-semibold text-blue-600 dark:text-blue-400">microplastic pollution issue</span>.
-								Read more about the origins of fast fashion here.
+								The <span className="font-semibold text-blue-600 dark:text-blue-400">Chalking Event by TEDI</span> is
+								dedicated to making a difference through{" "}
+								<span className="font-semibold text-blue-600 dark:text-blue-400">art and community engagement</span>.
+								The event hopes to bring people together to create a vibrant and{" "}
+								<span className="font-semibold text-blue-600 dark:text-blue-400">colorful environment</span> that
+								inspires creativity and joy. We will also be making flower crowns and having other{" "}
+								<span className="font-semibold text-blue-600 dark:text-blue-400">nature-related crafts</span>
+								for kids.
 							</p>
 						</div>
 						<div className="space-y-4">
 							<h2 className="text-xl font-semibold text-green-600 sm:text-2xl md:text-3xl dark:text-green-400">
-								Action Plan
+								Our Goals
 							</h2>
 							<p className="md:text-lg lg:text-base">
-								This campaign aims to mitigate the environmental harm that fast fashion causes by hosting clothing
-								drives across the{" "}
-								<span className="font-semibold text-blue-600 dark:text-blue-400">United States and Canada</span>.
-								Clothing drives are an excellent way to{" "}
+								We will be decorating the sidewalks of the{" "}
+								<span className="font-semibold text-blue-600 dark:text-blue-400">East Fishkill Rec</span> with spring
+								images drawn in chalk. The idea is to cover as much of the sidewalk as we can with cute pictures to get
+								everyone excited for spring and{" "}
 								<span className="font-semibold text-blue-600 dark:text-blue-400">
-									repurpose, reuse, and recycle clothing
-								</span>{" "}
-								to prevent waste from accumulating in landfills.
+									bring people in our community together
+								</span>
+								.
 							</p>
 						</div>
-						<div className="space-y-4">
-							<h2 className="text-xl font-semibold text-green-600 sm:text-2xl md:text-3xl dark:text-green-400">
+						<div className="space-y-4 rounded-3xl bg-stone-200 px-3 py-5 lg:col-span-2 lg:px-5 lg:py-10 dark:bg-stone-900">
+							<h2 className="text-xl font-semibold text-green-600 sm:text-2xl md:text-3xl lg:text-center dark:text-green-400">
 								Getting Involved
 							</h2>
-							<p className="md:text-lg lg:text-base">
-								<span className="font-semibold text-blue-600 dark:text-blue-400">Donate</span> old/used clothing at one
-								of our several clothing drive donation bins! If you don’t see a clothing drive in your area, consider
-								hosting one yourself. <Link href="/join-us">Become a member</Link> today to receive free, one-on-one
-								guidance on{" "}
-								<span className="font-semibold text-blue-600 dark:text-blue-400">starting a clothing drive</span> from a
-								member of our campaign team and gain access to an exclusive action toolkit including all of the
-								materials you need to launch a{" "}
-								<span className="font-semibold text-blue-600 dark:text-blue-400">successful drive</span>.
-							</p>
-						</div>
-						<div className="space-y-4">
-							<h2 className="text-xl font-semibold text-green-600 sm:text-2xl md:text-3xl dark:text-green-400">
-								Past Locations
-							</h2>
-							<p className="md:text-lg lg:text-base">
-								<span className="font-semibold">Hopewell Junction, New York, USA</span> - October 19st 12-4pm @{" "}
-								<Link
-									className="text-blue-500 underline"
-									href="https://www.google.com/maps/place/Hopewell+Recreation+Park/@41.5749365,-73.8121169,15.79z/data=!4m14!1m7!3m6!1s0x89dd4818425ae529:0x696af3813e741117!2sJohn+Jay+Senior+High+School!8m2!3d41.5406214!4d-73.8332066!16s%2Fm%2F025wqkv!3m5!1s0x89dd4742b5ea7787:0x73795bf9d941a3b4!8m2!3d41.5768458!4d-73.804657!16s%2Fg%2F11k61m0mfd?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D"
-								>
-									Hopewell Recreation Park
-								</Link>
-								<br />
-								{/* <span className="font-semibold">Shrub Oak, New York, USA</span> - donation bin addresses TBD
-								<br /> <span className="font-semibold">Verona, New Jersey, USA</span> - donation bin addresses TBD */}
-								<Popover>
-									<PopoverTrigger>
-										<span className="font-semibold underline">Toronto, Ontario, Canada *</span>
-									</PopoverTrigger>
-									<PopoverContent>
-										<div className="flex space-x-6">
-											<div className="space-y-2">
-												<h4 className="font-medium leading-none text-green-600 dark:text-green-400">
-													Pickup Clothing Drive
-												</h4>
-												<p className="text-muted-foreground">
-													A truck from{" "}
-													<Link href="https://www.diabetes.ca/" className="italic underline">
-														Diabetes Canada
-													</Link>{" "}
-													will be picking up clothing donations along with a few books. They accept donations around the{" "}
-													<Link href="https://declutterfordiabetes.ca/donation-bin" className="italic underline">
-														General Toronto Area
-													</Link>
-													!
-												</p>
-											</div>
-										</div>
-									</PopoverContent>
-									- All Day on December 9
-								</Popover>
-								{/* <br /> <span className="font-semibold">Miami, Florida, USA</span> - donation bin addresses TBD */}
-							</p>
+							<div className="container grid grid-cols-1 gap-6 px-4 md:px-6 lg:grid-cols-2">
+								<div>
+									<h3 className="text-lg font-semibold text-blue-600 dark:text-blue-400">Location</h3>
+									<p className="md:text-lg lg:text-base">
+										<span>Hopewell Junction, New York, USA</span> -{" "}
+										<Link className="text-blue-500 underline" href="https://g.co/kgs/ZXfrb1v">
+											East Fishkill Recreation
+										</Link>
+									</p>
+									<h3 className="pt-3 text-lg font-semibold text-blue-600 dark:text-blue-400">Time</h3>
+									<p className="md:text-lg lg:text-base">
+										<span>March 29th 10-12pm</span>
+									</p>
+								</div>
+								<div>
+									<h3 className="text-lg font-semibold text-blue-600 dark:text-blue-400">Register</h3>
+									<p>
+										We recommend that you invite your friends and family to come to the event with you, especially if
+										you have younger siblings or cousins in the area! <br />
+										<br />
+										To register for the event fill out the form{" "}
+										<Link className="text-blue-500 underline" href="https://forms.gle/SbQLbppGq8JEXtdd9">
+											here
+										</Link>
+										!
+									</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<CampaignsCarousel />
 		</>
 	);
 }

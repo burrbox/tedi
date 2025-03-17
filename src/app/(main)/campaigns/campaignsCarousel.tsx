@@ -1,6 +1,8 @@
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import Marquee from "@/components/magicui/marquee";
 
+/* campaign to be updated */
+
 const images = [
 	"clothingdrive/liyteccugtuokqmle4aw",
 	"clothingdrive/ulhn3zopqj7j9fcuxflm",
