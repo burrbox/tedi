@@ -216,6 +216,22 @@ export const team = [
 		instagram: "https://www.instagram.com/shaylen_b10/",
 		github: "https://github.com/sb00110/",
 	},
+	{
+		name: "Saide  Taşlıyol",
+		title: "Blog Writer",
+		location: "Hopewell Junction, NY, USA",
+		image: "TEDI Bio/dikbx8tsrhs3bjdmzqs5",
+		description: `Saide Zülal Taşlıyol is dedicated to solving global challenges through the innovative use of science and technology. She has held significant positions in numerous social impact-oriented initiatives and launched her own social benefit project. She is especially passionate about environmental sustainability, equal opportunities in education, and developing new bioplastics. Additionally, she has published an academic report in Turkey on the use of clean energy and been accepted into the Civic Unplugged Fellowship where she continues to contribute to impactful projects.`,
+		email: "zulalsaide@gmail.com",
+	},
+	{
+		name: "John Huang",
+		title: "Blog Writer",
+		location: "Hopewell Junction, NY, USA",
+		image: "TEDI Bio/clsulxofocmmvixemand",
+		description: `From a young age, John has been passionate about environmental awareness and the importance of preservation. He loves learning about different organisms and ecosystems and is particularly interested in symbiotic relationships and interactions. Moreover, he extremely dedicated to finding a sustainable means of life through renewable energy and alternative agricultural approaches. He has applied these ideas through climate based fellowships and individual projects. Through networking, John hope to help others learn more about our world and inspire them to take initiative.`,
+		email: "huangjohn1733@gmail.com",
+	},
 ] as {
 	name: string;
 	title: string;
