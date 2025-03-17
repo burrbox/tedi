@@ -151,15 +151,6 @@ export const team = [
 		instagram: "https://www.instagram.com/ashley.curtiss25/",
 	},
 	{
-		name: "Priya Connelly",
-		title: "Blog Writer",
-		location: "Hopewell Junction, NY, USA",
-		image: "TEDI Bio/clgfjuvx1rzmvmeyfifr",
-		description: `Priya has always been passionate about the Earth and is constantly looking for more ways to preserve it for future generations. She loves all things nature, especially animals, and wants to raise awareness of environmental problems that lack public attention. She has witnessed the impacts of environmental problems on our Earth first-hand and joined TEDI to speak up about these important issues.`,
-		email: "priya.connelly@gmail.com",
-		instagram: "https://www.instagram.com/priya.connellyy/",
-	},
-	{
 		name: "Madeline Cabral",
 		title: "Blog Editor",
 		location: "Taunton, MA, USA",
