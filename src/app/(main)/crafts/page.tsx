@@ -548,13 +548,13 @@ export default function SustainableCraftsPage() {
 					</p>
 					<div className="flex flex-wrap justify-center gap-4">
 						<Link
-							href="#"
+							href="/join-us"
 							className="rounded-md bg-green-500 px-8 py-3 font-medium text-white transition-all duration-300 hover:bg-green-600"
 						>
 							Get Started Today
 						</Link>
 						<Link
-							href="#"
+							href="mailto:hello@tedinitiative.org"
 							className="rounded-md bg-blue-500 px-8 py-3 font-medium text-white transition-all duration-300 hover:bg-blue-600"
 						>
 							Contact TEDI for Support
