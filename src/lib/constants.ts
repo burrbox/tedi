@@ -238,7 +238,70 @@ export const team = [
 	github?: string;
 }[];
 
-export const fullTeam = [...directors, ...team];
+export const retiredTeam = [
+	{
+		name: "Priya Connelly",
+		title: "Blog Writer",
+		location: "Hopewell Junction, NY, USA",
+		image: "TEDI Bio/clgfjuvx1rzmvmeyfifr",
+		description: `Priya has always been passionate about the Earth and is constantly looking for more ways to preserve it for future generations. She loves all things nature, especially animals, and wants to raise awareness of environmental problems that lack public attention. She has witnessed the impacts of environmental problems on our Earth first-hand and joined TEDI to speak up about these important issues.`,
+		email: "priya.connelly@gmail.com",
+		instagram: "https://www.instagram.com/priya.connellyy/",
+	},
+	{
+		name: "Sally Liu",
+		title: "Campaign Specialist",
+		location: "Vancouver, BC, Canada",
+		image: "TEDI Bio/czv4kdxgkiqdfq6omco2",
+		description: `Sally is always passionate about environmental conservation. As a second-year student majoring in Environmental and Sustainability Studies, she hopes to make a meaningful impact by promoting sustainability, justice, and equality. She joined TEDI to gain hands-on experience in addressing real-world environmental challenges and to contribute to making the world a better place for future generations.`,
+		email: "cheliu2005@outlook.com",
+	},
+	{
+		name: "Cassidy Fisher",
+		title: "Blog Writer",
+		location: "Warrington, PA, USA",
+		image: "TEDI Bio/uttowv3dxrxhufp1ophz",
+		description: `Cassidy is passionate about the environment and studying the impacts of changes in the environment on human health and wellbeing. She has conducted extensive research on environmental inequities in minority communities and joined TEDI to raise awareness of these inequities and other environmental issues.`,
+		email: "cassyfish2025@gmail.com",
+		instagram: "https://www.instagram.com/_cassidyfisher_/",
+	},
+	{
+		name: "Alexa Segovia",
+		title: "Blog Editor",
+		location: "New York City, NY, USA",
+		image: "TEDI Bio/oaj5yxnnzq9yuamerisr",
+		description: `Alexa has always has a strong interest in environmental conservation and ensuring a better future for generations to come. She has a special passion for animals, especially pandas. She wants to pursue a degree in biology and study ways in which we can help our environment thrive. TEDI is a great way to spread awareness and motivate  others to take action in order to make the world a better place!`,
+		email: "asegoviams101@gmail.com",
+		instagram: "https://www.instagram.com/heartz4ken/",
+	},
+] as {
+	name: string;
+	title: string;
+	location: string;
+	image: string;
+	description: string;
+	email?: string;
+	linkedin?: string;
+	twitter?: string;
+	instagram?: string;
+	tiktok?: string;
+	website?: string;
+	github?: string;
+}[];
+
+export const fullTeam = [
+	{
+		name: "Anonymous",
+		title: "Anonymous Contributor",
+		location: "Unknown",
+		image: "utter",
+		description: "This article was contributed anonymously.",
+		email: "anonymous@tedinitiative.org",
+	},
+	...directors,
+	...team,
+	...retiredTeam,
+];
 
 export const toolkits = [
 	{

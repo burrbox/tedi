@@ -52,8 +52,8 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 	const post = await getPost(params.slug);
 	if (!post) notFound();
 
-	const author = getPostAuthor(post) ?? fullTeam[1]!;
-	const editor = getPostEditor(post) ?? fullTeam[1]!;
+	const author = getPostAuthor(post) ?? fullTeam[0]!;
+	const editor = getPostEditor(post) ?? fullTeam[0]!;
 
 	const session = await auth();
 
@@ -62,12 +62,13 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 		"@type": "Article",
 		headline: post.title,
 		description: post.summary,
-		author: { "@type": "Person", name: author.name, url: author.website, email: author.email },
+		author: { "@type": "Person", name: author.name ?? "Anonymous Author", email: author.email ?? undefined },
 		image: post.image ? post.image : undefined,
 		datePublished: post.createdAt.toISOString(),
 		dateModified: post.updatedAt.toISOString(),
 	};
 
+	console.log(post.author);
 	return (
 		<>
 			<JsonLd data={jsonLd} />

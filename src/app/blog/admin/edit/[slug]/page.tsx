@@ -131,18 +131,6 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 								<CommandList>
 									<CommandEmpty>No author found.</CommandEmpty>
 									<CommandGroup className="max-h-96 overflow-scroll">
-										<CommandItem
-											key="anon"
-											value="Anonymous"
-											onSelect={(newAuthor) => {
-												setAuthor((prev) => (newAuthor === prev ? "" : newAuthor.toLowerCase()));
-												setIsAuthorOpen(false);
-											}}
-											className="dark:hover:bg-gray-900"
-										>
-											<Check className={cn("mr-2 h-4 w-4", author === "anonymous" ? "opacity-100" : "opacity-0")} />
-											Anonymous
-										</CommandItem>
 										<CommandItem className="dark:hover:bg-gray-900">
 											<Check
 												className={cn(
