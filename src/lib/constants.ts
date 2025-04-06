@@ -217,11 +217,20 @@ export const team = [
 	},
 	{
 		name: "John Huang",
-		title: "Blog Writer",
+		title: "Network Coordinator",
 		location: "Hopewell Junction, NY, USA",
 		image: "TEDI Bio/clsulxofocmmvixemand",
 		description: `From a young age, John has been passionate about environmental awareness and the importance of preservation. He loves learning about different organisms and ecosystems and is particularly interested in symbiotic relationships and interactions. Moreover, he extremely dedicated to finding a sustainable means of life through renewable energy and alternative agricultural approaches. He has applied these ideas through climate based fellowships and individual projects. Through networking, John hope to help others learn more about our world and inspire them to take initiative.`,
 		email: "huangjohn1733@gmail.com",
+	},
+	{
+		name: "Reagan Seay",
+		title: "Campaign Specialist",
+		location: "Severna Park, MD, USA",
+		image: "TEDI Bio/xrw5g9bkow1dajen9hmi",
+		description: `Since Reagan was little, they have been very passionate about helping others and making the planet a better place. With a deep commitment to sustainability and conservation, they joined TEDI to take action, connect with like-minded individuals, and contribute to meaningful environmental efforts. Through TEDI, Reagan hopes to inspire others to take action, make a lasting impact, and help create a greener future for later generations.`,
+		email: "Reaganseay@gmail.com",
+		instagram: "@darkmoon_moon144",
 	},
 ] as {
 	name: string;
