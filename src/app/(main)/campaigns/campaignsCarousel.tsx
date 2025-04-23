@@ -4,14 +4,21 @@ import Marquee from "@/components/magicui/marquee";
 /* campaign to be updated */
 
 const images = [
-	"clothingdrive/liyteccugtuokqmle4aw",
-	"clothingdrive/ulhn3zopqj7j9fcuxflm",
-	"clothingdrive/egi5apu8eal1wfywkief",
-	"clothingdrive/m7oxk0hkeydrrzrvsqk5",
-	"clothingdrive/wd2e00qdonvoqhcpgych",
-	"clothingdrive/osbas1157dqukpg59u4o",
-	"clothingdrive/ztkcyl8kijtedn98wv4a",
-	"clothingdrive/oyabxd0tfjr2d2z2dgxf",
+	"chalking/v9fzza6cngrtuekakzwx",
+	"chalking/pbvyi5hhwwvwymwxlqlf",
+	"chalking/tee3yzcrs3cifv2ik0sn",
+	"chalking/ngprl6hbghpdrpm2kt5l",
+	"chalking/doexxfyzlbchllc7xqz4",
+	"chalking/lcxxz41kgbip7fgtuc7d",
+	"chalking/dnkepf6g1bh8rdvzfbao",
+	"chalking/uscuftrofndjkddyknf3",
+	"chalking/xqzqnu4m3btkey7hkbbv",
+	"chalking/pde7wbc8tvmnrhwsxh9s",
+	"chalking/cx2t9ix4cs8hdvxfzzn5",
+	"chalking/fmjyeb6nh3clx5ohvqi5",
+	"chalking/ozvb8biyhvjnw6apszp5",
+	"chalking/bkllm2lcj3vdx0hud5kq",
+	"chalking/qj80yycrcs6pigua69u2",
 ];
 export default function CampaignsCarousel() {
 	return (
@@ -21,7 +28,7 @@ export default function CampaignsCarousel() {
 				data-aos="fade-left"
 			>
 				<h2 className="text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl dark:text-blue-400">
-					Check out our recent clothing drives!
+					Check out our recent chalking event!
 				</h2>
 			</div>
 			<div className="container px-4 md:px-6">

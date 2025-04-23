@@ -132,6 +132,7 @@ export default async function Campaigns() {
 					</div>
 				</div>
 			</section>
+			<CampaignsCarousel />
 		</>
 	);
 }
