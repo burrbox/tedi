@@ -199,9 +199,9 @@ export const team = [
 		github: "https://github.com/sb00110/",
 	},
 	{
-		name: "Saide  Taşlıyol",
+		name: "Saide Taşlıyol",
 		title: "Blog Writer",
-		location: "Hopewell Junction, NY, USA",
+		location: "Turkey",
 		image: "TEDI Bio/dikbx8tsrhs3bjdmzqs5",
 		description: `Saide Zülal Taşlıyol is dedicated to solving global challenges through the innovative use of science and technology. She has held significant positions in numerous social impact-oriented initiatives and launched her own social benefit project. She is especially passionate about environmental sustainability, equal opportunities in education, and developing new bioplastics. Additionally, she has published an academic report in Turkey on the use of clean energy and been accepted into the Civic Unplugged Fellowship where she continues to contribute to impactful projects.`,
 		email: "zulalsaide@gmail.com",
@@ -209,7 +209,7 @@ export const team = [
 	{
 		name: "John Huang",
 		title: "Network Coordinator",
-		location: "Hopewell Junction, NY, USA",
+		location: "New York, NY, USA",
 		image: "TEDI Bio/clsulxofocmmvixemand",
 		description: `From a young age, John has been passionate about environmental awareness and the importance of preservation. He loves learning about different organisms and ecosystems and is particularly interested in symbiotic relationships and interactions. Moreover, he extremely dedicated to finding a sustainable means of life through renewable energy and alternative agricultural approaches. He has applied these ideas through climate based fellowships and individual projects. Through networking, John hope to help others learn more about our world and inspire them to take initiative.`,
 		email: "huangjohn1733@gmail.com",
@@ -221,16 +221,17 @@ export const team = [
 		image: "TEDI Bio/xrw5g9bkow1dajen9hmi",
 		description: `Since Reagan was little, they have been very passionate about helping others and making the planet a better place. With a deep commitment to sustainability and conservation, they joined TEDI to take action, connect with like-minded individuals, and contribute to meaningful environmental efforts. Through TEDI, Reagan hopes to inspire others to take action, make a lasting impact, and help create a greener future for later generations.`,
 		email: "Reaganseay@gmail.com",
-		instagram: "@darkmoon_moon144",
+		instagram: "https://www.instagram.com/darkmoon_moon144/",
 	},
 	{
 		name: "Jeswith Mekapati",
 		title: "Blog Writer",
-		location: "",
+		location: "Houston, TX, USA",
 		image: "TEDI Bio/oiwjaf7jzzwu5trwgafk",
 		description: `Jeswith Reddy Mekapati is a high school student and environmental advocate with a passion for ecological research and climate action. He became interested in environmental science through his research projects involving plant biology and sustainable agriculture such as optimizing herb growth in space conditions. Jeswith joined TEDI to collaborate with like minded individuals and develop community-driven solutions to environmental challenges. He hopes to bridge scientific research and grassroots advocacy to create a more equitable planet. Outside of TEDI, he enjoys reading, debating, and playing sports such as cricket.`,
-		email: "",
+		email: "jeswith.mekapati@gmail.com",
 		linkedin: "https://www.linkedin.com/in/jeswith-mekapati/",
+		instagram: "https://www.instagram.com/jeswi_0816/",
 	},
 ] as {
 	name: string;
