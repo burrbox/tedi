@@ -227,7 +227,7 @@ export const team = [
 		name: "Jeswith Mekapati",
 		title: "Blog Writer",
 		location: "Houston, TX, USA",
-		image: "TEDI Bio/oiwjaf7jzzwu5trwgafk",
+		image: "oiwjaf7jzzwu5trwgafk",
 		description: `Jeswith Reddy Mekapati is a high school student and environmental advocate with a passion for ecological research and climate action. He became interested in environmental science through his research projects involving plant biology and sustainable agriculture such as optimizing herb growth in space conditions. Jeswith joined TEDI to collaborate with like minded individuals and develop community-driven solutions to environmental challenges. He hopes to bridge scientific research and grassroots advocacy to create a more equitable planet. Outside of TEDI, he enjoys reading, debating, and playing sports such as cricket.`,
 		email: "jeswith.mekapati@gmail.com",
 		linkedin: "https://www.linkedin.com/in/jeswith-mekapati/",
