@@ -79,15 +79,6 @@ export const directors = [
 		website: "https://nashpillai.com/about",
 		github: "https://github.com/nash-pillai/",
 	},
-	{
-		name: "Jude Ramsey",
-		title: "Networking Director",
-		location: "Omaha, NE, USA",
-		image: "TEDI Bio/jqvcfnz8fmaeoekuzifa",
-		description: `Jude has maintained a profound interest in the natural world and its interactions with human development. Specifically, he finds himself drawn to fields like sustainable agriculture, environmental toxicology, and natural resource management. As he pursues higher education, Jude hopes to expand upon these interests and their applications in the world of veterinary medicine. He joined TEDI to connect with like-minded individuals and to work to make change on a global scale.`,
-		email: "jude.n.ramsey@gmail.com",
-		instagram: "https://www.instagram.com/judenelsen/",
-	},
 ] as {
 	name: string;
 	title: string;
@@ -232,6 +223,14 @@ export const team = [
 		email: "Reaganseay@gmail.com",
 		instagram: "@darkmoon_moon144",
 	},
+	{
+		name: "Jeswith Mekapati",
+		title: "Blog Writer",
+		location: "",
+		image: "TEDI Bio/oiwjaf7jzzwu5trwgafk",
+		description: `Jeswith Reddy Mekapati is a high school student and environmental advocate with a passion for ecological research and climate action. He became interested in environmental science through his research projects involving plant biology and sustainable agriculture such as optimizing herb growth in space conditions. Jeswith joined TEDI to collaborate with like minded individuals and develop community-driven solutions to environmental challenges. He hopes to bridge scientific research and grassroots advocacy to create a more equitable planet. Outside of TEDI, he enjoys reading, debating, and playing sports such as cricket.`,
+		email: "",
+		linkedin: "https://www.linkedin.com/in/jeswith-mekapati/",
 ] as {
 	name: string;
 	title: string;
