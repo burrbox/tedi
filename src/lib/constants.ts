@@ -10,7 +10,7 @@ export const directors = [
 		instagram: "https://www.instagram.com/emma_mazzotta24/",
 		tiktok: "https://www.tiktok.com/@emmamazzotta24",
 	},
-	{
+	/*{
 		name: "Karen Wong",
 		title: "Blog Director",
 		location: "Hopewell Junction, NY, USA",
@@ -19,7 +19,7 @@ export const directors = [
 		email: "kw1021232007@gmail.com",
 		instagram: "https://www.instagram.com/karen.wong21/",
 		tiktok: "https://www.tiktok.com/@karen_wonggg",
-	},
+	},*/
 	{
 		name: "Maggie Yang",
 		title: "Creative Director & Blog Writer",
@@ -39,14 +39,14 @@ export const directors = [
 		email: "Karen.penggg@gmail.com",
 		instagram: "https://www.instagram.com/kp_penguin/",
 	},
-	{
+	/*{
 		name: "Isabella Morelli",
 		title: "Petition Director",
 		location: "Lakeland, NY, USA",
 		image: "TEDI Bio/zofvvn0r5x8qne3waclf",
 		description: `Isabella has been interested in nature since she was in elementary school when she tried to start a nature club with her friends. Recently, Isabella has become even more passionate about the environment upon witnessing the damage climate change has done to our world. She joined TEDI because she saw an opportunity to create change and use her voice for good.`,
 		email: "isabella.morelli924@gmail.com",
-	},
+	},*/
 	{
 		name: "Emilia Lugo",
 		title: "Fundraising Director",
@@ -95,7 +95,7 @@ export const directors = [
 }[];
 
 export const team = [
-	{
+	/*{
 		name: "Charlotte Wang",
 		title: "Instagram Manager & Video Content Creator",
 		location: "Stormville, NY, USA",
@@ -105,7 +105,7 @@ export const team = [
 		linkedin: "https://www.linkedin.com/in/charlotte-wang-023432265/",
 		instagram: "https://www.instagram.com/charlottew.3693/",
 		tiktok: "https://www.tiktok.com/@charlto3",
-	},
+	},*/
 	{
 		name: "Ann Catechis",
 		title: "Petition Specialist",
@@ -150,7 +150,7 @@ export const team = [
 		email: "madeline.cabral08@yahoo.com",
 		instagram: "https://www.instagram.com/madeline__cabral/",
 	},
-	{
+	/*{
 		name: "Edwin Keefner",
 		title: "Blog Writer",
 		location: "Hopewell Junction, NY, USA",
@@ -158,7 +158,7 @@ export const team = [
 		description: `Edwin Keefner has been passionate about the environment since his childhood, camping often and exploring nature. His love for the outdoors inspired him to join TEDI, where he contributes as a blog writer. Edwin hopes to amplify the message of environmental conservation and emphasize the importance of helping the environment. Through his work with TEDI, he aims to inspire others to take action in protecting the planet for future generations.`,
 		email: "edwin1keefner@gmail.com",
 		instagram: "https://www.instagram.com/chemtoolsfanboy2013",
-	},
+	},*/
 	{
 		name: "Devanshi Pandya",
 		title: "Digital Content Creator",
@@ -188,15 +188,15 @@ export const team = [
 		tiktok: "https://www.tiktok.com/@soph_seif6217",
 	},
 	{
-		name: "Shaylen Bhatt",
+		name: "Anika Anne",
 		title: "Chief Website Designer",
 		location: "Hopewell Junction, NY, USA",
-		image: "j6xm62fqjbs19tvdlqz6",
+		image: "anika_qfrxwe.webp",
 		description: `Shaylen has been environmentally conscious from a young age and is deeply concerned about the future of global aviation and travel amid rising emissions. This drives his interest in studying sustainable aeronautical engineering. In the past, he has conducted research on air pollution and sustainable drone applications. As part of TEDI, he contributes to organizing a compelling website that will help TEDI achieve its goals.`,
-		email: "shaylenb10@gmail.com",
-		linkedin: "https://www.linkedin.com/in/shaylen-bhatt/",
-		instagram: "https://www.instagram.com/shaylen_b10/",
-		github: "https://github.com/sb00110/",
+		email: "anikaanne2010pal@gmail.com",
+		linkedin: "https://www.linkedin.com/in/anika-anne-757173318/",
+		instagram: "https://www.instagram.com/anika.anne28/",
+		github: "https://github.com/anika4anne/",
 	},
 	{
 		name: "Saide Taşlıyol",
@@ -214,7 +214,7 @@ export const team = [
 		description: `From a young age, John has been passionate about environmental awareness and the importance of preservation. He loves learning about different organisms and ecosystems and is particularly interested in symbiotic relationships and interactions. Moreover, he extremely dedicated to finding a sustainable means of life through renewable energy and alternative agricultural approaches. He has applied these ideas through climate based fellowships and individual projects. Through networking, John hope to help others learn more about our world and inspire them to take initiative.`,
 		email: "huangjohn1733@gmail.com",
 	},
-	{
+	/*{
 		name: "Reagan Seay",
 		title: "Campaign Specialist",
 		location: "Severna Park, MD, USA",
@@ -222,7 +222,7 @@ export const team = [
 		description: `Since Reagan was little, they have been very passionate about helping others and making the planet a better place. With a deep commitment to sustainability and conservation, they joined TEDI to take action, connect with like-minded individuals, and contribute to meaningful environmental efforts. Through TEDI, Reagan hopes to inspire others to take action, make a lasting impact, and help create a greener future for later generations.`,
 		email: "Reaganseay@gmail.com",
 		instagram: "https://www.instagram.com/darkmoon_moon144/",
-	},
+	},*/
 	{
 		name: "Jeswith Mekapati",
 		title: "Blog Writer",
