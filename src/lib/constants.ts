@@ -192,7 +192,7 @@ export const team = [
 		title: "Chief Website Designer",
 		location: "Hopewell Junction, NY, USA",
 		image: "anika_qfrxwe.webp",
-		description: `Shaylen has been environmentally conscious from a young age and is deeply concerned about the future of global aviation and travel amid rising emissions. This drives his interest in studying sustainable aeronautical engineering. In the past, he has conducted research on air pollution and sustainable drone applications. As part of TEDI, he contributes to organizing a compelling website that will help TEDI achieve its goals.`,
+		description: `Anika is passionate about technology, creativity, and making a positive impact on the environment. As Chief Website Designer for TEDI, she enjoys combining her skills in web development with her interest in sustainability. When she's not coding, Anika loves playing volleyball with her school team and listening to music, always looking for new ways to bring energy and innovation into everything she does.`,
 		email: "anikaanne2010pal@gmail.com",
 		linkedin: "https://www.linkedin.com/in/anika-anne-757173318/",
 		instagram: "https://www.instagram.com/anika.anne28/",
