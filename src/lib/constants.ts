@@ -191,7 +191,7 @@ export const team = [
 		name: "Anika Anne",
 		title: "Chief Website Designer",
 		location: "Hopewell Junction, NY, USA",
-		image: "anika_qfrxwe.webp",
+		image: "Untitled_design_1_e6by0h.png",
 		description: `Anika is passionate about technology, creativity, and making a positive impact on the environment. As Chief Website Designer for TEDI, she enjoys combining her skills in web development with her interest in sustainability. When she's not coding, Anika loves playing volleyball with her school team and listening to music, always looking for new ways to bring energy and innovation into everything she does.`,
 		email: "anikaanne2010pal@gmail.com",
 		linkedin: "https://www.linkedin.com/in/anika-anne-757173318/",
