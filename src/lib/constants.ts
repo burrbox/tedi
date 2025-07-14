@@ -114,7 +114,7 @@ export const team = [
 		description: `Ann has always been passionate about preserving the Earth. From learning about recycling as a child, to studying how climate change affects marine species in the ocean, Ann knew TEDI was something she wanted to be a part of. Through TEDI, Ann is able to use her voice to express the increasing need for change to preserve the Earth for future generations.`,
 		email: "akcatechis@gmail.com",
 	},
-	{
+	/*{
 		name: "Ina Sabarre",
 		title: "Blog Writer & Video Content Creator",
 		location: "Hopewell Junction, NY, USA",
@@ -122,7 +122,7 @@ export const team = [
 		description: `Ina has always loved being out in nature and researching different animals. Ina's main environmental interests include endangered species, natural disasters, and the contributions of large corporations to climate change. She joined TEDI to use her love and talent for writing to educate others about important environmental issues in our world.`,
 		email: "Inasabarre@gmail.com",
 		instagram: "https://www.instagram.com/wilhelm._.ina/",
-	},
+	},*/
 	{
 		name: "Kylie Yap",
 		title: "Video Editor",
