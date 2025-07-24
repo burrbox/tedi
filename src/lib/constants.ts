@@ -199,6 +199,13 @@ export const team = [
 		github: "https://github.com/anika4anne/",
 	},
 	{
+		name: "Liza Melnichuk",
+		title: "Blog Writer",
+		location: "Kyiv, Ukraine",
+		image: "thing_yzhfoq.png",
+		description: `I live in Kyiv, Ukraine and from the young age I am aware of all disaster that war causes. I was always interested in how technology can assist with dealing with pollution of air, water and soil. I am an eager researcher and have presented my thesis and independent researches at international conferences where I gained a lot of knowledge with regards to environment saving. In the future I plan to study electrical engineering and I am eager to explore how can I apply my knowledge to developing technology to clear water reservoirs in my home city.`,
+	},
+	{
 		name: "Saide Taşlıyol",
 		title: "Blog Writer",
 		location: "Turkey",
@@ -206,6 +213,7 @@ export const team = [
 		description: `Saide Zülal Taşlıyol is dedicated to solving global challenges through the innovative use of science and technology. She has held significant positions in numerous social impact-oriented initiatives and launched her own social benefit project. She is especially passionate about environmental sustainability, equal opportunities in education, and developing new bioplastics. Additionally, she has published an academic report in Turkey on the use of clean energy and been accepted into the Civic Unplugged Fellowship where she continues to contribute to impactful projects.`,
 		email: "zulalsaide@gmail.com",
 	},
+
 	{
 		name: "John Huang",
 		title: "Network Coordinator",
