@@ -199,13 +199,6 @@ export const team = [
 		github: "https://github.com/anika4anne/",
 	},
 	{
-		name: "Liza Melnichuk",
-		title: "Blog Writer",
-		location: "Kyiv, Ukraine",
-		image: "thing_yzhfoq.png",
-		description: `I live in Kyiv, Ukraine and from the young age I am aware of all disaster that war causes. I was always interested in how technology can assist with dealing with pollution of air, water and soil. I am an eager researcher and have presented my thesis and independent researches at international conferences where I gained a lot of knowledge with regards to environment saving. In the future I plan to study electrical engineering and I am eager to explore how can I apply my knowledge to developing technology to clear water reservoirs in my home city.`,
-	},
-	{
 		name: "Saide Taşlıyol",
 		title: "Blog Writer",
 		location: "Turkey",
@@ -240,6 +233,13 @@ export const team = [
 		email: "jeswith.mekapati@gmail.com",
 		linkedin: "https://www.linkedin.com/in/jeswith-mekapati/",
 		instagram: "https://www.instagram.com/jeswi_0816/",
+	},
+	{
+		name: "Liza Melnichuk",
+		title: "Blog Writer",
+		location: "Kyiv, Ukraine",
+		image: "thing_yzhfoq.png",
+		description: `Liza is deeply aware of the devastating consequences that war can bring. From a young age, she has been interested in how technology can be used to address pollution in the air, water, and soil. As an eager and committed researcher, Liza has presented both her thesis and independent research at international conferences, where she gained valuable knowledge about environmental protection and sustainability. In the future, she plans to study electrical engineering and is excited to explore how she can apply her knowledge to developing technologies aimed at cleaning and restoring water reservoirs in her home city.`,
 	},
 ] as {
 	name: string;
