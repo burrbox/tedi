@@ -22,7 +22,7 @@ export const directors = [
 	},*/
 	{
 		name: "Maggie Yang",
-		title: "Creative Director & Blog Writer",
+		title: "Digital Marketing Director",
 		location: "Hopewell Junction, NY, USA",
 		image: "TEDI Bio/h0m1t2yqudur3vsbthvi",
 		description: `Maggie has always appreciated and been fascinated by the beauty of nature. She believes in protecting our world so that future generations can experience the same wonder and beauty she has. Maggie hopes to make a difference in our world and preserve our environment by working with TEDI. `,
@@ -49,7 +49,7 @@ export const directors = [
 	},*/
 	{
 		name: "Emilia Lugo",
-		title: "Fundraising Director",
+		title: "Finance Director",
 		location: "Miami, FL, USA",
 		image: "TEDI Bio/bu3aynqhs696kfeayykf",
 		description: `Emily has always been passionate about preserving the Earth and she is especially interested in the use of technology to solve current environmental issues. Her interest began in school, when she learned about how ecosystems function as well as how pollution harms these systems. This is when she began getting involved. She knew that TEDI was something she wanted to be a part of because of their genuine interest in protecting the environment, and she hopes to use her voice to spread awareness.`,
@@ -78,6 +78,16 @@ export const directors = [
 		linkedin: "https://www.linkedin.com/in/nash-pillai/",
 		website: "https://nashpillai.com/about",
 		github: "https://github.com/nash-pillai/",
+	},
+	{
+		name: "Jeswith Mekapati",
+		title: "Editorial Director",
+		location: "Houston, TX, USA",
+		image: "oiwjaf7jzzwu5trwgafk",
+		description: `Jeswith Reddy Mekapati is a high school student and environmental advocate with a passion for ecological research and climate action. He became interested in environmental science through his research projects involving plant biology and sustainable agriculture such as optimizing herb growth in space conditions. Jeswith joined TEDI to collaborate with like minded individuals and develop community-driven solutions to environmental challenges. He hopes to bridge scientific research and grassroots advocacy to create a more equitable planet. Outside of TEDI, he enjoys reading, debating, and playing sports such as cricket.`,
+		email: "jeswith.mekapati@gmail.com",
+		linkedin: "https://www.linkedin.com/in/jeswith-mekapati/",
+		instagram: "https://www.instagram.com/jeswi_0816/",
 	},
 ] as {
 	name: string;
@@ -108,7 +118,7 @@ export const team = [
 	},*/
 	{
 		name: "Ann Catechis",
-		title: "Petition Specialist",
+		title: "Editorial Technology Manager",
 		location: "Lakeland, NY, USA",
 		image: "TEDI Bio/qpvh1kz9lkhcnn4xw7af",
 		description: `Ann has always been passionate about preserving the Earth. From learning about recycling as a child, to studying how climate change affects marine species in the ocean, Ann knew TEDI was something she wanted to be a part of. Through TEDI, Ann is able to use her voice to express the increasing need for change to preserve the Earth for future generations.`,
@@ -200,7 +210,7 @@ export const team = [
 	},
 	{
 		name: "Saide Taşlıyol",
-		title: "Blog Writer",
+		title: "Crisis Blog Writer",
 		location: "Turkey",
 		image: "TEDI Bio/dikbx8tsrhs3bjdmzqs5",
 		description: `Saide Zülal Taşlıyol is dedicated to solving global challenges through the innovative use of science and technology. She has held significant positions in numerous social impact-oriented initiatives and launched her own social benefit project. She is especially passionate about environmental sustainability, equal opportunities in education, and developing new bioplastics. Additionally, she has published an academic report in Turkey on the use of clean energy and been accepted into the Civic Unplugged Fellowship where she continues to contribute to impactful projects.`,
@@ -209,7 +219,7 @@ export const team = [
 
 	{
 		name: "John Huang",
-		title: "Network Coordinator",
+		title: "Networking Coordinator",
 		location: "New York, NY, USA",
 		image: "TEDI Bio/clsulxofocmmvixemand",
 		description: `From a young age, John has been passionate about environmental awareness and the importance of preservation. He loves learning about different organisms and ecosystems and is particularly interested in symbiotic relationships and interactions. Moreover, he extremely dedicated to finding a sustainable means of life through renewable energy and alternative agricultural approaches. He has applied these ideas through climate based fellowships and individual projects. Through networking, John hope to help others learn more about our world and inspire them to take initiative.`,
@@ -225,18 +235,8 @@ export const team = [
 		instagram: "https://www.instagram.com/darkmoon_moon144/",
 	},*/
 	{
-		name: "Jeswith Mekapati",
-		title: "Blog Writer",
-		location: "Houston, TX, USA",
-		image: "oiwjaf7jzzwu5trwgafk",
-		description: `Jeswith Reddy Mekapati is a high school student and environmental advocate with a passion for ecological research and climate action. He became interested in environmental science through his research projects involving plant biology and sustainable agriculture such as optimizing herb growth in space conditions. Jeswith joined TEDI to collaborate with like minded individuals and develop community-driven solutions to environmental challenges. He hopes to bridge scientific research and grassroots advocacy to create a more equitable planet. Outside of TEDI, he enjoys reading, debating, and playing sports such as cricket.`,
-		email: "jeswith.mekapati@gmail.com",
-		linkedin: "https://www.linkedin.com/in/jeswith-mekapati/",
-		instagram: "https://www.instagram.com/jeswi_0816/",
-	},
-	{
 		name: "Liza Melnichuk",
-		title: "Blog Writer",
+		title: "Crisis Blog Writer",
 		location: "Kyiv, Ukraine",
 		image: "thing_yzhfoq.png",
 		description: `Liza is deeply aware of the devastating consequences that war can bring. From a young age, she has been interested in how technology can be used to address pollution in the air, water, and soil. As an eager and committed researcher, Liza has presented both her thesis and independent research at international conferences, where she gained valuable knowledge about environmental protection and sustainability. In the future, she plans to study electrical engineering and is excited to explore how she can apply her knowledge to developing technologies aimed at cleaning and restoring water reservoirs in her home city.`,
