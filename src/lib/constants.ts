@@ -391,14 +391,10 @@ export const toolkits = [
 
 export const petitions = [
 	{
-		title: "Protect Our Public Lands: Stop Trump's Deforestation Agenda",
-		description: `The Trump administration recently passed a devastating executive order called, "Immediate Expansion of American Timber Production" to increase domestic timber production, reversing environmental policies that encompassed over half of the land protected by the US Forest Service in the process. President Trump's continued push to exploit public lands for deforestation and industry gain is detrimental to our environment and the health of our planet. Our national forests, parks, and public lands are meant to maintain biodiversity and protect wildlife habitats, not to fuel corporate greed.
-
-Since President Trump was inaugurated, he passed numerous executive orders that put millions of acres of undisturbed land at risk of logging, mining, and industrial development. These destructive practices threaten our ecosystems, endangered species, and the air and water we all depend on. Additionally, disturbing these forests will destroy thousands of old, fire resistant trees that will leave lands more susceptible to forest fires. Old trees are often carbon-rich and are therefore essential to fighting climate change. With them gone, the impacts of global warming will increase exponentially and species residing in these forests will become endangered.
-
-We demand that the Trump Administration revoke the executive order "Immediate Expansion of American Timber Production" that ordered over 280 million acres of public lands and national forests be destroyed to increase timber production. This executive order directly contradicts the Endangered Species Act (ESA) and the National Environmental Policy Act (NEPA), which both work to protect public lands. The United States has become a country that is fiercely committed to protecting the environment and fighting for a more sustainable future, as evidenced by its environmentally friendly legislation and policies. We depend on the environment and its resources to survive. We must give back to it by upholding our commitment to environmental conservation. Sign this petition to protect our forests, our climate, and our future.`,
-		callToAction: "Protect our national forests and public lands from deforestation!",
-		name: "deforestation",
+		title: "Coming Soon",
+		description: `We're working on new petitions to help protect our environment and make a difference in our communities. Check back soon for opportunities to advocate for important environmental causes and join us in creating positive change.`,
+		callToAction: "Stay tuned for upcoming petitions!",
+		name: "coming-soon",
 	},
 	{
 		title: "Protect the East Fishkill from the Woodland Estates Luxury Apartment Complex",

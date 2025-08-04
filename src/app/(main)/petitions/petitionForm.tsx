@@ -16,6 +16,21 @@ export default function PetitionForm({ petition }: { petition: (typeof petitions
 	const [done, setDone] = useState(false);
 	const name = petition.name;
 
+	if (petition.name === "coming-soon") {
+		return (
+			<div className="rounded-2xl bg-white text-center dark:bg-stone-800">
+				<div className="mx-4 py-4 lg:py-8">
+					<h1 className="text-wrap py-6 text-center text-5xl font-bold text-green-700 dark:text-green-400">
+						Coming Soon
+					</h1>
+					<h2 className="text-wrap text-center text-lg text-blue-700 dark:text-blue-400">
+						Check back soon for new petitions!
+					</h2>
+				</div>
+			</div>
+		);
+	}
+
 	const submitForm = async (event: FormEvent<HTMLFormElement>) => {
 		if (done || isSubmitting) return;
 		event.preventDefault();

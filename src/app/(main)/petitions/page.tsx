@@ -1,5 +1,6 @@
 import { petitions } from "@/lib/constants";
 import PetitionForm from "./petitionForm";
+import PetitionSuggestionForm from "./petitionSuggestionForm";
 import { type Metadata } from "next";
 import { env } from "@/env";
 import { getCldImageUrl } from "next-cloudinary";
@@ -73,31 +74,75 @@ export default async function Petitions() {
 						</span>
 					</div>
 				</div>
-				{petitions.map((petition) => (
-					<div
-						key={petition.name}
-						className="flex min-h-[60vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
-						style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/t7x9xmnsyqs2yetfpp3j" })})` }}
-					>
-						<div className="container mx-auto w-full" data-aos="fade-down">
-							<div className="flex flex-col justify-center gap-6 rounded-xl bg-stone-300/70 px-3 py-10 xl:flex-row dark:bg-stone-800/70">
-								<div className="basis-3/5">
-									<div className="h-fit rounded-xl bg-white p-2 py-8 dark:bg-stone-800">
-										<h1 className="text-center text-3xl font-semibold text-green-700 dark:text-green-400">
-											{petition.title}
-										</h1>
-										<h2 className="mx-4 whitespace-pre-line pt-6 text-center text-sm text-green-700 md:mx-6 md:text-sm lg:mx-8 lg:text-base dark:text-blue-300">
-											{petition.description}
-										</h2>
-									</div>
+				<div
+					className="flex min-h-[60vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
+					style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/t7x9xmnsyqs2yetfpp3j" })})` }}
+				>
+					<div className="container mx-auto w-full p-8" data-aos="fade-down">
+						<div className="flex flex-col gap-8">
+							{petitions.map((petition) => (
+								<div
+									key={petition.name}
+									className="flex flex-col justify-center gap-6 rounded-xl bg-stone-300/70 p-8 dark:bg-stone-800/70"
+								>
+									{petition.name === "coming-soon" ? (
+										<div className="h-fit rounded-xl bg-white p-8 dark:bg-stone-800">
+											<h1 className="text-center text-3xl font-semibold text-green-700 dark:text-green-400">
+												{petition.title}
+											</h1>
+											<h2 className="mx-4 whitespace-pre-line pt-6 text-center text-sm text-green-700 md:mx-6 md:text-sm lg:mx-8 lg:text-base dark:text-blue-300">
+												{petition.description}
+											</h2>
+										</div>
+									) : (
+										<div className="flex flex-col justify-center gap-6 xl:flex-row">
+											<div className="basis-3/5">
+												<div className="h-fit rounded-xl bg-white p-8 dark:bg-stone-800">
+													<h1 className="text-center text-3xl font-semibold text-green-700 dark:text-green-400">
+														{petition.title}
+													</h1>
+													<h2 className="mx-4 whitespace-pre-line pt-6 text-center text-sm text-green-700 md:mx-6 md:text-sm lg:mx-8 lg:text-base dark:text-blue-300">
+														{petition.description}
+													</h2>
+												</div>
+											</div>
+											<div className="basis-2/5">
+												<PetitionForm petition={petition} />
+											</div>
+										</div>
+									)}
 								</div>
-								<div className="basis-2/5">
-									<PetitionForm petition={petition} />
+							))}
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div
+					className="flex min-h-[60vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
+					style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/t7x9xmnsyqs2yetfpp3j" })})` }}
+				>
+					<div className="container mx-auto w-full" data-aos="fade-down">
+						<div className="flex flex-col justify-center gap-6 rounded-xl bg-stone-300/70 px-3 py-10 xl:flex-row dark:bg-stone-800/70">
+							<div className="basis-3/5">
+								<div className="h-fit rounded-xl bg-white p-2 py-8 dark:bg-stone-800">
+									<h1 className="text-center text-3xl font-semibold text-green-700 dark:text-green-400">
+										Have an Idea for a Petition?
+									</h1>
+									<h2 className="mx-4 whitespace-pre-line pt-6 text-center text-sm text-green-700 md:mx-6 md:text-sm lg:mx-8 lg:text-base dark:text-blue-300">
+										We want to hear from you! Suggest environmental issues in your community that need attention.
+										Whether it&apos;s a local concern, state-wide policy, or national issue, your ideas help us create
+										petitions that make a real difference.
+									</h2>
 								</div>
+							</div>
+							<div className="basis-2/5">
+								<PetitionSuggestionForm />
 							</div>
 						</div>
 					</div>
-				))}
+				</div>
 			</section>
 		</>
 	);

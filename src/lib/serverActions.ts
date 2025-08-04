@@ -37,16 +37,22 @@ export async function getPost(slug: string) {
 export async function addEmailSubscription(email: string) {
 	await db.subscription.create({ data: { email: z.string().email().parse(email) } });
 
-	const serviceAccountAuth = new JWT({
-		email: env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-		key: env.GOOGLE_PRIVATE_KEY.replace("\\n", "\n"),
-		scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-	});
+	try {
+		const privateKey = env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n").replace(/"/g, "");
 
-	const doc = new GoogleSpreadsheet(env.PETITION_SHEET_ID, serviceAccountAuth);
-	await doc.loadInfo(); // loads document properties and worksheets
-	const sheet = doc.sheetsByIndex[2]!; // or use `doc.sheetsById[id]` or `doc.sheetsByTitle[title]`
-	await sheet.addRow({ email, createdAt: new Date().toISOString() });
+		const serviceAccountAuth = new JWT({
+			email: env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+			key: privateKey,
+			scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+		});
+
+		const doc = new GoogleSpreadsheet(env.PETITION_SHEET_ID, serviceAccountAuth);
+		await doc.loadInfo();
+		const sheet = doc.sheetsByIndex[2]!;
+		await sheet.addRow({ email, createdAt: new Date().toISOString() });
+	} catch (error) {
+		console.error("Error saving email subscription to Google Sheets:", error);
+	}
 }
 
 export async function upsertArticle(
@@ -79,16 +85,23 @@ export async function savePetitionSignature(data: {
 	message?: string;
 	name: string;
 }) {
-	const serviceAccountAuth = new JWT({
-		email: env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-		key: env.GOOGLE_PRIVATE_KEY.replace("\\n", "\n"),
-		scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-	});
+	try {
+		const privateKey = env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n").replace(/"/g, ""); // Remove any quotes
 
-	const doc = new GoogleSpreadsheet(env.PETITION_SHEET_ID, serviceAccountAuth);
-	await doc.loadInfo(); // loads document properties and worksheets
-	const sheet = doc.sheetsByIndex[0]!; // or use `doc.sheetsById[id]` or `doc.sheetsByTitle[title]`
-	await sheet.addRow({ ...data, createdAt: new Date().toISOString() });
+		const serviceAccountAuth = new JWT({
+			email: env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+			key: privateKey,
+			scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+		});
+
+		const doc = new GoogleSpreadsheet(env.PETITION_SHEET_ID, serviceAccountAuth);
+		await doc.loadInfo(); // loads document properties and worksheets
+		const sheet = doc.sheetsByIndex[0]!; // or use `doc.sheetsById[id]` or `doc.sheetsByTitle[title]`
+		await sheet.addRow({ ...data, createdAt: new Date().toISOString() });
+	} catch (error) {
+		console.error("Error saving petition signature:", error);
+		throw new Error("Failed to save signature. Please try again later.");
+	}
 
 	// await db.petitionSignature.create({
 	// 	data: z
@@ -114,19 +127,58 @@ export async function saveJoinUsForm(data: {
 	gender: string;
 	team: boolean;
 }) {
-	// const session = await auth();
-	// if (!session) redirect("/signin");
+	try {
+		// const session = await auth();
+		// if (!session) redirect("/signin");
 
-	const serviceAccountAuth = new JWT({
-		email: env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-		key: env.GOOGLE_PRIVATE_KEY.replace("\\n", "\n"),
-		scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-	});
+		const privateKey = env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n").replace(/"/g, ""); // Remove any quotes
 
-	const doc = new GoogleSpreadsheet(env.PETITION_SHEET_ID, serviceAccountAuth);
-	await doc.loadInfo(); // loads document properties and worksheets
-	const sheet = doc.sheetsByIndex[1]!; // or use `doc.sheetsById[id]` or `doc.sheetsByTitle[title]`
-	await sheet.addRow({ ...data, createdAt: new Date().toISOString() });
+		const serviceAccountAuth = new JWT({
+			email: env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+			key: privateKey,
+			scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+		});
+
+		const doc = new GoogleSpreadsheet(env.PETITION_SHEET_ID, serviceAccountAuth);
+		await doc.loadInfo(); // loads document properties and worksheets
+		const sheet = doc.sheetsByIndex[1]!; // or use `doc.sheetsById[id]` or `doc.sheetsByTitle[title]`
+		await sheet.addRow({ ...data, createdAt: new Date().toISOString() });
+	} catch (error) {
+		console.error("Error saving join us form:", error);
+		throw new Error("Failed to save form. Please try again later.");
+	}
+}
+
+export async function savePetitionSuggestion(data: {
+	name: string;
+	email: string;
+	suggestion: string;
+	level: "local" | "state" | "national";
+}) {
+	try {
+		const privateKey = env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n").replace(/"/g, "");
+
+		const serviceAccountAuth = new JWT({
+			email: env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+			key: privateKey,
+			scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+		});
+
+		const doc = new GoogleSpreadsheet(env.PETITION_SHEET_ID, serviceAccountAuth);
+		await doc.loadInfo();
+
+		console.log("Available sheets:");
+		doc.sheetsByIndex.forEach((sheet, index) => {
+			console.log(`Sheet ${index}: "${sheet.title}"`);
+		});
+
+		const sheet = doc.sheetsByIndex[3]!;
+		console.log(`Using sheet: "${sheet.title}" (index 3)`);
+		await sheet.addRow({ ...data, createdAt: new Date().toISOString() });
+	} catch (error) {
+		console.error("Error saving petition suggestion:", error);
+		throw new Error("Failed to save suggestion. Please try again later.");
+	}
 }
 
 export async function stripeDonation() {
