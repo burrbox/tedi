@@ -41,75 +41,68 @@ export default async function Campaigns() {
 					</div>
 				</div>
 			</section>
+
 			<section className="w-full pt-6 md:pt-12">
 				<div className="container grid items-center gap-6 px-4 py-10 pb-6 md:px-6 md:pb-12 lg:grid-cols-2 lg:gap-10">
 					<div>
 						<CloudinaryClientWrapper
-							src="other/xgusyuyln9ry0rhojhmx"
+							src="bee_fhkq1l"
 							width="600"
 							height="400"
-							alt="A sidewalk covered in chalk art"
+							alt="A bee pollinator on a flower"
 							className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full"
 						/>
 					</div>
 					<div className="space-y-4">
-						<div className="inline-block rounded-lg bg-stone-100 px-3 py-1 text-sm text-black">Featured Campaign</div>
+						<div className="inline-block rounded-lg bg-stone-100 px-3 py-1 text-sm text-black">Current Campaign</div>
 						<h2 className="text-xl font-semibold text-blue-600 sm:text-4xl md:text-5xl dark:text-blue-400">
-							Guest Speaking at Millard North High
+							Pollinator Campaign
 						</h2>
 						<p className="font-medium md:text-lg">
-							Join us as we speak to multiple environmentally related clubs at Millard North High School about TEDI,
-							sustainability, and encouraging youth to become members.
+							Join the movement to restore native plants and support pollinators—one seed at a time! Hosting your own
+							seed spreading campaign is easy, fun, and impactful. All you need is a handheld salt sprinkler, native
+							seeds, and some green space. This event is suitable for everyone, you can walk or bike to spread native
+							seeds whenever you pass by an empty green space, have fun spreading seeds!! 🌻🌸🌸🌧️💧
 						</p>
+						<div className="pt-2">
+							<a
+								href="https://docs.google.com/document/d/1x0GCtd_Gr5aV39RxFEp5emQ-OSQ_Tpf3XMmHvFlG2Kg/edit?usp=drivesdk"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="inline-flex items-center font-medium text-blue-600 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+							>
+								View Campaign Toolkit →
+							</a>
+						</div>
 					</div>
 				</div>
-				<div className="w-full bg-stone-100 py-6 md:py-12 lg:py-24 dark:bg-stone-800">
-					<div className="container grid grid-cols-1 gap-12 px-4 md:px-6 lg:grid-cols-2">
+				<div className="w-full bg-stone-100 py-6 md:py-12 lg:py-16 dark:bg-stone-800">
+					<div className="container grid grid-cols-1 gap-8 px-4 md:px-6 lg:grid-cols-2">
 						<div className="space-y-4">
-							<h2 className="text-xl font-semibold text-green-600 sm:text-2xl md:text-3xl dark:text-green-400">
-								About The Event
-							</h2>
-							<p className="md:text-lg lg:text-base">
-								The <span className="font-semibold text-blue-600 dark:text-blue-400">Guest Speaking Event by TEDI</span>{" "}
-								is dedicated to inspiring the next generation of environmental advocates. We&apos;ll be speaking to
-								multiple environmentally related clubs at Millard North High School, sharing our mission, discussing
-								sustainability practices, and encouraging interested youth to join our organization.
+							<h3 className="text-lg font-semibold text-green-600 sm:text-xl md:text-2xl dark:text-green-400">
+								Feature #1: Seed Sculptures in Downsview Park
+							</h3>
+							<p className="md:text-base lg:text-sm">
+								We created seed sculptures by embedding seeds into clay and then distributed them throughout Downsview
+								Park to encourage natural growth and environmental restoration.
 							</p>
+							<div className="text-sm">
+								<strong>Location:</strong> Downsview Park, Toronto, Ontario
+								<br />
+								<strong>Date:</strong> May 21, 2025
+							</div>
 						</div>
 						<div className="space-y-4">
-							<h2 className="text-xl font-semibold text-green-600 sm:text-2xl md:text-3xl dark:text-green-400">
-								Our Goals
-							</h2>
-							<p className="md:text-lg lg:text-base">
-								We aim to educate students about environmental issues, share TEDI&apos;s mission and initiatives, and
-								inspire young people to get involved in environmental advocacy. By connecting with youth in our
-								community, we hope to build a stronger network of environmental defenders.
+							<h3 className="text-lg font-semibold text-green-600 sm:text-xl md:text-2xl dark:text-green-400">
+								Feature #2: Wildflower Planting in Hopewell Junction
+							</h3>
+							<p className="md:text-base lg:text-sm">
+								Plant one seed for every follower and every 10 likes gained on Instagram and TikTok
 							</p>
-						</div>
-						<div className="space-y-4 rounded-3xl bg-stone-200 px-3 py-5 lg:col-span-2 lg:px-5 lg:py-10 dark:bg-stone-900">
-							<h2 className="text-xl font-semibold text-green-600 sm:text-2xl md:text-3xl lg:text-center dark:text-green-400">
-								Event Details
-							</h2>
-							<div className="container grid grid-cols-1 gap-6 px-4 md:px-6 lg:grid-cols-2">
-								<div>
-									<h3 className="text-lg font-semibold text-blue-600 dark:text-blue-400">Location</h3>
-									<p className="md:text-lg lg:text-base">
-										<span>Millard North High School</span>
-										<br />
-										<span>Omaha, Nebraska</span>
-									</p>
-									<h3 className="pt-3 text-lg font-semibold text-blue-600 dark:text-blue-400">Date</h3>
-									<p className="md:text-lg lg:text-base">
-										<span>TBD</span>
-									</p>
-								</div>
-								<div>
-									<h3 className="text-lg font-semibold text-blue-600 dark:text-blue-400">What to Expect</h3>
-									<p className="md:text-lg lg:text-base">
-										Interactive presentations about TEDI&apos;s mission, sustainability discussions, Q&A sessions, and
-										opportunities for students to learn how they can get involved in environmental advocacy.
-									</p>
-								</div>
+							<div className="text-sm">
+								<strong>Location:</strong> Hopewell Junction, New York
+								<br />
+								<strong>Date:</strong> August 1-31, 2025
 							</div>
 						</div>
 					</div>
@@ -119,31 +112,14 @@ export default async function Campaigns() {
 			<section className="w-full pt-6 md:pt-12">
 				<div className="container grid items-center gap-6 px-4 py-10 pb-6 md:px-6 md:pb-12 lg:grid-cols-2 lg:gap-10">
 					<div className="space-y-4">
-						<div className="inline-block rounded-lg bg-stone-100 px-3 py-1 text-sm text-black">Featured Campaign</div>
+						<div className="inline-block rounded-lg bg-stone-100 px-3 py-1 text-sm text-black">Past Campaign</div>
 						<h2 className="text-xl font-semibold text-blue-600 sm:text-4xl md:text-5xl dark:text-blue-400">
-							Seed Sculpture at Downsview Park
+							Youth Sustainability Workshop Campaign
 						</h2>
 						<p className="font-medium md:text-lg">
-							We put seeds into clay to create seed sculptures and spread them throughout the park to promote
-							environmental growth and sustainability.
+							TEDI is working on hosting a crafts workshop this February to educate youth the importance of
+							sustainability, continue reading to figure out how YOU could host one yourself and double the impact!
 						</p>
-						<div className="space-y-3 pt-4">
-							<div>
-								<h3 className="text-base font-semibold text-blue-600 dark:text-blue-400">Location</h3>
-								<p className="text-sm">Downsview Park, Toronto, Ontario, Canada</p>
-							</div>
-							<div>
-								<h3 className="text-base font-semibold text-blue-600 dark:text-blue-400">Date</h3>
-								<p className="text-sm">May 21, 2025</p>
-							</div>
-							<div>
-								<h3 className="text-base font-semibold text-blue-600 dark:text-blue-400">What Happened</h3>
-								<p className="text-sm">
-									We created seed sculptures by embedding seeds into clay and then distributed them throughout Downsview
-									Park to encourage natural growth and environmental restoration.
-								</p>
-							</div>
-						</div>
 					</div>
 					<div>
 						<CloudinaryClientWrapper
@@ -155,99 +131,37 @@ export default async function Campaigns() {
 						/>
 					</div>
 				</div>
-			</section>
-
-			<section className="w-full pt-6 md:pt-12">
-				<div className="container grid items-center gap-6 px-4 py-10 pb-6 md:px-6 md:pb-12 lg:grid-cols-2 lg:gap-10">
-					<div>
-						<CloudinaryClientWrapper
-							src="other/xgusyuyln9ry0rhojhmx"
-							width="600"
-							height="400"
-							alt="A sidewalk covered in chalk art"
-							className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full"
-						/>
-					</div>
-					<div className="space-y-4">
-						<div className="inline-block rounded-lg bg-stone-100 px-3 py-1 text-sm text-black">Featured Campaign</div>
-						<h2 className="text-xl font-semibold text-blue-600 sm:text-4xl md:text-5xl dark:text-blue-400">
-							Elementary School Visits in Toronto
-						</h2>
-						<p className="font-medium md:text-lg">
-							We visited multiple elementary schools around Toronto to discuss Waste Energy Management and recent
-							environmental news with their Eco Councils.
-						</p>
-						<div className="space-y-3 pt-4">
-							<div>
-								<h3 className="text-base font-semibold text-blue-600 dark:text-blue-400">Location</h3>
-								<p className="text-sm">Multiple Elementary Schools in the GTA, Toronto, Ontario, Canada</p>
-							</div>
-							<div>
-								<h3 className="text-base font-semibold text-blue-600 dark:text-blue-400">Dates</h3>
-								<p className="text-sm">
-									April 22 - Claud Watson School for the Arts
-									<br />
-									April 24 - McKee Public School
-									<br />
-									April 25 - Yorkview Public School
-								</p>
-							</div>
-							<div>
-								<h3 className="text-base font-semibold text-blue-600 dark:text-blue-400">What Happened</h3>
-								<p className="text-sm">
-									We delivered interactive presentations about waste energy management, discussed recent environmental
-									news, collaborated with school Eco Councils, and provided opportunities for students to learn about
-									environmental stewardship.
-								</p>
+				<div className="w-full bg-stone-100 py-6 md:py-12 lg:py-16 dark:bg-stone-800">
+					<div className="container grid grid-cols-1 gap-8 px-4 md:px-6 lg:grid-cols-2">
+						<div className="space-y-4">
+							<h3 className="text-lg font-semibold text-green-600 sm:text-xl md:text-2xl dark:text-green-400">
+								Feature #1: HJ Chalking Event
+							</h3>
+							<p className="md:text-base lg:text-sm">
+								We decorated the sidewalks of East Fishkill Rec with spring chalk art to get everyone excited for spring
+								and brought our community together. We also made flower crowns and other nature-related crafts for kids.
+							</p>
+							<div className="text-sm">
+								<strong>Location:</strong> Hopewell Junction, New York
+								<br />
+								<strong>Date:</strong> March 29, 2025
 							</div>
 						</div>
-					</div>
-				</div>
-			</section>
-
-			<section className="w-full pt-6 md:pt-12">
-				<div className="container grid items-center gap-6 px-4 py-10 pb-6 md:px-6 md:pb-12 lg:grid-cols-2 lg:gap-10">
-					<div className="space-y-4">
-						<div className="inline-block rounded-lg bg-stone-100 px-3 py-1 text-sm text-black">Featured Campaign</div>
-						<h2 className="text-xl font-semibold text-blue-600 sm:text-4xl md:text-5xl dark:text-blue-400">
-							Chalking Event
-						</h2>
-						<p className="font-medium md:text-lg">
-							We decorated sidewalks with chalk, participated in fun spring activities, and enjoyed a morning with
-							friends. All ages were welcome!
-						</p>
-						<div className="space-y-3 pt-4">
-							<div>
-								<h3 className="text-base font-semibold text-blue-600 dark:text-blue-400">Location</h3>
-								<p className="text-sm">
-									Hopewell Junction, New York, USA -{" "}
-									<Link className="text-blue-500 underline" href="https://g.co/kgs/ZXfrb1v">
-										East Fishkill Recreation
-									</Link>
-								</p>
-							</div>
-							<div>
-								<h3 className="text-base font-semibold text-blue-600 dark:text-blue-400">Time</h3>
-								<p className="text-sm">March 29th 10-12pm</p>
-							</div>
-							<div>
-								<h3 className="text-base font-semibold text-blue-600 dark:text-blue-400">What Happened</h3>
-								<p className="text-sm">
-									We decorated the sidewalks of East Fishkill Rec with spring chalk art to get everyone excited for
-									spring and brought our community together. We also made flower crowns and other nature-related crafts
-									for kids.
-								</p>
+						<div className="space-y-4">
+							<h3 className="text-lg font-semibold text-green-600 sm:text-xl md:text-2xl dark:text-green-400">
+								Feature #2: Elementary School Visits in Toronto
+							</h3>
+							<p className="md:text-base lg:text-sm">
+								We delivered interactive presentations about waste energy management, discussed recent environmental
+								news, collaborated with school Eco Councils, and provided opportunities for students to learn about
+								environmental stewardship.
+							</p>
+							<div className="text-sm">
+								<strong>Location:</strong> Multiple Elementary Schools in the GTA, Toronto
+								<br />
+								<strong>Dates:</strong> April 22-25, 2025
 							</div>
 						</div>
-					</div>
-					<div>
-						<CloudinaryClientWrapper
-							src="other/xgusyuyln9ry0rhojhmx"
-							width="600"
-							height="400"
-							alt="A sidewalk covered in chalk art"
-							className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full"
-						/>
 					</div>
 				</div>
 			</section>

@@ -28,7 +28,7 @@ export default function CampaignsCarousel() {
 				data-aos="fade-left"
 			>
 				<h2 className="text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl dark:text-blue-400">
-					Check out our recent chalking event!
+					Check out our chalking event!
 				</h2>
 			</div>
 			<div className="container px-4 md:px-6">
