@@ -241,6 +241,15 @@ export const team = [
 		image: "thing_yzhfoq.png",
 		description: `Liza is deeply aware of the devastating consequences that war can bring. From a young age, she has been interested in how technology can be used to address pollution in the air, water, and soil. As an eager and committed researcher, Liza has presented both her thesis and independent research at international conferences, where she gained valuable knowledge about environmental protection and sustainability. In the future, she plans to study electrical engineering and is excited to explore how she can apply her knowledge to developing technologies aimed at cleaning and restoring water reservoirs in her home city.`,
 	},
+	{
+		name: "Matthew Katz",
+		title: "Networking Coordinator & Blog Editor",
+		location: "Alberta, Canada",
+		image: "https://res.cloudinary.com/mozzarella-tedi/image/upload/v1756320169/matthew_k_m42tdk.png",
+		description:
+			"Mathew Katz is a high school student from Ontario. He is passionate about protecting the environment and combatting the climate crisis. Growing up in Alberta, he has seen firsthand the impact of the climate crisis during numerous heatwaves and wildfires. Mathew joined TEDI because he wants to be part of the fight to protect our environment. Outside of TEDI, Mathew enjoys reading and running.",
+		email: "mathewkatz22@gmail.com",
+	},
 ] as {
 	name: string;
 	title: string;
