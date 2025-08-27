@@ -249,6 +249,7 @@ export const team = [
 		description:
 			"Mathew Katz is a high school student from Ontario. He is passionate about protecting the environment and combatting the climate crisis. Growing up in Alberta, he has seen firsthand the impact of the climate crisis during numerous heatwaves and wildfires. Mathew joined TEDI because he wants to be part of the fight to protect our environment. Outside of TEDI, Mathew enjoys reading and running.",
 		email: "mathewkatz22@gmail.com",
+		instagram: "https://www.instagram.com/_mathewkatz/",
 	},
 ] as {
 	name: string;
