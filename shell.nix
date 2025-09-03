@@ -1,5 +1,5 @@
 with import <nixpkgs> {};
-let unstable = import <unstable> {};
+let unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {};
 in mkShell {
 	buildInputs = [
 		nodejs unstable.nodePackages.pnpm
