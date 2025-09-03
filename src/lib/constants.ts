@@ -188,7 +188,7 @@ export const team = [
 		name: "Amy Nangia",
 		title: "Campaign Specialist & Blog Editor",
 		location: "Houston, TX, USA",
-		image: "TEDI Bio/amy_bw9lsh",
+		image: "amy_bw9lsh",
 		description:
 			"Amy Nangia is a high school student and advocate passionate about medicine, neuroscience, and environmental sustainability. She has participated in hospital service, research, and climate-focused initiatives that explore the connections between health and the environment. Amy hopes to contribute to solutions that advance both medical care and ecological resilience. In her free time, she enjoys playing volleyball, debating, and spending time with family.",
 		email: "amysugarland@gmail.com",
