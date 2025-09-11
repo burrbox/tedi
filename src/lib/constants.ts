@@ -188,11 +188,37 @@ export const team = [
 		name: "Amy Nangia",
 		title: "Campaign Specialist & Blog Editor",
 		location: "Houston, TX, USA",
-		image: "amy_bw9lsh",
+		image: "37f8e477-759f-4655-a196-07ca5c5f139b",
 		description:
 			"Amy Nangia is a high school student and advocate passionate about medicine, neuroscience, and environmental sustainability. She has participated in hospital service, research, and climate-focused initiatives that explore the connections between health and the environment. Amy hopes to contribute to solutions that advance both medical care and ecological resilience. In her free time, she enjoys playing volleyball, debating, and spending time with family.",
 		email: "amysugarland@gmail.com",
 		instagram: "https://www.instagram.com/amy2_342/",
+	},
+	{
+		name: "Zabrina Yam",
+		title: "Fundraising Coordinator",
+		location: "Ontario, Canada",
+		image: "886b2dde-f108-48d6-a234-fa648e77aff5",
+		description: `Zabina has always been passionate about capturing the environment’s beauty through photography. She enjoys participating in park cleanups and beach cleanups while taking photos of the environment. She joined TEDI to combine her interests and take environmental action to contribute as a fundraising coordinator, where she can apply her financial and organizational skills to support the team.`,
+		email: "zabrinayam@gmail.com",
+	},
+	{
+		name: "Yakubu Fame",
+		title: "Crisis Blog Writer",
+		location: "Lagos, Nigeria",
+		image: "3994faca-3bb2-46ee-aca7-85533891e185",
+		description: `Yakubu Fame is a highly motivated law student passionate about environmental protection, human rights, and dispute resolution. With extensive experience in legal research, advocacy, and litigation, he has developed a strong track record in moot court competitions, legal writing, and leadership roles. Skilled in case analysis, contract drafting, and courtroom advocacy, Yakubu brings strong communication and negotiation abilities to advancing environmental justice and defending communities affected by ecological and climate challenges.`,
+		email: "yakubufame@gmail.com",
+		linkedin: "https://www.linkedin.com/in/yakubu-fame-884391253?trk=contact-info",
+	},
+	{
+		name: "Cassidy Frater",
+		title: "Video Content Creator",
+		location: "Fairhope, AL/Middlebury, VT, USA",
+		image: "29ebbfca-f0f5-4fcd-9985-c12d555972dc",
+		description: `Cassidy is a college student who has cared about the conservation of animals and the environment ever since she was a little girl. Guided by her previous volunteer and leadership experience, Cassidy hopes working with TEDI will reaffirm and strengthen her commitment to environmental conservation and help her make a difference in the world.`,
+		email: "cassidy.frater@gmail.com",
+		instagram: "https://www.instagram.com/cassidyfrater/",
 	},
 ] as {
 	name: string;
