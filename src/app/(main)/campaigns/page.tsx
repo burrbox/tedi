@@ -44,6 +44,76 @@ export default async function Campaigns() {
 
 			<section className="w-full pt-6 md:pt-12">
 				<div className="container grid items-center gap-6 px-4 py-10 pb-6 md:px-6 md:pb-12 lg:grid-cols-2 lg:gap-10">
+					<div className="space-y-4">
+						<div className="inline-block rounded-lg bg-stone-100 px-3 py-1 text-sm text-black">September Campaign</div>
+						<h2 className="text-xl font-semibold text-blue-600 sm:text-4xl md:text-5xl dark:text-blue-400">
+							College Sustainability Initiative
+						</h2>
+						<p className="font-medium md:text-lg">
+							Take action for a greener campus! The College Sustainability Initiative challenges students to host an
+							environmental campaign at their local college. From tree planting to reverse vending machine challenge,
+							TEDI has listed many different ideas ranked from easy to even challenging that encourages students to
+							raise awareness about different environmental issues. Join TEDI to make our campuses cleaner, greener, and
+							more eco-friendly!
+						</p>
+						<div className="pt-2">
+							<p className="text-sm text-gray-600 dark:text-gray-400">
+								*Subscribe to become a TEDI member for FREE today and get access to our campaign toolkits for
+								September&apos;s initiative on the website!!
+							</p>
+						</div>
+					</div>
+					<div>
+						<CloudinaryClientWrapper
+							src="27f1bd8f-8b55-4b13-afda-fbaafb068140"
+							width="600"
+							height="400"
+							alt="College Sustainability Initiative - hands drawing peace signs with chalk on pavement"
+							className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full"
+						/>
+					</div>
+				</div>
+				<div className="w-full bg-stone-100 py-6 md:py-12 lg:py-16 dark:bg-stone-800">
+					<div className="container grid grid-cols-1 gap-8 px-4 md:px-6 lg:grid-cols-2">
+						<div className="space-y-4">
+							<h3 className="text-lg font-semibold text-green-600 sm:text-xl md:text-2xl dark:text-green-400">
+								Reverse Vending Machine Challenge
+							</h3>
+							<p className="md:text-base lg:text-sm">
+								Students can participate in recycling challenges using reverse vending machines to recycle rigid plastic
+								containers, promoting circular economy practices on campus.
+							</p>
+							<div className="text-sm">
+								<strong>Reference:</strong>{" "}
+								<a
+									href="https://www.recyclingtoday.com/news/olyns-mars-partner-reverse-vending-machine-challenge/"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-blue-600 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+								>
+									Olyns, Mars partner to recycle rigid plastic candy containers
+								</a>
+							</div>
+						</div>
+						<div className="space-y-4">
+							<h3 className="text-lg font-semibold text-green-600 sm:text-xl md:text-2xl dark:text-green-400">
+								Tree Planting Initiatives
+							</h3>
+							<p className="md:text-base lg:text-sm">
+								Organize campus tree planting events to increase green spaces, improve air quality, and create lasting
+								environmental impact in your college community.
+							</p>
+							<div className="text-sm">
+								<strong>Inspiration:</strong> Environmental activism and sustainable living practices that make a real
+								difference in our communities.
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section className="w-full pt-6 md:pt-12">
+				<div className="container grid items-center gap-6 px-4 py-10 pb-6 md:px-6 md:pb-12 lg:grid-cols-2 lg:gap-10">
 					<div>
 						<CloudinaryClientWrapper
 							src="bee_fhkq1l"
@@ -54,7 +124,7 @@ export default async function Campaigns() {
 						/>
 					</div>
 					<div className="space-y-4">
-						<div className="inline-block rounded-lg bg-stone-100 px-3 py-1 text-sm text-black">Current Campaign</div>
+						<div className="inline-block rounded-lg bg-stone-100 px-3 py-1 text-sm text-black">Past Campaign</div>
 						<h2 className="text-xl font-semibold text-blue-600 sm:text-4xl md:text-5xl dark:text-blue-400">
 							Pollinator Campaign
 						</h2>
@@ -160,6 +230,76 @@ export default async function Campaigns() {
 								<strong>Location:</strong> Multiple Elementary Schools in the GTA, Toronto
 								<br />
 								<strong>Dates:</strong> April 22-25, 2025
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section className="w-full pt-6 md:pt-12">
+				<div className="container grid items-center gap-6 px-4 py-10 pb-6 md:px-6 md:pb-12 lg:grid-cols-2 lg:gap-10">
+					<div className="space-y-4">
+						<div className="inline-block rounded-lg bg-stone-100 px-3 py-1 text-sm text-black">September Campaign</div>
+						<h2 className="text-xl font-semibold text-blue-600 sm:text-4xl md:text-5xl dark:text-blue-400">
+							College Sustainability Initiative
+						</h2>
+						<p className="font-medium md:text-lg">
+							Take action for a greener campus! The College Sustainability Initiative challenges students to host an
+							environmental campaign at their local college. From tree planting to reverse vending machine challenge,
+							TEDI has listed many different ideas ranked from easy to even challenging that encourages students to
+							raise awareness about different environmental issues. Join TEDI to make our campuses cleaner, greener, and
+							more eco-friendly!
+						</p>
+						<div className="pt-2">
+							<p className="text-sm text-gray-600 dark:text-gray-400">
+								*Subscribe to become a TEDI member for FREE today and get access to our campaign toolkits for
+								September&apos;s initiative on the website!!
+							</p>
+						</div>
+					</div>
+					<div>
+						<CloudinaryClientWrapper
+							src="27f1bd8f-8b55-4b13-afda-fbaafb068140"
+							width="600"
+							height="400"
+							alt="College Sustainability Initiative - hands drawing peace signs with chalk on pavement"
+							className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full"
+						/>
+					</div>
+				</div>
+				<div className="w-full bg-stone-100 py-6 md:py-12 lg:py-16 dark:bg-stone-800">
+					<div className="container grid grid-cols-1 gap-8 px-4 md:px-6 lg:grid-cols-2">
+						<div className="space-y-4">
+							<h3 className="text-lg font-semibold text-green-600 sm:text-xl md:text-2xl dark:text-green-400">
+								Reverse Vending Machine Challenge
+							</h3>
+							<p className="md:text-base lg:text-sm">
+								Students can participate in recycling challenges using reverse vending machines to recycle rigid plastic
+								containers, promoting circular economy practices on campus.
+							</p>
+							<div className="text-sm">
+								<strong>Reference:</strong>{" "}
+								<a
+									href="https://www.recyclingtoday.com/news/olyns-mars-partner-reverse-vending-machine-challenge/"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-blue-600 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+								>
+									Olyns, Mars partner to recycle rigid plastic candy containers
+								</a>
+							</div>
+						</div>
+						<div className="space-y-4">
+							<h3 className="text-lg font-semibold text-green-600 sm:text-xl md:text-2xl dark:text-green-400">
+								Tree Planting Initiatives
+							</h3>
+							<p className="md:text-base lg:text-sm">
+								Organize campus tree planting events to increase green spaces, improve air quality, and create lasting
+								environmental impact in your college community.
+							</p>
+							<div className="text-sm">
+								<strong>Inspiration:</strong> Environmental activism and sustainable living practices that make a real
+								difference in our communities.
 							</div>
 						</div>
 					</div>
