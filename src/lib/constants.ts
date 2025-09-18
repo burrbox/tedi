@@ -335,7 +335,7 @@ export const retiredTeam = [
 		image: "TEDI Bio/cgmkahssvtqmleu51a8b",
 		description: `Karen has loved animals from a very young age. In her preschool years, she loved to care for turtles that wandered into her yard from a nearby creek. Growing up, she has been passionate about preserving animal habitats and saving the environment, often reading articles about animal life. TEDI allows her to use her voice to spread awareness for her interests and make a difference in this world. `,
 		email: "kw1021232007@gmail.com",
-		instagram: "https://www.instagram.com/karen.wong21/",
+		linkdin: "https://ca.linkedin.com/in/karen-peng-b46a98300",
 		tiktok: "https://www.tiktok.com/@karen_wonggg",
 	},
 ] as {
