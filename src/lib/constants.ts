@@ -220,6 +220,15 @@ export const team = [
 		email: "cassidy.frater@gmail.com",
 		instagram: "https://www.instagram.com/cassidyfrater/",
 	},
+	{
+		name: "Sahasra Rajesh",
+		title: "Blog Editor",
+		//location: "Hopewell Junction, NY, USA",
+		image:
+			"https://res.cloudinary.com/mozzarella-tedi/image/upload/v1758661649/76040e0a-c949-48fb-bb71-0485e1e03aec.png",
+		description: `Sahasra Rajesh is a high school student and passionate advocate for protecting the environment and the incredible wildlife that calls it home. Her research on the environmental consequences of war has strengthened her commitment to safeguard delicate ecosystems. As a TEDI Blog Editor, Sahasra hopes to raise awareness and inspire action to preserve our planet not only through her work but also by encouraging others to join. She also enjoys cheering, volunteering, listening to music, and experimenting with art!`,
+		instagram: "https://www.instagram.com/_sahaasra/",
+	},
 ] as {
 	name: string;
 	title: string;
