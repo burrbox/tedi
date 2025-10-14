@@ -43,12 +43,18 @@ export default async function Campaigns() {
 			</section>
 
 			<section className="w-full pt-6 md:pt-12">
-				<div className="container grid items-center gap-6 px-4 py-10 pb-6 md:px-6 md:pb-12 lg:grid-cols-2 lg:gap-10">
+				<div className="container grid items-center gap-6 px-4 py-10 pb-6 md:px-6 lg:grid-cols-2 lg:gap-10">
+					<div>
+						<CloudinaryClientWrapper
+							src="tshirtcampaign_n1edai"
+							width="600"
+							height="600"
+							alt="Sustainable merchandise including eco-friendly t-shirts and tote bags"
+							className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full"
+						/>
+					</div>
 					<div className="space-y-4">
 						<div className="inline-block rounded-lg bg-stone-100 px-3 py-1 text-sm text-black">Current Campaign</div>
-						<Link href="https://www.etsy.com/shop/tedinitiative/">
-							<div className="mx-5 inline-block rounded-lg bg-blue-300 px-3 py-1 text-sm text-black">Buy Here</div>
-						</Link>
 						<h2 className="text-xl font-semibold text-blue-600 sm:text-4xl md:text-5xl dark:text-blue-400">
 							Sustainable Merchandise Fundraiser
 						</h2>
@@ -64,15 +70,13 @@ export default async function Campaigns() {
 								with friends, family, and your community.
 							</p>
 						</div>
-					</div>
-					<div>
-						<CloudinaryClientWrapper
-							src="tshirtcampaign_n1edai" // You'll need to upload an appropriate image to Cloudinary
-							width="600"
-							height="400"
-							alt="Sustainable merchandise including eco-friendly t-shirts and tote bags"
-							className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full"
-						/>
+						<div className="flex justify-center pt-4">
+							<Link href="https://www.etsy.com/shop/tedinitiative/">
+								<div className="rounded-lg bg-blue-300 px-16 py-2 text-sm font-medium text-black transition-colors hover:bg-blue-400">
+									Buy Here
+								</div>
+							</Link>
+						</div>
 					</div>
 				</div>
 				<div className="w-full bg-stone-100 py-6 md:py-12 lg:py-16 dark:bg-stone-800">
