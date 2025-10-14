@@ -30,15 +30,6 @@ export const directors = [
 		instagram: "https://www.instagram.com/kp_penguin/",
 	},
 	{
-		name: "Emilia Lugo",
-		title: "Finance Director",
-		location: "Miami, FL, USA",
-		image: "TEDI Bio/bu3aynqhs696kfeayykf",
-		description: `Emily has always been passionate about preserving the Earth and she is especially interested in the use of technology to solve current environmental issues. Her interest began in school, when she learned about how ecosystems function as well as how pollution harms these systems. This is when she began getting involved. She knew that TEDI was something she wanted to be a part of because of their genuine interest in protecting the environment, and she hopes to use her voice to spread awareness.`,
-		email: "emilymlugo2007@gmail.com",
-		instagram: "https://www.instagram.com/emilia.lugoo",
-	},
-	{
 		name: "Hiroyuki Sakuma",
 		title: "Chief Technology Officer",
 		location: "Hopewell Junction, NY, USA",
@@ -245,6 +236,15 @@ export const team = [
 }[];
 
 export const retiredTeam = [
+	{
+		name: "Emilia Lugo",
+		title: "Finance Director",
+		location: "Miami, FL, USA",
+		image: "TEDI Bio/bu3aynqhs696kfeayykf",
+		description: `Emily has always been passionate about preserving the Earth and she is especially interested in the use of technology to solve current environmental issues. Her interest began in school, when she learned about how ecosystems function as well as how pollution harms these systems. This is when she began getting involved. She knew that TEDI was something she wanted to be a part of because of their genuine interest in protecting the environment, and she hopes to use her voice to spread awareness.`,
+		email: "emilymlugo2007@gmail.com",
+		instagram: "https://www.instagram.com/emilia.lugoo",
+	},
 	{
 		name: "Priya Connelly",
 		title: "Blog Writer",
