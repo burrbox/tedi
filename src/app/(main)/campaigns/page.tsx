@@ -53,7 +53,7 @@ export default async function Campaigns() {
 							Sustainable Merchandise Fundraiser
 						</h2>
 						<p className="font-medium md:text-lg">
-							Combat fast fashion and excessive textile waste with TEDI's Sustainable Merchandise Fundraiser! We've
+							Combat fast fashion and excessive textile waste with TEDI&apos;s Sustainable Merchandise Fundraiser! We've
 							partnered with TapStitch to offer affordable, ethically-sourced clothing options including t-shirts,
 							sweaters, hoodies, and tote bags. All products are made from eco-friendly fabrics and nontoxic dyes, with
 							packaging made from recycled materials.
