@@ -53,10 +53,10 @@ export default async function Campaigns() {
 							Sustainable Merchandise Fundraiser
 						</h2>
 						<p className="font-medium md:text-lg">
-							Combat fast fashion and excessive textile waste with TEDI&apos;s Sustainable Merchandise Fundraiser! We've
-							partnered with TapStitch to offer affordable, ethically-sourced clothing options including t-shirts,
-							sweaters, hoodies, and tote bags. All products are made from eco-friendly fabrics and nontoxic dyes, with
-							packaging made from recycled materials.
+							Combat fast fashion and excessive textile waste with TEDI&apos;s Sustainable Merchandise Fundraiser!
+							We&apos;ve partnered with TapStitch to offer affordable, ethically-sourced clothing options including
+							t-shirts, sweaters, hoodies, and tote bags. All products are made from eco-friendly fabrics and nontoxic
+							dyes, with packaging made from recycled materials.
 						</p>
 						<div className="pt-2">
 							<p className="text-sm text-gray-600 dark:text-gray-400">
@@ -94,8 +94,8 @@ export default async function Campaigns() {
 								Community Impact
 							</h3>
 							<p className="md:text-base lg:text-sm">
-								Every purchase supports TEDI's mission to host bigger environmental actions. Help us spread the word by
-								sharing our store link, reposting on social media, and putting up flyers in your community.
+								Every purchase supports TEDI&apos;s mission to host bigger environmental actions. Help us spread the
+								word by sharing our store link, reposting on social media, and putting up flyers in your community.
 							</p>
 							<div className="text-sm">
 								<strong>Available Items:</strong> T-shirts, sweaters, hoodies, and tote bags at affordable prices
