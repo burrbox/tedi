@@ -27,7 +27,7 @@ export const directors = [
 		image: "TEDI Bio/xejrbnm0k1loivohupbx",
 		description: `Karen has always been intrigued by forest ecosystems and how they sustain themselves. She is fascinated by environmental policy and advocating for sustainability in developing cities. She joined TEDI to express her passion for environmental science and to meet likeminded peers who also hope to solve current environmental issues.`,
 		email: "Karen.penggg@gmail.com",
-		instagram: "https://www.instagram.com/kp_penguin/",
+		linkedin: "https://ca.linkedin.com/in/karen-peng-b46a98300",
 	},
 	{
 		name: "Hiroyuki Sakuma",
