@@ -43,6 +43,24 @@ export default async function Campaigns() {
 			</section>
 
 			<section className="w-full pt-6 md:pt-12">
+				<div className="container px-4 py-10 pb-6 md:px-6">
+					<div className="space-y-4 rounded-2xl bg-stone-100 p-8 shadow-md dark:bg-stone-800/80">
+						<div className="inline-block rounded-lg bg-stone-200 px-3 py-1 text-sm text-black">Seasonal Campaign</div>
+						<h2 className="text-2xl font-semibold text-blue-600 sm:text-4xl md:text-5xl dark:text-blue-400">
+							Holiday Food Drive Initiative
+						</h2>
+						<p className="font-medium md:text-lg">
+							Join us and host your own food drive campaign from Thanksgiving to the New Year. By hosting or
+							participating in a food drive in YOUR community, it would ensure more households can have the ability to
+							enjoy a warm, festive meal, while also reducing food waste, cutting methane emissions, and conserving the
+							resources used to produce the food products. This seasonal campaign encourages gratitude, conscious
+							consumption, and important environmental actions that may seem small, but makes a huge impact!!
+						</p>
+						<p className="text-sm text-gray-600 dark:text-gray-400">
+							Duration: Thanksgiving Holiday to New Year Holiday
+						</p>
+					</div>
+				</div>
 				<div className="container grid items-center gap-6 px-4 py-10 pb-6 md:px-6 lg:grid-cols-2 lg:gap-10">
 					<div>
 						<CloudinaryClientWrapper
@@ -108,7 +126,7 @@ export default async function Campaigns() {
 					</div>
 				</div>
 			</section>
-			<section className="w-full pt-6 md:pt-12">
+			{/* <section className="w-full pt-6 md:pt-12">
 				<div className="container px-4 py-10 pb-6 md:px-6 md:pb-12">
 					<div className="mb-12">
 						<div className="inline-block rounded-lg bg-stone-100 px-3 py-1 text-sm text-black">Fall Campaign</div>
@@ -118,11 +136,11 @@ export default async function Campaigns() {
 					</div>
 					<div className="grid gap-8 md:grid-cols-2">
 						<div className="rounded-lg bg-blue-100 p-8 shadow-md dark:bg-emerald-900">
-							<h3 className="mb-4 text-2xl font-bold text-blue-700 dark:text-blue-200">Maggie Yang</h3>
+							<h3 className="mb-4 text-2xl font-bold text-blue-700 dark:text-blue-200">Hanover</h3>
 							<div className="space-y-3">
 								<div>
-									<h4 className="font-semibold text-blue-700 dark:text-blue-300">Location</h4>
-									<p className="text-blue-600 dark:text-blue-400">Hanover</p>
+									<h4 className="font-semibold text-blue-700 dark:text-blue-300">Coordinator</h4>
+									<p className="text-blue-600 dark:text-blue-400">Maggie Yang</p>
 								</div>
 								<div>
 									<h4 className="font-semibold text-blue-700 dark:text-blue-300">Date</h4>
@@ -142,11 +160,11 @@ export default async function Campaigns() {
 							</div>
 						</div>
 						<div className="rounded-lg bg-blue-100 p-8 shadow-md dark:bg-emerald-900">
-							<h3 className="mb-4 text-2xl font-bold text-blue-700 dark:text-blue-200">Devanshi Pandya</h3>
+							<h3 className="mb-4 text-2xl font-bold text-blue-700 dark:text-blue-200">New Paltz</h3>
 							<div className="space-y-3">
 								<div>
-									<h4 className="font-semibold text-blue-700 dark:text-blue-300">Location</h4>
-									<p className="text-blue-600 dark:text-blue-400">New Paltz</p>
+									<h4 className="font-semibold text-blue-700 dark:text-blue-300">Coordinator</h4>
+									<p className="text-blue-600 dark:text-blue-400">Devanshi Pandya</p>
 								</div>
 								<div>
 									<h4 className="font-semibold text-blue-700 dark:text-blue-300">Date</h4>
@@ -167,7 +185,7 @@ export default async function Campaigns() {
 						</div>
 					</div>
 				</div>
-			</section>
+			</section> */}
 
 			<section className="w-full pt-6 md:pt-12">
 				<div className="container grid items-center gap-6 px-4 py-10 pb-6 md:px-6 md:pb-12 lg:grid-cols-2 lg:gap-10">
