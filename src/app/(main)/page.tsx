@@ -88,7 +88,18 @@ export default async function Home() {
 			<JsonLd data={jsonLd} />
 			{/* <Birthday /> */}
 			<section
-				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/oh93nln39npdtzsyettf" })})` }}
+				style={{
+					backgroundImage: `url(${getCldImageUrl({
+						src: "nature/oh93nln39npdtzsyettf",
+						width: 1600,
+						height: 900,
+						crop: "fill",
+						quality: "auto",
+						format: "auto",
+						dpr: "auto",
+						gravity: "auto",
+					})})`,
+				}}
 				className="flex w-screen bg-cover bg-fixed bg-center bg-no-repeat py-12 md:min-h-[70vh] md:pb-20 md:pt-32 lg:pt-40"
 			>
 				<div
@@ -119,8 +130,13 @@ export default async function Home() {
 									alt="An image of our team"
 									src="cleanup2_rhiq2n"
 									className="mx-auto aspect-video overflow-hidden rounded-xl object-cover shadow-xl"
-									width="1300"
-									height="1100"
+									width={960}
+									height={540}
+									sizes="(min-width: 1280px) 40vw, (min-width: 768px) 55vw, 100vw"
+									quality="auto"
+									format="auto"
+									dpr="auto"
+									loading="lazy"
 								/>
 							</div>
 						</div>
@@ -206,6 +222,11 @@ export default async function Home() {
 							data-aos="fade-left"
 							width={550}
 							height={550}
+							sizes="(min-width: 1280px) 35vw, (min-width: 768px) 45vw, 90vw"
+							quality="auto"
+							format="auto"
+							dpr="auto"
+							loading="lazy"
 						/>
 					</div>
 				</div>
@@ -274,13 +295,17 @@ export default async function Home() {
 						</p>
 						<div className="flex gap-4 py-5 lg:justify-start">
 							<CloudinaryClientWrapper
-								height="64"
-								width="64"
+								height={64}
+								width={64}
 								src="TEDI Bio/x6q3sdgebdrhx2pb5b4k"
 								alt="An image of TEDI Founder Emma Mazzotta"
 								gravity="face"
 								crop="fill"
 								className="rounded-full object-cover shadow-xl"
+								quality="auto"
+								format="auto"
+								dpr="auto"
+								loading="lazy"
 							/>
 							<div>
 								<h4 className="text-lg font-semibold">Emma Mazzotta</h4>
@@ -290,12 +315,17 @@ export default async function Home() {
 					</div>
 					<CloudinaryClientWrapper
 						src="other/wq4nmeqsd2o4lf1rc4ly"
-						width="550"
-						height="450"
+						width={550}
+						height={309}
 						alt="A local high school cleanup event"
 						className="mx-auto aspect-video overflow-hidden rounded-xl object-cover shadow-xl"
 						data-aos="fade-left"
 						data-aos-delay="200"
+						sizes="(min-width: 1280px) 40vw, (min-width: 768px) 55vw, 100vw"
+						quality="auto"
+						format="auto"
+						dpr="auto"
+						loading="lazy"
 					/>
 				</div>
 			</section>
