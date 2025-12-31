@@ -166,7 +166,7 @@ export const team = [
 		description: `Liza is deeply aware of the devastating consequences that war can bring. From a young age, she has been interested in how technology can be used to address pollution in the air, water, and soil. As an eager and committed researcher, Liza has presented both her thesis and independent research at international conferences, where she gained valuable knowledge about environmental protection and sustainability. In the future, she plans to study electrical engineering and is excited to explore how she can apply her knowledge to developing technologies aimed at cleaning and restoring water reservoirs in her home city.`,
 	},
 	{
-		name: "Matthew Katz",
+		name: "Mathew Katz",
 		title: "Networking Coordinator & Blog Editor",
 		location: "Alberta, Canada",
 		image: "https://res.cloudinary.com/mozzarella-tedi/image/upload/v1756320169/matthew_k_m42tdk.png",
