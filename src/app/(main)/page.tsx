@@ -345,13 +345,13 @@ export default async function Home() {
 						data-aos="fade-right"
 						width="560"
 						height="315"
-						src="https://www.youtube.com/embed/itVIr3ztSyA?si=3u96gsPESkxp8QbQ"
-						title="The Intersection of Soil Science, Education, and Research with Dr. Rattan Lal"
+						src="https://www.youtube.com/embed/ovHgx8kr_CM?si=8xMem1qFeQz5CZ0l"
+						title="Water Security and the Global Water Crisis | Dr. Kate Brauman on Ecosystems & Advocacy"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 						className="h-full w-full rounded-xl"
 						referrerPolicy="strict-origin-when-cross-origin"
 						allowFullScreen
-					/>
+					></iframe>
 				</div>
 				<div className="flex flex-col items-center justify-center space-y-4 text-center" data-aos="fade-left">
 					<div className="space-y-2">
