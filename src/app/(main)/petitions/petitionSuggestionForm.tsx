@@ -57,7 +57,7 @@ export default function PetitionSuggestionForm() {
 		);
 
 	return (
-		<form className="rounded-2xl bg-white dark:bg-stone-800" onSubmit={submitForm}>
+		<form className="w-full rounded-2xl bg-white dark:bg-stone-800" onSubmit={submitForm}>
 			<div className="mx-4 py-4 lg:py-8">
 				<h1 className="text-wrap py-6 text-center text-5xl font-bold text-green-700 dark:text-green-400">
 					Suggest a Petition
@@ -66,68 +66,61 @@ export default function PetitionSuggestionForm() {
 					Help us create petitions that matter to your community
 				</h2>
 			</div>
-			<div className="mx-6 grid w-full justify-center gap-3 md:flex-col">
-				<div className="w-full flex-col">
-					<label className="w-full text-blue-700 dark:text-blue-300">
-						Name *
-						<input
-							name="name"
-							className="w-full rounded-md bg-blue-300 p-3 shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-700 dark:text-white dark:hover:bg-stone-800 dark:focus:bg-stone-800"
-							type="text"
-							required
-							value={name}
-							onChange={(event) => void setName(event.target.value)}
-						/>
-					</label>
-				</div>
-				<div className="flex-col">
-					<label className="text-blue-700 dark:text-blue-300">
-						Email *
-						<input
-							name="email"
-							className="w-full rounded-md bg-blue-300 p-3 shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-700 dark:text-white dark:hover:bg-stone-800 dark:focus:bg-stone-800"
-							type="email"
-							required
-							value={email}
-							onChange={(event) => void setEmail(event.target.value)}
-						/>
-					</label>
-				</div>
-				<div className="flex-col">
-					<label className="text-blue-700 dark:text-blue-300">
-						Level *
-						<select
-							name="level"
-							className="w-full rounded-md bg-blue-300 p-3 shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-700 dark:text-white dark:hover:bg-stone-800 dark:focus:bg-stone-800"
-							required
-							value={level}
-							onChange={(event) => void setLevel(event.target.value as "local" | "state" | "national")}
-						>
-							<option value="local">Local</option>
-							<option value="state">State</option>
-							<option value="national">National</option>
-						</select>
-					</label>
-				</div>
-				<div className="flex-col">
-					<label className="text-blue-700 dark:text-blue-300">
-						Suggestion *
-						<textarea
-							name="suggestion"
-							className="h-32 w-full resize-none rounded-md bg-blue-300 p-3 shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-700 dark:text-white dark:hover:bg-stone-800 dark:focus:bg-stone-800"
-							placeholder="Describe the environmental issue you'd like us to address with a petition. Include details about the problem, who it affects, and what change you'd like to see."
-							required
-							value={suggestion}
-							onChange={(event) => void setSuggestion(event.target.value)}
-						/>
-					</label>
-				</div>
+			<div className="mx-auto flex w-full flex-col justify-center gap-3 px-6 md:w-4/5">
+				<label className="w-full text-blue-700 dark:text-blue-300">
+					Name *
+					<input
+						name="name"
+						className="w-full rounded-md bg-blue-300 p-3 shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-700 dark:text-white dark:hover:bg-stone-800 dark:focus:bg-stone-800"
+						type="text"
+						required
+						value={name}
+						onChange={(event) => void setName(event.target.value)}
+					/>
+				</label>
+
+				<label className="w-full text-blue-700 dark:text-blue-300">
+					Email *
+					<input
+						name="email"
+						className="w-full rounded-md bg-blue-300 p-3 shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-700 dark:text-white dark:hover:bg-stone-800 dark:focus:bg-stone-800"
+						type="email"
+						required
+						value={email}
+						onChange={(event) => void setEmail(event.target.value)}
+					/>
+				</label>
+				<label className="w-full text-blue-700 dark:text-blue-300">
+					Level *
+					<select
+						name="level"
+						className="w-full rounded-md bg-blue-300 p-3 shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-700 dark:text-white dark:hover:bg-stone-800 dark:focus:bg-stone-800"
+						required
+						value={level}
+						onChange={(event) => void setLevel(event.target.value as "local" | "state" | "national")}
+					>
+						<option value="local">Local</option>
+						<option value="state">State</option>
+						<option value="national">National</option>
+					</select>
+				</label>
+				<label className="w-full text-blue-700 dark:text-blue-300">
+					Suggestion *
+					<textarea
+						name="suggestion"
+						className="h-32 w-full resize-none rounded-md bg-blue-300 p-3 shadow-blue-700 duration-200 hover:bg-blue-100 focus:bg-white dark:bg-stone-700 dark:text-white dark:hover:bg-stone-800 dark:focus:bg-stone-800"
+						placeholder="Describe the environmental issue you'd like us to address with a petition. Include details about the problem, who it affects, and what change you'd like to see."
+						required
+						value={suggestion}
+						onChange={(event) => void setSuggestion(event.target.value)}
+					/>
+				</label>
 			</div>
 			<div className="mx-3 flex justify-center py-10">
 				<button
 					type="submit"
 					disabled={isSubmitting || done}
-					className="w-4/5 cursor-pointer rounded-xl bg-blue-700 py-3 text-white duration-300 hover:bg-blue-600"
+					className="w-4/5 cursor-pointer rounded-xl bg-blue-700 py-3 text-white duration-300 hover:bg-blue-600 md:w-3/5"
 					onClick={() => console.log("Button clicked!")}
 				>
 					{isSubmitting ? <Loading className="m-auto" /> : "Submit Suggestion"}

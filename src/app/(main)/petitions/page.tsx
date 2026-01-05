@@ -75,7 +75,7 @@ export default async function Petitions() {
 					</div>
 				</div>
 				<div
-					className="flex min-h-[35vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
+					className="flex min-h-[30vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
 					style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/t7x9xmnsyqs2yetfpp3j" })})` }}
 				>
 					<div className="container mx-auto w-full p-8" data-aos="fade-down">
@@ -123,8 +123,8 @@ export default async function Petitions() {
 					className="flex w-screen bg-cover bg-fixed bg-center bg-repeat py-8"
 					style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/t7x9xmnsyqs2yetfpp3j" })})` }}
 				>
-					<div className="container mx-auto w-full" data-aos="fade-down">
-						<div className="flex flex-col justify-center gap-5 rounded-xl bg-stone-300/70 p-5 dark:bg-stone-800/70">
+					<div className="container mx-auto w-5/6 md:w-4/5" data-aos="fade-down">
+						<div className="flex flex-col justify-center gap-5 rounded-xl bg-stone-300/70 p-5 md:p-12 dark:bg-stone-800/70">
 							<div className="w-full">
 								<div className="h-fit rounded-xl bg-white p-8 dark:bg-stone-800">
 									<h1 className="text-center text-3xl font-semibold text-green-700 dark:text-green-400">
@@ -137,7 +137,7 @@ export default async function Petitions() {
 									</h2>
 								</div>
 							</div>
-							<div className="min-w-3xl mx-auto w-full">
+							<div className="mx-auto w-full">
 								<PetitionSuggestionForm />
 							</div>
 						</div>
