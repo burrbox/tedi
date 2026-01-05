@@ -82,7 +82,15 @@ const globeConfig: Partial<COBEOptions> = {
 	markers: locations,
 };
 
+// Helper function to get alternating background colors for sections
+const getSectionBg = (index: number) => {
+	return index % 2 === 0 ? "bg-stone-100 dark:bg-stone-800" : "bg-white dark:bg-stone-900";
+};
+
 export default async function Home() {
+	// Track section index for automatic background color alternation
+	let sectionIndex = 0;
+
 	return (
 		<div className="flex min-h-dvh flex-col">
 			<JsonLd data={jsonLd} />
@@ -143,7 +151,7 @@ export default async function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800">
+			<section className={`w-full py-12 md:py-24 lg:py-32 ${getSectionBg(sectionIndex++)}`}>
 				<div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
 					<div className="space-y-3">
 						<h2 className="text-3xl font-bold tracking-tighter text-blue-500 sm:text-4xl md:text-5xl">
@@ -180,7 +188,7 @@ export default async function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="flex w-full items-center py-4">
+			<section className={`items-centerpy-12 flex w-full md:py-24 lg:py-32 ${getSectionBg(sectionIndex++)}`}>
 				<div className="container px-4 md:px-6">
 					<div className="mx-auto grid justify-center gap-6 lg:grid-cols-2 lg:gap-12">
 						<div className="flex flex-col justify-center space-y-4" data-aos="fade-right">
@@ -231,7 +239,7 @@ export default async function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800">
+			<section className={`w-full py-12 md:py-24 lg:py-32 ${getSectionBg(sectionIndex++)}`}>
 				<div className="container px-4 md:px-6">
 					<div className="flex flex-col items-center justify-center space-y-4 text-center">
 						<div className="space-y-2" data-aos="fade-down">
@@ -284,7 +292,7 @@ export default async function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="w-full bg-white py-12 md:py-24 lg:py-32 dark:bg-stone-900">
+			<section className={`w-full py-12 md:py-24 lg:py-32 ${getSectionBg(sectionIndex++)}`}>
 				<div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
 					<div className="mx-auto justify-center space-y-2" data-aos="fade-right">
 						<h2 className="text-3xl font-bold tracking-tighter text-green-600 md:text-4xl/tight dark:text-green-400">
@@ -329,96 +337,9 @@ export default async function Home() {
 					/>
 				</div>
 			</section>
-			<section className="bg-stone-100 px-5 py-6 text-center md:px-10 md:py-12 lg:py-24 dark:bg-stone-800">
-				<div className="my-5 inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">Get Involved</div>
-				<h2 className="text-center text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl dark:text-blue-400">
-					Fall Fast Fashion Campaign
-				</h2>
-				<p className="mx-auto max-w-4xl py-4 text-center md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-white">
-					This campaign aims to mitigate the environmental harm that fast fashion causes by hosting clothing drives
-					across the <span className="font-semibold text-green-600">United States and Canada</span>. Clothing drives are
-					an excellent way to{" "}
-					<span className="font-semibold text-green-600">repurpose, reuse, and recycle clothing</span> to prevent waste
-					from accumulating in landfills.
-				</p>
-				<div className="grid flex-col items-center justify-center gap-6 space-y-4 text-center md:grid-cols-2">
-					<div className="mt-5 h-full space-y-2 rounded-xl bg-stone-200 py-10 dark:bg-stone-900">
-						<p className="pb-5 text-center text-lg font-medium">
-							<span className="font-semibold text-green-600 dark:text-green-400">Donate</span> old/used clothing at one
-							of our several clothing drive donation bins! If you don’t see a clothing drive in your area, consider
-							hosting one yourself. <Link href="/join-us">Become a member</Link> today to receive free, one-on-one
-							guidance on{" "}
-							<span className="font-semibold text-green-600 dark:text-green-400">starting a clothing drive</span> from a
-							member of our campaign team and gain access to an exclusive action toolkit including all of the materials
-							you need to launch a{" "}
-							<span className="font-semibold text-green-600 dark:text-green-400">successful drive</span>.
-						</p>
-						<div className="my-5 text-center font-bold tracking-tighter text-blue-600 dark:text-blue-400">
-							<Link
-								href="/campaigns" //temporary until i work on the campaign page
-								className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow-xl duration-300 hover:bg-green-700"
-							>
-								Find Out More
-							</Link>
-						</div>
-					</div>
-					<div className="mt-5 h-full space-y-2 rounded-xl bg-stone-200 px-4 py-10 md:px-8 dark:bg-stone-900">
-						<h3 className="text-2xl font-semibold text-green-600 dark:text-green-400">Our Locations</h3>
-						<p className="py-4 text-xl font-medium">
-							Stop by at one of these locations to drop off some clothes and save the environment!
-						</p>
-						<ul className="list-inside list-disc text-left md:pl-12">
-							{/* <li>
-								<span className="font-semibold">Hopewell Junction, NY, USA</span> - October 19st 12-4pm @{" "}
-								<Link
-									className="text-blue-500 underline"
-									href="https://www.google.com/maps/place/Hopewell+Recreation+Park/@41.5749365,-73.8121169,15.79z/data=!4m14!1m7!3m6!1s0x89dd4818425ae529:0x696af3813e741117!2sJohn+Jay+Senior+High+School!8m2!3d41.5406214!4d-73.8332066!16s%2Fm%2F025wqkv!3m5!1s0x89dd4742b5ea7787:0x73795bf9d941a3b4!8m2!3d41.5768458!4d-73.804657!16s%2Fg%2F11k61m0mfd?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D"
-								>
-									Hopewell Recreation Park
-								</Link>
-							</li>
-							<li>
-								<span className="font-semibold">Shrub Oak, NY, USA</span> - donation bin addresses TBD
-							</li>
-							<li>
-								<span className="font-semibold">Verona, NJ, USA</span> - donation bin addresses TBD
-							</li> */}
-							<Popover>
-								<li>
-									<PopoverTrigger>
-										<span className="font-semibold italic underline">Toronto, ON, Canada *</span>
-									</PopoverTrigger>
-									<PopoverContent>
-										<div className="flex space-x-6">
-											<div className="space-y-2">
-												<h4 className="font-medium leading-none text-green-600 dark:text-green-400">
-													Pickup Clothing Drive
-												</h4>
-												<p className="text-muted-foreground">
-													A truck from{" "}
-													<Link href="https://www.diabetes.ca/" className="italic underline">
-														Diabetes Canada
-													</Link>{" "}
-													will be picking up clothing donations along with a few books. They accept donations around the{" "}
-													<Link href="https://declutterfordiabetes.ca/donation-bin" className="italic underline">
-														General Toronto Area
-													</Link>
-													!
-												</p>
-											</div>
-										</div>
-									</PopoverContent>{" "}
-									- All Day on December 9
-								</li>
-							</Popover>
-							{/* <li>
-								<span className="font-semibold">Miami, FL, USA</span> - donation bin addresses TBD
-							</li> */}
-						</ul>
-					</div>
-				</div>
-			</section>
-			<section className="w-full bg-white px-12 py-12 md:py-24 lg:grid lg:grid-cols-2 lg:gap-12 lg:py-32 dark:bg-stone-900">
+			<section
+				className={`w-full px-12 py-12 md:py-24 lg:grid lg:grid-cols-2 lg:gap-12 lg:py-32 ${getSectionBg(sectionIndex++)}`}
+			>
 				<div className="aspect-video w-full overflow-hidden rounded-lg">
 					<iframe
 						data-aos="fade-right"
@@ -458,14 +379,16 @@ export default async function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800">
+			<section className={`w-full py-12 md:py-24 lg:py-32 ${getSectionBg(sectionIndex++)}`}>
 				<h1 className="pb-8 text-center text-5xl font-bold tracking-tighter text-blue-600 dark:text-blue-400">
 					See where our members are!
 				</h1>
 				<Globe className="w-full" config={globeConfig} speed={0.002} phi={0} markers={locations} />
 			</section>
-			<Carousel />
-			<section className="w-full bg-stone-100 py-12 md:py-24 lg:py-32 dark:bg-stone-800" data-aos="fade-in">
+			<section className={`w-full py-12 md:py-24 lg:py-32 ${getSectionBg(sectionIndex++)}`}>
+				<Carousel />
+			</section>
+			<section className={`w-full py-12 md:py-24 lg:py-32 ${getSectionBg(sectionIndex++)}`} data-aos="fade-in">
 				<div className="container px-4 md:px-6">
 					<div className="flex flex-col items-center justify-center space-y-4 text-center">
 						<div className="space-y-2">

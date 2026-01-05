@@ -66,9 +66,9 @@ export default function PetitionSuggestionForm() {
 					Help us create petitions that matter to your community
 				</h2>
 			</div>
-			<div className="mx-6 grid justify-center gap-3 md:flex-col">
-				<div className="flex-col">
-					<label className="text-blue-700 dark:text-blue-300">
+			<div className="mx-6 grid w-full justify-center gap-3 md:flex-col">
+				<div className="w-full flex-col">
+					<label className="w-full text-blue-700 dark:text-blue-300">
 						Name *
 						<input
 							name="name"

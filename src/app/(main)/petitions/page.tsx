@@ -75,7 +75,7 @@ export default async function Petitions() {
 					</div>
 				</div>
 				<div
-					className="flex min-h-[60vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
+					className="flex min-h-[35vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
 					style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/t7x9xmnsyqs2yetfpp3j" })})` }}
 				>
 					<div className="container mx-auto w-full p-8" data-aos="fade-down">
@@ -86,7 +86,7 @@ export default async function Petitions() {
 									className="flex flex-col justify-center gap-6 rounded-xl bg-stone-300/70 p-8 dark:bg-stone-800/70"
 								>
 									{petition.name === "coming-soon" ? (
-										<div className="h-fit rounded-xl bg-white p-8 dark:bg-stone-800">
+										<div className="rounded-xl bg-white p-8 dark:bg-stone-800">
 											<h1 className="text-center text-3xl font-semibold text-green-700 dark:text-green-400">
 												{petition.title}
 											</h1>
@@ -120,13 +120,13 @@ export default async function Petitions() {
 
 			<section>
 				<div
-					className="flex min-h-[60vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
+					className="flex w-screen bg-cover bg-fixed bg-center bg-repeat py-8"
 					style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/t7x9xmnsyqs2yetfpp3j" })})` }}
 				>
 					<div className="container mx-auto w-full" data-aos="fade-down">
-						<div className="flex flex-col justify-center gap-6 rounded-xl bg-stone-300/70 px-3 py-10 xl:flex-row dark:bg-stone-800/70">
-							<div className="basis-3/5">
-								<div className="h-fit rounded-xl bg-white p-2 py-8 dark:bg-stone-800">
+						<div className="flex flex-col justify-center gap-5 rounded-xl bg-stone-300/70 p-5 dark:bg-stone-800/70">
+							<div className="w-full">
+								<div className="h-fit rounded-xl bg-white p-8 dark:bg-stone-800">
 									<h1 className="text-center text-3xl font-semibold text-green-700 dark:text-green-400">
 										Have an Idea for a Petition?
 									</h1>
@@ -137,7 +137,7 @@ export default async function Petitions() {
 									</h2>
 								</div>
 							</div>
-							<div className="basis-2/5">
+							<div className="min-w-3xl mx-auto w-full">
 								<PetitionSuggestionForm />
 							</div>
 						</div>

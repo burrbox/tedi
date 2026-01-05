@@ -451,16 +451,6 @@ export const petitions = [
 		callToAction: "Stay tuned for upcoming petitions!",
 		name: "coming-soon",
 	},
-	{
-		title: "Protect the East Fishkill from the Woodland Estates Luxury Apartment Complex",
-		description: `Woodland Estates is a proposed rental development community in the town of East Fishkill calling for 468 luxury apartments in 23 buildings, 900 parking spots, and various lavish amenities. While this project may satisfy the growing demand for single-family homes in East Fishkill, it will have severe environmental repercussions including worsened air quality and local ecosystem damage.
-
-The luxury apartment complex will occupy 35 acres of undeveloped land and include lavish amenities such as clubhouses, pools, and pickleball courts. Considering East Fishkill has no shortage of these kinds of facilities, the exorbitant amount of land that the project would take up is completely unnecessary considering the development would harm local ecosystems and displace native species. In addition, the plan calls for the waste system of the apartments to connect to the general waste facilities of East Fishkill. The construction of this system would involve drilling underneath Shenandoah Creek, a process that would create noise pollution, destroy natural habitats, and disturb wildlife. Moreover, building these apartments would cause serious congestion on NY-376, lengthening commute times and thus increasing vehicle emissions.
-
-Allowing the Woodland Estates to be built would drastically reduce air quality and destroy fragile ecosystems in East Fishkill. Our town needs to emphasize the protection of natural lands, rather than construct unneeded luxury apartments with unnecessary amenities. We cannot compromise the health of our environment for the sake of capital gain. Sign our petition today to urge the town planning board to reject the Woodland Estates community development project.`,
-		callToAction: "Protect Shenandoah Creek and the fragile ecosystems of East Fishkill!",
-		name: "woodland",
-	},
 	// 	{
 	// 		title: "Halt the Construction of Warehouses on NYS Wetlands in East Fishkill",
 	// 		description: `Treetop Development, a real estate investment firm, is threatening the livelihood of East Fishkill residents and putting our precious wetlands at risk for environmental catastrophe. They have proposed the Treetop Planned Industrial Development Project, an initiative that details the construction of two massive industrial warehouses on the wetlands of Wiccopee, a crucial habitat for various native plants and animals. Not only would this project disrupt the quiet and serene environment East Fishkill residents pride themselves on, but also provide prime conditions for an ecological disaster of epic proportions.
