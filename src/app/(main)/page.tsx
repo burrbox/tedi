@@ -67,7 +67,7 @@ const locations = [
 	// { name: "Vancouver, BC", location: [49.257706, -123.2064753], size: 0.02 },
 	// { name: "Warrington, PA", location: [40.2470657, -75.2037622], size: 0.04 },
 	{ name: "Lakeland, NY", location: [43.0903, -76.2405], size: 0.04 },
-	{ name: "Mumbai, India", location: [19.0821772, 72.7160353], size: 0.02 },
+	// { name: "Mumbai, India", location: [19.0821772, 72.7160353], size: 0.02 },
 ] satisfies COBEOptions["markers"] & { name: string }[];
 
 const globeConfig: Partial<COBEOptions> = {
