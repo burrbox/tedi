@@ -213,7 +213,7 @@ export const team = [
 	},
 	{
 		name: "Sahasra Rajesh",
-		title: "Blog Editor",
+		title: "Crisis Blog Writer & Blog Editor",
 		//location: "Hopewell Junction, NY, USA",
 		image:
 			"https://res.cloudinary.com/mozzarella-tedi/image/upload/v1758661649/76040e0a-c949-48fb-bb71-0485e1e03aec.png",
