@@ -62,29 +62,61 @@ export default async function Blog() {
 						</div>
 					)}
 				</div>
-				<div className="container mx-auto mb-8 justify-center px-5 md:px-10 lg:px-20">
+				<div className="container mx-auto mb-8 max-w-7xl justify-center">
 					<div
-						className="flex flex-col rounded-xl border-2 border-gray-500 bg-white px-2 py-3 text-center text-gray-950 md:flex-row md:px-5 md:py-5 md:text-left lg:px-10 dark:bg-gray-950 dark:text-gray-50"
+						className="relative flex flex-col gap-6 overflow-hidden rounded-2xl bg-gradient-to-br from-green-50 via-blue-50 to-emerald-50 p-8 shadow-lg md:flex-row md:items-center md:gap-8 md:p-10 lg:p-12 dark:from-green-950/40 dark:via-blue-950/40 dark:to-emerald-950/40"
 						data-aos="fade-in"
 						data-aos-delay="100"
 					>
-						<div>
-							<h3 className="text-2xl font-semibold text-green-600 dark:text-green-400">Want to take action?</h3>
-							<p>
+						{/* Decorative background elements */}
+						<div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-green-200/30 blur-3xl dark:bg-green-500/10" />
+						<div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-blue-200/30 blur-3xl dark:bg-blue-500/10" />
+
+						<div className="relative z-10 flex-1 text-center md:text-left">
+							<div className="mb-3 flex items-center justify-center gap-2 md:justify-start">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									strokeWidth={2}
+									stroke="currentColor"
+									className="h-7 w-7 text-green-600 dark:text-green-400"
+								>
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+									/>
+								</svg>
+								<h3 className="text-3xl font-bold text-green-700 dark:text-green-400">Want to take action?</h3>
+							</div>
+							<p className="text-base leading-relaxed text-gray-700 md:text-lg dark:text-gray-300">
 								We&apos;ve opened our blog submissions to anyone interested!
 								<br />
-								Try your hand at writing an article; it may even be featured on our website!
+								<span className="font-medium">Try your hand at writing an article</span> — it may even be featured on
+								our website!
 							</p>
 						</div>
 						<Link
 							href="https://docs.google.com/forms/d/e/1FAIpQLScPyNKW82l-B3YJypShgVB6m6WKZ4dqpyFsuzFvKhVdQPbmaA/viewform"
-							className="mx-auto my-3 content-center justify-center rounded-xl bg-blue-400 px-3 py-4 text-gray-950 duration-200 hover:scale-105 md:my-auto"
+							className="group relative z-10 mx-auto flex items-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 font-semibold text-white shadow-md transition-all duration-300 hover:scale-105 hover:shadow-xl md:mx-0 md:shrink-0"
 						>
-							Submit an Article
+							<span className="relative z-10">Submit an Article</span>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								strokeWidth={2.5}
+								stroke="currentColor"
+								className="relative z-10 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+							>
+								<path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+							</svg>
+							<div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 						</Link>
 					</div>
 				</div>
-				<div className="lg:mb-18 mx-auto mb-12 max-w-6xl md:mb-16">
+				<div className="lg:mb-18 mx-auto mb-12 max-w-7xl md:mb-16">
 					{featuredPost.image && (
 						<div
 							className="relative mx-5 h-[400px] overflow-hidden rounded-lg md:h-[500px] lg:h-[600px]"
@@ -163,7 +195,7 @@ export default async function Blog() {
 
 			{/* Articles list */}
 			<section className="bg-white dark:bg-stone-900">
-				<div className="mx-auto max-w-6xl px-4 sm:px-6">
+				<div className="mx-auto max-w-7xl px-4 sm:px-6">
 					<div className="pb-12 md:pb-20">
 						<div className="lg:flex lg:justify-between">
 							{/* Main content */}
