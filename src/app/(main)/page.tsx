@@ -8,8 +8,6 @@ import Link from "next/link";
 import type { WebSite, WithContext } from "schema-dts";
 import { type COBEOptions } from "cobe";
 import Globe from "@/components/magicui/globe";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-// import Birthday from "@/components/birthday";
 
 export const metadata: Metadata = {
 	title: "Home",
@@ -31,15 +29,10 @@ const jsonLd: WithContext<WebSite> = {
 	name: "The Environmental Defense Initiative",
 	alternateName: ["TEDI"],
 	url: env.URL,
-	potentialAction: [
-		// { "@type": "DonateAction", target: { "@type": "EntryPoint", urlTemplate: `${env.URL}/donate` } },
-		{ "@type": "JoinAction", target: { "@type": "EntryPoint", urlTemplate: `${env.URL}/join` } },
-		// { "@type": "SubscribeAction" },
-	],
+	potentialAction: [{ "@type": "JoinAction", target: { "@type": "EntryPoint", urlTemplate: `${env.URL}/join` } }],
 	sourceOrganization: {
 		"@type": "Organization",
 		name: "The Environmental Defense Initiative",
-		// legalName: "The Environmental Defense Initiative",
 		url: env.URL,
 		logo: getCldImageUrl({ src: "logo" }),
 		foundingDate: "2023",
@@ -64,10 +57,7 @@ const locations = [
 	{ name: "Hopewell Junction, NY", location: [41.5406254, -73.8357815], size: 0.07 },
 	{ name: "Miami, FL", location: [25.7825389, -80.3118589], size: 0.04 },
 	{ name: "Toronto, ON", location: [43.718371, -79.5428628], size: 0.02 },
-	// { name: "Vancouver, BC", location: [49.257706, -123.2064753], size: 0.02 },
-	// { name: "Warrington, PA", location: [40.2470657, -75.2037622], size: 0.04 },
 	{ name: "Lakeland, NY", location: [43.0903, -76.2405], size: 0.04 },
-	// { name: "Mumbai, India", location: [19.0821772, 72.7160353], size: 0.02 },
 ] satisfies COBEOptions["markers"] & { name: string }[];
 
 const globeConfig: Partial<COBEOptions> = {
@@ -94,7 +84,6 @@ export default async function Home() {
 	return (
 		<div className="flex min-h-dvh flex-col">
 			<JsonLd data={jsonLd} />
-			{/* <Birthday /> */}
 			<section
 				style={{
 					backgroundImage: `url(${getCldImageUrl({
@@ -108,44 +97,102 @@ export default async function Home() {
 						gravity: "auto",
 					})})`,
 				}}
-				className="flex w-screen bg-cover bg-fixed bg-center bg-no-repeat py-12 md:min-h-[70vh] md:pb-20 md:pt-32 lg:pt-40"
+				className="relative flex w-screen bg-cover bg-fixed bg-center bg-no-repeat py-12 md:min-h-[80vh] md:pb-20 md:pt-32 lg:pt-40"
 			>
+				<div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/30 to-transparent" />
+
 				<div
-					className="mx-3 justify-center rounded-xl bg-white/80 py-10 shadow-xl md:mx-8 lg:mx-auto dark:bg-stone-950/80"
+					className="relative z-10 mx-3 w-full justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-white/95 via-white/90 to-white/85 px-6 py-12 shadow-2xl backdrop-blur-sm md:mx-8 md:py-16 lg:mx-auto lg:max-w-[90rem] lg:px-12 lg:py-20 dark:from-stone-950/95 dark:via-stone-900/90 dark:to-stone-950/85"
 					data-aos="fade-down"
 				>
-					<div className="container md:space-y-10 xl:space-y-16">
-						<div className="grid gap-4 lg:grid-cols-2 lg:gap-16">
-							<div>
-								<h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter text-green-600 sm:text-4xl md:text-5xl xl:text-[4rem] 2xl:text-[5rem] dark:text-stone-100">
+					<div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-green-400/20 blur-3xl dark:bg-green-500/10" />
+					<div className="absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-blue-400/20 blur-3xl dark:bg-blue-500/10" />
+
+					<div className="container relative z-10 md:space-y-10 xl:space-y-16">
+						<div className="grid gap-8 lg:grid-cols-[2fr_3fr] lg:gap-12 xl:gap-16">
+							<div className="space-y-6 md:space-y-8">
+								<div className="inline-flex items-center gap-2 rounded-full bg-green-100 px-4 py-2 text-sm font-medium text-green-800 shadow-sm dark:bg-green-900/30 dark:text-green-400">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+										strokeWidth={2}
+										stroke="currentColor"
+										className="h-4 w-4"
+									>
+										<path
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
+										/>
+									</svg>
+									<span>Environmental Advocacy & Education</span>
+								</div>
+								<h1 className="lg:leading-tighter bg-gradient-to-br from-green-700 via-green-600 to-emerald-600 bg-clip-text text-3xl font-extrabold tracking-tight text-transparent sm:text-4xl md:text-5xl xl:text-[4rem] 2xl:text-[5rem] dark:from-green-400 dark:via-emerald-400 dark:to-green-500">
 									The Environmental Defense Initiative
 								</h1>
-								<p className="mx-auto max-w-[700px] py-5 md:py-10 md:text-xl dark:text-green-500">
-									Our nonprofit organization is dedicated to preserving the natural world and creating a sustainable
-									future for all.
+								<p className="max-w-[700px] text-lg leading-relaxed text-gray-700 md:text-xl dark:text-gray-300">
+									Our nonprofit organization is dedicated to{" "}
+									<span className="font-semibold text-green-700 dark:text-green-400">preserving the natural world</span>{" "}
+									and creating a{" "}
+									<span className="font-semibold text-blue-700 dark:text-blue-400">sustainable future</span> for all.
 								</p>
-								<div className="space-x-4">
-									<button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-green-700">
-										<Link href="/join-us">Get Involved</Link>
-									</button>
-									<button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700">
-										<Link href="/petitions">Sign a Petition</Link>
-									</button>
+								<div className="flex flex-col gap-4 sm:flex-row">
+									<Link
+										href="/join-us"
+										className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-green-600 to-green-700 px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+									>
+										<span className="relative z-10">Get Involved</span>
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											fill="none"
+											viewBox="0 0 24 24"
+											strokeWidth={2.5}
+											stroke="currentColor"
+											className="relative z-10 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+										>
+											<path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+										</svg>
+										<div className="absolute inset-0 bg-gradient-to-r from-green-700 to-green-800 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+									</Link>
+									<Link
+										href="/petitions"
+										className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl border-2 border-blue-600 bg-white px-8 py-4 font-semibold text-blue-600 shadow-md transition-all duration-300 hover:bg-blue-600 hover:text-white hover:shadow-lg dark:bg-stone-900 dark:text-blue-400 dark:hover:bg-blue-600 dark:hover:text-white"
+									>
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											fill="none"
+											viewBox="0 0 24 24"
+											strokeWidth={2}
+											stroke="currentColor"
+											className="h-5 w-5"
+										>
+											<path
+												strokeLinecap="round"
+												strokeLinejoin="round"
+												d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"
+											/>
+										</svg>
+										<span>Sign a Petition</span>
+									</Link>
 								</div>
 							</div>
 							<div className="flex h-fit flex-col items-center self-center">
-								<CloudinaryClientWrapper
-									alt="An image of our team"
-									src="cleanup2_rhiq2n"
-									className="mx-auto aspect-video overflow-hidden rounded-xl object-cover shadow-xl"
-									width={960}
-									height={540}
-									sizes="(min-width: 1280px) 40vw, (min-width: 768px) 55vw, 100vw"
-									quality="auto"
-									format="auto"
-									dpr="auto"
-									loading="lazy"
-								/>
+								<div className="relative">
+									<div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-green-400 to-blue-500 opacity-20 blur-xl dark:opacity-30" />
+									<CloudinaryClientWrapper
+										alt="An image of our team"
+										src="cleanup2_rhiq2n"
+										className="relative mx-auto aspect-video overflow-hidden rounded-2xl object-cover shadow-2xl ring-1 ring-gray-900/10 dark:ring-white/10"
+										width={960}
+										height={540}
+										sizes="(min-width: 1280px) 40vw, (min-width: 768px) 55vw, 100vw"
+										quality="auto"
+										format="auto"
+										dpr="auto"
+										loading="lazy"
+									/>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -164,31 +211,22 @@ export default async function Home() {
 						</p>
 					</div>
 					<div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-						<div
-							className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center shadow-xl dark:border-gray-700 dark:bg-gray-700"
-							data-aos="fade-up"
-						>
-							<h3 className="text-3xl font-bold dark:text-green-400">338</h3>
-							<p className="text-muted-foreground">Gallons of Trash Collected</p>
+						<div className="rounded-xl bg-white p-6 text-center shadow-lg dark:bg-gray-800" data-aos="fade-up">
+							<h3 className="text-4xl font-bold text-gray-900 dark:text-green-400">338</h3>
+							<p className="text-muted-foreground mt-2">Gallons of Trash Collected</p>
 						</div>
-						<div
-							className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center shadow-xl dark:border-gray-700 dark:bg-gray-700"
-							data-aos="fade-up"
-						>
-							<h3 className="text-3xl font-bold dark:text-green-400">15,000+</h3>
-							<p className="text-muted-foreground">People Reached</p>
+						<div className="rounded-xl bg-white p-6 text-center shadow-lg dark:bg-gray-800" data-aos="fade-up">
+							<h3 className="text-4xl font-bold text-gray-900 dark:text-green-400">15,000+</h3>
+							<p className="text-muted-foreground mt-2">People Reached</p>
 						</div>
-						<div
-							className="rounded-xl border-2 border-stone-300 bg-white p-6 text-center shadow-xl dark:border-gray-700 dark:bg-gray-700"
-							data-aos="fade-up"
-						>
-							<h3 className="text-3xl font-bold dark:text-green-400">156</h3>
-							<p className="text-muted-foreground">Gallons of Plastic Collected</p>
+						<div className="rounded-xl bg-white p-6 text-center shadow-lg dark:bg-gray-800" data-aos="fade-up">
+							<h3 className="text-4xl font-bold text-gray-900 dark:text-green-400">156</h3>
+							<p className="text-muted-foreground mt-2">Gallons of Plastic Collected</p>
 						</div>
 					</div>
 				</div>
 			</section>
-			<section className={`items-centerpy-12 flex w-full md:py-24 lg:py-32 ${getSectionBg(sectionIndex++)}`}>
+			<section className={`flex w-full items-center py-12 md:py-24 lg:py-32 ${getSectionBg(sectionIndex++)}`}>
 				<div className="container px-4 md:px-6">
 					<div className="mx-auto grid justify-center gap-6 lg:grid-cols-2 lg:gap-12">
 						<div className="flex flex-col justify-center space-y-4" data-aos="fade-right">
@@ -208,16 +246,16 @@ export default async function Home() {
 									</span>
 								</p>
 							</div>
-							<div className="flex flex-col gap-2 min-[400px]:flex-row">
+							<div className="flex flex-col gap-4 sm:flex-row">
 								<Link
 									href="https://docs.google.com/forms/d/e/1FAIpQLSfEWkGAauRBi07E8-4WRlay7RyXJlLII85dt1FCV2C0m-hI1Q/viewform"
-									className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow-xl duration-300 hover:bg-green-700"
+									className="inline-flex items-center justify-center rounded-xl bg-green-600 px-8 py-3 font-medium text-white shadow-lg transition-all duration-300 hover:bg-green-700 hover:shadow-xl"
 								>
 									Join the TEDI team
 								</Link>
 								<Link
 									href="https://www.instagram.com/environmentaldefenseinitiative/"
-									className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-8 text-sm font-medium text-white shadow-xl duration-300 hover:bg-blue-700"
+									className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-3 font-medium text-white shadow-lg transition-all duration-300 hover:bg-blue-700 hover:shadow-xl"
 								>
 									Check out our social media
 								</Link>
@@ -243,7 +281,9 @@ export default async function Home() {
 				<div className="container px-4 md:px-6">
 					<div className="flex flex-col items-center justify-center space-y-4 text-center">
 						<div className="space-y-2" data-aos="fade-down">
-							<div className="inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">Our Initiatives</div>
+							<div className="inline-block rounded-full bg-green-100 px-4 py-1.5 text-sm font-medium text-green-800 dark:bg-green-900/30 dark:text-green-400">
+								Our Initiatives
+							</div>
 							<h2 className="text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl dark:text-blue-400">
 								Protecting the Environment, One Step at a Time
 							</h2>
@@ -355,7 +395,7 @@ export default async function Home() {
 				</div>
 				<div className="flex flex-col items-center justify-center space-y-4 text-center" data-aos="fade-left">
 					<div className="space-y-2">
-						<div className="mt-5 inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black lg:mt-0">
+						<div className="mt-5 inline-block rounded-full bg-green-100 px-4 py-1.5 text-sm font-medium text-green-800 lg:mt-0 dark:bg-green-900/30 dark:text-green-400">
 							Expert Interviews
 						</div>
 						<h2 className="text-3xl font-bold tracking-tighter text-green-600 sm:text-5xl dark:text-green-400">
@@ -369,10 +409,10 @@ export default async function Home() {
 							action.
 						</p>
 					</div>
-					<div className="flex flex-col gap-2 min-[400px]:flex-row">
+					<div className="flex flex-col gap-4 sm:flex-row">
 						<Link
 							href="https://www.youtube.com/@EnvironmentalDefenseInitiative"
-							className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-green-700"
+							className="inline-flex items-center justify-center rounded-xl bg-green-600 px-8 py-3 font-medium text-white shadow-lg transition-all duration-300 hover:bg-green-700 hover:shadow-xl"
 						>
 							See Our Past Webinars
 						</Link>
@@ -380,10 +420,12 @@ export default async function Home() {
 				</div>
 			</section>
 			<section className={`w-full py-12 md:py-24 lg:py-32 ${getSectionBg(sectionIndex++)}`}>
-				<h1 className="pb-8 text-center text-5xl font-bold tracking-tighter text-blue-600 dark:text-blue-400">
-					See where our members are!
-				</h1>
-				<Globe className="w-full" config={globeConfig} speed={0.002} phi={0} markers={locations} />
+				<div className="container px-4 md:px-6">
+					<h1 className="pb-8 text-center text-5xl font-bold tracking-tighter text-blue-600 dark:text-blue-400">
+						See where our members are!
+					</h1>
+					<Globe className="w-full" config={globeConfig} speed={0.002} phi={0} markers={locations} />
+				</div>
 			</section>
 			<section className={`w-full py-12 md:py-24 lg:py-32 ${getSectionBg(sectionIndex++)}`}>
 				<Carousel />
@@ -392,7 +434,9 @@ export default async function Home() {
 				<div className="container px-4 md:px-6">
 					<div className="flex flex-col items-center justify-center space-y-4 text-center">
 						<div className="space-y-2">
-							<div className="inline-block rounded-lg bg-stone-300 px-3 py-1 text-sm text-black">Interested?</div>
+							<div className="inline-block rounded-full bg-green-100 px-4 py-1.5 text-sm font-medium text-green-800 dark:bg-green-900/30 dark:text-green-400">
+								Interested?
+							</div>
 							<h2 className="text-3xl font-bold tracking-tighter text-blue-600 sm:text-5xl dark:text-blue-400">
 								Join the Movement
 							</h2>
@@ -401,16 +445,16 @@ export default async function Home() {
 								the Earth.
 							</p>
 						</div>
-						<div className="flex flex-col gap-2 min-[400px]:flex-row">
+						<div className="flex flex-col gap-4 sm:flex-row">
 							<Link
 								href="/join-us"
-								className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-green-700"
+								className="inline-flex items-center justify-center rounded-xl bg-green-600 px-8 py-3 font-medium text-white shadow-lg transition-all duration-300 hover:bg-green-700 hover:shadow-xl"
 							>
 								Join Us
 							</Link>
 							<Link
 								href="/petitions"
-								className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-8 text-sm font-medium text-white shadow duration-300 hover:bg-blue-700"
+								className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-3 font-medium text-white shadow-lg transition-all duration-300 hover:bg-blue-700 hover:shadow-xl"
 							>
 								Sign a petition!
 							</Link>
