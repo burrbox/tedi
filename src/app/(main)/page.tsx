@@ -7,7 +7,16 @@ import { getCldImageUrl } from "next-cloudinary";
 import Link from "next/link";
 import type { WebSite, WithContext } from "schema-dts";
 import { type COBEOptions } from "cobe";
-import Globe from "@/components/magicui/globe";
+import dynamic from "next/dynamic";
+
+const Globe = dynamic(() => import("@/components/magicui/globe"), {
+	ssr: false,
+	loading: () => (
+		<div className="flex h-[400px] w-full items-center justify-center md:h-[500px] lg:h-[600px]">
+			<div className="h-12 w-12 animate-spin rounded-full border-4 border-blue-600 border-t-transparent" />
+		</div>
+	),
+});
 
 export const metadata: Metadata = {
 	title: "Home",
@@ -88,25 +97,23 @@ export default async function Home() {
 				style={{
 					backgroundImage: `url(${getCldImageUrl({
 						src: "nature/oh93nln39npdtzsyettf",
-						width: 1600,
-						height: 900,
+						width: 1280,
+						height: 720,
 						crop: "fill",
 						quality: "auto",
 						format: "auto",
-						dpr: "auto",
-						gravity: "auto",
 					})})`,
 				}}
 				className="relative flex w-screen bg-cover bg-fixed bg-center bg-no-repeat py-12 md:min-h-[80vh] md:pb-20 md:pt-32 lg:pt-40"
 			>
-				<div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/30 to-transparent" />
+				<div className="absolute inset-0 bg-gradient-to-br from-black/35 to-transparent" />
 
 				<div
-					className="relative z-10 mx-3 w-full justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-white/95 via-white/90 to-white/85 px-6 py-12 shadow-2xl backdrop-blur-sm md:mx-8 md:py-16 lg:mx-auto lg:max-w-[90rem] lg:px-12 lg:py-20 dark:from-stone-950/95 dark:via-stone-900/90 dark:to-stone-950/85"
+					className="relative z-10 mx-3 w-full justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-white/95 to-white/85 px-6 py-12 shadow-2xl md:mx-8 md:py-16 lg:mx-auto lg:max-w-[90rem] lg:px-12 lg:py-20 dark:from-stone-950/95 dark:to-stone-950/85"
 					data-aos="fade-down"
 				>
-					<div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-green-400/20 blur-3xl dark:bg-green-500/10" />
-					<div className="absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-blue-400/20 blur-3xl dark:bg-blue-500/10" />
+					<div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-green-400/15 blur-2xl dark:bg-green-500/10" />
+					<div className="absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-blue-400/15 blur-2xl dark:bg-blue-500/10" />
 
 					<div className="container relative z-10 md:space-y-10 xl:space-y-16">
 						<div className="grid gap-8 lg:grid-cols-[2fr_3fr] lg:gap-12 xl:gap-16">
@@ -179,7 +186,7 @@ export default async function Home() {
 							</div>
 							<div className="flex h-fit flex-col items-center self-center">
 								<div className="relative">
-									<div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-green-400 to-blue-500 opacity-20 blur-xl dark:opacity-30" />
+									<div className="absolute -inset-3 rounded-2xl bg-gradient-to-r from-green-400 to-blue-500 opacity-15 blur-lg dark:opacity-25" />
 									<CloudinaryClientWrapper
 										alt="An image of our team"
 										src="cleanup2_rhiq2n"
@@ -189,8 +196,7 @@ export default async function Home() {
 										sizes="(min-width: 1280px) 40vw, (min-width: 768px) 55vw, 100vw"
 										quality="auto"
 										format="auto"
-										dpr="auto"
-										loading="lazy"
+										priority={true}
 									/>
 								</div>
 							</div>
