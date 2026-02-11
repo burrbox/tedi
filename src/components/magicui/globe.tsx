@@ -115,6 +115,17 @@ export default function Globe({
 	};
 
 	const [teamL, setTeamL] = useState("all");
+	const isVisibleRef = useRef(true);
+	const globeRef = useRef<ReturnType<typeof createGlobe> | null>(null);
+
+	const onRenderWithVisibility = useCallback(
+		(state: Record<string, number>) => {
+			// Only render if visible
+			if (!isVisibleRef.current) return;
+			onRender(state);
+		},
+		[onRender],
+	);
 
 	useEffect(() => {
 		window.addEventListener("resize", onResize);
@@ -125,8 +136,10 @@ export default function Globe({
 			...configOverride,
 			width: width * 2,
 			height: width * 2,
-			onRender,
+			onRender: onRenderWithVisibility,
 		});
+
+		globeRef.current = globe;
 
 		canvasRef.current!.addEventListener(
 			"wheel",
@@ -138,8 +151,34 @@ export default function Globe({
 		);
 
 		setTimeout(() => (canvasRef.current!.style.opacity = "1"));
-		return () => globe.destroy();
+
+		// Only destroy when component actually unmounts, not when off screen
+		return () => {
+			window.removeEventListener("resize", onResize);
+			if (globeRef.current) {
+				globeRef.current.destroy();
+				globeRef.current = null;
+			}
+		};
 	}, []);
+
+	// Intersection observer to detect visibility
+	// useEffect(() => {
+	// 	if (!canvasRef.current) return;
+
+	// 	const observer = new IntersectionObserver(
+	// 		(entries) => {
+	// 			entries.forEach((entry) => {
+	// 				isVisibleRef.current = entry.isIntersecting;
+	// 			});
+	// 		},
+	// 		{ threshold: 0.1 },
+	// 	);
+
+	// 	observer.observe(canvasRef.current);
+
+	// 	return () => observer.disconnect();
+	// }, []);
 
 	return (
 		<div className="mx-6 grid items-stretch justify-center gap-2 lg:grid-cols-2">

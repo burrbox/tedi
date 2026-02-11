@@ -425,14 +425,14 @@ export default async function Home() {
 					</div>
 				</div>
 			</section>
-			<section className={`w-full py-12 md:py-24 lg:py-32 ${getSectionBg(sectionIndex++)}`}>
+			{/* <section className={`w-full py-12 md:py-24 lg:py-32 ${getSectionBg(sectionIndex++)}`}>
 				<div className="container px-4 md:px-6">
 					<h1 className="pb-8 text-center text-5xl font-bold tracking-tighter text-blue-600 dark:text-blue-400">
 						See where our members are!
 					</h1>
 					<Globe className="w-full" config={globeConfig} speed={0.002} phi={0} markers={locations} />
 				</div>
-			</section>
+			</section> */}
 			<section className={`w-full py-12 md:py-24 lg:py-32 ${getSectionBg(sectionIndex++)}`}>
 				<Carousel />
 			</section>
