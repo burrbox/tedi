@@ -104,20 +104,20 @@ export default async function Home() {
 						format: "auto",
 					})})`,
 				}}
-				className="relative flex w-screen bg-cover bg-fixed bg-center bg-no-repeat py-12 md:min-h-[80vh] md:pb-20 md:pt-32 lg:pt-40"
+				className="relative flex w-screen bg-cover bg-fixed bg-center bg-no-repeat py-12 md:min-h-[60vh] md:pb-20 md:pt-32 lg:pt-40"
 			>
 				<div className="absolute inset-0 bg-gradient-to-br from-black/35 to-transparent" />
 
 				<div
-					className="relative z-10 mx-3 w-full justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-white/95 to-white/85 px-6 py-12 shadow-2xl md:mx-8 md:py-16 lg:mx-auto lg:max-w-[90rem] lg:px-12 lg:py-20 dark:from-stone-950/95 dark:to-stone-950/85"
+					className="relative mx-3 w-full justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-white/95 to-white/85 px-6 py-12 shadow-2xl md:mx-8 lg:mx-auto lg:max-w-[90rem] lg:px-12 dark:from-stone-950/95 dark:to-stone-950/85"
 					data-aos="fade-down"
 				>
 					<div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-green-400/15 blur-2xl dark:bg-green-500/10" />
 					<div className="absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-blue-400/15 blur-2xl dark:bg-blue-500/10" />
 
-					<div className="container relative z-10 md:space-y-10 xl:space-y-16">
+					<div className="container relative z-10">
 						<div className="grid gap-8 lg:grid-cols-[2fr_3fr] lg:gap-12 xl:gap-16">
-							<div className="space-y-6 md:space-y-8">
+							<div className="h-fit">
 								<div className="inline-flex items-center gap-2 rounded-full bg-green-100 px-4 py-2 text-sm font-medium text-green-800 shadow-sm dark:bg-green-900/30 dark:text-green-400">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
@@ -144,7 +144,7 @@ export default async function Home() {
 									and creating a{" "}
 									<span className="font-semibold text-blue-700 dark:text-blue-400">sustainable future</span> for all.
 								</p>
-								<div className="flex flex-col gap-4 sm:flex-row">
+								<div className="flex flex-col gap-4 py-5 sm:flex-row md:py-10">
 									<Link
 										href="/join-us"
 										className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-green-600 to-green-700 px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
