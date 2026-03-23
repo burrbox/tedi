@@ -63,10 +63,12 @@ const jsonLd: WithContext<WebSite> = {
 };
 
 const locations = [
-	{ name: "Hopewell Junction, NY", location: [41.5406254, -73.8357815], size: 0.07 },
-	{ name: "Miami, FL", location: [25.7825389, -80.3118589], size: 0.04 },
-	{ name: "Toronto, ON", location: [43.718371, -79.5428628], size: 0.02 },
-	{ name: "Lakeland, NY", location: [43.0903, -76.2405], size: 0.04 },
+	{ name: "Hopewell Junction, NY", location: [41.5838, -73.7932], size: 0.07 },
+	{ name: "Miami, FL", location: [25.7617, -80.1918], size: 0.04 },
+	{ name: "Toronto, ON", location: [43.6532, -79.3832], size: 0.02 },
+	{ name: "Lakeland, NY", location: [43.0933, -76.2458], size: 0.04 },
+	{ name: "Houston, TX", location: [29.7604, -95.3698], size: 0.04 },
+	{ name: "Ontario, Canada", location: [45.4215, -75.6972], size: 0.03 },
 ] satisfies COBEOptions["markers"] & { name: string }[];
 
 const globeConfig: Partial<COBEOptions> = {
