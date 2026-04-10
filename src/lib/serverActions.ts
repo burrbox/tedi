@@ -3,7 +3,6 @@
 import { auth } from "@/server/auth";
 import { db } from "@/server/db";
 import { redirect } from "next/navigation";
-import { unstable_noStore as noStore } from "next/cache";
 import { z } from "zod";
 import Stripe from "stripe";
 import { env } from "@/env";
@@ -32,12 +31,7 @@ export async function getPostsFull() {
 }
 
 export async function getPost(slug: string) {
-	noStore();
 	return db.post.findFirst({ where: { slug } });
-}
-
-export async function incrementPostViews(slug: string) {
-	await db.post.update({ where: { slug }, data: { views: { increment: 1 } } });
 }
 
 export async function addEmailSubscription(email: string) {

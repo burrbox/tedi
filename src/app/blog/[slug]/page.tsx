@@ -14,7 +14,7 @@ import { TwitterXIcon } from "@/components/icons";
 import { getPostAuthor, getPostEditor } from "@/lib/utils";
 import { type Article, type WithContext } from "schema-dts";
 import { JsonLd } from "@/components/jsonLd";
-import { Eye, Pencil, PenLine, ArrowRight } from "lucide-react";
+import { Pencil, PenLine, ArrowRight } from "lucide-react";
 import { ViewTracker } from "./view-tracker";
 
 export const revalidate = 30;
@@ -74,7 +74,7 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 	return (
 		<>
 			<JsonLd data={jsonLd} />
-			<ViewTracker slug={post.slug} />
+			<ViewTracker slug={post.slug} initialViews={post.views ?? 0} />
 
 			{/* Hero image */}
 			{post.image && (
@@ -110,10 +110,7 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 									<time dateTime={post.createdAt.toISOString()}>{format(post.createdAt, "MMM d, yyyy")}</time>
 									<span className="mx-2 opacity-60">·</span>
 								</span>
-								<span className="flex items-center gap-1 text-sm text-white/70">
-									<Eye className="h-3.5 w-3.5" />
-									{post.views.toLocaleString()}
-								</span>
+								<ViewTracker slug={post.slug} initialViews={post.views ?? 0} />
 								{session?.user && ["editor", "admin"].includes(session.user.role) && (
 									<Link
 										href={`/blog/admin/edit/${post.slug}`}

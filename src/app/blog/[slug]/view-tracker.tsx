@@ -1,12 +1,22 @@
 "use client";
 
-import { useEffect } from "react";
-import { incrementPostViews } from "@/lib/serverActions";
+import { useEffect, useState } from "react";
+import { Eye } from "lucide-react";
 
-export function ViewTracker({ slug }: { slug: string }) {
+export function ViewTracker({ slug, initialViews }: { slug: string; initialViews: number }) {
+	const [views, setViews] = useState(initialViews);
+
 	useEffect(() => {
-		void incrementPostViews(slug);
+		fetch(`/api/posts/${slug}/views`, { method: "POST" })
+			.then((r) => r.json())
+			.then((data: { views: number }) => setViews(data.views))
+			.catch(() => null);
 	}, [slug]);
 
-	return null;
+	return (
+		<span className="flex items-center gap-1 text-sm text-white/70">
+			<Eye className="h-3.5 w-3.5" />
+			{views.toLocaleString()}
+		</span>
+	);
 }
