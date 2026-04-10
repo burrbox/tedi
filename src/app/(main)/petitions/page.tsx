@@ -116,25 +116,41 @@ export default function Petitions() {
 			</section>
 
 			{/* Suggest a petition */}
-			<section
-				className="flex min-h-[60vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
-				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/t7x9xmnsyqs2yetfpp3j" })})` }}
-			>
-				<div className="container mx-auto w-full" data-aos="fade-down">
-					<div className="flex flex-col justify-center gap-6 rounded-2xl bg-white/80 px-4 py-10 backdrop-blur-sm xl:flex-row dark:bg-stone-900/80">
-						<div className="basis-3/5">
-							<div className="h-full rounded-xl bg-white p-8 shadow-sm dark:bg-stone-800">
-								<h2 className="text-center text-2xl font-semibold text-green-700 dark:text-green-400">
-									Have an Idea for a Petition?
-								</h2>
-								<p className="mx-auto mt-4 max-w-md text-center text-stone-600 dark:text-stone-300">
-									We want to hear from you! Suggest environmental issues in your community that need attention. Whether
-									it&apos;s a local concern, state-wide policy, or national issue, your ideas help us create petitions
-									that make a real difference.
-								</p>
+			<section className="w-full bg-stone-50 py-16 md:py-24 dark:bg-stone-900">
+				<div className="container mx-auto max-w-6xl px-4 md:px-6" data-aos="fade-up">
+					<div className="grid items-start gap-12 lg:grid-cols-2">
+						{/* Left: description */}
+						<div className="flex flex-col justify-center space-y-6 lg:py-8">
+							<div>
+								<span className="inline-block rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-800 dark:bg-green-900/30 dark:text-green-400">
+									Community Input
+								</span>
 							</div>
+							<h2 className="text-3xl font-bold tracking-tight text-green-700 sm:text-4xl dark:text-green-400">
+								Have an Idea for a Petition?
+							</h2>
+							<p className="text-lg text-stone-600 dark:text-stone-300">
+								We want to hear from you! Suggest environmental issues in your community that need attention. Whether
+								it&apos;s a local concern, state-wide policy, or national issue, your ideas help us create petitions that
+								make a real difference.
+							</p>
+							<ul className="space-y-3">
+								{[
+									"Local issues affecting your neighborhood or city",
+									"State or provincial policy you want changed",
+									"National environmental legislation you care about",
+								].map((item) => (
+									<li key={item} className="flex items-start gap-3">
+										<span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/40">
+											<span className="h-2 w-2 rounded-full bg-green-600 dark:bg-green-400" />
+										</span>
+										<span className="text-stone-600 dark:text-stone-300">{item}</span>
+									</li>
+								))}
+							</ul>
 						</div>
-						<div className="basis-2/5">
+						{/* Right: form */}
+						<div>
 							<PetitionSuggestionForm />
 						</div>
 					</div>

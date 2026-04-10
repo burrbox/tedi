@@ -48,11 +48,18 @@ export default function JoinUsPage() {
 			</div>
 
 			{/* Join the team */}
-			<div className="py-16 text-center md:py-20">
-				<p className="mb-4 text-2xl font-medium text-stone-700 dark:text-stone-200">
-					Looking to help out a bit more?
+			<div className="relative overflow-hidden bg-stone-100 py-16 text-center md:py-20 dark:bg-stone-800">
+				<div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-green-500 to-transparent" />
+				<div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-green-500 to-transparent" />
+				<p className="mb-2 text-sm font-semibold uppercase tracking-widest text-green-600 dark:text-green-400">
+					Want to do more?
 				</p>
-				<div className="mx-auto mb-10 h-1 w-12 rounded-full bg-green-500" />
+				<p className="text-2xl font-bold text-stone-800 dark:text-stone-100">Looking to help out a bit more?</p>
+				<p className="mx-auto mt-3 max-w-md text-stone-500 dark:text-stone-400">
+					Becoming a team member means shaping our campaigns, voting on initiatives, and making your voice heard on a
+					national level.
+				</p>
+				<div className="mx-auto mt-6 h-1 w-12 rounded-full bg-green-500" />
 			</div>
 
 			<div

@@ -5,6 +5,7 @@ import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import Link from "next/link";
 import CampaignsCarousel from "./campaignsCarousel";
 import { SectionBadge } from "@/components/ui/section-badge";
+import { CityRankings } from "@/components/campaigns/city-rankings";
 
 export const metadata: Metadata = {
 	title: "Campaigns",
@@ -272,6 +273,7 @@ export default function Campaigns() {
 				</div>
 			</section>
 
+			<CityRankings />
 			<CampaignsCarousel />
 		</>
 	);
