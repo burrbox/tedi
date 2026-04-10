@@ -12,7 +12,7 @@ import { upsertArticle, getPost } from "@/lib/serverActions";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Loading from "@/components/loading";
-import { Check, ChevronsUpDown } from "lucide-react";
+import { Check, ChevronsUpDown, ImagePlus, Save, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
@@ -25,7 +25,7 @@ const MDEditor = dynamic(() => import("@uiw/react-md-editor"), {
 	ssr: false,
 	loading: () => (
 		<SkeletonTheme baseColor="#1e293b" highlightColor="#3e595b">
-			<Skeleton height={200} />
+			<Skeleton height={500} />
 		</SkeletonTheme>
 	),
 });
@@ -54,7 +54,7 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 
 	const [content, setContent] = useState("");
 	const [newSlug, setNewSlug] = useState(slug);
-	const [title, setTitle] = useState("New Article");
+	const [title, setTitle] = useState("");
 	const [summary, setSummary] = useState("");
 	const [author, setAuthor] = useState("");
 	const [editor, setEditor] = useState("");
@@ -62,7 +62,6 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 	const [isAuthorOpen, setIsAuthorOpen] = useState(false);
 	const [isEditorOpen, setIsEditorOpen] = useState(false);
 	const [customAuthor, setCustomAuthor] = useState("");
-
 	const [isSaving, setIsSaving] = useState(false);
 
 	if (status === "unauthenticated" || (session?.user && !["editor", "admin"].includes(session.user.role)))
@@ -78,7 +77,6 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 						setEditor(post.editor);
 						setContent(post.content);
 						setSummary(post.summary);
-						setContent(post.content);
 						setArticleImage(post.image);
 					}
 				})
@@ -86,246 +84,297 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 		}
 	}, [slug]);
 
+	async function handleSave() {
+		if (!newSlug || newSlug === "new") {
+			alert("Please enter a URL slug");
+			return;
+		}
+		setIsSaving(true);
+		await upsertArticle(slug, { title, content, slug: newSlug, summary, author, editor, image: articleImage });
+		if (slug !== newSlug) router.push(`/blog/admin/edit/${newSlug}`);
+		setIsSaving(false);
+	}
+
 	return (
-		<div className="m-auto max-w-6xl space-y-4 p-8 pt-24">
-			{/* Edit title */}
-			<div>
-				<label htmlFor="title" className="mb-2 block">
-					Title
-				</label>
-				<Input id="title" type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
-			</div>
-			{/* URL */}
-			<div className="flex flex-col gap-4 sm:flex-row">
-				<div className="w-full">
-					<label htmlFor="slug" className="mb-2 block">
-						URL
-					</label>
-					<Input
-						id="slug"
-						type="text"
-						value={newSlug}
-						onChange={(e) => setNewSlug((prev) => (e.target.value.match(/^[a-z0-9-]*$/) ? e.target.value : prev))}
-					/>
-				</div>
-				<div className="w-full">
-					<label htmlFor="author" className="mb-2 block">
-						Author
-					</label>
-					<Popover open={isAuthorOpen} onOpenChange={setIsAuthorOpen}>
-						<PopoverTrigger asChild>
-							<Button
-								id="author"
-								variant="outline"
-								role="combobox"
-								aria-expanded={isAuthorOpen}
-								className="w-full justify-between"
-							>
-								{author ? author : "Select author..."}
-								<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-							</Button>
-						</PopoverTrigger>
-						<PopoverContent className="w-72 p-0">
-							<Command>
-								<CommandInput placeholder={author} />
-								<CommandList>
-									<CommandEmpty>No author found.</CommandEmpty>
-									<CommandGroup className="max-h-96 overflow-scroll">
-										<CommandItem className="dark:hover:bg-gray-900">
-											<Check
-												className={cn(
-													"mr-2 h-4 w-4",
-													author === customAuthor.toLowerCase() ? "opacity-100" : "opacity-0",
-												)}
-											/>
-											<div className="w-full">
-												<input
-													className="w-3/4 bg-inherit font-normal"
-													onChange={(e) => setCustomAuthor(e.target.value)}
-													placeholder="Set Custom Author"
-													value={customAuthor}
-												/>
-												<Button
-													onClick={(e) => {
-														setAuthor((prev) => (customAuthor === prev ? "" : customAuthor.toLowerCase()));
-														setIsAuthorOpen(false);
-													}}
-													className="w-1/4"
-												>
-													Set
-												</Button>
-											</div>
-										</CommandItem>
-										{fullTeam.map((member) => (
-											<CommandItem
-												key={member.name}
-												value={member.name}
-												onSelect={(newAuthor) => {
-													setAuthor((prev) => (newAuthor === prev ? "" : newAuthor.toLowerCase()));
-													setIsAuthorOpen(false);
-												}}
-												className="dark:hover:bg-gray-900"
-											>
-												<Check
-													className={cn(
-														"mr-2 h-4 w-4",
-														author === member.name.toLowerCase() ? "opacity-100" : "opacity-0",
-													)}
-												/>
-												<CldImage
-													className="mr-4 h-8 w-8 rounded-full"
-													src={member.image}
-													gravity="face"
-													crop="thumb"
-													alt={`An image of ${member.name}.`}
-													height={32}
-													width={32}
-												/>
-												{member.name}
-											</CommandItem>
-										))}
-									</CommandGroup>
-								</CommandList>
-							</Command>
-						</PopoverContent>
-					</Popover>
-				</div>
-				<div className="w-full">
-					<label htmlFor="editor" className="mb-2 block">
-						Editor
-					</label>
-					<Popover open={isEditorOpen} onOpenChange={setIsEditorOpen}>
-						<PopoverTrigger asChild>
-							<Button
-								id="editor"
-								variant="outline"
-								role="combobox"
-								aria-expanded={isEditorOpen}
-								className="w-full justify-between"
-							>
-								{editor ? editor : "Select editor..."}
-								<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-							</Button>
-						</PopoverTrigger>
-						<PopoverContent className="w-72 p-0">
-							<Command>
-								<CommandInput placeholder="Search editor..." />
-								<CommandList>
-									<CommandEmpty>No editor found.</CommandEmpty>
-									<CommandGroup className="max-h-96 overflow-scroll">
-										{/* commented out bc we don't have anonymous editors */}
-										{/* <CommandItem
-											key="anon"
-											value="Anonymous"
-											onSelect={(newEditor) => {
-												setEditor((prev) => (newEditor === prev ? "" : newEditor.toLowerCase()));
-												setIsEditorOpen(false);
-											}}
-											className="dark:hover:bg-gray-900"
-										>
-											<Check className={cn("mr-2 h-4 w-4", editor === "anonymous" ? "opacity-100" : "opacity-0")} />
-											Anonymous
-										</CommandItem> */}
-										{fullTeam.map((member) => (
-											<CommandItem
-												key={member.name}
-												value={member.name}
-												onSelect={(newEditor) => {
-													setEditor((prev) => (newEditor === prev ? "" : newEditor.toLowerCase()));
-													setIsEditorOpen(false);
-												}}
-												className="dark:hover:bg-gray-900"
-											>
-												<Check
-													className={cn(
-														"mr-2 h-4 w-4",
-														editor === member.name.toLowerCase() ? "opacity-100" : "opacity-0",
-													)}
-												/>
-												<CldImage
-													className="mr-4 h-8 w-8 rounded-full"
-													src={member.image}
-													gravity="face"
-													crop="thumb"
-													alt={`An image of ${member.name}.`}
-													height={32}
-													width={32}
-												/>
-												{member.name}
-											</CommandItem>
-										))}
-									</CommandGroup>
-								</CommandList>
-							</Command>
-						</PopoverContent>
-					</Popover>
-				</div>
-			</div>
-			{/* Summary */}
-			<div>
-				<label htmlFor="summary" className="mb-2 block">
-					Summary
-				</label>
-				<Textarea id="summary" placeholder="Summary" value={summary} onChange={(e) => setSummary(e.target.value)} />
-			</div>
-			<div className="flex flex-col items-center justify-between gap-4 py-4 sm:flex-row">
-				<h1 className="grow text-2xl font-bold">Edit Post</h1>
-				<CldUploadButton
-					className="rounded-md border-2 border-blue-400 px-4 py-2"
-					uploadPreset="TEDI Blog"
-					options={{ cropping: true, styles: cloudinaryDarkStyles }}
-					onSuccess={(results) => {
-						if (!results.info || typeof results.info === "string") return;
-						setArticleImage(results.info.secure_url);
-					}}
-				>
-					Upload Article Image
-				</CldUploadButton>
-				{articleImage && (
-					<button
-						className="flex space-x-2 rounded-md bg-blue-600 px-4 py-2 text-white"
-						onClick={() => window.open(articleImage)}
+		<div className="min-h-screen bg-stone-50 dark:bg-stone-950">
+			{/* Sticky header bar */}
+			<div className="fixed top-0 z-40 w-full border-b border-stone-200 bg-white/95 shadow-sm backdrop-blur-sm dark:border-stone-700 dark:bg-stone-900/95">
+				<div className="flex h-14 items-center gap-4 px-6">
+					<h1 className="text-sm font-semibold text-stone-800 dark:text-stone-100">
+						{slug === "new" ? "New Article" : "Edit Article"}
+					</h1>
+					<div className="flex-1" />
+					{articleImage && (
+						<button
+							onClick={() => window.open(articleImage)}
+							className="flex items-center gap-1.5 rounded-md border border-stone-200 px-3 py-1.5 text-xs font-medium text-stone-600 transition-colors hover:bg-stone-100 dark:border-stone-700 dark:text-stone-400 dark:hover:bg-stone-800"
+						>
+							<ExternalLink className="h-3.5 w-3.5" />
+							Preview Image
+						</button>
+					)}
+					<CldUploadButton
+						className="flex items-center gap-1.5 rounded-md border border-stone-200 px-3 py-1.5 text-xs font-medium text-stone-600 transition-colors hover:bg-stone-100 dark:border-stone-700 dark:text-stone-400 dark:hover:bg-stone-800"
+						uploadPreset="TEDI Blog"
+						options={{ cropping: true, styles: cloudinaryDarkStyles }}
+						onSuccess={(results) => {
+							if (!results.info || typeof results.info === "string") return;
+							setArticleImage(results.info.secure_url);
+						}}
 					>
-						Preview article image...
+						<ImagePlus className="h-3.5 w-3.5" />
+						Cover Image
+					</CldUploadButton>
+					<CldUploadButton
+						className="flex items-center gap-1.5 rounded-md border border-stone-200 px-3 py-1.5 text-xs font-medium text-stone-600 transition-colors hover:bg-stone-100 dark:border-stone-700 dark:text-stone-400 dark:hover:bg-stone-800"
+						uploadPreset="TEDI Blog"
+						options={{ cropping: true, styles: cloudinaryDarkStyles }}
+						onSuccess={(results) => {
+							if (!results.info || typeof results.info === "string") return;
+							const imageMd = `<figure>\n\n![${results.info.original_filename}](${results.info.secure_url})\n<figcaption>${results.info.original_filename}</figcaption></figure>`;
+							setContent((prev) => prev + imageMd);
+						}}
+					>
+						<ImagePlus className="h-3.5 w-3.5" />
+						Insert Image
+					</CldUploadButton>
+					<button
+						onClick={handleSave}
+						disabled={isSaving}
+						className="flex items-center gap-2 rounded-md bg-green-600 px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-green-700 disabled:opacity-60"
+					>
+						<Save className="h-4 w-4" />
+						{isSaving ? <Loading /> : slug === "new" ? "Publish" : "Save"}
 					</button>
-				)}
-				<CldUploadButton
-					className="rounded-md border-2 border-blue-400 px-4 py-2"
-					uploadPreset="TEDI Blog"
-					options={{ cropping: true, styles: cloudinaryDarkStyles }}
-					onSuccess={(results) => {
-						if (!results.info || typeof results.info === "string") return;
-						const imageMd = `<figure>\n\n![${results.info.original_filename}](${results.info.secure_url})\n<figcaption>${results.info.original_filename}</figcaption></figure>`;
-						setContent((prev) => prev + imageMd);
-					}}
-				>
-					Upload Image
-				</CldUploadButton>
-				<button
-					className="flex space-x-2 rounded-md bg-blue-600 px-4 py-2 text-white"
-					onClick={async () => {
-						setIsSaving(true);
-						if (newSlug && newSlug !== "new") {
-							await upsertArticle(slug, {
-								title,
-								content,
-								slug: newSlug,
-								summary,
-								author,
-								editor,
-								image: articleImage,
-							});
-							if (slug !== newSlug) router.push(`/blog/admin/edit/${newSlug}`);
-						} else alert("Please enter a URL");
-						setIsSaving(false);
-					}}
-				>
-					<span>{slug === "new" ? "Create Article" : "Save Article"}</span>
-					{isSaving && <Loading />}
-				</button>
+				</div>
 			</div>
 
-			<MDEditor id="md-editor" value={content} onChange={(val) => setContent(val ?? "")} height={1000} />
+			{/* Main content */}
+			<div className="mx-auto max-w-5xl space-y-6 px-6 pb-12 pt-24">
+				{/* Article metadata card */}
+				<div className="rounded-xl border border-stone-200 bg-white p-6 shadow-sm dark:border-stone-700 dark:bg-stone-800">
+					<h2 className="mb-4 text-xs font-semibold uppercase tracking-wider text-stone-400 dark:text-stone-500">
+						Article Metadata
+					</h2>
+					<div className="space-y-4">
+						{/* Title */}
+						<div>
+							<label htmlFor="title" className="mb-1.5 block text-sm font-medium text-stone-700 dark:text-stone-300">
+								Title
+							</label>
+							<Input
+								id="title"
+								type="text"
+								placeholder="Article title"
+								value={title}
+								onChange={(e) => setTitle(e.target.value)}
+								className="text-base"
+							/>
+						</div>
+
+						{/* URL slug */}
+						<div>
+							<label htmlFor="slug" className="mb-1.5 block text-sm font-medium text-stone-700 dark:text-stone-300">
+								URL slug
+							</label>
+							<div className="flex items-center gap-2">
+								<span className="text-sm text-stone-400 dark:text-stone-500">/blog/</span>
+								<Input
+									id="slug"
+									type="text"
+									value={newSlug === "new" ? "" : newSlug}
+									placeholder="my-article-slug"
+									onChange={(e) =>
+										setNewSlug((prev) => (e.target.value.match(/^[a-z0-9-]*$/) ? e.target.value : prev))
+									}
+									className="flex-1"
+								/>
+							</div>
+						</div>
+
+						{/* Summary */}
+						<div>
+							<label htmlFor="summary" className="mb-1.5 block text-sm font-medium text-stone-700 dark:text-stone-300">
+								Summary
+							</label>
+							<Textarea
+								id="summary"
+								placeholder="A short description shown in article listings and previews"
+								value={summary}
+								onChange={(e) => setSummary(e.target.value)}
+								rows={2}
+							/>
+						</div>
+
+						{/* Author + Editor row */}
+						<div className="grid gap-4 sm:grid-cols-2">
+							<div>
+								<label htmlFor="author" className="mb-1.5 block text-sm font-medium text-stone-700 dark:text-stone-300">
+									Author
+								</label>
+								<Popover open={isAuthorOpen} onOpenChange={setIsAuthorOpen}>
+									<PopoverTrigger asChild>
+										<Button
+											id="author"
+											variant="outline"
+											role="combobox"
+											aria-expanded={isAuthorOpen}
+											className="w-full justify-between"
+										>
+											{author || "Select author..."}
+											<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+										</Button>
+									</PopoverTrigger>
+									<PopoverContent className="w-72 p-0">
+										<Command>
+											<CommandInput placeholder="Search author..." />
+											<CommandList>
+												<CommandEmpty>No author found.</CommandEmpty>
+												<CommandGroup className="max-h-72 overflow-scroll">
+													<CommandItem>
+														<Check
+															className={cn(
+																"mr-2 h-4 w-4",
+																author === customAuthor.toLowerCase() ? "opacity-100" : "opacity-0",
+															)}
+														/>
+														<div className="flex w-full items-center gap-2">
+															<input
+																className="flex-1 bg-inherit text-sm"
+																onChange={(e) => setCustomAuthor(e.target.value)}
+																placeholder="Custom author name"
+																value={customAuthor}
+															/>
+															<Button
+																size="sm"
+																onClick={() => {
+																	setAuthor(customAuthor.toLowerCase());
+																	setIsAuthorOpen(false);
+																}}
+															>
+																Set
+															</Button>
+														</div>
+													</CommandItem>
+													{fullTeam.map((member) => (
+														<CommandItem
+															key={member.name}
+															value={member.name}
+															onSelect={(val) => {
+																setAuthor(val === author ? "" : val.toLowerCase());
+																setIsAuthorOpen(false);
+															}}
+														>
+															<Check
+																className={cn(
+																	"mr-2 h-4 w-4",
+																	author === member.name.toLowerCase() ? "opacity-100" : "opacity-0",
+																)}
+															/>
+															<CldImage
+																className="mr-3 h-7 w-7 rounded-full"
+																src={member.image}
+																gravity="face"
+																crop="thumb"
+																alt={member.name}
+																height={28}
+																width={28}
+															/>
+															{member.name}
+														</CommandItem>
+													))}
+												</CommandGroup>
+											</CommandList>
+										</Command>
+									</PopoverContent>
+								</Popover>
+							</div>
+
+							<div>
+								<label htmlFor="editor" className="mb-1.5 block text-sm font-medium text-stone-700 dark:text-stone-300">
+									Editor
+								</label>
+								<Popover open={isEditorOpen} onOpenChange={setIsEditorOpen}>
+									<PopoverTrigger asChild>
+										<Button
+											id="editor"
+											variant="outline"
+											role="combobox"
+											aria-expanded={isEditorOpen}
+											className="w-full justify-between"
+										>
+											{editor || "Select editor..."}
+											<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+										</Button>
+									</PopoverTrigger>
+									<PopoverContent className="w-72 p-0">
+										<Command>
+											<CommandInput placeholder="Search editor..." />
+											<CommandList>
+												<CommandEmpty>No editor found.</CommandEmpty>
+												<CommandGroup className="max-h-72 overflow-scroll">
+													{fullTeam.map((member) => (
+														<CommandItem
+															key={member.name}
+															value={member.name}
+															onSelect={(val) => {
+																setEditor(val === editor ? "" : val.toLowerCase());
+																setIsEditorOpen(false);
+															}}
+														>
+															<Check
+																className={cn(
+																	"mr-2 h-4 w-4",
+																	editor === member.name.toLowerCase() ? "opacity-100" : "opacity-0",
+																)}
+															/>
+															<CldImage
+																className="mr-3 h-7 w-7 rounded-full"
+																src={member.image}
+																gravity="face"
+																crop="thumb"
+																alt={member.name}
+																height={28}
+																width={28}
+															/>
+															{member.name}
+														</CommandItem>
+													))}
+												</CommandGroup>
+											</CommandList>
+										</Command>
+									</PopoverContent>
+								</Popover>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{/* Cover image preview */}
+				{articleImage && (
+					<div className="overflow-hidden rounded-xl border border-stone-200 dark:border-stone-700">
+						{/* eslint-disable-next-line @next/next/no-img-element */}
+						<img src={articleImage} alt="Cover" className="h-48 w-full object-cover" />
+						<div className="flex items-center justify-between bg-stone-50 px-4 py-2 dark:bg-stone-800">
+							<span className="text-xs text-stone-400">Cover image</span>
+							<button
+								onClick={() => setArticleImage("")}
+								className="text-xs text-red-500 hover:text-red-600"
+							>
+								Remove
+							</button>
+						</div>
+					</div>
+				)}
+
+				{/* Markdown editor */}
+				<div className="overflow-hidden rounded-xl border border-stone-200 shadow-sm dark:border-stone-700">
+					<div className="border-b border-stone-200 bg-stone-50 px-4 py-2.5 dark:border-stone-700 dark:bg-stone-800">
+						<span className="text-xs font-medium text-stone-500 dark:text-stone-400">Content (Markdown)</span>
+					</div>
+					<MDEditor id="md-editor" value={content} onChange={(val) => setContent(val ?? "")} height={700} />
+				</div>
+			</div>
 		</div>
 	);
 }

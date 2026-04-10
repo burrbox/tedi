@@ -9,6 +9,7 @@ import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
+	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
@@ -109,14 +110,28 @@ export default function Header() {
 									</span>
 								</div>
 							</DropdownMenuTrigger>
-							<DropdownMenuContent align="end">
-								<DropdownMenuItem>Profile</DropdownMenuItem>
-								<DropdownMenuItem>Settings</DropdownMenuItem>
+							<DropdownMenuContent align="end" className="w-48">
+								<div className="px-3 py-2">
+									<p className="text-sm font-medium text-stone-800 dark:text-stone-100">{session.user.name}</p>
+									<p className="truncate text-xs text-stone-500 dark:text-stone-400">{session.user.email}</p>
+								</div>
+								<DropdownMenuSeparator />
+								{["editor", "admin"].includes(session.user.role) && (
+									<Link href="/blog/admin/edit/new">
+										<DropdownMenuItem className="cursor-pointer">Write Article</DropdownMenuItem>
+									</Link>
+								)}
 								<Link href="/toolkit">
-									<DropdownMenuItem>Toolkits</DropdownMenuItem>
+									<DropdownMenuItem className="cursor-pointer">Toolkits</DropdownMenuItem>
 								</Link>
+								<Link href="/settings">
+									<DropdownMenuItem className="cursor-pointer">Settings</DropdownMenuItem>
+								</Link>
+								<DropdownMenuSeparator />
 								<button className="w-full" onClick={() => signOut().then(() => updateSession())}>
-									<DropdownMenuItem>Sign Out</DropdownMenuItem>
+									<DropdownMenuItem className="cursor-pointer text-red-600 focus:text-red-600 dark:text-red-400">
+										Sign Out
+									</DropdownMenuItem>
 								</button>
 							</DropdownMenuContent>
 						</DropdownMenu>

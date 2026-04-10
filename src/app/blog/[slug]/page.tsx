@@ -14,8 +14,7 @@ import { TwitterXIcon } from "@/components/icons";
 import { getPostAuthor, getPostEditor } from "@/lib/utils";
 import { type Article, type WithContext } from "schema-dts";
 import { JsonLd } from "@/components/jsonLd";
-import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
-import { Eye } from "lucide-react";
+import { Eye, Pencil, PenLine, ArrowRight } from "lucide-react";
 import { ViewTracker } from "./view-tracker";
 
 export async function generateStaticParams() {
@@ -74,163 +73,137 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 		<>
 			<JsonLd data={jsonLd} />
 			<ViewTracker slug={post.slug} />
-			<section className="relative">
-				{/* Background image */}
-				{post.image && (
-					<div className="h-128 absolute inset-0 box-content pt-16">
-						<Image
-							className="absolute inset-0 h-full w-full object-cover opacity-25"
-							src={post.image}
-							width={1440}
-							height={577}
-							priority
-							alt={post.title}
-						/>
-						<div className="absolute inset-0 bg-gradient-to-t from-white dark:from-gray-900" aria-hidden="true" />
-					</div>
-				)}
 
-				<div className="relative mx-auto max-w-6xl px-4 sm:px-6 dark:bg-stone-900">
-					<div className="pb-12 pt-8 md:pb-20">
-						<Alert className="relative mb-8" data-aos="fade-down" data-aos-delay="1250">
-							<AlertTitle className="font-semibold text-green-600 dark:text-green-400">Like these articles?</AlertTitle>
-							<AlertDescription>
-								Want to try your hand at writing your own? Submit an article{" "}
-								<Link
-									href="https://docs.google.com/forms/d/e/1FAIpQLScPyNKW82l-B3YJypShgVB6m6WKZ4dqpyFsuzFvKhVdQPbmaA/viewform"
-									className="text-blue-400 underline"
-								>
-									here
-								</Link>{" "}
-								for a chance to be featured on our page!
-							</AlertDescription>
-						</Alert>
-						<div className="mx-auto max-w-3xl">
-							<article>
-								{/* Article header */}
-								<header className="mb-8">
-									{/* Title and excerpt */}
-									<div className="text-center md:text-left">
-										<h1
-											className="h1 font-red-hat-display mb-4 dark:text-green-600"
-											data-aos="fade-in"
-											data-aos-delay="150"
-										>
-											{post.title}
-										</h1>
-										<p className="text-xl text-gray-600 dark:text-stone-300" data-aos="fade-in" data-aos-delay="150">
-											{post.summary}
-										</p>
-									</div>
-									{/* Article meta */}
-									<div className="mt-5 md:flex md:items-center md:justify-between">
-										{/* Author meta */}
-										<div className="flex items-center justify-center" data-aos="fade-in" data-aos-delay="300">
-											<a href="#0">
-												<CloudinaryClientWrapper
-													className="mr-3 shrink-0 rounded-full"
-													src={author.image ?? "utter"}
-													width={32}
-													height={32}
-													crop="thumb"
-													gravity="face"
-													alt={author.name ?? "Anonymous Author"}
-												/>
-											</a>
-											<div className="flex justify-items-stretch">
-												<span className="text-gray-600 dark:text-blue-400">By</span>
-												<a className="px-2 font-medium text-gray-800 hover:underline dark:text-blue-300" href="#0">
-													{author.name ?? "Anonymous Author"}
-												</a>
-												<span className="text-gray-600 dark:text-blue-400">
-													{" · "}
-													<time dateTime={post.createdAt.toISOString()}>{format(post.createdAt, "MMM d, yyyy")}</time>
-													{" · "}
-												</span>
-												<span className="flex items-center gap-1 text-gray-600 dark:text-blue-400">
-													<Eye className="h-3.5 w-3.5" />
-													{post.views.toLocaleString()}
-												</span>
-											</div>
-										</div>
-									</div>
-								</header>
-								{session?.user && ["editor", "admin"].includes(session.user.role) && (
-									<span data-aos="fade-in" data-aos-delay="450">
-										<Link
-											className="my-4 rounded-xl bg-green-600 px-4 py-2 text-xl text-white hover:bg-green-700"
-											title="Edit this article"
-											href={`/blog/admin/edit/${post.slug}`}
-										>
-											Edit this article
-										</Link>
-									</span>
-								)}
-								<hr
-									className="my-8 h-px w-5 border-0 bg-gray-400 pt-px dark:bg-white"
-									data-aos="fade-in"
-									data-aos-delay="300"
+			{/* Hero image */}
+			{post.image && (
+				<div className="relative h-[50vh] min-h-[380px] w-full">
+					<Image
+						className="h-full w-full object-cover"
+						src={post.image}
+						fill
+						priority
+						alt={post.title}
+					/>
+					<div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
+					<div className="absolute bottom-0 left-0 right-0 px-4 pb-8 pt-16">
+						<div className="container mx-auto max-w-3xl">
+							<h1 className="mb-3 text-3xl font-bold leading-tight text-white drop-shadow md:text-4xl lg:text-5xl">
+								{post.title}
+							</h1>
+							<p className="mb-4 line-clamp-2 text-base text-white/80 md:text-lg">{post.summary}</p>
+							{/* Meta row */}
+							<div className="flex flex-wrap items-center gap-3">
+								<CloudinaryClientWrapper
+									className="shrink-0 rounded-full ring-2 ring-white/40"
+									src={author.image ?? "utter"}
+									width={32}
+									height={32}
+									crop="thumb"
+									gravity="face"
+									alt={author.name ?? "Anonymous Author"}
 								/>
-								<Link href={`https://twitter.com/intent/tweet?text=${post.slug}`} className="inline" data-aos="fade-in">
-									<TwitterXIcon className="h-6 w-6 dark:fill-gray-200" name="Share this article on Twitter" />
-								</Link>
-								{/*<button onClick={() => navigator.clipboard.writeText(post.slug)}>
-														<LinkShare className="h-6" name="Copy this article link to your clipboard" />
-													</button> */}
-
-								{/* Article content */}
-								<div className="mb-8" data-aos="fade-down" data-aos-delay="450">
-									<Mdx content={post.content} />
-								</div>
-							</article>
-							<div className="dark:bg-stone-900">
-								<div className="mx-auto flex flex-col justify-center">
-									<h3 className="text-wrap text-blue-500 dark:text-blue-400">
-										Stay updated and active by following the Environmental Defense Initiative on Medium and all our
-										social media platforms!
-									</h3>
-									<div className="py-6 text-black dark:text-white">
-										<ul className="mx-auto mb-4 flex flex-wrap justify-center gap-2 md:order-2 md:mb-0 md:ml-4 md:gap-4">
-											<Link
-												className="w-32 rounded-xl bg-green-600 py-2 text-center duration-300 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800"
-												href={"https://www.instagram.com/environmentaldefenseinitiative/"}
-											>
-												Instagram
-											</Link>
-											<Link
-												className="w-32 rounded-xl bg-green-600 py-2 text-center duration-300 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800"
-												href={"https://medium.com/@environmentaldefenseinitiative"}
-											>
-												Medium
-											</Link>
-											<Link
-												className="w-32 rounded-xl bg-green-600 py-2 text-center duration-300 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800"
-												href={"https://www.youtube.com/@EnvironmentalDefenseInitiative"}
-											>
-												YouTube
-											</Link>
-											<Link
-												className="w-32 rounded-xl bg-green-600 py-2 text-center duration-300 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800"
-												href={"https://www.tiktok.com/@tediactivism"}
-											>
-												TikTok
-											</Link>
-										</ul>
-									</div>
-									<div className="pt-5 md:pt-10">
-										<p className="text-green-500">
-											Author: <span>{author.name}</span>
-											<br />
-											Editor: <span>{editor.name}</span>
-										</p>
-									</div>
-								</div>
+								<span className="text-sm text-white/90">
+									<span className="font-medium">{author.name ?? "Anonymous Author"}</span>
+									<span className="mx-2 opacity-60">·</span>
+									<time dateTime={post.createdAt.toISOString()}>{format(post.createdAt, "MMM d, yyyy")}</time>
+									<span className="mx-2 opacity-60">·</span>
+								</span>
+								<span className="flex items-center gap-1 text-sm text-white/70">
+									<Eye className="h-3.5 w-3.5" />
+									{post.views.toLocaleString()}
+								</span>
+								{session?.user && ["editor", "admin"].includes(session.user.role) && (
+									<Link
+										href={`/blog/admin/edit/${post.slug}`}
+										className="ml-auto flex items-center gap-1.5 rounded-md bg-white/15 px-3 py-1.5 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/25"
+									>
+										<Pencil className="h-3.5 w-3.5" />
+										Edit
+									</Link>
+								)}
 							</div>
 						</div>
 					</div>
 				</div>
+			)}
+
+			<section className="bg-white dark:bg-stone-950">
+				<div className="container mx-auto max-w-3xl px-4 py-10">
+					{/* Submit article banner */}
+					<div className="mb-8 flex flex-col items-start justify-between gap-4 rounded-xl border border-stone-200 bg-stone-50 p-5 sm:flex-row sm:items-center dark:border-stone-700/50 dark:bg-stone-800/60">
+						<div className="flex items-start gap-3">
+							<div className="rounded-full bg-green-100 p-2 dark:bg-green-900/30">
+								<PenLine className="h-4 w-4 text-green-600 dark:text-green-400" />
+							</div>
+							<div>
+								<p className="font-semibold text-stone-800 dark:text-stone-100">Like these articles?</p>
+								<p className="text-sm text-stone-500 dark:text-stone-400">
+									Want to try your hand at writing your own? We&apos;ve opened blog submissions to anyone.
+								</p>
+							</div>
+						</div>
+						<Link
+							href="https://docs.google.com/forms/d/e/1FAIpQLScPyNKW82l-B3YJypShgVB6m6WKZ4dqpyFsuzFvKhVdQPbmaA/viewform"
+							className="inline-flex shrink-0 items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
+						>
+							Submit an Article
+							<ArrowRight className="h-3.5 w-3.5" />
+						</Link>
+					</div>
+
+					{/* Article content */}
+					<article>
+						<div data-aos="fade-up">
+							<Mdx content={post.content} />
+						</div>
+					</article>
+
+					{/* Divider */}
+					<hr className="my-10 border-stone-200 dark:border-stone-700" />
+
+					{/* Social share */}
+					<div className="mb-8 flex items-center gap-4">
+						<span className="text-sm text-stone-500 dark:text-stone-400">Share:</span>
+						<Link href={`https://twitter.com/intent/tweet?text=${post.slug}`}>
+							<TwitterXIcon className="h-5 w-5 fill-stone-600 dark:fill-stone-400" name="Share on X / Twitter" />
+						</Link>
+					</div>
+
+					{/* Follow us */}
+					<div className="rounded-xl border border-stone-200 bg-stone-50 p-6 dark:border-stone-700 dark:bg-stone-800">
+						<h3 className="mb-1 font-semibold text-stone-800 dark:text-stone-100">Stay connected</h3>
+						<p className="mb-4 text-sm text-stone-500 dark:text-stone-400">
+							Follow the Environmental Defense Initiative on our social platforms.
+						</p>
+						<div className="flex flex-wrap gap-2">
+							{[
+								{ label: "Instagram", href: "https://www.instagram.com/environmentaldefenseinitiative/" },
+								{ label: "Medium", href: "https://medium.com/@environmentaldefenseinitiative" },
+								{ label: "YouTube", href: "https://www.youtube.com/@EnvironmentalDefenseInitiative" },
+								{ label: "TikTok", href: "https://www.tiktok.com/@tediactivism" },
+							].map(({ label, href }) => (
+								<Link
+									key={label}
+									href={href}
+									className="rounded-md bg-green-600 px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800"
+								>
+									{label}
+								</Link>
+							))}
+						</div>
+					</div>
+
+					{/* Author / editor credit */}
+					<div className="mt-6 text-sm text-stone-400 dark:text-stone-500">
+						Written by <span className="font-medium text-stone-600 dark:text-stone-300">{author.name}</span>
+						{editor.name !== author.name && (
+							<>
+								{" · "}Edited by <span className="font-medium text-stone-600 dark:text-stone-300">{editor.name}</span>
+							</>
+						)}
+					</div>
+				</div>
 			</section>
-			{/* <RelatedPosts /> */}
 		</>
 	);
 }
