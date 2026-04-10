@@ -27,7 +27,7 @@ export const directors = [
 		image: "TEDI Bio/xejrbnm0k1loivohupbx",
 		description: `Karen has always been intrigued by forest ecosystems and how they sustain themselves. She is fascinated by environmental policy and advocating for sustainability in developing cities. She joined TEDI to express her passion for environmental science and to meet likeminded peers who also hope to solve current environmental issues.`,
 		email: "Karen.penggg@gmail.com",
-		instagram: "https://www.instagram.com/kp_penguin/",
+		linkedin: "https://ca.linkedin.com/in/karen-peng-b46a98300",
 	},
 	{
 		name: "Hiroyuki Sakuma",
@@ -166,7 +166,7 @@ export const team = [
 		description: `Liza is deeply aware of the devastating consequences that war can bring. From a young age, she has been interested in how technology can be used to address pollution in the air, water, and soil. As an eager and committed researcher, Liza has presented both her thesis and independent research at international conferences, where she gained valuable knowledge about environmental protection and sustainability. In the future, she plans to study electrical engineering and is excited to explore how she can apply her knowledge to developing technologies aimed at cleaning and restoring water reservoirs in her home city.`,
 	},
 	{
-		name: "Matthew Katz",
+		name: "Mathew Katz",
 		title: "Networking Coordinator & Blog Editor",
 		location: "Alberta, Canada",
 		image: "https://res.cloudinary.com/mozzarella-tedi/image/upload/v1756320169/matthew_k_m42tdk.png",
@@ -213,7 +213,7 @@ export const team = [
 	},
 	{
 		name: "Sahasra Rajesh",
-		title: "Blog Editor",
+		title: "Crisis Blog Writer & Blog Editor",
 		//location: "Hopewell Junction, NY, USA",
 		image:
 			"https://res.cloudinary.com/mozzarella-tedi/image/upload/v1758661649/76040e0a-c949-48fb-bb71-0485e1e03aec.png",
@@ -450,16 +450,6 @@ export const petitions = [
 		description: `We're working on new petitions to help protect our environment and make a difference in our communities. Check back soon for opportunities to advocate for important environmental causes and join us in creating positive change.`,
 		callToAction: "Stay tuned for upcoming petitions!",
 		name: "coming-soon",
-	},
-	{
-		title: "Protect the East Fishkill from the Woodland Estates Luxury Apartment Complex",
-		description: `Woodland Estates is a proposed rental development community in the town of East Fishkill calling for 468 luxury apartments in 23 buildings, 900 parking spots, and various lavish amenities. While this project may satisfy the growing demand for single-family homes in East Fishkill, it will have severe environmental repercussions including worsened air quality and local ecosystem damage.
-
-The luxury apartment complex will occupy 35 acres of undeveloped land and include lavish amenities such as clubhouses, pools, and pickleball courts. Considering East Fishkill has no shortage of these kinds of facilities, the exorbitant amount of land that the project would take up is completely unnecessary considering the development would harm local ecosystems and displace native species. In addition, the plan calls for the waste system of the apartments to connect to the general waste facilities of East Fishkill. The construction of this system would involve drilling underneath Shenandoah Creek, a process that would create noise pollution, destroy natural habitats, and disturb wildlife. Moreover, building these apartments would cause serious congestion on NY-376, lengthening commute times and thus increasing vehicle emissions.
-
-Allowing the Woodland Estates to be built would drastically reduce air quality and destroy fragile ecosystems in East Fishkill. Our town needs to emphasize the protection of natural lands, rather than construct unneeded luxury apartments with unnecessary amenities. We cannot compromise the health of our environment for the sake of capital gain. Sign our petition today to urge the town planning board to reject the Woodland Estates community development project.`,
-		callToAction: "Protect Shenandoah Creek and the fragile ecosystems of East Fishkill!",
-		name: "woodland",
 	},
 	// 	{
 	// 		title: "Halt the Construction of Warehouses on NYS Wetlands in East Fishkill",
