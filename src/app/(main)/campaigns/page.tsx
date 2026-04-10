@@ -30,17 +30,13 @@ export default function Campaigns() {
 		<>
 			{/* Hero */}
 			<section
-				title="An image of a waterfall"
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/cqdwyikqyeqqfwemsrek" })})` }}
-				className="flex w-screen bg-cover bg-fixed bg-center bg-no-repeat lg:h-[50vh]"
+				className="relative flex min-h-[55vh] w-screen items-center bg-cover bg-center bg-no-repeat"
 			>
-				<div className="container flex items-center justify-center px-5 py-10" data-aos="fade-in">
-					<div className="flex flex-col justify-center rounded-2xl bg-white/90 p-10 shadow-xl backdrop-blur-sm lg:p-20 dark:bg-stone-900/90">
-						<h1 className="text-center text-5xl font-bold text-green-600 md:text-6xl dark:text-green-400">Campaigns</h1>
-						<p className="pt-4 text-center text-xl text-stone-600 dark:text-stone-300">
-							Find out how you can help your local community
-						</p>
-					</div>
+				<div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black/65" />
+				<div className="container relative z-10 py-32 text-center" data-aos="fade-in">
+					<h1 className="mb-4 text-5xl font-bold text-white drop-shadow-md md:text-6xl">Campaigns</h1>
+					<p className="text-xl text-white/90 drop-shadow">Find out how you can help your local community</p>
 				</div>
 			</section>
 

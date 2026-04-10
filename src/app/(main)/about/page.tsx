@@ -125,21 +125,17 @@ export default function AboutPage() {
 
 			{/* Hero */}
 			<section
-				className="flex w-screen bg-cover bg-fixed bg-center bg-no-repeat py-12 md:pb-20 lg:h-[50vh] lg:pt-40"
+				className="relative flex min-h-[55vh] w-screen items-center bg-cover bg-center bg-no-repeat"
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/mountainWide", gravity: "south" })})` }}
 			>
-				<div className="container flex items-center justify-center">
-					<div
-						className="rounded-2xl bg-white/90 px-8 py-10 shadow-xl backdrop-blur-sm dark:bg-stone-950/90"
-						data-aos="fade-down"
-					>
-						<h1 className="mb-4 text-center text-5xl font-bold text-green-700 dark:text-white">Our Mission</h1>
-						<p className="mx-auto max-w-3xl text-center text-lg text-blue-700 dark:text-green-300">
-							The Environmental Defense Initiative is an international youth-led initiative dedicated to raising
-							awareness of environmental issues and providing a platform for people to take action to create
-							long-lasting change.
-						</p>
-					</div>
+				<div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black/60" />
+				<div className="container relative z-10 py-32 text-center" data-aos="fade-down">
+					<h1 className="mb-5 text-5xl font-bold text-white drop-shadow-md md:text-6xl">Our Mission</h1>
+					<p className="mx-auto max-w-3xl text-lg text-white/90 drop-shadow">
+						The Environmental Defense Initiative is an international youth-led initiative dedicated to raising
+						awareness of environmental issues and providing a platform for people to take action to create
+						long-lasting change.
+					</p>
 				</div>
 			</section>
 
@@ -165,19 +161,16 @@ export default function AboutPage() {
 			{/* Our Values */}
 			<section className="w-full">
 				<div
-					className="relative flex min-h-[50vh] w-screen flex-col bg-cover bg-fixed bg-center bg-repeat"
+					className="relative flex w-screen flex-col bg-cover bg-center bg-repeat"
 					style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/waterfall" })})` }}
 				>
-					<div className="w-screen">
-						<div className="w-screen rounded-b-2xl bg-stone-50 py-4 md:px-20 dark:bg-stone-900">
-							<h2 className="mb-3 text-center text-3xl font-bold text-green-700 dark:text-green-400">Our Values</h2>
-							<div className="mx-auto h-1 w-12 rounded-full bg-green-600" />
-						</div>
-					</div>
-					<div className="container mx-auto px-4 py-16">
+					<div className="absolute inset-0 bg-black/50" />
+					<div className="relative z-10 container mx-auto px-4 py-20">
+						<h2 className="mb-3 text-center text-3xl font-bold text-white">Our Values</h2>
+						<div className="mx-auto mb-10 h-1 w-12 rounded-full bg-green-400" />
 						<div className="grid gap-6 md:grid-cols-3">
 							{values.map((value) => (
-								<div key={value.title} className="rounded-xl bg-white p-8 shadow-md dark:bg-stone-800">
+								<div key={value.title} className="rounded-xl bg-white/90 p-8 shadow-md backdrop-blur-sm dark:bg-stone-800/90">
 									<div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-green-600 text-2xl font-bold text-white shadow-md">
 										{value.number}
 									</div>

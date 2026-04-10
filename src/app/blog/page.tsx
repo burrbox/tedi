@@ -47,7 +47,7 @@ export default async function Blog() {
 			<JsonLd data={jsonLd} />
 
 			{/* Submit article banner */}
-			<section className="w-full pt-24">
+			<section className="w-full bg-gradient-to-b from-stone-100 to-white pt-24 dark:from-stone-800 dark:to-stone-950">
 				<div className="container mx-auto max-w-6xl px-4 sm:px-6">
 					{session?.user && ["editor", "admin"].includes(session.user.role) && (
 						<div className="mb-4">
@@ -60,7 +60,7 @@ export default async function Blog() {
 						</div>
 					)}
 					<div
-						className="flex flex-col items-center justify-between gap-4 rounded-xl border border-stone-200 bg-white p-5 shadow-sm sm:flex-row dark:border-stone-700 dark:bg-stone-900"
+						className="flex flex-col items-center justify-between gap-4 rounded-xl border border-stone-200 bg-white p-5 shadow-sm sm:flex-row dark:border-stone-700/50 dark:bg-stone-800/60 dark:backdrop-blur-sm"
 						data-aos="fade-in"
 					>
 						<div className="flex items-start gap-3">
@@ -86,7 +86,7 @@ export default async function Blog() {
 			</section>
 
 			{/* Featured post */}
-			<section className="w-full py-8">
+			<section className="w-full bg-gradient-to-b from-white to-stone-50 py-8 dark:from-stone-950 dark:to-stone-900">
 				<div className="container mx-auto max-w-6xl px-4 sm:px-6">
 					{featuredPost.image && (
 						<div

@@ -37,21 +37,17 @@ export default function Petitions() {
 
 			{/* Hero */}
 			<section
-				className="flex w-screen bg-cover bg-fixed bg-center bg-no-repeat py-12 md:pb-20 lg:pt-40"
+				className="relative flex min-h-[55vh] w-screen items-center bg-cover bg-center bg-no-repeat"
 				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/tallForest" })})` }}
 			>
-				<div className="container flex items-center justify-center">
-					<div
-						className="rounded-2xl bg-white/90 px-8 py-10 shadow-xl backdrop-blur-sm dark:bg-stone-950/90"
-						data-aos="fade-in"
-					>
-						<h1 className="text-center text-5xl font-bold text-blue-600 dark:text-white">Petitions</h1>
-						<p className="pt-4 text-center text-xl text-green-600 dark:text-green-300">
-							Be the change you want to see in the world.
-							<br />
-							Sign a petition — every signature counts.
-						</p>
-					</div>
+				<div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black/65" />
+				<div className="container relative z-10 py-32 text-center" data-aos="fade-in">
+					<h1 className="mb-4 text-5xl font-bold text-white drop-shadow-md md:text-6xl">Petitions</h1>
+					<p className="text-xl text-white/90 drop-shadow">
+						Be the change you want to see in the world.
+						<br />
+						Sign a petition — every signature counts.
+					</p>
 				</div>
 			</section>
 
