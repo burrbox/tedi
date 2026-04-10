@@ -17,6 +17,8 @@ import { JsonLd } from "@/components/jsonLd";
 import { Eye, Pencil, PenLine, ArrowRight } from "lucide-react";
 import { ViewTracker } from "./view-tracker";
 
+export const revalidate = 30;
+
 export async function generateStaticParams() {
 	return (await getPosts()).map((post) => ({
 		slug: post.slug,

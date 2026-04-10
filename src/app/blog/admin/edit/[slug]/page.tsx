@@ -9,7 +9,6 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { CldImage, CldUploadButton } from "next-cloudinary";
 import { upsertArticle, getPost } from "@/lib/serverActions";
-import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Loading from "@/components/loading";
 import { Check, ChevronsUpDown, ImagePlus, Save, ExternalLink } from "lucide-react";
@@ -50,7 +49,6 @@ const cloudinaryDarkStyles = {
 
 export default function BlogEditor({ params: { slug } }: { params: { slug: string } }) {
 	const router = useRouter();
-	const { data: session, status } = useSession();
 
 	const [content, setContent] = useState("");
 	const [newSlug, setNewSlug] = useState(slug);
@@ -63,9 +61,6 @@ export default function BlogEditor({ params: { slug } }: { params: { slug: strin
 	const [isEditorOpen, setIsEditorOpen] = useState(false);
 	const [customAuthor, setCustomAuthor] = useState("");
 	const [isSaving, setIsSaving] = useState(false);
-
-	if (status === "unauthenticated" || (session?.user && !["editor", "admin"].includes(session.user.role)))
-		router.push("/unauthorized");
 
 	useEffect(() => {
 		if (slug !== "new") {
