@@ -34,6 +34,10 @@ export async function getPost(slug: string) {
 	return db.post.findFirst({ where: { slug } });
 }
 
+export async function incrementPostViews(slug: string) {
+	await db.post.update({ where: { slug }, data: { views: { increment: 1 } } });
+}
+
 export async function addEmailSubscription(email: string) {
 	await db.subscription.create({ data: { email: z.string().email().parse(email) } });
 

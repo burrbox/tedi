@@ -15,6 +15,8 @@ import { getPostAuthor, getPostEditor } from "@/lib/utils";
 import { type Article, type WithContext } from "schema-dts";
 import { JsonLd } from "@/components/jsonLd";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
+import { Eye } from "lucide-react";
+import { ViewTracker } from "./view-tracker";
 
 export async function generateStaticParams() {
 	return (await getPosts()).map((post) => ({
@@ -68,10 +70,10 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 		dateModified: post.updatedAt.toISOString(),
 	};
 
-	console.log(post.author);
 	return (
 		<>
 			<JsonLd data={jsonLd} />
+			<ViewTracker slug={post.slug} />
 			<section className="relative">
 				{/* Background image */}
 				{post.image && (
@@ -143,6 +145,11 @@ export default async function SinglePost({ params }: { params: { slug: string } 
 												<span className="text-gray-600 dark:text-blue-400">
 													{" · "}
 													<time dateTime={post.createdAt.toISOString()}>{format(post.createdAt, "MMM d, yyyy")}</time>
+													{" · "}
+												</span>
+												<span className="flex items-center gap-1 text-gray-600 dark:text-blue-400">
+													<Eye className="h-3.5 w-3.5" />
+													{post.views.toLocaleString()}
 												</span>
 											</div>
 										</div>

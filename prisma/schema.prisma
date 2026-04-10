@@ -26,6 +26,7 @@ model Post {
 
     author String @default("nash pillai")
     editor String @default("nash pillai")
+    views  Int    @default(0)
 
     @@index([createdAt])
     @@index([author])
