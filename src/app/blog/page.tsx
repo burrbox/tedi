@@ -5,15 +5,13 @@ import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import { format } from "date-fns";
 import { type Metadata } from "next";
 import { env } from "@/env";
-import { BlogSearch } from "./blogSearch";
 import { auth } from "@/server/auth";
 import { getPostAuthor } from "@/lib/utils";
-import { type WebPage, type WebSite, type WithContext } from "schema-dts";
+import { type WebPage, type WithContext } from "schema-dts";
 import { JsonLd } from "@/components/jsonLd";
-import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
-// import RelatedPosts from "@/components/related-posts-01";
+import { PenLine, ArrowRight } from "lucide-react";
 
-export const revalidate = 300; // 5 minutes
+export const revalidate = 300;
 
 export const metadata: Metadata = {
 	title: { default: "Blog", template: "%s - Blog" },
@@ -28,6 +26,7 @@ export const metadata: Metadata = {
 		url: `${env.URL}/blog`,
 	},
 };
+
 const jsonLd: WithContext<WebPage> = {
 	"@context": "https://schema.org",
 	"@type": "WebPage",
@@ -46,111 +45,106 @@ export default async function Blog() {
 	return (
 		<>
 			<JsonLd data={jsonLd} />
-			{/* Featured post */}
-			<section className="w-full pt-6">
-				<div className="relative mx-auto mb-3 max-w-6xl justify-center space-y-4 md:mb-4 lg:mb-5">
-					{/* <BlogSearch articles={allPosts} /> */}
+
+			{/* Submit article banner */}
+			<section className="w-full pt-24">
+				<div className="container mx-auto max-w-6xl px-4 sm:px-6">
 					{session?.user && ["editor", "admin"].includes(session.user.role) && (
-						<div>
+						<div className="mb-4">
 							<Link
-								className="my-4 rounded-xl bg-green-600 px-4 py-2 text-white hover:bg-green-700"
-								title="Edit this article"
+								className="inline-flex h-9 items-center justify-center rounded-md bg-green-600 px-4 text-sm font-medium text-white hover:bg-green-700"
 								href="/blog/admin/edit/new"
 							>
 								New article
 							</Link>
 						</div>
 					)}
-				</div>
-				<div className="container mx-auto mb-8 justify-center px-5 md:px-10 lg:px-20">
 					<div
-						className="flex flex-col rounded-xl border-2 border-gray-500 bg-white px-2 py-3 text-center text-gray-950 md:flex-row md:px-5 md:py-5 md:text-left lg:px-10 dark:bg-gray-950 dark:text-gray-50"
+						className="flex flex-col items-center justify-between gap-4 rounded-xl border border-stone-200 bg-white p-5 shadow-sm sm:flex-row dark:border-stone-700 dark:bg-stone-900"
 						data-aos="fade-in"
-						data-aos-delay="100"
 					>
-						<div>
-							<h3 className="text-2xl font-semibold text-green-600 dark:text-green-400">Want to take action?</h3>
-							<p>
-								We&apos;ve opened our blog submissions to anyone interested!
-								<br />
-								Try your hand at writing an article; it may even be featured on our website!
-							</p>
+						<div className="flex items-start gap-3">
+							<div className="rounded-full bg-green-100 p-2 dark:bg-green-900/30">
+								<PenLine className="h-5 w-5 text-green-600 dark:text-green-400" />
+							</div>
+							<div>
+								<h3 className="font-semibold text-stone-800 dark:text-stone-100">Want to take action?</h3>
+								<p className="text-sm text-stone-500 dark:text-stone-400">
+									We&apos;ve opened our blog submissions to anyone interested. Try your hand at writing an article!
+								</p>
+							</div>
 						</div>
 						<Link
 							href="https://docs.google.com/forms/d/e/1FAIpQLScPyNKW82l-B3YJypShgVB6m6WKZ4dqpyFsuzFvKhVdQPbmaA/viewform"
-							className="mx-auto my-3 content-center justify-center rounded-xl bg-blue-400 px-3 py-4 text-gray-950 duration-200 hover:scale-105 md:my-auto"
+							className="inline-flex shrink-0 items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
 						>
 							Submit an Article
+							<ArrowRight className="h-4 w-4" />
 						</Link>
 					</div>
 				</div>
-				<div className="lg:mb-18 mx-auto mb-12 max-w-6xl md:mb-16">
+			</section>
+
+			{/* Featured post */}
+			<section className="w-full py-8">
+				<div className="container mx-auto max-w-6xl px-4 sm:px-6">
 					{featuredPost.image && (
 						<div
-							className="relative mx-5 h-[400px] overflow-hidden rounded-lg md:h-[500px] lg:h-[600px]"
+							className="relative overflow-hidden rounded-2xl shadow-xl"
+							style={{ height: "clamp(360px, 50vh, 560px)" }}
 							data-aos="fade-in"
-							data-aos-delay="200"
 						>
 							<Image
-								className="relative inset-0 h-full w-full object-cover opacity-50"
+								className="h-full w-full object-cover"
 								src={featuredPost.image}
 								width={1440}
 								height={577}
 								priority
 								alt={featuredPost.title}
 							/>
-							<div className="absolute inset-0 bg-gradient-to-t from-blue-100/50 to-transparent dark:from-black/50" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 							<div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 lg:p-10">
-								<div className="max-w-xl">
-									<div className="mb-2 md:mb-3 lg:mb-4">
-										<span className="inline-block rounded-full bg-green-600 px-3 py-1 font-medium text-white">
-											Featured
+								<div className="max-w-2xl space-y-3">
+									<span className="inline-block rounded-full bg-green-600 px-3 py-1 text-sm font-medium text-white">
+										Featured
+									</span>
+									<h1 className="text-2xl font-bold leading-tight text-white md:text-3xl lg:text-4xl">
+										{featuredPost.title}
+									</h1>
+									<div className="flex items-center gap-3">
+										<CloudinaryClientWrapper
+											className="shrink-0 rounded-full"
+											src={getPostAuthor(featuredPost).image ?? "utter"}
+											width={32}
+											height={32}
+											crop="thumb"
+											gravity="face"
+											alt={getPostAuthor(featuredPost).name ?? "Anonymous Author"}
+										/>
+										<span className="text-sm text-stone-200">
+											<span className="font-medium">{getPostAuthor(featuredPost).name}</span>
+											<span className="mx-2 opacity-60">·</span>
+											<time dateTime={featuredPost.createdAt.toISOString()}>
+												{format(featuredPost.createdAt, "MMM d, yyyy")}
+											</time>
 										</span>
-										<h1 className="mb-3 text-3xl font-bold text-blue-600 md:mb-4 md:text-4xl lg:mb-5 lg:text-5xl dark:text-blue-400">
-											{featuredPost.title}
-										</h1>
-										<div className="mb-4 flex items-center text-sm text-black md:mb-5 md:text-base lg:mb-6 lg:text-lg dark:text-white">
-											<div className="mr-4">
-												<CloudinaryClientWrapper
-													className="mr-3 shrink-0 rounded-full"
-													src={getPostAuthor(featuredPost).image ?? "utter"}
-													width={32}
-													height={32}
-													crop="thumb"
-													gravity="face"
-													alt={getPostAuthor(featuredPost).name ?? "Anonymous Author"}
-												/>
-												<span>
-													<span className="font-medium">{getPostAuthor(featuredPost).name}</span>
-													<span className="mx-2">•</span>
-													<time dateTime={featuredPost.createdAt.toISOString()}>
-														{format(featuredPost.createdAt, "MMM d, yyyy")}
-													</time>
-												</span>
-											</div>
-										</div>
-										<p className="mb-6 line-clamp-3 text-base text-gray-600 md:mb-8 md:text-lg lg:mb-10 lg:text-xl dark:text-stone-300">
-											{featuredPost.summary}
-										</p>
-										<div className="">
+									</div>
+									<p className="line-clamp-2 text-sm text-stone-300 md:text-base">{featuredPost.summary}</p>
+									<div className="flex flex-wrap gap-3 pt-1">
+										<Link
+											href={`/blog/${featuredPost.slug}`}
+											className="inline-flex h-9 items-center rounded-md bg-green-600 px-5 text-sm font-medium text-white transition-colors hover:bg-green-700"
+										>
+											Read More
+										</Link>
+										{session?.user && ["editor", "admin"].includes(session.user.role) && (
 											<Link
-												href={`/blog/${featuredPost.slug}`}
-												className="rounded-xl border-2 border-green-600 bg-green-600 px-10 py-2 text-white duration-300 hover:bg-white hover:text-green-600 md:px-16"
+												className="inline-flex h-9 items-center rounded-md border border-white/30 bg-white/10 px-5 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+												href={`/blog/admin/edit/${featuredPost.slug}`}
 											>
-												Read More
+												Edit article
 											</Link>
-											{session?.user && ["editor", "admin"].includes(session.user.role) && (
-												<span data-aos="fade-in" data-aos-delay="450">
-													<Link
-														className="mx-5 rounded-xl border-2 border-blue-600 bg-blue-600 px-5 py-2 text-white duration-300 hover:bg-stone-300 hover:text-blue-600"
-														title="Edit this article"
-														href={`/blog/admin/edit/${featuredPost.slug}`}
-													>
-														Edit this article
-													</Link>
-												</span>
-											)}
-										</div>
+										)}
 									</div>
 								</div>
 							</div>
@@ -159,98 +153,60 @@ export default async function Blog() {
 				</div>
 			</section>
 
-			{/* <RelatedPosts /> */}
-
 			{/* Articles list */}
-			<section className="bg-white dark:bg-stone-900">
-				<div className="mx-auto max-w-6xl px-4 sm:px-6">
-					<div className="pb-12 md:pb-20">
-						<div className="lg:flex lg:justify-between">
-							{/* Main content */}
-							<div className="lg:grow">
-								{/* Section title */}
-								<h2 className="h3 font-red-hat-display mb-4 text-center dark:text-green-500">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke-width="1.5"
-										stroke="currentColor"
-										className="mx-3 inline size-6 animate-bounce"
-									>
-										<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-									</svg>
-									Recent Articles
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke-width="1.5"
-										stroke="currentColor"
-										className="mx-3 inline size-6 animate-bounce"
-									>
-										<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-									</svg>
-								</h2>
-
-								<hr className="border-1 mb-4 border-green-500 pb-4 md:pb-10" />
-
-								{/* Articles container */}
-								<div className="grid items-start gap-12 sm:grid-cols-2 sm:gap-x-6 md:gap-y-8">
-									{posts.map((post, postIndex) => (
-										<article
-											key={postIndex}
-											className="flex h-full flex-col rounded-xl bg-blue-100 p-10 duration-300 hover:bg-blue-200 dark:bg-emerald-950 dark:hover:bg-emerald-900"
-											data-aos="fade-down"
-											data-aos-delay="200"
-										>
-											<header>
-												{post.image && (
-													<Link className="mb-4 block" href={`/blog/${post.slug}`}>
-														<figure className="pb-9/16 relative h-0">
-															<Image
-																className="absolute inset-0 h-full w-full object-cover"
-																src={post.image}
-																width={352}
-																height={198}
-																alt={post.title}
-															/>
-														</figure>
-													</Link>
-												)}
-												<Link className="hover:underline" href={`/blog/${post.slug}`}>
-													<h3 className="h4 font-red-hat-display mb-2 dark:text-white">{post.title}</h3>
-												</Link>
-											</header>
-											<p className="grow text-gray-600 dark:text-stone-300">{post.summary}</p>
-											<footer className="mt-4 flex items-center">
-												<a href="#0">
-													<CloudinaryClientWrapper
-														className="mr-3 rounded-full"
-														src={getPostAuthor(post).image ?? "utter"}
-														width={32}
-														height={32}
-														crop="thumb"
-														gravity="face"
-														alt={getPostAuthor(post).name ?? "Anonymous Author"}
-													/>
-												</a>
-												<div className="text-sm text-stone-400">
-													By{" "}
-													<a className="font-medium text-gray-800 hover:underline dark:text-stone-200" href="#0">
-														{getPostAuthor(post).name ?? "Anonymous Author"}
-													</a>
-													{" · "}
-													<span className="text-gray-500 dark:text-blue-400">
-														<time dateTime={post.createdAt.toISOString()}>{format(post.createdAt, "MMM d, yyyy")}</time>
-													</span>
-												</div>
-											</footer>
-										</article>
-									))}
+			<section className="w-full bg-stone-50 pb-16 pt-8 dark:bg-stone-900">
+				<div className="container mx-auto max-w-6xl px-4 sm:px-6">
+					<h2 className="mb-2 text-2xl font-bold tracking-tight text-stone-800 dark:text-stone-100">Recent Articles</h2>
+					<div className="mb-8 h-1 w-12 rounded-full bg-green-500" />
+					<div className="grid gap-8 sm:grid-cols-2">
+						{posts.map((post, postIndex) => (
+							<article
+								key={postIndex}
+								className="group flex h-full flex-col overflow-hidden rounded-xl border border-stone-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-stone-700 dark:bg-stone-800"
+								data-aos="fade-up"
+								data-aos-delay="100"
+							>
+								{post.image && (
+									<Link className="block overflow-hidden" href={`/blog/${post.slug}`}>
+										<div className="relative h-48 w-full">
+											<Image
+												className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+												src={post.image}
+												fill
+												sizes="(max-width: 640px) 100vw, 50vw"
+												alt={post.title}
+											/>
+										</div>
+									</Link>
+								)}
+								<div className="flex flex-1 flex-col p-6">
+									<Link href={`/blog/${post.slug}`} className="hover:underline">
+										<h3 className="mb-2 text-lg font-semibold text-stone-800 dark:text-stone-100">{post.title}</h3>
+									</Link>
+									<p className="mb-4 flex-1 text-sm text-stone-500 dark:text-stone-400">{post.summary}</p>
+									<footer className="flex items-center gap-3">
+										<CloudinaryClientWrapper
+											className="shrink-0 rounded-full"
+											src={getPostAuthor(post).image ?? "utter"}
+											width={32}
+											height={32}
+											crop="thumb"
+											gravity="face"
+											alt={getPostAuthor(post).name ?? "Anonymous Author"}
+										/>
+										<div className="text-sm">
+											<span className="font-medium text-stone-700 dark:text-stone-200">
+												{getPostAuthor(post).name ?? "Anonymous Author"}
+											</span>
+											<span className="mx-1 text-stone-400">·</span>
+											<time className="text-stone-400 dark:text-stone-500" dateTime={post.createdAt.toISOString()}>
+												{format(post.createdAt, "MMM d, yyyy")}
+											</time>
+										</div>
+									</footer>
 								</div>
-							</div>
-						</div>
+							</article>
+						))}
 					</div>
 				</div>
 			</section>

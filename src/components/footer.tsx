@@ -2,57 +2,38 @@
 
 import { EnvelopeIcon, RssIcon } from "@heroicons/react/24/solid";
 import { addEmailSubscription } from "@/lib/serverActions";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { InstagramIcon, LinkedInIcon, TikTokIcon, TwitterXIcon, YouTubeIcon } from "./icons";
 import Link from "next/link";
 
-export default function Footer() {
-	const [isMac, setIsMac] = useState(false);
+const socialLinks = [
+	{ href: "mailto:team@tedinitiative.org", label: "Email", icon: EnvelopeIcon },
+	{ href: "https://www.tiktok.com/@tedi_youth", label: "TikTok", icon: TikTokIcon },
+	{ href: "https://twitter.com/TEDIactivism", label: "Twitter", icon: TwitterXIcon },
+	{ href: "https://www.youtube.com/@EnvironmentalDefenseInitiative", label: "YouTube", icon: YouTubeIcon },
+	{ href: "https://www.instagram.com/environmentaldefenseinitiative/", label: "Instagram", icon: InstagramIcon },
+	{
+		href: "https://www.linkedin.com/company/the-environmental-defense-initiative/posts",
+		label: "LinkedIn",
+		icon: LinkedInIcon,
+	},
+	{ href: "/rss.xml", label: "RSS Feed", icon: RssIcon },
+];
 
-	useEffect(() => {
-		if (navigator.userAgent.includes("Mac")) {
-			setIsMac(true);
-		}
-	}, []);
+export default function Footer() {
 	const [email, setEmail] = useState("");
 	const [done, setDone] = useState(false);
-	return (
-		<footer className="relative bg-white dark:bg-stone-950">
-			<div className="mx-auto max-w-6xl px-4 sm:px-6">
-				<div className="-mt-px border-t border-gray-200 py-12 md:py-16 dark:border-gray-800">
-					{/* Footer illustration */}
-					<div className="-z-1 pointer-events-none" aria-hidden="true">
-						<svg
-							className="absolute bottom-0 left-0 ml-24 -translate-x-1/2 transform dark:opacity-40"
-							width="800"
-							height="264"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<circle cx="400" cy="400" r="400" fill="url(#footerglow_paint0_radial)" fillOpacity=".4" />
-							<defs>
-								<radialGradient
-									id="footerglow_paint0_radial"
-									cx="0"
-									cy="0"
-									r="1"
-									gradientUnits="userSpaceOnUse"
-									gradientTransform="rotate(90 0 400) scale(315.089)"
-								>
-									<stop stopColor="#3ABAB4 dark:#7D55C3" />
-									<stop offset="1" stopColor="#3ABAB4" stopOpacity=".01" />
-								</radialGradient>
-							</defs>
-						</svg>
-					</div>
 
-					{/* Footer Content */}
-					<div className="w-full pb-8">
-						<div>
-							<h3 className="pb-2 text-xl text-blue-600 dark:text-blue-400">
-								Subscribe to our monthly membership emails!
-							</h3>
-						</div>
+	return (
+		<footer className="border-t border-stone-200 bg-white dark:border-stone-800 dark:bg-stone-950">
+			<div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">
+				<div className="grid gap-10 md:grid-cols-2 md:gap-16">
+					{/* Email subscription */}
+					<div className="space-y-4">
+						<h3 className="text-lg font-semibold text-stone-800 dark:text-stone-200">Stay in the loop</h3>
+						<p className="text-sm text-stone-500 dark:text-stone-400">
+							Subscribe to our monthly membership emails for updates on our campaigns and initiatives.
+						</p>
 						{!done ? (
 							<form
 								name="email-subscription"
@@ -61,133 +42,68 @@ export default function Footer() {
 									setDone(true);
 									await addEmailSubscription(email);
 								}}
+								className="flex flex-col gap-3 sm:flex-row"
 							>
-								<label className="py-2 text-blue-600 dark:text-blue-300">
-									Email*
-									<div className="flex w-full border-b-4 border-b-green-600 py-1 text-xl text-green-600 md:w-1/2 dark:text-green-500">
-										<input
-											id="email"
-											name="email"
-											type="email"
-											className="size-3/4 border-none bg-transparent text-blue-700 focus:outline-none"
-											placeholder="Your email"
-											value={email}
-											required
-											onChange={(e) => setEmail(e.target.value)}
-										/>
-										<label className="inline w-1/4 text-center">
-											<button type="submit">Subscribe</button>
-										</label>
-									</div>
-								</label>
+								<input
+									id="email"
+									name="email"
+									type="email"
+									className="flex-1 rounded-md border border-stone-300 bg-white px-3 py-2 text-sm text-stone-800 placeholder-stone-400 focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-200 dark:placeholder-stone-500"
+									placeholder="your@email.com"
+									value={email}
+									required
+									onChange={(e) => setEmail(e.target.value)}
+								/>
+								<button
+									type="submit"
+									className="inline-flex h-9 items-center justify-center rounded-md bg-green-600 px-4 text-sm font-medium text-white transition-colors hover:bg-green-700"
+								>
+									Subscribe
+								</button>
 							</form>
 						) : (
-							<p className="text-wrap text-lg text-green-500">
-								Thanks for subscribing! Consider{" "}
-								<Link href="/join-us" className="underline">
-									joining our team?
+							<p className="text-sm text-green-600 dark:text-green-400">
+								Thanks for subscribing! Want to do more?{" "}
+								<Link href="/join-us" className="font-medium underline">
+									Join our team.
 								</Link>
 							</p>
 						)}
 					</div>
-					<div className="md:flex md:items-center md:justify-between">
-						{/* Social links */}
-						<ul className="mb-4 flex md:order-2 md:mb-0 md:ml-4">
-							<li>
-								<a
-									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
-									href="mailto:team@tedinitiative.org"
-									target="_blank"
-									aria-label="Email"
-								>
-									<EnvelopeIcon className="h-4 w-4 dark:fill-white" />
-								</a>
-							</li>
-							<li className="ml-4">
-								<a
-									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
-									href="https://www.tiktok.com/@tedi_youth"
-									target="_blank"
-									aria-label="TikTok"
-								>
-									<TikTokIcon className="h-4 w-4 fill-current dark:fill-white" />
-								</a>
-							</li>
-							<li className="ml-4">
-								<a
-									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
-									href="https://twitter.com/TEDIactivism"
-									target="_blank"
-									aria-label="Twitter"
-								>
-									<TwitterXIcon className="h-4 w-4 fill-current dark:fill-white" />
-								</a>
-							</li>
-							<li className="ml-4">
-								<a
-									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
-									href="https://www.youtube.com/@EnvironmentalDefenseInitiative"
-									target="_blank"
-									aria-label="Youtube"
-								>
-									<YouTubeIcon className="h-4 w-4 fill-current dark:fill-white" />
-								</a>
-							</li>
-							<li className="ml-4">
-								<a
-									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
-									href="https://www.instagram.com/environmentaldefenseinitiative/"
-									target="_blank"
-									aria-label="Instagram"
-								>
-									<InstagramIcon className="h-4 w-4 fill-current dark:fill-white" />
-								</a>
-							</li>
-							<li className="ml-4">
-								<a
-									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
-									href="https://www.linkedin.com/company/the-environmental-defense-initiative/posts"
-									target="_blank"
-									aria-label="Linkedin"
-								>
-									<LinkedInIcon className="h-4 w-4 fill-current dark:fill-white" />
-								</a>
-							</li>
-							<li className="ml-4">
-								<a
-									className="flex items-center justify-center rounded-full bg-blue-600 p-2 text-white transition duration-150 ease-in-out hover:bg-purple-600 hover:underline dark:bg-emerald-800 dark:text-blue-600"
-									href="/rss.xml"
-									target="_blank"
-									aria-label="RSS Feed"
-								>
-									<RssIcon className="h-4 w-4 fill-current dark:fill-white" />
-								</a>
-							</li>
+
+					{/* Social + links */}
+					<div className="space-y-4">
+						<h3 className="text-lg font-semibold text-stone-800 dark:text-stone-200">Follow us</h3>
+						<ul className="flex flex-wrap gap-3">
+							{socialLinks.map(({ href, label, icon: Icon }) => (
+								<li key={label}>
+									<a
+										className="flex h-9 w-9 items-center justify-center rounded-full bg-stone-100 text-stone-600 transition-colors hover:bg-green-600 hover:text-white dark:bg-stone-800 dark:text-stone-400 dark:hover:bg-green-700 dark:hover:text-white"
+										href={href}
+										target="_blank"
+										rel="noreferrer"
+										aria-label={label}
+									>
+										<Icon className="h-4 w-4 fill-current" />
+									</a>
+								</li>
+							))}
 						</ul>
-
-						{/* Middle links */}
-						<div className="mb-2 text-sm text-gray-700 md:order-1 md:mb-0">
-							{/* <a
-								className="text-gray-600 transition duration-150 ease-in-out hover:underline dark:text-gray-400"
-								href="#0">
-								Terms
-							</a>{" "}
-							·{" "} */}
-							<a
-								className="text-gray-600 transition duration-150 ease-in-out hover:underline dark:text-gray-400"
-								href="/privacy-policy"
-								target="_blank"
-							>
-								Privacy Policy
-							</a>
-						</div>
-
-						{/* Copyrights note */}
-						<div className="mr-4 text-sm text-gray-600 dark:text-gray-400">
-							&copy; 2025
-							{!isMac ? " Hiro and Nash" : " The Environmental Defense Initiative"}. All rights reserved.
-						</div>
 					</div>
+				</div>
+
+				{/* Bottom bar */}
+				<div className="mt-10 flex flex-col items-start gap-3 border-t border-stone-200 pt-8 md:flex-row md:items-center md:justify-between dark:border-stone-800">
+					<p className="text-sm text-stone-500 dark:text-stone-400">
+						&copy; {new Date().getFullYear()} The Environmental Defense Initiative. All rights reserved.
+					</p>
+					<a
+						className="text-sm text-stone-500 transition-colors hover:text-stone-800 hover:underline dark:text-stone-400 dark:hover:text-stone-200"
+						href="/privacy-policy"
+						target="_blank"
+					>
+						Privacy Policy
+					</a>
 				</div>
 			</div>
 		</footer>

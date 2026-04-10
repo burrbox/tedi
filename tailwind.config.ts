@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 const config = {
 	darkMode: "media",
@@ -13,6 +14,9 @@ const config = {
 			},
 		},
 		extend: {
+			fontFamily: {
+				sans: ["var(--font-geist-sans)", ...defaultTheme.fontFamily.sans],
+			},
 			keyframes: {
 				"accordion-down": {
 					from: { height: "0" },

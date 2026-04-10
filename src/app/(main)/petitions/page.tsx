@@ -30,116 +30,116 @@ const jsonLd: WithContext<WebPage> = {
 	url: `${env.URL}/petitions`,
 };
 
-export default async function Petitions() {
+export default function Petitions() {
 	return (
 		<>
+			<JsonLd data={jsonLd} />
+
+			{/* Hero */}
 			<section
 				className="flex w-screen bg-cover bg-fixed bg-center bg-no-repeat py-12 md:pb-20 lg:pt-40"
-				style={{
-					backgroundImage: `url(${getCldImageUrl({ src: "nature/tallForest" })})`,
-				}}
+				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/tallForest" })})` }}
 			>
-				<JsonLd data={jsonLd} />
 				<div className="container flex items-center justify-center">
-					<div className="rounded-lg bg-white bg-opacity-85 px-5 py-10 dark:bg-emerald-950/85" data-aos="fade-in">
-						<h1 className="text-center text-6xl font-bold text-blue-600 dark:text-white">Petitions</h1>
-						<h2 className="text-wrap pt-6 text-center text-xl text-green-600 dark:text-green-300">
+					<div
+						className="rounded-2xl bg-white/90 px-8 py-10 shadow-xl backdrop-blur-sm dark:bg-stone-950/90"
+						data-aos="fade-in"
+					>
+						<h1 className="text-center text-5xl font-bold text-blue-600 dark:text-white">Petitions</h1>
+						<p className="pt-4 text-center text-xl text-green-600 dark:text-green-300">
 							Be the change you want to see in the world.
 							<br />
-							Sign a petition; every signature counts.
-						</h2>
-					</div>
-				</div>
-			</section>
-			<section>
-				<div className="h-fit w-full bg-white dark:bg-stone-900">
-					<div className="flex flex-row justify-center py-8">
-						<span>
-							<CloudinaryClientWrapper
-								src="other/many-signs"
-								alt="An image of a protest with many people holding various signs for environmental protection."
-								width="600"
-								height="300"
-								className="h-96 object-cover"
-							/>
-						</span>
-						<span>
-							<CloudinaryClientWrapper
-								src="other/act-now"
-								alt="An image of a protest. One of the protesters is holding a sign that reads '#ACTNOW'."
-								width="400"
-								height="300"
-								className="h-96 object-cover"
-							/>
-						</span>
-					</div>
-				</div>
-				<div
-					className="flex min-h-[60vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
-					style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/t7x9xmnsyqs2yetfpp3j" })})` }}
-				>
-					<div className="container mx-auto w-full p-8" data-aos="fade-down">
-						<div className="flex flex-col gap-8">
-							{petitions.map((petition) => (
-								<div
-									key={petition.name}
-									className="flex flex-col justify-center gap-6 rounded-xl bg-stone-300/70 p-8 dark:bg-stone-800/70"
-								>
-									{petition.name === "coming-soon" ? (
-										<div className="h-fit rounded-xl bg-white p-8 dark:bg-stone-800">
-											<h1 className="text-center text-3xl font-semibold text-green-700 dark:text-green-400">
-												{petition.title}
-											</h1>
-											<h2 className="mx-4 whitespace-pre-line pt-6 text-center text-sm text-green-700 md:mx-6 md:text-sm lg:mx-8 lg:text-base dark:text-blue-300">
-												{petition.description}
-											</h2>
-										</div>
-									) : (
-										<div className="flex flex-col justify-center gap-6 xl:flex-row">
-											<div className="basis-3/5">
-												<div className="h-fit rounded-xl bg-white p-8 dark:bg-stone-800">
-													<h1 className="text-center text-3xl font-semibold text-green-700 dark:text-green-400">
-														{petition.title}
-													</h1>
-													<h2 className="mx-4 whitespace-pre-line pt-6 text-center text-sm text-green-700 md:mx-6 md:text-sm lg:mx-8 lg:text-base dark:text-blue-300">
-														{petition.description}
-													</h2>
-												</div>
-											</div>
-											<div className="basis-2/5">
-												<PetitionForm petition={petition} />
-											</div>
-										</div>
-									)}
-								</div>
-							))}
-						</div>
+							Sign a petition — every signature counts.
+						</p>
 					</div>
 				</div>
 			</section>
 
-			<section>
-				<div
-					className="flex min-h-[60vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
-					style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/t7x9xmnsyqs2yetfpp3j" })})` }}
-				>
-					<div className="container mx-auto w-full" data-aos="fade-down">
-						<div className="flex flex-col justify-center gap-6 rounded-xl bg-stone-300/70 px-3 py-10 xl:flex-row dark:bg-stone-800/70">
-							<div className="basis-3/5">
-								<div className="h-fit rounded-xl bg-white p-2 py-8 dark:bg-stone-800">
-									<h1 className="text-center text-3xl font-semibold text-green-700 dark:text-green-400">
-										Have an Idea for a Petition?
-									</h1>
-									<h2 className="mx-4 whitespace-pre-line pt-6 text-center text-sm text-green-700 md:mx-6 md:text-sm lg:mx-8 lg:text-base dark:text-blue-300">
-										We want to hear from you! Suggest environmental issues in your community that need attention.
-										Whether it&apos;s a local concern, state-wide policy, or national issue, your ideas help us create
-										petitions that make a real difference.
-									</h2>
-								</div>
+			{/* Protest images */}
+			<section className="w-full bg-white dark:bg-stone-900">
+				<div className="flex flex-row justify-center gap-2 py-8">
+					<CloudinaryClientWrapper
+						src="other/many-signs"
+						alt="An image of a protest with many people holding various signs for environmental protection."
+						width="600"
+						height="300"
+						className="h-80 flex-1 rounded-lg object-cover shadow-md"
+					/>
+					<CloudinaryClientWrapper
+						src="other/act-now"
+						alt="An image of a protest. One of the protesters is holding a sign that reads '#ACTNOW'."
+						width="400"
+						height="300"
+						className="h-80 flex-1 rounded-lg object-cover shadow-md"
+					/>
+				</div>
+			</section>
+
+			{/* Active petitions */}
+			<section
+				className="flex min-h-[60vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
+				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/t7x9xmnsyqs2yetfpp3j" })})` }}
+			>
+				<div className="container mx-auto w-full p-8" data-aos="fade-down">
+					<div className="flex flex-col gap-8">
+						{petitions.map((petition) => (
+							<div
+								key={petition.name}
+								className="flex flex-col justify-center gap-6 rounded-2xl bg-white/80 p-6 backdrop-blur-sm dark:bg-stone-900/80"
+							>
+								{petition.name === "coming-soon" ? (
+									<div className="rounded-xl bg-white p-8 shadow-sm dark:bg-stone-800">
+										<h2 className="text-center text-2xl font-semibold text-green-700 dark:text-green-400">
+											{petition.title}
+										</h2>
+										<p className="mx-auto mt-4 max-w-2xl whitespace-pre-line text-center text-stone-600 dark:text-stone-300">
+											{petition.description}
+										</p>
+									</div>
+								) : (
+									<div className="flex flex-col justify-center gap-6 xl:flex-row">
+										<div className="basis-3/5">
+											<div className="h-full rounded-xl bg-white p-8 shadow-sm dark:bg-stone-800">
+												<h2 className="text-center text-2xl font-semibold text-green-700 dark:text-green-400">
+													{petition.title}
+												</h2>
+												<p className="mx-auto mt-4 whitespace-pre-line text-center text-stone-600 dark:text-stone-300">
+													{petition.description}
+												</p>
+											</div>
+										</div>
+										<div className="basis-2/5">
+											<PetitionForm petition={petition} />
+										</div>
+									</div>
+								)}
 							</div>
-							<div className="basis-2/5">
-								<PetitionSuggestionForm />
+						))}
+					</div>
+				</div>
+			</section>
+
+			{/* Suggest a petition */}
+			<section
+				className="flex min-h-[60vh] w-screen bg-cover bg-fixed bg-center bg-repeat py-16 xl:pt-28"
+				style={{ backgroundImage: `url(${getCldImageUrl({ src: "nature/t7x9xmnsyqs2yetfpp3j" })})` }}
+			>
+				<div className="container mx-auto w-full" data-aos="fade-down">
+					<div className="flex flex-col justify-center gap-6 rounded-2xl bg-white/80 px-4 py-10 backdrop-blur-sm xl:flex-row dark:bg-stone-900/80">
+						<div className="basis-3/5">
+							<div className="h-full rounded-xl bg-white p-8 shadow-sm dark:bg-stone-800">
+								<h2 className="text-center text-2xl font-semibold text-green-700 dark:text-green-400">
+									Have an Idea for a Petition?
+								</h2>
+								<p className="mx-auto mt-4 max-w-md text-center text-stone-600 dark:text-stone-300">
+									We want to hear from you! Suggest environmental issues in your community that need attention. Whether
+									it&apos;s a local concern, state-wide policy, or national issue, your ideas help us create petitions
+									that make a real difference.
+								</p>
 							</div>
+						</div>
+						<div className="basis-2/5">
+							<PetitionSuggestionForm />
 						</div>
 					</div>
 				</div>

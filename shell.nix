@@ -1,9 +1,8 @@
 with import <nixpkgs> {};
-let unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {};
-in mkShell {
+mkShell {
 	buildInputs = [
-		nodejs unstable.nodePackages.pnpm
-		stripe-cli nodePackages.vercel
+		nodejs pnpm
+		stripe-cli
 		openssl
 	];
 
