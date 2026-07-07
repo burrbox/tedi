@@ -119,8 +119,8 @@ export default function Campaigns() {
 							awareness about different environmental issues.
 						</p>
 						<p className="text-sm text-stone-500 dark:text-stone-400">
-							*Subscribe to become a TEDI member for FREE today and get access to our campaign toolkits for
-							September&apos;s initiative on the website!
+							*All of our campaign toolkits are available publicly on the website for anyone to download and use for
+							their own community initiatives.
 						</p>
 					</div>
 					<CloudinaryClientWrapper
@@ -265,8 +265,7 @@ export default function Campaigns() {
 							</p>
 							<p className="text-sm text-stone-500 dark:text-stone-400">
 								<strong className="text-stone-700 dark:text-stone-300">Location:</strong> Multiple Elementary Schools,
-								Toronto GTA ·{" "}
-								<strong className="text-stone-700 dark:text-stone-300">Dates:</strong> April 22–25, 2025
+								Toronto GTA · <strong className="text-stone-700 dark:text-stone-300">Dates:</strong> April 22–25, 2025
 							</p>
 						</div>
 					</div>

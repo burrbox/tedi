@@ -3,8 +3,6 @@ import { env } from "@/env";
 import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
 import { CloudinaryClientWrapper } from "@/components/cloudinaryClientWrapper";
 import Link from "next/link";
-import { auth } from "@/server/auth";
-import { redirect } from "next/navigation";
 import { toolkits } from "@/lib/constants";
 import { Download, Mail } from "lucide-react";
 import React from "react";
@@ -41,10 +39,7 @@ export const metadata: Metadata = {
 	},
 };
 
-export default async function Toolkit() {
-	const session = await auth();
-	if (!session) redirect("/signin");
-
+export default function Toolkit() {
 	return (
 		<>
 			{/* Hero */}
@@ -56,7 +51,7 @@ export default async function Toolkit() {
 				<div className="container relative z-10 py-32 text-center">
 					<h1 className="mb-4 text-5xl font-bold text-white drop-shadow-md md:text-6xl">Toolkits</h1>
 					<p className="text-xl text-white/90 drop-shadow">
-						Resources for TEDI members to take action in their communities
+						Free resources for anyone to take action in their communities
 					</p>
 				</div>
 			</section>
@@ -65,7 +60,7 @@ export default async function Toolkit() {
 			<section className="w-full bg-white py-12 dark:bg-stone-900">
 				<div className="container mx-auto max-w-3xl px-4 text-center">
 					<p className="text-lg text-stone-600 dark:text-stone-300">
-						Our campaign team develops toolkits to help members start environmental initiatives as easily as possible.
+						Our campaign team develops toolkits to help anyone start environmental initiatives as easily as possible.
 						Each toolkit is a starting point — simple, stress-free, and ready to use.
 					</p>
 					<p className="mt-4 text-stone-500 dark:text-stone-400">

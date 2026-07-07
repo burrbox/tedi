@@ -22,23 +22,18 @@ export function CampaignSection() {
 				<div className="grid gap-6 md:grid-cols-2">
 					<div className="h-full space-y-4 rounded-xl bg-white p-8 shadow-md dark:bg-stone-900">
 						<p className="text-lg text-stone-600 dark:text-stone-300">
-							<span className="font-semibold text-green-600 dark:text-green-400">Donate</span> old/used clothing at
-							one of our several clothing drive donation bins! If you don&apos;t see a clothing drive in your area,
-							consider hosting one yourself.{" "}
-							<Link href="/join-us" className="text-blue-600 underline hover:text-blue-700 dark:text-blue-400">
-								Become a member
-							</Link>{" "}
-							today to receive free, one-on-one guidance on{" "}
-							<span className="font-semibold text-green-600 dark:text-green-400">starting a clothing drive</span> from
-							a member of our campaign team and gain access to an exclusive action toolkit including all of the
-							materials you need to launch a{" "}
+							<span className="font-semibold text-green-600 dark:text-green-400">Donate</span> old/used clothing at one
+							of our several clothing drive donation bins! If you don&apos;t see a clothing drive in your area, consider
+							hosting one yourself. Visit our public toolkit library to download free resources and get guidance on{" "}
+							<span className="font-semibold text-green-600 dark:text-green-400">starting a clothing drive</span>,
+							including the materials you need to launch a{" "}
 							<span className="font-semibold text-green-600 dark:text-green-400">successful drive</span>.
 						</p>
 						<Link
-							href="/campaigns"
+							href="/toolkit"
 							className="inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow-md transition-colors hover:bg-green-700"
 						>
-							Find Out More
+							Explore Our Toolkits
 						</Link>
 					</div>
 					<div className="h-full space-y-4 rounded-xl bg-white p-8 shadow-md dark:bg-stone-900">
@@ -65,10 +60,7 @@ export function CampaignSection() {
 													Diabetes Canada
 												</Link>{" "}
 												will be picking up clothing donations along with a few books. They accept donations around the{" "}
-												<Link
-													href="https://declutterfordiabetes.ca/donation-bin"
-													className="italic underline"
-												>
+												<Link href="https://declutterfordiabetes.ca/donation-bin" className="italic underline">
 													General Toronto Area
 												</Link>
 												!
