@@ -124,7 +124,7 @@ export default function Campaigns() {
 						</p>
 					</div>
 					<CloudinaryClientWrapper
-						src="27f1bd8f-8b55-4b13-afda-fbaafb068140"
+						src="nature/qneh8sn9n3xcb9daktfj"
 						width="600"
 						height="400"
 						alt="College Sustainability Initiative - hands drawing peace signs with chalk on pavement"
