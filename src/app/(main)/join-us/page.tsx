@@ -80,7 +80,7 @@ export default function JoinUsPage() {
 							</p>
 							<Link
 								className="mx-auto flex h-11 w-full max-w-xs items-center justify-center rounded-md bg-blue-700 text-center text-white transition-colors hover:bg-blue-600"
-								href="https://docs.google.com/forms/d/e/1FAIpQLSecGEqTHRtdt7xkRlcgrpM2_dh1M138XFuPrNy2kkqW9PKeCA/viewform?usp=header"
+								href="https://docs.google.com/forms/d/e/1FAIpQLScjhJnvbggMPeO5mOdLitcs_2LleqcNTM-5dppX9xCoAP0miQ/viewform?usp=header"
 							>
 								Apply Now
 							</Link>

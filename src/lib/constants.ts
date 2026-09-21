@@ -21,15 +21,6 @@ export const directors = [
 		tiktok: "https://www.tiktok.com/@maggiesomebody",
 	},
 	{
-		name: "Karen Peng",
-		title: "Campaign Director",
-		location: "Toronto, ON, Canada",
-		image: "TEDI Bio/xejrbnm0k1loivohupbx",
-		description: `Karen has always been intrigued by forest ecosystems and how they sustain themselves. She is fascinated by environmental policy and advocating for sustainability in developing cities. She joined TEDI to express her passion for environmental science and to meet likeminded peers who also hope to solve current environmental issues.`,
-		email: "Karen.penggg@gmail.com",
-		linkedin: "https://ca.linkedin.com/in/karen-peng-b46a98300",
-	},
-	{
 		name: "Hiroyuki Sakuma",
 		title: "Chief Technology Officer",
 		location: "Hopewell Junction, NY, USA",
@@ -58,24 +49,6 @@ export const directors = [
 
 export const team = [
 	{
-		name: "Kylie Yap",
-		title: "Video Editor",
-		location: "Hopewell Junction, NY, USA",
-		image: "TEDI Bio/x4yg3lxrb3ntlha9tw2y",
-		description: `Kylie has always been captivated by nature and various forms of wildlife. She is extremely passionate about helping the millions of species that face extinction by preventing further habitat loss. She joined TEDI as a video editor to raise awareness of the impact of humans on wildlife and the environment.`,
-		email: "kylieayap@gmail.com",
-		instagram: "https://www.instagram.com/taekwondo.sushi/",
-	},
-	{
-		name: "Madeline Cabral",
-		title: "Blog Editor",
-		location: "Taunton, MA, USA",
-		image: "madeline_pvpjea",
-		description: `Madeline’s love for the environment began at a young age. She is an aspiring hydrologist who enjoys studying water and soil sciences. She has seen how pollution and negligence affect her local watershed and hopes to help spread awareness about current environmental issues through TEDI.`,
-		email: "madeline.cabral08@yahoo.com",
-		instagram: "https://www.instagram.com/madeline__cabral/",
-	},
-	{
 		name: "Devanshi Pandya",
 		title: "Digital Content Creator",
 		location: "Hopewell Junction, NY, USA",
@@ -83,15 +56,6 @@ export const team = [
 		image: "TEDI Bio/oj4ezvnjfmoik5upp2ob",
 		description: `Devanshi has always been a curious girl who always found peace of mind in nature. She hopes to make a difference by spreading awareness through different platforms with beautiful posts in hopes to portray the same beauty nature gives us by giving back and protecting nature. TEDI is a great initiative to encourage our generation to care and be more mindful about the environment since it is a beautiful gift to all to enjoy.`,
 		email: "pandyadevanshi07@gmail.com",
-	},
-	{
-		name: "Anthony Giron",
-		title: "Video Editor",
-		location: "Hopewell Junction, NY, USA",
-		image: "TEDI Bio/lfy2hxarbpv2bmzbscny",
-		description: `Anthony is a 3D animator and software engineer fluent in Spanish. His love for red pandas fuels his passion for environmental conservation, and he’s thrilled to join the team in helping TEDI achieve its mission.`,
-		email: "firethekid1021bro@gmail.com",
-		instagram: "https://www.instagram.com/fuzionpanda/",
 	},
 	{
 		name: "Amy Nangia",
@@ -122,7 +86,7 @@ export const team = [
 	},
 	{
 		name: "Sahasra Rajesh",
-		title: "Crisis Blog Writer & Blog Editor",
+		title: "Policy Specialist",
 		//location: "Hopewell Junction, NY, USA",
 		image:
 			"https://res.cloudinary.com/mozzarella-tedi/image/upload/v1758661649/76040e0a-c949-48fb-bb71-0485e1e03aec.png",
@@ -145,6 +109,42 @@ export const team = [
 }[];
 
 export const retiredTeam = [
+	{
+		name: "Kylie Yap",
+		title: "Video Editor",
+		location: "Hopewell Junction, NY, USA",
+		image: "TEDI Bio/x4yg3lxrb3ntlha9tw2y",
+		description: `Kylie has always been captivated by nature and various forms of wildlife. She is extremely passionate about helping the millions of species that face extinction by preventing further habitat loss. She joined TEDI as a video editor to raise awareness of the impact of humans on wildlife and the environment.`,
+		email: "kylieayap@gmail.com",
+		instagram: "https://www.instagram.com/taekwondo.sushi/",
+	},
+	{
+		name: "Anthony Giron",
+		title: "Video Editor",
+		location: "Hopewell Junction, NY, USA",
+		image: "TEDI Bio/lfy2hxarbpv2bmzbscny",
+		description: `Anthony is a 3D animator and software engineer fluent in Spanish. His love for red pandas fuels his passion for environmental conservation, and he’s thrilled to join the team in helping TEDI achieve its mission.`,
+		email: "firethekid1021bro@gmail.com",
+		instagram: "https://www.instagram.com/fuzionpanda/",
+	},
+	{
+		name: "Madeline Cabral",
+		title: "Blog Editor",
+		location: "Taunton, MA, USA",
+		image: "madeline_pvpjea",
+		description: `Madeline’s love for the environment began at a young age. She is an aspiring hydrologist who enjoys studying water and soil sciences. She has seen how pollution and negligence affect her local watershed and hopes to help spread awareness about current environmental issues through TEDI.`,
+		email: "madeline.cabral08@yahoo.com",
+		instagram: "https://www.instagram.com/madeline__cabral/",
+	},
+	{
+		name: "Karen Peng",
+		title: "Campaign Director",
+		location: "Toronto, ON, Canada",
+		image: "TEDI Bio/xejrbnm0k1loivohupbx",
+		description: `Karen has always been intrigued by forest ecosystems and how they sustain themselves. She is fascinated by environmental policy and advocating for sustainability in developing cities. She joined TEDI to express her passion for environmental science and to meet likeminded peers who also hope to solve current environmental issues.`,
+		email: "Karen.penggg@gmail.com",
+		linkedin: "https://ca.linkedin.com/in/karen-peng-b46a98300",
+	},
 	{
 		name: "Yakubu Fame",
 		title: "Crisis Blog Writer",
