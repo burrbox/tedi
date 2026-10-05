@@ -2,10 +2,10 @@ export const directors = [
 	{
 		name: "Emma Mazzotta",
 		title: "Founder & Executive Director",
-		location: "Hopewell Junction, NY, USA",
-		image: "TEDI Bio/x6q3sdgebdrhx2pb5b4k",
-		description: `From a young age, Emma has exhibited a remarkable talent for leadership and passion for protecting the environment. She not only coordinates and engages in clean-up projects, but conducts research on the ecological impacts of water pollution. She founded TEDI to build upon her passion for environmental advocacy and achieve long-lasting, impactful change on an international level.`,
-		email: "Emmarose2007@icloud.com",
+		location: "Williamstown, Massachusetts, USA",
+		image: "IMG_7738_-_Emma_Mazzotta_yzxuna",
+		description: `Emma is a current sophomore at Williams College in Williamstown, Massachusetts majoring in Geosciences and Environmental Studies with a concentration in Public Health. During her short time at Williams so far, she founded a chapter of Amnesty International USA to advocate for climate justice, co-founded an academic and professional advising group for the Environmental Studies department, and actively participates in the Williams Environmental Council. Additionally, Emma works as a research assistant in the Carrasquillo Environmental Chemistry Lab quantifying contaminant concentrations in affected communities and evaluating their impacts on human health. She founded TEDI not only as a public call to action for the current environmental crisis, but also as a unique means of achieving long-term, sustainable change through policy. `,
+		email: "admin@tedinitiative.org",
 		linkedin: "https://www.linkedin.com/in/emma-mazzotta-362182286/",
 		instagram: "https://www.instagram.com/emma_mazzotta24/",
 		tiktok: "https://www.tiktok.com/@emmamazzotta24",
@@ -23,7 +23,7 @@ export const directors = [
 	{
 		name: "Hiroyuki Sakuma",
 		title: "Chief Technology Officer",
-		location: "Hopewell Junction, NY, USA",
+		location: "Atlanta, GA, USA",
 		image: "TEDI Bio/rainbow-hiro",
 		description: `Hiro is interested in STEM and wishes to pursue a career in mechanical engineering. With his experience of building website, he hopes to combine his passion for the environment with his problem solving skills.`,
 		email: "hiro@tedinitiative.org",
@@ -70,10 +70,11 @@ export const team = [
 	{
 		name: "Zabrina Yam",
 		title: "Fundraising Coordinator",
-		location: "Ontario, Canada",
+		location: "Toronto, Canada",
 		image: "886b2dde-f108-48d6-a234-fa648e77aff5",
-		description: `Zabina has always been passionate about capturing the environment’s beauty through photography. She enjoys participating in park cleanups and beach cleanups while taking photos of the environment. She joined TEDI to combine her interests and take environmental action to contribute as a fundraising coordinator, where she can apply her financial and organizational skills to support the team.`,
+		description: `Zabrina has always been passionate about capturing the environment’s beauty through photography. She is a grade 12 student studying in Earl Haig Secondary School in Toronto and she has a passion in accounting and finance. She enjoys participating in park cleanups and beach cleanups while taking photos of the environment. She joined TEDI to combine her interests and take environmental action to contribute as a fundraising coordinator, where she can apply her financial and organizational skills to support the team.`,
 		email: "zabrinayam@gmail.com",
+		instagram: "https://www.instagram.com/arbe_yam/",
 	},
 	{
 		name: "Cassidy Frater",
@@ -92,6 +93,15 @@ export const team = [
 			"https://res.cloudinary.com/mozzarella-tedi/image/upload/v1758661649/76040e0a-c949-48fb-bb71-0485e1e03aec.png",
 		description: `Sahasra Rajesh is a high school student and passionate advocate for protecting the environment and the incredible wildlife that calls it home. Her research on the environmental consequences of war has strengthened her commitment to safeguard delicate ecosystems. As a TEDI Blog Editor, Sahasra hopes to raise awareness and inspire action to preserve our planet not only through her work but also by encouraging others to join. She also enjoys cheering, volunteering, listening to music, and experimenting with art!`,
 		instagram: "https://www.instagram.com/_sahaasra/",
+	},
+	{
+		name: "Veda Kodakandla",
+		title: "Policy Specialist",
+		location: "Hopewell Junction, NY, USA",
+		image: "image_ch0dlq",
+		description: `Veda is currently a junior in high school, and enjoys spending her free time reading psychological thrillers, debating world topics through Model UN conferences, competing in various science topics in SciOly, and doing research on different types of environmental pollution. She hopes to major in bioengineering and entrepreneurship, and pursue a career as a healthcare entrepreneur.`,
+		instagram: "https://www.instagram.com/vedakodakandla22/",
+		email: "vedasrikodak@gmail.com",
 	},
 ] as {
 	name: string;
